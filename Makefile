@@ -1,4 +1,4 @@
-.PHONY: setup build run clean jupyter test
+.PHONY: setup build run clean jupyter test scrape run-gui
 
 # Create and setup conda environment
 setup:
@@ -13,6 +13,13 @@ build:
 # Run scraper in Docker
 run:
 	docker run indeed-scraper
+
+# Run with GUI (non-headless mode)
+run-gui:
+	docker run -e DISPLAY=${DISPLAY} \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		--net=host \
+		indeed-scraper conda run -n indeed-scraper python indeed_scraper.py --no-headless
 
 # Run Jupyter notebook
 jupyter:
@@ -29,4 +36,4 @@ clean:
 
 # Run scraper locally (without Docker)
 scrape:
-	conda run -n indeed-scraper python indeed_scraper.py 
+	conda run -n indeed-scraper python indeed_scraper.py

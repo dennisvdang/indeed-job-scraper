@@ -20,20 +20,27 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 
 
-def setup_selenium_driver() -> webdriver.Chrome:
+def setup_selenium_driver(headless=True) -> webdriver.Chrome:
     """Set up and configure a Selenium Chrome driver for web scraping.
     
-    This function configures Chrome options for headless browsing with a realistic
-    user agent and returns the configured driver.
+    Args:
+        headless: Whether to run Chrome in headless mode
     
     Returns:
         webdriver.Chrome: Configured Chrome webdriver instance
     """
     # Set up Chrome options
     chrome_options = Options()
-    chrome_options.add_argument("--headless")  # Run in headless mode
+    
+    if headless:
+        chrome_options.add_argument("--headless")  # Run in headless mode
+    
     chrome_options.add_argument("--disable-gpu")  # Disable GPU hardware acceleration
     chrome_options.add_argument("--window-size=1920,1080")  # Set window size
+    
+    # Docker-specific options
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
     
     # Set a realistic user agent
     user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
@@ -221,7 +228,7 @@ def scrape_job_details(driver: webdriver.Chrome, job_url: str) -> Dict[str, Any]
 
 
 def scrape_indeed_jobs(job_title: str, location: str = "", max_pages: int = 5, 
-                       days_ago: int = 7, remote: bool = False) -> pd.DataFrame:
+                      days_ago: int = 7, remote: bool = False, headless: bool = True) -> pd.DataFrame:
     """Main function to scrape Indeed jobs based on search criteria.
     
     Args:
@@ -235,7 +242,7 @@ def scrape_indeed_jobs(job_title: str, location: str = "", max_pages: int = 5,
         pd.DataFrame: DataFrame containing all scraped job information
     """
     # Set up the driver
-    driver = setup_selenium_driver()
+    driver = setup_selenium_driver(headless=headless)
     
     try:
         # Construct the search URL
@@ -315,15 +322,28 @@ def scrape_indeed_jobs(job_title: str, location: str = "", max_pages: int = 5,
 
 
 if __name__ == "__main__":
-    # Example usage
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Scrape jobs from Indeed.com')
+    parser.add_argument('--job-title', type=str, default="Data Scientist", help='Job title to search for')
+    parser.add_argument('--location', type=str, default="Remote", help='Location to search in')
+    parser.add_argument('--max-pages', type=int, default=3, help='Maximum number of pages to scrape')
+    parser.add_argument('--days-ago', type=int, default=7, help='Filter for jobs posted within this many days')
+    parser.add_argument('--remote', action='store_true', help='Search for remote jobs only')
+    parser.add_argument('--no-headless', action='store_true', help='Run Chrome in visible mode (not headless)')
+    
+    args = parser.parse_args()
+    
     jobs = scrape_indeed_jobs(
-        job_title="Data Scientist",
-        location="Remote",
-        max_pages=3,
-        days_ago=7,
-        remote=True
+        job_title=args.job_title,
+        location=args.location,
+        max_pages=args.max_pages,
+        days_ago=args.days_ago,
+        remote=args.remote,
+        headless=not args.no_headless
     )
     
     # Save to CSV
-    jobs.to_csv("indeed_data_scientist_jobs.csv", index=False)
-    print(f"Saved {len(jobs)} jobs to CSV file.") 
+    output_file = f"indeed_{args.job_title.replace(' ', '_').lower()}_jobs.csv"
+    jobs.to_csv(output_file, index=False)
+    print(f"Saved {len(jobs)} jobs to {output_file}.")
