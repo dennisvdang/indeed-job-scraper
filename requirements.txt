@@ -28,9 +28,20 @@ google-cloud-sql-python-connector==1.2.0
 # Natural Language Processing
 nltk==3.8
 spacy==3.4.4
+transformers==4.35.0
+torch==2.1.0
 
 # Web scraping
-scrapy==2.7.1
+selenium==4.15.2
+selenium-stealth==1.0.6
+undetected-chromedriver==3.5.3
+webdriver-manager==4.0.1
+
+# LLM and Vector Stores
+langchain==0.1.0
+langchain-ollama==0.1.3
+ollama==0.1.6
+chromadb==0.4.22
 
 # Jupyter Notebook
 jupyter==1.0.0

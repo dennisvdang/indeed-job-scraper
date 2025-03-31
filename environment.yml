@@ -1,0 +1,38 @@
+name: indeed-scraper
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pandas
+  - numpy
+  - selenium
+  - beautifulsoup4
+  - requests
+  - jupyter
+  - notebook
+  - scikit-learn
+  - nltk
+  - spacy
+  - transformers
+  - pytorch
+  - cpuonly
+  - matplotlib
+  - seaborn
+  - plotly
+  - python-dotenv
+  - black
+  - flake8
+  - mypy
+  - pytest
+  - pip:
+    - openai
+    - chromadb
+    - langchain
+    - langchain-ollama
+    - selenium-stealth
+    - webdriver-manager
+    - undetected-chromedriver
+    - ollama 
