@@ -91,12 +91,12 @@ docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py -
 
 | Parameter | Description | Example | Default |
 |-----------|-------------|---------|---------|
-| `--job-title` | Job title to search for | "Data Scientist" | None |
+| `--job-title` | Job title to search for | "Data Analyst" | None |
 | `--location` | Location to search in | "New York City" | None |
 | `--search-radius` | Search radius in miles | 25 | 25 (None if no location) |
 | `--max-pages` | Maximum number of pages to scrape | 5 | 3 |
 | `--days-ago` | Filter for jobs posted within this many days | 14 | 7 |
-| `--remote` | Search for remote jobs only | `--remote true/false` or `--no-remote` | True |
+| `--work-arrangement` | Work arrangement preference | "remote", "hybrid", or "any" | "any" |
 | `--headless` | Run Chrome in headless mode (without GUI) | `--headless true/false` or `--no-headless` | True |
 
 #### Example Usage
@@ -104,7 +104,7 @@ docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py -
 Basic example:
 
 ```bash
-python indeed_scraper.py --job-title "Data Scientist" --location "New York City" --max-pages 3
+python indeed_scraper.py --job-title "Data Analyst" --location "New York City" --max-pages 3
 ```
 
 or using advanced options:
@@ -116,18 +116,7 @@ python indeed_scraper.py \
     --search-radius 50 \
     --max-pages 5 \
     --days-ago 14 \
-    --no-remote \
-    --no-headless
-```
-
-Alternative syntax for boolean flags:
-
-```bash
-python indeed_scraper.py \
-    --job-title "Data Analyst" \
-    --location "Chicago" \
-    --remote false \
-    --headless false
+    --work-arrangement "remote"
 ```
 
 ## ⚠️ Disclaimer

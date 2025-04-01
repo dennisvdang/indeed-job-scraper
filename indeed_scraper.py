@@ -63,7 +63,7 @@ def random_delay(min_seconds: float = 2.0, max_seconds: float = 5.0) -> None:
 
 
 def construct_search_url(job_title: str, location: str = "", search_radius: Optional[int] = None,
-                         days_ago: int = 7, remote: bool = True) -> str:
+                         days_ago: int = 7, work_arrangement: str = "any") -> str:
     """Construct an Indeed search URL based on search parameters.
     
     Args:
@@ -71,7 +71,7 @@ def construct_search_url(job_title: str, location: str = "", search_radius: Opti
         location: The location to search in (optional)
         search_radius: Search radius in miles (default: 25 if location provided, None otherwise)
         days_ago: Number of days since job posting
-        remote: Whether to search for remote jobs only
+        work_arrangement: Work arrangement preference ("remote", "hybrid", "any")
         
     Returns:
         str: A properly formatted Indeed search URL
@@ -96,9 +96,12 @@ def construct_search_url(job_title: str, location: str = "", search_radius: Opti
     if days_ago > 0:
         base_url += f"&fromage={days_ago}"
     
-    # Add remote filter
-    if remote:
-        base_url += "&remotejob=032b3046-06a3-4876-8dfd-474eb5e7ed11"
+    # Add work arrangement filter
+    if work_arrangement == "remote":
+        base_url += "&remotejob=032b3046-06a3-4876-8dfd-474eb5e7ed11"  # Remote only
+    elif work_arrangement == "hybrid":
+        base_url += "&sc=0kf%3Aattr(DSQF7)%3B"  # Hybrid only
+    # For "any", we don't add a filter
     
     return base_url
 
@@ -234,7 +237,7 @@ def scrape_job_details(driver: webdriver.Chrome, job_url: str) -> Dict[str, Any]
 
 
 def scrape_indeed_jobs(job_title: str, location: str = "", search_radius: Optional[int] = None,
-                      max_pages: int = 3, days_ago: int = 7, remote: bool = True, 
+                      max_pages: int = 3, days_ago: int = 7, work_arrangement: str = "any", 
                       headless: bool = True) -> pd.DataFrame:
     """Main function to scrape Indeed jobs based on search criteria.
     
@@ -244,7 +247,7 @@ def scrape_indeed_jobs(job_title: str, location: str = "", search_radius: Option
         search_radius: Search radius in miles (default: 25 if location provided, None otherwise)
         max_pages: Maximum number of search result pages to scrape
         days_ago: Number of days since job posting
-        remote: Whether to search for remote jobs only
+        work_arrangement: Work arrangement preference ("remote", "hybrid", "any")
         headless: Whether to run Chrome in headless mode
         
     Returns:
@@ -255,7 +258,7 @@ def scrape_indeed_jobs(job_title: str, location: str = "", search_radius: Option
     
     try:
         # Construct the search URL
-        search_url = construct_search_url(job_title, location, search_radius, days_ago, remote)
+        search_url = construct_search_url(job_title, location, search_radius, days_ago, work_arrangement)
         print(f"Searching: {search_url}\n")
         
         # Initialize empty list to store all jobs
@@ -340,8 +343,10 @@ if __name__ == "__main__":
     parser.add_argument('--search-radius', type=int, default=None, help='Search radius in miles (default: 25 if location provided)')
     parser.add_argument('--max-pages', type=int, default=3, help='Maximum number of pages to scrape')
     parser.add_argument('--days-ago', type=int, default=7, help='Filter for jobs posted within this many days')
-    parser.add_argument('--remote', type=bool, default=True, action=BooleanOptionalAction, help='Search for remote jobs only')
-    parser.add_argument('--headless', type=bool, default=True, action=BooleanOptionalAction, help='Run Chrome in headless mode (without GUI)')
+    parser.add_argument('--work-arrangement', type=str, choices=['remote', 'hybrid', 'any'], default='any', 
+                       help='Work arrangement preference (remote, hybrid, or any)')
+    parser.add_argument('--headless', type=bool, default=True, action=BooleanOptionalAction, 
+                       help='Run Chrome in headless mode (without GUI)')
     
     args = parser.parse_args()
     
@@ -351,7 +356,7 @@ if __name__ == "__main__":
         search_radius=args.search_radius,
         max_pages=args.max_pages,
         days_ago=args.days_ago,
-        remote=args.remote,
+        work_arrangement=args.work_arrangement,
         headless=args.headless
     )
     
