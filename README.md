@@ -1,6 +1,6 @@
 # Indeed Job Scraper & AI Analysis [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-A Python-based data pipeline that combines web scraping, NLP, and AI analysis to extract insights from job listings on Indeed.com.
+A Python-based data pipeline that combines web scraping and AI analysis to extract insights from job listings on Indeed.com.
 
 Setup instructions can be found in the [Getting Started](#-getting-started) section below.
 
