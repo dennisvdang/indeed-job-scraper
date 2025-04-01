@@ -4,8 +4,6 @@ A Python-based data pipeline that combines web scraping, NLP, and AI analysis to
 
 Setup instructions can be found in the [Getting Started](#-getting-started) section below.
 
-*Note: This project is under active development.*
-
 ## 🚀 Project Overview
 
 ### Indeed Job Scraper
