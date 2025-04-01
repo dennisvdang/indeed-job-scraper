@@ -332,6 +332,7 @@ def scrape_indeed_jobs(job_title: str, location: str = "", search_radius: Option
 
 if __name__ == "__main__":
     import argparse
+    from argparse import BooleanOptionalAction
     
     parser = argparse.ArgumentParser(description='Scrape jobs from Indeed.com')
     parser.add_argument('--job-title', type=str, required=True, help='Job title to search for')
@@ -339,10 +340,8 @@ if __name__ == "__main__":
     parser.add_argument('--search-radius', type=int, default=None, help='Search radius in miles (default: 25 if location provided)')
     parser.add_argument('--max-pages', type=int, default=3, help='Maximum number of pages to scrape')
     parser.add_argument('--days-ago', type=int, default=7, help='Filter for jobs posted within this many days')
-    parser.add_argument('--remote', action='store_true', default=True, help='Search for remote jobs only')
-    parser.add_argument('--no-remote', action='store_false', dest='remote', help='Include non-remote jobs')
-    parser.add_argument('--headless', action='store_true', default=True, help='Run Chrome in headless mode')
-    parser.add_argument('--no-headless', action='store_false', dest='headless', help='Run Chrome in visible mode')
+    parser.add_argument('--remote', type=bool, default=True, action=BooleanOptionalAction, help='Search for remote jobs only')
+    parser.add_argument('--headless', type=bool, default=True, action=BooleanOptionalAction, help='Run Chrome in headless mode (without GUI)')
     
     args = parser.parse_args()
     
