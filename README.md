@@ -49,7 +49,12 @@ cd Indeed-Job-Scraper
 
 # Create and activate virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# On Windows: 
+venv\Scripts\activate
+
+# On iOS: 
+source venv/bin/activate  
 
 # Install dependencies
 pip install -r requirements.txt
@@ -67,6 +72,9 @@ cd Indeed-Job-Scraper
 # Create and activate the conda environment
 conda env create -f environment.yml
 conda activate indeed-scraper
+
+# To deactivate the environment when you're done:
+conda deactivate
 ```
 
 #### Using Docker
