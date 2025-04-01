@@ -97,8 +97,7 @@ docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py -
 | `--max-pages` | Maximum number of pages to scrape | 5 | 3 |
 | `--days-ago` | Filter for jobs posted within this many days | 14 | 7 |
 | `--remote` | Search for remote jobs only | `--remote` or `--no-remote` | True |
-| `--headless` | Run Chrome without a GUI | `--headless` | True |
-| `--no-headless` | Run Chrome with visible GUI | `--no-headless` | False |
+| `--headless` | Run Chrome in headless mode (without GUI) | `--headless True/False` | True |
 
 #### Example Usage
 
@@ -112,13 +111,13 @@ or using advanced options:
 
 ```bash
 python indeed_scraper.py \
-  --job-title "Machine Learning Engineer" \
-  --location "New York" \
-  --search-radius 50 \
-  --max-pages 5 \
-  --days-ago 14 \
-  --remote \
-  --no-headless
+    --job-title "Software Engineer" \
+    --location "San Francisco" \
+    --search-radius 50 \
+    --max-pages 5 \
+    --days-ago 14 \
+    --remote False \
+    --headless False
 ```
 
 ## ⚠️ Disclaimer
