@@ -31,4 +31,5 @@ SHELL ["conda", "run", "-n", "indeed-scraper", "/bin/bash", "-c"]
 # Set default command
 CMD ["conda", "run", "-n", "indeed-scraper", "python", "indeed_scraper.py", "--args-will-be-overridden"]
 
-# Example run command: `docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py --job-title "Data Analyst" --location "New York" --max-pages 5`
+# Example run command:
+# docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py --job-title "Data Scientist" --location "New York" --search-radius 25 --max-pages 3 --remote --headless

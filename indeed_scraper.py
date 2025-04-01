@@ -20,7 +20,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 
 
-def setup_selenium_driver(headless=True) -> webdriver.Chrome:
+def setup_selenium_driver(headless: bool = True) -> webdriver.Chrome:
     """Set up and configure a Selenium Chrome driver for web scraping.
     
     Args:
@@ -62,13 +62,14 @@ def random_delay(min_seconds: float = 2.0, max_seconds: float = 5.0) -> None:
     time.sleep(delay)
 
 
-def construct_search_url(job_title: str, location: str = "", 
-                         days_ago: int = 7, remote: bool = False) -> str:
+def construct_search_url(job_title: str, location: str = "", search_radius: Optional[int] = None,
+                         days_ago: int = 7, remote: bool = True) -> str:
     """Construct an Indeed search URL based on search parameters.
     
     Args:
         job_title: The job title to search for
         location: The location to search in (optional)
+        search_radius: Search radius in miles (default: 25 if location provided, None otherwise)
         days_ago: Number of days since job posting
         remote: Whether to search for remote jobs only
         
@@ -85,6 +86,11 @@ def construct_search_url(job_title: str, location: str = "",
     if location:
         location_encoded = location.replace(' ', '+')
         base_url += f"&l={location_encoded}"
+        
+        # Add search radius if location is provided
+        if search_radius is None:
+            search_radius = 25  # Default to 25 miles if location provided
+        base_url += f"&radius={search_radius}"
     
     # Add days ago filter
     if days_ago > 0:
@@ -227,16 +233,19 @@ def scrape_job_details(driver: webdriver.Chrome, job_url: str) -> Dict[str, Any]
     return job_details
 
 
-def scrape_indeed_jobs(job_title: str, location: str = "", max_pages: int = 5, 
-                      days_ago: int = 7, remote: bool = False, headless: bool = True) -> pd.DataFrame:
+def scrape_indeed_jobs(job_title: str, location: str = "", search_radius: Optional[int] = None,
+                      max_pages: int = 3, days_ago: int = 7, remote: bool = True, 
+                      headless: bool = True) -> pd.DataFrame:
     """Main function to scrape Indeed jobs based on search criteria.
     
     Args:
         job_title: The job title to search for
         location: The location to search in (optional)
+        search_radius: Search radius in miles (default: 25 if location provided, None otherwise)
         max_pages: Maximum number of search result pages to scrape
         days_ago: Number of days since job posting
         remote: Whether to search for remote jobs only
+        headless: Whether to run Chrome in headless mode
         
     Returns:
         pd.DataFrame: DataFrame containing all scraped job information
@@ -246,7 +255,7 @@ def scrape_indeed_jobs(job_title: str, location: str = "", max_pages: int = 5,
     
     try:
         # Construct the search URL
-        search_url = construct_search_url(job_title, location, days_ago, remote)
+        search_url = construct_search_url(job_title, location, search_radius, days_ago, remote)
         print(f"Searching: {search_url}\n")
         
         # Initialize empty list to store all jobs
@@ -325,22 +334,26 @@ if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser(description='Scrape jobs from Indeed.com')
-    parser.add_argument('--job-title', type=str, default="Data Scientist", help='Job title to search for')
-    parser.add_argument('--location', type=str, default="Remote", help='Location to search in')
+    parser.add_argument('--job-title', type=str, required=True, help='Job title to search for')
+    parser.add_argument('--location', type=str, default=None, help='Location to search in')
+    parser.add_argument('--search-radius', type=int, default=None, help='Search radius in miles (default: 25 if location provided)')
     parser.add_argument('--max-pages', type=int, default=3, help='Maximum number of pages to scrape')
     parser.add_argument('--days-ago', type=int, default=7, help='Filter for jobs posted within this many days')
-    parser.add_argument('--remote', action='store_true', help='Search for remote jobs only')
-    parser.add_argument('--no-headless', action='store_true', help='Run Chrome in visible mode (not headless)')
+    parser.add_argument('--remote', action='store_true', default=True, help='Search for remote jobs only')
+    parser.add_argument('--no-remote', action='store_false', dest='remote', help='Include non-remote jobs')
+    parser.add_argument('--headless', action='store_true', default=True, help='Run Chrome in headless mode')
+    parser.add_argument('--no-headless', action='store_false', dest='headless', help='Run Chrome in visible mode')
     
     args = parser.parse_args()
     
     jobs = scrape_indeed_jobs(
         job_title=args.job_title,
         location=args.location,
+        search_radius=args.search_radius,
         max_pages=args.max_pages,
         days_ago=args.days_ago,
         remote=args.remote,
-        headless=not args.no_headless
+        headless=args.headless
     )
     
     # Save to CSV
