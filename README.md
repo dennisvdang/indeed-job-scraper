@@ -87,7 +87,13 @@ cd Indeed-Job-Scraper
 docker build -t indeed-scraper .
 
 # Run the container
-docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py --job-title "Data Scientist" --location "New York City" --max-pages 3
+docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py \
+    --job-title "Data Scientist" \
+    --location "New York" \
+    --search-radius 25 \
+    --max-pages 3 \
+    --work-arrangement "remote" \
+    --headless
 ```
 
 ## 📊 Usage
@@ -112,7 +118,7 @@ Basic example:
 python indeed_scraper.py --job-title "Data Analyst" --location "New York City" --max-pages 3
 ```
 
-or using advanced options:
+Advanced example with all options:
 
 ```bash
 python indeed_scraper.py \
@@ -125,17 +131,9 @@ python indeed_scraper.py \
     --headless
 ```
 
-or using Docker:
+#### Stopping the Scraper
 
-```bash
-docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py \
-    --job-title "Data Scientist" \
-    --location "New York" \
-    --search-radius 25 \
-    --max-pages 3 \
-    --work-arrangement "remote" \
-    --headless
-```
+You can stop the scraper at any time by pressing `Ctrl+C` in the terminal. The scraper will gracefully exit, save any data collected so far, and clean up resources.
 
 ## ⚠️ Disclaimer
 

@@ -8,6 +8,8 @@ work arrangement, and other criteria. Results are saved to CSV for further analy
 import time
 import random
 import re
+import signal
+import sys
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from selenium import webdriver
@@ -17,6 +19,21 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import pandas as pd
+
+
+# Global variable to track if the script should exit
+should_exit = False
+
+
+def signal_handler(signum, frame):
+    """Handle exit signals gracefully."""
+    global should_exit
+    print("\n\nReceived exit signal. Cleaning up...")
+    should_exit = True
+
+
+# Register the signal handler for Ctrl+C (SIGINT)
+signal.signal(signal.SIGINT, signal_handler)
 
 
 @dataclass
@@ -86,6 +103,8 @@ def construct_search_url(job_title: str, location: str = "", search_radius: Opti
 
 def extract_job_cards(driver: webdriver.Chrome) -> List[JobListing]:
     """Extract job information from Indeed's job cards on the search results page."""
+    global should_exit
+    
     try:
         # Wait for job cards to load
         WebDriverWait(driver, 10).until(
@@ -99,6 +118,11 @@ def extract_job_cards(driver: webdriver.Chrome) -> List[JobListing]:
     job_cards = driver.find_elements(By.CSS_SELECTOR, "ul.jobsearch-ResultsList > li")
     
     for card in job_cards:
+        # Check if exit signal received
+        if should_exit:
+            print("Stopping job card extraction...")
+            break
+            
         try:
             # Skip non-job elements
             if not card.get_attribute("data-resultid"):
@@ -139,16 +163,24 @@ def scrape_indeed_jobs(job_title: str, location: str = "", search_radius: Option
                       max_pages: int = 3, days_ago: int = 7, work_arrangement: str = "any", 
                       headless: bool = True) -> pd.DataFrame:
     """Main function to scrape Indeed jobs based on search criteria."""
-    driver = setup_selenium_driver(headless=headless)
+    global should_exit
+    driver = None
     
     try:
+        driver = setup_selenium_driver(headless=headless)
         search_url = construct_search_url(job_title, location, search_radius, days_ago, work_arrangement)
         print(f"Searching: {search_url}\n")
+        print("Press Ctrl+C at any time to stop the scraper safely.\n")
         
         all_jobs = []
         job_ids = set()
         
         for page in range(1, max_pages + 1):
+            # Check if exit signal received
+            if should_exit:
+                print("Stopping scraper...")
+                break
+            
             page_url = search_url if page == 1 else f"{search_url}&start={(page-1)*10}"
             driver.get(page_url)
             random_delay()
@@ -170,7 +202,9 @@ def scrape_indeed_jobs(job_title: str, location: str = "", search_radius: Option
         return pd.DataFrame(all_jobs)
         
     finally:
-        driver.quit()
+        if driver:
+            driver.quit()
+            print("\nCleaned up browser resources.")
 
 
 if __name__ == "__main__":
@@ -190,16 +224,21 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    jobs = scrape_indeed_jobs(
-        job_title=args.job_title,
-        location=args.location,
-        search_radius=args.search_radius,
-        max_pages=args.max_pages,
-        days_ago=args.days_ago,
-        work_arrangement=args.work_arrangement,
-        headless=args.headless
-    )
-    
-    output_file = f"indeed_{args.job_title.replace(' ', '_').lower()}_jobs.csv"
-    jobs.to_csv(output_file, index=False)
-    print(f"Saved {len(jobs)} jobs to {output_file}.")
+    try:
+        jobs = scrape_indeed_jobs(
+            job_title=args.job_title,
+            location=args.location,
+            search_radius=args.search_radius,
+            max_pages=args.max_pages,
+            days_ago=args.days_ago,
+            work_arrangement=args.work_arrangement,
+            headless=args.headless
+        )
+        
+        output_file = f"indeed_{args.job_title.replace(' ', '_').lower()}_jobs.csv"
+        jobs.to_csv(output_file, index=False)
+        print(f"\nSaved {len(jobs)} jobs to {output_file}.")
+        
+    except KeyboardInterrupt:
+        print("\nScript terminated by user. Any scraped data will be saved.")
+        sys.exit(0)
