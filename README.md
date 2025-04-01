@@ -47,14 +47,11 @@ This component is currently under development. The goal is to implement an LLM p
 git clone https://github.com/dennisvdang/Indeed-Job-Scraper.git
 cd Indeed-Job-Scraper
 
-# Create and activate virtual environment
+# Create virtual environment
 python -m venv venv
 
-# On Windows: 
-venv\Scripts\activate
-
-# On iOS: 
-source venv/bin/activate  
+# Activate virtual environment
+venv\Scripts\activate  # On Unix/macOS: source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
