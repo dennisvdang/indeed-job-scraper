@@ -1,38 +1,33 @@
 name: indeed-scraper
 channels:
-  - pytorch
   - conda-forge
   - defaults
 dependencies:
   - python=3.11
   - pip
-  - pandas
-  - numpy
-  - selenium
-  - beautifulsoup4
-  - requests
+  - pandas>=2.1.0
+  - numpy>=1.26.0
+  - beautifulsoup4>=4.12.0
+  - requests>=2.31.0
   - jupyter
   - notebook
-  - scikit-learn
-  - nltk
-  - spacy
-  - transformers
-  - pytorch
-  - cpuonly
-  - matplotlib
-  - seaborn
-  - plotly
-  - python-dotenv
-  - black
-  - flake8
-  - mypy
-  - pytest
+  - matplotlib>=3.8.0
+  - seaborn>=0.13.0
+  - python-dateutil>=2.8.2
+  # Development tools
+  - pytest>=7.4.0
+  - pytest-mock>=3.12.0
+  - pytest-cov>=4.1.0
+  - black>=23.9.0
+  - flake8>=6.1.0
+  - isort>=5.12.0
+  - mypy>=1.5.0
   - pip:
-    - openai
-    - chromadb
-    - langchain
-    - langchain-ollama
-    - selenium-stealth
-    - webdriver-manager
-    - undetected-chromedriver
-    - ollama 
+    # Core web-scraping
+    - selenium>=4.16.0
+    - undetected-chromedriver>=3.5.3
+    - selenium-stealth>=1.0.6
+    - webdriver-manager>=4.0.1
+    # Type annotations
+    - types-requests>=2.31.0
+    - types-selenium>=3.141.9 
