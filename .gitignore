@@ -1,3 +1,32 @@
 notebook_styling.md
 .cursor/rules/python-project-general.mdc
 /venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+
+# Data and outputs
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+.cursor/
+
+# Jupyter
+.ipynb_checkpoints
+notebooks/.ipynb_checkpoints
+notebooks/indeed_job_analysis.ipynb
+notebooks/job_scraper.ipynb
+
+# Logs
+*.log
