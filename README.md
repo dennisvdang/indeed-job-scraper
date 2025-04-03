@@ -139,7 +139,7 @@ python indeed_scraper.py \
 
 Testing without saving (shows GUI but doesn't save file):
 ```bash
-python indeed_scraper.py --job-title "Data Analyst" --dry-run
+python indeed_scraper.py --job-title "Data Analyst" --location "New York City" --max-pages 1 --dry-run
 ```
 
 ### Data Organization
