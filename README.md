@@ -8,7 +8,7 @@ Setup instructions can be found in the [Getting Started](#-getting-started) sect
 
 ### Indeed Job Scraper
 
-The data scraping pipeline ([indeed_scraper.py](./indeed_scraper.py)) extracts, cleans, and stores the following information:
+The data scraping pipeline ([indeed_scraper.py](./indeed_scraper.py)) extracts the following information:
 
 - Job title
 - Company name
@@ -92,8 +92,7 @@ docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py \
     --location "New York" \
     --search-radius 25 \
     --max-pages 3 \
-    --work-arrangement "remote" \
-    --headless
+    --work-arrangement "remote"
 ```
 
 ## 📊 Usage
@@ -108,18 +107,26 @@ docker run indeed-scraper conda run -n indeed-scraper python indeed_scraper.py \
 | `--max-pages` | Maximum number of pages to scrape | 5 | 3 |
 | `--days-ago` | Filter for jobs posted within this many days | 14 | 7 |
 | `--work-arrangement` | Work arrangement preference | "remote", "hybrid", or "any" | "any" |
-| `--headless` | Run Chrome in headless mode (without GUI) | `--headless` or `--no-headless` | True |
+| `--dry-run` | Run without saving output file | `--dry-run` | False |
+
+#### CAPTCHA Handling
+
+Due to Indeed's CAPTCHA system, the scraper runs with the Chrome browser visible. When a CAPTCHA appears (usually a simple checkbox on startup):
+
+1. Click the checkbox or solve any additional puzzles that appear
+2. Wait for the page to fully load after solving
+3. Press Enter in the terminal to continue
+
+The script will only continue the scraping process once you've hit Enter in the command line.
 
 #### Example Usage
 
 Basic example:
-
 ```bash
-python indeed_scraper.py --job-title "Data Analyst" --location "New York City" --max-pages 3
+python indeed_scraper.py --job-title "Data Analyst" --location "New York City"
 ```
 
-Advanced example with all options:
-
+Advanced example (all options):
 ```bash
 python indeed_scraper.py \
     --job-title "Software Engineer" \
@@ -127,13 +134,28 @@ python indeed_scraper.py \
     --search-radius 50 \
     --max-pages 5 \
     --days-ago 14 \
-    --work-arrangement "remote" \
-    --headless
+    --work-arrangement "remote"
 ```
 
-#### Stopping the Scraper
+Testing without saving (shows GUI but doesn't save file):
+```bash
+python indeed_scraper.py --job-title "Data Analyst" --dry-run
+```
 
-You can stop the scraper at any time by pressing `Ctrl+C` in the terminal. The scraper will gracefully exit, save any data collected so far, and clean up resources.
+### Data Organization
+
+The scraper organizes data in the following structure:
+```
+data/
+├── raw/          # Raw CSV files from Indeed scraping
+└── processed/    # For future processed/analyzed data
+```
+
+Output files are automatically saved in `data/raw/` with the naming format:
+`indeed_[job_title]_[location]_[timestamp].csv`
+
+For example:
+`data/raw/indeed_data_analyst_new_york_20240401_153022.csv`
 
 ## ⚠️ Disclaimer
 
