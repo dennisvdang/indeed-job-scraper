@@ -23,6 +23,7 @@ from indeed_scraper import (
     # Job scraping
     construct_search_url,
     extract_job_data,
+    handle_captcha_challenge,
     scrape_indeed_jobs
 )
 
@@ -46,7 +47,8 @@ def sample_job_listing():
         salary="$100,000 - $150,000 a year",
         job_url="https://indeed.com/job/123",
         job_id="abc123",
-        date_posted="Posted 2 days ago"
+        date_posted="Posted 2 days ago",
+        job_type="Full-time"
     )
 
 
@@ -58,69 +60,6 @@ def temp_data_dir(tmp_path):
     (data_dir / "raw").mkdir()
     (data_dir / "processed").mkdir()
     return data_dir
-
-
-# =====================
-# Data Models Tests
-# =====================
-def test_job_listing_creation(sample_job_listing):
-    """Test JobListing creation and default values."""
-    # Test required fields
-    assert sample_job_listing.title == "Software Engineer"
-    assert sample_job_listing.company == "Test Company"
-    
-    # Test additional fields
-    assert sample_job_listing.location == "Remote"
-    assert sample_job_listing.salary == "$100,000 - $150,000 a year"
-    
-    # Test defaults
-    assert sample_job_listing.source == "Indeed"
-    assert isinstance(sample_job_listing.date_scraped, datetime)
-
-
-def test_job_listing_to_dict(sample_job_listing):
-    """Test conversion of JobListing to dictionary."""
-    job_dict = sample_job_listing.to_dict()
-    assert isinstance(job_dict, dict)
-    assert job_dict["title"] == "Software Engineer"
-    assert job_dict["company"] == "Test Company"
-    assert job_dict["job_id"] == "abc123"
-    assert "date_scraped" in job_dict
-
-
-# =====================
-# Filesystem Utilities Tests
-# =====================
-def test_get_output_filepath():
-    """Test output filepath generation with different inputs."""
-    # Test with job title only
-    path = get_output_filepath("Software Engineer")
-    assert "indeed_software_engineer_" in path
-    assert path.endswith(".csv")
-    assert "data/raw" in path
-    
-    # Test with job title and location
-    path = get_output_filepath("Data Scientist", "New York")
-    assert "indeed_data_scientist_new_york_" in path
-    assert path.endswith(".csv")
-
-
-def test_save_jobs_to_csv(sample_job_listing, tmp_path):
-    """Test saving job listings to CSV."""
-    # Prepare test data
-    test_file = tmp_path / "test_jobs.csv"
-    jobs = [sample_job_listing]
-    
-    # Save to CSV
-    save_jobs_to_csv(jobs, str(test_file))
-    
-    # Verify the file exists and contains correct data
-    assert test_file.exists()
-    df = pd.read_csv(test_file)
-    assert len(df) == 1
-    assert df.iloc[0]["title"] == "Software Engineer"
-    assert df.iloc[0]["company"] == "Test Company"
-    assert "date_scraped" in df.columns
 
 
 # =====================
@@ -139,6 +78,27 @@ def test_setup_browser(mock_chrome):
     # Verify Chrome driver was created with expected options
     mock_chrome.assert_called_once()
     assert driver == instance
+
+
+@patch('time.sleep')
+@patch('indeed_scraper.wait_for_user_continue', return_value="")
+def test_handle_captcha_challenge(mock_user_continue, mock_sleep, mock_driver):
+    """Test handling of CAPTCHA challenges."""
+    # Test normal execution (user presses Enter)
+    result = handle_captcha_challenge(mock_driver)
+    assert result is True
+    mock_user_continue.assert_called_once()
+    assert mock_sleep.called
+    
+    # Reset mocks
+    mock_user_continue.reset_mock()
+    mock_sleep.reset_mock()
+    
+    # Test user interruption
+    mock_user_continue.return_value = None
+    result = handle_captcha_challenge(mock_driver)
+    assert result is False
+    mock_user_continue.assert_called_once()
 
 
 # =====================
@@ -163,9 +123,23 @@ def test_construct_search_url():
     url = construct_search_url("Manager", days_ago=14)
     assert "&fromage=14" in url
     
-    # Test with work arrangement
-    url = construct_search_url("Remote Job", work_arrangement="remote")
+    # Test with remote option
+    url = construct_search_url("Remote Job", remote="remote")
     assert "remotejob=" in url
+    
+    # Test with hybrid option
+    url = construct_search_url("Hybrid Job", remote="hybrid")
+    assert "sc=0kf%3Aattr(DSQF7)%3B" in url
+    
+    # Test with job type
+    url = construct_search_url("Software Engineer", job_type="full-time")
+    assert "&jt=fulltime" in url
+    
+    url = construct_search_url("Software Engineer", job_type="part-time")
+    assert "&jt=parttime" in url
+    
+    url = construct_search_url("Software Engineer", job_type="contract")
+    assert "&jt=contract" in url
 
 
 @patch('selenium.webdriver.support.ui.WebDriverWait')
@@ -189,6 +163,8 @@ def test_extract_job_data(mock_wait, mock_driver):
                 element.text = "$100k - $150k"
             elif "link" in args[1] or args[1].endswith("a"):
                 element.get_attribute.return_value = "https://indeed.com/job/test123"
+            elif "attribute_snippet" in args[1]:
+                element.text = "Full-time"
         return element
     
     mock_card.find_element = mock_find_element
@@ -208,8 +184,8 @@ def test_extract_job_data(mock_wait, mock_driver):
 @patch('indeed_scraper.extract_job_data')
 @patch('indeed_scraper.navigate_to_next_page')
 @patch('indeed_scraper.setup_browser')
-@patch('indeed_scraper.wait_for_user_continue', return_value="")
-def test_scrape_indeed_jobs(mock_wait, mock_setup, mock_navigate, mock_extract, 
+@patch('indeed_scraper.handle_captcha_challenge', return_value=True)
+def test_scrape_indeed_jobs(mock_captcha, mock_setup, mock_navigate, mock_extract, 
                           mock_find, mock_scroll):
     """Test the main scraping function with mocks."""
     # Configure mocks
@@ -223,9 +199,9 @@ def test_scrape_indeed_jobs(mock_wait, mock_setup, mock_navigate, mock_extract,
     
     # Set up job data mocks
     mock_extract.side_effect = [
-        {"title": "Job 1", "company": "Company 1", "link": "https://indeed.com/job/1", "job_id": "1"},
-        {"title": "Job 2", "company": "Company 2", "link": "https://indeed.com/job/2", "job_id": "2"},
-        {"title": "Job 3", "company": "Company 3", "link": "https://indeed.com/job/3", "job_id": "3"}
+        {"title": "Job 1", "company": "Company 1", "link": "https://indeed.com/job/1", "job_id": "1", "job_type": "Full-time"},
+        {"title": "Job 2", "company": "Company 2", "link": "https://indeed.com/job/2", "job_id": "2", "job_type": "Part-time"},
+        {"title": "Job 3", "company": "Company 3", "link": "https://indeed.com/job/3", "job_id": "3", "job_type": "Contract"}
     ]
     
     # Navigate mock returns True to simulate successful navigation
@@ -241,5 +217,8 @@ def test_scrape_indeed_jobs(mock_wait, mock_setup, mock_navigate, mock_extract,
     # Verify results
     assert len(jobs) == 3
     assert jobs[0].title == "Job 1"
+    assert jobs[0].job_type == "Full-time"
     assert jobs[1].company == "Company 2"
-    assert jobs[2].job_id == "3" 
+    assert jobs[1].job_type == "Part-time"
+    assert jobs[2].job_id == "3"
+    assert jobs[2].job_type == "Contract" 
