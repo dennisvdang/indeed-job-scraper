@@ -4,7 +4,7 @@ A Python-based data pipeline that combines web scraping and AI analysis to extra
 
 Setup instructions can be found in the [Getting Started](#-getting-started) section below.
 
-## 🚀 Project Overview
+## 🚀 Overview
 
 ### Indeed Job Scraper
 
