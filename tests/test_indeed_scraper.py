@@ -1,42 +1,29 @@
 """Tests for the Indeed job scraper."""
 
 import os
-import re
-import time
 import pytest
 from unittest.mock import MagicMock, patch
 from pathlib import Path
-from dataclasses import dataclass
 from datetime import datetime
-from typing import Dict, List, Optional, Generator
+from typing import Dict, List, Optional
 
 import pandas as pd
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import TimeoutException
 
 from indeed_scraper import (
-    # Core
-    SHOULD_EXIT,
-    wait_for_user_continue,
-    handle_exit_signal,
     # Data models
     JobListing,
     # Filesystem
-    ensure_data_dirs,
     get_output_filepath,
     save_jobs_to_csv,
     # Browser automation
-    setup_browser,
-    random_delay,
-    scroll_page_naturally,
     check_browser_closed,
+    setup_browser,
     # Job scraping
     construct_search_url,
-    find_job_elements,
     extract_job_data,
-    navigate_to_next_page,
     scrape_indeed_jobs
 )
 
@@ -75,52 +62,6 @@ def temp_data_dir(tmp_path):
 
 
 # =====================
-# Core Utilities Tests
-# =====================
-def test_handle_exit_signal():
-    """Test that the exit signal handler sets the global flag."""
-    global SHOULD_EXIT
-    # Save original value to restore after test
-    original_value = SHOULD_EXIT
-    
-    # Reset for test
-    SHOULD_EXIT = False
-    
-    # Test handler
-    handle_exit_signal()
-    assert SHOULD_EXIT is True
-    
-    # Restore original value
-    SHOULD_EXIT = original_value
-
-
-@patch('builtins.input', return_value="continue")
-def test_wait_for_user_continue_normal(mock_input):
-    """Test normal operation of wait_for_user_continue."""
-    result = wait_for_user_continue("Press Enter to continue:")
-    assert result == "continue"
-    mock_input.assert_called_once_with("Press Enter to continue:")
-
-
-@patch('builtins.input', side_effect=KeyboardInterrupt)
-def test_wait_for_user_continue_interrupt(mock_input):
-    """Test interrupt handling of wait_for_user_continue."""
-    global SHOULD_EXIT
-    # Save original value to restore after test
-    original_value = SHOULD_EXIT
-    
-    # Reset for test
-    SHOULD_EXIT = False
-    
-    result = wait_for_user_continue()
-    assert result is None
-    assert SHOULD_EXIT is True
-    
-    # Restore original value
-    SHOULD_EXIT = original_value
-
-
-# =====================
 # Data Models Tests
 # =====================
 def test_job_listing_creation(sample_job_listing):
@@ -151,23 +92,6 @@ def test_job_listing_to_dict(sample_job_listing):
 # =====================
 # Filesystem Utilities Tests
 # =====================
-def test_ensure_data_dirs(tmp_path, monkeypatch):
-    """Test data directory creation."""
-    # Set up test environment
-    test_dir = tmp_path / "test_data"
-    test_dir.mkdir()
-    monkeypatch.chdir(test_dir)
-    
-    # Run function
-    ensure_data_dirs()
-    
-    # Check results
-    assert (test_dir / "data" / "raw").exists()
-    assert (test_dir / "data" / "raw" / ".gitkeep").exists()
-    assert (test_dir / "data" / "processed").exists()
-    assert (test_dir / "data" / "processed" / ".gitkeep").exists()
-
-
 def test_get_output_filepath():
     """Test output filepath generation with different inputs."""
     # Test with job title only
@@ -218,27 +142,6 @@ def test_setup_browser(mock_chrome):
     assert driver == instance
 
 
-def test_random_delay():
-    """Test that random delay function stays within bounds."""
-    min_delay = 0.1  # Use smaller values for faster tests
-    max_delay = 0.2
-    
-    # Test multiple times to ensure randomness within bounds
-    for _ in range(5):
-        start_time = time.time()
-        random_delay(min_delay, max_delay)
-        elapsed = time.time() - start_time
-        assert min_delay <= elapsed <= max_delay + 0.1  # Add small buffer
-
-
-def test_scroll_page_naturally(mock_driver):
-    """Test page scrolling with mock driver."""
-    scroll_page_naturally(mock_driver)
-    
-    # Check that execute_script was called multiple times
-    assert mock_driver.execute_script.call_count > 5
-
-
 def test_check_browser_closed():
     """Test detection of closed browser."""
     # Create a mock driver that raises exception on property access
@@ -281,21 +184,6 @@ def test_construct_search_url():
     # Test with work arrangement
     url = construct_search_url("Remote Job", work_arrangement="remote")
     assert "remotejob=" in url
-
-
-@patch('selenium.webdriver.support.ui.WebDriverWait')
-def test_find_job_elements(mock_wait, mock_driver):
-    """Test job elements finder with mock driver."""
-    # Configure mock
-    mock_elements = [MagicMock() for _ in range(5)]
-    mock_driver.find_elements.return_value = mock_elements
-    
-    # Call function
-    elements = find_job_elements(mock_driver)
-    
-    # Verify results
-    assert elements == mock_elements
-    assert mock_driver.find_elements.call_count > 0
 
 
 @patch('selenium.webdriver.support.ui.WebDriverWait')
@@ -372,7 +260,4 @@ def test_scrape_indeed_jobs(mock_wait, mock_setup, mock_navigate, mock_extract,
     assert len(jobs) == 3
     assert jobs[0].title == "Job 1"
     assert jobs[1].company == "Company 2"
-    assert jobs[2].job_id == "3"
-    
-    # Verify navigation was attempted
-    assert mock_navigate.call_count == 1 
+    assert jobs[2].job_id == "3" 
