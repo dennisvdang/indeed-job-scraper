@@ -2,7 +2,7 @@
 
 import os
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch, Mock
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional
@@ -12,7 +12,7 @@ import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 
-from indeed_scraper import (
+from src.indeed_scraper import (
     # Data models
     JobListing,
     # Filesystem
@@ -24,7 +24,9 @@ from indeed_scraper import (
     construct_search_url,
     extract_job_data,
     handle_captcha_challenge,
-    scrape_indeed_jobs
+    scrape_indeed_jobs,
+    clean_html_description,
+    scrape_job_description
 )
 
 
@@ -221,4 +223,66 @@ def test_scrape_indeed_jobs(mock_captcha, mock_setup, mock_navigate, mock_extrac
     assert jobs[1].company == "Company 2"
     assert jobs[1].job_type == "Part-time"
     assert jobs[2].job_id == "3"
-    assert jobs[2].job_type == "Contract" 
+    assert jobs[2].job_type == "Contract"
+
+
+def test_clean_html_description():
+    """Test the HTML cleaning function for job descriptions."""
+    # Test with various HTML elements
+    html_content = """
+    <div class="job-desc">
+        <h3>Job Description</h3>
+        <p>We are looking for a <strong>Software Engineer</strong> with the following skills:</p>
+        <ul>
+            <li>Python programming</li>
+            <li>JavaScript &amp; React.js</li>
+            <li>Database experience</li>
+        </ul>
+        <p>Salary range: $80,000 - $120,000</p>
+        <br/>
+        <div>Please apply now!</div>
+    </div>
+    """
+    
+    cleaned_text = clean_html_description(html_content)
+    
+    # Check that HTML tags are removed but content is preserved
+    assert "Job Description" in cleaned_text
+    assert "Software Engineer" in cleaned_text
+    assert "Python programming" in cleaned_text
+    assert "JavaScript & React.js" in cleaned_text
+    assert "• Python programming" in cleaned_text  # Check bullet points
+    assert "<strong>" not in cleaned_text  # HTML tags should be removed
+    assert "<div>" not in cleaned_text  # HTML tags should be removed
+    assert "&amp;" not in cleaned_text  # HTML entities should be converted
+
+
+def test_scrape_job_description():
+    """Test the job description scraping functionality."""
+    # Create mock objects
+    mock_driver = MagicMock()
+    mock_wait = MagicMock()
+    mock_desc_element = MagicMock()
+    
+    # Set up mock behavior
+    mock_desc_element.get_attribute.return_value = "<p>Test job description</p>"
+    mock_driver.find_element.return_value = mock_desc_element
+    mock_driver.current_url = "https://indeed.com/search"
+    
+    # Patch WebDriverWait
+    with patch('indeed_scraper.WebDriverWait', return_value=mock_wait):
+        with patch('indeed_scraper.EC.presence_of_element_located'):
+            # Test successful description scraping
+            result = scrape_job_description(mock_driver, "https://indeed.com/job/123")
+            
+            # Verify driver interactions
+            mock_driver.get.assert_any_call("https://indeed.com/job/123")
+            mock_driver.get.assert_any_call("https://indeed.com/search")  # Return to original page
+            
+            # Verify result
+            assert result == "Test job description"  # Should be cleaned HTML
+            
+            # Test with None returned from get_attribute
+            mock_desc_element.get_attribute.return_value = None
+            result = scrape_job_description(mock_driver, "https://indeed.com/job/456")
+            assert result is None 
