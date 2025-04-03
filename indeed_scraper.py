@@ -108,7 +108,6 @@ def ensure_data_dirs() -> None:
     data_dirs = ['data/raw', 'data/processed']
     for dir_path in data_dirs:
         Path(dir_path).mkdir(parents=True, exist_ok=True)
-        # Create .gitkeep to track empty directories
         gitkeep_file = Path(dir_path) / '.gitkeep'
         if not gitkeep_file.exists():
             gitkeep_file.touch()
@@ -125,21 +124,17 @@ def get_output_filepath(job_title: str, location: Optional[str] = None) -> str:
     Returns:
         Full path to the output CSV file
     """
-    # Clean up job title for filename
     clean_title = job_title.replace(' ', '_').lower()
     
-    # Add location to filename if provided
     if location:
         clean_location = location.replace(' ', '_').lower()
         base_name = f"indeed_{clean_title}_{clean_location}"
     else:
         base_name = f"indeed_{clean_title}"
     
-    # Add timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"{base_name}_{timestamp}.csv"
     
-    # Return full path in data/raw directory
     return os.path.join('data', 'raw', filename)
 
 
@@ -155,14 +150,11 @@ def save_jobs_to_csv(jobs: List[JobListing], output_file: str) -> None:
         logger.warning("No jobs to save")
         return
         
-    # Convert to DataFrame for saving
     df = pd.DataFrame([job.to_dict() for job in jobs])
     
-    # Format the datetime before saving
     if 'date_scraped' in df.columns:
         df['date_scraped'] = df['date_scraped'].apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
     
-    # Save to CSV
     df.to_csv(output_file, index=False)
     logger.info(f"Saved {len(jobs)} jobs to {output_file}")
 
@@ -180,33 +172,28 @@ def setup_browser() -> uc.Chrome:
     Raises:
         WebDriverException: If the browser cannot be initialized
     """
-    # Create options for undetected-chromedriver
     options = uc.ChromeOptions()
     
-    # Configure options
+    # Necessary flags to prevent Chrome detection mechanisms
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-notifications')
     options.add_argument('--disable-popup-blocking')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    
-    # Explicitly set headless attribute to avoid attribute error
-    options.headless = False
+    options.add_argument('--no-sandbox')  # Required in some environments (Docker)
+    options.add_argument('--disable-dev-shm-usage')  # Prevents crashes in containerized environments
+    options.headless = False  # Headless mode often triggers bot detection
     
     try:
-        # Create the driver directly with undetected-chromedriver
         logger.info("Setting up undetected-chromedriver...")
-        # Specify version to match Chrome installation
+        # undetected_chromedriver bypasses Cloudflare and other bot detection systems
+        # by mimicking a real Chrome browser with a real user profile
         driver = uc.Chrome(options=options, version_main=134)
-        
-        # Maximize window
         driver.maximize_window()
         return driver
         
     except Exception as e:
         logger.error(f"Error setting up Chrome with options: {str(e)}")
         
-        # Try with minimal configuration
+        # Try with minimal configuration in case custom options caused the failure
         logger.info("Trying with minimal configuration...")
         minimal_options = uc.ChromeOptions()
         minimal_options.headless = False
@@ -218,24 +205,6 @@ def setup_browser() -> uc.Chrome:
             logger.warning("Could not maximize window")
             
         return driver
-
-
-def check_browser_closed(driver: uc.Chrome) -> bool:
-    """
-    Check if the browser window has been closed.
-    
-    Args:
-        driver: Chrome driver instance to check
-        
-    Returns:
-        True if browser is closed, False otherwise
-    """
-    try:
-        # Try to get the current window handle
-        driver.current_window_handle
-        return False
-    except (WebDriverException, SessionNotCreatedException):
-        return True
 
 
 def random_delay(min_seconds: float = 2.0, max_seconds: float = 5.0) -> None:
@@ -258,27 +227,28 @@ def scroll_page_naturally(driver: uc.Chrome) -> None:
     """
     logger.info("Scrolling page naturally...")
     
-    # Get current scroll height
+    # Get initial document height via JavaScript execution
     last_height = driver.execute_script("return document.body.scrollHeight")
     
-    # Scroll down with human-like random pauses
     while True:
-        # Scroll down in a randomized steps pattern
+        # Scroll gradually with pauses between movements to mimic human behavior
+        # Indeed uses lazy loading, so we need to scroll to load all job listings
         for i in range(10):
             scroll_position = i * last_height / 10
             driver.execute_script(f"window.scrollTo(0, {scroll_position});")
-            time.sleep(random.uniform(0.1, 0.3))  # Slight pause between steps
+            time.sleep(random.uniform(0.1, 0.3))
         
-        # Wait a bit at the bottom
+        # Pause briefly at the bottom as a human would to read content
         time.sleep(random.uniform(0.5, 1.5))
         
-        # Calculate new scroll height and check if we've reached the bottom
+        # Check if new content was loaded (page height increased)
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == last_height:
+            # No new content loaded, we've reached the bottom
             break
         last_height = new_height
     
-    # Scroll back up a bit (seems more human-like)
+    # Scroll back up slightly as a human often does after reaching the bottom
     driver.execute_script(f"window.scrollTo(0, {last_height * 0.9});")
     time.sleep(random.uniform(0.5, 1))
     logger.info("Page scrolling complete")
@@ -296,14 +266,17 @@ def add_random_mouse_movements(driver: uc.Chrome, elements: List, max_movements:
     if not elements:
         return
         
-    # Select a random subset of elements
+    # Select a subset of elements to interact with
     sample_size = min(max_movements, len(elements))
     if sample_size <= 0:
         return
         
+    # Moving the mouse randomly helps evade bot detection that looks for
+    # suspiciously direct cursor paths or lack of mouse movement
     for element in random.sample(elements, sample_size):
         try:
             action = ActionChains(driver)
+            # ActionChains allows simulation of complex user interactions
             action.move_to_element(element).perform()
             logger.info("Moving mouse to random element")
             time.sleep(random.uniform(0.5, 1.5))
@@ -322,13 +295,14 @@ def navigate_to_next_page(driver: uc.Chrome) -> bool:
         True if navigation was successful, False otherwise
     """
     try:
-        # Find next page button
+        # WebDriverWait actively polls the DOM until the element is clickable
+        # or until the timeout is reached - more reliable than immediate access
         logger.info("Looking for next page button...")
         next_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-testid='pagination-page-next']"))
         )
         
-        # Scroll the button into view smoothly
+        # Smooth scrolling is more human-like than immediate jumps
         logger.info("Scrolling to next page button...")
         driver.execute_script(
             "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", 
@@ -336,12 +310,13 @@ def navigate_to_next_page(driver: uc.Chrome) -> bool:
         )
         time.sleep(random.uniform(0.8, 1.5))
         
-        # Move mouse to button before clicking
+        # Hover over button before clicking - bots often click directly
         action = ActionChains(driver)
         action.move_to_element(next_button).perform()
         time.sleep(random.uniform(0.5, 1.0))
         
-        # Try regular click first, then JavaScript click if needed
+        # Try standard click first, then JavaScript click as a fallback
+        # JavaScript clicks bypass overlay elements that might block standard clicks
         logger.info("Clicking next page button...")
         try:
             next_button.click()
@@ -351,14 +326,13 @@ def navigate_to_next_page(driver: uc.Chrome) -> bool:
             driver.execute_script("arguments[0].click();", next_button)
             logger.info("Next page button clicked via JavaScript")
         
-        # Wait for page to load
+        # Wait for new page content to load before continuing
         logger.info("Waiting for next page to load...")
         WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "div[class*='job']"))
         )
         logger.info("Next page loaded successfully")
         
-        # Add random delay after navigation
         random_delay(3.0, 5.0)
         return True
         
@@ -430,6 +404,8 @@ def find_job_elements(driver: uc.Chrome) -> List:
     """
     job_cards = []
     
+    # Multiple selectors are tried because Indeed frequently changes their DOM structure
+    # and different selectors may work better depending on the user's location, device, etc.
     selectors_to_try = [
         # Common mobile/app selectors
         "div.tapItem",
@@ -443,22 +419,22 @@ def find_job_elements(driver: uc.Chrome) -> List:
         "div[id^='jobCard']"
     ]
     
-    # Try each selector and use the one that finds the most jobs
+    # Try each selector and keep the one that finds the most job cards
     for selector in selectors_to_try:
         cards = driver.find_elements(By.CSS_SELECTOR, selector)
         if len(cards) > len(job_cards):
             job_cards = cards
             logger.debug(f"Found {len(cards)} job cards with selector: {selector}")
     
-    # If we found no jobs with any selector, try a different approach
+    # If standard selectors fail, try a more generic approach
     if not job_cards:
         logger.warning("Could not find job cards with standard selectors, trying alternative...")
         try:
-            # Wait for any job-like elements
+            # Wait for any job-like elements to appear
             WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div[class*='job']"))
             )
-            # Look for job containers by common patterns in the HTML structure
+            # Look for elements with 'job' in the class name as a last resort
             job_cards = driver.find_elements(By.CSS_SELECTOR, "div[class*='job']")
             logger.debug(f"Found {len(job_cards)} jobs with alternative selector")
         except Exception:
@@ -479,12 +455,15 @@ def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
         Dictionary of job data or None if extraction failed
     """
     try:
-        # First verify the card is attached to DOM
-        WebDriverWait(driver, 1).until(EC.visibility_of(card))
+        # Ensure the job card is attached to DOM before attempting to extract data
+        # This prevents stale element reference exceptions
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "job_seen_beacon"))
+        )
         
         job_data = {}
         
-        # Only check for required fields first
+        # Required fields to extract
         required_fields = {
             'title': {
                 'primary': (By.CSS_SELECTOR, "a.jcs-JobTitle"),
@@ -500,8 +479,8 @@ def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
             }
         }
         
-        # Optional fields
-        optional_fields = {
+        # Additional fields (non-required)
+        additional_fields = {
             'location': {
                 'primary': (By.CSS_SELECTOR, "[data-testid='text-location']"),
                 'backup': (By.CSS_SELECTOR, "div.companyLocation")
@@ -516,7 +495,8 @@ def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
             }
         }
         
-        # Check required fields first
+        # Using primary and backup selectors improves resilience against
+        # Indeed's frequent UI changes and A/B tests
         missing_required = False
         for field, locators in required_fields.items():
             try:
@@ -533,22 +513,23 @@ def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
                 if field == 'link':
                     job_data[field] = element.get_attribute('href')
                     
-                    # Extract job ID from the URL if available
+                    # Extract job ID from URL using regex for unique identification
                     job_id_match = re.search(r'jk=([a-zA-Z0-9]+)', job_data[field])
                     if job_id_match:
                         job_data['job_id'] = job_id_match.group(1)
                 else:
+                    # Some job titles are stored in the 'title' attribute rather than text
                     if field == 'title' and element.get_attribute('title'):
                         job_data[field] = element.get_attribute('title')
                     else:
                         job_data[field] = element.text.strip()
         
-        # If any required field is missing, return None
+        # Skip jobs missing required fields
         if missing_required or not all(job_data.get(field) for field in required_fields.keys()):
             return None
             
-        # Get optional fields
-        for field, locators in optional_fields.items():
+        # Get additional (non-required) fields
+        for field, locators in additional_fields.items():
             try:
                 element = card.find_element(*locators['primary'])
             except NoSuchElementException:
@@ -608,7 +589,7 @@ def scrape_indeed_jobs(
         driver.get(search_url)
         random_delay(2.0, 4.0)
         
-        # Mandatory pause for CAPTCHA solving
+        # CAPTCHA solving pause
         logger.info("\nIndeed likely shows a CAPTCHA on first visit")
         logger.info("1. Solve the CAPTCHA if present")
         logger.info("2. Wait for the page to fully load")
@@ -623,67 +604,54 @@ def scrape_indeed_jobs(
         time.sleep(5)
         logger.info("Continuing with search...")
         
-        # Setup for job collection
+        # Collection containers
         all_jobs: List[JobListing] = []
         job_ids: Set[str] = set()
         seen_title_company_pairs: Set[str] = set()
         
-        # Single function to check if we should exit
+        # Check if scraping should be stopped
         def should_stop():
             """Check if we should stop scraping."""
-            return SHOULD_EXIT or (driver and check_browser_closed(driver))
+            return SHOULD_EXIT
         
         # Scrape page by page
         for current_page in range(1, max_pages + 1):
             # Check if we should exit before starting a new page
             if should_stop():
-                logger.info("Exiting: User interrupt or browser closed")
+                logger.info("Exiting: User interrupt")
                 break
                 
             logger.info(f"Scraping page {current_page} of {max_pages}...")
             
-            # Scroll page naturally to load all content
-            scroll_page_naturally(driver)
-            
-            # Find job cards
+            # Scrape the current page
             job_cards = find_job_elements(driver)
-            logger.info(f"Found {len(job_cards)} job cards on the page")
             
-            # Add some random mouse movements
-            add_random_mouse_movements(driver, job_cards)
-            
-            # Process jobs on this page
+            # Process jobs found on this page
             jobs_on_page = []
             jobs_already_seen_this_page = set()
             
-            # Process each job card
             for card in job_cards:
-                # Extract job data
                 if should_stop():
                     break
                     
                 job_data = extract_job_data(card, driver)
                 
-                # Process if extraction succeeded
                 if job_data:
-                    # Create a unique identifier for the job
                     job_id = job_data.get('job_id')
                     title_company = f"{job_data['title']}_{job_data['company']}"
                     
-                    # Skip duplicates
+                    # Skip if duplicate
                     if ((job_id and job_id in job_ids) or 
                         (title_company in seen_title_company_pairs) or 
                         (title_company in jobs_already_seen_this_page)):
                         logger.debug(f"Skipping duplicate job: {job_data['title']} at {job_data['company']}")
                         continue
                     
-                    # Track jobs seen on this page
                     jobs_already_seen_this_page.add(title_company)
                     jobs_on_page.append(job_data)
                 
-                # Add delay between processing cards
                 time.sleep(random.uniform(0.3, 0.7))
-              
+            
             # Check if we found any jobs
             if not jobs_on_page:
                 logger.info("No job cards found on this page.")
@@ -692,9 +660,8 @@ def scrape_indeed_jobs(
             
             logger.info(f"Found {len(jobs_on_page)} unique jobs on this page")
             
-            # Convert to JobListing objects and add to collection
+            # Convert to JobListing objects
             for job in jobs_on_page:
-                # Create unique identifier
                 title_company = f"{job['title']}_{job['company']}"
                 
                 # Skip if already seen
@@ -702,12 +669,10 @@ def scrape_indeed_jobs(
                     (title_company in seen_title_company_pairs)):
                     continue
                 
-                # Track this job
                 if job.get('job_id'):
                     job_ids.add(job['job_id'])
                 seen_title_company_pairs.add(title_company)
                 
-                # Create JobListing object
                 job_listing = JobListing(
                     title=job['title'],
                     company=job['company'],
@@ -722,16 +687,14 @@ def scrape_indeed_jobs(
             
             logger.info(f"Total unique jobs so far: {len(all_jobs)}")
             
-            # Check if we should stop before attempting navigation
+            # Check if we should continue to next page
             if should_stop() or current_page >= max_pages:
                 break
                 
-            # Try to navigate to next page
             if not navigate_to_next_page(driver):
                 logger.info("Could not navigate to next page. Stopping.")
                 break
                 
-            # Add delay between pages
             random_delay(3.0, 6.0)
         
         logger.info(f"Completed scraping {len(all_jobs)} unique jobs in total")
@@ -750,8 +713,6 @@ def scrape_indeed_jobs(
                 logger.info("Browser resources released.")
             except Exception:
                 pass
-            
-            # Prevent __del__ from being called during program exit
             driver = None
 
 
