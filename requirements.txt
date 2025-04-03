@@ -1,15 +1,27 @@
 # Core dependencies
-pandas==1.5.2
-numpy==1.23.5
+pandas==2.1.4
+numpy==1.26.3
 
 # Web scraping
-selenium==4.15.2
+selenium==4.16.0
+undetected-chromedriver==3.5.4
 selenium-stealth==1.0.6
-undetected-chromedriver==3.5.3
 webdriver-manager==4.0.1
 
-# Development tools
-black==22.12.0
-flake8==6.0.0
-isort==5.11.4
-pytest==7.2.0
+# Data processing
+python-dateutil==2.8.2
+
+# Development and testing
+pytest==7.4.3
+pytest-mock==3.12.0
+pytest-cov==4.1.0
+
+# Code quality
+black==23.12.1
+flake8==6.1.0
+isort==5.13.2
+mypy==1.8.0
+
+# Type annotations
+types-requests==2.31.0.10
+types-selenium==3.141.9
