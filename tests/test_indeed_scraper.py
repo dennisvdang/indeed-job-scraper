@@ -19,7 +19,6 @@ from indeed_scraper import (
     get_output_filepath,
     save_jobs_to_csv,
     # Browser automation
-    check_browser_closed,
     setup_browser,
     # Job scraping
     construct_search_url,
@@ -70,7 +69,7 @@ def test_job_listing_creation(sample_job_listing):
     assert sample_job_listing.title == "Software Engineer"
     assert sample_job_listing.company == "Test Company"
     
-    # Test optional fields
+    # Test additional fields
     assert sample_job_listing.location == "Remote"
     assert sample_job_listing.salary == "$100,000 - $150,000 a year"
     
@@ -140,23 +139,6 @@ def test_setup_browser(mock_chrome):
     # Verify Chrome driver was created with expected options
     mock_chrome.assert_called_once()
     assert driver == instance
-
-
-def test_check_browser_closed():
-    """Test detection of closed browser."""
-    # Create a mock driver that raises exception on property access
-    mock_driver = MagicMock(spec=uc.Chrome)
-    type(mock_driver).current_window_handle = property(
-        side_effect=TimeoutException("Browser closed"))
-    
-    # Test the function
-    assert check_browser_closed(mock_driver) is True
-    
-    # Test with a working browser
-    working_driver = MagicMock(spec=uc.Chrome)
-    type(working_driver).current_window_handle = property(
-        return_value="window1")
-    assert check_browser_closed(working_driver) is False
 
 
 # =====================
