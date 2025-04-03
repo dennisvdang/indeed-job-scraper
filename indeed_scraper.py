@@ -3,13 +3,12 @@
 Indeed Job Scraper
 
 A tool for scraping job listings from Indeed.com with support for filtering by location,
-work arrangement, and other criteria. Results are saved to CSV for further analysis.
+work arrangement, job type, and other criteria. Results are saved to CSV for further analysis.
 
 Usage:
-    python indeed_scraper.py --job-title "Software Engineer" --location "San Francisco" --work-arrangement remote
+    python indeed_scraper.py --job-title "Software Engineer" --location "San Francisco" --remote remote --job-type "full-time"
 
 Author: Dennis
-Version: 1.0.0
 """
 
 import os
@@ -93,6 +92,7 @@ class JobListing:
     job_id: Optional[str] = None
     source: str = "Indeed"
     date_posted: Optional[str] = None
+    job_type: Optional[str] = None
     date_scraped: datetime = field(default_factory=datetime.now)
 
     def to_dict(self) -> Dict:
@@ -349,7 +349,8 @@ def construct_search_url(
     location: str = "",
     search_radius: Optional[int] = None,
     days_ago: int = 7,
-    work_arrangement: str = "any"
+    remote: str = "all",
+    job_type: Optional[str] = None
 ) -> str:
     """
     Build an Indeed search URL with the specified parameters.
@@ -359,7 +360,8 @@ def construct_search_url(
         location: The location to search in (optional)
         search_radius: The search radius in miles (default: 25 if location provided)
         days_ago: Filter for jobs posted within this many days
-        work_arrangement: Work arrangement preference (remote, hybrid, or any)
+        remote: Remote work options ('all', 'remote', or 'hybrid')
+        job_type: Type of job (full-time, part-time, contract, etc.)
         
     Returns:
         Constructed search URL
@@ -381,13 +383,27 @@ def construct_search_url(
     if days_ago > 0:
         base_url += f"&fromage={days_ago}"
     
-    # Add work arrangement filter
-    work_arrangement_filters = {
+    # Add remote work filter
+    remote_work_filters = {
         "remote": "&remotejob=032b3046-06a3-4876-8dfd-474eb5e7ed11",
         "hybrid": "&sc=0kf%3Aattr(DSQF7)%3B"
     }
-    if work_arrangement in work_arrangement_filters:
-        base_url += work_arrangement_filters[work_arrangement]
+    if remote in remote_work_filters:
+        base_url += remote_work_filters[remote]
+    
+    # Add job type filter
+    job_type_filters = {
+        "full-time": "&jt=fulltime", 
+        "part-time": "&jt=parttime",
+        "contract": "&jt=contract",
+        "temporary": "&jt=temporary",
+        "permanent": "&jt=permanent",
+        # Indeed's API uses 'internship' for temp-to-hire in the URL parameter
+        # even though it displays as "temp-to-hire" in the UI
+        "temp-to-hire": "&jt=internship"
+    }
+    if job_type and job_type.lower() in job_type_filters:
+        base_url += job_type_filters[job_type.lower()]
     
     return base_url
 
@@ -492,6 +508,10 @@ def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
             'date_posted': {
                 'primary': (By.CSS_SELECTOR, "span.date"),
                 'backup': (By.CSS_SELECTOR, "span[class*='date']")
+            },
+            'job_type': {
+                'primary': (By.CSS_SELECTOR, "div[data-testid='job-type-info']"),  # Modern view
+                'backup': (By.CSS_SELECTOR, "div.metadataContainer span.attribute_snippet")  # Older UI
             }
         }
         
@@ -544,12 +564,77 @@ def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
             else:
                 job_data[field] = None
         
-        logger.info(f"Scraped: {job_data['title']} at {job_data['company']}")
+        # Clean up job_type field if it exists
+        if job_data.get('job_type'):
+            # Extract just the job type part (e.g., "Full-time" from "Full-time · Some other info")
+            job_type_raw = job_data['job_type'].split('·')[0].strip()
+            
+            # Normalize common job type variations
+            job_type_mapping = {
+                'fulltime': 'Full-time',
+                'full time': 'Full-time',
+                'full-time': 'Full-time',
+                'parttime': 'Part-time',
+                'part time': 'Part-time',
+                'part-time': 'Part-time',
+                'contract': 'Contract',
+                'contractor': 'Contract',
+                'temporary': 'Temporary',
+                'temp': 'Temporary',
+                'permanent': 'Permanent',
+                'perm': 'Permanent',
+                'temp to hire': 'Temp-to-hire',
+                'temp-to-hire': 'Temp-to-hire',
+                'temptohire': 'Temp-to-hire',
+                'internship': 'Internship'
+            }
+            
+            # Try to normalize the job type
+            job_type_lower = job_type_raw.lower()
+            for key, value in job_type_mapping.items():
+                if key in job_type_lower:
+                    job_data['job_type'] = value
+                    break
+            else:
+                # If no match found, keep the original text but truncate if too long
+                if len(job_type_raw) > 30:
+                    job_data['job_type'] = job_type_raw[:30] + "..."
+                else:
+                    job_data['job_type'] = job_type_raw
+        
+        job_type_info = f" ({job_data['job_type']})" if job_data.get('job_type') else ""
+        logger.info(f"Scraped: {job_data['title']} at {job_data['company']}{job_type_info}")
         return job_data
         
     except Exception as e:
         logger.error(f"Failed to scrape a job card: {str(e)}")
         return None
+
+
+def handle_captcha_challenge(driver: uc.Chrome) -> bool:
+    """
+    Pause execution to allow the user to solve any CAPTCHA challenges.
+    
+    Args:
+        driver: Chrome driver instance
+        
+    Returns:
+        True if the user confirmed CAPTCHA is solved, False if interrupted
+    """
+    logger.info("\nIndeed likely shows a CAPTCHA on first visit")
+    logger.info("1. Solve the CAPTCHA if present")
+    logger.info("2. Wait for the page to fully load")
+    logger.info("3. Press Enter ONLY when you're ready to continue...")
+    
+    # Use wait_for_user_continue to handle Ctrl+C
+    if SHOULD_EXIT or wait_for_user_continue() is None:
+        logger.info("Operation interrupted by user")
+        return False
+        
+    logger.info("Waiting additional time for page to stabilize...")
+    time.sleep(5)
+    logger.info("Continuing with search...")
+    return True
 
 
 def scrape_indeed_jobs(
@@ -558,7 +643,8 @@ def scrape_indeed_jobs(
     search_radius: Optional[int] = None,
     max_pages: int = 3,
     days_ago: int = 7,
-    work_arrangement: str = "any"
+    remote: str = "all",
+    job_type: Optional[str] = None
 ) -> List[JobListing]:
     """
     Main function to scrape Indeed jobs based on search criteria.
@@ -569,7 +655,8 @@ def scrape_indeed_jobs(
         search_radius: The search radius in miles (default: 25 if location provided)
         max_pages: Maximum number of pages to scrape
         days_ago: Filter for jobs posted within this many days
-        work_arrangement: Work arrangement preference (remote, hybrid, or any)
+        remote: Remote work options ('all', 'remote', or 'hybrid')
+        job_type: Type of job (full-time, part-time, contract, etc.)
         
     Returns:
         List of JobListing objects containing scraped job data
@@ -583,26 +670,15 @@ def scrape_indeed_jobs(
         
         # Construct and navigate to search URL
         search_url = construct_search_url(
-            job_title, location, search_radius, days_ago, work_arrangement
+            job_title, location, search_radius, days_ago, remote, job_type
         )
         logger.info(f"Opening search URL: {search_url}")
         driver.get(search_url)
         random_delay(2.0, 4.0)
         
-        # CAPTCHA solving pause
-        logger.info("\nIndeed likely shows a CAPTCHA on first visit")
-        logger.info("1. Solve the CAPTCHA if present")
-        logger.info("2. Wait for the page to fully load")
-        logger.info("3. Press Enter ONLY when you're ready to continue...")
-        
-        # Use wait_for_user_continue to handle Ctrl+C
-        if SHOULD_EXIT or wait_for_user_continue() is None:
-            logger.info("Operation interrupted by user")
+        # Handle any CAPTCHA challenges
+        if not handle_captcha_challenge(driver):
             return []
-            
-        logger.info("Waiting additional time for page to stabilize...")
-        time.sleep(5)
-        logger.info("Continuing with search...")
         
         # Collection containers
         all_jobs: List[JobListing] = []
@@ -680,7 +756,8 @@ def scrape_indeed_jobs(
                     salary=job.get('salary'),
                     job_url=job.get('link'),
                     job_id=job.get('job_id'),
-                    date_posted=job.get('date_posted')
+                    date_posted=job.get('date_posted'),
+                    job_type=job.get('job_type')
                 )
                 
                 all_jobs.append(job_listing)
@@ -764,11 +841,19 @@ def parse_arguments():
     )
     
     parser.add_argument(
-        '--work-arrangement', 
+        '--remote', 
         type=str, 
-        choices=['remote', 'hybrid', 'any'], 
-        default='any', 
-        help='Work arrangement preference'
+        choices=['all', 'remote', 'hybrid'], 
+        default='all', 
+        help='Remote work options (all, remote, or hybrid)'
+    )
+    
+    parser.add_argument(
+        '--job-type',
+        type=str,
+        choices=['full-time', 'part-time', 'contract', 'temporary', 'permanent', 'temp-to-hire'],
+        default=None,
+        help='Type of job to search for'
     )
     
     parser.add_argument(
@@ -809,7 +894,8 @@ def main():
             search_radius=args.search_radius,
             max_pages=args.max_pages,
             days_ago=args.days_ago,
-            work_arrangement=args.work_arrangement
+            remote=args.remote,
+            job_type=args.job_type
         )
         
         # Process results
