@@ -1,0 +1,2 @@
+[console_scripts]
+indeed-scraper = src.indeed_scraper:main
