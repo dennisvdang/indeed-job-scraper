@@ -6,11 +6,12 @@ A tool for scraping job listings from Indeed.com with support for filtering by l
 work arrangement, job type, and other criteria. Results are saved to CSV for further analysis.
 
 Usage:
-    python indeed_scraper.py --job-title "Software Engineer" --location "San Francisco" --remote remote --job-type "full-time" --fetch-descriptions
+    python indeed_scraper.py --job-title "Software Engineer" --location "San Francisco" --remote remote --job-type "full-time" --include-descriptions
 
 Author: Dennis
 """
 
+import argparse
 import os
 import re
 import sys
@@ -18,12 +19,11 @@ import time
 import random
 import signal
 import logging
-import csv
-import json
 from pathlib import Path
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple, Set, Union
+from urllib.parse import quote_plus
 
 import pandas as pd
 import undetected_chromedriver as uc
@@ -40,11 +40,20 @@ from selenium.common.exceptions import (
 )
 
 # Import functions from description_scraper module
-from description_scraper import (
-    scrape_job_description,
-    batch_scrape_descriptions,
-    clean_html_description
-)
+try:
+    # Try relative import (works when installed as a package)
+    from .description_scraper import (
+        scrape_job_description,
+        batch_scrape_descriptions,
+        clean_html_description
+    )
+except ImportError:
+    # Fallback to direct import (works when run directly)
+    from description_scraper import (
+        scrape_job_description,
+        batch_scrape_descriptions,
+        clean_html_description
+    )
 
 # Configure logging
 logging.basicConfig(
@@ -57,6 +66,70 @@ logger = logging.getLogger("indeed_scraper")
 # Global flag for graceful shutdown
 SHOULD_EXIT = False
 
+# =====================
+# Constants
+# =====================
+REMOTE_WORK_FILTERS = {
+    "remote": "&remotejob=032b3046-06a3-4876-8dfd-474eb5e7ed11",
+    "hybrid": "&sc=0kf%3Aattr(DSQF7)%3B",
+    "onsite": ""  # No specific filter for onsite/in-person
+}
+
+JOB_TYPE_FILTERS = {
+    "full-time": "&sc=0kf%3Aattr(CF3CP)%3B", 
+    "part-time": "&sc=0kf%3Aattr(75GKK)%3B",
+    "contract": "&sc=0kf%3Aattr(NJXCK)%3B",
+    "temporary": "&sc=0kf%3Aattr(4HKF7)%3B",
+    "temp-to-hire": "&sc=0kf%3Aattr(7SBAT)%3B"
+}
+
+# Valid options for days ago filter
+VALID_DAYS_AGO = [1, 3, 7, 14]
+
+# Selectors for different elements
+NEXT_PAGE_SELECTOR = "a[data-testid='pagination-page-next']"
+JOB_CONTAINER_SELECTOR = "div[class*='job']"
+
+# Common selectors for job card elements
+JOB_CARD_SELECTORS = [
+    "div.tapItem",                      # Mobile/app view
+    "div.job_seen_beacon",              # Desktop primary
+    "div[class*='job_seen_beacon']",    # Desktop with dynamic classes
+    "ul.jobsearch-ResultsList > li",    # Container list items 
+    "[data-testid='jobListing']",       # New UI with data attributes
+    "div[id^='jobCard']"                # Legacy job cards
+]
+
+# Job detail field selectors
+JOB_TITLE_SELECTORS = {
+    'primary': (By.CSS_SELECTOR, "a.jcs-JobTitle"),
+    'backup': (By.CSS_SELECTOR, "h2.jobTitle span[title]")
+}
+
+JOB_COMPANY_SELECTORS = {
+    'primary': (By.CSS_SELECTOR, "[data-testid='company-name']"),
+    'backup': (By.CSS_SELECTOR, "span.companyName")
+}
+
+JOB_LINK_SELECTORS = {
+    'primary': (By.CSS_SELECTOR, "a.jcs-JobTitle"),
+    'backup': (By.CSS_SELECTOR, "h2.jobTitle a")
+}
+
+JOB_LOCATION_SELECTORS = {
+    'primary': (By.CSS_SELECTOR, "[data-testid='text-location']"),
+    'backup': (By.CSS_SELECTOR, "div.companyLocation")
+}
+
+JOB_SALARY_SELECTORS = {
+    'primary': (By.CSS_SELECTOR, "div[class*='salary-snippet-container']"),
+    'backup': (By.CSS_SELECTOR, "div.salary-snippet-container")
+}
+
+JOB_TYPE_SELECTORS = {
+    'primary': (By.CSS_SELECTOR, "div[data-testid='job-type-info']"),  # Modern view
+    'backup': (By.CSS_SELECTOR, "div.metadataContainer span.attribute_snippet")  # Older UI
+}
 
 # =====================
 # Core Utilities
@@ -87,6 +160,13 @@ def wait_for_user_continue(prompt: str = "") -> Optional[str]:
         return None
 
 
+def convert_days_ago_arg(days_ago: int) -> int:
+    """
+    Validate the days-ago argument and return it.
+    """
+    return days_ago if days_ago in VALID_DAYS_AGO else 7
+
+
 # =====================
 # Data Models
 # =====================
@@ -100,14 +180,16 @@ class JobListing:
     job_url: Optional[str] = None
     job_id: Optional[str] = None
     source: str = "Indeed"
-    date_posted: Optional[str] = None
     job_type: Optional[str] = None
     date_scraped: datetime = field(default_factory=datetime.now)
     description: Optional[str] = None
+    search_url: Optional[str] = None
+    date_posted: Optional[str] = None  # Will only be populated when descriptions are fetched
 
     def to_dict(self) -> Dict:
         """Convert the job listing to a dictionary."""
-        return {k: v for k, v in self.__dict__.items()}
+        # Only include non-None fields to avoid empty columns in CSV
+        return {k: v for k, v in self.__dict__.items() if v is not None}
 
 
 # =====================
@@ -115,15 +197,15 @@ class JobListing:
 # =====================
 def ensure_data_dirs() -> None:
     """Create data directories if they don't exist."""
-    data_dirs = ['data/raw', 'data/processed']
+    data_dirs = [Path('data/raw'), Path('data/processed')]
     for dir_path in data_dirs:
-        Path(dir_path).mkdir(parents=True, exist_ok=True)
-        gitkeep_file = Path(dir_path) / '.gitkeep'
+        dir_path.mkdir(parents=True, exist_ok=True)
+        gitkeep_file = dir_path / '.gitkeep'
         if not gitkeep_file.exists():
             gitkeep_file.touch()
 
 
-def get_output_filepath(job_title: str, location: Optional[str] = None) -> str:
+def get_output_filepath(job_title: str, location: Optional[str] = None) -> Path:
     """
     Generate an organized output filepath for the CSV file.
     
@@ -145,10 +227,10 @@ def get_output_filepath(job_title: str, location: Optional[str] = None) -> str:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"{base_name}_{timestamp}.csv"
     
-    return os.path.join('data', 'raw', filename)
+    return Path('data/raw') / filename
 
 
-def save_jobs_to_csv(jobs: List[JobListing], output_file: str) -> None:
+def save_jobs_to_csv(jobs: List[JobListing], output_file: Path) -> None:
     """
     Convert job listings to DataFrame and save to CSV.
     
@@ -159,12 +241,13 @@ def save_jobs_to_csv(jobs: List[JobListing], output_file: str) -> None:
     if not jobs:
         logger.warning("No jobs to save")
         return
-        
-    df = pd.DataFrame([job.to_dict() for job in jobs])
     
+    # Create dataframe from job dictionaries and format dates
+    df = pd.DataFrame([job.to_dict() for job in jobs])
     if 'date_scraped' in df.columns:
         df['date_scraped'] = df['date_scraped'].apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
     
+    # Save to CSV
     df.to_csv(output_file, index=False)
     logger.info(f"Saved {len(jobs)} jobs to {output_file}")
 
@@ -178,43 +261,37 @@ def setup_browser() -> uc.Chrome:
     
     Returns:
         Configured Chrome driver instance
-    
-    Raises:
-        WebDriverException: If the browser cannot be initialized
     """
+    # Create options with anti-detection settings
     options = uc.ChromeOptions()
-    
-    # Necessary flags to prevent Chrome detection mechanisms
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-notifications')
     options.add_argument('--disable-popup-blocking')
-    options.add_argument('--no-sandbox')  # Required in some environments (Docker)
-    options.add_argument('--disable-dev-shm-usage')  # Prevents crashes in containerized environments
-    options.headless = False  # Headless mode often triggers bot detection
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.headless = False
     
+    # Try with full options first, fall back to minimal if needed
     try:
-        logger.info("Setting up undetected-chromedriver...")
-        # undetected_chromedriver bypasses Cloudflare and other bot detection systems
-        # by mimicking a real Chrome browser with a real user profile
+        logger.info("Setting up browser...")
         driver = uc.Chrome(options=options, version_main=134)
         driver.maximize_window()
         return driver
+    except WebDriverException as e:
+        logger.warning(f"Could not initialize browser with full options: {str(e)}")
         
-    except Exception as e:
-        logger.error(f"Error setting up Chrome with options: {str(e)}")
-        
-        # Try with minimal configuration in case custom options caused the failure
-        logger.info("Trying with minimal configuration...")
-        minimal_options = uc.ChromeOptions()
-        minimal_options.headless = False
-        driver = uc.Chrome(options=minimal_options, version_main=134)
-        
+        # Fallback to minimal configuration
+        logger.info("Trying with minimal configuration")
         try:
+            minimal_options = uc.ChromeOptions()
+            minimal_options.headless = False
+            driver = uc.Chrome(options=minimal_options, version_main=134)
             driver.maximize_window()
-        except Exception:
-            logger.warning("Could not maximize window")
-            
-        return driver
+            return driver
+        except Exception as e:
+            logger.error(f"Browser initialization failed: {str(e)}")
+            # Let the caller handle this exception
+            raise
 
 
 def random_delay(min_seconds: float = 2.0, max_seconds: float = 5.0) -> None:
@@ -237,30 +314,41 @@ def scroll_page_naturally(driver: uc.Chrome) -> None:
     """
     logger.info("Scrolling page naturally...")
     
-    # Get initial document height via JavaScript execution
+    # Get initial document height
     last_height = driver.execute_script("return document.body.scrollHeight")
     
     while True:
-        # Scroll gradually with pauses between movements to mimic human behavior
-        # Indeed uses lazy loading, so we need to scroll to load all job listings
-        for i in range(10):
-            scroll_position = i * last_height / 10
-            driver.execute_script(f"window.scrollTo(0, {scroll_position});")
-            time.sleep(random.uniform(0.1, 0.3))
+        # Scroll down gradually with a single script execution
+        driver.execute_script("""
+            const totalScrolls = 10;
+            const scrollHeight = arguments[0];
+            const scrollDelay = Math.floor(Math.random() * 100) + 50;
+            
+            function smoothScroll(step) {
+                if (step >= totalScrolls) return;
+                
+                const position = Math.ceil((step + 1) * scrollHeight / totalScrolls);
+                window.scrollTo(0, position);
+                
+                setTimeout(() => smoothScroll(step + 1), scrollDelay);
+            }
+            
+            smoothScroll(0);
+        """, last_height)
         
-        # Pause briefly at the bottom as a human would to read content
-        time.sleep(random.uniform(0.5, 1.5))
+        # Wait for scrolling to complete and content to load
+        time.sleep(2)
         
-        # Check if new content was loaded (page height increased)
+        # Check if new content was loaded
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == last_height:
-            # No new content loaded, we've reached the bottom
             break
         last_height = new_height
     
-    # Scroll back up slightly as a human often does after reaching the bottom
-    driver.execute_script(f"window.scrollTo(0, {last_height * 0.9});")
-    time.sleep(random.uniform(0.5, 1))
+    # Scroll back up slightly to mimic human behavior
+    driver.execute_script("window.scrollTo(0, arguments[0]);", last_height * 0.9)
+    random_delay(0.5, 1.0)
+    
     logger.info("Page scrolling complete")
 
 
@@ -275,22 +363,20 @@ def add_random_mouse_movements(driver: uc.Chrome, elements: List, max_movements:
     """
     if not elements:
         return
-        
-    # Select a subset of elements to interact with
+    
+    # Select up to max_movements random elements for mouse interaction
     sample_size = min(max_movements, len(elements))
-    if sample_size <= 0:
-        return
-        
-    # Moving the mouse randomly helps evade bot detection that looks for
-    # suspiciously direct cursor paths or lack of mouse movement
-    for element in random.sample(elements, sample_size):
+    elements_to_interact = random.sample(elements, sample_size)
+    
+    # Move mouse to each selected element with random delays
+    action = ActionChains(driver)
+    for element in elements_to_interact:
         try:
-            action = ActionChains(driver)
-            # ActionChains allows simulation of complex user interactions
             action.move_to_element(element).perform()
-            logger.info("Moving mouse to random element")
-            time.sleep(random.uniform(0.5, 1.5))
+            logger.debug("Moving mouse to random element")
+            random_delay(0.3, 1.0)
         except Exception:
+            # Silently continue if element is stale or not interactable
             pass
 
 
@@ -305,49 +391,41 @@ def navigate_to_next_page(driver: uc.Chrome) -> bool:
         True if navigation was successful, False otherwise
     """
     try:
-        # WebDriverWait actively polls the DOM until the element is clickable
-        # or until the timeout is reached - more reliable than immediate access
-        logger.info("Looking for next page button...")
+        logger.info("Navigating to next page...")
+        
+        # Wait for next button to be clickable
         next_button = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-testid='pagination-page-next']"))
+            EC.element_to_be_clickable((By.CSS_SELECTOR, NEXT_PAGE_SELECTOR))
         )
         
-        # Smooth scrolling is more human-like than immediate jumps
-        logger.info("Scrolling to next page button...")
+        # Smooth scroll to button
         driver.execute_script(
             "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", 
             next_button
         )
-        time.sleep(random.uniform(0.8, 1.5))
+        random_delay(0.5, 1.0)
         
-        # Hover over button before clicking - bots often click directly
-        action = ActionChains(driver)
-        action.move_to_element(next_button).perform()
-        time.sleep(random.uniform(0.5, 1.0))
+        # Hover and click
+        ActionChains(driver).move_to_element(next_button).perform()
+        random_delay(0.3, 0.7)
         
-        # Try standard click first, then JavaScript click as a fallback
-        # JavaScript clicks bypass overlay elements that might block standard clicks
-        logger.info("Clicking next page button...")
+        # Try standard click, use JavaScript click as fallback
         try:
             next_button.click()
-            logger.info("Next page button clicked")
         except Exception as e:
-            logger.warning(f"Regular click failed, trying JavaScript click: {str(e)}")
+            logger.debug(f"Using JavaScript click - {str(e)}")
             driver.execute_script("arguments[0].click();", next_button)
-            logger.info("Next page button clicked via JavaScript")
         
-        # Wait for new page content to load before continuing
-        logger.info("Waiting for next page to load...")
+        # Wait for new page content to load
         WebDriverWait(driver, 15).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "div[class*='job']"))
+            EC.presence_of_element_located((By.CSS_SELECTOR, JOB_CONTAINER_SELECTOR))
         )
-        logger.info("Next page loaded successfully")
         
-        random_delay(3.0, 5.0)
+        random_delay(2.0, 4.0)
         return True
         
     except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-        logger.error(f"Could not navigate to next page: {str(e)}")
+        logger.warning(f"Could not navigate to next page: {str(e)}")
         return False
 
 
@@ -376,48 +454,33 @@ def construct_search_url(
     Returns:
         Constructed search URL
     """
-    # URL encode parameters
-    job_title_encoded = job_title.replace(' ', '+')
-    location_encoded = location.replace(' ', '+') if location else ""
-    
-    # Build base URL
-    base_url = f"https://www.indeed.com/jobs?q={job_title_encoded}"
+    # Build base URL with properly encoded parameters
+    base_url = f"https://www.indeed.com/jobs?q={quote_plus(job_title)}"
     
     # Add location and radius if provided
     if location:
-        base_url += f"&l={location_encoded}"
+        base_url += f"&l={quote_plus(location)}"
         radius = search_radius or 25  # Default to 25 miles if location provided
-        # Using Indeed's actual radius parameter format
         base_url += f"&radius={radius}"
     
-    # Add filters
-    if days_ago > 0:
+    # Add date filter
+    if days_ago in VALID_DAYS_AGO:
         base_url += f"&fromage={days_ago}"
+    else:
+        base_url += "&fromage=7"  # Default to 7 days
     
     # Add remote work filter
-    remote_work_filters = {
-        "remote": "&remotejob=032b3046-06a3-4876-8dfd-474eb5e7ed11",
-        "hybrid": "&sc=0kf%3Aattr(DSQF7)%3B",
-        "onsite": ""  # No specific filter for onsite/in-person
-    }
-    if remote_filter and remote_filter in remote_work_filters:
-        base_url += remote_work_filters[remote_filter]
+    if remote_filter and remote_filter in REMOTE_WORK_FILTERS:
+        base_url += REMOTE_WORK_FILTERS[remote_filter]
     
     # Add job type filter
-    job_type_filters = {
-        "full-time": "&jt=fulltime&sc=0kf%3Aattr(CF3CP)%3B", 
-        "part-time": "&jt=parttime",
-        "contract": "&jt=contract",
-        "temporary": "&jt=temporary",
-        "internship": "&jt=internship"
-    }
-    if job_type and job_type.lower() in job_type_filters:
-        base_url += job_type_filters[job_type.lower()]
+    if job_type and job_type.lower() in JOB_TYPE_FILTERS:
+        base_url += JOB_TYPE_FILTERS[job_type.lower()]
     
     return base_url
 
 
-def find_job_elements(driver: uc.Chrome) -> List:
+def find_job_cards(driver: uc.Chrome) -> List:
     """
     Find job card elements using different selectors.
     
@@ -429,43 +492,51 @@ def find_job_elements(driver: uc.Chrome) -> List:
     """
     job_cards = []
     
-    # Multiple selectors are tried because Indeed frequently changes their DOM structure
-    # and different selectors may work better depending on the user's location, device, etc.
-    selectors_to_try = [
-        # Common mobile/app selectors
-        "div.tapItem",
-        # Common desktop selectors - more specific to less specific
-        "div.job_seen_beacon",
-        "div[class*='job_seen_beacon']",
-        # Parent containers - for grouping
-        "ul.jobsearch-ResultsList > li",
-        # Generic fallbacks - less reliable
-        "[data-testid='jobListing']",
-        "div[id^='jobCard']"
-    ]
-    
     # Try each selector and keep the one that finds the most job cards
-    for selector in selectors_to_try:
-        cards = driver.find_elements(By.CSS_SELECTOR, selector)
-        if len(cards) > len(job_cards):
-            job_cards = cards
-            logger.debug(f"Found {len(cards)} job cards with selector: {selector}")
+    for selector in JOB_CARD_SELECTORS:
+        try:
+            cards = driver.find_elements(By.CSS_SELECTOR, selector)
+            if len(cards) > len(job_cards):
+                job_cards = cards
+                logger.debug(f"Found {len(cards)} job cards with selector: {selector}")
+        except Exception:
+            continue
     
-    # If standard selectors fail, try a more generic approach
+    # If standard selectors fail, try a fallback approach
     if not job_cards:
-        logger.warning("Could not find job cards with standard selectors, trying alternative...")
+        logger.warning("Using fallback method to find job cards")
         try:
             # Wait for any job-like elements to appear
             WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "div[class*='job']"))
+                EC.presence_of_element_located((By.CSS_SELECTOR, JOB_CONTAINER_SELECTOR))
             )
-            # Look for elements with 'job' in the class name as a last resort
-            job_cards = driver.find_elements(By.CSS_SELECTOR, "div[class*='job']")
-            logger.debug(f"Found {len(job_cards)} jobs with alternative selector")
-        except Exception:
+            # Look for elements with 'job' in the class name
+            job_cards = driver.find_elements(By.CSS_SELECTOR, JOB_CONTAINER_SELECTOR)
+            logger.debug(f"Found {len(job_cards)} jobs with fallback selector")
+        except TimeoutException:
             logger.error("Could not identify any job elements")
     
     return job_cards
+
+
+def find_job_field(card: object, selectors: dict) -> Optional[object]:
+    """
+    Try to find a specific field within a job card using primary selector, fall back to backup if not found.
+    
+    Args:
+        card: WebElement to search within
+        selectors: Dictionary with 'primary' and 'backup' selector tuples
+        
+    Returns:
+        The found element or None if not found
+    """
+    try:
+        return card.find_element(*selectors['primary'])
+    except NoSuchElementException:
+        try:
+            return card.find_element(*selectors['backup'])
+        except NoSuchElementException:
+            return None
 
 
 def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
@@ -480,139 +551,59 @@ def extract_job_data(card: object, driver: uc.Chrome) -> Optional[Dict]:
         Dictionary of job data or None if extraction failed
     """
     try:
-        # Ensure the job card is attached to DOM before attempting to extract data
-        # This prevents stale element reference exceptions
+        # Ensure the job card is attached to DOM 
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "job_seen_beacon"))
         )
         
         job_data = {}
         
-        # Required fields to extract
+        # Required fields mapping
         required_fields = {
-            'title': {
-                'primary': (By.CSS_SELECTOR, "a.jcs-JobTitle"),
-                'backup': (By.CSS_SELECTOR, "h2.jobTitle span[title]")
-            },
-            'company': {
-                'primary': (By.CSS_SELECTOR, "[data-testid='company-name']"),
-                'backup': (By.CSS_SELECTOR, "span.companyName")
-            },
-            'link': {
-                'primary': (By.CSS_SELECTOR, "a.jcs-JobTitle"),
-                'backup': (By.CSS_SELECTOR, "h2.jobTitle a")
-            }
+            'title': JOB_TITLE_SELECTORS,
+            'company': JOB_COMPANY_SELECTORS,
+            'link': JOB_LINK_SELECTORS
         }
         
-        # Additional fields (non-required)
+        # Non-required fields mapping
         additional_fields = {
-            'location': {
-                'primary': (By.CSS_SELECTOR, "[data-testid='text-location']"),
-                'backup': (By.CSS_SELECTOR, "div.companyLocation")
-            },
-            'salary': {
-                'primary': (By.CSS_SELECTOR, "div[class*='salary-snippet-container']"),
-                'backup': (By.CSS_SELECTOR, "div.salary-snippet-container")
-            },
-            'date_posted': {
-                'primary': (By.CSS_SELECTOR, "span.date"),
-                'backup': (By.CSS_SELECTOR, "span[class*='date']")
-            },
-            'job_type': {
-                'primary': (By.CSS_SELECTOR, "div[data-testid='job-type-info']"),  # Modern view
-                'backup': (By.CSS_SELECTOR, "div.metadataContainer span.attribute_snippet")  # Older UI
-            }
+            'location': JOB_LOCATION_SELECTORS,
+            'salary': JOB_SALARY_SELECTORS,
+            'job_type': JOB_TYPE_SELECTORS
         }
         
-        # Using primary and backup selectors improves resilience against
-        # Indeed's frequent UI changes and A/B tests
-        missing_required = False
-        for field, locators in required_fields.items():
-            try:
-                element = card.find_element(*locators['primary'])
-            except NoSuchElementException:
-                try:
-                    element = card.find_element(*locators['backup'])
-                except NoSuchElementException:
-                    missing_required = True
-                    logger.warning(f"Missing required field: {field}")
-                    break
-                    
-            if element:
-                if field == 'link':
-                    job_data[field] = element.get_attribute('href')
-                    
-                    # Extract job ID from URL using regex for unique identification
-                    job_id_match = re.search(r'jk=([a-zA-Z0-9]+)', job_data[field])
-                    if job_id_match:
-                        job_data['job_id'] = job_id_match.group(1)
+        # Extract required fields
+        for field, selectors in required_fields.items():
+            element = find_job_field(card, selectors)
+            
+            if not element:
+                logger.warning(f"Missing required field: {field}")
+                return None
+                
+            if field == 'link':
+                job_data[field] = element.get_attribute('href')
+                
+                # Extract job ID from URL
+                job_id_match = re.search(r'jk=([a-zA-Z0-9]+)', job_data[field])
+                if job_id_match:
+                    job_data['job_id'] = job_id_match.group(1)
+            else:
+                # Some job titles are stored in the 'title' attribute
+                if field == 'title' and element.get_attribute('title'):
+                    job_data[field] = element.get_attribute('title')
                 else:
-                    # Some job titles are stored in the 'title' attribute rather than text
-                    if field == 'title' and element.get_attribute('title'):
-                        job_data[field] = element.get_attribute('title')
-                    else:
-                        job_data[field] = element.text.strip()
+                    job_data[field] = element.text.strip()
         
         # Skip jobs missing required fields
-        if missing_required or not all(job_data.get(field) for field in required_fields.keys()):
+        if not all(job_data.get(field) for field in required_fields.keys()):
             return None
             
-        # Get additional (non-required) fields
-        for field, locators in additional_fields.items():
-            try:
-                element = card.find_element(*locators['primary'])
-            except NoSuchElementException:
-                try:
-                    element = card.find_element(*locators['backup'])
-                except NoSuchElementException:
-                    job_data[field] = None
-                    continue
-                    
-            if element:
-                job_data[field] = element.text.strip()
-            else:
-                job_data[field] = None
+        # Extract additional (non-required) fields
+        for field, selectors in additional_fields.items():
+            element = find_job_field(card, selectors)
+            job_data[field] = element.text.strip() if element else None
         
-        # Clean up job_type field if it exists
-        if job_data.get('job_type'):
-            # Extract just the job type part (e.g., "Full-time" from "Full-time · Some other info")
-            job_type_raw = job_data['job_type'].split('·')[0].strip()
-            
-            # Normalize common job type variations
-            job_type_mapping = {
-                'fulltime': 'Full-time',
-                'full time': 'Full-time',
-                'full-time': 'Full-time',
-                'parttime': 'Part-time',
-                'part time': 'Part-time',
-                'part-time': 'Part-time',
-                'contract': 'Contract',
-                'contractor': 'Contract',
-                'temporary': 'Temporary',
-                'temp': 'Temporary',
-                'permanent': 'Permanent',
-                'perm': 'Permanent',
-                'temp to hire': 'Temp-to-hire',
-                'temp-to-hire': 'Temp-to-hire',
-                'temptohire': 'Temp-to-hire',
-                'internship': 'Internship'
-            }
-            
-            # Try to normalize the job type
-            job_type_lower = job_type_raw.lower()
-            for key, value in job_type_mapping.items():
-                if key in job_type_lower:
-                    job_data['job_type'] = value
-                    break
-            else:
-                # If no match found, keep the original text but truncate if too long
-                if len(job_type_raw) > 30:
-                    job_data['job_type'] = job_type_raw[:30] + "..."
-                else:
-                    job_data['job_type'] = job_type_raw
-        
-        job_type_info = f" ({job_data['job_type']})" if job_data.get('job_type') else ""
-        logger.info(f"Scraped: {job_data['title']} at {job_data['company']}{job_type_info}")
+        logger.info(f"Scraped: {job_data['title']} at {job_data['company']}")
         return job_data
         
     except Exception as e:
@@ -630,20 +621,197 @@ def handle_captcha_challenge(driver: uc.Chrome) -> bool:
     Returns:
         True if the user confirmed CAPTCHA is solved, False if interrupted
     """
+    if SHOULD_EXIT:
+        return False
+    
     logger.info("\nIndeed likely shows a CAPTCHA on first visit")
     logger.info("1. Solve the CAPTCHA if present")
     logger.info("2. Wait for the page to fully load")
     logger.info("3. Press Enter ONLY when you're ready to continue...")
     
-    # Use wait_for_user_continue to handle Ctrl+C
-    if SHOULD_EXIT or wait_for_user_continue() is None:
-        logger.info("Operation interrupted by user")
+    # Wait for user input or interruption
+    if wait_for_user_continue() is None:
         return False
-        
+    
+    # Give additional time for page to load completely
     logger.info("Waiting additional time for page to stabilize...")
     time.sleep(5)
     logger.info("Continuing with search...")
     return True
+
+
+def process_description_batch(
+    driver: uc.Chrome, 
+    job_listings: List[JobListing], 
+    job_urls_to_scrape: List[str],
+    current_page: int
+) -> None:
+    """
+    Process a batch of job descriptions and update the corresponding job listings.
+    
+    Args:
+        driver: Chrome driver instance
+        job_listings: List of JobListing objects to update with descriptions
+        job_urls_to_scrape: List of job URLs to scrape descriptions from
+        current_page: Current page number (for logging)
+    """
+    if not job_urls_to_scrape:
+        return
+        
+    logger.info(f"Batch scraping descriptions for {len(job_urls_to_scrape)} jobs on page {current_page}")
+    descriptions_data = batch_scrape_descriptions(driver, job_urls_to_scrape)
+    
+    # Add descriptions to job listings
+    for listing in job_listings:
+        # Skip if no job URL
+        if not listing.job_url:
+            continue
+            
+        # Add description if available
+        if listing.job_url in descriptions_data:
+            listing.description = descriptions_data[listing.job_url]
+            
+        # Add posted date if available (new format with _posted_date suffix)
+        posted_date_key = f"{listing.job_url}_posted_date"
+        if posted_date_key in descriptions_data:
+            listing.date_posted = descriptions_data[posted_date_key]
+            logger.debug(f"Added date_posted: {listing.date_posted} for job: {listing.title}")
+
+
+def is_duplicate_job(
+    job_id: Optional[str], 
+    title_company: str,
+    job_ids: Set[str], 
+    seen_title_company_pairs: Set[str],
+    current_page_seen: Optional[Set[str]] = None
+) -> bool:
+    """
+    Check if a job is a duplicate based on ID and title-company pair.
+    
+    Args:
+        job_id: Job ID to check
+        title_company: Title-company string to check
+        job_ids: Set of already seen job IDs 
+        seen_title_company_pairs: Set of already seen title-company pairs
+        current_page_seen: Set of title-company pairs seen on the current page
+        
+    Returns:
+        True if job is a duplicate, False otherwise
+    """
+    # Check if job ID is present and already seen
+    if job_id and job_id in job_ids:
+        return True
+        
+    # Check if title-company already seen in overall results
+    if title_company in seen_title_company_pairs:
+        return True
+        
+    # Check if title-company already seen on current page
+    if current_page_seen and title_company in current_page_seen:
+        return True
+        
+    return False
+
+
+def process_job_cards(
+    job_cards: List, 
+    driver: uc.Chrome,
+    job_ids: Set[str],
+    seen_title_company_pairs: Set[str]
+) -> Tuple[List[Dict], Set[str]]:
+    """
+    Process job cards from a page and extract job data.
+    
+    Args:
+        job_cards: List of WebElements representing job cards
+        driver: Chrome driver instance
+        job_ids: Set of already seen job IDs
+        seen_title_company_pairs: Set of already seen title-company pairs
+        
+    Returns:
+        Tuple of (list of job data dictionaries, set of job IDs seen on this page)
+    """
+    jobs_on_page = []
+    current_page_seen = set()
+    
+    for card in job_cards:
+        if SHOULD_EXIT:
+            break
+            
+        job_data = extract_job_data(card, driver)
+        
+        if job_data:
+            job_id = job_data.get('job_id')
+            title_company = f"{job_data['title']}_{job_data['company']}"
+            
+            # Skip duplicates
+            if is_duplicate_job(job_id, title_company, job_ids, seen_title_company_pairs, current_page_seen):
+                logger.debug(f"Skipping duplicate job: {job_data['title']} at {job_data['company']}")
+                continue
+            
+            current_page_seen.add(title_company)
+            jobs_on_page.append(job_data)
+        
+        random_delay(0.3, 0.7)
+    
+    return jobs_on_page, current_page_seen
+
+
+def create_job_listings(
+    jobs_data: List[Dict], 
+    job_ids: Set[str], 
+    seen_title_company_pairs: Set[str],
+    search_url: str,
+    include_descriptions: bool
+) -> Tuple[List[JobListing], List[str]]:
+    """
+    Create JobListing objects from job data dictionaries and prepare URLs for description scraping.
+    
+    Args:
+        jobs_data: List of job data dictionaries
+        job_ids: Set of job IDs to update with new IDs found
+        seen_title_company_pairs: Set of title-company pairs to update with new pairs found
+        search_url: The search URL used to find these jobs
+        include_descriptions: Whether to include full job descriptions in output
+        
+    Returns:
+        Tuple of (list of JobListing objects, list of URLs to scrape descriptions from)
+    """
+    job_listings = []
+    job_urls_to_scrape = []
+    
+    for job in jobs_data:
+        title_company = f"{job['title']}_{job['company']}"
+        job_id = job.get('job_id')
+        
+        # Skip if already seen in previous pages
+        if is_duplicate_job(job_id, title_company, job_ids, seen_title_company_pairs):
+            continue
+        
+        # Update tracking sets
+        if job_id:
+            job_ids.add(job_id)
+        seen_title_company_pairs.add(title_company)
+        
+        # Create the job listing
+        job_listing = JobListing(
+            title=job['title'],
+            company=job['company'],
+            location=job.get('location'),
+            salary=job.get('salary'),
+            job_url=job.get('link'),
+            job_id=job_id,
+            job_type=job.get('job_type'),
+            search_url=search_url
+        )
+        
+        job_listings.append(job_listing)
+        
+        # If including descriptions, collect URLs for batch processing
+        if include_descriptions and job.get('link'):
+            job_urls_to_scrape.append(job.get('link'))
+    
+    return job_listings, job_urls_to_scrape
 
 
 def scrape_indeed_jobs(
@@ -655,7 +823,7 @@ def scrape_indeed_jobs(
     days_ago: int = 7,
     remote_filter: Optional[str] = None,
     job_type: Optional[str] = None,
-    fetch_descriptions: bool = False
+    include_descriptions: bool = False
 ) -> List[JobListing]:
     """
     Main function to scrape Indeed jobs based on search criteria.
@@ -669,7 +837,7 @@ def scrape_indeed_jobs(
         days_ago: Filter for jobs posted within this many days
         remote_filter: Remote work options ('onsite', 'remote', or 'hybrid')
         job_type: Type of job (full-time, part-time, contract, etc.)
-        fetch_descriptions: Whether to fetch job descriptions from detail pages
+        include_descriptions: Whether to include full job descriptions in output
         
     Returns:
         List of JobListing objects containing scraped job data
@@ -694,48 +862,22 @@ def scrape_indeed_jobs(
         job_ids: Set[str] = set()
         seen_title_company_pairs: Set[str] = set()
         
-        # Check if scraping should be stopped
-        def should_stop():
-            """Check if we should stop scraping."""
-            return SHOULD_EXIT
-        
         # Scrape page by page
         for current_page in range(1, max_pages + 1):
             # Check if we should exit before starting a new page
-            if should_stop():
+            if SHOULD_EXIT:
                 logger.info("Exiting: User interrupt")
                 break
                 
             logger.info(f"Scraping page {current_page} of {max_pages}...")
             
             # Scrape the current page
-            job_cards = find_job_elements(driver)
+            job_cards = find_job_cards(driver)
             
             # Process jobs found on this page
-            jobs_on_page = []
-            jobs_already_seen_this_page = set()
-            
-            for card in job_cards:
-                if should_stop():
-                    break
-                    
-                job_data = extract_job_data(card, driver)
-                
-                if job_data:
-                    job_id = job_data.get('job_id')
-                    title_company = f"{job_data['title']}_{job_data['company']}"
-                    
-                    # Skip if duplicate
-                    if ((job_id and job_id in job_ids) or 
-                        (title_company in seen_title_company_pairs) or 
-                        (title_company in jobs_already_seen_this_page)):
-                        logger.debug(f"Skipping duplicate job: {job_data['title']} at {job_data['company']}")
-                        continue
-                    
-                    jobs_already_seen_this_page.add(title_company)
-                    jobs_on_page.append(job_data)
-                
-                time.sleep(random.uniform(0.3, 0.7))
+            jobs_on_page, current_page_seen = process_job_cards(
+                job_cards, driver, job_ids, seen_title_company_pairs
+            )
             
             # Check if we found any jobs
             if not jobs_on_page:
@@ -745,55 +887,20 @@ def scrape_indeed_jobs(
             
             logger.info(f"Found {len(jobs_on_page)} unique jobs on this page")
             
-            # Prepare job listings
-            job_listings = []
-            job_urls_to_scrape = []
-            
-            for job in jobs_on_page:
-                title_company = f"{job['title']}_{job['company']}"
-                
-                # Skip if already seen
-                if ((job.get('job_id') and job['job_id'] in job_ids) or 
-                    (title_company in seen_title_company_pairs)):
-                    continue
-                
-                if job.get('job_id'):
-                    job_ids.add(job['job_id'])
-                seen_title_company_pairs.add(title_company)
-                
-                # Create the job listing
-                job_listing = JobListing(
-                    title=job['title'],
-                    company=job['company'],
-                    location=job.get('location'),
-                    salary=job.get('salary'),
-                    job_url=job.get('link'),
-                    job_id=job.get('job_id'),
-                    date_posted=job.get('date_posted'),
-                    job_type=job.get('job_type')
-                )
-                
-                job_listings.append(job_listing)
-                
-                # If fetching descriptions, collect URLs for batch processing
-                if fetch_descriptions and job.get('link'):
-                    job_urls_to_scrape.append(job.get('link'))
+            # Create job listings and prepare for description scraping
+            job_listings, job_urls_to_scrape = create_job_listings(
+                jobs_on_page, job_ids, seen_title_company_pairs, search_url, include_descriptions
+            )
             
             # Batch scrape descriptions if needed
-            if fetch_descriptions and job_urls_to_scrape:
-                logger.info(f"Batch scraping descriptions for {len(job_urls_to_scrape)} jobs on page {current_page}")
-                descriptions = batch_scrape_descriptions(driver, job_urls_to_scrape)
-                
-                # Add descriptions to job listings
-                for i, listing in enumerate(job_listings):
-                    if listing.job_url in descriptions:
-                        listing.description = descriptions[listing.job_url]
+            if include_descriptions and job_urls_to_scrape:
+                process_description_batch(driver, job_listings, job_urls_to_scrape, current_page)
             
             all_jobs.extend(job_listings)
             logger.info(f"Total unique jobs so far: {len(all_jobs)}")
             
             # Check if we should continue to next page
-            if should_stop() or current_page >= max_pages:
+            if SHOULD_EXIT or current_page >= max_pages:
                 break
                 
             if not navigate_to_next_page(driver):
@@ -854,9 +961,17 @@ def parse_args() -> argparse.Namespace:
     )
     
     parser.add_argument(
+        "--days-ago", 
+        type=int, 
+        choices=VALID_DAYS_AGO,
+        default=7,
+        help="Filter for jobs posted within this many days"
+    )
+    
+    parser.add_argument(
         "--remote", 
         type=str, 
-        choices=["onsite", "remote", "hybrid"],
+        choices=list(REMOTE_WORK_FILTERS.keys()),
         default=None,
         help="Filter for remote, onsite, or hybrid jobs"
     )
@@ -864,9 +979,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--job-type", 
         type=str, 
-        choices=["full-time", "part-time", "contract", "temporary", "internship"],
+        choices=list(JOB_TYPE_FILTERS.keys()),
         default=None,
-        help="Filter by job type"
+        help="Filter by job type (default: None, which shows all job types without filtering)"
     )
     
     parser.add_argument(
@@ -883,18 +998,12 @@ def parse_args() -> argparse.Namespace:
     )
     
     parser.add_argument(
-        "--fetch-descriptions", 
+        "--include-descriptions", 
         action="store_true",
-        help="Fetch detailed job descriptions (makes the scraping process slower but provides full job details)"
+        help="Include full job descriptions in the output (slower but provides more details and accurate posting dates)"
     )
     
-    args = parser.parse_args()
-    
-    # Configure logging verbosity
-    if args.verbose:
-        logger.setLevel(logging.DEBUG)
-    
-    return args
+    return parser.parse_args()
 
 
 def main():
@@ -907,6 +1016,10 @@ def main():
         # Parse command line arguments
         args = parse_args()
         
+        # Configure logging verbosity
+        if args.verbose:
+            logger.setLevel(logging.DEBUG)
+        
         # Create data directories
         ensure_data_dirs()
         
@@ -914,12 +1027,13 @@ def main():
         driver = setup_browser()
 
         # Get output filepath
-        output_file = args.output
-        if not output_file:
-            output_file = get_output_filepath(args.job_title, args.location)
+        output_file = Path(args.output) if args.output else get_output_filepath(args.job_title, args.location)
+        
+        # Convert days-ago argument
+        days_ago = convert_days_ago_arg(args.days_ago)
         
         try:
-            # Do the scraping
+            # Perform the job scraping
             logger.info(f"Starting job search for '{args.job_title}' in {args.location or 'any location'}")
             
             jobs = scrape_indeed_jobs(
@@ -928,12 +1042,13 @@ def main():
                 location=args.location,
                 search_radius=args.search_radius,
                 max_pages=args.num_pages,
+                days_ago=days_ago,
                 remote_filter=args.remote,
                 job_type=args.job_type,
-                fetch_descriptions=args.fetch_descriptions
+                include_descriptions=args.include_descriptions
             )
             
-            # Process results
+            # Process and save results
             if jobs:
                 save_jobs_to_csv(jobs, output_file)
                 logger.info(f"Scraping complete! {len(jobs)} jobs saved to {output_file}")
@@ -944,8 +1059,8 @@ def main():
             # Clean up browser resources
             try:
                 driver.quit()
-            except:
-                pass
+            except Exception as e:
+                logger.debug(f"Error during driver cleanup: {str(e)}")
             
     except Exception as e:
         logger.error(f"An error occurred: {str(e)}")
@@ -953,7 +1068,7 @@ def main():
     
     # Exit gracefully
     if SHOULD_EXIT:
-        sys.exit(130)  # Standard exit code for SIGINT
+        sys.exit(130)
     
     return 0
 
