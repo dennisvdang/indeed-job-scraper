@@ -1,8 +1,6 @@
 # Indeed Job Scraper [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-A Python tool for scraping job listings from Indeed.com, with filtering and export options for data analysis.
-
-Setup instructions can be found in the [Getting Started](#-getting-started) section below.
+A Python CLI tool for scraping job listings from Indeed.com with filtering and export options.
 
 ## 🚀 Overview
 
