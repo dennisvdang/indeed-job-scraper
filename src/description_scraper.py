@@ -14,6 +14,7 @@ import time
 import random
 import logging
 from typing import Optional, List, Dict, Tuple, Any
+import html2text
 
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
@@ -44,7 +45,7 @@ def random_delay(min_seconds: float = 1.0, max_seconds: float = 3.0) -> None:
 
 def clean_html_description(html_content: str) -> str:
     """
-    Clean HTML content from job descriptions to make it more readable.
+    Clean HTML content from job descriptions to make it more readable using html2text.
     
     Args:
         html_content: Raw HTML content from the job description
@@ -55,70 +56,22 @@ def clean_html_description(html_content: str) -> str:
     if not html_content:
         return ""
     
-    # First try to properly decode any UTF-8 content if needed
-    try:
-        # Try to handle potential double-encoded content
-        html_content = html_content.encode('latin1').decode('utf-8')
-    except (UnicodeEncodeError, UnicodeDecodeError):
-        try:
-            # If that fails, try direct UTF-8 decoding
-            html_content = html_content.encode('raw_unicode_escape').decode('utf-8')
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            # If all else fails, keep original content
-            pass
+    # Configure html2text
+    h = html2text.HTML2Text()
+    h.ignore_links = True  # Don't show URLs, just link text
+    h.ignore_images = True  # Don't show image URLs
+    h.ignore_emphasis = True  # Don't show bold/italic markers
+    h.body_width = 0  # Don't wrap text at specific width
+    h.unicode_snob = True  # Use Unicode characters instead of ASCII approximations
+    h.ul_item_mark = "•"  # Use bullet points for unordered lists
     
-    # Replace common HTML tags with line breaks or spaces
-    replacements = [
-        ('<br\\s*/?>', '\n'),                   # Line breaks
-        ('</?p>', '\n\n'),                      # Paragraphs
-        ('<li\\s*/?>', '\n• '),                 # List items with bullet
-        ('</?ul>', '\n'),                       # Unordered lists
-        ('</?ol>', '\n'),                       # Ordered lists
-        ('<h\\d[^>]*>', '\n\n'),                # Headers start
-        ('</h\\d>', '\n'),                      # Headers end
-        ('<div[^>]*>', '\n'),                   # Divs
-        ('</div>', '\n'),                       # End divs
-        ('<[^>]*>', ' '),                       # All other tags
-    ]
+    # Convert HTML to clean text
+    text = h.handle(html_content)
     
-    text = html_content
-    for pattern, replacement in replacements:
-        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
-    
-    # Fix whitespace issues
-    text = re.sub(r'\s+', ' ', text)            # Collapse multiple spaces
-    text = re.sub(r'\n\s+', '\n', text)         # Remove spaces after newlines
-    text = re.sub(r'\n{3,}', '\n\n', text)      # Limit consecutive newlines
-    
-    # Fix common HTML entities and special characters
-    html_entities = [
-        ('&nbsp;', ' '),
-        ('&amp;', '&'),
-        ('&lt;', '<'),
-        ('&gt;', '>'),
-        ('&quot;', '"'),
-        ('&apos;', "'"),
-        ('&#39;', "'"),
-        ('&ndash;', '–'),
-        ('&mdash;', '—'),
-        ('&bull;', '•'),
-        ('&#8226;', '•'),
-        ('â€¢', '•'),  # Explicitly handle this problematic encoding
-        ('â€"', '–'),  # Handle en dash
-        ('â€"', '—'),  # Handle em dash
-        ('â€™', "'"),  # Handle apostrophe
-        ('â€œ', '"'),  # Handle left double quote
-        ('â€', '"'),   # Handle right double quote
-    ]
-    
-    for entity, replacement in html_entities:
-        text = text.replace(entity, replacement)
-    
-    # Remove remaining HTML entities
-    text = re.sub(r'&[a-zA-Z0-9]+;', '', text)
-    
-    # Strip extra whitespace at start and end
-    text = text.strip()
+    # Clean up extra whitespace
+    text = re.sub(r'\n\s+\n', '\n\n', text)  # Remove extra blank lines
+    text = re.sub(r'\n{3,}', '\n\n', text)   # Limit consecutive newlines
+    text = text.strip()  # Remove leading/trailing whitespace
     
     return text
 
