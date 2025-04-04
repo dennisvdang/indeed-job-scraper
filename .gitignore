@@ -6,6 +6,8 @@ notebook_styling.md
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info/
+*.egg
 
 # Virtual Environment
 venv/
