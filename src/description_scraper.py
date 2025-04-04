@@ -55,11 +55,23 @@ def clean_html_description(html_content: str) -> str:
     if not html_content:
         return ""
     
+    # First try to properly decode any UTF-8 content if needed
+    try:
+        # Try to handle potential double-encoded content
+        html_content = html_content.encode('latin1').decode('utf-8')
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        try:
+            # If that fails, try direct UTF-8 decoding
+            html_content = html_content.encode('raw_unicode_escape').decode('utf-8')
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            # If all else fails, keep original content
+            pass
+    
     # Replace common HTML tags with line breaks or spaces
     replacements = [
         ('<br\\s*/?>', '\n'),                   # Line breaks
         ('</?p>', '\n\n'),                      # Paragraphs
-        ('<li\\s*/?>', '\n• '),                 # List items
+        ('<li\\s*/?>', '\n• '),                 # List items with bullet
         ('</?ul>', '\n'),                       # Unordered lists
         ('</?ol>', '\n'),                       # Ordered lists
         ('<h\\d[^>]*>', '\n\n'),                # Headers start
@@ -78,7 +90,7 @@ def clean_html_description(html_content: str) -> str:
     text = re.sub(r'\n\s+', '\n', text)         # Remove spaces after newlines
     text = re.sub(r'\n{3,}', '\n\n', text)      # Limit consecutive newlines
     
-    # Fix common HTML entities
+    # Fix common HTML entities and special characters
     html_entities = [
         ('&nbsp;', ' '),
         ('&amp;', '&'),
@@ -91,6 +103,12 @@ def clean_html_description(html_content: str) -> str:
         ('&mdash;', '—'),
         ('&bull;', '•'),
         ('&#8226;', '•'),
+        ('â€¢', '•'),  # Explicitly handle this problematic encoding
+        ('â€"', '–'),  # Handle en dash
+        ('â€"', '—'),  # Handle em dash
+        ('â€™', "'"),  # Handle apostrophe
+        ('â€œ', '"'),  # Handle left double quote
+        ('â€', '"'),   # Handle right double quote
     ]
     
     for entity, replacement in html_entities:
