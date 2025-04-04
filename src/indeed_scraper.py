@@ -249,8 +249,8 @@ def save_jobs_to_csv(jobs: List[JobListing], output_file: Path) -> None:
     if 'date_scraped' in df.columns:
         df['date_scraped'] = df['date_scraped'].apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
     
-    # Save to CSV
-    df.to_csv(output_file, index=False)
+    # Save to CSV with UTF-8 encoding
+    df.to_csv(output_file, index=False, encoding='utf-8-sig')
     logger.info(f"Saved {len(jobs)} jobs to {output_file}")
 
 
