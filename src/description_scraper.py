@@ -13,7 +13,7 @@ import re
 import time
 import random
 import logging
-from typing import Optional, List, Dict, Tuple
+from typing import Optional, List, Dict, Tuple, Any
 
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
@@ -105,16 +105,81 @@ def clean_html_description(html_content: str) -> str:
     return text
 
 
-def scrape_job_description(driver: uc.Chrome, job_url: str) -> Optional[str]:
+def extract_posted_date(driver: uc.Chrome) -> Optional[str]:
     """
-    Navigate to a job details page and scrape the job description.
+    Extract the exact job posting date from the page.
+    
+    Args:
+        driver: Chrome driver instance
+        
+    Returns:
+        The exact posted date as a string, or None if not found
+    """
+    try:
+        # Check for meta tags containing date information
+        date_meta_selectors = [
+            "meta[itemprop='datePosted']",
+            "meta[property='datePosted']",
+            "meta[name='date']",
+            "meta[property='article:published_time']"
+        ]
+        
+        for selector in date_meta_selectors:
+            try:
+                date_element = driver.find_element(By.CSS_SELECTOR, selector)
+                if date_element:
+                    content = date_element.get_attribute("content")
+                    if content and (re.match(r'\d{4}-\d{2}-\d{2}', content) or 'T' in content):
+                        logger.debug(f"Found exact date in meta tag: {content}")
+                        return content
+            except NoSuchElementException:
+                continue
+                
+        # If meta tags failed, try to find structured data in script tags
+        script_elements = driver.find_elements(By.CSS_SELECTOR, "script[type='application/ld+json']")
+        for script in script_elements:
+            try:
+                content = script.get_attribute('innerHTML')
+                if not content:
+                    continue
+                    
+                # Check if content contains datePosted field
+                if '"datePosted":' in content or '"datePublished":' in content:
+                    import json
+                    data = json.loads(content)
+                    # Navigate nested JSON structures
+                    if isinstance(data, list):
+                        for item in data:
+                            if isinstance(item, dict) and ('datePosted' in item or 'datePublished' in item):
+                                date = item.get('datePosted') or item.get('datePublished')
+                                if date:
+                                    logger.debug(f"Found exact date in structured data: {date}")
+                                    return date
+                    elif isinstance(data, dict):
+                        date = data.get('datePosted') or data.get('datePublished')
+                        if date:
+                            logger.debug(f"Found exact date in structured data: {date}")
+                            return date
+            except Exception as e:
+                logger.debug(f"Error parsing script content: {str(e)}")
+                continue
+                
+        return None
+    except Exception as e:
+        logger.debug(f"Error extracting exact date: {str(e)}")
+        return None
+
+
+def scrape_job_description(driver: uc.Chrome, job_url: str) -> Tuple[Optional[str], Optional[str]]:
+    """
+    Navigate to a job details page and scrape the job description and posted date.
     
     Args:
         driver: Chrome driver instance
         job_url: URL to the job details page
         
     Returns:
-        Job description as text or None if failed
+        A tuple of (job_description, posted_date) where both can be None if not found
     """
     try:
         logger.debug(f"Navigating to job details: {job_url}")
@@ -148,19 +213,22 @@ def scrape_job_description(driver: uc.Chrome, job_url: str) -> Optional[str]:
             except (NoSuchElementException, TimeoutException):
                 continue
         
+        # Extract the exact posting date
+        exact_date = extract_posted_date(driver)
+        
         # Clean HTML from description if needed
+        cleaned_description = None
         if description_text:
-            # Return to search results page
-            driver.get(current_url)
-            random_delay(1.0, 2.0)
-            return clean_html_description(description_text)
-        else:
-            logger.warning(f"Could not find job description on page: {job_url}")
+            cleaned_description = clean_html_description(description_text)
             
         # Return to search results page
         driver.get(current_url)
         random_delay(1.0, 2.0)
-        return None
+        
+        if not cleaned_description:
+            logger.warning(f"Could not find job description on page: {job_url}")
+            
+        return cleaned_description, exact_date
         
     except Exception as e:
         logger.error(f"Error scraping job description: {str(e)}")
@@ -170,7 +238,7 @@ def scrape_job_description(driver: uc.Chrome, job_url: str) -> Optional[str]:
             random_delay(1.0, 2.0)
         except:
             pass
-        return None
+        return None, None
 
 
 def batch_scrape_descriptions(
@@ -178,9 +246,9 @@ def batch_scrape_descriptions(
     job_urls: List[str], 
     max_retries: int = 2,
     delay_between_jobs: Tuple[float, float] = (1.5, 3.0)
-) -> Dict[str, Optional[str]]:
+) -> Dict[str, str]:
     """
-    Scrape descriptions for multiple jobs with resilience features.
+    Scrape descriptions and posted dates for multiple jobs with resilience features.
     
     Args:
         driver: Chrome driver instance
@@ -189,7 +257,8 @@ def batch_scrape_descriptions(
         delay_between_jobs: Tuple of (min, max) seconds to delay between jobs
         
     Returns:
-        Dictionary mapping job URLs to their descriptions (or None if failed)
+        Dictionary mapping job URLs to their descriptions and posted dates.
+        URLs ending with "_posted_date" contain posting date information.
     """
     results = {}
     
@@ -201,6 +270,7 @@ def batch_scrape_descriptions(
         
         # Try with retries
         description = None
+        posted_date = None
         attempts = 0
         
         while description is None and attempts <= max_retries:
@@ -209,68 +279,30 @@ def batch_scrape_descriptions(
                 # Longer delay between retries
                 random_delay(3.0, 5.0)
                 
-            description = scrape_job_description(driver, url)
+            description, posted_date = scrape_job_description(driver, url)
             attempts += 1
             
+        # Add description to results
         results[url] = description
+        
+        # Add posted date to results if available
+        if posted_date:
+            results[f"{url}_posted_date"] = posted_date
+            logger.debug(f"Extracted posted date: {posted_date}")
         
         # Random delay between jobs to avoid rate limiting
         if i < total_jobs - 1:  # No need to delay after the last job
             min_delay, max_delay = delay_between_jobs
             random_delay(min_delay, max_delay)
     
-    success_count = sum(1 for desc in results.values() if desc is not None)
+    # Count actual job descriptions (not posted dates)
+    success_count = sum(1 for key in results.keys() if not key.endswith('_posted_date') and results[key] is not None)
     logger.info(f"Successfully scraped {success_count}/{total_jobs} job descriptions")
     
     return results
 
 
 if __name__ == "__main__":
-    """Simple demonstration/test when module is run directly."""
-    import argparse
-    import sys
-    import os
-    
-    # Add parent directory to path so we can import from src.indeed_scraper
-    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-    
-    parser = argparse.ArgumentParser(
-        description="Scrape job descriptions from Indeed.com URLs"
-    )
-    parser.add_argument(
-        "urls", 
-        nargs="+", 
-        help="One or more Indeed job URLs to scrape"
-    )
-    parser.add_argument(
-        "--verbose", 
-        action="store_true", 
-        help="Enable detailed logging"
-    )
-    
-    args = parser.parse_args()
-    
-    if args.verbose:
-        logger.setLevel(logging.DEBUG)
-    
-    try:
-        from indeed_scraper import setup_browser
-        
-        driver = setup_browser()
-        try:
-            results = batch_scrape_descriptions(driver, args.urls)
-            
-            for url, description in results.items():
-                print(f"\n{'=' * 80}\n{url}\n{'-' * 80}")
-                if description:
-                    print(description[:500] + "..." if len(description) > 500 else description)
-                else:
-                    print("Failed to scrape description")
-                print(f"{'=' * 80}\n")
-                
-        finally:
-            driver.quit()
-            
-    except ImportError:
-        logger.error("Failed to import setup_browser from indeed_scraper")
-        logger.error("Make sure indeed_scraper.py is in the same directory") 
+    """For testing the module functionality."""
+    logger.info("This module is designed to be imported by indeed_scraper.py")
+    logger.info("Direct execution is only supported for development/testing") 
