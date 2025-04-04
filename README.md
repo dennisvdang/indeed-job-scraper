@@ -87,7 +87,7 @@ indeed-scraper --job-title "Software Engineer" --location "San Francisco"
 | Parameter | Description | Example | Default |
 |-----------|-------------|---------|---------|
 | `--job-title` | Job title to search for (required) | "Data Analyst" | None |
-| `--location` | Location to search in | "New York City" | None |
+| `--location` | Location (City/State or Zipcode) to search in | "New York City" | None |
 | `--search-radius` | Search radius in miles | 25 | 25 |
 | `--num-pages` | Maximum number of pages to scrape | 5 | 3 |
 | `--days-ago` | Filter for jobs posted in the last X days | 14 | 7 |
@@ -114,10 +114,10 @@ indeed-scraper \
     --days-ago 14 \
     --remote remote \
     --job-type "full-time" \
+    --verbose \
     --include-descriptions
 ```
 
-The `--verbose` flag can be used to get detailed logging during execution:
 ```bash
 indeed-scraper --job-title "Data Analyst" --location "Irvine, CA" --num-pages 2 --include-descriptions --verbose
 ```
