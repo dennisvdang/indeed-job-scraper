@@ -216,10 +216,12 @@ def get_output_filepath(job_title: str, location: Optional[str] = None) -> Path:
     Returns:
         Full path to the output CSV file
     """
-    clean_title = job_title.replace(' ', '_').lower()
+    # Remove spaces from job title and convert to lowercase
+    clean_title = job_title.replace(' ', '').lower()
     
     if location:
-        clean_location = location.replace(' ', '_').lower()
+        # Remove spaces and commas from location and convert to lowercase
+        clean_location = location.lower().replace(',', '').replace(' ', '')
         base_name = f"indeed_{clean_title}_{clean_location}"
     else:
         base_name = f"indeed_{clean_title}"
