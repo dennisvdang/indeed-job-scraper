@@ -182,7 +182,7 @@ def test_extract_job_data(mock_wait, mock_driver):
 
 
 @patch('indeed_scraper.scroll_page_naturally')
-@patch('indeed_scraper.find_job_elements')
+@patch('indeed_scraper.find_job_cards')
 @patch('indeed_scraper.extract_job_data')
 @patch('indeed_scraper.navigate_to_next_page')
 @patch('indeed_scraper.setup_browser')
