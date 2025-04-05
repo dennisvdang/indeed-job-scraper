@@ -2,9 +2,7 @@
 """
 Indeed Job Description Scraper
 
-A module for extracting detailed job descriptions from Indeed.com job listings.
-This module works in conjunction with the indeed_scraper.py main module but can
-also be used independently for focused description scraping tasks.
+A module for extracting detailed job descriptions and job posting dates from Indeed.com job listings.
 
 Author: Dennis
 """
@@ -44,15 +42,7 @@ def random_delay(min_seconds: float = 1.0, max_seconds: float = 3.0) -> None:
 
 
 def clean_html_description(html_content: str) -> str:
-    """
-    Clean HTML content from job descriptions to make it more readable using html2text.
-    
-    Args:
-        html_content: Raw HTML content from the job description
-        
-    Returns:
-        Cleaned text version of the job description
-    """
+    """Clean HTML content from job descriptions to make it more readable using html2text."""
     if not html_content:
         return ""
     
@@ -78,14 +68,24 @@ def clean_html_description(html_content: str) -> str:
 
 def extract_posted_date(driver: uc.Chrome) -> Optional[str]:
     """
-    Extract the exact job posting date from the page.
+    Extract the exact job posting date from the page and format it as YYYY-MM-DD.
     
     Args:
         driver: Chrome driver instance
         
     Returns:
-        The exact posted date as a string, or None if not found
+        The posted date as a string in YYYY-MM-DD format, or None if not found
     """
+    def format_date(date_str: str) -> str:
+        """Format date string to YYYY-MM-DD format."""
+        try:
+            from datetime import datetime
+            # Parse ISO 8601 format and convert to YYYY-MM-DD
+            date_obj = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+            return date_obj.strftime('%Y-%m-%d')
+        except (ValueError, TypeError):
+            return date_str
+    
     try:
         # Check for meta tags containing date information
         date_meta_selectors = [
@@ -95,18 +95,18 @@ def extract_posted_date(driver: uc.Chrome) -> Optional[str]:
             "meta[property='article:published_time']"
         ]
         
+        # Try to find date in meta tags
         for selector in date_meta_selectors:
             try:
                 date_element = driver.find_element(By.CSS_SELECTOR, selector)
-                if date_element:
-                    content = date_element.get_attribute("content")
-                    if content and (re.match(r'\d{4}-\d{2}-\d{2}', content) or 'T' in content):
-                        logger.debug(f"Found exact date in meta tag: {content}")
-                        return content
+                content = date_element.get_attribute("content")
+                if content and (re.match(r'\d{4}-\d{2}-\d{2}', content) or 'T' in content):
+                    logger.debug(f"Found exact date in meta tag: {content}")
+                    return format_date(content)
             except NoSuchElementException:
                 continue
                 
-        # If meta tags failed, try to find structured data in script tags
+        # Try to find structured data in script tags
         script_elements = driver.find_elements(By.CSS_SELECTOR, "script[type='application/ld+json']")
         for script in script_elements:
             try:
@@ -118,22 +118,22 @@ def extract_posted_date(driver: uc.Chrome) -> Optional[str]:
                 if '"datePosted":' in content or '"datePublished":' in content:
                     import json
                     data = json.loads(content)
-                    # Navigate nested JSON structures
+                    
+                    # Check for date in the data structure
                     if isinstance(data, list):
                         for item in data:
-                            if isinstance(item, dict) and ('datePosted' in item or 'datePublished' in item):
+                            if isinstance(item, dict):
                                 date = item.get('datePosted') or item.get('datePublished')
                                 if date:
                                     logger.debug(f"Found exact date in structured data: {date}")
-                                    return date
+                                    return format_date(date)
                     elif isinstance(data, dict):
                         date = data.get('datePosted') or data.get('datePublished')
                         if date:
                             logger.debug(f"Found exact date in structured data: {date}")
-                            return date
+                            return format_date(date)
             except Exception as e:
                 logger.debug(f"Error parsing script content: {str(e)}")
-                continue
                 
         return None
     except Exception as e:
@@ -276,4 +276,3 @@ def batch_scrape_descriptions(
 if __name__ == "__main__":
     """For testing the module functionality."""
     logger.info("This module is designed to be imported by indeed_scraper.py")
-    logger.info("Direct execution is only supported for development/testing") 
