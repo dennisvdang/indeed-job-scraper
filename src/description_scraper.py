@@ -11,7 +11,7 @@ import re
 import time
 import random
 import logging
-from typing import Optional, List, Dict, Tuple, Any
+from typing import Optional, List, Dict, Tuple, Any, Union
 import html2text
 
 import undetected_chromedriver as uc
@@ -19,6 +19,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
+
+try:
+    from indeed_scraper import JobListing
+except ImportError:
+    JobListing = Any
 
 # Configure logging
 logging.basicConfig(
@@ -30,15 +35,8 @@ logger = logging.getLogger("description_scraper")
 
 
 def random_delay(min_seconds: float = 1.0, max_seconds: float = 3.0) -> None:
-    """
-    Add a random delay to simulate human behavior and avoid being detected as a bot.
-    
-    Args:
-        min_seconds: Minimum delay in seconds
-        max_seconds: Maximum delay in seconds
-    """
-    delay = random.uniform(min_seconds, max_seconds)
-    time.sleep(delay)
+    """Add a random delay to simulate human behavior."""
+    time.sleep(random.uniform(min_seconds, max_seconds))
 
 
 def clean_html_description(html_content: str) -> str:
@@ -64,6 +62,76 @@ def clean_html_description(html_content: str) -> str:
     text = text.strip()  # Remove leading/trailing whitespace
     
     return text
+
+
+def extract_job_details(driver: uc.Chrome) -> Dict[str, Optional[str]]:
+    """
+    Extract detailed job information from the job details section including job type and work setting.
+    
+    Args:
+        driver: Chrome driver instance
+        
+    Returns:
+        Dictionary containing job details (job_type, work_setting)
+    """
+    job_details = {
+        'job_type': None,
+        'work_setting': None
+    }
+    
+    try:
+        # Find job details section
+        job_details_selectors = [
+            (By.ID, "jobDetailsSection"),
+            (By.CSS_SELECTOR, "[data-testid='jobDetails']"),
+            (By.CSS_SELECTOR, "div.jobsearch-JobDescriptionSection-sectionItem")
+        ]
+        
+        # Try each selector to find the job details section
+        job_details_section = None
+        for selector_type, selector in job_details_selectors:
+            try:
+                job_details_section = driver.find_element(selector_type, selector)
+                if job_details_section:
+                    break
+            except NoSuchElementException:
+                continue
+        
+        if not job_details_section:
+            logger.debug("Could not find job details section")
+            return job_details
+            
+        # Extract job type
+        try:
+            # Look for job type heading
+            job_type_heading = job_details_section.find_element(By.XPATH, ".//h3[contains(text(), 'Job type')]")
+            if job_type_heading:
+                # Get the job type value from the nearest span element
+                job_type_item = job_type_heading.find_element(By.XPATH, "../..//span[contains(@class, 'e1wnkr790')]")
+                if job_type_item:
+                    job_details['job_type'] = job_type_item.text.strip()
+                    logger.debug(f"Found job type: {job_details['job_type']}")
+        except NoSuchElementException:
+            logger.debug("Could not find job type information")
+            
+        # Extract work setting
+        try:
+            # Look for work setting heading
+            work_setting_heading = job_details_section.find_element(By.XPATH, ".//h3[contains(text(), 'Work setting')]")
+            if work_setting_heading:
+                # Get the work setting value from the nearest span element
+                work_setting_item = work_setting_heading.find_element(By.XPATH, "../..//span[contains(@class, 'e1wnkr790')]")
+                if work_setting_item:
+                    job_details['work_setting'] = work_setting_item.text.strip()
+                    logger.debug(f"Found work setting: {job_details['work_setting']}")
+        except NoSuchElementException:
+            logger.debug("Could not find work setting information")
+            
+        return job_details
+        
+    except Exception as e:
+        logger.debug(f"Error extracting job details: {str(e)}")
+        return job_details
 
 
 def extract_posted_date(driver: uc.Chrome) -> Optional[str]:
@@ -141,16 +209,21 @@ def extract_posted_date(driver: uc.Chrome) -> Optional[str]:
         return None
 
 
-def scrape_job_description(driver: uc.Chrome, job_url: str) -> Tuple[Optional[str], Optional[str]]:
+def scrape_job_description(
+    driver: uc.Chrome, 
+    job_url: str,
+    need_job_details: bool = False
+) -> Tuple[Optional[str], Optional[str], Optional[Dict[str, Optional[str]]]]:
     """
-    Navigate to a job details page and scrape the job description and posted date.
+    Navigate to a job details page and scrape the job description, posted date, and job details.
     
     Args:
         driver: Chrome driver instance
         job_url: URL to the job details page
+        need_job_details: Whether to extract job details (job type and work setting)
         
     Returns:
-        A tuple of (job_description, posted_date) where both can be None if not found
+        A tuple of (job_description, posted_date, job_details) where all can be None if not found
     """
     try:
         logger.debug(f"Navigating to job details: {job_url}")
@@ -187,6 +260,11 @@ def scrape_job_description(driver: uc.Chrome, job_url: str) -> Tuple[Optional[st
         # Extract the exact posting date
         exact_date = extract_posted_date(driver)
         
+        # Extract job details if requested
+        job_details = None
+        if need_job_details:
+            job_details = extract_job_details(driver)
+        
         # Clean HTML from description if needed
         cleaned_description = None
         if description_text:
@@ -199,7 +277,7 @@ def scrape_job_description(driver: uc.Chrome, job_url: str) -> Tuple[Optional[st
         if not cleaned_description:
             logger.warning(f"Could not find job description on page: {job_url}")
             
-        return cleaned_description, exact_date
+        return cleaned_description, exact_date, job_details
         
     except Exception as e:
         logger.error(f"Error scraping job description: {str(e)}")
@@ -209,39 +287,39 @@ def scrape_job_description(driver: uc.Chrome, job_url: str) -> Tuple[Optional[st
             random_delay(1.0, 2.0)
         except:
             pass
-        return None, None
+        return None, None, None
 
 
 def batch_scrape_descriptions(
     driver: uc.Chrome, 
-    job_urls: List[str], 
+    job_listings_map: Dict[str, JobListing],
     max_retries: int = 2,
     delay_between_jobs: Tuple[float, float] = (1.5, 3.0)
-) -> Dict[str, str]:
+) -> None:
     """
-    Scrape descriptions and posted dates for multiple jobs with resilience features.
+    Scrape descriptions and posted dates for multiple jobs and update JobListing objects.
     
     Args:
         driver: Chrome driver instance
-        job_urls: List of job URLs to scrape descriptions from
+        job_listings_map: Dictionary mapping job URLs to their JobListing objects
         max_retries: Maximum number of retry attempts per job
         delay_between_jobs: Tuple of (min, max) seconds to delay between jobs
-        
-    Returns:
-        Dictionary mapping job URLs to their descriptions and posted dates.
-        URLs ending with "_posted_date" contain posting date information.
     """
-    results = {}
+    if not job_listings_map:
+        return
     
+    job_urls = list(job_listings_map.keys())
     total_jobs = len(job_urls)
     logger.info(f"Batch scraping {total_jobs} job descriptions")
     
+    success_count = 0
+    
     for i, url in enumerate(job_urls):
         logger.info(f"Processing job {i+1}/{total_jobs}: {url}")
+        job_listing = job_listings_map[url]
         
         # Try with retries
         description = None
-        posted_date = None
         attempts = 0
         
         while description is None and attempts <= max_retries:
@@ -250,27 +328,31 @@ def batch_scrape_descriptions(
                 # Longer delay between retries
                 random_delay(3.0, 5.0)
                 
-            description, posted_date = scrape_job_description(driver, url)
+            # Always extract job details when accessing job page for descriptions
+            description, posted_date, job_details = scrape_job_description(driver, url, need_job_details=True)
             attempts += 1
             
-        # Add description to results
-        results[url] = description
-        
-        # Add posted date to results if available
+        # Update the JobListing object with scraped data
+        if description:
+            job_listing.description = description
+            success_count += 1
+            
         if posted_date:
-            results[f"{url}_posted_date"] = posted_date
-            logger.debug(f"Extracted posted date: {posted_date}")
+            job_listing.date_posted = posted_date
+            
+        if job_details:
+            if job_details.get('job_type'):
+                job_listing.job_type = job_details['job_type']
+                
+            if job_details.get('work_setting'):
+                job_listing.work_setting = job_details['work_setting']
         
         # Random delay between jobs to avoid rate limiting
         if i < total_jobs - 1:  # No need to delay after the last job
             min_delay, max_delay = delay_between_jobs
             random_delay(min_delay, max_delay)
     
-    # Count actual job descriptions (not posted dates)
-    success_count = sum(1 for key in results.keys() if not key.endswith('_posted_date') and results[key] is not None)
     logger.info(f"Successfully scraped {success_count}/{total_jobs} job descriptions")
-    
-    return results
 
 
 if __name__ == "__main__":

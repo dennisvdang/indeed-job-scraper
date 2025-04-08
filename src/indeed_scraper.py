@@ -6,7 +6,7 @@ A tool for scraping job listings and descriptions from Indeed.com with support f
 work arrangement, job type, and other criteria. Results are saved to CSV.
 
 Usage:
-    python indeed_scraper.py --job-title "Software Engineer" --location "San Francisco" --remote remote --job-type "full-time" --include-descriptions
+    python indeed_scraper.py --job-title "Software Engineer" --location "San Francisco" --job-type "full-time" --include-descriptions
 
 Author: Dennis
 """
@@ -71,7 +71,7 @@ SHOULD_EXIT = False
 # =====================
 # Constants
 # =====================
-REMOTE_WORK_FILTERS = {
+WORK_SETTING_FILTERS = {
     "remote": "&remotejob=032b3046-06a3-4876-8dfd-474eb5e7ed11",
     "hybrid": "&sc=0kf%3Aattr(DSQF7)%3B",
     "onsite": ""  # No specific filter for onsite/in-person
@@ -133,6 +133,11 @@ JOB_TYPE_SELECTORS = {
     'backup': (By.CSS_SELECTOR, "div.metadataContainer span.attribute_snippet")  # Older UI
 }
 
+WORK_SETTING_SELECTORS = {
+    'primary': (By.CSS_SELECTOR, "div[data-testid='work-setting-info']"),  # Modern view
+    'backup': (By.CSS_SELECTOR, "div.metadataContainer span.attribute_snippet[data-work-setting]")  # Older UI
+}
+
 # =====================
 # Core Utilities
 # =====================
@@ -173,6 +178,7 @@ class JobListing:
     job_id: Optional[str] = None
     source: str = "Indeed"
     job_type: Optional[str] = None
+    work_setting: Optional[str] = None  # In-person, Hybrid, Remote
     date_scraped: datetime = field(default_factory=datetime.now)
     description: Optional[str] = None
     search_url: Optional[str] = None
@@ -475,7 +481,7 @@ def get_search_url(
     location: str = "",
     search_radius: Optional[int] = None,
     days_ago: int = 7,
-    remote_filter: Optional[str] = None,
+    work_setting: Optional[str] = None,
     job_type: Optional[str] = None
 ) -> str:
     """
@@ -486,7 +492,7 @@ def get_search_url(
         location: The location to search in (optional)
         search_radius: The search radius in miles (default: 25 if location provided)
         days_ago: Filter for jobs posted within this many days
-        remote_filter: Remote work options ('onsite', 'remote', or 'hybrid')
+        work_setting: Work setting options ('onsite', 'remote', or 'hybrid')
         job_type: Type of job (full-time, part-time, contract, etc.)
         
     Returns:
@@ -507,9 +513,9 @@ def get_search_url(
     else:
         base_url += "&fromage=7"  # Default to 7 days
     
-    # Add remote work filter
-    if remote_filter and remote_filter in REMOTE_WORK_FILTERS:
-        base_url += REMOTE_WORK_FILTERS[remote_filter]
+    # Add work setting filter
+    if work_setting and work_setting in WORK_SETTING_FILTERS:
+        base_url += WORK_SETTING_FILTERS[work_setting]
     
     # Add job type filter
     if job_type and job_type.lower() in JOB_TYPE_FILTERS:
@@ -608,7 +614,8 @@ def extract_job_data(card: WebElement, driver: uc.Chrome) -> Optional[Dict[str, 
         additional_fields = {
             'location': JOB_LOCATION_SELECTORS,
             'salary': JOB_SALARY_SELECTORS,
-            'job_type': JOB_TYPE_SELECTORS
+            'job_type': JOB_TYPE_SELECTORS,
+            'work_setting': WORK_SETTING_SELECTORS
         }
         
         # Extract required fields
@@ -698,19 +705,15 @@ def process_description_batch(
         return
         
     logger.info(f"Batch scraping descriptions for {len(job_urls_to_scrape)} jobs on page {current_page}")
-    descriptions_data = batch_scrape_descriptions(driver, job_urls_to_scrape)
     
-    # Add descriptions to job listings that have URLs
-    for listing in [l for l in job_listings if l.job_url]:
-        # Add description if available
-        if listing.job_url in descriptions_data:
-            listing.description = descriptions_data[listing.job_url]
-            
-            # Add posted date if available (new format with _posted_date suffix)
-            posted_date_key = f"{listing.job_url}_posted_date"
-            if posted_date_key in descriptions_data:
-                listing.date_posted = descriptions_data[posted_date_key]
-                logger.debug(f"Added date_posted: {listing.date_posted} for job: {listing.title}")
+    # Create a dictionary mapping URLs to their JobListing objects
+    url_to_listing = {listing.job_url: listing for listing in job_listings if listing.job_url in job_urls_to_scrape}
+    
+    # Directly update the JobListing objects
+    batch_scrape_descriptions(
+        driver=driver, 
+        job_listings_map=url_to_listing
+    )
 
 
 def has_duplicate_job(
@@ -783,6 +786,7 @@ def create_job_listings(
             job_url=job.get('link'),
             job_id=job.get('job_id'),
             job_type=job.get('job_type'),
+            work_setting=job.get('work_setting'),
             search_url=search_url
         )
         for job in unique_jobs
@@ -805,7 +809,7 @@ def scrape_indeed_jobs(
     search_radius: Optional[int] = None,
     max_pages: int = 3,
     days_ago: int = 7,
-    remote_filter: Optional[str] = None,
+    work_setting: Optional[str] = None,
     job_type: Optional[str] = None,
     include_descriptions: bool = False
 ) -> List[JobListing]:
@@ -819,7 +823,7 @@ def scrape_indeed_jobs(
         search_radius: The search radius in miles (default: 25 if location provided)
         max_pages: Maximum number of pages to scrape
         days_ago: Filter for jobs posted within this many days
-        remote_filter: Remote work options ('onsite', 'remote', or 'hybrid')
+        work_settting: Work setting options ('onsite', 'remote', or 'hybrid')
         job_type: Type of job (full-time, part-time, contract, etc.)
         include_descriptions: Whether to include full job descriptions in output
         
@@ -831,7 +835,7 @@ def scrape_indeed_jobs(
     try:
         # Construct and navigate to search URL
         search_url = get_search_url(
-            job_title, location, search_radius, days_ago, remote_filter, job_type
+            job_title, location, search_radius, days_ago, work_setting, job_type
         )
         logger.info(f"Opening search URL: {search_url}")
         driver.get(search_url)
@@ -948,11 +952,11 @@ def parse_args() -> argparse.Namespace:
     )
     
     parser.add_argument(
-        "--remote", 
+        "--work-setting", 
         type=str, 
-        choices=list(REMOTE_WORK_FILTERS.keys()),
+        choices=list(WORK_SETTING_FILTERS.keys()),
         default=None,
-        help="Filter for remote, onsite, or hybrid jobs"
+        help="Filter for work setting: remote, hybrid, or onsite jobs"
     )
     
     parser.add_argument(
@@ -1022,7 +1026,7 @@ def main():
                 search_radius=args.search_radius,
                 max_pages=args.num_pages,
                 days_ago=days_ago,
-                remote_filter=args.remote,
+                work_setting=args.work_setting,
                 job_type=args.job_type,
                 include_descriptions=args.include_descriptions
             )
