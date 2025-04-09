@@ -7,10 +7,14 @@ A Python CLI tool for scraping job listings from Indeed.com with filtering and e
 This tool scrapes job listings from Indeed.com and exports the data to CSV format. It extracts the following information:
 
 - Job title and company name
-- Location and salary (when available)
+- Location (city, state, zip) and salary information (when available)
 - Job type (full-time, part-time, contract, etc.)
-- Full job descriptions and posting dates (when using `--include-descriptions`)
-- Source URLs for reference
+- Work setting (remote, hybrid, in-person)
+- Full job descriptions and posting dates
+- Advertisement status (identifies which job listings were originally ads)
+- Standardized salary data (min, max, yearly equivalents)
+- Job IDs and simplified, direct URLs for job listings
+- Source URLs and search metadata
 
 The scraper supports filtering by job title, location, posting date, work arrangement, and job type through command-line arguments.
 
@@ -84,18 +88,19 @@ indeed-scraper --job-title "Software Engineer" --location "San Francisco"
 
 ### All Available Options
 
-| Parameter | Description | Example | Default |
-|-----------|-------------|---------|---------|
-| `--job-title` | Job title to search for (required) | "Data Analyst" | None |
-| `--location` | Location (City/State or Zipcode) to search in | "New York City" | None |
-| `--search-radius` | Search radius in miles | 25 | 25 |
-| `--num-pages` | Maximum number of pages to scrape | 5 | 3 |
-| `--days-ago` | Filter for jobs posted in the last X days | 14 | 7 |
-| `--remote` | Remote work filter | "remote", "hybrid", or "onsite" | None |
-| `--job-type` | Type of job | "full-time", "part-time", "contract" | None |
-| `--include-descriptions` | Include full job descriptions | | False |
-| `--verbose` | Enable detailed logging | | False |
-| `--output` | Custom output file path | "my_jobs.csv" | Auto-generated |
+| Parameter | Description | Possible Values | Default |
+|-----------|-------------|-----------------|---------|
+| `--job-title` | Job title to search for (required) | Any search string (e.g., "Data Analyst") | None (Required) |
+| `--location` | Location to search in | Any city/state or zip code (e.g., "New York, NY" or "94105") | None |
+| `--search-radius` | Search radius in miles from the location | Any positive integer | 25 |
+| `--num-pages` | Maximum number of search result pages to scrape | Any positive integer | 3 |
+| `--days-ago` | Filter for jobs posted within this many days | 1, 3, 7, 14 | 7 |
+| `--work-setting` | Filter for specific work arrangements | "remote", "hybrid", "onsite" | None |
+| `--job-type` | Filter for specific job types | "full-time", "part-time", "contract", "temporary", "temp-to-hire" | None |
+| `--exclude-descriptions` | Skip scraping full job descriptions | Flag (no value required) | False |
+| `--verbose` | Enable detailed logging | Flag (no value required) | False |
+| `--output` | Custom output file path | Valid file path (e.g., "jobs.csv") | Auto-generated |
+| `--keep-browser` | Keep browser open after scraping | Flag (no value required) | False |
 
 ### Example Commands
 
@@ -104,7 +109,7 @@ Basic search:
 indeed-scraper --job-title "Data Analyst" --location "New York City"
 ```
 
-Advanced search:
+Advanced search with all descriptions (default):
 ```bash
 indeed-scraper \
     --job-title "Software Engineer" \
@@ -112,21 +117,16 @@ indeed-scraper \
     --search-radius 50 \
     --num-pages 5 \
     --days-ago 14 \
-    --remote remote \
+    --work-setting remote \
     --job-type "full-time" \
-    --verbose \
-    --include-descriptions
-```
-
-```bash
-indeed-scraper --job-title "Data Analyst" --location "Irvine, CA" --num-pages 2 --include-descriptions --verbose
+    --verbose
 ```
 
 ### CAPTCHA Handling
 
-Indeed employs CAPTCHA protection that requires human interaction. The tool opens a visible Chrome browser window and pauses when a CAPTCHA is detected:
+Indeed employs CAPTCHA protection that requires human interaction:
 
-1. When prompted, solve the CAPTCHA in the browser window
+1. When prompted (at program startup), solve the CAPTCHA in the browser window
 2. Ensure the page loads completely after solving the CAPTCHA
 3. Return to your terminal and press Enter to continue scraping
 
@@ -139,6 +139,45 @@ data/raw/indeed_[job_title]_[location]_[timestamp].csv
 
 Example: `data/raw/indeed_software_engineer_san_francisco_20240404_103022.csv`
 
+### Output Data Structure
+
+The CSV output contains the following columns organized into logical groups:
+
+**Identification:**
+- `job_id` - Indeed's unique job identifier
+- `source` - Always "Indeed" (useful if combining with other sources)
+- `is_ad` - Boolean flag indicating if the job was an advertisement (True/False)
+
+**Essential Information:**
+- `title` - Job title
+- `company` - Company name
+- `work_setting` - Work arrangement (remote, hybrid, in-person)
+- `job_type` - Job type (full-time, part-time, contract, etc.)
+
+**Dates:**
+- `date_posted` - Date the job was posted on Indeed (YYYY-MM-DD)
+- `date_scraped` - Timestamp when the job was scraped (YYYY-MM-DD HH:MM:SS)
+
+**Location:**
+- `city` - City name extracted from location
+- `state` - State code (e.g., CA, NY)
+- `zip` - ZIP code if available
+
+**Compensation:**
+- `salary_period` - Pay period (hourly, weekly, monthly, yearly)
+- `salary_min` - Minimum salary in original period
+- `salary_max` - Maximum salary in original period
+- `salary_min_yearly` - Minimum salary converted to yearly equivalent
+- `salary_max_yearly` - Maximum salary converted to yearly equivalent
+- `salary_midpoint_yearly` - Average of min and max yearly salaries
+
+**URLs:**
+- `job_url` - Direct link to the job posting
+- `search_url` - URL used to perform the search
+
+**Content:**
+- `job_description` - Full job description text with formatting preserved
+
 ## 🔧 Troubleshooting
 
 ### Common Issues
@@ -149,10 +188,6 @@ Example: `data/raw/indeed_software_engineer_san_francisco_20240404_103022.csv`
 - Ensure you have Chrome installed and updated to a recent version
 - If you encounter driver-related errors, try updating your Chrome browser
 - The tool uses undetected-chromedriver which automatically handles most driver compatibility
-
-**"No such element" errors:**
-
-- Indeed occasionally changes their website structure, try updating to the latest version
 
 **Scraping interruptions:**
 
@@ -167,14 +202,13 @@ A planned enhancement is to implement an LLM pipeline in Python to extract the f
 
 | Topic | Examples |
 |----------|----------|
-| Domain/Industry | Finance, Healthcare, Ecommerce |
-| Compensation | Base salary, 401K, bonuses, equity |
-| Benefits | PTO, healthcare, remote work options |
-| Requirements | Education level, years of experience |
-| Work Arrangement | Remote, hybrid, on-site |
-| Role responsibilities* | Project management, client relations, data analysis |
-| Technical requirements* | Programming languages, certifications, tools |
-| Technologies mentioned* | Salesforce, Python, AWS, WorkDay |
+| Domain/Industry | *Finance, Healthcare, Ecommerce* |
+| Compensation | *Base salary, 401K, bonuses, equity* |
+| Benefits | *PTO, healthcare, remote work options* |
+| Requirements | *Education level, years of experience* |
+| Role responsibilities* | *Project management, client relations, data analysis* |
+| Technical requirements* | *Programming languages, certifications, tools*|
+| Technologies mentioned* | *Salesforce, Python, AWS, WorkDay* |
 
 *\* These topics might be included as they are interesting from a job seeker's perspective, but are lower priority.*
 
