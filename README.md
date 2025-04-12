@@ -47,24 +47,7 @@ This installs the `indeed-scraper` command globally in your virtual environment,
 pip install -e .
 ```
 
-### Alternative Installation Methods
-
-#### Using Conda
-
-```bash
-# Clone the repository
-git clone https://github.com/dennisvdang/Indeed-Job-Scraper.git
-cd Indeed-Job-Scraper
-
-# Create and activate the conda environment
-conda env create -f environment.yml
-conda activate indeed-scraper
-
-# Install the package
-pip install -r requirements.txt
-```
-
-#### Using Docker
+#### Alternative Installation Using Docker
 
 ```bash
 # Clone the repository
@@ -78,9 +61,8 @@ docker build -t indeed-scraper .
 docker run indeed-scraper conda run -n indeed-scraper indeed-scraper \
     --job-title "Data Scientist" \
     --location "New York" \
-    --search-radius 25 \
     --num-pages 3 \
-    --remote remote
+    --verbose
 ```
 
 ## 📊 Usage
@@ -91,7 +73,7 @@ docker run indeed-scraper conda run -n indeed-scraper indeed-scraper \
 indeed-scraper --job-title "Software Engineer" --location "San Francisco"
 ```
 
-### All Available Options
+### Command Line Arguments
 
 | Parameter | Description | Possible Values | Default |
 |-----------|-------------|-----------------|---------|
