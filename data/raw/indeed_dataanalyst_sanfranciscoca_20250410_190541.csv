@@ -1,0 +1,1422 @@
+﻿job_id,source,title,company,queried_job_title,work_setting,job_type,date_posted,date_scraped,city,state,zip,salary_period,salary_min,salary_max,salary_min_yearly,salary_max_yearly,salary_midpoint_yearly,job_url,search_url,job_description
+aa93af6795187505,Indeed,"Marketing Data Analyst, Global Partnerships",Google,Data Analyst,in-person,Full-time,2025-04-07,2025-04-10,San Francisco,CA,,,,,,,,https://www.indeed.com/viewjob?jk=aa93af6795187505,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Note: By applying to this position you will have an opportunity to share your preferred working location from the following: New York, NY, USA; San Francisco, CA, USA.   
+
+Minimum qualifications:  
+
+  • Bachelor's degree or equivalent practical experience.
+  • 2 years of experience in Business Intelligence or Data Analytics.
+  • 2 years of experience in SQL and Data Visualization (e.g., Looker, Tableau, Power BI, Qlik, or similar technologies).
+
+Preferred qualifications:  
+
+  • Experience with data warehousing or data modeling concepts.
+  • Experience with big data technologies (e.g., Hadoop, Spark, Python, or R).
+  • Experience with translating business requirements to BI solutions.
+  • Experience with explaining technical analysis to stakeholders.
+
+About the job   
+
+Google’s Global Partnerships team powers extraordinary user experiences through partnerships that solve users’ needs, advance our partners’ goals, and further Google’s mission. Our team provides meaningful solutions — from helping publishers and developers grow their businesses through monetization solutions, to helping our long-term partners anticipate and navigate change in a way that delivers economic and reputational value. We build and distribute products through partnerships across a multitude of product areas. We collaborate across Google, ensuring a coordinated approach when engaging with our most complex and strategic partners.   
+The Google Partners, Sellside Monetization team's mission is to fund the world's information by enabling online publishers, app developers, and media buyers to grow their businesses using our portfolio of products (AdSense, AdMob, and Ad Manager). We provide innovative, industry-leading online advertising solutions for our partners, by enriching an open and healthy advertising ecosystem, developing trusted products our partners can rely on, and exceeding their expectations to strengthen long-term relationships.As a Marketing Data Analyst, you'll power the future of our publisher marketing by empowering partners to maximize content business growth and ensure a thriving, ad-supported open internet. This role sits within the Sellside Marketing team in Global Partnerships and is focused on growing new and existing publishers through proven marketing strategies and innovative testing. You will collaborate with marketing, sales, product, and legal to drive performance marketing strategies, provide valuable customer insights, and leverage data to drive growth marketing impact.The US base salary range for this full-time position is $96,000-$138,000 + bonus + equity + benefits. Our salary ranges are determined by role, level, and location. Within the range, individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range for your preferred location during the hiring process.Please note that the compensation details listed in US role postings reflect the base salary only, and do not include bonus, equity, or benefits. Learn more aboutbenefits at Google.   
+
+Responsibilities   
+
+  • Analyze marketing channel performance to optimize growth strategies across key scaled channels, such as email, events, social media, websites, etc., and identify new opportunities via data-driven recommendations.
+  • Lead campaign experimentation and incrementality analyses to measure business impact of marketing efforts and inform future investments to maximize the impact of marketing spend.
+  • Develop and maintain data pipelines, dashboards, and infrastructure to automate marketing operations and provide insight into campaign performance.
+  • Develop an understanding of customer user journeys through research and data analysis to provide actionable insights for our marketing programs.
+  • Collaborate across Marketing, Product, Legal, and Sales teams on a variety of analytical workstreams to drive incremental impact on the overall business.
+
+Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See alsoGoogle's EEO Policy andEEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing ourAccommodations for Applicants form."
+0a78053efef4f0a8,Indeed,Data Scientist/Analyst,Photon,Data Analyst,in-person,Full-time,2025-04-04,2025-04-10,San Francisco,CA,,yearly,48000.0,168000.0,48000.0,168000.0,108000.0,https://www.indeed.com/viewjob?jk=0a78053efef4f0a8,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Greetings Everyone   
+
+Who are we?   
+
+For the past 20 years, we have powered many Digital Experiences for the Fortune 500. Since 1999, we have grown from a few people to more than 4000 team members across the globe that are engaged in various Digital Modernization. For a brief 1 minute video about us, you can check   
+
+https://youtu.be/uJWBWQZEA6o   
+
+.   
+
+What will you do?   
+
+What are we looking for?   
+
+About the Role:  
+We are seeking a highly motivated and experienced Data Scientist/Analyst with a strong background in the Retail CPG industry to join our dynamic data team. In this role, you will be instrumental in transforming raw data into actionable insights, driving strategic decisions, and leveraging cutting-edge Agentic frameworks to automate and enhance data-driven processes. You will play a critical role in optimizing our supply chain, marketing strategies, and customer experience.   
+
+Responsibilities:  
+Data Cleansing and Preparation:  
+Develop and implement robust data cleansing and preprocessing pipelines to ensure data quality and consistency.   
+
+Extract, transform, and load (ETL) data from various sources, including POS systems, inventory management systems, and customer databases.   
+
+Identify and resolve data anomalies, inconsistencies, and missing values.   
+
+Create and maintain comprehensive data documentation.   
+
+Retail CPG Analysis:  
+Conduct in-depth analysis of sales, inventory, and customer data to identify trends, patterns, and opportunities.   
+
+Develop and implement predictive models for demand forecasting, inventory optimization, and customer segmentation.   
+
+Analyze the impact of marketing campaigns and promotional activities on sales and customer behavior.   
+
+Generate actionable insights and recommendations to optimize business performance.   
+
+Agentic Frameworks:  
+Research, evaluate, and implement Agentic frameworks to automate data analysis and decision-making processes.   
+
+Develop and deploy intelligent agents for tasks such as data extraction, anomaly detection, and report generation.   
+
+Integrate Agentic frameworks with existing data pipelines and analytical tools.   
+
+Explore and experiment with emerging AI technologies to enhance data-driven capabilities.   
+
+Collaboration and Communication:  
+Collaborate with cross-functional teams, including sales, marketing, and supply chain, to understand business requirements and deliver data-driven solutions.   
+
+Communicate complex data insights to stakeholders in a clear and concise manner.   
+
+Present data findings and recommendations through visualizations and reports.   
+
+Requirements:  
+Bachelor’s or master’s degree in data science, Statistics, Computer Science, or a related field.   
+
+Strong proficiency in SQL and Python (Pandas, NumPy, Scikit-learn).   
+
+Experience with data visualization tools (e.g., Tableau, Power BI).   
+
+Solid understanding of statistical modeling and machine learning techniques.   
+
+Proven ability to clean, process, and analyze large datasets.   
+
+Experience with ETL processes and data warehousing.   
+
+Strong analytical and problem-solving skills.   
+
+Excellent communication   
+
+and presentation skills.   
+
+Preferred Qualifications:  
+Experience with Agentic frameworks (e.g., Auto-GPT, LangChain, etc.).   
+
+Familiarity with cloud platforms (AWS, Azure, GCP) and their data services.   
+
+Experience with time series analysis and forecasting.   
+
+Knowledge of supply chain management and inventory optimization.   
+
+Experience with customer segmentation and lifetime value analysis.   
+
+Knowledge of natural language processing (NLP) and text analysis.   
+
+Experience with LLMs.   
+
+Experience with Retail POS data.   
+
+Compensation, Benefits and Duration   
+
+Minimum Compensation: USD 48,000   
+
+Maximum Compensation: USD 168,000   
+
+Compensation is based on actual experience and qualifications of the candidate. The above is a reasonable and a good faith estimate for the role.   
+
+Medical, vision, and dental benefits, 401k retirement plan, variable pay/incentives, paid time off, and paid holidays are available for full time employees.   
+
+This position is available for independent contractors   
+
+No applications will be considered if received more than 120 days after the date of this post"
+879a6134dbb393f3,Indeed,Business Analyst,RPX,Data Analyst,in-person,Full-time,2025-04-04,2025-04-10,San Francisco,CA,94105,yearly,82000.0,117000.0,82000.0,117000.0,99500.0,https://www.indeed.com/viewjob?jk=879a6134dbb393f3,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"All employees are required to provide proof of authorization to work in the U.S. within their first 3 days of work. Please note that the Company does not sponsor employees for work visas or permanent resident cards to work in the U.S. If you need sponsorship for a work visa or green card, you will not be qualified for employment with RPX.  
+
+RPX Corporation is the leading provider of a comprehensive suite of solutions to help companies manage the risks and costs that arise at any stage of their IP program. To learn more about RPX Services, please visit us at www.RPXcorp.com.
+
+By combining world-class transaction expertise with proprietary data and advanced analytics RPX obtains patent rights that avoid or resolve patent-related disputes shared among our diverse global membership, and provides unique insights that inform our members’ strategic and tactical executive decisions.
+
+####  What you can expect as a Business Analyst:
+
+We are searching for an entry level analyst to join our team, new grads are welcome to apply! As a Business Analyst, you will be solving intriguing problems to help global technology companies, as well as the opportunity to interact with industry leading professionals. You will analyze and visualize data, uncovering legal and business trends in response to questions from RPX clients, internal groups, the press, and academics. The focus of this role is synthesizing data, extracting high level insights, and building persuasive reports and presentations.
+
+####  In this role, you will:
+
+  • Provide data-based answers to questions posed by the business and clients
+  • Create customized and standardized reports
+  • Present research findings to internal and external stakeholders
+  • Perform a variety of directed and independent research on IP risk in new technology areas
+  • Collaborate with other internal teams and work self-directed under limited supervision
+  • Locate, assemble, clean, and maintain datasets from internal and external sources
+
+Do you have the experience to join our team?
+
+####  Minimum Qualifications:
+
+  • Bachelor’s degree required; business, economics, or hard science degree viewed favorably
+  • 1+ years developing business reports and/or presentations
+  • 1+ years performing analysis
+  • Proficiency with Microsoft Excel and PowerPoint
+  • Strong quantitative analysis skills with a proficiency towards discovering insights, trends, and patterns with large datasets
+  • Detail-oriented; natural curiosity and a quick, eager learner; creative problem solver
+  • Excellent oral and written communications and presentation skills
+
+####  Preferred Qualifications:
+
+  • Experience with data visualization
+  • Experience with a SQL-style query language
+
+Interested in Learning More About Us?
+
+In compliance with CA Pay Transparency, the RPX target budgeted salary for this position is $82,000 to $95,000 depending on skills and experience and the RPX base salary range is $65,000 to $117,000. In addition to base salary, we offer an annual bonus opportunity and comprehensive benefits and perks, including group health coverage, company HSA contribution, 401(k) matching, medical disability and family leave benefits, fitness reimbursement, community service days, charitable donation matching, and more, as well as the option to work remotely or from our beautiful San Francisco office.
+
+At RPX, we value diversity. Our differences unlock our strengths. We embrace diversity of thought and background to foster opportunities for innovation and collaboration. We’re committed to creating an inclusive environment of mutual respect, humility and empathy where authenticity is welcomed, and all people are supported. Uplifting each other enhances the well-being of our communities as well as the success of our company. By encouraging everyone to speak, and listening carefully to every voice, we’re better equipped to understand our clients’ increasingly diverse needs and deliver solutions to their most complex problems.
+
+RPX is an equal opportunity employer.
+
+We will make reasonable accommodations to enable any qualified individual with a disability to participate in the job application and interview process, to perform the essential functions of the relevant position, and to enjoy equal benefits and privileges of employment as those enjoyed by similarly-situated employees without disabilities. If you require a reasonable accommodation, please notify RPX HR."
+ebfd97e8b456211b,Indeed,Business Analyst,University of San Francisco,Data Analyst,in-person,Full-time,2025-04-10,2025-04-10,San Francisco,CA,94117,yearly,62400.0,91032.0,62400.0,91032.0,76716.0,https://www.indeed.com/viewjob?jk=ebfd97e8b456211b,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Business Analyst  
+University of San Francisco
+
+R0005443  
+USF Hilltop Campus  
+
+Job Title:  
+Business Analyst  
+
+Job Summary:  
+Under the leadership of the Purchasing & Ancillary Services (PaAS) Director, the Business Analyst is responsible for owning and supporting procurement program deliverables. Specific areas of focus include: ownership of team assignments & rigorous documentation, diverse data analysis and reporting, defining or capturing new & revised product and business processes; setup & facilitation of meetings, event coordination, stakeholder communication and tasks as assigned in PaAS.  
+
+The Business Analyst will leverage their skills and knowledge of process evaluation methodologies, data analysis techniques, using supporting tools & systems. With strong emphasis on system data analysis, process standardization, documentation & training, the Business Analyst will independently own business process assessments, sometimes as a part of team projects, or under guidance by PaAS leadership.  
+
+USF seeks a self-motivated, personable, proactive individual for an excellent growth opportunity as Business Analyst in a higher education setting. The Business Analyst role reports to the PaAS e-Procurement Specialist.  
+
+Full Job Description:  
+
+Essential Job Responsibilities  
+
+  • Supports systems within the PaAS domain through knowledge of solutions, modules and operational procedures  
+
+  • Performs diverse data analysis, trend reporting; diagrams / charts creation for stakeholders  
+
+  • Prepares reports as required by collecting, analyzing, and summarizing information  
+
+  • Contribute to operational improvements through business review, elicitation, and evaluating business input/output requirements and formats  
+
+  • Documents current & future processes constructing workflow visualization; studying system capabilities; writing specifications and operational procedures  
+
+  • Maintains training & reference material for users by writing or updating user documentation  
+
+  • Willingness to learn new technologies; independently administer technical solutions with guidance and supervision from e-Procurement Specialist  
+
+  • Prepare PaAS-related business transactions when required  
+
+  • Contributes to team goals by owning, driving & accomplishing collaborative results  
+
+  • Ability to work across teams, build consensus & facilitate business process workshops  
+
+  • Other duties as assigned
+
+Requirements (knowledge, skills, abilities, education and experience)  
+
+  • Self-motivated to own and complete time-sensitive tasks, documentation & business process assessments  
+
+  • Strong critical thinking skills while maintaining objective analysis  
+
+  • An eagerness to learn, map & improve business processes; illustrating in tools such as Visio or Lucidchart  
+
+  • Degree in business, data science, IT or operations desirable; 3-5 years of similar experience considered  
+
+  • At least 2 years of relatable work experience; business or data analysis ownership of 6 months or longer preferred  
+
+  • Demonstrable skills with Microsoft Office Suite (Word, Excel, PowerPoint, Visio) and Google for Higher Education Suite (Google Docs, Gmail, Calendar, Sheets)  
+
+  • Intermediate to advanced skills in planning, analysis & process mapping required  
+
+  • Active listener with strong verbal & written communication skills  
+
+  • Ability to work in team environment & multi-task effectively  
+
+  • Detail-oriented and highly organized  
+
+  • Higher education experience advantageous  
+
+  • Tableau certification, Jaggaer, Banner or ERP systems knowledge desirable  
+
+  • PMI-PBA, IIBA CBAP, CCBA or ISM CPSM certifications a plus
+
+Application Documents  
+Cover letter  
+
+Resume 
+  • Workflow diagram and writing sample  
+
+Full-Time/Part-Time:  
+Full time  
+
+Pay Rate:  
+Salary  
+
+Salary Range :  
+$62,400.00 to $91,032.00 annualized; commensurate with experience  
+
+To apply, visit https://usfca.wd5.myworkdayjobs.com/en-US/USF_Staff/job/USF-Hilltop-Campus/Business-Analyst_R0005443.  
+
+The University of San Francisco is located in the heart of one of the worlds most innovative and diverse cities, and is home to a vibrant academic community of students and faculty who achieve excellence in their fields. Its diverse student body enjoys direct access to faculty, small classes and outstanding opportunities in the city itself. USF is San Francisco's first university, and its Jesuit Catholic mission helps ignite a students passion for social justice and a desire to ""Change the World From Here."" For more information, visit http://www.usfca.edu.  
+
+jeid-e8d2cc8f2491874cb71a080afcfa721c"
+d28ee0b00a304054,Indeed,Data Analytics Senior Analyst,Salesforce,Data Analyst,in-person,Full-time,2025-04-08,2025-04-10,San Francisco,CA,94105,yearly,117100.0,161100.0,117100.0,161100.0,139100.0,https://www.indeed.com/viewjob?jk=d28ee0b00a304054,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. 
+
+Job Category
+
+Data 
+
+Job Details
+
+About Salesforce 
+
+We’re Salesforce, the Customer Company, inspiring the future of business with AI+ Data +CRM. Leading with our core values, we help companies across every industry blaze new trails and connect with customers in a whole new way. And, we empower you to be a Trailblazer, too — driving your performance and career growth, charting new paths, and improving the state of the world. If you believe in business as the greatest platform for change and in companies doing well and doing good – you’ve come to the right place.
+
+Overview of the Role:   
+As part of a high-performance, fast-paced, and collaborative team, your role will encompass all aspects of running a successful sales organization, which includes GTM (Go-To-Market) planning, growth strategy, sales forecasting, business operations, and data evaluation and analysis. You will work with sales leadership and cross-functional partners to provide a 360° view of the business and drive executive-level recommendations and tools that directly impact an industry-leading Sales team.   
+
+Successful candidates will be able to use data to drive insights, provide strategic recommendations, build scalable assets, and guide the charge on execution and organizational change. You will have the opportunity to combine intuition for business, innovative inquiry, insights from sales leaders, and curiosity to accomplish meaningful work to uncover trends and identify insights that deliver impact across the organization.   
+
+Sample projects and results range from evaluating worldwide market opportunities, building a scalable reporting infrastructure, supporting the creation of the product growth strategy, market segmentation, sales pipeline and key performance metric reviews.   
+
+These teams play a meaningful role in supporting sales leadership at the fastest ever growing Enterprise software company!   
+
+Responsibilities: 
+
+  • Evaluate ongoing business performance against growth targets to support daily operations
+  • Define, design, and interpret key performance metrics to deliver insights and recommendations
+  • Triage and troubleshoot operational issues and optimize infrastructure/systems/processes for scale
+  • Support extensive GTM planning process and pivotal initiatives through capacity planning, efficiency, review, market segmentation, territory carving, quota/incentive design, and more
+  • Collaborate cross-functionally with finance (budget, headcount planning), recruiting (hiring profile, seasonality), field enablement/programs, Employee Success, etc.
+Develop and deliver presentations for senior executives 
+
+Required Skills: 
+
+  • 2-3+ years of professional experience, in a highly analytical role or strategy department
+  • Advanced Excel skills
+Degree or equivalent relevant experience required. Experience will be evaluated based on the core competencies for the role (e.g. extracurricular leadership roles, military experience, volunteer roles, work experience, etc.) 
+
+Preferred Skills: 
+
+  • Experience with Google Sheets, SQL, Tableau a plus
+  • Outstanding problem solving skills: consistent track record to ask questions, structure sophisticated problems, develop solutions and recommendations
+  • Strong communication skills to translate complex info into easily digestible insights and executive presentations
+  • Strong presentation skills, especially related to building compelling PowerPoint/Google Slides presentations
+  • Resilient Self-starter and high degree of motivation to go above and beyond the task at hand
+  • Highly collaborative style with strong networking skills across business functions
+  • Flexibility and ability to adjust on the fly to new demands; sense of urgency
+  • Passionate around quantitative analysis, Excel, and reasoning
+
+Accommodations
+
+If you require assistance due to a disability applying for open positions please submit a request via this Accommodations Request Form .
+
+Posting Statement
+
+Salesforce is an equal opportunity employer and maintains a policy of non-discrimination with all employees and applicants for employment. What does that mean exactly? It means that at Salesforce, we believe in equality for all. And we believe we can lead the path to equality in part by creating a workplace that’s inclusive, and free from discrimination. Know your rights: workplace discrimination is illegal. Any employee or potential employee will be assessed on the basis of merit, competence and qualifications – without regard to race, religion, color, national origin, sex, sexual orientation, gender expression or identity, transgender status, age, disability, veteran or marital status, political viewpoint, or other classifications protected by law. This policy applies to current and prospective employees, no matter where they are in their Salesforce employment journey. It also applies to recruiting, hiring, job assignment, compensation, promotion, benefits, training, assessment of job performance, discipline, termination, and everything in between. Recruiting, hiring, and promotion decisions at Salesforce are fair and based on merit. The same goes for compensation, benefits, promotions, transfers, reduction in workforce, recall, training, and education.
+
+Pursuant to the San Francisco Fair Chance Ordinance and the Los Angeles Fair Chance Initiative for Hiring, Salesforce will consider for employment qualified applicants with arrest and conviction records. 
+
+For New York-based roles, the base salary hiring range for this position is $117,100 to $161,100. 
+
+### For California-based roles, the base salary hiring range for this position is $117,100 to $161,100. 
+
+### Compensation offered will be determined by factors such as location, level, job-related knowledge, skills, and experience. Certain roles may be eligible for incentive compensation, equity, benefits. More details about our company benefits can be found at the following link: https://www.salesforcebenefits.com."
+bb57543045bae99d,Indeed,Business Analyst / Job Req 788830863,ALAMEDA ALLIANCE FOR HEALTH,Data Analyst,in-person,Full-time,2025-04-09,2025-04-10,Alameda,CA,94502,yearly,110094.4,165131.2,110094.4,165131.2,137612.8,https://www.indeed.com/viewjob?jk=bb57543045bae99d,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"PRINCIPAL RESPONSIBILITIES:
+
+Under the general supervision of the Director, the Business Analyst performs complex business process and data analysis with internal customers to gather business requirements related to the interoperable exchange of data in structured and unstructured formats for use in identifying technology solutions and supporting system configuration to meet business and regulatory needs. This position will be the liaison between external trading partners alongside internal business and technical teams to provide technical solutions, processes, system configuration and resolutions.
+
+Principal responsibilities include:
+
+Organization expects job performance to be consistent with its vision and mission. Day-to-day work is focused on these key performance areas.
+
+  • Collaborate with internal stakeholders to gather, analyze, and document business requirements as they relate to electronic data interchange (EDI) and interoperability processes.
+
+  • Identify and analyze various user problems and make appropriate recommendations. Participate in upgrade/replacement/new implementation projects by tracking activity, resolving issues identified, reporting progress and ensuring solutions meet requirements.
+
+  • Determine operational objectives by studying business functions, gathering information, evaluating input and output requirements and formats. Improve systems by studying current practices and design modifications.
+
+  • Analyze and audit EDI current-use functionality and resulting data for best practices. This may include enrollment, claims, encounters, benefit eligibility and status transaction sets.
+
+  • Recommend technology solutions and manage vendor functionality enhancements to meet the business needs of the AAH Departments. Document those needs and the resulting changes implemented.
+
+  • Ensure that business processes and systems comply with DHCS, DMHC and CMS regulatory requirements.
+
+  • Prepare documentation for audits and regulatory reporting.
+
+  • Maintain detailed and up-to-date documentation of business processes, workflows and standard troubleshooting procedures as they relate to enrollment/eligibility, capitation preparation, member/provider portals.
+
+  • Other duties as assigned.
+
+ESSENTIAL FUNCTIONS OF THE JOB
+
+  • Keep abreast of healthcare industry best practices, system capabilities, and managed care regulatory requirements as outlined by California DHCS, DMHC and CMS
+  • Data entry, analysis, documentation, and reporting.
+  • Report and presentation development.
+  • Train staff and consult with managers, IT, and employee users.
+  • Audit, test, evaluate, and monitor results of EDI and Interoperability processes
+  • Develop and maintain materials and knowledge bases.
+  • Teambuilding: Working with internal and external customers to build integrated multi-disciplined teams.
+  • Comply with the organization’s Code of Conduct, all regulatory and contractual requirements, organizational policies, procedures, and internal controls.
+
+PHYSICAL REQUIREMENTS
+
+  • Constant and close visual work at desk or on a computer.
+  • Constant sitting and working at a desk.
+  • Constant data entry using keyboard and/or mouse.
+  • Frequent use of telephone headset.
+  • Constant verbal and written communication with staff and other business associates by telephone, correspondence, or in person.
+  • Frequent lifting of folders and other objects weighing between 0 and 30 lbs.
+  • Frequent walking and standing.
+
+Number of Employees Supervised: 0
+
+MINIMUM QUALIFICATIONS:
+
+EDUCATION OR TRAINING EQUIVALENT TO:
+
+  • Bachelor’s Degree or equivalent professional experience.
+
+MINIMUM YEARS OF ADDITIONAL RELATED EXPERIENCE:
+
+  • Two years of experience in operational healthcare or payer setting required.
+  • Two years of experience in research, analysis and/or business processes required.
+  • Three years working knowledge of process functionality and understanding of business platform(s).
+
+SPECIAL QUALIFICATIONS (SKILLS, ABILITIES, LICENSE):
+
+  • Experience with Medicaid and Medicare regulations published by the California DHCS, DMHC and CMS, and their impact to health plan processes
+  • Ability to create diagrams such as Use Cases, DFD (Data Flow Diagrams), and others.
+  • Knowledge of relational database systems, such as SQL or Microsoft.
+  • Knowledge of the theory, principles, practices and methods of system analysis.
+  • Must be able to handle competing priorities.
+  • Ability for critical thinking and communication is required.
+  • Strong interpersonal skills using clear, concise and professional verbal and written communication skills mandatory, mature judgment, and diplomacy required to interact effectively with a broad spectrum of people, both individually and in groups.
+  • Ability to prioritize daily work tasks.
+  • Ability to exercise initiative and judgment and make decisions within the scope of assigned authority.
+  • Ability to identify sources of problems and arrive at appropriate solutions.
+  • Understanding of complex systems and how they integrate and impact the entire organization.
+  • Experience in defining problems, collecting data, establishing facts, and drawing valid conclusions.
+
+SALARY RANGE: $110,094.40 - $165,131.20 Annually
+
+The Alliance is an equal opportunity employer and makes all employment decisions on the basis of merit and business necessity. We strive to have the best-qualified person in every job. The Alliance prohibits unlawful discrimination against any employee or applicant for employment based on race, color, religious creed, sex, gender, transgender status, age, sexual orientation, national origin, ethnicity, citizenship, ancestry, religion, marital status, familial status, status as a victim of domestic violence, assault or stalking, military service/veteran status, physical or mental disability, genetic information, medical condition, employees requesting accommodation of a disability or religious belief, political affiliation or activities, or any other status protected by federal, state, or local laws."
+aa93af6795187505,Indeed,Grievance and Appeals Data Analyst,Health Plan of San Mateo,Data Analyst,hybrid,Full-time,2025-04-03,2025-04-10,South San Francisco,CA,94080,hourly,33.0,40.0,68640.0,83200.0,75920.0,https://www.indeed.com/viewjob?jk=aa93af6795187505,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Provide department-specific analysis and quality assurance to the Grievance and Appeals department. This includes analyzing data and processes to identify trends related to operational or quality issues; identifying and implementing process improvements; and supporting departmental training efforts.
+
+Position overview
+
+  • Utilizes G&A data to identify trends and root causes of repeat issues brought to the G&A unit; acts as an advocate for members, summarizing insights and clearly communicating quality monitoring results to the team; clearly communicates findings from trend analysis with G&A management and other internal customer groups.
+  • Partners with team Lead and supervisor to trend and conduct thorough reviews of G&A case work in alignment with regulations, internal training, and standard operating procedures.
+  • Designs, develops and produces visualizations of data reports such as tables, graphs, and charts to support reporting and analysis.
+  • Writes parameters for all G&A reports, including all reports provided to HPSM’s regulatory bodies (i.e. Department of Health Care Services, Department of Managed Health Care, and Centers for Medicare and Medicaid Services) and governing bodies (e.g. Consumer Advisory Committee, San Mateo Health Commission).
+  • Maintains department desktop procedures, workflows, job aids and training material. Identifies barriers to work processes and brings to the attention of the Supervisor/Manager.
+  • Analyzes, creates and tests new tools and processes in order to enhance the department’s assessment and documentation processes.
+  • Develops and implements work plans for department and individual staff under the direction of the G&A Supervisor and Manager; identifies appropriate resources for tasks and develops appropriate workflows and outcomes.
+  • Identifies and helps implement staff trainings that addresss team needs, in collaboration with the Lead and Supervisor; this includes:
+  • Analyzing and providing written/verbal interpretation of data to identify new team training needs
+  • Assisting with the design of new trainings to the team
+  • Provide ongoing training and assistance to internal staff as assigned, on how to effectively process grievances and appeals to DHCS and CMS requirements
+  • Providing recommendations to support the Supervisor and Manager in creating tailored training plans for individuals.
+  • Under the direction of the G&A Supervisor and Manager, leads team preparation for audits and designated responses to regulatory agencies.
+  • Researches issues related to assigned projects, including regulatory compliance, to identify their impact on the organization.
+  • Develops and maintains collaborative relationships within the unit and inter-departmentally; collaborates with the HPSM Health Information Management (HIM) team to ensure all G&A reporting is accurate and conducts quality assurance on the data provided.
+  • Continuously evaluates processes and makes recommendations to G&A Manager for on-going process improvement, including database design and staff training.
+  • As needed, provide back-up coverage and support for other members on the team.
+
+Requirements
+
+These are the qualifications typically needed to succeed in this position. However, you don’t need to meet every requirement to apply.
+
+Education and experience
+
+  • Bachelor’s Degree preferred.
+  • 3+ years of experience in managed care and/or grievance and appeal (Healthcare environment).
+  • Medicare/Medicaid experience preferred.
+  • Subject-matter expertise in training and facilitation skills in a group/ classroom setting as well as one-on-one preferred.
+
+Knowledge of:
+
+  • Quantitative and qualitative analysis
+  • Database management, spreadsheets, relational databases, and health care compliant systems
+  • Local, state and federal health plan guidelines/regulations (including CMS, DMHC, DHCS and NCQA requirements).
+  • Personal computers and Microsoft Office Suite applications, including Outlook, Word, Excel, Access and PowerPoint.
+  • Grievance and Appeals processes and concepts in a health insurance managed care setting.
+  • Health care processes related to maintaining regulatory compliance.
+
+Ability to:
+
+  • Prioritize multiple and competing tasks, in a fast-paced and dynamic environment.
+  • Work under pressure and meet deadlines.
+  • Work both independently and in a team environment.
+  • Communicate effectively, both verbally and in writing.
+  • Analyze data and create reports by utilizing strong analytical skills with high attention to detail.
+  • Communicate effectively, with a strong emphasis on written and verbal communication.
+  • Adapt to changes in requirements/priorities for daily and specialized tasks.
+  • Exercise objectivity in all work functions and approach conflict with curiosity.
+  • Collaborate and build relationships with a variety of people as part of a cross-functional team.
+  • Demonstrate a strong customer focus and proactively find ways to exceed customer needs.
+
+Skills:
+
+  • Excellent written and oral communication skills, as well as strong interpersonal, critical thinking and analytical skills.
+  • Excellent organizational, decision-making and multi-tasking skills.
+  • Keen attention to detail.
+
+Job Type: Full-time
+
+Pay: $33.00 - $40.00 per hour
+
+Benefits:
+
+  • Dental insurance
+  • Flexible spending account
+  • Health insurance
+  • Life insurance
+  • Paid time off
+  • Professional development assistance
+  • Retirement plan
+  • Tuition reimbursement
+  • Vision insurance
+
+Schedule:
+
+  • Monday to Friday
+
+Application Question(s):
+
+  • Do you reside in California? Applicants must reside in California to apply.
+
+Experience:
+
+  • Grievance and Appeals: 4 years (Preferred)
+  • DHCS/CMS Audit Preparation: 2 years (Preferred)
+
+Work Location: Hybrid remote in South San Francisco, CA 94080"
+29860c76aafe11d8,Indeed,SAS Analyst,Katalyst Healthcares & Life Sciences,Data Analyst,in-person,Contract,2025-04-09,2025-04-10,San Francisco,CA,94015,,,,,,,https://www.indeed.com/viewjob?jk=29860c76aafe11d8,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Responsibilities:
+
+  • The Senior Statistical Analyst is a key role in the research and development of new pharmaceutical products.
+  • The primary responsibilities for this role include the analysis and reporting of clinical trial data and leading the statistical programming activities for clinical studies and projects with lower complexity.
+  • The Senior Statistical Analyst interfaces with Statistics, Data Sciences, Medical Writing, Regulatory Publishing and Clinical Operations.
+  • Leads the statistical programming activities for projects with lower complexity.
+  • Leads the statistical programming activities for studies.
+  • Develop SAS programs for the creation of ADaM data sets following
+  • CDISC standards.
+  • Develop SAS programs for the creation of Tables, Listings and Figures.
+  • Validation of ADaM data sets, Tables, Listings and Figures.
+  • Create specifications for the structure of ADaM data sets for individual studies and integrated data.
+  • Create documentation for regulatory filings including reviewers guides and data definition documents.
+  • Leads the development of standard SAS Macros and participates in the development of standard operating procedures.
+  • Provides oversight and mentoring of assigned Statistical Programmers and Statistical Analysts.
+
+Requirements:
+
+  • MS in Statistics, Computer Science or a related field with 6+ years of relevant experience. OR BS in Statistics, Computer Science or a related field with 8+ years of relevant experience.
+  • In-depth understanding of SAS programming concepts and techniques related to drug development.
+  • Fundamental understanding of CDISC Standards.
+  • Fundamental understanding of the drug development process, including experience with regulatory filings.
+  • Ability to communicate clearly both oral and written.
+  • Ability to accurately estimate effort required for study related programming activities."
+0687149ffacd1f52,Indeed,Sr. Business Intelligence Analyst - Finance,Intuitive Surgical,Data Analyst,in-person,,2025-04-10,2025-04-10,San Francisco,CA,,yearly,108600.0,183800.0,108600.0,183800.0,146200.0,https://www.indeed.com/viewjob?jk=0687149ffacd1f52,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"### Company Description
+
+At Intuitive, we are united behind our mission: we believe that minimally invasive care is life-enhancing care. Through ingenuity and intelligent technology, we expand the potential of physicians to heal without constraints.  
+As a pioneer and market leader in robotic-assisted surgery, we strive to foster an inclusive and diverse team, committed to making a difference. For more than 25 years, we have worked with hospitals and care teams around the world to help solve some of healthcare's hardest challenges and advance what is possible.  
+Intuitive has been built by the efforts of great people from diverse backgrounds. We believe great ideas can come from anywhere. We strive to foster an inclusive culture built around diversity of thought and mutual respect. We lead with inclusion and empower our team members to do their best work as their most authentic selves.  
+Passionate people who want to make a difference drive our culture. Our team members are grounded in integrity, have a strong capacity to learn, the energy to get things done, and bring diverse, real world experiences to help us think in new ways. We actively invest in our team members to support their long-term growth so they can continue to advance our mission and achieve their highest potential.  
+Join a team committed to taking big leaps forward for a global community of healthcare professionals and their patients. Together, let's advance the world of minimally invasive care.
+
+###  Job Description
+
+Primary Function of Position The Senior Business Intelligence Analyst – Finance will play a key role in the Finance Analytics function at Intuitive. The primary responsibilities of this team are to:
+
+  • Develop and execute on analytics roadmaps
+  • Generate better, more accurate, and more prescriptive insights
+  • Create measurable value for our internal teams and our customers
+
+This position will serve as the primary point of contact for all analytics requests from our global FP&A and Corporate Accounting departments. The successful candidate will work closely with department leaders to leverage analytics to expand capacity and better enable our world-class Finance organization. The right person for the job will apply their knowledge of data analysis to solving real-world problems faced by our company and finding opportunities for improvement across multiple projects and teams.
+
+Essential Job Duties 
+
+  • Provide analytical services and tools to the FP&A and Corporate Accounting functions to improve insights and productivity.
+  • Standardize & automate routine processes using data & reporting.
+  • Partner with IT, Enterprise Analytics, & Finance business process owners to prioritize & execute on critical analytics initiatives.
+  • Assist in architecting and socializing new data sets to serve the FP&A and Corporate Accounting functions.
+  • Practice good data and reporting governance & help improve overall master data integrity.
+  • Present insights and recommendations to Finance executive management for decision-making and strategic planning.
+  • Provide additional ad hoc analytics capacity to serve the CFO and SVP of Finance.
+
+###  Qualifications
+
+Required Skills and Experience
+
+  • Proficient SQL & Tableau skills (technical exercise included as part of interview process)
+  • High capacity with the ability to plan, manage, & execute upon numerous processes and projects simultaneously
+  • Proficient analytical and critical thinking skills 
+    • Solution-oriented
+    • Excellent written and verbal communication skills
+
+Required Education and Training
+
+  • Bachelor’s degree required in a finance or quantitative field; Master’s in Analytics or Data Science preferred
+  • 4+ years of experience in a highly analytical role; Prior FP&A or Accounting experience a strong plus
+
+This job is On-site in Sunnyvale, CA, 3 days weekly.  
+
+Working Conditions 
+
+  • None
+
+Preferred Skills and Experience 
+
+  • Other programming languages (Python, R)
+  • Intellectual curiosity with a passion for continuous improvement and process automation
+  • Ability to tailor technical solutions to non-technical stakeholders
+  • Knowledge of finance related business processes and internal controls
+
+###  Additional Information
+
+Due to the nature of our business and the role, please note that Intuitive and/or your customer(s) may require that you show current proof of vaccination against certain diseases including COVID-19. Details can vary by role.
+
+Intuitive is an Equal Opportunity Employer. We provide equal employment opportunities to all qualified applicants and employees, and prohibit discrimination and harassment of any type, without regard to race, sex, pregnancy, sexual orientation, gender identity, national origin, color, age, religion, protected veteran or disability status, genetic information or any other status protected under federal, state, or local applicable laws.
+
+Mandatory Notices
+
+We will consider for employment qualified applicants with arrest and conviction records in accordance with fair chance laws.
+
+Preference will be given to qualified candidates who do not reside, or plan to reside, in Alabama, Arkansas, Delaware, Florida, Indiana, Iowa, Louisiana, Maryland, Mississippi, Missouri, Oklahoma, Pennsylvania, South Carolina, or Tennessee.
+
+We provide market-competitive compensation packages, inclusive of base pay, incentives, benefits, and equity. It would not be typical for someone to be hired at the top end of range for the role, as actual pay will be determined based on several factors, including experience, skills, and qualifications. The target salary ranges are listed.
+
+Base Salary Range Region 1:$127,800 - $183,800  
+Base Salary Range Region 2: $108,600 - $156,200  
+Shift: Day  
+Travel: 10% of the time  
+Workplace Type: Set Schedule - This job will be onsite weekly, the percentage of onsite work will be defined by the leader."
+0dae8c3feb8424ef,Indeed,Senior Data Governance Analyst,Uber,Data Analyst,in-person,Full-time,2025-04-09,2025-04-10,San Francisco,CA,,yearly,133000.0,148000.0,133000.0,148000.0,140500.0,https://www.indeed.com/viewjob?jk=0dae8c3feb8424ef,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"About the Role   
+
+As we build Uber's Delivery Commercial Operations team, we are looking for a Senior Data Governance/Quality Analyst to break down complex problems cross-functionally and drive incremental & strategic value to business teams. The focus of the role will be on expanding a Data Governance program to establish a more unified data strategy as we execute digital transformations to improve systems scalability & sustainability.   
+
+In the role, you will focus on the global business priorities across Uber Delivery's Salesforce Data Governance program. Your objective will be to standardize best data capabilities globally w/ automation & business intelligence. Your day-to-day will be to work with a program manager and help to solve complex business data challenges from strategy to implementation.   
+
+The Delivery Commercial Operations team's mission is simply Commercial Excellence,"" focused on scalable and sustainable systems & data infrastructure to drive insights & establish governance with our Salesforce instance for Uber Delivery.   
+
+What You'll Do   
+
+As the Senior Data Governance/Quality Analyst you will demonstrate the ability to self-manage complex governance projects, build the data governance business case for the stakeholders, implementation roadmap, and success metrics. You will support the Data Governance Manager. 
+
+  • scope & prioritize data requirements, design intelligent dashboard & systems alerts, connect cross-functionally with business & tech teams
+  • gather data improvement initiatives across sales systems teams, regional operations teams, cross-functional product teams, and the IT engineering team
+  • build pre-work data standard templates to be used across various sales systems projects to gather data requirements
+  • ensure and monitor business value creation for the data governance program
+  • apply data governance frameworks and best practices and processes to the data assets
+  • implement the Data Governance operating model that includes designing Data Governance organization, roles and responsibilities, and success metrics
+
+Basic Qualifications
+
+  • A minimum of four years of experience working in consulting, sales operations, or program management
+  • At least two years of work experience in strategy through execution of data governance or data quality projects
+  • Familiarity with Salesforce concepts such as CPQ/CLM, Account Hierarchies, etc.
+  • Familiarity with Information lifecycle concepts such as presales, acquisition, and expansion within commercial operations
+  • Experience with process documentation and building standard operating procedures
+  • Ability to communicate efficiently with different stakeholders with clarity
+  • Understanding of complex data hierarchies and relationships e.g. account and opportunity hierarchies, legal entity structures, etc.
+  • Understanding of data management concepts such as data profiling, data deduplication, data enrichment, data archival, etc.
+  • Bachelors Degree
+
+Preferred Qualifications
+
+  • Understanding and experience with one or more of the following or equivalent data governance and data quality technologies - Informatica, Collibra
+  • Designing and developing Data Governance technology solutions that include data dictionary & business glossaries, data standards and policies; data lineage and catalogs
+  • Creating detailed documentation related to Data Governance processes and policies
+  • Having familiarity with compliance areas is a plus e.g. Contracts Management, Product and Asset Management, SOX regulations, and building compliance processes
+  • Understanding of SFDC data architecture and data integration patterns, identifying and prioritizing critical data elements across SFDC objects, Data Quality Processes and KPIs, metadata management
+  • Have familiarity with data profiling, data discovery, data quality dimensions
+  • Understanding of enterprise data concepts such as Master Data Management and Enterprise Data Warehouse, experience with MDM standards
+  • Understanding or knowledge of SQL, build DG metrics visualization using tools such as Tableau or Power BI
+Train the stakeholder team on foundational processes and activities to bring data under governance 
+
+For New York, NY-based roles: The base salary range for this role is USD$133,000 per year - USD$148,000 per year. For San Francisco, CA-based roles: The base salary range for this role is USD$133,000 per year - USD$148,000 per year. For Sunnyvale, CA-based roles: The base salary range for this role is USD$133,000 per year - USD$148,000 per year. For all US locations, you will be eligible to participate in Uber's bonus program, and may be offered an equity award & other types of comp. You will also be eligible for various benefits. More details can be found at the following link https://www.uber.com/careers/benefits."
+f6353c81e81ff471,Indeed,Trust & Safety Analyst,OpenAI,Data Analyst,hybrid,Full-time,2025-04-10,2025-04-10,San Francisco,CA,,yearly,180000.0,235000.0,180000.0,235000.0,207500.0,https://www.indeed.com/viewjob?jk=f6353c81e81ff471,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"About the Team   
+
+At OpenAI, our Trust & Safety operations are central to protecting OpenAI’s platform and users from abuse. We serve a diverse customer base, ranging from individual users and early-stage startups to global enterprises, across ChatGPT and our API (and beyond!). Operating within our Support organization, our team works closely with Product, Engineering, Legal, Policy, Go To Market and Operations teams to ensure we're delivering the best possible experience to our users at scale while keeping OpenAI and users safe.   
+
+About the Role   
+
+We are looking for experienced Trust & Safety Analysts to collaborate closely with internal teams to ensure safety and compliance on OpenAI platforms. You will be a stakeholder in the design and implementation of policies, processes, and automated systems to take action against bad actors and minimize abuse at scale, handle high risk & high visibility customer cases with care, and build feedback loops to improve our trust & safety policies and detection systems. Ideally, you have worked in a high-paced startup environment, have handled a breadth of integrity related issues of varying sensitivity and complexity, and are comfortable with building processes and systems from zero to one.   
+
+Please note: This role may involve handling sensitive content, including material that may be highly confidential, sexual, violent, or otherwise disturbing.   
+
+This role is based in San Francisco, CA. We use a hybrid work model of 3 days in the office per week and offer relocation assistance to new employees.   
+
+In this role you will:  
+Support new launches   
+
+by partnering with Product and Policy teams to stand up safety workflows, tooling, and vendor programs ahead of release.   
+
+Interpret and apply usage policies   
+
+to complex scenarios, providing clear guidance to customers and internal teams, and capturing edge cases to refine the policy set.   
+
+Own high‑stakes escalations   
+
+—investigate quickly, coordinate across Legal, Compliance, and Engineering, and drive incidents to resolution with minimal noise.   
+
+Build and scale processes   
+
+for human‑in‑the‑loop labeling, user reporting & content moderation, appeals, and other trust workflows—always with quality as the North Star.   
+
+Analyze data for trends   
+
+and create tight feedback loops that inform detection models, product features, and policy updates.   
+
+Advance moderation quality   
+
+by defining KPIs, setting up QA programs, and iterating on reviewer training and tooling.   
+
+Equip internal & external teams   
+
+with playbooks, SOPs, and hands‑on training that deepen their understanding of our systems and safety philosophy.   
+
+Serve as escalation POC   
+
+for high‑complexity cases, acting as the nexus between product, compliance, legal, ops, and customer‑facing teams.   
+
+You might thrive in this role if you:  
+Build for scale.   
+
+You’ve taken operations from zero to one while keeping the quality bar‑high.   
+
+Bring   
+
+5+ years in Trust & Safety, integrity, or compliance ops   
+
+, including hands‑on experience with content moderation and vendor management.   
+
+Combine   
+
+strong analytical skills   
+
+with the ability to communicate nuanced, technical issues to both engineers and non‑technical stakeholders.   
+
+Have   
+
+proven program‑management skills   
+
+: you prioritize ruthlessly, juggle multiple launches, and bias toward action.   
+
+Are   
+
+comfortable in ambiguity   
+
+and energized by solving novel problems in a fast‑moving, startup‑style environment.   
+
+Maintain a   
+
+humble, collaborative attitude   
+
+and a willingness to learn whatever is needed to help your team and our users succeed.   
+
+About OpenAI   
+
+OpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. We push the boundaries of the capabilities of AI systems and seek to safely deploy them to the world through our products. AI is an extremely powerful tool that must be created with safety and human needs at its core, and to achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity.   
+
+We are an equal opportunity employer and do not discriminate on the basis of race, religion, national origin, gender, sexual orientation, age, veteran status, disability or any other legally protected status.   
+
+OpenAI Affirmative Action and Equal Employment Opportunity Policy Statement   
+
+For US Based Candidates: Pursuant to the San Francisco Fair Chance Ordinance, we will consider qualified applicants with arrest and conviction records.   
+
+We are committed to providing reasonable accommodations to applicants with disabilities.   
+
+OpenAI Global Applicant Privacy Policy   
+
+At OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.   
+
+Compensation   
+
+$180K – $235K"
+8b81d59f8b7964bd,Indeed,IT Helpdesk Analyst,Obayashi Corporation,Data Analyst,in-person,,2025-04-10,2025-04-10,Foster City,CA,94404,yearly,76806.0,91306.0,76806.0,91306.0,84056.0,https://www.indeed.com/viewjob?jk=8b81d59f8b7964bd,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"OBAYASHI CORPORATION is seeking an IT Helpdesk Analyst who will act as a critical hub for end users to access information and support in all areas of technology. This position shall act as SME and primary user of the company’s IT ticketing system to track all technology incidents and requests.
+
+RESPONSIBILITIES:
+
+  • Manage help desk ticket queue (incidents and requested items), adhering to department’s Service Level Agreements.
+  • Provide onsite and remote desktop support for end users (phone, chat, IM, Microsoft Teams, and remote desktop software).
+  • Create and maintain end-user self-help Knowledge Base articles.
+  • Educate end users by walking them through problem-solving processes, so that they can resolve on their own in the future.
+  • Provide mobile devices and VoIP, hardware, and software maintenance &upkeep troubleshooting, respectively.
+  • Set up laptops, desktop computers, mobile devices, and computer peripherals for users.
+  • Network Infrastructure maintenance (troubleshooting and upgrade support for LAN/WAN devices).
+  • Maintain best practices and procedures for patch management, malware mitigation, security principles, and operating system upgrades.
+  • Manage IT Assets in Asset management system
+  • Manage entire laptop and desktop lifecycle from imaging, repairs, offboarding, and disposition.
+
+#### REQUIREMENTS:
+
+  • A college degree, technical school certificate, military experience, or equivalent experience is required.
+  • Industry certifications a plus.
+  • Minimum three years of experience in the following:
+  • Windows Help Desk role supporting 50+ local and remote users.
+  • Proficiency with managing users and PCs in Active Directory, Microsoft Entra and Microsoft 365 Admin Center.
+  • Deploying, supporting, and managing Windows OS, iOS, Microsoft Office, mobile devices, cloud-based apps, and common mainstream desktop apps, with a focus on supporting end users.
+  • Administering user accounts in cloud technologies such as Microsoft O365, Azure, One Drive, and SharePoint Online, etc.
+  • A working understanding of:
+  • Networking - WAN, LAN, OSI Model, Palo Alto Network, Cisco/Meraki, VoIP, DNS, mail routing protocols, TCP/IP layers, and VPN.
+  • Computer - Windows OS server (>2016) & Desktop OS (Windows 11, Apple OS & iOS).
+  • Storage - Cloud-based storage, Storage Networks, and File Systems (NTFS, exFat, APFS).
+  • Industry certifications in technology a big plus (MCSE, MCSA, CCNA, CCNP, ITIL, VCP6).
+  • Ability to work independently as required, collaborate in a team environment (IT projects), manage expectations, analyze data, and manage internal and external relationships.
+  • Excellent written and verbal communication, along with strong interpersonal skills.
+  • Focused approach to customer support.
+  • Possess a high level of attention to detail and quality, strong administrative and organizational skills.
+  • Agile, enthusiastic learner with demonstrated ability to manage tasks effectively and efficiently.
+
+ANTICIPATED SALARY RANGE: $76,806 - $91,306 USD / yr
+
+In accordance with California state law, Obayashi Corporation is committed to providing clear and transparent information regarding the compensation for this position. The final salary offered will be based on various factors, including the candidate’s qualifications, experience, skills, and relevant market considerations. This salary range reflects what we reasonably expect to pay for this role within California. Compensation in other states may vary based on local market conditions and applicable regulations. We strive to offer competitive and fair compensation across all locations.
+
+BENEFITS: 
+
+Obayashi Offers Competitive Market Salaries and a Benefits Package including:
+
+  • Medical PPO Plan and HDHP
+  • Dental DPO Plan
+  • Vision Insurance
+  • Employee Assistance Program
+  • Life Insurance
+  • Disability Insurance
+  • Health Savings Account
+  • Flexible Spending Account
+  • Disability Insurance
+  • Paid Holidays
+  • Paid Sick Leave
+  • Paid Time Off
+  • 401(k) Plan Matching
+
+Employee benefits are 100% covered by Obayashi and family coverage is covered at 80%.
+
+About Obayashi
+
+Obayashi Corporation has delivered quality solutions to infrastructure challenges across the globe for more than 130 years. Founded in 1892, Obayashi is the largest Japanese Contractor and the fourth-largest International Contractor conducting business in the United States. Obayashi has been operating and completing projects in the United States since 1979. Obayashi provides a full range of general contractor services in both public works and private sectors including: office buildings, residences, tunnels, highways, rail systems, bridges, artificial islands, airports and nuclear power plants. Other services include urban planning and architecture, real estate and property development, environmental, and waste services. The North American Operations consolidated revenue is over $3 billion in the United States and Canada.
+
+Equal Opportunity Employer
+
+Obayashi Corporation is an equal opportunity employer and makes employment decisions on the basis of merit. We want to have the best available persons in every job. Company policy prohibits unlawful discrimination based on race, color, creed, gender, religion, marital status, registered domestic partner status, age, national origin or ancestry, physical or mental disability, medical condition including genetic characteristics, sexual orientation, or any other consideration made unlawful by federal, state, or local laws. It also prohibits unlawful discrimination based on the perception that anyone has any of those characteristics, or is associated with a person who has or is perceived as having any of those characteristics. The Company is committed to compliance with all applicable laws providing equal employment opportunities. This commitment applies to all persons involved in Company operations and prohibits unlawful discrimination by any employee of the Company, including supervisors and coworkers.
+
+To comply with applicable laws ensuring equal employment opportunities to qualified individuals with a disability, the Company will make reasonable accommodations for the known physical or mental limitations of an otherwise qualified individual with a disability who is an applicant or an employee unless undue hardship would result. If you need accommodation to complete the application process, please contact the Human Resources Department by either visiting Obayashi Corporation at 950 Tower Lane, Ste 800, Foster City, CA 94404 or call (650) 952-4910."
+053e36053f86bad4,Indeed,"Northern California New Business Analyst, Growth Operations",Aon Corporation,Data Analyst,hybrid,Full-time,2025-04-03,2025-04-10,San Francisco,CA,94105,yearly,60000.0,80000.0,60000.0,80000.0,70000.0,https://www.indeed.com/viewjob?jk=053e36053f86bad4,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Posting Description: 
+
+Northern California New Business Analyst, Growth Operations
+
+The U.S. Commercial Risk and Health New Business Analyst (“NBA”) will work primarily with U.S. Commercial Risk and Health Sales to operationalize a growth strategy and measure new business activities in U.S. Commercial Risk and Health office(s). The NBA will report directly to the North American Sales Operations team with secondary reporting requirements to the local Resident Sales Director (“RSD”). The directive of the NBA is to operationalize a process and drive a strategy that contributes to measurable growth across all Aon Solution Lines with a focus on Commercial Risk and Health Solutions.
+
+This is a hybrid role with the flexibility to work virtually and from our San Francisco, CA office.
+
+Aon is in the business of better decisions
+
+At Aon, we shape decisions for the better to protect and enrich the lives of people around the world. 
+
+As an organization, we are united through trust as one inclusive, diverse team, and we are passionate about helping our colleagues and clients succeed. 
+
+What the day will look like
+
+Key Areas of Responsibility 
+
+New Business Implementation & Support: 
+
+  • Participate in National, Regional and working group calls with National Sales Operations and other New Business Analysts
+  • Partner with RSD to identify the appropriate new business initiatives to activate in the local office, primarily with the Producers and Account Executives (Sales Team)
+  • Participate in meetings with the Sales Team to develop prospect identification and client penetration strategies
+  • Develop and distribute revenue, client acquisition activity, and benchmark reports (e.g., Local Market Analytics, Heat Map) that provide regional and local leadership with the supportive analytics need to implement strategic goals
+  • Provide strategic guidance and operational support to local leadership in the adoption and implementation of U.S. Commercial Risk and Health Sales strategy; to include (not limited to) strategic valuation, collateral and implementation timeline
+  • Provide strategic guidance and operational support to U.S. Retail Marketing and U.S. Sales Operations to ensure all leads are assigned. Follow up on assigned leads to determine opportunity status
+  • At the direction of the Sales Team, research prospects and clients, using analyst reports, SEC reports, Yahoo! Finance, and related sources of information, to identify prospect- and client-specific risk profile information
+  • Identify with the Sales Team ideal prospects and clients for marketing campaigns; working cooperatively with Marketing assets to populate Aon Connect (“AC”)
+  • Execute national sales initiatives at the local level; including, industry, product, cross-sell and named account strategies as directed by U.S. Commercial Risk and Health Sales
+  • Coordinate annual business planning and goal allocation process with local office leadership and National Sales Effectiveness team
+
+New Business Revenue Tracking & Measuring: 
+
+  • Partner with Regional and National Sales Operations to build and deliver consistent pipeline and financial reporting
+  • Prepare revenue and pipeline composition analytics for office sales meeting and monthly forecast calls
+  • Develop and maintain pipeline composition reporting functionalities that reflect forecasted and ultimately recognized sales revenue, working closely with U.S. Finance to maintain accurate revenue pipelines to reconcile opportunity valuation
+  • Collaborate with sales and marketing colleagues to review marketing campaign effectiveness reports and recommend actions locally that will improve effectiveness
+  • Collaborate with local marketers to ensure delivery of local events
+  • Ensure the Office and Individual Sales Plan, including Quarterly Producer Assessment reporting is completed on time and accurate
+  • Provide operational assistance and strategic analysis to Sales Team and Pursuit and Creative Team (PaC) for prospect and client presentations
+  • Provide operational support to the RSD and RMD by providing revenue analyses to include valuation of individual and office performance to goal, office sales and marketing statistics (e.g., Client Promise results, prospecting Activity, wins and losses, deal size, and sales cycle in general and by product and industry, using AC, the Sales Effectiveness Report), resource identification, and follow-up communication, including any resource documents.
+
+Aon Connect Management and Administration: 
+
+  • Serve as the office AC expert for support of AC users, including: 
+    • AC training and licensing of new producer and AE hires and ongoing training of the Sales Team including training on Client Survey Feedback and Jeopardy reporting in AC as needed
+    • Coordinate with AC leadership on AC enhancement requests and functional issues
+    • Participate in AC national support team
+
+How this opportunity is different
+
+This is a great opportunity to work with a dynamic team right in the heart of San Francisco. As a member of the Growth Operations team, you will partner with Sales Director, Producers and Account Executives to collaborate on our go-to-market strategies and reporting on key performance indicators. We are an inclusive workplace that values diversity. 
+
+Skills and experience that will lead to success
+
+  • Passionate self-starter who can juggle multiple projects, follow-up and exhibit creative problem solving – ultimately delivering projects and assignments on target and on time within a fast-paced environment
+  • Strong ability to work closely with various cross functional groups, specifically with the Director of Marketing, Regional/Resident Sales Director, RMD, Producers and AEs in the office, as well as with Industry/Practice Leaders and National Sales Effectiveness Team
+  • A creative thinker who brings innovative ideas, new perspectives and a wealth of enthusiasm
+  • Excellent verbal and written communication skills, organizational skills and relationship skills
+  • Process-oriented person who can provide a clear, complete analysis that support sales efforts, resulting in revenue win for the company
+  • Excellent Microsoft Office skills (Excel, PPT, Word, etc.).
+  • Familiarity with Customer Relationship Management Systems (CRM) and marketing automation systems (i.e. Eloqua)
+  • A minimum of 2+ years of research experience or related formal training.
+
+Education
+
+  • Bachelor’s degree in Business or related major
+
+Pay Transparency
+
+The salary range for this position (intended for U.S. applicants) is $60,000 - $80,000 annually. The actual salary will vary based on applicant’s education, experience, skills, and abilities, as well as internal equity and alignment with market data. The salary may also be adjusted based on applicant’s geographic location. 
+
+This position is eligible to participate in one of Aon’s annual incentive plans to receive an annual discretionary bonus in addition to base salary. The amount of any bonus varies and is subject to the terms and conditions of the applicable incentive plan. 
+
+How we support our colleagues
+
+Aon offers a comprehensive package of benefits for full-time and regular part-time colleagues, including, but not limited to: a 401(k) savings plan with employer contributions; an employee stock purchase plan; consideration for long-term incentive awards at Aon’s discretion; medical, dental and vision insurance, various types of leaves of absence, paid time off, including 12 paid holidays throughout the calendar year, 15 days of paid vacation per year, paid sick leave as provided under state and local paid sick leave laws, short-term disability and optional long-term disability, health savings account, health care and dependent care reimbursement accounts, employee and dependent life insurance and supplemental life and AD&D insurance; optional personal insurance policies, adoption assistance, tuition assistance, commuter benefits, and an employee assistance program that includes free counseling sessions. Eligibility for benefits is governed by the applicable plan documents and policies. 
+
+In addition to our comprehensive benefits package, we encourage an inclusive workforce. Plus, our agile environment allows you to manage your wellbeing and work/life balance, ensuring you can be your best self at Aon. Furthermore, all colleagues enjoy two “Global Wellbeing Days” each year, encouraging you to take time to focus on yourself. We offer a variety of working style solutions for our colleagues as well. 
+
+Our continuous learning culture inspires and equips you to learn, share and grow, helping you achieve your fullest potential. As a result, at Aon, you are more connected, more relevant, and more valued. 
+
+Aon values an innovative and inclusive workplace where all colleagues feel empowered to be their authentic selves. Aon is proud to be an equal opportunity workplace. 
+
+Aon provides equal employment opportunities to all employees and applicants for employment without regard to race, color, religion, creed, sex, sexual orientation, gender identity, national origin, age, disability, veteran, marital, domestic partner status, or other legally protected status. People with criminal histories are encouraged to apply. 
+
+We welcome applications from all and provide individuals with disabilities with reasonable adjustments to participate in the job application, interview process and to perform essential job functions once onboard. If you would like to learn more about the reasonable accommodations we provide, email ReasonableAccommodations@Aon.com 
+
+For positions in San Francisco and Los Angeles, we will consider for employment qualified applicants with arrest and conviction record in accordance with local Fair Chance ordinances. 
+
+Aon is not accepting unsolicited resumes from search firms for this position. If you are a search firm, you will not be compensated in any way for your submission of a candidate, even if Aon hires that candidate.
+
+Nothing in this job description restricts management's right to assign or reassign duties and responsibilities to this job at any time. 
+
+#LI-DD1  
+#LI-HYBRID"
+66226c53cbd87d6b,Indeed,Grievance and Appeals Quality Analyst,Health Plan of San Mateo,Data Analyst,remote,Full-time,2025-04-08,2025-04-10,South San Francisco,CA,94080,hourly,33.32,42.8,69305.6,89024.0,79164.8,https://www.indeed.com/viewjob?jk=66226c53cbd87d6b,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Provide department-specific analysis and quality assurance to the Grievance and Appeals department. This includes analyzing data and processes to identify trends related to operational or quality issues; identifying and implementing process improvements; and supporting departmental training efforts.   
+
+Position overview   
+
+  • Utilizes G&A data to identify trends and root causes of repeat issues brought to the G&A unit; acts as an advocate for members, summarizing insights and clearly communicating quality monitoring results to the team; clearly communicates findings from trend analysis with G&A management and other internal customer groups.
+  • Partners with team Lead and supervisor to trend and conduct thorough reviews of G&A case work in alignment with regulations, internal training, and standard operating procedures.
+  • Designs, develops and produces visualizations of data reports such as tables, graphs, and charts to support reporting and analysis.
+  • Writes parameters for all G&A reports, including all reports provided to HPSM’s regulatory bodies (i.e. Department of Health Care Services, Department of Managed Health Care, and Centers for Medicare and Medicaid Services) and governing bodies (e.g. Consumer Advisory Committee, San Mateo Health Commission).
+  • Maintains department desktop procedures, workflows, job aids and training material. Identifies barriers to work processes and brings to the attention of the Supervisor/Manager.
+  • Analyzes, creates and tests new tools and processes in order to enhance the department’s assessment and documentation processes.
+  • Develops and implements work plans for department and individual staff under the direction of the G&A Supervisor and Manager; identifies appropriate resources for tasks and develops appropriate workflows and outcomes.
+  • Identifies and helps implement staff trainings that addresss team needs, in collaboration with the Lead and Supervisor; this includes:
+  • Analyzing and providing written/verbal interpretation of data to identify new team training needs
+  • Assisting with the design of new trainings to the team
+  • Provide ongoing training and assistance to internal staff as assigned, on how to effectively process grievances and appeals to DHCS and CMS requirements
+  • Providing recommendations to support the Supervisor and Manager in creating tailored training plans for individuals.
+  • Under the direction of the G&A Supervisor and Manager, leads team preparation for audits and designated responses to regulatory agencies.
+  • Researches issues related to assigned projects, including regulatory compliance, to identify their impact on the organization.
+  • Develops and maintains collaborative relationships within the unit and inter-departmentally; collaborates with the HPSM Health Information Management (HIM) team to ensure all G&A reporting is accurate and conducts quality assurance on the data provided.
+  • Continuously evaluates processes and makes recommendations to G&A Manager for on-going process improvement, including database design and staff training.
+  • As needed, provide back-up coverage and support for other members on the team.
+
+Requirements   
+These are the qualifications typically needed to succeed in this position. However, you don’t need to meet every requirement to apply.   
+Education and experience   
+
+  • Bachelor’s Degree preferred.
+  • 3+ years of experience in managed care and/or grievance and appeal (Healthcare environment).
+  • Medicare/Medicaid experience preferred.
+  • Subject-matter expertise in training and facilitation skills in a group/ classroom setting as well as one-on-one preferred.
+
+Knowledge of:  
+
+  • Quantitative and qualitative analysis
+  • Database management, spreadsheets, relational databases, and health care compliant systems
+  • Local, state and federal health plan guidelines/regulations (including CMS, DMHC, DHCS and NCQA requirements).
+  • Personal computers and Microsoft Office Suite applications, including Outlook, Word, Excel, Access and PowerPoint.
+  • Grievance and Appeals processes and concepts in a health insurance managed care setting.
+  • Health care processes related to maintaining regulatory compliance.
+
+Ability to:  
+
+  • Prioritize multiple and competing tasks, in a fast-paced and dynamic environment.
+  • Work under pressure and meet deadlines.
+  • Work both independently and in a team environment.
+  • Communicate effectively, both verbally and in writing.
+  • Analyze data and create reports by utilizing strong analytical skills with high attention to detail.
+  • Communicate effectively, with a strong emphasis on written and verbal communication.
+  • Adapt to changes in requirements/priorities for daily and specialized tasks.
+  • Exercise objectivity in all work functions and approach conflict with curiosity.
+  • Collaborate and build relationships with a variety of people as part of a cross-functional team.
+  • Demonstrate a strong customer focus and proactively find ways to exceed customer needs.
+
+Skills:  
+
+  • Excellent written and oral communication skills, as well as strong interpersonal, critical thinking and analytical skills.
+  • Excellent organizational, decision-making and multi-tasking skills.
+  • Keen attention to detail.
+
+Benefits   
+
+Excellent benefits package includes:  
+
+  • HPSM-paid premiums for employee’s medical, dental and vision coverage (employee pays 10% of each dependent’s premiums)
+  • Fully paid life, AD&D and LTD insurance
+  • Retirement plan (HPSM contributes equivalent of 10% of annual compensation)
+  • 12 paid holidays a year, 12 paid sick days a year and paid vacation starting at 16 days a year
+  • Tuition reimbursement plan
+  • Employee wellness program
+
+It is HPSM's policy to provide equal employment opportunity for all applicants and employees. HPSM does not unlawfully discriminate based on race, religion, color, national origin, ancestry, physical disability, mental disability, medical condition, marital status, sex, age, sexual orientation, veteran status, registered domestic partner status, genetic information, gender, gender identity, gender expression, or any other characteristic protected by applicable federal, state, or local law. HPSM also prohibits discrimination based on the perception that an applicant or employee has any of those characteristics or is associated with a person who has or is perceived to have any of those characteristics."
+5fc4ca39132790cd,Indeed,Lead OneStream Analyst,LiveRamp,Data Analyst,in-person,Full-time,2025-04-09,2025-04-10,San Francisco,CA,,yearly,128500.0,203000.0,128500.0,203000.0,165750.0,https://www.indeed.com/viewjob?jk=5fc4ca39132790cd,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"LiveRamp is the data collaboration platform of choice for the world’s most innovative companies. A groundbreaking leader in consumer privacy, data ethics, and foundational identity, LiveRamp is setting the new standard for building a connected customer view with unmatched clarity and context while protecting precious brand and consumer trust. LiveRamp offers complete flexibility to collaborate wherever data lives to support the widest range of data collaboration use cases—within organizations, between brands, and across its premier global network of top-quality partners. 
+
+Hundreds of global innovators, from iconic consumer brands and tech giants to banks, retailers, and healthcare leaders turn to LiveRamp to build enduring brand and business value by deepening customer engagement and loyalty, activating new partnerships, and maximizing the value of their first-party data while staying on the forefront of rapidly evolving compliance and privacy requirements. 
+
+We are seeking a highly skilled and detail-oriented Lead OneStream Analyst to join our Business Technology (BT) team to support our OneStream implementation and maintain the product post-implementation. 
+
+You will: 
+
+  • Solution Implementation, Design and Development 
+
+    • Understand LiveRamp’s financial objectives and ensure those objectives underpin all design decisions made in the implementation 
+
+    • During implementation, serve as LiveRamp’s SME on OneStream functionality, working with our implementation partner to ensure that optimal design, configuration and modeling decisions are made 
+
+    • Provide input into the design of complex business rules, calculations, data integrations, and financial models 
+
+    • Analyze data, define source-to-target mapping, read data models and data mining and data profiling and use this analysis to inform system and model design and ensure accurate data conversion 
+
+    • Provide input and guidance into the design of dashboards and reporting, with a focus on enabling business users to obtain the data they need directly from the tool 
+
+    • Participate in all phases of testing through the implementation, including providing input into test scenarios 
+
+  • Application Maintenance & Support 
+
+    • Develop and maintain business rules, calculations, and data integration processes within OneStream and ACM 
+
+    • Provide ongoing support and maintenance for existing OneStream applications 
+
+    • Troubleshoot and resolve technical issues related to OneStream functionalities 
+
+    • Analyze data, define source-to-target mapping, read data models and data mining and conduct data profiling 
+
+    • Manage user access and security settings, ensuring appropriate permissions are in place 
+
+    • Assist business users with the creation of report and dashboards that deliver the data sets they need to execute their work 
+
+    • Oversee data integration processes, ensuring accurate and timely data flow between OneStream and other financial systems 
+
+  • Continuous Improvement 
+
+    • Keep abreast of the latest OneStream features and industry best practices and collaborate with FP&A stakeholders to develop roadmaps to ensure we are maximizing value realization from the tool 
+
+    • Identify opportunities for process improvements and automation within OneStream 
+
+    • Participate in knowledge-sharing activities and contribute to the development of best practices within the team 
+
+    • Create and maintain a backlog of user stories that are reviewed, prioritized and delivered in agile ways of working 
+
+About you: 
+
+  • Are an expert in designing enterprise performance management (EPM) tools 
+
+  • Have an analytical mind with the ability to consume large amounts of data and extrapolate it into business insights 
+
+  • Have 10+ years 
+
+    • serving as the conduit between the business and technology teams to synthesize business requirements and outcomes and design software solutions that will enable those outcomes 
+
+    • designing and configuring EPM tools 
+
+    • facilitating user acceptance testing 
+
+    • deciding when to release new features 
+
+    • assisting the business with communications content 
+
+  • 2+ years of hands-on configuration or development experience with OneStream 
+
+  • Have excellent communication and interpersonal skills; effective at listening to, understanding and clarifying concerns and issues raised by colleagues, with a deep sense of humility and openness to the perspectives of others 
+
+  • Understand the importance of maintaining confidential information 
+
+  • Are able to work well in a hyper-growth, fast-paced environment 
+
+  • Approach problems with an innovative and curious mindset, always looking for new and better ways to make people better at their workKnowledge of financial and accounting principles 
+
+Preferred Skills: 
+
+  • Certification in OneStream or related financial systems 
+
+  • Familiarity with programming languages such as SQL, VB.NET, or C#. 
+
+Note: This job description is intended to convey the scope of the job and the general nature and level of work performed by job holders within this job. It is not intended to be an exhaustive list of qualifications, skills, efforts, duties, responsibilities or working conditions associated with the role. 
+
+Benefits: 
+
+  • People: Work with talented, collaborative, and friendly people who love what they do. 
+
+  • Fun: We host in-person and virtual events such as game nights, happy hours, camping trips, and sports leagues. 
+
+  • Work/Life Harmony: Flexible paid time off, paid holidays, options for working from home, and paid parental leave. 
+
+  • Comprehensive Benefits Package: LiveRamp offers a comprehensive benefits package designed to help you be your best self in your personal and professional lives. Our benefits package offers medical, dental, vision, life and disability, an employee assistance program, voluntary benefits as well as perks programs for your healthy lifestyle, career growth and more. 
+
+  • Savings: Our 401K matching plan—1:1 match up to 6% of salary—helps you plan ahead. Also Employee Stock Purchase Plan - 15% discount off purchase price of LiveRamp stock (U.S. LiveRampers) 
+
+  • RampRemote: A comprehensive office equipment and ergonomics program—we provide you with equipment and tools to be your most productive self, no matter where you're located 
+
+  • Location: work in the heart of San Francisco and/or from home 
+
+More about us: 
+
+LiveRampers are empowered to live our values of committing to shared goals and operational excellence. Connecting LiveRampers to new ideas and to one another is one of our guiding principles—one that informs how we hire, train, and grow our global teams across nine countries and four continents. By continually building inclusive, high belonging teams, LiveRampers can deliver exceptional work, champion innovative ideas, and be their best selves. 
+
+Click here 
+
+to learn more about Diversity, Inclusion, & Belonging (DIB) at LiveRamp. 
+
+The approximate annual base compensation range is $128,500 to $203,000. The actual offer, reflecting the total compensation package and benefits, will be determined by a number of factors including the applicant's experience, knowledge, skills, and abilities, geography, as well as internal equity among our team.
+
+LiveRamp is an affirmative action and equal opportunity employer (AA/EOE/W/M/Vet/Disabled) and does not discriminate in recruiting, hiring, training, promotion or other employment of associates or the awarding of subcontracts because of a person's race, color, sex, age, religion, national origin, protected veteran, disability, sexual orientation, gender identity, genetics or other protected status. Qualified applicants with arrest and conviction records will be considered for the position in accordance with the San Francisco Fair Chance Ordinance. 
+
+California residents: Please see our 
+
+California Personnel Privacy Policy 
+
+for more information regarding how we collect, use, and disclose the personal information you provide during the job application process. 
+
+To all recruitment agencies: LiveRamp does not accept agency resumes. Please do not forward resumes to our jobs alias, LiveRamp employees or any other company location. LiveRamp is not responsible for any fees related to unsolicited resumes.
+
+More about us:
+
+LiveRamp’s mission is to connect data in ways that matter, and doing so starts with our people. We know that inspired teams enlist people from a blend of backgrounds and experiences. And we know that individuals do their best when they not only bring their full selves to work but feel like they truly belong. Connecting LiveRampers to new ideas and one another is one of our guiding principles—one that informs how we hire, train, and grow our global team across nine countries and four continents. Click 
+
+here 
+
+to learn more about Diversity, Inclusion, & Belonging (DIB) at LiveRamp."
+5b5c57911d3d60a3,Indeed,Human Services Analyst II (Open and Promotional),County of San Mateo,Data Analyst,in-person,Full-time,2025-04-08,2025-04-10,San Mateo,CA,,yearly,92019.2,114961.6,92019.2,114961.6,103490.4,https://www.indeed.com/viewjob?jk=5b5c57911d3d60a3,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Under general supervision, the Human Services Analyst (HSA) II will provide a variety of analytical and administrative services for assigned programs in the Human Services Agency (HSA); provide program monitoring and evaluation; create data reports for presentations to boards, committees and other groups;; provide technical/ assistance to staff and contractors; and act as a liaison to other County departments and partnering agencies. Independent judgment, strong administrative and analytical skills, excellent organizational/customer service skills, the ability to function as a key member of a team and experience working with clients from diverse backgrounds is required.  
+
+The current vacancy in HSA is located in the Service Connect Reporting team within the Employment Services Branch. The ideal candidates for this position should have the following competencies:
+
+  • Ability to prepare effective, concise, and complete data reports on various issues, and evaluate program outcomes.
+  • Strength in analyzing and interpreting data and experience and knowledge of program evaluation that promote evidence-based and data driven outcomes.
+  • Familiarity with San Mateo County community-based organizations and government agencies is highly desired.
+  • Strong interpersonal, facilitation, analytical, public speaking and project management skills.
+  • Excellent oral and written communication skills.
+  • Flexible, deadline-driven and customer service oriented.
+  • Excellent organizational skills in handling multiple and competing priorities.
+  • Advanced skills in computer systems and applications, such as Microsoft Windows and the Microsoft Office suite (Microsoft Word, Excel, and PowerPoint).
+  • Ability to work independently with minimal supervision and instruction; as well as collaboratively as part of a team.
+  • Ability to analyze a wide variety of problems and recommend effective solutions.
+
+## Examples Of Duties
+
+The incumbent will work with multiple managers with varying levels of authority to analyze, interpret and report on various types of data.  
+
+Other duties may include, but are not limited to the following:
+
+  • Meet with and provide technical assistance to managers in reviewing program specific data; coordinate with the Business Systems Group to develop reports related to Service Connect.
+  • Create and distribute staffing reports, dashboards and others on-going reports to management and staff; research relevant information using multiple data systems.
+  • Develop, schedule and conduct data systems related trainings for staff and partners; provide technical programmatic assistance to staff and subcontractors; collect, analyze and interpret various information, develop recommendations and present findings.
+  • Understand and use data management systems to collect, manage, retrieve, and analyze quantitative data, present analysis and information visually as well as in writing.
+  • Write reports and make presentations to boards, committees and other groups; represent Service Connect and the Agency at various meetings and conferences and serve as the liaison with the state and other organizations; coordinate and conduct special events and projects.
+
+## Qualifications
+
+Education and Experience: Any combination of education and experience that would likely provide the required knowledge, skills and abilities is qualifying. A typical way to qualify for a Human Services Analyst II is two years of experience performing journey level administrative and analytical duties in a human services or related agency. 
+
+Knowledge of: Principles and practices of public administration; principles and practices of the specific program area to which assigned; principles and practices of contract development, negotiation and monitoring; principles, practices and techniques of administrative and programmatic research and analysis; applicable federal, state and local laws, rules and regulations and County and program policies and guidelines; computer applications related to the work and office administrative practices and procedures, including records management and the operation of standard office equipment. 
+
+Skill/Ability to: Develop and evaluate proposals and negotiate contracts and agreements; develop, monitor and analyze budgets and program performance; plan, coordinate and implement administrative and programmatic research and analysis; analyze, interpret and apply various regulations and requirements; train staff in work procedures and provide technical and programmatic assistance to staff and subcontractors; plan, coordinate and conduct special events and projects; establish and maintain effective working relationships with grantors, subcontractors, County staff, elected and appointed officials, the public and others; communicate effectively, both orally and in writing; compile and analyze data, draw sound conclusions and prepare and present effective reports; exercise sound independent judgment within general policy and regulatory guidelines. 
+
+## Application/Examination
+
+Open and Promotional. Anyone may apply. Current County of San Mateo and County of San Mateo Superior Court of California employees with at least six months (1040 hours) of continuous service in a classified regular, probationary, or extra-help/term position prior to the final filing date will receive five points added to their final passing score on this examination. Responses to the supplemental questions must be submitted in addition to our regular employment application form.  
+
+A supplemental application form must be submitted in addition to our regular employment application form. Based solely on the information provided in the application materials, an application screening committee will select those applicants whose education, training and experience most closely matches the needs of the department. Those selected will be invited to a panel board examination (weight: 100%) which may include the evaluation of a written or performance exercise given immediately preceding the interview. Selected applicants will be notified of the date, time and place of the tests.  
+
+IMPORTANT: Applications for this position will only be accepted online. If you are currently on the County's website, you may click the ""Apply"" button. If you are not on the County's website, please go to https://jobs.smcgov.org/ to apply. Online applications must be received by the Human Resources Department before midnight on the final filing date.  
+
+TENTATIVE RECRUITMENT SCHEDULE  
+Final Filing Date: Monday, April 21, 2025 at 11:59 p.m. PST  
+Screening Date: Tuesday, April 22, 2025  
+Combined Panel Interview Date: Wednesday, May 14, 2025  
+
+San Mateo County  
+San Mateo County is centrally located between San Francisco, San Jose, and the East Bay. With over 750,000 residents, San Mateo is one of the largest and most diverse counties in California and serves a multitude of culturally, ethnically, and linguistically diverse communities.  
+
+As an employer, the County of San Mateo is committed to advancing equity to ensure that all employees are welcomed in a safe and inclusive environment. The County seeks to hire, support, and retain employees who reflect our diverse community. We encourage applicants with diverse backgrounds and lived experiences to apply. Eighty percent of employees surveyed stated that they would recommend the County as a great place to work.
+
+The County of San Mateo is an equal opportunity employer committed to fostering diversity, equity, and inclusion at all levels.
+
+Analyst: Arlene Cahill (Human Services Analyst II - G231)"
+223406055faf96b0,Indeed,Data Analyst Lead - Customer Experience Advanced Analytics,Meta,Data Analyst,in-person,,2025-04-04,2025-04-10,Burlingame,CA,94010,yearly,150000.0,213000.0,150000.0,213000.0,181500.0,https://www.indeed.com/viewjob?jk=223406055faf96b0,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"As a Data Analyst Lead at Reality Labs' Customer Experience (CX) team, you'll be part of a global team that unlocks the power of customer feedback and insights across their end-to-end journeys to drive customer experience improvements and business growth. Your background and experience in advanced analytics will help us identify and act on our customers' needs, preferences, and behaviors, enabling us to deliver exceptional experiences. In this role, you will employ your advanced analytics skills and functional expertise in customer insights to look at end-to-end customer journeys to identify trends, pain points, and opportunities in enhancing customer satisfaction and shaping the future of our product and services.To be successful in this role, you'll have a passion for data storytelling, experience managing multiple projects concurrently, and enjoy a fast-moving organization. You will thrive within cross-functional teams, excel at building and managing relationships with internal partners and stakeholders, and exhibit proven organizational and presentation skills.  
+
+### Data Analyst Lead - Customer Experience Advanced Analytics Responsibilities:   
+
+  • Identify trends in customer experiences and opportunities to drive growth and CX strategy
+  • Provide a holistic view of customer experiences, identifying opportunities, and recommendations looking at end-to-end customer journeys
+  • Work with various data sources, including customer interactions, feedback, and behavioral data, to identify trends, patterns, and provide actionable insights to drive CX improvements
+  • Build and deploy predictive models to forecast customer behavior, identify potential issues, and optimize support processes
+  • Conduct statistical analysis/modeling, leveraging methods ranging from descriptive statistics to measurement models to answer exploratory and hypothesis-based questions to inform data-driven decisions. Leverages forecasting techniques to draw insights.
+  • Leverage data to create business stories that are clearly and concisely communicated through a wide range of relevant communication and presentation tools and techniques decisions and drives actions.
+  • Identify metrics that reflect operational and experiential success and inform business objectives. Evaluate opportunities as they arise, based on impact analysis and business priorities.
+
+### Minimum Qualifications:  
+
+  • 8+ years of experience in data analytics, data science, or related analytical roles
+  • Background and experience working with CX, customer support, customer insight, marketing or Voice-of-customer data
+  • Proficiency in programming languages such as Python, R, or SQL
+  • Experience with machine learning concepts and experience working with machine learning libraries and frameworks (e.g. scikit-learn, TensorFlow)
+  • Experience managing time-sensitive projects through to completion while balancing evolving priorities and a broad range of stakeholders
+  • Experience working with operations functions
+
+### Preferred Qualifications:  
+
+  • Master's degree in Computer Science, Statistics, Mathematics, or related field
+  • Experience creating interactive dashboards with Tableau, Power BI, and others, with proven communication and presentation skills to deliver actionable insights
+  • Experimentation experience to design multivariate tests, synthesize test results and build frameworks to make data-informed launch decisions
+  • Knowledge of Natural Language Processing (NLP) techniques
+  • Familiarity with customer support software (e.g. Salesforce)
+  • Certification in data science or related field (e.g., Certified Data Scientist)
+  • Experience working with operations functions, preferably in the customer experience or customer support operations space
+
+### About Meta:  
+
+Meta builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps like Messenger, Instagram and WhatsApp further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology. People who choose to build their careers by building with us at Meta help shape a future that will take us beyond what digital connection makes possible today—beyond the constraints of screens, the limits of distance, and even the rules of physics.  
+
+Meta is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics. We also consider qualified applicants with criminal histories, consistent with applicable federal, state and local law. Meta participates in the E-Verify program in certain locations, as required by law. Please note that Meta may leverage artificial intelligence and machine learning technologies in connection with applications for employment.   
+
+Meta is committed to providing reasonable accommodations for candidates with disabilities in our recruiting process. If you need any assistance or accommodations due to a disability, please let us know at accommodations-ext@fb.com.  
+
+$150,000/year to $213,000/year + bonus + equity + benefits  
+
+Individual compensation is determined by skills, qualifications, experience, and location. Compensation details listed in this posting reflect the base hourly rate, monthly rate, or annual salary only, and do not include bonus, equity or sales incentives, if applicable. In addition to base compensation, Meta offers benefits. Learn more about benefits at Meta."
+d634f70397b8aec8,Indeed,Project Analyst – National Partnerships and Sales Excellence Support Officer,U.S. Bank National Association,Data Analyst,in-person,Full-time,2025-04-09,2025-04-10,San Francisco,CA,94111,yearly,71400.0,92400.0,71400.0,92400.0,81900.0,https://www.indeed.com/viewjob?jk=d634f70397b8aec8,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"At U.S. Bank, we’re on a journey to do our best. Helping the customers and businesses we serve to make better and smarter financial decisions and enabling the communities we support to grow and succeed. We believe it takes all of us to bring our shared ambition to life, and each person is unique in their potential. A career with U.S. Bank gives you a wide, ever-growing range of opportunities to discover what makes you thrive at every stage of your career. Try new things, learn new skills and discover what you excel at—all from Day One.
+
+##  Job Description
+
+Provides project and analytical support to assigned business line or functional area. Performs research, analysis, review, development, implementation, and monitoring of new and/or revised products and services. Acts as a project liaison with other departments. Analyzes current costs and estimates cost savings. Compiles and analyzes information for an assigned project or area, making recommendations based on findings. Travel will be required up to 10% annually.
+
+Basic Qualifications:
+
+Bachelor’s degree, or equivalent work experience
+
+Three to five years of experience in project management activities
+
+Preferred Skills/Experience:
+
+Thorough knowledge of assigned business line or functional area
+
+Strong organizational and analytical skills
+
+Familiarity with mortgage sales processes and center of influence (COI) development
+
+Understanding of how product knowledge creates growth opportunities in strategic markets
+
+Ability to support development of KPIs, analyze performance data, and support impact reporting
+
+Ability to identify and resolve exceptions and to analyze data
+
+Strong cross-functional collaboration skills, particularly in community impact and business development efforts
+
+Demonstrated leadership skills
+
+Highly organized and detail-oriented
+
+The role offers a hybrid/flexible schedule, which means there's an in-office expectation of 3 or more days per week and the flexibility to work outside the office location for the other days.
+
+If there’s anything we can do to accommodate a disability during any portion of the application or hiring process, please refer to our disability accommodations for applicants.
+
+Benefits:
+
+Our approach to benefits and total rewards considers our team members’ whole selves and what may be needed to thrive in and outside work. That's why our benefits are designed to help you and your family boost your health, protect your financial security and give you peace of mind. Our benefits include the following (some may vary based on role, location or hours):
+
+  • Healthcare (medical, dental, vision)
+
+  • Basic term and optional term life insurance
+
+  • Short-term and long-term disability
+
+  • Pregnancy disability and parental leave
+
+  • 401(k) and employer-funded retirement plan
+
+  • Paid vacation (from two to five weeks depending on salary grade and tenure)
+
+  • Up to 11 paid holiday opportunities
+
+  • Adoption assistance
+
+  • Sick and Safe Leave accruals of one hour for every 30 worked, up to 80 hours per calendar year unless otherwise provided by law
+
+U.S. Bank is an equal opportunity employer. We consider all qualified applicants without regard to race, religion, color, sex, national origin, age, sexual orientation, gender identity, disability or veteran status, and other factors protected under applicable law.
+
+E-Verify
+
+U.S. Bank participates in the U.S. Department of Homeland Security E-Verify program in all facilities located in the United States and certain U.S. territories. The E-Verify program is an Internet-based employment eligibility verification system operated by the U.S. Citizenship and Immigration Services.
+
+The salary range reflects figures based on the primary location, which is listed first. The actual range for the role may differ based on the location of the role. In addition to salary, U.S. Bank offers a comprehensive benefits package, including incentive and recognition programs, equity stock purchase 401(k) contribution and pension (all benefits are subject to eligibility requirements). Pay Range: $71,400.00 - $84,000.00 - $92,400.00 
+
+U.S. Bank will consider qualified applicants with arrest or conviction records for employment. U.S. Bank conducts background checks consistent with applicable local laws, including the Los Angeles County Fair Chance Ordinance and the California Fair Chance Act as well as the San Francisco Fair Chance Ordinance. U.S. Bank is subject to, and conducts background checks consistent with the requirements of Section 19 of the Federal Deposit Insurance Act (FDIA). In addition, certain positions may also be subject to the requirements of FINRA, NMLS registration, Reg Z, Reg G, OFAC, the NFA, the FCPA, the Bank Secrecy Act, the SAFE Act, and/or federal guidelines applicable to an agreement, such as those related to ethics, safety, or operational procedures.
+
+Applicants must be able to comply with U.S. Bank policies and procedures including the Code of Ethics and Business Conduct and related workplace conduct and safety policies."
+b9de639bbbb78208,Indeed,Sr. IT Business Analyst (Temp Contract),"Diamond Technology, Inc.",Data Analyst,in-person,Full-time,2025-04-05,2025-04-10,San Francisco,CA,94111,hourly,85.0,95.0,176800.0,197600.0,187200.0,https://www.indeed.com/viewjob?jk=b9de639bbbb78208,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Benefits:  
+
+  • Paid time off
+
+Diamond Technology is a Technical Services company. We have a business client who is a large local public organization with an opening for the following position:  
+JOB TITLE: Sr. IT Business Analyst (Temp Contract)  
+
+NUMBER OF OPENINGS: 2  
+
+DESIRED START DATE: Soon  
+
+LOCATION: San Francisco: ON-SITE + Local travel required to multiple Bay Area work locations  
+
+DURATION: 6+ months. 40 hours a week.  
+
+HOURLY RATE: $85ph to $95ph  
+
+SKILLS SUMMARY  
+
+  • 10 years of experience working with email domain changes, email migration projects involving inbound & outbound email flow
+  • Intermediate to advanced experience using Microsoft applications (Excel, Word, PowerPoint, Teams, and SharePoint).
+  • 10 year of experience working with large organizations
+  • More details below
+
+Responsibilities for these projects include but are not limited to the following:  
+
+1\. Task 1: Professional Services - As-Needed at the discretion of the IS Project Director / Project Manager. Scope of work may include but not limited to the following:  
+A. Provide analytical support and serve as a subject matter expert to the ITS Program and Project Manager for website, e-mail domain migration, and disaster recovery service efforts.  
+B. Lead requirements gathering discussions, analyze and draft technical requirements.  
+C. Create various types of reports, maintain records for system documentation, and provide functional support for large-scale projects in ITS Portfolio Management.  
+D. Intermediate to advanced experience using Microsoft applications; Excel, Word, PowerPoint, Teams, and SharePoint.  
+E. Familiar with website redirects, e-mail domain redirects, and e-mail delivery processes.  
+F. Documenting requirements for ITS for business processes and applications.  
+G. Experience with documenting requirements for website and e-mail domain migration services, which will include domain updates within various applications.  
+H. May require research and analysis of software products specific to e-mail domain migration for business communication, IT and business continuity within various applications.  
+I. Responsible for training and transitioning project work to City staff.  
+
+2\. Task 2: Project Management – As-Needed at the discretion of the ITS Program / Project Manager. Scope may include but is not limited to the following:  
+J. Planning, Project Schedule Creation, Quality, Scope & Change Management  
+K. Risk Management: Responsible for documenting risk management and contingency plans.  
+L. Responsible for drafting agenda items and meeting minutes.  
+M. Stakeholder Engagement Management: Plan communication strategy to internal and external ensure stakeholders are informed of e-mail domain migration.  
+N. Monitor and report on project status and report on project constraints.  
+O. Assist with overseeing project-related functions as-needed.  
+P. Responsible for training and transitioning project work to City staff.  
+
+3\. Task 3: Disaster Recovery Analysis  
+Q. Analyze existing policies and procedures, provide recommendations for improvements, and document requirements as needed. Responsible for documenting risk management  
+and contingency plans.  
+R. Responsible for training and transitioning project work to City staff.  
+
+Project Success Criteria: Success will be measured by each Technical Business Analysts’ ability to complete the tasks assigned to them by the SFPUC-IS Project Director / Project Manager and outlined herein. Additional success factors  
+will include realized benefits/outcomes and stakeholder satisfaction."
+,Indeed,Senior Business Performance Analyst,"GTT, LLC",Data Analyst,hybrid,Contract,2025-04-09,2025-04-10,Oakland,CA,94612,hourly,60.0,65.0,124800.0,135200.0,130000.0,https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0Ci6abQPzZtnlIzpaPsmGvPJW6fwVsgLRdzrRle_KK1bIsupeBqLY1Cih8KiiI5c0j0OO-sCd4Lo8T5XqXbZEbO91-nWS5quxLJcwZkKe4Unqs9aj0S2d8mwWV9-HzCwZq3DOBNV_N9TVJzWhk4MY-1Ztlq-aFmB0JqbT5P9Ri2gAWXOdEP0j_VAMz3b4k65V6CWU1AJ8YO-gIrAl3m8u7x7loAjbbkQB4avWJNkJD6YkBpMW42SIbykRH0XEGAAImKop8vJw3-b4fde09d37ECbKGnnpdFOR3oOe4yi3YtAYUEkLt8YkpqmDuE_HTrOPRjKNzXqZBXOEeFXyP7cz-uLSNISKP1drId9j-DsZVZv8BBO80LsKG10BvOAjz3s3lggf0kYyNh8s-nAicnnm6GJnjAF-2iEMwTC4hmqnCh4hCQ15FTrBW25sWTFYnYncwj2TIgSg9-cBS-XlPWk54A9k0hqAYVrLgaEaRdkZ17YwIvfTFw2K-w8fsRiOD02GiFp8KE1Xr0yGfVN0KikGrcy4etPGrYizXX_-XvEHaq9SzM0q6DE7ozxfaKRHqFIbWfgY2mQgQA1GH8PmLdTTQBDMuEXWhyz6nGadKhMUi3SbD0Pl7ehPQfwAwTi8PTEjKeEYsYVWvy4RLCE-8YLrwhNx7ttnE9WfNcV9kKLc2WlLVDJmFf11jkTJuBejLfjqhADOlZegClDnlD-iK9Zp8JKkQ51SU7LDdPfzPjv09nTzXFeTJlFpfB3GX9YPFiIJWAjcY3UDAAuu4X2aKAKdIAKkdbgW_VZTw8X5DiMB3dEtFEWK4ibWf2krs8hihOkcNDODnRxpiVZ8cyqvGlUtye2A3XGZkDCZxpXq1NoPT2ZbO44ypmG1T8nkNcwclNtNdl7LYwUwyzTmoQSdfIWin2Ns83NxorTCNZnZ6DLs9hSg2PWqajjEMQwAaAzCHgWFE264lRQElnCbWk8bEhqpTiNPETO6ie14GlQvf6eLAwNqt5cKDbQRVDGtr7XNsuRZzNMhBlO_DOXgMLOTo7qXQMiSBtfdLsfJFBOEakJTLhdo3vzyCJjTwmTls5s6dJ_CxV6NdTufftDdMtTV5M4B653zT8omTK6P4GPawfQVR5-LpggPFmgb4S4AmiTb0QzbbN9OOe0yQMCq50z6D08ek65XK7k67XLbo=&xkcb=SoCp6_M3zRbbF9wGUZ0NbzkdCdPP&camk=ethIe0s0hefRCMi1CB970w==&p=6&fvj=0&vjs=3,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"Job Title: Senior Business Performance Analyst   
+Contract Duration: 6+ Months   
+Pay range: $60 - 65/hr   
+Location: Oakland, CA   
+Work Type: Hybrid. Will be required on-site in Oakland 1-2X per month as needed   
+
+Job Summary:  
+The Business Performance Analyst, Senior's primary function will create monthly vendor/contractor performance metrics and dashboards.   
+Facilitates monthly reporting of results for transmission, distribution and vegetation management vendor performance meeting.   
+The Senior Business Performance Analyst will implement and maintain custom data and analytic reporting to provide insight into and facilitate the day-to-day operations of Electric Operations Contract Management and which supports the end-to-end contract lifecycle.   
+He/She will evolve the role to lead clients from simple, pre-existing business intelligence solutions to forward-looking ""what's next"" capabilities using more advanced predictive and prescriptive tools.   
+The successful candidate will work across functional teams and partner with peers and leaders on process change implementation and ongoing measurement and reporting.   
+
+Job Responsibilities:  
+Facilitates monthly and weekly metrics reporting related to vendor performance   
+Measures vendor performance requirements. Collects data to identify root cause of problems on performances and implements solutions for improvements   
+Senior Business Performance Analyst provides consultation on the use of re-engineering techniques to improve vendor performance   
+Aligns improvement to performance shortfalls. Surveys and analyzes best practices for techniques, processes, and implementation   
+Determines data needs, collects data, selects from different analytical techniques to conduct root cause analysis, determines issues design,s and maintains operational tools and reports   
+Projects are moderately to highly complex and require selecting methods, approaches, and tactics to resolve problems and obtain solutions   
+Creates analysis that accurately describes the state of the business   
+Creates complex and automated data routines and processes for reporting and data delivery, ensuring accurate data transformation   
+Design data analysis to achieve business objectives, process data, analyze data, and write clear and concise data findings using power queries and power BI reporting   
+Applies judgment to solve problems of diverse scope   
+Typically receives general instructions on new assignments or projects. Receives little instruction on recurring assignments   
+May assist in coaching and developing less experienced staff and end users   
+Understands business process needs and develops solutions   
+Work Execution and Operational support, ability to travel 3 to 5% of time   
+
+Top Things:  
+Background working with SAP, Palantir Foundry is desirable, PowerBI   
+Relationship building   
+Can work in a fast-paced operational environment independently once trained   
+
+Minimum Qualifications:  
+5 years of relevant business experience   
+BA/BS in Business, Engineering, Construction Management, Computer Science/Information   
+Business Systems, SAP   
+Advanced Excel skills (Power Pivots & Tables, V Look up, etc)   
+Advanced in Microsoft BI stack, including PowerView and PowerPivot; PowerBI, DAX   
+Advanced in MS Excel/Access/PowerPoint   
+Experience with metrics/dashboard creation, reporting, and presenting data   
+Experience working with data stored across multiple databases/data sources   
+MBA or other advanced degrees.   
+Advanced statistical, modeling, and process improvement knowledge   
+Lean Six Sigma Green Belt   
+Advanced reporting knowledge and experience with multiple reporting tools   
+Demonstrated experience in data visualization best practices using power BI   
+Ability to work independently and as part of a team   
+Ability to keep pace and contribute to a high-performing team   
+Self-Starter   
+Advanced problem-solving skills and data analysis skills   
+Familiarity with utility operation   
+
+Note:  
+Our client accepts candidates local to the Bay Area/Work location (Oakland GO).   
+A laptop will be provided.   
+Some travel outside of assigned work location, potentially 1-2X per month.   
+Calls/ Meetings will be via MS Teams   
+
+Benefits:  
+Medical, Vision, and Dental Insurance Plans   
+401k Retirement Fund   
+
+About The Company:  
+Leading natural gas and electric energy company serving millions of customers across the United States. Offers reliable energy delivery and a positive work environment. Join our team and make a difference in your community.   
+
+About GTT:  
+GTT is a minority-owned staffing firm and a subsidiary of Chenega Corporation, a Native American-owned company in Alaska. As a Native American-owned, economically disadvantaged corporation, we highly value diverse and inclusive workplaces. Our clients are Fortune 500 banking, insurance, financial services, and technology companies, along with some of the nation’s largest life sciences, biotech, utility, and retail companies across the US and Canada. We look forward to helping you land your next great career opportunity!   
+
+25-20051: #LI-GTT #LI-Hybrid #gttutility"
+,Indeed,"Business Analyst Instructor (Part-Time, Remote) +5yrs",IT School,Data Analyst,remote,Part-time,2025-04-10,2025-04-10,,,,hourly,50.0,60.0,104000.0,124800.0,114400.0,https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0Cwo1rpLNqGNl-JR4Ycn-HhZZkZD-zKzWtqwY2v0IaF7tU80im9Od9vooQfqBoNTE4b7fwL7P37oiMqQaxnEE9yTjKmz46sxXhRo2oO8Q3OnT4fnKdubk5igPnjbvTBcN6Vw_747VFKGQ6y1hbhg8gUnIUrB5c7Q0d1ahBtBBIm-R0RCDPqFInI5uoaACVyWt0ZHOyUWioSnah7BexuZMGIt2862i_bmY3TSZfhCdrvxDTJEVaFUeIF_7oPUVtZgozAo3OJ9gpIpABOZkdgvhLCKA-kCAjHTqzjZblAyPeKqci96ywymopU99nI3Z85ciS3noMnFF3rXbmcfXXXRsmr1GULLy4YK6hKjDsQM2bX7KLe_4eYbjjr3dBELuXxey2otHtNyNW4Nu38z859QmLTTN9OpfVzKVi_5ntUpXqcDRFkmZpg-oqDXIFS9b4Xsr36d3AzSm8FHTmokjNCpsmOaMkzxCsViHxBmLK6UmqAsmyZqeeNdXpIALxF3WnjHPWPTDjYlmIIRZZzudyM_sPzSkb8QLPzc6XiQil4vGPU8F1SbIss4ic4ENJEO_pe0JW1e7SBKVnQzrZJovVF6G4v90viqmsxaTed9PBbuMuVIULntWPVqCy93uk6G8gnNuI9w2ftuuMXdtnj5WUxWD-O-TGJSbKDj9znCIOlo3I0EBLS3RF7A-D6NI-qty6A_JDiW-z9X5epAA==&xkcb=SoAd6_M3zRbbF9wGUZ0MbzkdCdPP&camk=ethIe0s0hedRJfEr7FQ12Q==&p=7&fvj=0&vjs=3,https://www.indeed.com/jobs?q=Data+Analyst&l=San+Francisco%2C+CA&radius=25&fromage=7,"IT School (NYC) is looking for an experienced IT Business Analyst Instructor to teach remotely part-time some evenings (7pm-9:30pm EST) or/and weekends (10am-3:30pm EST) classes. This is a part-time position to teach remote/online training.
+
+***
+
+Requirements:
+
+\- Minimum of 5 years of hands-on IT Business Analyst work experience
+
+\- Agile experience and Atlassian tools skills (Jira, Confluence, Bitbucket, etc.)
+
+\- Excellent verbal communication skills
+
+\- Teaching experience is a plus
+
+\- Technology background is a plus
+
+\- CBAP certification is a plus
+
+***
+
+Salary DOE (1099 or C2C)
+
+Please reply with your resume and contact information.
+
+Job Type: Part-time
+
+Pay: $50.00 - $60.00 per hour
+
+Work Location: Remote"
