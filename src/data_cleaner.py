@@ -278,8 +278,8 @@ def organize_columns(df: pd.DataFrame,
     """Organize DataFrame columns into a logical order."""
     # Define column groups for ordering
     column_groups = {
-        'id': ['job_id', 'source', 'is_ad'],
-        'essentials': ['title', 'company', 'work_setting', 'job_type'],
+        'id': ['job_id', 'source'],
+        'essentials': ['title', 'company', 'queried_job_title', 'work_setting', 'job_type'],
         'dates': ['date_posted', 'date_scraped'],
         'location': ['city', 'state', 'zip'],
         'compensation': ['salary_period', 'salary_min', 'salary_max', 

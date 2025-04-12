@@ -109,7 +109,7 @@ class JobListing:
     description: Optional[str] = None
     search_url: Optional[str] = None
     date_posted: Optional[str] = None
-    is_ad: bool = False
+    queried_job_title: Optional[str] = None
 
     def to_dict(self) -> Dict:
         """Convert the job listing to a dictionary, excluding None values."""
@@ -205,7 +205,7 @@ def export_jobs_to_csv(jobs: List[JobListing], output_file: Path) -> None:
     # Format datetime fields
     if 'date_scraped' in df.columns:
         df['date_scraped'] = df['date_scraped'].apply(
-            lambda x: x.strftime('%Y-%m-%d %H:%M:%S') if hasattr(x, 'strftime') else x
+            lambda x: x.strftime('%Y-%m-%d') if hasattr(x, 'strftime') else x
         )
     
     # Clean the dataframe
@@ -358,9 +358,6 @@ def extract_job_data(card: WebElement) -> Optional[Dict[str, Any]]:
             if field == 'link':
                 original_url = element.get_attribute('href')
                 
-                # Check if it's an ad (contains pagead in the URL)
-                job_data['is_ad'] = 'pagead' in original_url
-                
                 # Extract job ID from URL
                 job_id_match = re.search(r'jk=([a-zA-Z0-9]+)', original_url)
                 if job_id_match:
@@ -474,7 +471,7 @@ def scrape_job_listings(
                     job_type=job_data.get('job_type'),
                     work_setting=job_data.get('work_setting'),
                     search_url=search_url,
-                    is_ad=job_data.get('is_ad', False)
+                    queried_job_title=job_title
                 )
                 
                 jobs_on_page.append(job_listing)

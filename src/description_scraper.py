@@ -201,7 +201,7 @@ def scrape_job_description(
         driver.get(normalized_url)
         random_delay(2.0, 3.0)
         
-        # For ad URLs that redirect, extract job ID from the redirected URL
+        # For URLs that redirect, extract job ID from the redirected URL
         if not job_id_match and "pagead" in job_url:
             redirected_url = driver.current_url
             job_id_match = re.search(r'jk=([a-zA-Z0-9]+)', redirected_url)
@@ -301,7 +301,7 @@ def batch_scrape_descriptions(
         )
         
         # Check if we got redirected to a job page with a job ID (for ad URLs)
-        if "pagead" in url and not job_id_match:
+        if not job_id_match and "pagead" in url:
             current_url = driver.current_url
             job_id_match = re.search(r'jk=([a-zA-Z0-9]+)', current_url)
             if job_id_match:
@@ -310,9 +310,7 @@ def batch_scrape_descriptions(
                 # Update the job listing with the job ID and normalized URL
                 job_listing.job_url = normalized_url
                 job_listing.job_id = job_id
-                # Ensure the is_ad flag is set for these URLs
-                job_listing.is_ad = True
-                logger.info(f"Updated ad URL to simplified URL: {normalized_url}")
+                logger.info(f"Updated URL to simplified URL: {normalized_url}")
             
         # Update the JobListing object
         if description:

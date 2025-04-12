@@ -25,3 +25,10 @@ mypy==1.8.0
 # Type annotations
 types-requests==2.31.0.10
 types-selenium==3.141.9
+
+# Dashboard
+matplotlib==3.7.2
+streamlit==1.25.0
+plotly==5.15.0
+wordcloud==1.9.2
+streamlit-aggrid==0.3.4

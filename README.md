@@ -1,6 +1,8 @@
 # Indeed Job Scraper [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-A Python CLI tool for scraping job listings from Indeed.com with filtering and export options.
+![Indeed Job Scraper Dashboard](images/dashboard-cover.jpg)
+
+A Python CLI tool for scraping job listings from Indeed.com and Streamlit dashboard for data visualization.
 
 ## 🚀 Overview
 
@@ -36,11 +38,14 @@ python -m venv venv
 venv\Scripts\activate  # On Windows
 source venv/bin/activate  # On macOS/Linux
 
-# Install the package in development mode
-pip install -e .
+# Install required packages
+pip install -r requirements.txt
 ```
 
 This installs the `indeed-scraper` command globally in your virtual environment, allowing you to run it from anywhere.
+```bash
+pip install -e .
+```
 
 ### Alternative Installation Methods
 
@@ -55,8 +60,8 @@ cd Indeed-Job-Scraper
 conda env create -f environment.yml
 conda activate indeed-scraper
 
-# Install the package in development mode
-pip install -e .
+# Install the package
+pip install -r requirements.txt
 ```
 
 #### Using Docker
@@ -146,17 +151,17 @@ The CSV output contains the following columns organized into logical groups:
 **Identification:**
 - `job_id` - Indeed's unique job identifier
 - `source` - Always "Indeed" (useful if combining with other sources)
-- `is_ad` - Boolean flag indicating if the job was an advertisement (True/False)
 
 **Essential Information:**
 - `title` - Job title
 - `company` - Company name
+- `queried_job_title` - The job title search query used to find this listing
 - `work_setting` - Work arrangement (remote, hybrid, in-person)
 - `job_type` - Job type (full-time, part-time, contract, etc.)
 
 **Dates:**
 - `date_posted` - Date the job was posted on Indeed (YYYY-MM-DD)
-- `date_scraped` - Timestamp when the job was scraped (YYYY-MM-DD HH:MM:SS)
+- `date_scraped` - Timestamp when the job was scraped (YYYY-MM-DD)
 
 **Location:**
 - `city` - City name extracted from location
@@ -177,6 +182,20 @@ The CSV output contains the following columns organized into logical groups:
 
 **Content:**
 - `job_description` - Full job description text with formatting preserved
+
+## 📊 Interactive Dashboard
+
+The package includes an interactive Streamlit dashboard for visualizing the scraped job data and descriptions:
+
+### Running the Dashboard
+
+```bash
+# Make sure you're in your virtual environment
+# Launch the dashboard
+streamlit run src/streamlit_dashboard.py
+```
+
+The dashboard will open automatically in your web browser, displaying all data from CSV files in the `data/raw/` directory.
 
 ## 🔧 Troubleshooting
 
