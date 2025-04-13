@@ -2,221 +2,146 @@
 
 ![Indeed Job Scraper Dashboard](images/dashboard-cover.jpg)
 
-A Python CLI tool for scraping job listings from Indeed.com and Streamlit dashboard for data visualization.
+A Python CLI tool for scraping job listings from Indeed.com with an interactive Streamlit dashboard for data visualization.
 
 ## 🚀 Overview
 
-This tool scrapes job listings from Indeed.com and exports the data to CSV format. It extracts the following information:
+This repo contains python tools that do the following:
+- Scrape job listings from Indeed.com with customizable filters
+- Extract job details including salaries and job descriptions
+- Analyze the job market with an interactive dashboard
+- Export structured data for further analysis
 
-- Job title and company name
-- Location (city, state, zip) and salary information (when available)
-- Job type (full-time, part-time, contract, etc.)
-- Work setting (remote, hybrid, in-person)
+<details>
+<summary>📋 Data extracted includes...</summary>
+
+- Job titles, companies, locations, and contact information
+- Detailed salary data (normalized to yearly equivalents)
+- Work settings (remote, hybrid, in-person) and job types
 - Full job descriptions and posting dates
-- Advertisement status (identifies which job listings were originally ads)
-- Standardized salary data (min, max, yearly equivalents)
-- Job IDs and simplified, direct URLs for job listings
-- Source URLs and search metadata
+- Direct links to job listings
 
-The scraper supports filtering by job title, location, posting date, work arrangement, and job type through command-line arguments.
+</details>
 
-## 🏁 Getting Started
+## 🏁 Quick Start
 
 ### Installation
 
-**Prerequisites:** Python 3.7+, pip
-
 ```bash
-# Clone the repository
+# Clone and setup
 git clone https://github.com/dennisvdang/Indeed-Job-Scraper.git
 cd Indeed-Job-Scraper
 
-# Create virtual environment
+# Create and activate virtual environment
 python -m venv venv
-
-# Activate virtual environment
 venv\Scripts\activate  # On Windows
 source venv/bin/activate  # On macOS/Linux
 
-# Install required packages
+# Install
 pip install -r requirements.txt
+
 ```
 
-This installs the `indeed-scraper` command globally in your virtual environment, allowing you to run it from anywhere.
-```bash
-pip install -e .
-```
-
-#### Alternative Installation Using Docker
+### Basic Usage
 
 ```bash
-# Clone the repository
-git clone https://github.com/dennisvdang/Indeed-Job-Scraper.git
-cd Indeed-Job-Scraper
-
-# Build the Docker image
-docker build -t indeed-scraper .
-
-# Run the container
-docker run indeed-scraper conda run -n indeed-scraper indeed-scraper \
-    --job-title "Data Scientist" \
-    --location "New York" \
-    --num-pages 3 \
-    --verbose
-```
-
-## 📊 Usage
-
-### Basic Command
-
-```bash
+# Run a basic job search
 indeed-scraper --job-title "Software Engineer" --location "San Francisco"
-```
 
-### Command Line Arguments
-
-| Parameter | Description | Possible Values | Default |
-|-----------|-------------|-----------------|---------|
-| `--job-title` | Job title to search for (required) | Any search string (e.g., "Data Analyst") | None (Required) |
-| `--location` | Location to search in | Any city/state or zip code (e.g., "New York, NY" or "94105") | None |
-| `--search-radius` | Search radius in miles from the location | Any positive integer | 25 |
-| `--num-pages` | Maximum number of search result pages to scrape | Any positive integer | 3 |
-| `--days-ago` | Filter for jobs posted within this many days | 1, 3, 7, 14 | 7 |
-| `--work-setting` | Filter for specific work arrangements | "remote", "hybrid", "onsite" | None |
-| `--job-type` | Filter for specific job types | "full-time", "part-time", "contract", "temporary", "temp-to-hire" | None |
-| `--exclude-descriptions` | Skip scraping full job descriptions | Flag (no value required) | False |
-| `--verbose` | Enable detailed logging | Flag (no value required) | False |
-| `--output` | Custom output file path | Valid file path (e.g., "jobs.csv") | Auto-generated |
-| `--keep-browser` | Keep browser open after scraping | Flag (no value required) | False |
-
-### Example Commands
-
-Basic search:
-```bash
-indeed-scraper --job-title "Data Analyst" --location "New York City"
-```
-
-Advanced search with all descriptions (default):
-```bash
-indeed-scraper \
-    --job-title "Software Engineer" \
-    --location "San Francisco" \
-    --search-radius 50 \
-    --num-pages 5 \
-    --days-ago 14 \
-    --work-setting remote \
-    --job-type "full-time" \
-    --verbose
-```
-
-### CAPTCHA Handling
-
-Indeed employs CAPTCHA protection that requires human interaction:
-
-1. When prompted (at program startup), solve the CAPTCHA in the browser window
-2. Ensure the page loads completely after solving the CAPTCHA
-3. Return to your terminal and press Enter to continue scraping
-
-### Output Files
-
-Results are saved in `data/raw/` with an auto-generated filename:
-```
-data/raw/indeed_[job_title]_[location]_[timestamp].csv
-```
-
-Example: `data/raw/indeed_software_engineer_san_francisco_20240404_103022.csv`
-
-### Output Data Structure
-
-The CSV output contains the following columns organized into logical groups:
-
-**Identification:**
-- `job_id` - Indeed's unique job identifier
-- `source` - Always "Indeed" (useful if combining with other sources)
-
-**Essential Information:**
-- `title` - Job title
-- `company` - Company name
-- `queried_job_title` - The job title search query used to find this listing
-- `work_setting` - Work arrangement (remote, hybrid, in-person)
-- `job_type` - Job type (full-time, part-time, contract, etc.)
-
-**Dates:**
-- `date_posted` - Date the job was posted on Indeed (YYYY-MM-DD)
-- `date_scraped` - Timestamp when the job was scraped (YYYY-MM-DD)
-
-**Location:**
-- `city` - City name extracted from location
-- `state` - State code (e.g., CA, NY)
-- `zip` - ZIP code if available
-
-**Compensation:**
-- `salary_period` - Pay period (hourly, weekly, monthly, yearly)
-- `salary_min` - Minimum salary in original period
-- `salary_max` - Maximum salary in original period
-- `salary_min_yearly` - Minimum salary converted to yearly equivalent
-- `salary_max_yearly` - Maximum salary converted to yearly equivalent
-- `salary_midpoint_yearly` - Average of min and max yearly salaries
-
-**URLs:**
-- `job_url` - Direct link to the job posting
-- `search_url` - URL used to perform the search
-
-**Content:**
-- `job_description` - Full job description text with formatting preserved
-
-## 📊 Interactive Dashboard
-
-The package includes an interactive Streamlit dashboard for visualizing the scraped job data and descriptions:
-
-### Running the Dashboard
-
-```bash
-# Make sure you're in your virtual environment
-# Launch the dashboard
+# View your results in the dashboard
 streamlit run src/streamlit_dashboard.py
 ```
 
-The dashboard will open automatically in your web browser, displaying all data from CSV files in the `data/raw/` directory.
+## 🔍 Key Features
+
+### 1. Flexible Job Filtering
+
+```bash
+indeed-scraper \
+    --job-title "Data Scientist" \
+    --location "New York" \
+    --work-setting remote \
+    --job-type "full-time" \
+    --days-ago 7
+```
+
+### 2. Multiple Job Queues
+
+Run multiple job searches sequentially:
+
+```bash
+indeed-scraper --queue examples/job_queues/software_and_data_jobs.txt
+```
+
+<details>
+<summary>Learn more about job queues...</summary>
+
+Create text or JSON configuration files with multiple search parameters. See the [`examples/job_queues/`](examples/job_queues/) directory for sample files and [`examples/templates/`](examples/templates/) for templates.
+
+</details>
+
+### 3. Interactive Dashboard
+
+Visualize and analyze your job data:
+
+```bash
+streamlit run src/streamlit_dashboard.py
+```
+
+The dashboard automatically loads all scraped job data from the `data/raw/` directory and provides:
+- Salary distribution analysis
+- Geographic job distribution
+- Company and role breakdowns
+- Detailed job descriptions
+
+## 📚 Documentation
+
+- **[Examples Directory](examples/)**: Sample files and usage patterns
+- **[Command Line Reference](#command-line-reference)**: All available CLI options
+- **[Troubleshooting](#troubleshooting)**: Common issues and solutions
+
+## 📊 Command Line Reference
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `--job-title` | Job title to search for (**required**) | `"Data Analyst"` |
+| `--location` | Location to search in | `"New York, NY"` |
+| `--work-setting` | Work arrangement | `remote`, `hybrid`, `onsite` |
+| `--job-type` | Employment type | `"full-time"`, `"contract"` |
+| `--days-ago` | Filter by posting date | `1`, `3`, `7`, `14` |
+| `--queue` | Run multiple job searches | `examples/job_queues/remote_jobs.txt` |
+
+<details>
+<summary>Show all options...</summary>
+
+| Parameter | Description | Possible Values | Default |
+|-----------|-------------|-----------------|---------|
+| `--search-radius` | Search radius in miles | Any positive integer | 25 |
+| `--num-pages` | Maximum pages to scrape | Any positive integer | 3 |
+| `--exclude-descriptions` | Skip job descriptions | Flag | False |
+| `--verbose` | Detailed logging | Flag | False |
+| `--output` | Custom output file path | Valid file path | Auto-generated |
+| `--keep-browser` | Keep browser open | Flag | False |
+
+</details>
 
 ## 🔧 Troubleshooting
 
-### Common Issues
+### CAPTCHA Handling
 
-**ChromeDriver installation errors:**
+When prompted, solve the CAPTCHA in the browser window and press Enter to continue.
 
-- The tool currently requires Chrome version 134 (or compatible)
-- Ensure you have Chrome installed and updated to a recent version
-- If you encounter driver-related errors, try updating your Chrome browser
-- The tool uses undetected-chromedriver which automatically handles most driver compatibility
+### Chrome Issues
 
-**Scraping interruptions:**
-
-- Indeed may rate-limit or block excessive requests; use reasonable values for `--num-pages`
-- Try adding delays between runs if you perform multiple searches
-
-## 🔮 Future Development
-
-### Job Description Analysis
-
-A planned enhancement is to implement an LLM pipeline in Python to extract the following topics from the scraped job descriptions:
-
-| Topic | Examples |
-|----------|----------|
-| Domain/Industry | *Finance, Healthcare, Ecommerce* |
-| Compensation | *Base salary, 401K, bonuses, equity* |
-| Benefits | *PTO, healthcare, remote work options* |
-| Requirements | *Education level, years of experience* |
-| Role responsibilities* | *Project management, client relations, data analysis* |
-| Technical requirements* | *Programming languages, certifications, tools*|
-| Technologies mentioned* | *Salesforce, Python, AWS, WorkDay* |
-
-*\* These topics might be included as they are interesting from a job seeker's perspective, but are lower priority.*
+The tool uses undetected-chromedriver with Chrome version 134 (or compatible). Ensure you have Chrome installed and updated.
 
 ## ⚠️ Disclaimer
 
-This tool is a proof-of-concept for educational and personal use only. Use responsibly and respect Indeed.com's terms of service by:
+This tool is for educational and personal use only. Use responsibly and respect Indeed.com's terms of service by limiting requests and using for personal research purposes only.
 
-- Adding reasonable delays between requests
-- Not performing excessive scraping
-- Using for personal research purposes only
+## 🔮 Future Development
+
+- Job description analysis using LLM pipeline
+- Dashboard improvements
+
+---

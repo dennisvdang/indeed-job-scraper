@@ -1,0 +1,32 @@
+[
+  {
+    "job_title": "Software Engineer",
+    "location": "San Francisco",
+    "days_ago": 7,
+    "max_pages": 2,
+    "include_descriptions": true
+  },
+  {
+    "job_title": "Software Engineer",
+    "location": "Los Angeles",
+    "days_ago": 7,
+    "max_pages": 2,
+    "include_descriptions": true
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "New York",
+    "days_ago": 14,
+    "work_setting": "remote",
+    "max_pages": 3,
+    "include_descriptions": true
+  },
+  {
+    "job_title": "Project Manager",
+    "location": "Chicago",
+    "job_type": "full-time",
+    "max_pages": 3,
+    "search_radius": 25,
+    "include_descriptions": true
+  }
+] 

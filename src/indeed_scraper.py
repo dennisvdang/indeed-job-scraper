@@ -7,6 +7,9 @@ Results are saved to CSV with optional job descriptions.
 
 Usage:
     python indeed_scraper.py --job-title "Software Engineer" --location "San Francisco" --job-type "full-time"
+    
+    # To run multiple jobs from a queue file:
+    python indeed_scraper.py --queue jobs.txt
 
 Author: Dennis
 """
@@ -18,10 +21,11 @@ import re
 import signal
 import sys
 import time
-from dataclasses import dataclass, field
+import json
+from dataclasses import dataclass, field, asdict
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple, Any
+from typing import Dict, List, Optional, Set, Tuple, Any, Union
 from urllib.parse import quote_plus
 
 import pandas as pd
@@ -114,6 +118,151 @@ class JobListing:
     def to_dict(self) -> Dict:
         """Convert the job listing to a dictionary, excluding None values."""
         return {k: v for k, v in self.__dict__.items() if v is not None}
+
+
+@dataclass
+class ScrapeJob:
+    """Data class to store scrape job configuration."""
+    job_title: str
+    location: Optional[str] = None
+    search_radius: int = 25
+    max_pages: int = 3
+    days_ago: int = 7
+    work_setting: Optional[str] = None
+    job_type: Optional[str] = None
+    include_descriptions: bool = True
+    output_file: Optional[str] = None
+    
+    def to_dict(self) -> Dict:
+        """Convert the scrape job to a dictionary for serialization."""
+        return {k: v for k, v in asdict(self).items() if v is not None}
+    
+    @classmethod
+    def from_dict(cls, data: Dict) -> 'ScrapeJob':
+        """Create a ScrapeJob from a dictionary."""
+        # Filter out any keys that aren't valid fields for ScrapeJob
+        valid_fields = {f.name for f in fields(cls)}
+        filtered_data = {k: v for k, v in data.items() if k in valid_fields}
+        return cls(**filtered_data)
+    
+    @classmethod
+    def from_args(cls, args: argparse.Namespace) -> 'ScrapeJob':
+        """Create a ScrapeJob from command-line arguments."""
+        return cls(
+            job_title=args.job_title,
+            location=args.location,
+            search_radius=args.search_radius,
+            max_pages=args.num_pages,
+            days_ago=args.days_ago,
+            work_setting=args.work_setting,
+            job_type=args.job_type,
+            include_descriptions=not args.exclude_descriptions,
+            output_file=args.output
+        )
+
+
+class JobQueue:
+    """Class to manage a queue of scrape jobs."""
+    
+    def __init__(self, jobs: Optional[List[ScrapeJob]] = None):
+        self.jobs = jobs or []
+    
+    def add_job(self, job: ScrapeJob) -> None:
+        """Add a job to the queue."""
+        self.jobs.append(job)
+    
+    def is_empty(self) -> bool:
+        """Check if the queue is empty."""
+        return len(self.jobs) == 0
+    
+    def load_from_file(self, file_path: str) -> None:
+        """Load scrape jobs from a file."""
+        path = Path(file_path)
+        if not path.exists():
+            raise FileNotFoundError(f"Queue file not found: {file_path}")
+        
+        # Read the file
+        with open(path, 'r') as f:
+            content = f.read().strip()
+        
+        # Check if it's a JSON file
+        if path.suffix.lower() == '.json':
+            self._load_from_json(content)
+        else:
+            self._load_from_text(content)
+    
+    def _load_from_json(self, content: str) -> None:
+        """Load jobs from JSON content."""
+        try:
+            data = json.loads(content)
+            
+            # Handle both list and dict formats
+            if isinstance(data, list):
+                for job_data in data:
+                    self.add_job(ScrapeJob.from_dict(job_data))
+            elif isinstance(data, dict):
+                for name, job_data in data.items():
+                    job = ScrapeJob.from_dict(job_data)
+                    logger.info(f"Loaded job: {name}")
+                    self.add_job(job)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid JSON in queue file: {e}")
+    
+    def _load_from_text(self, content: str) -> None:
+        """Load jobs from text content (command-line format)."""
+        lines = content.split('\n')
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+                
+            # Parse the command-line style arguments
+            try:
+                args = []
+                current_arg = ""
+                in_quotes = False
+                quote_char = None
+                
+                for char in line:
+                    if char in ['"', "'"]:
+                        if not in_quotes:
+                            in_quotes = True
+                            quote_char = char
+                        elif char == quote_char:
+                            in_quotes = False
+                            quote_char = None
+                        else:
+                            current_arg += char
+                    elif char.isspace() and not in_quotes:
+                        if current_arg:
+                            args.append(current_arg)
+                            current_arg = ""
+                    else:
+                        current_arg += char
+                        
+                if current_arg:
+                    args.append(current_arg)
+                
+                # Parse with argparse
+                parser = create_job_parser()
+                job_args = parser.parse_args(args)
+                
+                # Create and add the job
+                job = ScrapeJob.from_args(job_args)
+                self.add_job(job)
+                
+            except Exception as e:
+                logger.warning(f"Skipping invalid job configuration: {line} ({e})")
+    
+    def save_to_file(self, file_path: str) -> None:
+        """Save the job queue to a file."""
+        jobs_data = [job.to_dict() for job in self.jobs]
+        
+        with open(file_path, 'w') as f:
+            json.dump(jobs_data, f, indent=2)
+    
+    def __len__(self) -> int:
+        return len(self.jobs)
 
 
 # =====================
@@ -396,7 +545,8 @@ def scrape_job_listings(
     days_ago: int = 7,
     work_setting: Optional[str] = None,
     job_type: Optional[str] = None,
-    include_descriptions: bool = False
+    include_descriptions: bool = False,
+    captcha_already_solved: bool = False
 ) -> List[JobListing]:
     """Main function to scrape Indeed job listings."""
     if SHOULD_EXIT:
@@ -411,11 +561,12 @@ def scrape_job_listings(
         driver.get(search_url)
         random_delay()
         
-        # Handle CAPTCHA
-        logger.info("\nIf a CAPTCHA appears, please solve it and press Enter to continue...")
-        if get_user_input() is None:
-            return []
-        time.sleep(2)
+        # Handle CAPTCHA (only for first job in queue)
+        if not captcha_already_solved:
+            logger.info("\nIf a CAPTCHA appears, please solve it and press Enter to continue...")
+            if get_user_input() is None:
+                return []
+            time.sleep(2)
         
         # Prepare for scraping
         all_jobs = []
@@ -512,8 +663,8 @@ def scrape_job_listings(
 # =====================
 # Command-line Interface
 # =====================
-def parse_args() -> argparse.Namespace:
-    """Parse command-line arguments."""
+def create_job_parser() -> argparse.ArgumentParser:
+    """Create an argument parser for job configuration."""
     parser = argparse.ArgumentParser(
         description="Scrape job listings from Indeed.com",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
@@ -579,15 +730,29 @@ def parse_args() -> argparse.Namespace:
     )
     
     parser.add_argument(
-        "--verbose", 
-        action="store_true",
-        help="Enable verbose logging"
-    )
-    
-    parser.add_argument(
         "--exclude-descriptions", 
         action="store_true",
         help="Skip scraping full job descriptions"
+    )
+    
+    return parser
+
+
+def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments."""
+    parser = create_job_parser()
+    
+    # Add non-job specific arguments
+    parser.add_argument(
+        "--queue", 
+        type=str, 
+        help="Path to a file containing multiple scrape jobs to run sequentially"
+    )
+    
+    parser.add_argument(
+        "--verbose", 
+        action="store_true",
+        help="Enable verbose logging"
     )
     
     parser.add_argument(
@@ -596,7 +761,53 @@ def parse_args() -> argparse.Namespace:
         help="Keep the browser open after scraping is complete"
     )
     
-    return parser.parse_args()
+    # Make job-title not required if using queue
+    job_title_action = next(action for action in parser._actions 
+                            if action.dest == 'job_title')
+    job_title_action.required = False
+    
+    args = parser.parse_args()
+    
+    # Validate arguments
+    if not args.queue and not args.job_title:
+        parser.error("Either --job-title or --queue must be specified")
+    
+    return args
+
+
+def run_scrape_job(
+    driver: uc.Chrome, 
+    job: ScrapeJob,
+    captcha_already_solved: bool = False
+) -> List[JobListing]:
+    """Run a single scrape job configuration."""
+    logger.info(f"Starting job search for '{job.job_title}' in {job.location or 'any location'}")
+    
+    # Get output filepath
+    output_file = Path(job.output_file) if job.output_file else get_output_filepath(job.job_title, job.location)
+    
+    # Perform scraping
+    jobs = scrape_job_listings(
+        driver=driver,
+        job_title=job.job_title,
+        location=job.location,
+        search_radius=job.search_radius,
+        max_pages=job.max_pages,
+        days_ago=job.days_ago,
+        work_setting=job.work_setting,
+        job_type=job.job_type,
+        include_descriptions=job.include_descriptions,
+        captcha_already_solved=captcha_already_solved
+    )
+    
+    # Save results
+    if jobs:
+        export_jobs_to_csv(jobs, output_file)
+        logger.info(f"Completed job search for '{job.job_title}' - saved to {output_file}")
+    else:
+        logger.info(f"No jobs found for '{job.job_title}'")
+    
+    return jobs
 
 
 def main() -> int:
@@ -616,33 +827,51 @@ def main() -> int:
         # Create data directories
         ensure_data_dirs()
         
+        # Set up job queue
+        job_queue = JobQueue()
+        
+        # Load jobs from queue file if specified
+        if args.queue:
+            try:
+                logger.info(f"Loading jobs from queue file: {args.queue}")
+                job_queue.load_from_file(args.queue)
+                logger.info(f"Loaded {len(job_queue)} jobs from queue file")
+            except Exception as e:
+                logger.error(f"Failed to load queue file: {e}")
+                return 1
+        # Otherwise, create a single job from command-line arguments
+        elif args.job_title:
+            job = ScrapeJob.from_args(args)
+            job_queue.add_job(job)
+        
+        if job_queue.is_empty():
+            logger.error("No jobs to run")
+            return 1
+        
         # Initialize browser
         driver = setup_browser()
         
         try:
-            # Get output filepath
-            output_file = Path(args.output) if args.output else get_output_filepath(args.job_title, args.location)
+            # Run all jobs in the queue
+            captcha_already_solved = False
             
-            # Perform scraping
-            logger.info(f"Starting job search for '{args.job_title}' in {args.location or 'any location'}")
+            for i, job in enumerate(job_queue.jobs):
+                if SHOULD_EXIT:
+                    break
+                
+                logger.info(f"\n{'='*60}")
+                logger.info(f"Running job {i+1} of {len(job_queue)}")
+                logger.info(f"{'='*60}\n")
+                
+                run_scrape_job(driver, job, captcha_already_solved)
+                captcha_already_solved = True  # Only need to solve CAPTCHA once
+                
+                # Add a delay between jobs
+                if i < len(job_queue.jobs) - 1 and not SHOULD_EXIT:
+                    logger.info("Waiting before starting next job...")
+                    time.sleep(random.uniform(3.0, 5.0))
             
-            jobs = scrape_job_listings(
-                driver=driver,
-                job_title=args.job_title,
-                location=args.location,
-                search_radius=args.search_radius,
-                max_pages=args.num_pages,
-                days_ago=args.days_ago,
-                work_setting=args.work_setting,
-                job_type=args.job_type,
-                include_descriptions=not args.exclude_descriptions
-            )
-            
-            # Save results
-            if jobs:
-                export_jobs_to_csv(jobs, output_file)
-            else:
-                logger.info("No jobs were found.")
+            logger.info("\nAll jobs completed!")
                 
             # Keep browser open if requested
             if args.keep_browser:
