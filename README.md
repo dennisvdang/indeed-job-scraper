@@ -2,54 +2,56 @@
 
 ![Indeed Job Scraper Dashboard](images/dashboard-cover.jpg)
 
-A Python CLI tool for scraping job listings from Indeed.com with an interactive Streamlit dashboard for data visualization.
+This repository contains a Python command-line tool to help you scrape job listings from Indeed.com, along with an interactive Streamlit dashboard for visualizing and exploring job data. It's meant as a helpful resource for research, analysis, or personal exploration of the job market.
 
-## 🚀 Overview
+## 📖 Overview
 
-This repo contains python tools that do the following:
-- Scrape job listings from Indeed.com with customizable filters
-- Extract job details including salaries and job descriptions
-- Analyze the job market with an interactive dashboard
-- Export structured data for further analysis
+With this tool, you can:
+
+- Scrape job listings from Indeed.com using simple and clear filtering options.
+- Extract detailed job information, including salaries and descriptions.
+- Explore and analyze the collected data using an interactive dashboard.
+- Export structured data for further personal research or analysis.
 
 <details>
-<summary>📋 Data extracted includes...</summary>
+<summary>📋 Details of the extracted data</summary>
 
-- Job titles, companies, locations, and contact information
-- Detailed salary data (normalized to yearly equivalents)
-- Work settings (remote, hybrid, in-person) and job types
-- Full job descriptions and posting dates
-- Direct links to job listings
+- Job titles, companies, locations, and contact information (when available).
+- Salary information (normalized to annual equivalents for easier comparison).
+- Work settings, such as remote, hybrid, or onsite.
+- Job types such as full-time, part-time, or contract.
+- Full job descriptions and posting dates.
+- Direct links to original job postings.
 
 </details>
 
-## 🏁 Quick Start
+## 🛠️ Getting Started
 
 ### Installation
 
+To use the tool, follow these steps:
+
 ```bash
-# Clone and setup
+# Clone this repository
 git clone https://github.com/dennisvdang/Indeed-Job-Scraper.git
 cd Indeed-Job-Scraper
 
-# Create and activate virtual environment
+# Create and activate a virtual environment
 python -m venv venv
-venv\Scripts\activate  # On Windows
-source venv/bin/activate  # On macOS/Linux
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate     # Windows
 
-# Install
+# Install required packages
 pip install -r requirements.txt
-
 ```
 
 ### Basic Usage
 
+Here's how you can perform a simple job search:
+
 ```bash
 # Run a basic job search
 indeed-scraper --job-title "Software Engineer" --location "San Francisco"
-
-# View your results in the dashboard
-streamlit run src/streamlit_dashboard.py
 ```
 
 ## 🔍 Key Features
@@ -65,40 +67,40 @@ indeed-scraper \
     --days-ago 7
 ```
 
-### 2. Multiple Job Queues
+### 2. Multiple Job Searches/Queues
 
-Run multiple job searches sequentially:
+You can run several job searches at once using a queue file:
 
 ```bash
 indeed-scraper --queue examples/job_queues/software_and_data_jobs.txt
 ```
 
 <details>
-<summary>Learn more about job queues...</summary>
 
-Create text or JSON configuration files with multiple search parameters. See the [`examples/job_queues/`](examples/job_queues/) directory for sample files and [`examples/templates/`](examples/templates/) for templates.
+<summary>More about job queues...</summary>
+
+You can create your own text or JSON queue files to automate multiple searches. Check the [`examples/job_queues/`](examples/job_queues/) directory for examples and [`examples/templates/`](examples/templates/) for templates you can customize.
 
 </details>
 
 ### 3. Interactive Dashboard
 
-Visualize and analyze your job data:
+To explore the scraped data interactively:
 
 ```bash
 streamlit run src/streamlit_dashboard.py
 ```
-
-The dashboard automatically loads all scraped job data from the `data/raw/` directory and provides:
-- Salary distribution analysis
-- Geographic job distribution
-- Company and role breakdowns
+The dashboard automatically loads your collected data from the `data/raw/` directory and helps you explore:
+- Salary distributions
+- Geographic locations of jobs
+- Companies and job roles
 - Detailed job descriptions
 
-## 📚 Documentation
+## 📚 Helpful Resources
 
 - **[Examples Directory](examples/)**: Sample files and usage patterns
-- **[Command Line Reference](#command-line-reference)**: All available CLI options
-- **[Troubleshooting](#troubleshooting)**: Common issues and solutions
+- **[Command Line Reference](#command-line-reference)**: All available command-line options explained.
+- **[Troubleshooting](#troubleshooting)**: Solutions for common issues.
 
 ## 📊 Command Line Reference
 
@@ -112,7 +114,7 @@ The dashboard automatically loads all scraped job data from the `data/raw/` dire
 | `--queue` | Run multiple job searches | `examples/job_queues/remote_jobs.txt` |
 
 <details>
-<summary>Show all options...</summary>
+<summary>Additional options...</summary>
 
 | Parameter | Description | Possible Values | Default |
 |-----------|-------------|-----------------|---------|
@@ -137,11 +139,15 @@ The tool uses undetected-chromedriver with Chrome version 134 (or compatible). E
 
 ## ⚠️ Disclaimer
 
-This tool is for educational and personal use only. Use responsibly and respect Indeed.com's terms of service by limiting requests and using for personal research purposes only.
+Please use this tool responsibly. It is intended strictly for educational and personal research purposes. Always respect Indeed.com's terms of service.
 
-## 🔮 Future Development
+## 🌱 Planned Improvements
 
-- Job description analysis using LLM pipeline
-- Dashboard improvements
+Some areas for future improvement include:
+
+- Adding job description analysis using language models.
+- Further enhancements to the dashboard experience.
+
+Contributions, suggestions, and feedback from everyone are warmly welcomed. Feel free to open an issue or submit a pull request if you'd like to help make the project better.
 
 ---
