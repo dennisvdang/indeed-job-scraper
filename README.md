@@ -14,7 +14,7 @@ With this tool, you can:
 - Export structured data for further personal research or analysis.
 
 <details>
-<summary>📋 Details of the extracted data</summary>
+<summary>📋 Extracted job data includes...</summary>
 
 - Job titles, companies, locations, and contact information (when available).
 - Salary information (normalized to annual equivalents for easier comparison).
