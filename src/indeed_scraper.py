@@ -22,7 +22,7 @@ import signal
 import sys
 import time
 import json
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, field, asdict, fields
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple, Any, Union
@@ -130,7 +130,7 @@ class ScrapeJob:
     days_ago: int = 7
     work_setting: Optional[str] = None
     job_type: Optional[str] = None
-    include_descriptions: bool = True
+    exclude_descriptions: bool = False
     output_file: Optional[str] = None
     
     def to_dict(self) -> Dict:
@@ -156,7 +156,7 @@ class ScrapeJob:
             days_ago=args.days_ago,
             work_setting=args.work_setting,
             job_type=args.job_type,
-            include_descriptions=not args.exclude_descriptions,
+            exclude_descriptions=args.exclude_descriptions,
             output_file=args.output
         )
 
@@ -545,7 +545,7 @@ def scrape_job_listings(
     days_ago: int = 7,
     work_setting: Optional[str] = None,
     job_type: Optional[str] = None,
-    include_descriptions: bool = False,
+    exclude_descriptions: bool = False,
     captcha_already_solved: bool = False
 ) -> List[JobListing]:
     """Main function to scrape Indeed job listings."""
@@ -585,7 +585,16 @@ def scrape_job_listings(
             job_cards = driver.find_elements(By.CSS_SELECTOR, JOB_CARD_SELECTOR)
             if not job_cards:
                 logger.info("No job cards found on this page.")
-                break
+                # Likely a CAPTCHA or other blocking mechanism
+                logger.info("\nPossible CAPTCHA detected. Please check the browser window.")
+                logger.info("After solving any CAPTCHA, press Enter to continue scraping...")
+                if get_user_input() is None:
+                    return all_jobs
+                # Try to find job cards again after CAPTCHA is solved
+                job_cards = driver.find_elements(By.CSS_SELECTOR, JOB_CARD_SELECTOR)
+                if not job_cards:
+                    logger.info("Still no job cards found after user input. Moving to next job.")
+                    break
                 
             # Process each job card
             jobs_on_page = []
@@ -628,7 +637,7 @@ def scrape_job_listings(
                 jobs_on_page.append(job_listing)
                 
                 # Track URLs for description scraping
-                if include_descriptions and job_data.get('link'):
+                if not exclude_descriptions and job_data.get('link'):
                     page_urls_to_scrape.append(job_data['link'])
                 
                 random_delay(0.2, 0.5)
@@ -636,7 +645,7 @@ def scrape_job_listings(
             logger.info(f"Found {len(jobs_on_page)} unique jobs on this page")
             
             # Batch scrape descriptions if needed
-            if include_descriptions and page_urls_to_scrape:
+            if not exclude_descriptions and page_urls_to_scrape:
                 logger.info(f"Scraping descriptions for {len(page_urls_to_scrape)} jobs...")
                 url_to_listing = {listing.job_url: listing for listing in jobs_on_page if listing.job_url}
                 batch_scrape_descriptions(driver, url_to_listing)
@@ -732,7 +741,7 @@ def create_job_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--exclude-descriptions", 
         action="store_true",
-        help="Skip scraping full job descriptions"
+        help="Skip scraping full job descriptions (descriptions are included by default)"
     )
     
     return parser
@@ -796,7 +805,7 @@ def run_scrape_job(
         days_ago=job.days_ago,
         work_setting=job.work_setting,
         job_type=job.job_type,
-        include_descriptions=job.include_descriptions,
+        exclude_descriptions=job.exclude_descriptions,
         captcha_already_solved=captcha_already_solved
     )
     
@@ -863,8 +872,12 @@ def main() -> int:
                 logger.info(f"Running job {i+1} of {len(job_queue)}")
                 logger.info(f"{'='*60}\n")
                 
-                run_scrape_job(driver, job, captcha_already_solved)
-                captcha_already_solved = True  # Only need to solve CAPTCHA once
+                jobs = run_scrape_job(driver, job, captcha_already_solved)
+                # If no jobs were found, we may need to solve a CAPTCHA again for the next job
+                if not jobs:
+                    captcha_already_solved = False
+                else:
+                    captcha_already_solved = True
                 
                 # Add a delay between jobs
                 if i < len(job_queue.jobs) - 1 and not SHOULD_EXIT:

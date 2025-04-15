@@ -10,8 +10,9 @@ Author: Dennis
 
 import os
 from pathlib import Path
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple
 from datetime import datetime
+from functools import partial
 
 import pandas as pd
 import streamlit as st
@@ -40,7 +41,7 @@ def load_data(file_path: Path) -> pd.DataFrame:
     
     # Create job_id if missing
     if 'job_id' not in df.columns:
-        df['job_id'] = df.index.map(lambda i: f"{file_path.stem}_{i}")
+        df['job_id'] = df.index.map(f"{file_path.stem}_{{}}".format)
     
     return df
 
@@ -62,119 +63,146 @@ def load_multiple_datasets() -> pd.DataFrame:
     return combined_df
 
 
-def create_chart(df: pd.DataFrame, chart_type: str, **kwargs) -> Optional[go.Figure]:
-    """Create various chart types based on parameters."""
-    if chart_type == "count":
-        column = kwargs.get('column')
-        title = kwargs.get('title')
-        limit = kwargs.get('limit', 20)
-        
-        if column not in df.columns or df[column].isna().all():
-            return None
-        
-        counts = df[column].value_counts().reset_index().head(limit)
-        counts.columns = [column.title(), 'Count']
-        
-        fig = px.bar(
-            counts, x='Count', y=column.title(),
-            orientation='h', title=title,
-            color='Count', color_continuous_scale='Viridis'
-        )
-        fig.update_layout(yaxis={'categoryorder': 'total ascending'})
-        
-    elif chart_type == "histogram":
-        column = kwargs.get('column', 'salary_midpoint_yearly')
-        title = kwargs.get('title', f'{column.replace("_", " ").title()} Distribution')
-        
-        if column not in df.columns:
-            return None
-        
-        # Filter for valid data
-        data = df[column].dropna()
-        if len(data) < 5:
-            return None
-        
-        # Remove outliers (5th to 95th percentile)
-        quantiles = data.quantile([0.05, 0.95])
-        filtered_df = df[(df[column] >= quantiles.iloc[0]) & (df[column] <= quantiles.iloc[1])]
-        
-        median_value = filtered_df[column].median()
-        
-        fig = px.histogram(
-            filtered_df, x=column, title=title,
-            labels={column: column.replace('_', ' ').title()},
-            color_discrete_sequence=['#2E86C1'], nbins=20
-        )
-        
-        # Add median line
-        fig.add_vline(
-            x=median_value, line_dash="dash", line_color="red",
-            annotation_text=f"Median: ${median_value:,.0f}" if 'salary' in column else f"Median: {median_value:.1f}",
-            annotation_position="top right"
-        )
-        
-    elif chart_type == "pie":
-        column = kwargs.get('column')
-        title = kwargs.get('title')
-        
-        if column not in df.columns or df[column].isna().all():
-            return None
-        
-        value_counts = df[column].value_counts().reset_index()
-        value_counts.columns = [column.title(), 'Count']
-        
-        fig = px.pie(
-            value_counts, values='Count', names=column.title(),
-            title=title, color_discrete_sequence=px.colors.qualitative.Safe
-        )
-        fig.update_traces(textposition='inside', textinfo='percent+label')
-        
-    elif chart_type == "box":
-        x, y = kwargs.get('x'), kwargs.get('y')
-        title = kwargs.get('title')
-        
-        if not all(col in df.columns for col in [x, y]) or df[y].isna().all():
-            return None
-        
-        filtered_df = df.dropna(subset=[x, y])
-        if len(filtered_df) < 5:
-            return None
-        
-        fig = px.box(
-            filtered_df, x=x, y=y, title=title,
-            labels={col: col.replace('_', ' ').title() for col in [x, y]},
-            color=x
-        )
-        
-    elif chart_type == "map":
-        if 'state' not in df.columns or df['state'].isna().all():
-            return None
-        
-        state_counts = df['state'].value_counts().reset_index()
-        state_counts.columns = ['State', 'Job Count']
-        
-        fig = px.choropleth(
-            state_counts, locations='State', locationmode='USA-states',
-            color='Job Count', scope='usa', title='Job Distribution by State',
-            color_continuous_scale='Viridis'
-        )
-        
-    else:
+def check_required_columns(df: pd.DataFrame, required_cols: List[str]) -> bool:
+    """Check if dataframe has required columns with valid data."""
+    return all(col in df.columns and not df[col].isna().all() for col in required_cols)
+
+
+def create_bar_chart(df: pd.DataFrame, column: str, title: str, limit: int = 20) -> Optional[go.Figure]:
+    """Create a horizontal bar chart for counting values in a column."""
+    if not check_required_columns(df, [column]):
         return None
+    
+    counts = df[column].value_counts().reset_index().head(limit)
+    counts.columns = [column.title(), 'Count']
+    
+    fig = px.bar(
+        counts, x='Count', y=column.title(),
+        orientation='h', title=title,
+        color='Count', color_continuous_scale='Viridis'
+    )
+    fig.update_layout(yaxis={'categoryorder': 'total ascending'})
+    return fig
+
+
+def create_histogram(
+    df: pd.DataFrame, 
+    column: str = 'salary_midpoint_yearly', 
+    title: Optional[str] = None
+) -> Optional[go.Figure]:
+    """Create a histogram with median line for numerical data."""
+    if not check_required_columns(df, [column]):
+        return None
+    
+    # Use provided title or generate one
+    title = title or f'{column.replace("_", " ").title()} Distribution'
+    
+    # Filter for valid data
+    data = df[column].dropna()
+    if len(data) < 5:
+        return None
+    
+    # Remove outliers (5th to 95th percentile)
+    quantiles = data.quantile([0.05, 0.95])
+    filtered_df = df[(df[column] >= quantiles.iloc[0]) & (df[column] <= quantiles.iloc[1])]
+    
+    median_value = filtered_df[column].median()
+    
+    fig = px.histogram(
+        filtered_df, x=column, title=title,
+        labels={column: column.replace('_', ' ').title()},
+        color_discrete_sequence=['#2E86C1'], nbins=20
+    )
+    
+    # Add median line
+    is_salary = 'salary' in column
+    median_text = f"Median: ${median_value:,.0f}" if is_salary else f"Median: {median_value:.1f}"
+    
+    fig.add_vline(
+        x=median_value, line_dash="dash", line_color="red",
+        annotation_text=median_text,
+        annotation_position="top right"
+    )
     
     return fig
 
 
+def create_pie_chart(df: pd.DataFrame, column: str, title: str) -> Optional[go.Figure]:
+    """Create a pie chart for categorical data."""
+    if not check_required_columns(df, [column]):
+        return None
+    
+    value_counts = df[column].value_counts().reset_index()
+    value_counts.columns = [column.title(), 'Count']
+    
+    fig = px.pie(
+        value_counts, values='Count', names=column.title(),
+        title=title, color_discrete_sequence=px.colors.qualitative.Safe
+    )
+    fig.update_traces(textposition='inside', textinfo='percent+label')
+    return fig
+
+
+def create_box_plot(df: pd.DataFrame, x: str, y: str, title: str) -> Optional[go.Figure]:
+    """Create a box plot for comparing distributions across categories."""
+    if not check_required_columns(df, [x, y]):
+        return None
+    
+    filtered_df = df.dropna(subset=[x, y])
+    if len(filtered_df) < 5:
+        return None
+    
+    fig = px.box(
+        filtered_df, x=x, y=y, title=title,
+        labels={col: col.replace('_', ' ').title() for col in [x, y]},
+        color=x
+    )
+    return fig
+
+
+def create_choropleth(df: pd.DataFrame) -> Optional[go.Figure]:
+    """Create a US choropleth map of job counts by state."""
+    if not check_required_columns(df, ['state']):
+        return None
+    
+    state_counts = df['state'].value_counts().reset_index()
+    state_counts.columns = ['State', 'Job Count']
+    
+    fig = px.choropleth(
+        state_counts, locations='State', locationmode='USA-states',
+        color='Job Count', scope='usa', title='Job Distribution by State',
+        color_continuous_scale='Viridis'
+    )
+    return fig
+
+
+def create_chart(df: pd.DataFrame, chart_type: str, **kwargs) -> Optional[go.Figure]:
+    """Create various chart types based on parameters."""
+    chart_creators = {
+        "count": partial(create_bar_chart, df=df, **kwargs),
+        "histogram": partial(create_histogram, df=df, **kwargs),
+        "pie": partial(create_pie_chart, df=df, **kwargs),
+        "box": partial(create_box_plot, df=df, **kwargs),
+        "map": partial(create_choropleth, df=df)
+    }
+    
+    creator = chart_creators.get(chart_type)
+    return creator() if creator else None
+
+
 def create_wordcloud(df: pd.DataFrame, column: str = 'title') -> Optional[plt.Figure]:
     """Create a word cloud from text data in specified column."""
-    if column not in df.columns or df[column].isna().all():
+    if not check_required_columns(df, [column]):
         return None
     
     text = ' '.join(df[column].dropna().astype(str))
     
     wordcloud = WordCloud(
-        width=800, height=400, background_color='white',
-        colormap='viridis', max_words=100, contour_width=1,
+        width=800, height=400, 
+        background_color='white',
+        colormap='viridis', 
+        max_words=100, 
+        contour_width=1,
         stopwords=STOPWORDS
     ).generate(text)
     
@@ -188,11 +216,12 @@ def create_wordcloud(df: pd.DataFrame, column: str = 'title') -> Optional[plt.Fi
 
 def create_salary_by_location_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     """Create chart of salaries grouped by location."""
-    if 'salary_midpoint_yearly' not in df.columns:
+    if not check_required_columns(df, ['salary_midpoint_yearly']):
         return None
     
     # Find best location column (state, city, zip)
-    loc_field = next((field for field in ['state', 'city', 'zip'] 
+    location_fields = ['state', 'city', 'zip']
+    loc_field = next((field for field in location_fields 
                      if field in df.columns and df[field].notna().sum() > 3), None)
     
     if not loc_field:
@@ -244,6 +273,37 @@ def create_salary_by_location_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     return fig
 
 
+def apply_date_filter(df: pd.DataFrame) -> Tuple[pd.DataFrame, bool]:
+    """Apply date filter to the dataframe."""
+    if 'date_posted' not in df.columns:
+        return df, False
+    
+    min_date = df['date_posted'].min().date()
+    max_date = df['date_posted'].max().date()
+    
+    # Set datetime format to mm/dd/yyyy
+    st.sidebar.markdown(
+        "<style>input[type=date] {min-height: 36px;}</style>", 
+        unsafe_allow_html=True
+    )
+    
+    date_range = st.sidebar.date_input(
+        "Job Posted Date Range",
+        value=(min_date, max_date),
+        min_value=min_date,
+        max_value=max_date,
+        format="MM/DD/YYYY"
+    )
+    
+    if len(date_range) == 2:
+        start_date, end_date = date_range
+        return df[
+            (df['date_posted'].dt.date >= start_date) & 
+            (df['date_posted'].dt.date <= end_date)
+        ], True
+    return df, False
+
+
 def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
     """Apply all dashboard filters to the dataframe."""
     filtered_df = df.copy()
@@ -256,29 +316,7 @@ def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
             filtered_df = filtered_df[filtered_df['queried_job_title'].isin(selected_queries)]
     
     # Date filter
-    if 'date_posted' in filtered_df.columns:
-        min_date = filtered_df['date_posted'].min().date()
-        max_date = filtered_df['date_posted'].max().date()
-        
-        # Set datetime format to mm/dd/yyyy
-        st.sidebar.markdown("""
-        <style>input[type=date] {min-height: 36px;}</style>
-        """, unsafe_allow_html=True)
-        
-        date_range = st.sidebar.date_input(
-            "Job Posted Date Range",
-            value=(min_date, max_date),
-            min_value=min_date,
-            max_value=max_date,
-            format="MM/DD/YYYY"
-        )
-        
-        if len(date_range) == 2:
-            start_date, end_date = date_range
-            filtered_df = filtered_df[
-                (filtered_df['date_posted'].dt.date >= start_date) & 
-                (filtered_df['date_posted'].dt.date <= end_date)
-            ]
+    filtered_df, _ = apply_date_filter(filtered_df)
     
     # Location filter
     if 'state' in filtered_df.columns:
@@ -414,7 +452,116 @@ def get_field_display_value(row: pd.Series, field: str, default: str = "Unknown"
         return row[field].strftime('%m/%d/%y')
     
     return str(row[field])
+
+
+def get_location_display(row: pd.Series) -> str:
+    """Extract formatted location from row data."""
+    if 'city' in row and 'state' in row and pd.notna(row['city']) and pd.notna(row['state']):
+        return f"{row['city']}, {row['state']}"
+    if 'state' in row and pd.notna(row['state']):
+        return row['state']
+    if 'city' in row and pd.notna(row['city']):
+        return row['city']
+    return "Unknown"
+
+
+def get_job_url(row: pd.Series) -> Optional[str]:
+    """Extract job URL from row data."""
+    url_fields = ['url', 'job_url', 'apply_url']
+    return next((row[field] for field in url_fields 
+               if field in row and pd.notna(row[field])), None)
+
+
+def display_job_listing_row(df: pd.DataFrame, index: int) -> None:
+    """Display a single job listing row in the job descriptions tab."""
+    row = df.iloc[index]
+    job_id = row['job_id']
     
+    # Get field values with appropriate defaults and formatting
+    title = get_field_display_value(row, 'title', "Unknown Job")
+    company = get_field_display_value(row, 'company', "Unknown Company")
+    location = get_location_display(row)
+    salary = get_field_display_value(row, 'salary_midpoint_yearly', "Not listed")
+    date_posted = get_field_display_value(row, 'date_posted', "Unknown")
+    
+    # Check if this is the selected job
+    is_selected = job_id == st.session_state.selected_job_id
+    
+    # Create row with columns
+    cols = st.columns([3, 1.5, 1.2, 1.2, 1.2, 1.1, 1.1])
+    cols[0].write(f"**{title}**")
+    cols[1].write(company)
+    cols[2].write(location)
+    cols[3].write(salary)
+    cols[4].write(date_posted)
+    
+    # View button for job description
+    button_type = "secondary" if is_selected else "primary"
+    button_label = "Selected" if is_selected else "Job Description"
+    if cols[5].button(button_label, key=f"btn_{index}", use_container_width=True, type=button_type, disabled=is_selected):
+        st.session_state.selected_job_id = job_id
+        st.rerun()
+    
+    # Job URL button
+    job_url = get_job_url(row)
+    
+    if job_url:
+        cols[6].markdown(f"<a href='{job_url}' target='_blank'><button style='width:100%'>Visit Link</button></a>", unsafe_allow_html=True)
+    else:
+        cols[6].write("No URL")
+    
+    # Add divider line between rows (except after the last row)
+    if index < len(df) - 1:
+        st.markdown("<div class='row-divider'></div>", unsafe_allow_html=True)
+
+
+def display_job_details(job: pd.Series) -> None:
+    """Display detailed job information in the right panel."""
+    st.markdown("### Quick Info")
+    
+    # Collect available details
+    fields = [
+        ('company', 'Company'),
+        ('job_type', 'Job Type'),
+        ('work_setting', 'Work Setting'),
+    ]
+    
+    details_md = []
+    
+    # Add standard fields
+    for field, label in fields:
+        if field in job and pd.notna(job[field]):
+            details_md.append(f"**{label}:** {job[field]}")
+    
+    # Add location
+    location = get_location_display(job)
+    if location != "Unknown":
+        details_md.append(f"**Location:** {location}")
+    
+    # Add salary
+    if 'salary_midpoint_yearly' in job and pd.notna(job['salary_midpoint_yearly']):
+        details_md.append(f"**Annual Salary:** ${job['salary_midpoint_yearly']:,.0f}")
+    
+    # Add job URL
+    job_url = get_job_url(job)
+    if job_url:
+        details_md.append(f"**[View Job Post Link]({job_url})**")
+    
+    st.markdown("\n\n".join(details_md))
+
+
+def display_job_description_content(job: pd.Series) -> None:
+    """Display the job description content."""
+    # Find description content
+    desc_cols = ['job_description', 'description']
+    desc_col = next((col for col in desc_cols 
+                if col in job and pd.notna(job[col])), None)
+            
+    if desc_col:
+        st.markdown(job[desc_col])
+    else:
+        st.info("No job description available for this listing.")
+
 
 def display_descriptions_tab(df: pd.DataFrame) -> None:
     """Display content for the Job Descriptions tab."""
@@ -435,7 +582,7 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     # Selection interface
     st.subheader("Select a job to view its description")
     
-    # Add custom CSS for compact table-like display
+    # Add custom CSS
     st.markdown("""
     <style>
     .compact-item {padding: 6px 10px; border-bottom: 1px solid #eee; margin-bottom: 4px;}
@@ -448,7 +595,6 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     [data-testid="stVerticalBlock"] > [style*="flex-direction: column;"] > [data-testid="stVerticalBlock"] {
         border: none !important; box-shadow: none !important;
     }
-    /* Row divider styles */
     .row-divider {
         border-bottom: 1px solid #e0e0e0;
         margin: 4px 0;
@@ -457,8 +603,8 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     """, unsafe_allow_html=True)
     
     # Display header row
-    header_cols = st.columns([3, 1.5, 1.2, 1.2, 1.2, 1.1, 1.1])
     headers = ["Job Title", "Company", "Location", "Salary", "Date Posted", "View Job Description", "Visit Job Post"]
+    header_cols = st.columns([3, 1.5, 1.2, 1.2, 1.2, 1.1, 1.1])
     for i, header in enumerate(headers):
         header_cols[i].write(f"**{header}**")
     
@@ -468,55 +614,7 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     # Create scrollable container for jobs
     with st.container(height=280, border=False):
         for i in range(len(df)):
-            row = df.iloc[i]
-            job_id = row['job_id']
-            
-            # Get field values with appropriate defaults and formatting
-            title = get_field_display_value(row, 'title', "Unknown Job")
-            company = get_field_display_value(row, 'company', "Unknown Company")
-            
-            # Get location info
-            location = "Unknown"
-            if 'city' in row and 'state' in row and pd.notna(row['city']) and pd.notna(row['state']):
-                location = f"{row['city']}, {row['state']}"
-            elif 'state' in row and pd.notna(row['state']):
-                location = row['state']
-            elif 'city' in row and pd.notna(row['city']):
-                location = row['city']
-            
-            salary = get_field_display_value(row, 'salary_midpoint_yearly', "Not listed")
-            date_posted = get_field_display_value(row, 'date_posted', "Unknown")
-            
-            # Check if this is the selected job
-            is_selected = job_id == st.session_state.selected_job_id
-            
-            # Create row with columns
-            cols = st.columns([3, 1.5, 1.2, 1.2, 1.2, 1.1, 1.1])
-            cols[0].write(f"**{title}**")
-            cols[1].write(company)
-            cols[2].write(location)
-            cols[3].write(salary)
-            cols[4].write(date_posted)
-            
-            # View button for job description
-            button_type = "secondary" if is_selected else "primary"
-            button_label = "Selected" if is_selected else "Job Description"
-            if cols[5].button(button_label, key=f"btn_{i}", use_container_width=True, type=button_type, disabled=is_selected):
-                st.session_state.selected_job_id = job_id
-                st.rerun()
-            
-            # Job URL button
-            job_url = next((row[url_field] for url_field in ['url', 'job_url', 'apply_url']
-                          if url_field in row and pd.notna(row[url_field])), None)
-            
-            if job_url:
-                cols[6].markdown(f"<a href='{job_url}' target='_blank'><button style='width:100%'>Visit Link</button></a>", unsafe_allow_html=True)
-            else:
-                cols[6].write("No URL")
-            
-            # Add divider line between rows (except after the last row)
-            if i < len(df) - 1:
-                st.markdown("<div class='row-divider'></div>", unsafe_allow_html=True)
+            display_job_listing_row(df, i)
     
     # Add spacer
     st.write("---")
@@ -531,59 +629,20 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     
     # Display job description
     if not selected_job.empty:
-        job_title = get_field_display_value(selected_job.iloc[0], 'title', 'Unknown Position')
-        company_name = get_field_display_value(selected_job.iloc[0], 'company', 'Unknown Company')
+        job = selected_job.iloc[0]
+        job_title = get_field_display_value(job, 'title', 'Unknown Position')
+        company_name = get_field_display_value(job, 'company', 'Unknown Company')
         st.subheader(f"{job_title} @ {company_name}")
         
         col1, col2 = st.columns([3, 1])
         
         # Job description (left column)
         with col1:
-            # Find description content
-            desc_col = next((col for col in ['job_description', 'description'] 
-                        if col in selected_job.iloc[0] and pd.notna(selected_job.iloc[0][col])), None)
-                    
-            if desc_col:
-                st.markdown(selected_job.iloc[0][desc_col])
-            else:
-                st.info("No job description available for this listing.")
+            display_job_description_content(job)
         
         # Job details (right column)
         with col2:
-            st.markdown("### Quick Info")
-            
-            # Collect available details
-            fields = [
-                ('company', 'Company'),
-                ('job_type', 'Job Type'),
-                ('work_setting', 'Work Setting'),
-            ]
-            
-            details_md = []
-            job = selected_job.iloc[0]
-            
-            # Add standard fields
-            for field, label in fields:
-                if field in job and pd.notna(job[field]):
-                    details_md.append(f"**{label}:** {job[field]}")
-            
-            # Add location
-            if 'city' in job and 'state' in job and pd.notna(job['city']) and pd.notna(job['state']):
-                details_md.append(f"**Location:** {job['city']}, {job['state']}")
-            elif 'state' in job and pd.notna(job['state']):
-                details_md.append(f"**Location:** {job['state']}")
-            
-            # Add salary
-            if 'salary_midpoint_yearly' in job and pd.notna(job['salary_midpoint_yearly']):
-                details_md.append(f"**Annual Salary:** ${job['salary_midpoint_yearly']:,.0f}")
-            
-            # Add job URL
-            job_url = next((job[url_field] for url_field in ['url', 'job_url', 'apply_url']
-                          if url_field in job and pd.notna(job[url_field])), None)
-            if job_url:
-                details_md.append(f"**[View Job Post Link]({job_url})**")
-            
-            st.markdown("\n\n".join(details_md))
+            display_job_details(job)
     else:
         st.info("No job data available to display.")
 
@@ -600,10 +659,9 @@ def display_sidebar_info(df: pd.DataFrame) -> None:
     # Add date range if available
     if 'date_posted' in df.columns and not df['date_posted'].empty:
         date_format = '%m/%d/%y'
-        st.sidebar.write(
-            f"Job postings from: {df['date_posted'].min().strftime(date_format)} "
-            f"to {df['date_posted'].max().strftime(date_format)}"
-        )
+        min_date = df['date_posted'].min().strftime(date_format)
+        max_date = df['date_posted'].max().strftime(date_format)
+        st.sidebar.write(f"Job postings from: {min_date} to {max_date}")
     
     # Download button
     st.sidebar.markdown("---")

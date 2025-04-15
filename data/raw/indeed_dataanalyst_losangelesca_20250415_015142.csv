@@ -1,0 +1,2303 @@
+﻿job_id,source,title,company,queried_job_title,work_setting,job_type,date_posted,date_scraped,city,state,zip,salary_period,salary_min,salary_max,salary_min_yearly,salary_max_yearly,salary_midpoint_yearly,job_url,search_url,job_description
+29543d68574a73f6,Indeed,"Data Products Analyst, YouTube",YouTube,Data Analyst,in-person,Full-time,2025-04-14,2025-04-15,Los Angeles,CA,,yearly,123000.0,176000.0,123000.0,176000.0,149500.0,https://www.indeed.com/viewjob?jk=29543d68574a73f6,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"This role may also be located in our Playa Vista, CA campus.   
+Note: By applying to this position you will have an opportunity to share your preferred working location from the following: Mountain View, CA, USA; New York, NY, USA; Los Angeles, CA, USA; San Bruno, CA, USA.   
+
+Minimum qualifications:  
+
+  • Bachelor’s degree or equivalent practical experience.
+  • 3 years of experience in either system design and code comprehension (reading) in one or more languages (e.g., Java, C++, Python, etc.).
+  • 3 years of experience in technical troubleshooting, and managing internal/external partners or customers.
+  • 3 years of experience in designing data pipelines, and dimensional data modeling for synch and asynch system integration and implementation using internal (e.g., Flume, etc.) and external stacks (e.g., Data-flow, Spark, etc.).
+  • 3 years of experience working with data infrastructure and data models by performing exploratory queries and scripts.
+
+Preferred qualifications:  
+
+  • Master’s degree in Business, Statistics, Mathematics, Economics, Engineering or Applied Science, or a related field.
+  • Experience with data warehouses, distributed data platforms, and data lakes.
+  • Ability to navigate ambiguity and work in a fast-moving environment with multiple stakeholders.
+  • Ability to apply structured thinking to break down complex, multi-dimensional problems.
+  • Excellent business and technical communication, organizational, and problem-solving skills.
+
+About the job   
+
+As a Data Products Analyst within YouTube Ads, you will be part of a community of analytics professionals who work on high impact projects ranging from developing critical data pipelines that help run the business, build tools to analyze the content partnerships and creator ecosystem which guide business leadership on optimizing the effectiveness and efficiency of our partner facing business teams. Data is the fundamental building block for every tool and every insight. You will build the data sets that help run the business, piping the relevant data into and out of our tools, and making it useful for analysts across the organization to drive reporting and insights.   
+In this role, you will be responsible for democratizing YouTube’s business data, helping business leaders make sense of business operations through timely, accurate, and robust business intelligence. You will use SQL and YouTube’s Extract, Transform, and Load (ETL) systems to produce useful datasets, establish best practices for data sets and reporting, and develop a breadth of expertise in various data domains. You will scale centralized reporting, to ensure the business is operating more effectively and efficiently. You will embody a product owner mindset and influence building exceptional data products that delight our users.   
+At YouTube, we believe that everyone deserves to have a voice, and that the world is a better place when we listen, share, and build community through our stories. We work together to give everyone the power to share their story, explore what they love, and connect with one another in the process. Working at the intersection of cutting-edge technology and boundless creativity, we move at the speed of culture with a shared goal to show people the world. We explore new ideas, solve real problems, and have fun — and we do it all together.   
+The US base salary range for this full-time position is $123,000-$176,000 + bonus + equity + benefits. Our salary ranges are determined by role, level, and location. Within the range, individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range for your preferred location during the hiring process.   
+Please note that the compensation details listed in US role postings reflect the base salary only, and do not include bonus, equity, or benefits. Learn more aboutbenefits at Google.   
+
+Responsibilities   
+
+  • Conduct requirements gathering and project scoping sessions with subject matter experts, business users, and executive stakeholders to discover and define business data needs.
+  • Design, build, and optimize the data architecture and extract, transform, and load (ETL) pipelines to make them accessible for Business Data Analysts, Data Scientists, and business users to enable data-driven decision-making.
+  • Work with analysts to productionlize and scale value-creating capabilities including data integrations and transformations, model features, and statistical and machine learning models.
+  • Drive standards in data reliability, data integrity and data governance, enabling accurate, consistent, and trustworthy data sets, business intelligence products, and analyses.
+  • Engage with the analyst community, communicate with analysts to understand user journeys and data sourcing inefficiencies, advocate best practices, and lead analyst training.
+
+Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See alsoGoogle's EEO Policy andEEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing ourAccommodations for Applicants form."
+2f2d7e0966f84970,Indeed,Data Analyst (Healthcare Required) - CA ONLY - REMOTE,Molina Healthcare,Data Analyst,remote,Full-time,2025-04-08,2025-04-15,Los Angeles,CA,,yearly,68640.0,111967.0,68640.0,111967.0,90303.5,https://www.indeed.com/viewjob?jk=2f2d7e0966f84970,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"JOB DESCRIPTION Job Summary Designs and implements processes and solutions associated with a wide variety of data sets used for data/text mining, analysis, modeling, and predicting to enable informed business decisions. Gains insight into key business problems and deliverables by applying statistical analysis techniques to examine structured and unstructured data from multiple disparate sources. Collaborates across departments and with customers to define requirements and understand business problems. Uses advanced mathematical, statistical, querying, and reporting methods to develop solutions. Develops information tools, algorithms, dashboards, and queries to monitor and improve business performance. Creates solutions from initial concept to fully tested production, and communicates results to a broad range of audiences. Effectively uses current and emerging technologies. KNOWLEDGE/SKILLS/ABILITIES   
+
+Extracts and compiles various sources of information and large data sets from various systems to identify and analyze outliers.   
+
+Sets up process for monitoring, tracking, and trending department data.   
+
+Prepares any state mandated reports and analysis.   
+
+Works with internal, external and enterprise clients as needed to research, develop, and document new standard reports or processes.   
+
+Implements and uses the analytics software and systems to support the departments goals.   
+JOB QUALIFICATIONS   
+
+Required Education   
+
+Associate's Degree or equivalent combination of education and experience   
+Required Experience   
+
+1-3 years   
+Preferred Education   
+
+Bachelor's Degree or equivalent combination of education and experience   
+Preferred Experience   
+
+3-5 years   
+
+To all current Molina employees: If you are interested in applying for this position, please apply through the intranet job listing.   
+
+Molina Healthcare offers a competitive benefits and compensation package. Molina Healthcare is an Equal Opportunity Employer (EOE) M/F/D/V.   
+Pay Range: $68,640 - $111,967 / ANNUAL   
+
+  • Actual compensation may vary from posting based on geographic location, work experience, education and/or skill level."
+d36c419e8781c059,Indeed,"Analyst, Linear Forecasting & Analytics (Disney Entertainment)",Disney Entertainment Television,Data Analyst,in-person,Full-time,2025-04-08,2025-04-15,Burbank,CA,,yearly,75000.0,95100.0,75000.0,95100.0,85050.0,https://www.indeed.com/viewjob?jk=d36c419e8781c059,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"The Linear Forecasting & Analytics team on Disney Entertainment’s (DE) Research, Insights & Analytics operation sits in the middle of business analytics and strategy by forecasting viewership across Primetime, Cable, News and Syndicated platforms and currencies (i.e.- linear and digital). This provides the business with targets in support of monetization, strategic consultation around programming, new measurement and risk planning. The team works across many stakeholders, providing a unique view of the business.
+
+Job Summary:
+
+The Linear Forecasting & Analytics Analyst will aide in the creation of strategic linear forecasts across ABC and the cable networks. This includes tracking Nielsen viewership across the TV landscape, as well as evaluating measurement methodology changes and alternative currencies to help make decisions across multiple teams including sales, finance and scheduling.
+
+The successful Analyst will have enthusiasm and curiosity for solving problems and learning new skill sets in this fast-changing media landscape. They will have passion for being part of numerous strategic projects that will aid in navigating the linear and overall Disney Media business.
+
+Responsibilities:
+
+  • Analyze Linear trends, evaluate methodology changes and alternative currencies to estimate their impact on the Disney Media business.
+
+  • Collaborate with analytics teams to align internal forecasts with machine learning as well as building more accuracy and scenario planning forecasts as well as partner with key executives of the business including finance, sales and scheduling.
+
+  • Evaluate methodology changes by Nielsen (i.e. Big Data) and other providers to alert key stakeholders on potential trend changes.
+
+  • Analyze content consumption and viewership for multiple networks.
+
+  • Work on in-season scenario planning and landscape forecasts.
+
+Basic Qualifications:
+
+  • Minimum of one year experience using advanced Excel and or SQL, to analyze data or conducting qualitative business analyses and insights, or relatable required.
+
+  • Experience with PowerPoint, Keynote, and Tableau, Snowflake
+
+  • Superior project management skills and high attention to detail.
+
+  • Must live within a commutable distance to Burbank, Ca. The role requires someone onsite 4+ days a week.
+
+  • A deep passion for the media landscape and TV programs.
+
+  • Strong verbal and written communication skills.
+
+Preferred Qualifications: 
+
+  • Knowledge of Nielsen media tools (including NNTV and NPOWER)
+
+Required Education: 
+
+  • A bachelor’s degree.
+
+The hiring range for this position in Burbank, CA is $75,000 to $95,100 per year based on a 40 hour work week. The amount of hours scheduled per week may vary based on business needs. The base pay actually offered will take into account internal equity and also may vary depending on the candidate’s geographic region, job-related knowledge, skills, and experience among other factors. A bonus and/or long-term incentive units may be provided as part of the compensation package, in addition to the full range of medical, financial, and/or other benefits, dependent on the level and position offered."
+199abc47ee80ce28,Indeed,"Data Analyst, Production Finance Operations & Innovation",Netflix,Data Analyst,in-person,Full-time,2025-04-10,2025-04-15,Los Angeles,CA,,yearly,50000.0,240000.0,50000.0,240000.0,145000.0,https://www.indeed.com/viewjob?jk=199abc47ee80ce28,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"#### Job Requisition ID
+
+JR32567 
+
+####  Job Posting Date
+
+04-10-2025 
+
+####  Teams
+
+Data Science & Analytics 
+
+####  Work Type
+
+Onsite 
+
+Netflix is one of the world's leading entertainment services, with 283 million paid memberships in over 190 countries enjoying TV series, films and games across a wide variety of genres and languages. Members can play, pause and resume watching as much as they want, anytime, anywhere, and can change their plans at any time.
+
+Netflix is seeking a skilled and motivated Production Finance Tax and Vendor Data Analyst to join our team. This role is pivotal in supporting our Production Finance teams with tasks related to Netflix’s 1099 Tax and Sustainability reporting. The ideal candidate will have a strong skills in both data analysis and communication.  
+
+Responsibilities:
+
+1099 Tax Analysis (50% of Role):
+
+Data Pipeline Maintenance:
+
+  • Monitor data pipelines to ensure continuous data flow for 1099 tax forms, ensuring data is flowing correctly and is available for analysis.
+
+Data Modeling and Scripting:
+
+  • Create and maintain SQL queries for data extraction, analysis, and reporting. Focus on data consumption, reconciliation, and validation tasks to support tax reporting processes.
+
+  • Partner with Production Finance Engineering to track 1099 automation progress.
+
+Accounting/Finance Workflows & Collaboration:
+
+  • Collaborate with Netflix Production Finance, Netflix Accounts Payable, external 1099 accountants, and payroll providers to resolve issues and meet deadlines.
+
+  • Address data validation issues and ensure accurate tax reporting prior to IRS submission.
+
+Sustainability Analysis (50% of Role):
+
+Data Management & Quality Control:
+
+  • Project manage and conduct daily quality control of fuel reduction data across Netflix productions for internal and external reporting.
+
+  • Manage and complete production data tracker templates based on input from internal and production stakeholders, maintaining robust version control.
+
+  • Perform quality checks and correct errors in reductions, cost, and unit data. Finalize values and resolve data issues.
+
+  • Support data roll-up activities, including creating charts and summaries for reports and case studies.
+
+  • Support spot-analysis as needed, including developing new formulas and assumptions based on identified requirements
+
+Collaboration and Communication:
+
+  • Lead training sessions and office hours for Production Sustainability Advisors.
+
+  • Regularly communicate with Regional and Production Sustainability Advisors to address challenges and ensure correct template usage.
+
+  • Respond to data entry questions in a timely and collaborative manner, troubleshoot, and correct errors.
+
+Qualifications:
+
+  • Strong advanced spreadsheet skills (required).
+
+  • Experience working with SQL (required).
+
+  • Some experience in Python or bash scripting is preferred.
+
+  • Analytical mindset, detail-oriented.
+
+  • Effective communicator, able to explain complex concepts to audiences with little to no technical knowledge.
+
+  • Highly organized and able to balance multiple projects, stakeholders, and requests.
+
+  • Ability to tackle and simplify complex analytical problems.
+
+  • Provide real-time support to productions in both regular US time zone hours and US/UK/Europe crossover times.
+
+  • Previous technical knowledge of electricity/generators, clean technology, Electric vehicles, and production is a plus, but not required (ability to learn required).
+
+  • Previous understanding of accounting principles (GAAP, Tax, and regulatory reporting) a plus, but not required (ability to learn required).
+
+Our compensation structure consists solely of an annual salary; we do not have bonuses. You choose each year how much of your compensation you want in salary versus stock options. To determine your personal top of market compensation, we rely on market indicators and consider your specific job family, background, skills, and experience to determine your compensation in the market range. The range for this role is $50,000-240,000.  
+
+Netflix provides comprehensive benefits including Health Plans, Mental Health support, a 401(k) Retirement Plan with employer match, Stock Option Program, Disability Programs, Health Savings and Flexible Spending Accounts, Family-forming benefits, and Life and Serious Injury Benefits. We also offer paid leave of absence programs. Full-time hourly employees accrue 35 days annually for paid time off to be used for vacation, holidays, and sick paid time off. Full-time salaried employees are immediately entitled to flexible time off. See more detail about our Benefits here.  
+
+Netflix is a unique culture and environment. Learn more here.
+
+Inclusion is a Netflix value and we strive to host a meaningful interview experience for all candidates. If you want an accommodation/adjustment for a disability or any other reason during the hiring process, please send a request to your recruiting partner.
+
+We are an equal-opportunity employer and celebrate diversity, recognizing that diversity builds stronger teams. We approach diversity and inclusion seriously and thoughtfully. We do not discriminate on the basis of race, religion, color, ancestry, national origin, caste, sex, sexual orientation, gender, gender identity or expression, age, disability, medical condition, pregnancy, genetic makeup, marital status, or military service."
+03238624822c6775,Indeed,TMS and Data Analyst,PACIFICA TRUCKS LLC,Data Analyst,in-person,Full-time,2025-04-15,2025-04-15,Long Beach,CA,90802,,,,,,,https://www.indeed.com/viewjob?jk=03238624822c6775,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Pacifica Trucks, LLC (a division of Pacifica Logistics Group) is a fast-growing company with ample advancement opportunities. Since our inception in 2004, our talented and valued employees have been committed to providing exceptional customer service through an ecosystem of cutting-edge technologies. We specialize in drayage, container storage, and brokerage services to help build a sustainable and lean supply chain. As a logistics company, we are fully committed to social responsibility, the environment, and the communities we live and work in. One of our major initiatives is to embrace the Clean Truck Program since we are committed to zero emissions and clean air.
+
+We offer 100% COVERED medical, dental, vision, and life insurance, a 401(k) retirement plan, identity theft insurance, paid vacations, holidays and sick days, and more for our employees!
+
+Job Summary
+
+The TMS & Data Analyst is responsible for managing and analyzing data related to the Transportation Management System (TMS) to enhance logistics performance and drive operational efficiency. This role involves data extraction, reporting, and trend analysis to support decision-making across supply chain and transportation functions. The analyst works closely with internal teams and external partners to optimize routing, reduce costs, and ensure accurate, timely movement of goods.
+
+Essential Duties and Responsibilities This position is responsible for, but not limited to, the following. Other duties may be assigned.
+
+  • Data Analytics & Reporting:
+    • Data Analysis: Employ statistical methods, machine learning algorithms, or business intelligence tools to uncover patterns and insights.
+    • Data Collection: Accumulate raw data from various sources including databases, spreadsheets, APIs, or external platforms.
+    • Data Cleaning & Preparation: Eliminate inconsistencies, duplicates, and formatting issues to ensure accurate analysis.
+    • Visualization & Reporting: Develop dashboards, graphs, and reports that succinctly summarize key findings and provide actionable insights.
+    • Decision Making: Utilize derived insights to guide strategies, enhance efficiency, and anticipate future trends.
+    • Automate Data Processing: Utilize tools such as Python, SQL, or Power BI to streamline data collection, cleaning, and transformation.
+    • Advanced Analytics: Apply predictive modeling, clustering, or trend analysis techniques to extract deeper insights.
+    • Clear & Dynamic Reporting: Implement interactive dashboards, real-time updates, and visually compelling presentations to effectively communicate findings.
+    • Data Governance & Quality: Establish standards for accuracy, security, and consistency across datasets.
+    • Storytelling with Data: Develop narratives that explain the meaning of the data and its implications for decision-making.
+  • TMS Support:
+    • Serve as the contact for any TMS-related tasks, including system updates, troubleshooting, and user training, with a focus on Trinium but applicable to other TMS platforms.
+    • Responsible for setting up new accounts, managing workflows, and configuring the system to meet operational needs.
+    • Provide technical support to internal teams to ensure the smooth operation of the TMS.
+    • Responsible for EDI configuration with internal and external trading partners.
+  • System Optimization & Process Improvement:
+    • Work closely with logistics and operations teams to identify areas for improvement within the TMS.
+    • Propose and implement changes to streamline processes and enhance overall efficiency.
+  • Cross-Department Collaboration:
+    • Provide training and support to staff across various departments to ensure proficiency in using the TMS.
+    • Collaborate with IT and other departments to ensure seamless integration between the TMS and other systems.
+  • Meet designated KPIs weekly, monthly, and quarterly according to company policies.
+  • Other tasks and duties, as assigned.
+
+Supervisory Responsibilities
+
+This job has no supervisory responsibilities.
+
+To perform this job successfully, an individual must be able to perform each essential duty satisfactorily. The requirements listed below are representative of the knowledge, skill, and/or ability required. Reasonable accommodations may be made to enable individuals with disabilities to perform essential functions. Job functions are typically performed in an office setting.
+
+Required Qualifications:
+
+  • Bachelor's in Data Science, Statistics, Computer Science, or a related field.
+  • Proven experience as a Data Analyst or in a similar role.
+  • Proficiency in data analysis tools and programming languages such as Python, SQL, Power BI, and others.
+  • Strong understanding of statistical methods and machine learning algorithms.
+  • Excellent communication skills with the ability to present complex data in a clear and concise manner.
+  • Attention to detail and a commitment to data accuracy and quality.
+  • Experience with data visualization tools and creating interactive dashboards.
+  • Strong ability to extract, analyze, and interpret data to drive business insights.
+
+Preferred Qualifications:
+
+  • Master's degree in Data Science, Statistics, Computer Science, or a related field.
+  • Experience working within the trucking or logistics industry.
+  • Familiarity with logistics metrics and operational performance indicators.
+  • Background in project management or process improvement.
+
+Required Technical Skills
+
+  • Data Collection & Integration: Pull and consolidate data from SQL Server, Excel workbooks, flat files, APIs, and external sources using SSIS, Power Query, or custom ETL processes.
+  • Data Cleaning & Transformation: Cleanse and standardize datasets by handling nulls, duplicates, and formatting issues using T-SQL, Power Query, or Excel formulas and VBA.
+  • Relational Data Modeling: Design and manage data models using SQL Server Management Studio (SSMS); establish relationships, indexes, and keys for optimized performance.
+  • Advanced Excel Analytics: Use pivot tables, Power Pivot, dynamic formulas, macros, and VBA to perform multidimensional analysis and scenario modeling.
+  • SQL-Based Analysis: Write efficient T-SQL queries to perform joins, aggregations, CTEs, window functions, and subqueries for in-depth data mining and business insights.
+  • Business Intelligence & Dashboards: Develop interactive dashboards using Power BI, Excel Power View, or SSRS to visualize KPIs, trends, and operational metrics.
+  • Automated Reporting & Scheduling: Create scheduled reports and alerts via SQL Server Agent, Power Automate, or Excel macros to streamline recurring workflows.
+
+Preferred Technical Skills
+
+  • Experience with Trinium TMS or other Transportation Management Systems (e.g., MercuryGate, Oracle Transportation Management, Manhattan Associates, SAP TM) is strongly preferred.
+
+Soft Skills:
+
+  • Ability to work collaboratively in a team environment and across departments.
+  • Excellent problem-solving skills with the ability to troubleshoot technical issues quickly and efficiently.
+  • Strong communication skills, both written and verbal.
+  • Highly organized with the ability to manage multiple priorities and meet deadlines.
+
+Education and/or Experience Bachelor's degree in Data Science, Statistics, Computer Science, or a related field. Prior experience with Trinium or similar transportation management systems.
+
+Language Skills Ability to read, analyze, and interpret general business periodicals, professional journals, technical procedures, or governmental regulations. Ability to write reports, business correspondence, and procedure manuals. Ability to effectively present information and respond to questions from groups of managers, clients, customers, and the general public. Excellent communication and training skills.
+
+Mathematical Skills Ability to add, subtract, multiply, and divide in all units of measure, using whole numbers, common fractions, and decimals. Ability to compute rate, ratio, and percent and to draw and interpret bar graphs.
+
+Reasoning Ability Ability to apply common sense understanding to carry out instructions furnished in written, or oral form. Ability to deal with problems involving several concrete variables in standardized situations. Strong problem-solving and analytical skills.
+
+Computer Skills To perform this job successfully, an individual should have working knowledge of the Microsoft Suite of products (Outlook, Excel, Word, PowerPoint).
+
+Physical Demands The physical demands described here are representative of those that must be met by an employee to successfully perform the essential functions of this job. Reasonable accommodations may be made to enable individuals with disabilities to perform essential functions.
+
+While performing the duties of this Job, the employee is regularly required to sit; use hands to finger, handle, or feel; reach with hands and arms and talk or hear. The employee is occasionally required to stand; walk and stoop, kneel, crouch, or crawl. The employee must occasionally lift and/or move up to 20 pounds. Specific vision abilities required by this job include close vision, color vision, and the ability to adjust focus.
+
+Work Environment The work environment characteristics described here are representative of those an employee encounters while performing the essential functions of this job. Reasonable accommodations may be made to enable individuals with disabilities to perform essential functions.
+
+The noise level in the work environment is usually moderate."
+4bb9adabed96b298,Indeed,ASSOCIATE GOVERNMENTAL PROGRAM ANALYST,Department of Industrial Relations,Data Analyst,in-person,Full-time,2025-04-09,2025-04-15,Los Angeles County,CA,,monthly,5855.0,7327.0,70260.0,87924.0,79092.0,https://www.indeed.com/viewjob?jk=4bb9adabed96b298,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Are you excited to start a career with a dynamic State Agency? Do you have a talent for performing efficiently in a fast-paced environment? Do you enjoy flexibility and learning new things? Then look no further and apply NOW. The Labor Commissioner's Office is made up of exceptional individuals just like YOU, who contribute to our Agency's goals and success. We celebrate diversity and inclusion and we are committed to providing guidance, encouragement, and support to our team members to enrich their work and our ability to combat wage theft and put earned wages into the pockets of California workers.   
+
+Read more about the Labor Commissioner's Office here: https://www.dir.ca.gov/dlse/ 
+
+Under the direction of the Staff Services Manager I (SSM I), the Associate Governmental Program Analyst (AGPA) will be responsible for a variety of complex analytical and program support functions related to the delivery and administration of the Department of Industrial Relations (DIR) Labor Commissioner’s Office (LCO) case management software, associated training activities, and utilization of technological improvements to enhance the administration of business processes. The AGPA works closely with program leaders for the timely implementation of projects to improve the overall functionality of data management systems used by the LCO and is responsible for developing and generating reports, tracking compliance and operational efficiencies, and for developing, facilitating, and delivering training. The AGPA will be involved in program evaluation, planning, analysis, troubleshooting, and will provide consultative services to management. 
+
+*** Please ensure application is complete with detailed job descriptions/tasks performed, employment beginning and ending date information, and hours worked per week. Failure to provide this information will disqualify your application. 
+
+*** If you are using education to meet one of the patterns of the minimum qualifications, please upload a copy of your degree or transcripts with your application package.  
+
+This posting may be used to fill future vacancies in accordance with 2 CCR §249.3. 
+
+To be considered for this Associate Governmental Program Analyst (AGPA) job opportunity, applicants must be either reachable on an employment list, have transfer eligibility or have reinstatement eligibility. To take the exam and gain employment list eligibility, please click here to access the exam bulletin: 
+
+https://calcareers.ca.gov/CalHrPublic/Exams/ExamBulletin.aspx?ExamControlId=1764  
+
+You will find additional information about the job in the Duty Statement.
+
+Working Conditions
+
+This position is located at:
+
+6150 Van Nuys Blvd.  
+Room 206 
+
+Van Nuys, CA 91401 
+
+High-volume, fast-paced office that handles wage claims and relies on computer systems to do so. May travel to assist other offices with support or training. The incumbent typically works in an office environment and uses a computer, telephone and other office equipment as needed to perform duties. The noise level in the work environment is typical of that of an office. Incumbent may encounter frequent interruptions throughout the workday. 
+
+Minimum Requirements
+
+You will find the Minimum Requirements in the Class Specification. 
+
+  • ASSOCIATE GOVERNMENTAL PROGRAM ANALYST
+
+Additional Documents
+
+  • Job Application Package Checklist
+  • Duty Statement
+
+Position Details
+
+Job Code #:
+
+JC-473649 
+
+Position #(s):
+
+400-551-5393-XXX 
+
+Working Title:
+
+IT Liaison
+
+Classification:
+
+ASSOCIATE GOVERNMENTAL PROGRAM ANALYST 
+
+$5,855.00 - $7,327.00 A 
+
+# of Positions:
+
+1 
+
+Work Location:
+
+Los Angeles County 
+
+Telework:
+
+Hybrid 
+
+Job Type:
+
+Permanent, Full Time 
+
+Department Information
+
+The Department of Industrial Relations (DIR) was established in 1927. Its mission is to improve working conditions for California's wage earners and to advance opportunities for profitable employment in California. DIR administers and enforces laws governing wages, workplace safety and health, apprenticeship training programs, and medical care and other benefits for injured workers.
+
+Electronic Submission of Applications preferred. Application Packages maybe submitted electronically through your CalCareer Account at https://jobs.ca.gov/ Applications must be received electronically by 11:59 p.m. on or before the above final filing date.
+
+Please only submit ONE application. Electronic applications submitted through your CalCareer Account are highly recommended and will be received/processed faster than other methods of filing.
+
+If you are unable to apply electronically through your CalCareer account, please mail a completed and signed State Examination/Employment Application STD Form 678 and application package to the mailing address provided in the “Application Instructions” section below and ensure the following:
+
+Clearly indicate the Job Code #, Position Number and the Title of this position in the “Examination or Job Title(s) For Which You Are Applying” section located on the first page of your State Examination/Employment Application STD Form 678.
+
+  • Clearly indicate the basis of your eligibility (cert, transfer, reinstatement, etc.) in the “Explanations” section located on the first page of your State Examination/Employment Application STD Form 678.
+  • Remove and do not submit the “Equal Employment Opportunity” questionnaire (page 5) with your completed State Examination/Employment Application STD Form 678. This page is for examination use only.
+  • Do not include your full Social Security Number on your documents and/or do not provide any LEAP information.
+
+Department Website: https://www.dir.ca.gov/
+
+Special Requirements
+
+A Statement of Qualifications (SOQ) is required. As part of the required application packet, interested applicants must submit an SOQ with their application. The SOQ serves as documentation of each candidate’s ability to present information clearly and concisely in writing.  
+
+SOQ must be typed in 12-point Arial font and be no more than two pages in length. Type your name, job title, job control number, and date on the top right corner of page. Instructions need to be followed to move forward with an interview.  
+
+Resumes and/or cover letters DO NOT take the place of the SOQ. Applications received without an SOQ that do not include a response to the questions below will not receive further consideration and will be excluded from the hiring process.  
+
+Please read the duty statement and provide a response to the following questions based on your understanding of the duties and experience: 
+
+  • Describe specific examples of your working with computer systems. Include an example of specific software you used (such as Word, Excel, Salesforce, etc.).
+  • Describe a specific example of a situation presented to you, and the steps you took, to train professionals on changes to a computer system. Please identify the name and type of the computer system.
+  • Describe specific projects and experiences that align with the desirable qualifications of this position? Explain what computer or troubleshooting skills you gained during those projects and/or experiences?
+
+Application Instructions
+
+Completed applications and all required documents must be received or postmarked by the Final Filing Date in order to be considered. Dates printed on Mobile Bar Codes, such as the Quick Response (QR) Codes available at the USPS, are not considered Postmark dates for the purpose of determining timely filing of an application.
+
+Final Filing Date: 4/29/2025 
+
+Who May Apply
+
+Individuals who are currently in the classification, eligible for lateral transfer, eligible for reinstatement, have list or LEAP eligibility, are in the process of obtaining list eligibility, or have SROA and/or Surplus eligibility (please attach your letter, if available). SROA and Surplus candidates are given priority; therefore, individuals with other eligibility may be considered in the event no SROA or Surplus candidates apply. Individuals who are eligible for a Training and Development assignment may also be considered for this position(s).   
+
+Applications will be screened and only the most qualified applicants will be selected to move forward in the selection process. Applicants must meet the Minimum Qualifications stated in the Classification Specification(s). 
+
+How To Apply
+
+Complete Application Packages (including your Examination/Employment Application (STD 678) and applicable or required documents) must be submitted to apply for this Job Posting. Application Packages may be submitted electronically through your CalCareer Account at www.CalCareers.ca.gov. When submitting your application in hard copy, a completed copy of the Application Package listing must be included. If you choose to not apply electronically, a hard copy application package may be submitted through an alternative method listed below:  
+
+Address for Mailing Application Packages
+
+You may submit your application and any applicable or required documents to:
+
+Department of Industrial Relations 
+
+Cert Mailing Address Sacramento 
+
+Attn: Certifications Unit 
+
+2180 Harvard Street Suite 160 
+
+Sacramento, CA 95815 
+
+Address for Drop-Off Application Packages
+
+You may drop off your application and any applicable or required documents at:
+
+Department of Industrial Relations 
+
+Cert Drop Off Address Sacramento 
+
+2180 Harvard Street Suite 160 
+
+Sacramento, CA 95815 
+
+08:00 AM - 04:00 PM 
+
+Required Application Package Documents
+
+The following items are required to be submitted with your application. Applicants who do not submit the required items timely may not be considered for this job:
+
+  • Current version of the State Examination/Employment Application STD Form 678 (when not applying electronically), or the Electronic State Employment Application through your Applicant Account at www.CalCareers.ca.gov. All Experience and Education relating to the Minimum Qualifications listed on the Classification Specification should be included to demonstrate how you meet the Minimum Qualifications for the position.
+  • Resume is optional. It may be included, but is not required.
+  • Statement of Qualifications - 
+
+Please see Special Requirements section of the posting for instructions on the Statement of Qualifications.
+
+Applicants requiring reasonable accommodations for the hiring interview process must request the necessary accommodations if scheduled for a hiring interview. The request should be made at the time of contact to schedule the interview. Questions regarding reasonable accommodations may be directed to the EEO contact listed on this job posting. 
+
+Desirable Qualifications
+
+In addition to evaluating each candidate's relative ability, as demonstrated by quality and breadth of experience, the following factors will provide the basis for competitively evaluating each candidate:  
+
+  • Knowledge of governmental programs and basic computer practices.
+  • Demonstrated ability to consult and collaborate with others in developing procedures.
+  • Good organization and time management in order to prioritize multiple assignments.
+  • Demonstrated ability to prepare and present training materials.
+  • Ability to present ideas and information effectively both orally and in writing.
+  • Ability to analyze data, develop and evaluate alternatives.
+  • Ability to reason logically and creatively and utilize a variety of analytical techniques to resolve complex problems.
+  • Demonstrated ability to act independently; open-mindedness, flexibility, and tact.
+  • Promotes team cooperation and encourages participation.
+  • Capable of cross functionality and working well with others on a team to achieve personal goals, team goals, and organizational goals.
+  • Takes responsibility for individual actions in order to achieve consistent results.
+
+Benefits
+
+Benefit information can be found on the CalHR website and the CalPERS website. 
+
+  • Health benefits with medical, dental, and vision options
+  • Sick leave, vacation leave, or annual leave options
+  • Paid State holidays
+  • Retirement plan through CalPERS
+  • Other retirement options include 401(k) and/or 457(b) participation through State of California Savings Plus program
+  • Public transportation subsidy and pre-tax parking program options
+  • Representation in the State of California collective bargaining process by Service Employees International Union (SEIU), Local 1000
+
+Contact Information
+
+The Human Resources Contact is available to answer questions regarding the position or application process.
+
+Department Website: https://www.dir.ca.gov/
+
+Human Resources Contact:   
+Certification Unit  
+(800) 564-0771  
+cert@dir.ca.gov
+
+Please direct requests for Reasonable Accommodations to the interview scheduler at the time the interview is being scheduled. You may direct any additional questions regarding Reasonable Accommodations or Equal Employment Opportunity for this position(s) to the Department's EEO Office.
+
+EEO Contact:  
+Diversity and Inclusion Office  
+(916) 559-6999  
+DIO@dir.ca.gov 
+
+California Relay Service: 1-800-735-2929 (TTY), 1-800-735-2922 (Voice) TTY is a Telecommunications Device for the Deaf, and is reachable only from phones equipped with a TTY Device.
+
+Additional Information
+
+Preference will be given to persons with State Restriction of Appointments (SROA) or Surplus status. Applicants must attach a copy of their most recently dated letter that specifies their designation as either SROA or surplus candidate as proof.
+
+Qualified candidates must have eligibility in State employment, be in a reachable rank on an employment list for this classification, be currently in this classification, or have transfer eligibility to this classification.
+
+If you do not hear from us in 4-6 weeks, you may assume the position has been filled by another applicant. Please note that all additional vacancies that become available may be added to this advertisement.
+
+Please note that the Exam and Certification Online System (ECOS) does not allow you to resubmit your application once you withdraw it. If you have any updates to your online application, please contact the Personnel, Recruitment, & Hiring Unit at (800) 564-0771.
+
+Please let us know how you heard about our position by taking this brief survey: DIR Applicant Survey
+
+DIR Mission and Core Values
+
+Our mission is to protect and improve the welfare and working conditions for California's wage earners and to advance opportunities for profitable employment in California. DIR is also committed to ensuring that all employers comply with labor laws in California to support a fair and thriving business environment.
+
+Integrity - We fulfill the promise of our mission through fair, honest and ethical behavior.
+
+Service - We are committed to responsibly serving the public and value their trust.
+
+Respect - We treat others with dignity, courtesy and consideration.
+
+Quality - We take pride in providing the public with accurate and timely services.
+
+Transparency - We conduct ourselves with openness and accountability in all aspects of our work.
+
+Equal Opportunity Employer
+
+The State of California is an equal opportunity employer to all, regardless of age, ancestry, color, disability (mental and physical), exercising the right to family care and medical leave, gender, gender expression, gender identity, genetic information, marital status, medical condition, military or veteran status, national origin, political affiliation, race, religious creed, sex (includes pregnancy, childbirth, breastfeeding and related medical conditions), and sexual orientation.
+
+It is an objective of the State of California to achieve a drug-free work place. Any applicant for state employment will be expected to behave in accordance with this objective because the use of illegal drugs is inconsistent with the law of the State, the rules governing Civil Service, and the special trust placed in public servants."
+b7fe815e5393524f,Indeed,Business Intelligence Analyst - Full Time,"Martin Luther King, Jr. Community Hospital",Data Analyst,in-person,Full-time,2025-04-14,2025-04-15,Los Angeles,CA,90059,yearly,76398.4,118414.4,76398.4,118414.4,97406.4,https://www.indeed.com/viewjob?jk=b7fe815e5393524f,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"POSITION SUMMARY
+
+As a Business Intelligence Analyst, you will play a crucial role in transforming data into actionable insights that drive strategic business decisions. You will be responsible for collecting, analyzing, and interpreting complex data sets to provide actionable insights that support business strategies and objectives. Your expertise in data visualization, reporting, and analytics will help the organization optimize performance, identify trends, and uncover opportunities for growth. You will develop and maintain BI solutions and provide key stakeholders with the information they need to make informed decisions.
+
+Under the direction of the Senior Director, Data Analytics and Digital Solutions, the Business Intelligence Analyst serves as a trusted partner to leaders throughout the organization seeking insights from the health system’s data.
+
+ESSENTIAL DUTIES AND RESPONSIBILITIES
+
+  • Develop and maintain dashboards and documentation
+  • Ensure usability and accuracy of enterprise dashboards
+  • Monitor and encourage dashboard adoption
+  • Work closely with cross-functional teams, including administrators, and clinical leadership, to ensure reporting meets end user needs.
+  • Ensure consistency of KPIs across dashboards.
+  • Provide support as needed to troubleshoot and resolve system issues.
+  • Stay up to date with trends in healthcare data and leverage new technologies to improve data processes.
+  • Develop and automate processes for data extraction, transformation, and loading, ensuring data integrity and accuracy.
+  • Ensure the availability, integrity, and security of data through best practices in data management.
+  • Stay up-to-date with the latest trends and technologies in data engineering and healthcare data analytics.
+  • Assist in developing and maintaining a long-term strategic roadmap for the health system's data architecture and analytics.
+  • Adheres to the MLKCH change management process for break fix and any system changes.
+  • Troubleshoots system issues to resolution or escalation to vendor.
+  • Successfully engages in multiple tasks and projects simultaneously.
+  • Excellent verbal and written communication skills and the ability to interact professionally with a diverse group, executives, managers, and subject matter experts.
+  • If applicable, monitors and tracks backend jobs and interfaces to ensure efficient operations.
+  • Provide after-hours “on-call” support to troubleshoot and resolve system issues.
+  • Assist in developing and maintaining a long-term strategic roadmap for health system’s data analytics.
+  • Other duties as assigned.
+
+#LI-AJ1
+
+POSITION REQUIREMENTS
+
+A. Education
+
+  • Bachelor’s degree, Associate degree or 3+ years of equivalent experience
+
+B. Qualifications/Experience
+
+  • Preferred: 2+ years of experience working with healthcare data, preferably Oracle Health EHR (formerly Cerner)
+  • Python/Spark programming – intermediate skills
+  • SQL (MS SQL preferred) – intermediate skills
+  • Business Intelligence (e.g. Tableau, Power BI, etc.) – intermediate skills
+  • Spreadsheets (Excel) – intermediate skills
+
+C. Special Skills/Knowledge
+
+  • Strong problem solving/analysis and customer service skills
+  • Strong internal and external customer service skills
+  • Strong communication and teamwork skills
+  • Ability to apply mathematical concepts to data
+
+MLKCH Video"
+3e700a676b2678e4,Indeed,Data Analyst,Cast & Crew,Data Analyst,in-person,Full-time,2025-04-12,2025-04-15,Burbank,CA,91504,yearly,80000.0,105000.0,80000.0,105000.0,92500.0,https://www.indeed.com/viewjob?jk=3e700a676b2678e4,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"About Us
+
+At Cast & Crew, we’ve empowered creativity and supported the global entertainment industry for decades. Together with our family of brands - Backstage, CAPS, Checks & Balances, Final Draft, Media Services, Sargent-Disc, and The TEAM Companies – we operate as a combined entertainment technology and services provider offering industry standard screenwriting accounting software, digital payroll products, data & reporting, and a host of creative tools. The industry continues to move faster than ever, and the need for our expertise, our technology, and our people has never been greater. We are a production’s best ally every step of the way. #OneCastOneCrew
+
+Position Overview  
+The Data Analyst plays a pivotal role in supporting the strategic business needs of Cast & Crew by transforming data into actionable insights. Acting as a bridge between business stakeholders and technology teams, this individual will provide data-driven recommendations that enhance decision-making across the organization. The ideal candidate is highly analytical, detail-oriented, and thrives in a fast-paced, dynamic environment—able to prioritize and manage multiple tasks efficiently while upholding accuracy, professionalism, and confidentiality. 
+
+Core Responsibilities
+
+  • Collaborate with stakeholders from various departments to identify, analyze, and document business requirements and provide actionable recommendations.
+  • Understand business processes, identify issues, and use data to propose solutions for improved decision-making.
+  • Develop and maintain dashboards, reports, and visualizations to track key performance indicators (KPIs) and operational metrics.
+  • Prepare weekly and monthly data presentations that effectively communicate trends, patterns, and forecasts to identify opportunities for business improvement to executive leadership.
+  • Use data to identify gaps, inefficiencies and risks and make recommendations for optimization.
+  • Conduct ad-hoc data analysis to answer business questions and support decision making.
+  • Partner with the technology team to enhance data automation, improve system integration, and ensure data integrity.
+  • Work with engineers and organizational leaders to identify, develop, implement and maintain opportunities for reporting improvements.
+  • Create clear documentation of data analysis processes, ensuring stakeholders can understand and replicate the analysis if needed.
+  • Utilize visualization tools (e.g., graphs and diagrams) to develop and present data summarizing key findings and trends.
+  • Translate complex data findings into clear insights that can be easily understood.
+  • Continuously refine and enhance reporting methodologies to improve efficiency and effectiveness.
+  • Manage multiple projects and priorities, ensuring deadlines are met with high- quality output.
+  • Work closely with multiple business units, assist with special projects as required, always aligning with the culture, values, and strategic goals of the organization.
+
+Key Qualifications
+
+  • Bachelor’s degree is required in business analytics, computer science, mathematics, engineering or related field.
+  • 2-3+ years of experience in a similar analytical role.
+  • Strong analytical and problem-solving skills with keen attention to detail.
+  • Proficient in database interrogation and analysis tools.
+  • Technologically savvy with the ability to quickly learn and adapt to new applications and tools.
+  • Exceptional communication and presentation skills to effectively explain analytical concepts to non-technical stakeholders.
+  • Excellent listening skills to accurately understand business requirements.
+  • Demonstrated ability to work independently, with minimal supervision, while being a proactive team player.
+  • Strong planning, time management, and organizational skills.
+  • Resilient and innovative, with the drive to try new ideas and solutions.
+  • Experience with data visualization tools (e.g., Tableau, Power BI, etc.) is a plus.
+
+Special Work Conditions
+
+  • Sedentary – Involves sitting most of the time but may involve walking or standing for brief periods of time. Some positions may entail exerting up to 15 lbs. of force occasionally and/or a negligible amount of force to lift, carry, push, or pull.
+
+Benefits
+
+Cast & Crew provides a comprehensive package of employee benefits including: Medical, Dental, Vision, PTO, health and wellness programs, employee discounts, and more! Note: Cast & Crew benefits are subject to eligibility requirements.
+
+Cast & Crew is an equal opportunity employer committed to hiring a diverse workforce and sustaining an inclusive culture. It is our policy to provide equal employment opportunities to all individuals based on job-related qualifications and ability to perform a job, without regard to age, gender, gender identity, sexual orientation, race, color, religion, creed, national origin, disability, genetic information, veteran status, citizenship or marital status, and to maintain a non-discriminatory environment free from intimidation, harassment or bias based upon these grounds.
+
+CA residents  
+Your personal information may be collected in connection with certain services provided by Cast & Crew or its affiliated companies. A summary of your California privacy rights can be found at: https://www.castandcrew.com/privacy-policy/
+
+Compensation is commensurate with various factors including, but not limited to, relevant experience, qualifications, skills, training, licensure, certifications, geographic cost of labor, and other business and organizational needs. Compensation range for candidates in other locations may differ based on the cost of labor in that location. The compensation range for this position is: $80,000.00 - $105,000.00 per year."
+69b9a232a5552c5a,Indeed,"Analyst, Healthcare Data",Molina Healthcare,Data Analyst,in-person,Full-time,2025-04-11,2025-04-15,Long Beach,CA,90802,yearly,68640.0,111967.0,68640.0,111967.0,90303.5,https://www.indeed.com/viewjob?jk=69b9a232a5552c5a,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"JOB DESCRIPTION Job Summary   
+
+Designs and implements processes and solutions associated with a wide variety of data sets used for data/text mining, analysis, modeling, and predicting to enable informed business decisions. Gains insight into key business problems and deliverables by applying statistical analysis techniques to examine structured and unstructured data from multiple disparate sources. Collaborates across departments and with customers to define requirements and understand business problems. Uses advanced mathematical, statistical, querying, and reporting methods to develop solutions. Develops information tools, algorithms, dashboards, and queries to monitor and improve business performance. Creates solutions from initial concept to fully tested production, and communicates results to a broad range of audiences. Effectively uses current and emerging technologies.   
+
+KNOWLEDGE/SKILLS/ABILITIES   
+
+Extracts and compiles various sources of information and large data sets from various systems to identify and analyze outliers.   
+
+Sets up process for monitoring, tracking, and trending department data.   
+
+Prepares any state mandated reports and analysis.   
+
+Works with internal, external and enterprise clients as needed to research, develop, and document new standard reports or processes.   
+
+Implements and uses the analytics software and systems to support the departments goals.   
+
+Must have member movement or PCP reassignment or Enrollment and Provider termination experience.   
+
+Must have intermediate level MS Excel experience,   
+
+Familiarity with Enrollment and Managed Healthcare experience is required.   
+
+Must be able to research and analyze data using SQL is required.   
+
+Experience with QNXT is preferred.   
+
+Medicare/ medicaid membership exp required   
+
+Required soft skill include but are not limited to :  
+Excellent communication   
+
+Possess a team player attitude   
+
+Ability to work in a diverse environment.   
+
+Must be flexible and willing to learn new skills.   
+
+JOB QUALIFICATIONS   
+
+Required Education   
+
+Associate's Degree or equivalent combination of education and experience   
+
+Required Experience   
+
+1-3 years   
+
+Preferred Education   
+
+Bachelor's Degree or equivalent combination of education and experience   
+
+Preferred Experience 3-5 years   
+
+To all current Molina employees: If you are interested in applying for this position, please apply through the intranet job listing.   
+
+Molina Healthcare offers a competitive benefits and compensation package. Molina Healthcare is an Equal Opportunity Employer (EOE) M/F/D/V.   
+Pay Range: $68,640 - $111,967 / ANNUAL   
+
+  • Actual compensation may vary from posting based on geographic location, work experience, education and/or skill level."
+e87e7ac2a4700f70,Indeed,"Data Analyst, Senior",Blue Shield of California,Data Analyst,in-person,Full-time,2025-04-15,2025-04-15,Long Beach,CA,,,,,,,,https://www.indeed.com/viewjob?jk=e87e7ac2a4700f70,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Your Role 
+
+The Growth and Servicing analytics team is part of the centralized Data and Analytics organization and oversees Analytics relating to Contact Center, Digital, Marketing, Claims, Appeals, Grievances, Disputes, Customer Experience and Lines of Business. The Data Analyst, Senior will report to the Senior Manager of Inventory Management. In this role you will support the contact center customer experience stakeholder to deliver faster and deeper data insights and solutions with measurable financial and experiential outcomes. You will connect into the contact center domain, harnessing all available data to execute analytic initiatives that help achieve contact center goals around experience, efficiency, and cost of healthcare. You will also engage directly with stakeholders to help frame business problems, participate in recommending analytic frameworks to address those problems and deliver high quality / high impact solutions.
+
+Your Work 
+
+In this role, you will: 
+
+  • Analyze structured and unstructured data to uncover pain points, establish causality/identify the root causes and recommend and size improvements for prioritization
+  • Build complex data sets linking data to enable analytics
+  • Use statistics and modeling to identify causes/drivers of call volume, call duration, call experience metrics
+  • Build reports and dashboards to empower stakeholder decision making
+  • Perform text mining/topic modeling to mine insights from verbatims, chats, call transcripts
+
+Your Knowledge and Experience 
+
+  • Bachelor’s degree in mathematics, health science, quantitative social science, statistics, engineering or health services research, or with demonstrated equivalent work experience
+  • Requires at least 5 years of prior relevant experience
+  • Requires at least 3 years of experience in Health Care (managed care, academic, or gov't payer)
+  • Working experience with complex data sets and contact center knowledge – processes, journeys, tools such as Nuance, Avaya/Genesis, Verint/NICE, Five9
+  • Proficiency in Python, Machine Learning Experience and SQL is strong preferred
+  • Proficiency in statistics, regression techniques, text mining and predictive modeling is strong preferred
+  • Desire proficiency in cloud-based computing and data platforms (Azure, Google Cloud, BigQuery, Snowflake, Databricks)
+  • Advanced level skills in text as data, transcripts/review analysis
+  • Desire proficiency in agile methodology, confluence, Jira, or other relevant tools
+  • Must be able to create data visualizations to effectively narrate an actionable data story. Preferred working experience with Tableau Desktop
+Requires SAS Certified Base Programmer Credential or equivalent 
+
+#LI-FB1
+
+ABOUT THE TEAM  
+About Stellarus and the Ascendiun Family of Companies 
+
+Stellarus, launched in January 2025, is designed to scale innovative healthcare solutions that support customers in creating a health care experience deserving of their family, friends, and neighbors.   
+
+Stellarus is part of a family of organizations that is overseen by a nonprofit corporate entity named Ascendiun. The Ascendiun Family of Companies also includes Blue Shield of California and its subsidiary, Blue Shield of California Promise Health Plan and Altais, a clinical services company.
+
+Stellarus’ vision is to empower its customers to create a healthcare experience that is worthy of their family, friends, and neighbors. Stellarus’ objective is to offer innovative, modern, scalable solutions that challenge the health care status quo. This very closely aligns with Blue Shield of California’s vision by using innovation to improve quality, affordability, and experience for members.
+
+To achieve our mission, we foster an environment where all employees can thrive and contribute fully to address the needs of the various communities we serve. We are committed to creating and maintaining a supportive workplace that upholds our values and advances our goals.
+
+Our Values: 
+
+At Stellarus, our core values of agility, trust, drive, courage and service shape our approach to developing innovative product offerings.
+
+Our Workplace Model: 
+
+At Stellarus and the Ascendiun Family of Companies, we believe in fostering a workplace environment that balances purposeful in-person collaboration with flexibility. As we continue to evolve our workplace model, our focus remains on creating spaces where our people can connect with purpose – whether working in the office or through a hybrid approach – by providing clear expectations while respecting the diverse needs of our workforce.
+
+Two Ways of Working:
+
+  • Hybrid (Default): Work from a business unit-approved office at least two (2) times per month (for roles below Director-level) or once per week (for Director-level roles and above). Exceptions:
+
+o Member-facing and approved out-of-state roles remain remote.
+
+o Employees living more than 50 miles from their assigned offices are expected to work with their managers on a plan for periodic office visits.
+
+o For employees with medical conditions that may impact their ability to work in-office, we are committed to engaging in an interactive process and providing reasonable accommodations to ensure their work environment is conducive to their success and well-being.
+
+  • On-Site: Work from a business unit-approved office an average of four (4) or more days a week.
+
+Physical Requirements: 
+
+Office Environment - roles involving part to full time schedule in Office Environment. Based in our physical offices and work from home office/deskwork - Activity level: Sedentary, frequency most of work day.
+
+Equal Employment Opportunity: 
+
+External hires must pass a background check/drug screen. Qualified applicants with arrest records and/or conviction records will be considered for employment in a manner consistent with Federal, State and local laws, including but not limited to the San Francisco Fair Chance Ordinance. All qualified applicants will receive consideration for employment without regards to race, color, religion, sex, national origin, sexual orientation, gender identity, protected veteran status or disability status and any other classification protected by Federal, State and local laws."
+b6a7bbf7f9a6299d,Indeed,Procurement Analyst,Mattel,Data Analyst,in-person,,2025-04-14,2025-04-15,El Segundo,CA,90245,yearly,70400.0,88000.0,70400.0,88000.0,79200.0,https://www.indeed.com/viewjob?jk=b6a7bbf7f9a6299d,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"CREATIVITY IS OUR SUPERPOWER. It’s our heritage and it’s also our future. Because we don’t just make toys. We create innovative products and experiences that inspire fans, entertain audiences and develop children through play. Mattel is at its best when every member of our team feels respected, included, and heard—when everyone can show up as themselves and do their best work every day. We value and share an infinite range of ideas and voices that evolve and broaden our perspectives with a reach that extends into all our brands, partners, and suppliers.
+
+The Team:
+
+The Global Procurement Logistics team drives the procurement of goods and services needed to support Mattel’s global operations. As Procurement Analyst, you will have the opportunity to actively support the strategic roadmap execution, analyze and provide visibility on internal and external metrics that drive decision making, support RFP execution, and implement controls that mitigate business and compliance risks.
+
+The Opportunity:
+
+This role will actively support the procurement of parcel services and key parcel initiatives for Mattel’s Global Logistics accordance with Mattel’s Global Procurement Policy. This includes developing Parcel Procurement KPI dashboard, real time tracking of parcel contracts and spend, supporting the Global Logistics Procurement team with complex RFP’s, managing contract database and supplier management.
+
+What Your Impact Will Be:
+
+  • Support management of Parcel Spend and carrier allocations thru Mattel’s network.
+  • Validate Mattel’s Parcel rating engine is selecting rates according to Category strategy and contracts after system changes.
+  • Assist with onboarding of new parcel carriers to the Mattel Network.
+  • Collaborate in managing the parcel spend data mapping in the Coupa platform and provide monthly feedback on mapping accuracy.
+  • Tracking and reporting of carrier spend by Mattel company, site, carrier contract and package size.
+  • Leverage spend analytics to identify cost savings opportunities across Parcel categories.
+  • Support Parcel Category Manager with QBRs and supplier scorecards, complex RFPs data analysis, including baseline development, RFP bid analysis and total cost analysis.
+  • Coordinate closely with Parcel Category Manager on category strategies, savings targets and scorecards.
+  • Contract Lifecycle Management (CLM) maintenance and management of Parcel category contracts in the Coupa platform.
+  • Build and maintain collaborative partnerships with internal stakeholders.
+  • Build and maintain collaborative relationships with suppliers while effectively resolving performance/capability issues.
+  • Collect and analyze small parcel shipping data from various carriers.
+  • Perform data validation and cleansing to ensure accuracy, consistency, and completeness of data.
+  • Develop and maintain regular reports and dashboards to track shipping performance, costs, trends, and issues.
+  • Provide actionable insights to optimize shipping strategies, reduce costs, and improve delivery efficiency.
+  • Analyze data related to shipping volume, delivery timeframes, and packaging to identify inefficiencies and suggest improvements.
+
+What We’re Looking For:
+
+  • Bachelor’s degree in Business Analytics, Logistics, Supply Chain, or related field, with business or supply chain management preferred, with a minimum of 1 year of procurement/supply chain experience or related field or combination of education and experience.
+  • Strong proficiency in data analysis tools (Excel, Python, SQL, Tableau, Power BI).
+  • Proven mathematical and data analysis skills.
+  • Experience of working with Business Information Systems - Knowledge/experience with Oracle and Coupa systems a plus.
+  • Ability to apply a wide range of sourcing and supplier performance management related skills and knowledge.
+  • Knowledge of supply chain fundamentals and Procure to Pay processes.
+  • Understanding of a multi-step RFx sourcing process.
+  • Knowledge of key contracting principles, standard terms, etc.
+  • Ability to communicate effectively, both verbally and in writing, with all levels of the workforce, including senior leadership and executive management.
+  • Exceptional problem solving, strategic planning, critical thinking, analytical, ability to deal with ambiguity, and risk management skills.
+  • Highly motivated and capable of managing global projects across multiple cross-functional groups in a decentralized organization.
+  • Team player with strong initiative, intrinsically motivated, works autonomously.
+  • Proven ability to produce error-free work under deadline.
+  • Excellent interpersonal skills with positive, customer-focus approach in combination with the ability to work effectively in a team environment, fast-paced, and rapidly changing environment.
+  • Ability to establish and maintain priorities to complete assignments by deadlines independently.
+  • Certification in supply chain, contract management, procurement or project management a plus.
+  • Demonstrated a growth mindset by staying curious and continuously learning, embracing challenges, and improving themselves.
+
+The annual base salary range for this position is between $70,400 and $[maximum annual 88,000.  
+**This range is indicative of projected hiring range, however annual base salary will be determined based on a candidate’s work location, skills and experience. Mattel offers competitive total pay programs, comprehensive benefits, and resources to help empower a culture where every employee can reach their full potential.
+
+Don’t meet every single requirement? At Mattel, we are dedicated to an inclusive workplace and a culture of belonging. If you’re excited about this role but your past experience doesn’t align perfectly with every qualification in the job description, we still encourage you to apply. You may be just the right candidate for this or other roles.  
+
+How We Work:  
+
+We are a purpose driven company aiming to empower generations to explore the wonder of childhood and reach their full potential. We live up to our purpose employing the following behaviors:
+
+  • We collaborate: Being a part of Mattel means being part of one team with shared values and common goals. Every person counts and working closely together always brings better results. Partnership is our process and our collective capabilities is our superpower.
+  • We innovate: At Mattel we always aim to find new and better ways to create innovative products and experiences. No matter where you work in the organization, you can always make a difference and have real impact. We welcome new ideas and value new initiatives that challenge conventional thinking.
+  • We execute: We are a performance-driven company. We strive for excellence and are focused on pursuing best-in-class outcomes. We believe in accountability and ownership and know that our people are at their best when they are empowered to create and deliver results.
+
+Who We Are:  
+
+Mattel is a leading global toy and family entertainment company and owner of one of the most iconic brand portfolios in the world. We engage consumers and fans through our franchise brands, including Barbie, Hot Wheels, Fisher-Price, American Girl, Thomas & Friends, UNO, Masters of the Universe, Matchbox, Monster High, MEGA and Polly Pocket, as well as other popular properties that we own or license in partnership with global entertainment companies. Our offerings include toys, content, consumer products, digital and live experiences. Our products are sold in collaboration with the world’s leading retail and ecommerce companies. Since its founding in 1945, Mattel is proud to be a trusted partner in empowering generations to explore the wonder of childhood and reach their full potential.
+
+Mattel’s award-winning workplace culture has been recognized by Forbes, Fast Company, Newsweek, Great Place to Work, TIME, and more.
+
+Visit us at https://jobs.mattel.com/ and www.instagram.com/MattelCareers.  
+
+Mattel is an Affirmative Action/Equal Opportunity Employer where we want you to bring your authentic self to work every day. We welcome all job seekers, and all applicants will receive consideration for employment without regard to race, ethnicity, color, national origin, religion, sex, gender, gender identity or expression, sexual orientation, veteran and protected veteran status, disability status, and or any other basis protected by applicable federal, state or local law.
+
+Pursuant to the Los Angeles Fair Chance Ordinance and the California Fair Chance Act, qualified applicants with arrest or conviction records will be considered for employment.
+
+Videos to watch:  
+The Culture at Mattel  
+Mattel Investor Highlights"
+87017e0385a42692,Indeed,Data Reporting and Analytics Consultant V,Kaiser Permanente,Data Analyst,in-person,Full-time,2025-04-10,2025-04-15,Pasadena,CA,,yearly,144400.0,186780.0,144400.0,186780.0,165590.0,https://www.indeed.com/viewjob?jk=87017e0385a42692,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Job Summary:
+
+This individual contributor is primarily responsible for driving strategic data-informed decisions, gathering data and information on targeted variables in an established systematic fashion, preparing data for analytic efforts, and interpreting complex data analyses.  
+
+This position drives the execution of creative data analytic approaches leading to actionable outcomes across functional areas, business and/or clinical lines, designs, implements, and automates business and reporting solutions, and leads the development of advanced analytical and/or statistical models enabling informed business decisions. 
+
+Essential Responsibilities:
+
+  • Practices self-leadership and promotes learning in others by building relationships with cross-functional stakeholders; communicating information and providing advice to drive projects forward; influencing team members within assigned unit; listening and responding to, seeking, and addressing performance feedback; adapting to competing demands and new responsibilities; providing feedback to others, including upward feedback to leadership and mentoring junior team members; creating and executing plans to capitalize on strengths and develop weaknesses; and adapting to and learning from change, difficulties, and feedback.
+  • Conducts or oversees business-specific projects by applying deep expertise in subject area; promoting adherence to all procedures and policies; developing work plans to meet business priorities and deadlines; determining and carrying out processes and methodologies; coordinating and delegating resources to accomplish organizational goals; partnering internally and externally to make effective business decisions; solving complex problems; escalating issues or risks as appropriate; monitoring progress and results; recognizing and capitalizing on improvement opportunities; and evaluating recommendations made by others.
+  • Interprets complex data analyses by applying findings to contextual settings; and developing insights, reports, and presentations telling a compelling story to stakeholders to enable and influence decision making; participating in peer reviews; and providing context related to data interpretations and/or limitations as appropriate.
+  • Leads the development of advanced analytical and/or statistical models enabling informed business decisions by determining data and analytical requirements; translating models and gaining stakeholder buy-in for implementation; creating complex models leading to actionable insights; and testing, refining, and validating models.
+  • Designs, implements, and automates business and reporting solutions by partnering with stakeholders to advise in their design, planning, and implementation while ensuring consistency and coherency; evaluating and summarizing data and results; creating summary statistics; designing data reports, visualizations, and/or interactive Business Intelligence (BI) reports; reporting to stakeholders on key findings; identifying needs for the development and implementation of additional reporting solutions; and preparing documentation as appropriate.
+  • Drives the execution of creative data analytic approaches leading to actionable outcomes across functional areas, business and/or clinical lines by defining and calculating complex metrics to be analyzed; defining, calculating, and validating algorithms; and conducting complex analyses, including descriptive, correlational, inferential, and/or predictive statistics.
+  • Prepares data for analytic efforts by integrating and consolidating data; ensuring data quality and accuracy; profiling data inaccuracies and recommending process improvements or system changes to enhance overall quality of the data; collaborating with stakeholders and source system owners to resolve data quality issues as appropriate; and cleaning and creating final data set(s) for analysis.
+  • Gathers data and information on targeted variables in an established systematic fashion by validating data sources; querying, merging, and extracting data across internal and external sources; completing routine data refresh and update; developing and/or delivering complex tools for electronic data collection; and providing user training, support, and documentation.
+  • Drives strategic data-informed decisions by consulting with clients and leadership to identify and clarify key business needs across functional areas, business and/or clinical lines; developing outcomes and process measures; translating business requirements; determining data/information needs and data collection methods; developing complex analysis plans; evaluating the impact of business decisions on clients, customers, and/or members; partnering with clients and staff to identify opportunities and methods to improve efficiencies with analysis; supporting and training end-users; and documenting processes and deliverables.
+
+Minimum Qualifications:
+
+  • Minimum three (3) years experience in a leadership role with or without direct reports.
+  • Bachelors degree in Mathematics, Statistics, Engineering, Social/Physical/Life Science, Business, or related field and Minimum eight (8) years experience in data analytics or a directly related field. Additional equivalent work experience in a directly related field may be substituted for the degree requirement.
+
+Additional Requirements:
+
+  • Knowledge, Skills, and Abilities (KSAs): Negotiation; Business Planning; Written Communication; Data Extraction; Data Mining; Data Visualization Tools; Statistical Programming Language; Relational Database Management; Vendor Management; Project Management
+
+PrimaryLocation : California,Pasadena,Walnut Center - Regional Offices  
+HoursPerWeek : 40  
+Shift : Day  
+Workdays : Mon, Tue, Wed, Thu, Fri  
+WorkingHoursStart : 08:00 AM  
+WorkingHoursEnd : 05:00 PM  
+Job Schedule : Full-time  
+Job Type : Standard  
+Employee Status : Regular  
+Employee Group/Union Affiliation : NUE-SCAL-01|NUE|Non Union Employee  
+Job Level : Individual Contributor  
+Job Category : Data Analytics  
+Department : Regional Offices - Pasadena - Rgnl MG-Reg Med Group Admin - 0806  
+Travel : Yes, 15 % of the Time  
+Kaiser Permanente is an equal opportunity employer committed to a diverse and inclusive workforce. Applicants will receive consideration for employment without regard to race, color, religion, sex (including pregnancy), age, sexual orientation, national origin, marital status, parental status, ancestry, disability, gender identity, veteran status, genetic information, other distinguishing characteristics of diversity and inclusion, or any other protected status. Kaiser Permanente is an equal opportunity employer committed to fair, respectful, and inclusive workplaces. Applicants will be considered for employment without regard to race, religion, sex, age, national origin, disability, veteran status, or any other protected characteristic or status.  
+
+For jobs where work will be performed in unincorporated LA County, the employer provides the following statement in accordance with the Los Angeles County Fair Chance Ordinance. Criminal history may have a direct, adverse, and negative relationship on the following job duties, potentially resulting in the withdrawal of the conditional offer of employment:  
+
+  • Consistently supports compliance and the Principles of Responsibility (Kaiser Permanente's Code of Conduct) by maintaining the privacy and confidentiality of information, protecting the assets of the organization, acting with ethics and integrity, reporting non-compliance, and adhering to applicable federal, state, and local laws and regulations, accreditation, and licensure requirements (where applicable), and Kaiser Permanente's policies and procedures.
+
+  • Models and reinforces ethical behavior in self and others in accordance with the Principles of Responsibility, adheres to organizational policies and guidelines; supports compliance initiatives; maintains confidences; admits mistakes; conducts business with honesty, shows consistency in words and actions; follows through on commitments.
+
+  • Job duties with at least occasional or possible access to: (1) patients, the general public, or other employees; (2) confidential protected health information and other confidential KP information (including employee, proprietary, financial or trade secret information); (3) KP property and assets, for example, electronic assets, medical instruments, or devices; (4) controlled substances regulated by federal law or potentially subject to diversion."
+ba508bc92f210da2,Indeed,Data Analyst - TC - Data and Analytics - Data Gov and Con - FSO - Manager - Mul Positions - 1586486,EY,Data Analyst,in-person,Full-time,2025-04-10,2025-04-15,Los Angeles,CA,90017,yearly,175698.0,175698.0,175698.0,175698.0,175698.0,https://www.indeed.com/viewjob?jk=ba508bc92f210da2,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"EY focuses on high-ethical standards and integrity among its employees and expects all candidates to demonstrate these qualities. At EY, you’ll have the chance to build a career as unique as you are, with the global scale, support, inclusive culture and technology to become the best version of you. And we’re counting on your unique voice and perspective to help EY become even better, too. Join us and build an exceptional experience for yourself, and a better working world for all. 
+
+Data Analyst, Technology Consulting - Data & Analytics (Data Governance & Controls) – Financial Services Office (Manager) (Multiple Positions) (1586486), Ernst & Young U.S. LLP, Los Angeles, CA.  
+
+Work with clients to transform the way they use and manage data by architecting data strategies, providing end-to-end solutions that focus on improving their data supply chain, reengineering processes, enhancing risk control, and enabling information intelligence by harnessing latest advanced technologies. Solve complex issues and drive growth across financial services. Define data and analytic strategies by performing assessments, recommending remediation strategies/solutions based on aggregated view of identified gaps, and designing/implementing future state data and analytics solutions. Manage and coach diverse teams of professionals with different backgrounds. Manage cross functional teams, to ensure project task and timeline accountability. Propose and drive new technologies to enhance or replace existing business processes. Initiate and build thought leadership through white papers, point of views, and proof of concepts. Develop strategies to solve problems logically using creative methods. Engage and influence large teams and functional leaders.  
+
+Manage and motivate teams with diverse skills and backgrounds. Consistently deliver quality client services by monitoring progress. Demonstrate in-depth technical capabilities and professional knowledge. Maintain long-term client relationships and networks. Cultivate business development opportunities.
+
+Full time employment, Monday – Friday, 40-45 hours per week, 8:30 am – 5:30 pm.
+
+MINIMUM REQUIREMENTS:
+
+Must have a bachelor's degree in Engineering, Computer Science, Business, Economics, Finance, Statistics, Analytics or a related field and 5 years related work experience. Alternatively, must have a Master’s degree in Engineering, Computer Science, Business, Economics, Finance, Statistics, Analytics or a related field and 4 years of related work experience.  
+
+Must have 4 years of experience in the banking, capital markets, insurance or asset management industry.  
+
+Must have 3 years of experience in at least 1 of the following:  
+
+  • Distributed Processing (Spark, Hadoop, or EMR);
+  • Traditional RDBMS (MS SQL Server, Oracle, MySQL, or PostgreSQL);
+  • MPP (AWS Redshift, or Teradata);
+  • NoSQL (MongoDB, DynamoDB, Cassandra, Neo4J, or Titan);
+  • Cloud Platforms (AWS, Azure, Google Platform, or Databricks);
+  • Data Governance, Lineage and Quality (Collibra, Solidatus, Informatica, Alation, Snowflake, Ab Initio, One Trust, or Big ID.
+
+Must have 3 years of experience using technologies, frameworks or methodologies for data ingestion, storage, mining or warehousing, big data analytics, manipulation, or visualization.  
+
+Must have 3 years of experience in managing teams through a product and/or project management life cycle including requirements, design, development and testing.  
+
+Must have 3 years of experience quantifying improvement in business areas resulting from optimization techniques through use of business analytics and/or statistical modeling.  
+
+Requires domestic and regional travel up to 60% to meet client needs.  
+
+Employer will accept any suitable combination of education, training or experience. 
+
+Please apply on-line at ey.com/en_us/careers and click on ""Careers - Job Search”, then “Search Jobs"" (Job Number - 1586486).
+
+What we offer
+
+We offer a comprehensive compensation and benefits package where you’ll be rewarded based on your performance and recognized for the value you bring to the business. The base salary for this job is $175,698 per year. In addition, our Total Rewards package includes medical and dental coverage, pension and 401(k) plans, and a wide range of paid time off options. Under our flexible vacation policy, you’ll decide how much vacation time you need based on your own personal circumstances. You’ll also be granted time off for designated EY Paid Holidays, Winter/Summer breaks, Personal/Family Care, and other leaves of absence when needed to support your physical, financial, and emotional well-being. 
+
+  • Continuous learning: You’ll develop the mindset and skills to navigate whatever comes next.
+  • Success as defined by you: We’ll provide the tools and flexibility, so you can make a meaningful impact, your way.
+  • Transformative leadership: We’ll give you the insights, coaching and confidence to be the leader the world needs.
+  • Diverse and inclusive culture: You’ll be embraced for who you are and empowered to use your voice to help others find theirs.
+
+If you can demonstrate that you meet the criteria above, please contact us as soon as possible.
+
+The exceptional EY experience. It’s yours to build.
+
+EY | Building a better working world
+
+EY exists to build a better working world, helping to create long-term value for clients, people and society and build trust in the capital markets. 
+
+Enabled by data and technology, diverse EY teams in over 150 countries provide trust through assurance and help clients grow, transform and operate. 
+
+Working across assurance, consulting, law, strategy, tax and transactions, EY teams ask better questions to find new answers for the complex issues facing our world today. 
+
+For those living in California, please click here for additional information.
+
+EY provides equal employment opportunities to applicants and employees without regard to race, color, religion, age, sex, sexual orientation, gender identity/expression, pregnancy, genetic information, national original, protected veteran status, disability status, or any other legal protected basis, including arrest an conviction records, in accordance with applicable law. 
+
+EY is committed to providing reasonable accommodation to qualified individuals with disabilities including veterans with disabilities. If you have a disability and either need assistance applying online or need to request an accommodation during any part of the application process, please call 1-800-EY-HELP3, type Option 2 (HR-related inquiries) and then type Option 1 (HR Shared Services Center), which will route you to EY’s Talent Shared Services Team or email SSC Customer Support at ssc.customersupport@ey.com 
+
+This particular position at Ernst & Young in the United States requires the qualified candidate to be a ""United States worker"" as defined by the U.S. Department of Labor regulations at 20 CFR 656.3. You can review this definition at https://www.gpo.gov/fdsys/pkg/CFR-2011-title20-vol3/pdf/CFR-2011-title20-vol3-sec656-3.pdf at the bottom of page 750. Please feel free to apply to other positions that do not require you to be a ""U.S. worker""."
+4f2d7b5acc503eb8,Indeed,"Business Analyst, Senior",Blue Shield of California,Data Analyst,in-person,Full-time,2025-04-11,2025-04-15,Long Beach,CA,,,,,,,,https://www.indeed.com/viewjob?jk=4f2d7b5acc503eb8,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Your Role 
+
+The Pharmacy Benefit Implementation team is responsible for the accurate and timely build and deployment of Pharmacy Benefits and Networks to support online claims adjudication at participating pharmacies. The Business Analyst, Senior will report to the Senior Manager, Pharmacy Benefit Implementation. In this role you will represent the Pharmacy Benefit Implementation team as a subject matter expert for project tasks, documentation review, setup validation and reporting.
+
+Your Work 
+
+In this role, you will:
+
+  • Provide complex analytical support through the analysis and interpretation of data in support of cross-functional business operations
+  • Build business cases for new business initiatives (cost/benefit analysis)
+  • Develop, prepare, and analyze reports with complex analysis and data for management review, and present to various levels of management
+  • Define business requirements and provide analysis to increase operational efficiency
+  • Provide analytical support for multiple, complex cross-functional projects simultaneously; establish work plans and timelines
+  • Validate critical time bound documentation for accuracy against setup intent and regulatory requirements
+  • Collaborate with cross functional teams to gather business requirements and options for execution of those requirements-
+  • Work with contracted vendors and others to maintain and validate Pharmacy Network Hierarchy and Rates, Pharmacy   
+Benefit Architecture Templates and other Pharmacy Benefit data
+  • Investigate, troubleshoot and facilitate resolution of Pharmacy Benefit & Network related defects and incidents
+  • Support internal and external audits with reporting, subject matter expertise and representation where required
+  • Support Pharmacy Benefit Implementation team through cross training to help meet crucial deliverables and service   
+level agreements
+
+Your Knowledge and Experience 
+
+  • Requires a bachelor’s degree or equivalent experience
+  • Requires at least 5 years of prior relevant experience
+  • Experience with interpreting pharmacy reporting and claims data using industry standard systems greatly desired
+
+ABOUT THE TEAM  
+About Blue Shield of California 
+
+As of January 2025, Blue Shield of California became a subsidiary of Ascendiun. Ascendiun is a nonprofit corporate entity that is the parent to a family of organizations including Blue Shield of California and its subsidiary, Blue Shield of California Promise Health Plan; Altais, a clinical services company; and Stellarus, a company designed to scale healthcare solutions. Together, these organizations are referred to as the Ascendiun Family of Companies.
+
+At Blue Shield of California, our mission is to create a healthcare system worthy of our family and friends and sustainably affordable. We are transforming health care in a way that genuinely serves our nonprofit mission by lowering costs, improving quality, and enhancing the member and physician experience.
+
+To achieve our mission, we foster an environment where all employees can thrive and contribute fully to address the needs of the various communities we serve. We are committed to creating and maintaining a supportive workplace that upholds our values and advances our goals.
+
+Blue Shield is a U.S. News Best Company to work for, a Deloitte U.S. Best Managed Company and a Top 100 Inspiring Workplace. We were recognized by Fair360 as a Top Regional Company, and one of the 50 most community-minded companies in the United States by Points of Light. Here at Blue Shield, we strive to make a positive change across our industry and communities – join us!
+
+Our Values: 
+
+  • Honest. We hold ourselves to the highest ethical and integrity standards. We build trust by doing what we say we're going to do and by acknowledging and correcting where we fall short.
+  • Human. We strive to listen and communicate effectively, showing empathy by understanding others' perspectives. 
+  • Courageous. We stand up for what we believe in and are committed to the hard work necessary to achieve our ambitious goals. 
+
+Our Workplace Model: 
+
+At Blue Shield of California and the Ascendiun Family of Companies, we believe in fostering a workplace environment that balances purposeful in-person collaboration with flexibility. As we continue to evolve our workplace model, our focus remains on creating spaces where our people can connect with purpose – whether working in the office or through a hybrid approach – by providing clear expectations while respecting the diverse needs of our workforce. 
+
+Two Ways of Working: 
+
+  • Hybrid (Default): Work from a business unit-approved office at least two (2) times per month (for roles below Director-level) or once per week (for Director-level roles and above). Exceptions: 
+
+o Member-facing and approved out-of-state roles remain remote. 
+
+o Employees living more than 50 miles from their assigned offices are expected to work with their managers on a plan for periodic office visits. 
+
+o For employees with medical conditions that may impact their ability to work in-office, we are committed to engaging in an interactive process and providing reasonable accommodations to ensure their work environment is conducive to their success and well-being. 
+
+  • On-Site: Work from a business unit-approved office an average of four (4) or more days a week. 
+
+Physical Requirements: 
+
+Office Environment - roles involving part to full time schedule in Office Environment. Based in our physical offices and work from home office/deskwork - Activity level: Sedentary, frequency most of work day.
+
+Equal Employment Opportunity: 
+
+External hires must pass a background check/drug screen. Qualified applicants with arrest records and/or conviction records will be considered for employment in a manner consistent with Federal, State and local laws, including but not limited to the San Francisco Fair Chance Ordinance. All qualified applicants will receive consideration for employment without regards to race, color, religion, sex, national origin, sexual orientation, gender identity, protected veteran status or disability status and any other classification protected by Federal, State and local laws."
+02588a49ad64fced,Indeed,IT Business Analyst - M365 SharePoint and Teams Administrator,Dudek,Data Analyst,in-person,Full-time,2025-04-08,2025-04-15,Los Angeles,CA,,yearly,95000.0,105000.0,95000.0,105000.0,100000.0,https://www.indeed.com/viewjob?jk=02588a49ad64fced,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Who We Are  
+Dudek is a leading environmental, planning, and engineering firm that help public and private clients plan, design, and build projects that improve communities’ built and natural infrastructure. Founded in 1980, Dudek has grown steadily to more than 800 professionals across the U.S. and received the Top Workplace Award for 2024.   
+
+As a 100% employee-owned company, Dudek’s culture rewards smart, productive team members with ownership, professional development, and financial benefits. We seek creative, pragmatic problem-solvers working at the intersection of science, engineering, regulations, and multiple stakeholders’ interest to help clients achieve project goals.  
+We encourage collaboration, sustainability, and innovation.   
+
+At Dudek, we abide by shared values:  
+Trust: We trust each other to use good judgment.  
+Respect: We act professionally and treat each other fairly.  
+Teamwork: We come together, share openly, and apply diverse perspectives.  
+Fun: We take our work seriously…not ourselves.  
+Well-Being: We care about each other’s health, safety, and total wellness.  
+
+Our culture is the foundation of who we are and how we work. We empower our employee-owners to invest in our local communities and themselves through initiatives that make Dudek a great place to work! Our cultural programs include: 
+
+  • DuGreen: Our sustainability initiative, which works to improve our environmental footprint
+  • DuGood: Our philanthropic initiative, which seeks to support the communities in which we live and work through fundraising challenges, office based giving and opportunity to take a paid volunteer day each year.
+  • eDUcate: Our educational outreach program where we aim to foster interest in our work and careers in the environmental and engineering field by participating in educational events in our communities.
+  • DuWell: Our wellness initiative, aimed at providing education on wellness, benefit resources, and preventive care
+
+At Dudek, we recognize that different perspectives, inclusivity, trust and belonging build a stronger culture and add value to our firm. Dudek's Employee Resource (ERGs) operate as diversity champions within Dudek and create a safe space for underrepresented employees and their allies to support, collaborate, network, and brainstorm ways to make Dudek’s work community more inclusive. We currently have ERGs for: 
+  • Women at Dudek
+  • Members of the Lesbian, Gay, Bisexual, Transgender, Queer (LGBTQ+) community
+  • Black, Indigenous, and People of Color (BIPOC) employees
+  • Disabled employees (all disabilities, seen / unseen)
+
+Learn more about our culture.  
+
+About The Job  
+Dudek is seeking a technology professional with a proven track record in Microsoft 365 and Power platform administration. The lead will be responsible for configuring, securing, and administering our Microsoft 365 SharePoint and Teams environments. The role requires expertise in configuring, optimizing, and troubleshooting core Microsoft 365 SharePoint and Teams environments, along with the core services of the Power Platform, to facilitate efficient collaboration, content and document management, and workflow management for our enterprise.  
+
+The team is looking for a team player who can immerse themselves in a fast-moving environment with exposure to different business functional teams contributing to overall client experience. Must have solid interpersonal, communication and presentation skills to both technical and non-technical audiences. The ideal candidate will be Innovative, disciplined and results driven.  
+
+This role can function remotely.  
+
+Learn more about the projects you will have the opportunity to shape.   
+
+Who You Are  
+To thrive at Dudek, you should be comfortable with accountability, collaboration, flexibility while being a resourceful and independent thinker. We look for curious, solution-focused people who can adapt quickly to an ever-changing industry. There is no single way to solve a problem, so we encourage innovation.   
+
+Our staff who find career growth, satisfaction, and long-tenured success at Dudek in a Business Analyst role are typically people who: 
+
+  • are seeking a more broad, diversified role that includes exposure to department leaders and client relations.
+  • are self-starters and team players with the mentality to get tasks done and identify opportunities for process improvement.
+  • have interest in learning and gaining exposure to project management with technical oversight and managing the completion of project deliverables.
+
+Duties and Responsibilities (may include some or all of the below): 
+  • Configure and administer Microsoft 365 applications, including SharePoint, Teams, OneDrive, and other core Microsoft 365 collaboration tools.
+  • Create, configure, and secure SharePoint & Teams sites, libraries, lists, workflows, and permissions according to best practices and user requirements.
+  • Collaborate with stakeholders to understand business processes and translate them into efficient M365, SharePoint, and Power Platform solutions.
+  • Administer and secure Power Automate workflows to automate business processes and improve efficiency.
+  • Manage user access, permissions, and security settings within Microsoft 365 and SharePoint & Teams environments.
+  • Implement best practices for security, governance, and performance within Power Platform applications and SharePoint Online.
+  • Provide user training and support for M365 collaboration, Power Platform, and SharePoint applications.
+  • Monitor system performance, troubleshoot issues, and perform regular maintenance as needed.
+
+Minimum Requirements 
+  • Bachelor’s degree in computer science, Information Technology or related field of study; relevant certifications (e.g., Microsoft 365, and Power Platform certifications).
+  • Proven experience as a Microsoft 365 administrator, with expertise in SharePoint Online, Teams, Power Apps & Power Automate configuration and administration.
+  • Strong understanding of Microsoft 365 suite functionality, including OneDrive, SharePoint & Teams, as well as Power Automate workflows, connectors, and process automation.
+  • Proficiency in PowerShell scripting for automation and management tasks is a plus.
+  • Strong ability to interact and communicate with stakeholders and translate business requirements into technical solutions
+  • As a federal contractor, successful candidates are required to pass the following pre-employment requirements prior to beginning employment: pre - employment drug test and background check.
+
+Physical Requirements  
+Working Conditions: 
+
+  • This job operates in a remote or office-based environment and this role routinely uses standard office equipment such as computers, phones, printers, etc.
+  • This job requires occasional project site visits-based outdoors which can include excessive noise, uneven walking surfaces, extreme weather, moving vehicles and equipment.
+
+Physical Requirements: The physical demands described here are representative of those that must be met in order to successfully perform the essential functions of the job.
+
+  • This job requires working on a computer, sitting or standing for long periods of time in an office or remote office setting.
+  • This job requires attending meetings, both in person and virtually as well as speaking on the phone with peers, clients, etc. Speaking, hearing and listening are required.
+  • Specific vision abilities required by this job include close vision, distance vision, color vision, peripheral vision, depth perception, and ability to adjust focus.
+  • Outdoor activity may involve walking/trekking in uneven terrain over long distances in extreme weather conditions for extended periods of time.
+
+Reasonable accommodations may be made to enable individuals with disabilities to perform the essential functions.  
+
+Proposed Salary Range: $95,000 - $105,000 annually*  
+
+  • Final agreed upon compensation will be based on a variety of factors including but not limited to an individual’s related experience, education, certifications, skills, and work location.
+
+Perks of Being a Dudekian  
+At Dudek we will provide you with a competitive salary in an environment that promotes growth, career development, and a flexible work–life balance. Dudek offers an array of benefits, from medical, dental, and vision coverage, to the discretionary bonuses, based on firmwide, divisional, and individual performance.   
+
+We also offer a yearly merit review, an employee stock ownership program, and dog friendly offices! To honor our key value of well-being, Dudek provides a generous vacation package. If you’re tired of an overly bureaucratic decision-making process and want to be part of a work culture that puts its employees first, speak with your recruiter to learn more about the great perks of being a Dudekian.   
+
+Dudek is an Equal Opportunity Employer. Qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national or ethnic origin, age, disability, protected veteran status, or other characteristics protected by applicable law.  
+
+Dudek is a U.S.-based employer. All positions are based in the U.S. and require U.S. work authorization.  
+
+6JKtDSq3Df"
+acb8e52f88aa1117,Indeed,Business Analyst,Jada Staffing Inc.,Data Analyst,hybrid,Temporary,2025-04-10,2025-04-15,Los Angeles,CA,90012,hourly,42.53,46.67,88462.40000000001,97073.6,92768.0,https://www.indeed.com/viewjob?jk=acb8e52f88aa1117,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Jada Systems seeks an onsite Business Analyst for a 12 month assignment to work a Hybrid work schedule (50% onsite / 50% remote:
+
+Job Overview
+
+Contractor shall meet the following key high-level work products and outcomes as:
+
+1\. Evaluate existing documentation library to understand the scope/nature of project, structure of change, and the required amount of documents that need to be updated.
+
+2\. Meet with various subject matter experts (SMEs) to gain insight and background to various PCIS and ePlanLA projects to document Department goals and objectives.
+
+3\. Elicit and gather detailed, comprehensive, and correct business requirements for core users and other pertinent staff.
+
+4\. Create, design, and document wireframes and design concepts.
+
+5\. Lead user acceptance testing.
+
+6\. Provide end-user training and overall implementation support for PCIS, ePlanLA, and the LA City Permitting System.
+
+7\. Create and maintain various project trackers (e.g., meeting trackers, action item trackers, etc.).
+
+8\. Perform data analysis, data cleansing, and data transformation processes.
+
+9\. Create and maintain data dashboards.
+
+10\. Design and create reports for business continuity and business analytics.
+
+11\. Other tasks as identified by LADBS
+
+Qualifications
+
+The qualified candidate must possess the following skills and years of experience in the following areas:
+
+  • 3+ years of work experience in Information Technology or Data Analysis.
+  • 3+ years of work experience gathering business requirements, including functional, user, and system requirements; creating application wireframes; developing process flow diagrams; writing high-quality technical and user guide documentation; performing heavy research; and other business analysis tasks for software/SDLC implementation projects.
+  • 1+ year of experience as a project manager over a project with a heavy IT component. Expected first-hand knowledge/experience with various assignment, resource allocation, and monitoring tools.
+  • Intermediate to advanced knowledge of Microsoft Word, Excel, Project, and PowerPoint is required.
+  • Demonstrated experience in extracting and translating large data sets and relational databases.
+
+Skills required
+
+  • Excellent written, verbal, and interpersonal communication skills.
+  • Strong organizational skills; highly detail oriented.
+  • Works effectively in a diverse team environment.
+  • Ability to communicate and present in large groups and team meetings.
+  • Ability to confidently interact with members of project including third parties, developers, sponsors, users, and management
+  • Possess good customer service skills.
+  • Excellent problem solving and follow-through skills.
+  • Ability to collect, evaluate and interpret complex information and data.
+  • Ability to create complex spreadsheets, dashboards, records and reports.
+  • Efficiently manage multiple tasks and bring deliverables to completion in a deadline-driven environment.
+
+Candidate must provide a minimum of three (3) work related references with contact information.
+
+Job Types: Full-time, Temporary
+
+Pay: $42.53 - $46.67 per hour
+
+Expected hours: 40 per week
+
+Schedule:
+
+  • 8 hour shift
+  • Monday to Friday
+
+Application Question(s):
+
+  • Do possess a valid California Driver's License?
+
+Work Location: Hybrid remote in Los Angeles, CA 90012"
+ceb256100debdf5c,Indeed,Compliance Business Analyst,AEG Worldwide,Data Analyst,in-person,,2025-04-14,2025-04-15,Los Angeles,CA,,yearly,78164.0,106587.0,78164.0,106587.0,92375.5,https://www.indeed.com/viewjob?jk=ceb256100debdf5c,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Company Information  
+For more than 20 years, AEG has played a pivotal role in transforming sports and live entertainment. Annually, we host more than 160 million guests, promote more than 10,000 shows and present more than 22,000 events around the world. We are committed to innovation, artistry, and community, and leverage the power of our 300+ venues, leading sports franchises, marquee music brands, integrated entertainment districts, premier ticketing platform and global sponsorship activations, to create memorable moments that give the world reason to cheer.  
+
+Our business is interwoven with the human mind and heart, and we strive to build a diverse and inclusive company that reflects the artists, athletes, and fans that we host; reach beyond traditional boundaries to support the communities in which we operate; and minimize our impact on the environment by adopting sustainable practices throughout our business operations.  
+
+If you want to be challenged to up your game and make a difference, then join us in giving the world reason to cheer!
+
+Job Summary
+
+As a Business Analyst - Compliance, you will play a crucial role in ensuring our digital platforms meet accessibility and data privacy standards. You will assess and analyze digital properties for compliance with ADA accessibility (WCAG 2.1), cookie consent policies (GDPR, CPRA), and other relevant regulations. Working cross-functionally with web development, consumer behavior design, and legal teams, you will conduct audits, implement compliance solutions, and track improvements over time. Your insights will help shape the online experience for millions of fans while maintaining regulatory compliance in the ever-evolving live music industry.
+
+Essential Functions
+
+  • Conduct audits using tools such as Chrome DevTools, browser inspect tools, and automated compliance platforms (Level Access and OneTrust) to identify compliance gaps.
+  • Review, implement, and optimize website cookie banners, accessibility widgets, and other compliance-related integrations.
+  • Evaluate and analyze digital properties to ensure compliance with ADA accessibility standards (WCAG 2.1), cookie consent policies (GDPR, CPRA), and other data privacy regulations.
+  • Monitor, research and stay up to date with regulatory updates related to website accessibility and data privacy to ensure ongoing compliance.
+  • Collaborate cross-functionally with web development, design, and legal teams to translate and implement compliance requirements into actionable solutions.
+  • Develop and maintain an audit of all data capture forms and the required consent language associated with each channel and use case.
+  • Work closely with the CRM team to review and audit consumer subscription preferences for compliance with data privacy standards.
+  • Develop reports and documentation to track compliance status, monitor key risks, and measure improvements over time.
+  • Support the operational implementation of privacy-related processes and standards set by Corporate Legal and Privacy teams to ensure adherence to policies.
+
+Required Qualifications
+
+  • BA/BS Degree (4-year) Computer Science, Information Systems, or a related field.
+  • 2-4 years experience in a compliance, business analysis, or web accessibility role
+  • Proficiency in front-end web technologies, including HTML, JavaScript, and CSS.
+  • Hands-on experience using Chrome DevTools and browser inspection tools.
+  • Familiarity with ADA compliance tools, WCAG guidelines, and website accessibility testing methodologies.
+  • Experience with website cookie compliance solutions and data privacy regulations such as GDPR and CPRA.
+  • Knowledge of CASL, CAN-SPAM and TCPA
+  • Strong analytical skills with the ability to interpret regulations and translate them into actionable steps.
+  • Excellent communication and collaboration skills, with experience working cross-functionally.
+  • Preferred Qualifications:
+  • Certification in ADA compliance, data privacy (CIPP/E, CIPM), or related fields.
+  • Experience with content management systems (CMS) and their impact on compliance efforts.
+  • Knowledge of JavaScript frameworks and their influence on web accessibility.
+  • Experience using Level Access or OneTrust.
+  • Experience with compliance monitoring software or automated accessibility testing tools (e.g., axe DevTools, WAVE, Siteimprove) is a plus.
+
+Pay Scale: $78,164 - $106,587
+
+AEG reserves the right to change or modify the employee's job description whether orally or in writing, at any time during the employment relationship. AEG may require an employee to perform duties outside their normal description."
+6e49f903557050a6,Indeed,Business Analyst II (ALD),L.A. Care Health Plan,Data Analyst,in-person,Full-time,2025-04-09,2025-04-15,Los Angeles,CA,90017,yearly,77265.0,123625.0,77265.0,123625.0,100445.0,https://www.indeed.com/viewjob?jk=6e49f903557050a6,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Business Analyst II (ALD)
+
+Job Category: Administrative, HR, Business Professionals 
+
+Department: Provider Data Management 
+
+Location: Los Angeles, CA, US, 90017 
+
+Position Type: Full Time 
+
+Requisition ID: 12132 
+
+Salary Range: $77,265.00 (Min.) - $100,445.00 (Mid.) - $123,625.00 (Max.)
+
+Established in 1997, L.A. Care Health Plan is an independent public agency created by the state of California to provide health coverage to low-income Los Angeles County residents. We are the nation’s largest publicly operated health plan. Serving more than 2 million members, we make sure our members get the right care at the right place at the right time.  
+
+Mission: L.A. Care’s mission is to provide access to quality health care for Los Angeles County's vulnerable and low-income communities and residents and to support the safety net required to achieve that purpose.  
+
+Job Summary 
+
+The Business Analyst II works closely with business units to gain in-depth business understanding of customer’s business strategy processes, services, roadmaps and the content in which the business operates. The Business Analyst is focus-driven, focusing on strategy, collaboration, prioritization based on value off internal and external customers. The position consults and collaborates with internal and external customers to address any issues that are contributing to inaccurate or inefficient procedures/ processes within the Department. This position is key to understanding the documenting capabilities needed to address business challenges. It is responsible for reviewing end-to-end business processes to identify, address, and remediate operational and functional risks. This position conducts a strengths, weaknesses, opportunities, and threats (SWOT) analysis to identify opportunities to improve operational efficiency. It is responsible for a full range of activities leading small to large size projects, assist project managers on complex projects related to operational business functions affecting internal departments and external customers at market level. 
+
+Duties 
+
+Participate and contribute in multiple projects by completing and updating project documentation; managing project scope; adjusting schedules when necessary; determining daily priorities; ensuring efficient and on-time delivery of project tasks and milestones; follow escalation process; and managing customer relationships. Ensure data is valid and reliable; develop business process improvement; monitor and update software as needed; partner with internal and external customers to accomplish long-term business strategies and goals. Identify, create, and facilitate process design changes by conducting business and systems process analysis and design at a complex level; focusing on quality improvement and data management. Identify improvement opportunities (proactive and reactive). 
+
+Oversee customer relationships and expectations through communication process; updating others through project paths. Support and align efforts to meet business and customer needs. Facilitate meetings, projects, and presentations to diverse audiences. Provide leadership to team members and peers, collaborating cross-functionally with others; articulate ideas and viewpoints to Senior Management, peers, and others; identify and initiate projects; manage resources; implement resolutions; and hold self-accountable for completing tasks and results. Provide a strategic asset to decompose strategy into value change initiatives. 
+
+Maintain an up-to date knowledge of Information Systems to develop, execute, and improve corrective action plans by providing subject matter expertise and guidance to best business practices. Stay current with customer needs and strategies; utilize formal and informal written communication methods (BRDs, emails, PowerPoint presentations, Visio workflows, executive summaries, and project logs). Provide and support business solutions; build relationships with internal/external customers and key stakeholders; monitor project progress and results; provide project analysis and root-cause of operational issues. 
+
+Demonstrate leadership and interpersonal communication skills by working collaboratively and effectively with peers, superiors and subordinates to accomplish objectives. Able to concisely, clearly and formally communicate complex concepts and formulate process solutions. Work as a subject matter expert and review all submitted problem and improvement reports; identify priority issues; evaluates opportunities for improvement, presents findings to supervisors for evaluation and prepares resolution work plan as directed. Develop and execute test plans. Monitor all solutions through to resolution. 
+
+Perform other duties as assigned. 
+
+Duties Continued 
+
+Education Required 
+
+Bachelor's Degree 
+
+In lieu of degree, equivalent education and/or experience may be considered. 
+
+Education Preferred 
+
+Master's Degree 
+
+Experience 
+
+Required:  
+At least 3 years of experience in data analysis in a health or managed care environment. 
+
+Skills 
+
+Required:
+
+Proven ability to significantly impact process improvement and process management.
+
+Ability to document scope, project tasks in a clear and concise manner.
+
+Thorough understanding of relevant industry practices, techniques and standards.
+
+Must have a comprehensive understanding of business process/ life cycle management principles, theories and concepts.
+
+Strong problem-solving/ analysis skills.
+
+Proficiency in Microsoft Office applications, database management.
+
+Articulates relevant information and directions in an organized and concise manner.
+
+Strong interpersonal, verbal, and written communication skills; Understanding of effective communication concepts tools and techniques.
+
+Ability to conform to shifting priorities, demands, and timelines through analytical and problem-solving capabilities. 
+
+Licenses/Certifications Required 
+
+Licenses/Certifications Preferred 
+
+Required Training 
+
+Physical Requirements 
+
+Light 
+
+Additional Information 
+
+Salary Range Disclaimer: The expected pay range is based on many factors such as geography, experience, education, and the market. The range is subject to change. 
+
+This position is a limited duration position. The term of this position is a minimum one year and maximum of two years from the start date unless terminated earlier by either party. Limited duration positions are full-time positions and are eligible to receive full benefits. 
+
+L.A. Care offers a wide range of benefits including
+
+  • Paid Time Off (PTO)
+  • Tuition Reimbursement
+  • Retirement Plans
+  • Medical, Dental and Vision
+  • Wellness Program
+  • Volunteer Time Off (VTO)
+
+Nearest Major Market: Los Angeles   
+Job Segment: Business Analyst, Finance"
+3369c681a72215aa,Indeed,"Clinical Data Analyst III (HEDIS, Tableau, SQL)",L.A. Care Health Plan,Data Analyst,in-person,Full-time,2025-04-08,2025-04-15,Los Angeles,CA,90017,yearly,88854.0,142166.0,88854.0,142166.0,115510.0,https://www.indeed.com/viewjob?jk=3369c681a72215aa,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Clinical Data Analyst III (HEDIS, Tableau, SQL)
+
+Job Category: Clinical 
+
+Department: Quality Improvement 
+
+Location: Los Angeles, CA, US, 90017 
+
+Position Type: Full Time 
+
+Requisition ID: 12137 
+
+Salary Range: $88,854.00 (Min.) - $115,509.00 (Mid.) - $142,166.00 (Max.) 
+
+Established in 1997, L.A. Care Health Plan is an independent public agency created by the state of California to provide health coverage to low-income Los Angeles County residents. We are the nation’s largest publicly operated health plan. Serving more than 2 million members, we make sure our members get the right care at the right place at the right time.  
+
+Mission: L.A. Care’s mission is to provide access to quality health care for Los Angeles County's vulnerable and low-income communities and residents and to support the safety net required to achieve that purpose.  
+
+Job Summary 
+
+The Clinical Data Analyst III supports Healthcare metrics, quality and process improvement activities by producing healthcare outcome measurements that are used for internal and external reporting, the tasks including data quality assurance, process programming, specification documentation and report developing.
+
+The Clinical Data Analyst III designs, develops, and generates production and similar reports that may evolve into complex data analysis/data integration projects that this individual may be responsible for maintaining. The complex data analysis/integration projects are those, which may require periodic maintenance on a weekly, monthly, quarterly, biannual, or annual basis. This position works with Information Systems analysts when ongoing reports can be accurately transferred for production.
+
+The Clinical Data Analyst III interprets and documents both written and verbal specifications. This position takes basic instructions or specifications and interviews with the client for complete details sufficient for writing data queries based for ad hoc and ongoing health care measures. This position must comprehend the relationships between the field elements in encounters and claims, membership, and provider databases. This position supports the functions related to quality improvement activities inclusive of quarterly reports that demonstrate health care outcomes in comparison to targets or national averages/percentiles published by recognized organizations such as National Committee for Quality Assurance (NCQA) and Center for Disease Control (CDC). Acts as a Subject Matter Expert, serves as a resource and mentor for other staff.
+
+Duties 
+
+Design, develop and maintain complex ongoing data projects. Design, develop, and generate ad hoc/production reports. Produce automatic, robust, timely and accurate results based on client specifications and as allowed by available resources. Produce complete documentation, QC reports and periodic results as scheduled. Identify and create work-around to generate valid results that meet the intent of the client's specifications.
+
+Investigate and document organizational data flow and sources. Provide thorough documentation regarding current 1) data sources 2) data flow 3) current process and procedures to code, group, QC, link and seed the data. Develop automatic, robust and sharable Statistical Analysis System (SAS) or Structured Query Language (SQL) procedures and programs towards building a comprehensive clinical data repository.
+
+Develop analytical programs, databases, routine procedures using SAS or SQL programming language. Create work tools that facilitate tasks by reducing paperwork and errors. Document assumptions, specification in a clear and sharable fashion.
+
+Applies subject expertise in evaluating business operations and processes. Identifies areas where technical solutions would improve business performance. Consults across business operations, providing mentorship, and contributing specialized knowledge. Ensures that the facts and details are correct so that the project’s/program's deliverable meets the needs of the department, organization and legislation's policies, standards, and best practices. Provides training, recommends process improvements, and mentors junior level staff, department interns, etc. as needed. Educate/Tutor clients/junior staff on maintenance/usage of database/solutions designed. Educate/Tutor junior staff on data/business knowledge and technical skills.
+
+Communicate with stakeholders/clients/collaborators regarding project details and plans.
+
+Perform other duties as assigned.
+
+Duties Continued 
+
+Education Required 
+
+Bachelor's Degree 
+
+In lieu of degree, equivalent education and/or experience may be considered. 
+
+Education Preferred 
+
+Master's Degree in Public Health or Related Field 
+
+Experience 
+
+Required:
+
+At least 4 years of experience in designing, developing, generating and analyzing ad hoc/production reports in Healthcare/Managed Care setting.
+
+Preferred:
+
+Experience as a Clinical Data Analyst.
+
+Skills 
+
+Required:
+
+Must be able to apply and/or develop technical specifications for health care measures such as those used by National Committee for Quality Assurance (NCQA), HEDIS, Centers for Medicare and Medicaid Services (CMS), and State.
+
+Must demonstrate advanced SQL and/or SAS skills in developing programs and procedures for analytics and quality assurance.
+
+Must be able to present data in a format that is appropriate for analysis. This includes the ability to determine select the correct information for calculating basic rates, table configuration, and graphical presentations.
+
+Must demonstrate an aptitude in learning and expanding abilities to use new applications with basic training.
+
+Must be a self-starter and can multi-task and can take charge of assigned projects.
+
+Must be able to make recommendations to the clients that demonstrate strengths and limitations of the organization's ability to meet the request. 
+
+Preferred:
+
+Working knowledge of SAS Proc SQL, SAS Macro and database related SAS skills are highly preferred. 
+
+Licenses/Certifications Required 
+
+Licenses/Certifications Preferred 
+
+Statistical Analysis System (SAS) Certification 
+
+Certified Healthcare Data Analyst (CHDA) 
+
+Required Training 
+
+Physical Requirements 
+
+Light 
+
+Additional Information 
+
+Dept Specific:
+
+Health Equity:
+
+This position is located in the Health Equity department. It supports the short and long term operational and L.A. Care’s Health Equity and Disparities Mitigation initiatives. This role will develop, enhance, and health and social service needs (food, housing, care management) information and models that will have an impact on vulnerable communities. Through the application of data analytics and analyzing various data sources, this role will work to deliver valuable insights and recommendations to improve health equity and reduce health disparities. 
+
+Salary Range Disclaimer: The expected pay range is based on many factors such as geography, experience, education, and the market. The range is subject to change. 
+
+L.A. Care offers a wide range of benefits including
+
+  • Paid Time Off (PTO)
+  • Tuition Reimbursement
+  • Retirement Plans
+  • Medical, Dental and Vision
+  • Wellness Program
+  • Volunteer Time Off (VTO)
+
+Nearest Major Market: Los Angeles   
+Job Segment: Public Health, Medicaid, Medicare, Claims, Equity, Healthcare, Insurance, Finance"
+54d8316f57a3f115,Indeed,Bank Fraud Senior Business Analyst,Crowe LLP,Data Analyst,in-person,Full-time,2025-04-11,2025-04-15,Los Angeles,CA,90017,yearly,109400.0,218100.0,109400.0,218100.0,163750.0,https://www.indeed.com/viewjob?jk=54d8316f57a3f115,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Your Journey at Crowe Starts Here:
+
+At Crowe, you can build a meaningful and rewarding career. With real flexibility to balance work with life moments, you’re trusted to deliver results and make an impact. We embrace you for who you are, care for your well-being, and nurture your career. Everyone has equitable access to opportunities for career growth and leadership. Over our 80-year history, delivering excellent service through innovation has been a core part of our DNA across our audit, tax, and consulting groups. That’s why we continuously invest in innovative ideas, such as AI-enabled insights and technology-powered solutions, to enhance our services. Join us at Crowe and embark on a career where you can help shape the future of our industry.
+
+Job Description:
+
+Bank Fraud Senior Business Analyst 
+
+Your Journey at Crowe Starts Here:
+
+Join our Consulting Financial Crime practice to lead our markets and the clients we serve within the financial services industry. From day one of your career, you will collaborate with our clients to transform their financial crime programs. We will enable an entrepreneurial and innovative environment for you to deliver transformative risk consulting services and to develop deeply specialized skill sets demanded in today’s market.
+
+For nearly 20 years, Crowe has been the leader in providing financial crime service to the financial community. We are a diverse, innovative, and driven group that operates across the country. We collaborate with the leading providers and organizations in financial services to bring our clients solutions to help them succeed.
+
+Why we exist  
+To better enable our clients to realize their purpose by helping them to optimally achieve their goals.  
+
+How we serve  
+We bring the best of our authentic selves, working as a diverse team, to achieve our highest potential in serving our clients.  
+
+What we offer  
+We provide innovative and high value solutions, by dedicated individuals, who are passionate about helping our clients to enable their own success.  
+
+Financial Crime compliance expectations are constantly evolving, requiring our Financial Crime consultants to adapt to challenging conditions, a wide breadth of client projects, and changing teams. At Crowe, you will have the opportunity to understand a client’s operational and compliance controls, provide recommendations for strengthening their financial crime program, and implement real solutions to assist our clients in meeting their needs and goals. At Crowe, our Financial Crime solution offerings range from Financial Crime audits and validations to Financial Crime technology implementation and enhancement, affording our consultants the ability to understand several aspects of Financial Crime risk management and provide opportunities to widen their breadth of expertise and knowledge.
+
+Job Description:
+
+As a Bank Fraud Senior Business Analyst in Crowe’s Financial Crime Analytics and Technology Practice, your role will be focused on helping clients implement fraud technology solutions with outcomes that meet regulatory expectations. At Crowe, we empower you to take risks, challenge yourself in specialized areas of consulting & technology and generate solutions that impact the firm and your professional growth. Crowe cultivates a creative corporate culture where you will have the opportunity to share your ideas and knowledge with clients from your very first day with the firm.
+
+This role is responsible for managing the implementation of fraud systems, including Fraud Detection and Case Management. The individual will have experience with managing technical projects and a background which includes the understanding of fraud prevention goals and detection mechanisms.
+
+This role will manage the execution of medium to large scale financial crime implementation and tuning engagements, while providing fraud technology subject matter expertise. The role will also be responsible for providing subject matter expertise and support to fraud model validation engagements. The activities the role will execute and/or oversee will include fraud technology advisory, business requirements gathering, selecting and/or defining fraud detection scenarios, business process and workflow design, data mapping, data validation, training, tuning / optimization, and testing.
+
+Responsibilities:
+
+Collaborate with clients to understand their fraud detection and prevention requirements and translate them into fraud solution configurations. Support the implementation and configuration of fraud solutions. Provide guidance on rule development and scenario configuration. Collaborate with clients to identify fraud patterns, trends, and potential vulnerabilities. Recommend configurations and customizations for fraud solutions to align with client-specific business processes and regulatory requirements. Provide guidance and expertise to clients on best practices for fraud prevention, detection, and investigation using fraud solutions. Collaborate with cross-functional teams, including project managers, developers, and business analysts, to ensure seamless integration and successful implementation of fraud solutions. Conduct training sessions and workshops for clients to educate them on the functionality and usage of fraud solutions. Stay updated on industry trends, emerging fraud techniques, and regulatory changes related to fraud detection and prevention. Assist in troubleshooting and resolving technical issues related to fraud solutions during implementation and post-implementation phases.
+
+Qualifications:
+
+  • 5+ years’ experience supporting fraud system implementation and tuning projects
+  • Demonstrated knowledge of fraud prevention techniques from working at financial institutions and/or financial crime professional services / consulting.
+  • Extensive experience in implementing fraud solutions for financial institutions, including rule development and scenario configuration, and business process / policy design.
+  • Detailed knowledge of the functionality and configurability of major fraud prevention vendor solutions such as Actimize, SAS, Verafin, etc.
+  • Strong understanding of fraud detection and prevention techniques, industry best practices, and regulatory requirements.
+  • Solid knowledge of financial crime and fraud typologies across various industries, such as banking, insurance, or e-commerce.
+  • Experience working in a project-based environment supporting full lifecycle technical projects.
+  • Skilled at collaborating and developing partnerships with clients, prospects, and colleagues.
+  • Strong writing, analytical, problem solving, and communication skills and the ability to multi-task and complete projects on time.
+  • Ability to support multiple small projects simultaneously and deliver high-quality results within defined timelines.
+  • Travel requirements may be up to 40%, however are currently limited due to the current environment. Expected travel will be approximately 20%.
+
+Preferences:
+
+  • Proficiency in Actimize Fraud solutions, including Actimize IFM-X, and Actimize ActOne.
+  • Experience in developing policy manager rules.
+  • Experience supporting the implementation of major Anti-Money Laundering (AML) vendor solutions.
+  • Demonstrated experience in working on both cloud and on-prem implementations.
+  • Certified Fraud Examiner (CFE), or other relevant certification.
+
+  • Experience with SQL and data analytics.
+  • Bachelor's degree in Computer Science, Information Systems, or a related field.
+  • Experience managing a team of professionals and/or consultants.
+  • Knowledge of the laws applicable to money laundering, to include the BSA, USA PATRIOT Act, OFAC requirements and Suspicious Activity Reporting requirements.
+
+#LI-JB1 #FinancialCrime #GoCrowe
+
+We expect the candidate to uphold Crowe’s values of Care, Trust, Courage, and Stewardship. These values define who we are. We expect all of our people to act ethically and with integrity at all times.
+
+The wage range for this role takes into account the wide range of factors that are considered in making compensation decisions including but not limited to skill sets; experience and training; licensure and certifications; and other business and organizational needs. The disclosed range estimate has not been adjusted for the applicable geographic differential associated with the location at which the position may be filled. At Crowe, it is not typical for an individual to be hired at or near the top of the range for their role and compensation decisions are dependent on the facts and circumstances of each case. A reasonable estimate of the current range is $109,400.00 - $218,100.00 per year. 
+
+Our Benefits:  
+Your exceptional people experience starts here. At Crowe, we know that great people are what makes a great firm. We care about our people and offer employees a comprehensive total rewards package. Learn more about what working at Crowe can mean for you!
+
+How You Can Grow:  
+We will nurture your talent in an inclusive culture that values diversity. You will have the chance to meet on a consistent basis with your Career Coach that will guide you in your career goals and aspirations. Learn more about where talent can prosper!  
+
+More about Crowe:  
+Crowe (www.crowe.com) is one of the largest public accounting, consulting and technology firms in the United States. Crowe uses its deep industry expertise to provide audit services to public and private entities while also helping clients reach their goals with tax, advisory, risk and performance services. Crowe is recognized by many organizations as one of the country's best places to work. Crowe serves clients worldwide as an independent member of Crowe Global, one of the largest global accounting networks in the world. The network consists of more than 200 independent accounting and advisory services firms in more than 130 countries around the world.
+
+Crowe LLP provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, sexual orientation, gender identity or expression, genetics, national origin, disability or protected veteran status, or any other characteristic protected by federal, state or local laws.
+
+Crowe will consider for employment all qualified applicants, including those with criminal histories, in a manner consistent with the requirements of applicable state and local laws. Please visit our webpage to see notices of the various state and local Ban-the-Box laws and Fair Chance Ordinances, where applicable."
+a986d47d4437ea3b,Indeed,TEMPORARY ADMINISTRATIVE ANALYST (SCHEDULING),LA Metro,Data Analyst,in-person,Temporary,2025-04-10,2025-04-15,Los Angeles,CA,,yearly,61068.8,91561.6,61068.8,91561.6,76315.20000000001,https://www.indeed.com/viewjob?jk=a986d47d4437ea3b,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Salary
+
+$61,068.80 - $91,561.60 Annually 
+
+Location 
+
+Los Angeles, CA 
+
+Job Type
+
+Contingent Employee - Temporary 
+
+Job Number
+
+2400551 
+
+Cabinet
+
+CUSTOMER EXPERIENCE OFFICE 
+
+Cost Center
+
+7015 - EXECUTIVE OFFICE CUSTOMER EXPERIENCE 
+
+Opening Date
+
+04/09/2025 
+
+Closing Date
+
+4/24/2025 5:00 PM Pacific 
+
+FLSA
+
+Non-Exempt 
+
+Bargaining Unit 
+
+Non-Contract 
+
+Metro’s mission is to provide a world-class transportation system that enhances the quality of life for all who live, work, and play within LA County.
+
+## Description
+
+*THIS POSITION IS TEMPORARY (UP TO 40 HOURS) WITH LIMITED BENEFITS. (Please see the Benefits tab for additional information.) NO QCP WILL BE ESTABLISHED. You will only be contacted if there is an interest from the hiring department.*  
+
+Provides journey-level administrative, technical, analytical, and/or budgetary support for an assigned department. Administrative Analyst will assist the Customer Experience Department with scheduling and organizing the calendar of a senior level executive. The position will collaborate with internal and external parties to coordinate schedules and manage prioritizing calendaring challenges.
+
+Recruitment Timeline: Interviews are are projected to be scheduled for the week of May 5, 2025. These dates are subject to change. We encourage you to monitor your governmentjobs.com profile and emails for the latest updates. 
+
+## Examples of Duties
+
+  • Provides administrative support for a department or division in one or more of the following areas as assigned, which may include budget preparation and administration, contract monitoring, and personnel administration
+
+  • Conducts research and prepares reports requiring compilation and analysis of data
+
+  • Conducts forecasting analyses and studies
+
+  • Develops program management, data tracking, and other software applications on personal computers
+
+  • Develops and implements records maintenance and analysis systems
+
+  • Monitors projects and programs
+
+  • Confers with internal and external stakeholders regarding various matters as assigned
+
+  • Represents the department at meetings, committees, and conferences
+
+  • Performs and formulates financial, administrative, policy, and organizational analyses and recommendations
+
+  • Advises management and staff regarding performance and funding matters
+
+  • Monitors assigned departmental operating and capital budgets
+
+  • Prepares recommendations for proposed expenditures of capital funds
+
+  • Researches and recommends appropriate action regarding performance and budget variances
+
+  • Reviews grant requests
+
+  • Monitors grant expenditures
+
+  • Contributes to ensuring that the Equal Employment Opportunity (EEO) policies and programs of Metro are carried out
+
+May be required to perform other related job duties
+
+## Minimum Qualifications
+
+A combination of education and/or experience that provides the required knowledge, skills, and abilities to perform the essential functions of the position. Additional experience, as outlined below, may be substituted for required education on a year-for-year basis. A typical combination includes:  
+
+Education
+
+  • Bachelor's Degree in Business, Public Administration, or a related field
+
+Experience
+
+  • One year of relevant experience performing basic or entry-level budgeting and/or administrative work
+
+Certifications/Licenses/Special Requirements
+
+  • A valid California Class C Driver License or the ability to utilize an alternative method of transportation when needed to carry out job-related essential functions
+
+Preferred Qualifications  
+
+Preferred Qualifications (PQs) are used to identify relevant knowledge, skills, and abilities (KSAs) as determined by business necessity. These criteria are considered preferred qualifications and are not intended to serve as minimum requirements for the position. PQs will help support selection decisions throughout the recruitment. In addition, applicants who possess these PQs will not automatically be selected.  
+
+The following are the preferred qualifications: 
+
+  • Experience calendaring and managing schedules for C suite executives
+  • Experience using Microsoft Suite to prepare correspondence and facilitate communication across multidisciplinary teams
+  • Experience preparing agendas for meetings and workshops, including organizing meeting materials and reserving conference rooms
+
+## Essential Knowledge
+
+Knowledge of (defined as a learned body of information that is required for and applied in the performance of job tasks)
+
+  • Theories, principles, and practices of budget, accounting, financial, and administrative and technical analysis
+  • Research and report preparation methods
+  • Mathematics and business statistics
+  • Applicable business software applications
+
+Skill in (defined as the proficient manual, verbal, or mental utilization of data, people, or things)
+
+  • Performing statistical and financial analyses
+  • Analyzing situations, identifying problems, and developing and recommending solutions
+  • Exercising sound judgment and critical thinking in making decisions
+  • Communicating effectively orally and in writing
+  • Preparing comprehensive reports and correspondence
+  • Interacting professionally with various levels of Metro employees and outside representatives
+
+Ability to (defined as a present competence to perform an observable behavior or produce an observable result)
+
+  • Research, compile, and analyze data
+  • Handle highly confidential information
+  • Meet tight time constraints and deadlines
+  • Think and act independently
+  • Follow oral and written instructions
+  • Understand, interpret, and apply laws, rules, regulations, policies, procedures, contracts, budgets, and labor/management agreements
+  • Read, write, speak, and understand English
+
+Special Conditions
+
+The physical demands described are representative of those that must be met by the employee to successfully perform the essential functions of this job. Metro provides reasonable accommodation to enable individuals with disabilities to perform the essential functions.  
+
+Working Conditions
+
+  • Typical office situation
+  • Close exposure to computer monitors and video screen
+
+Physical Effort Required
+
+  • Sitting at a desk or table
+  • Operate a telephone or other telecommunications device and communicate through the medium
+  • Type and use a keyboard and mouse to perform necessary computer-based functions
+  • Communicating through speech in the English language required
+
+(JAL) 
+
+Metro is an Equal Opportunity Employer and does not discriminate on the basis of race, color, creed, ancestry, national origin, gender, marital status, sexual orientation, religion, age, veteran status, or disability. Learn more about Metro’s Equal Employment Opportunity Program. Metro does not deny participation in the application process to anyone with prior justice system involvement, in line with Fair Chance hiring practices.
+
+Selection Procedure
+
+Applicants who best meet job-related qualifications will be invited to participate in the examination process that may consist of any combination of written, performance, or oral appraisal to further evaluate job-related experience, knowledge, skills and abilities.
+
+Application Procedure
+
+To apply, visit Metro's website at www.metro.net and complete an online Employment Application.  
+
+Computers are available to complete online Employment Applications at the following Metro location:  
+
+METRO Headquarters, Employment Office  
+One Gateway Plaza  
+Los Angeles, CA 90012  
+
+Telephone: (213) 922-6217 or persons with hearing or speech impairments can use California Relay Service 711 to contact Metro.  
+
+All completed online Employment Applications must be received by 5:00 p.m. on the closing date. Late applications will not be considered.
+
+  • Open to the public and all Metro employees
+
+This job bulletin is not to be construed as an exhaustive list of duties, responsibilities, or requirements. Employees may be required to perform other related job duties.
+
+*Please refer to the applicable benefit type (Regular or Temporary)*  
+
+BENEFITS FOR REGULAR EMPLOYEES  
+
+Benefits cover probationary or regular full-time (working at least 40 hrs/week) employees of Metro.   
+
+We offer a range of high-quality medical, dental and vision plan options as well as health care spending accounts for you and your family. Metro will cover a significant portion of your health care premiums.  
+
+Medical/Dental/Vision Plan \- Employee has the choice of 3 separate medical plans and 3 dental plans. A separate vision plan is included in each medical plan.  
+
+Group Life Insurance \- PTSC pays for an amount equal to your annual salary, rounded up to the nearest $1,000. Minimum amount of life insurance is $30,000.  
+
+Accidental Death & Dismemberment Insurance \- PTSC provides $50,000 coverage for each employee. Additional voluntary coverage in amounts up to $500,000 is available at favorable premium rates.  
+
+Long-Term Disability Insurance \- 100% employer paid. Provides employees with a minimum income of 60% of earnings after six months of disability. Buy up or buy down options available.  
+
+Holidays \- 12 days a year: New Year's Day, Martin Luther King, Jr. Day, Presidents' Day, Memorial Day, Independence Day, Labor Day, Veterans' Day, Cesar E Chavez, Juneteenth,Thanksgiving Day, Day After Thanksgiving, and Christmas Day.  
+
+Time off with Pay (TOWP) \- Compensates employees who are on approved absence from work for reasons such as illness, injury, medical and dental appointments, personal business, vacation, or observance of (a) religious holiday.  
+Years of Service Annual Accrual  
+Hire date - 5 years 20 days  
+Beginning of 6th - 10th year 25 days  
+Beginning of 11th - 15th year 30 days  
+Beginning of 16th + years 35 days  
+
+Pension Plan \- PTSC retirement plan is the Public Employees' Retirement System (PERS). Vesting is five (5) years. Minimum retirement age is 52, based on the 2% at 62 formula.  
+
+Other Benefits: Transportation passes for employees and/or eligible dependents; Medicare; Tuition reimbursement; credit union membership; SDI; Deferred Compensation Plan; 401(K) Thrift plan; EAP; Medical and Dependent Care Flexible Spending Accounts; Flexible work schedules; and Jury Duty Pay.  
+
+BENEFITS FOR TEMPORARY EMPLOYEES  
+
+Temporary (Contingent) employees are eligible for the following benefits only:
+
+  • Kaiser medical insurance
+  • Public Pension Plan
+  • 457/401K Plan
+  • Flex Spending
+  • Paid Sick Time
+  • Fare Media
+  • Rideshare Subsidies
+  • Metro One Fitness membership
+
+For more information on the Benefits Enrollment for Contingent Employees, please visit LA Metro’s Pension & Benefits website at www.benefits.metro.net. 
+
+Employer
+
+Los Angeles County Metropolitan Transportation Authority (CA) 
+
+Address
+
+One Gateway Plaza  
+
+Los Angeles, California, 90012
+
+Website
+
+https://www.metro.net/careers"
+9716e4b91e8dd687,Indeed,"Senior Production Control and Data Analyst - Long Beach, CA",BeautyHealth,Data Analyst,in-person,Full-time,2025-04-09,2025-04-15,Long Beach,CA,,yearly,70000.0,82000.0,70000.0,82000.0,76000.0,https://www.indeed.com/viewjob?jk=9716e4b91e8dd687,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"About Us 
+
+Hydrafacial is a global category-creating company focused on bringing innovative products to market and delivering beauty health experiences by reinventing our consumer’s relationship with their skin, their bodies and their self-confidence. 
+
+Every person here is a key player in our success. We are firm believers in making the little things count each day so the big things will follow. If this sounds like you, come check us out! This is the perfect opportunity to work with some of the best leaders in the industry while you gain the global and strategic experience to add to your professional toolbox. 
+
+Job Description: 
+
+The Senior Production Control and Data Analyst plays a crucial role in handling a variety of tasks associated with maintaining ERP BOM and item master data, as well as planning, scheduling, and inventory management for the production and reconditioning of cosmetic-medical devices. This role will involve analyzing capacity and providing insights to operations, engineering, sales, procurement, and FRC production, while also addressing labor and material shortages, backlogs, and other possible scheduling challenges. 
+
+What you’ll do: 
+
+Primary Responsibilities: 
+
+  • Collects, interprets and analyzes production data for production performance and gap analysis to determine the highest priority issue to resolve. 
+
+  • Conducts data analysis to drive continuous process improvements. 
+
+  • Plans and processes Work Orders in support of the production schedule. 
+
+  • Identify and assess demand requirements to solve capacity or material constraints. 
+
+  • Coordinates, develops, and updates capacity dashboards and generates production reports. 
+
+  • Performs edits and maintains ERP BOM and item master data. 
+
+  • Writes Manufacturing Work Instructions/procedures and trains personnel in FRC area as needed. 
+
+  • Process Material Movement Forms and log/track as required. 
+
+  • Oversee performance indicators for operational systems, determine the root cause of production challenges, and suggest corrective actions. 
+
+  • Performs other duties as assigned. 
+
+What you need to know: 
+
+Experience/Skills/Education: 
+
+Required: 
+
+  • Bachelor's degree in computer science or a related field 
+
+  • Must have at least 3 years experience in working within a fully integrated MRP/ERP system, Master Control, Korber, Netsuite, or SAP with an emphasis on inventory, production, and warehouse processes. 
+
+  • Experience in data cleaning, data prep, and data visualization for data analysis and reporting 
+
+  • Proficiency in Microsoft applications, such as MS Excel, PowerPoint, Outlook 
+
+  • Strong Analytical and Presentation skills, such as Tableau, PowerBI, SQL, Spreadsheets, etc. 
+
+  • Attention to detail with excellent written and verbal communication skills. 
+
+  • Ability to execute a high level of initiative, effort, and commitment towards completing assignments in a timely manner. 
+
+  • Capable of overseeing various projects and handling conflicting priorities. 
+
+  • Capable of engaging in critical thinking and problem-solving to develop innovative solutions to challenges in a live production setting while managing multiple concurrent issues. 
+
+  • Supervisory experience is a plus. 
+
+What else can you expect with Hydrafacial?  
+PERKS! We proudly offer full health benefits, that’s medical, dental, vision, FSAs, HSAs, Accident Insurance, and even Pet Insurance for your furry family to name a few. We also provide Basic Life/AD&D and Long-Term Disability coverage at no cost to you! Top these benefits off with an Employee Stock Purchase Plan and a 401(K) plan with an Employer Match. 
+
+Every person here is a key player in our success. We are firm believers in making the little things count each day so that the big things will follow. If this sounds like you, come check us out! This is the perfect opportunity to work with some of the best leaders in the industry while you gain the global and strategic experience to add to your professional toolbox. 
+
+We mean it when we say you’ll LOVE this role. 
+
+Base Salary Pay Range: $70,000 - $82,000 annually 
+
+An employee’s pay position within the salary range will be based on several factors including, but not limited to, relevant education, qualifications, certifications, experience, skills, seniority, geographic location, performance, travel requirements, revenue-based metrics, any contractual agreements, and business or organizational needs. The range listed is just one component of Hydrafacial's total rewards package for our employees. Other rewards may include annual bonuses, long-term incentives based on level, paid time off, and region-specific benefits. Come grow and GLOW with us! 
+
+Hydrafacial is proud to be an equal opportunity employer. We prohibit discrimination and harassment of any kind based on race, sex, religion, sexual orientation, national origin, gender identity, gender expression, age, disability, genetic information, pregnancy or any other protected characteristic as outlined by color, federal, state or local laws. We are committed to working with and providing accommodation to applicants with physical and mental disabilities. 
+
+Hydrafacial does not accept unsolicited assistance or resumes/CVs from third party search firms. No fee will be paid in the event a candidate is hired by our company as a result of an agency referral or CV/resume submitted by a search firm to any employee at our company without a valid written search agreement. If we need additional support, we will be sure to reach out directly to one of our preferred providers. Please no phone calls or emails."
+8544615f08284f34,Indeed,Senior Technical Business Analyst (DET),Disney Entertainment Television,Data Analyst,in-person,,2025-04-08,2025-04-15,Los Angeles,CA,,yearly,126400.0,169500.0,126400.0,169500.0,147950.0,https://www.indeed.com/viewjob?jk=8544615f08284f34,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"The Disney Entertainment Television Production Technology team is focused on implementing innovative solutions to support the production of episodic television. The team works to implement solutions across production, post-production, production finance, business affairs and creative affairs for multiple studios and platforms. We are focused on building solutions to business problems that increase insight and operational efficiency and are looking for a technical analyst to join our team.
+
+##  Responsibilities:
+
+  • Work closely with high level executives to understand their problems and design solutions
+
+  • Lead user acceptance testing and document results
+
+  • Lead meetings with business users to gather requirements and demo system functionality
+
+  • Detailed analysis of data using a SQL database, multi-dimensional database, or Excel
+
+  • Analyze business requirements and translate them into technical requirements
+
+  • Provide first line support for user reported issues
+
+  • Develop test cases, estimate test effort, perform application testing, and document test results
+
+  • Create training materials and train users
+
+  • Collaborate closely with developers to learn the application
+
+  • Identify and communicate risks and issues
+
+  • Track sprint progress using JIRA
+
+  • Web application testing
+
+  • Report testing
+
+  • Interface testing
+
+  • Conversion testing and reconciliation
+
+  • Data validation using Excel and SQL
+
+##  Basic Qualifications:
+
+  • 10+ years of experience working on custom software development projects
+
+  • Project management skills require
+
+  • Experience with conducting data analysis within financial reporting
+
+  • Ability to understand complex systems and end-to-end business processes
+
+  • Experience writing test plans and performing application testing
+
+  • Experience conducting user acceptance testing
+
+  • Comfortable working in Agile/SCRUM environment
+
+  • Ability to communicate clearly and collaborate closely with developers and business analysts
+
+  • Produces high quality written deliverables (specifications, test plans)
+
+  • Advanced Excel skills to include pivot tables, vlookup, formulas
+
+  • Ability to use basic SQL to query a database
+
+  • Must live within a commutable distance to Burbank, CA. (The role will move from Century City and require 4 days onsite weekly.)
+
+##  Preferred Qualifications:
+
+  • Experience working at a major studio
+
+  • Experience working in television production or distribution
+
+  • Experience working on financial systems
+
+  • Experience with SAP financials
+
+  • Experience with Airtable
+
+  • Experience with Snowflake or Oracle relational databases
+
+  • Experience using Hyperion Planning
+
+  • Experience with SOX applications
+
+##  Required Education:
+
+Bachelor’s degree and/or equivalent work experience
+
+##  Preferred Education:
+
+Master’s degree and/or equivalent work experience
+
+The hiring range for this position in Burbank, CA and Century City, CA is $126,400 to $169,500 per year. The base pay actually offered will take into account internal equity and also may vary depending on the candidate’s geographic region, job-related knowledge, skills, and experience among other factors. A bonus and/or long-term incentive units may be provided as part of the compensation package, in addition to the full range of medical, financial, and/or other benefits, dependent on the level and position offered."
+c7f0865c8f50b4bc,Indeed,Financial Analyst,TBI Airport Management,Data Analyst,in-person,Full-time,2025-04-09,2025-04-15,Burbank,CA,91505,yearly,95000.0,115000.0,95000.0,115000.0,105000.0,https://www.indeed.com/viewjob?jk=c7f0865c8f50b4bc,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"TBI Airport Management, Inc.
+
+Hollywood Burbank Airport
+
+Job Description
+
+Financial Analyst
+
+Reports to: Assistant Controller
+
+Status: Exempt
+
+Salary Range (based on qualifications and experience): $95,000 - $115,000
+
+Schedule: 9/80 Work Schedule
+
+General Description:
+
+Under the supervision and direction of the Director of Financial Services, this position will compile and analyze the Airport’s financial data, perform financial research, and update financial reports, models, and forecasts to help provide relevant data to senior/executive management in their decision making processes to achieve the Airport’s financial objectives.
+
+Essential Job Functions:
+
+Typical Tasks
+
+  • Compile and analyze data from financial, operational, and external sources.
+  • Maintain and regularly update financial models.
+  • Prepare or assist with the preparation of monthly, quarterly, and annual financial reports.
+  • Identify and analyze trends, utilizing statistical analyses, to develop and maintain financial metrics and forecasting models.
+  • Develop automated financial reporting/forecasting tools to increase productivity and efficiency.
+  • Perform research and analyses as may be required by senior/executive management.
+  • Assist in the annual budgeting process.
+  • Monitor and maintain ongoing actual financial transactions to the adopted fiscal budget and other forecasted data.
+  • Prepare presentations or reports on results of analyses performed.
+  • Identify and drive process improvements, including the creation of standard and ad-hoc reports, tools, and Excel/data visualization dashboards.
+  • Perform additional tasks as required.
+
+Minimum Qualifications:
+
+Employment Standards
+
+  • Bachelor's degree from an accredited college or university in Statistics, Data Analytics, Accounting, Finance or Business Administration; AND
+  • Five plus years of full-time, paid relevant accounting experience with governmental agencies and/or paid professional experience in financial planning, analysis, and modeling.
+  • Experience working directly with ERP systems and creating query-based reports.
+  • Airport and/or transportation industry experience a plus.
+
+License and Special Requirements:
+
+  • Possession of a valid California Driver’s license.
+  • Obtain and maintain security clearance as required by role and TSA regulations.
+  • Certified Public Accountant (CPA) a plus.
+
+Supplemental Information:
+
+Knowledge of:
+
+  • Advanced statistical analyses methods.
+  • Zero-based budgeting.
+  • Intermediate to advanced financial accounting along with the ability to understand and analyze financial data and the basic financial statements.
+  • Advanced statistical and data visualization tools such as R, Tableau, Microsoft Power BI a plus.
+
+Demonstrates:
+
+  • Strong analytical skills and demonstrated ability to perform research that involves interpretation and analysis.
+  • Advanced proficiencies in Microsoft Excel, Word, and PowerPoint.
+  • Excellent communication, interpersonal, and presentation skills, ability to present complex financial information.
+  • Organizational skills and ability to prioritize work efficiently to meet schedules and deadlines.
+  • Ability to develop and maintain cooperative, effective working relationships with others.
+  • High level of attention to detail.
+  • Ability to work independently, as well as part of a team, and effectively communicate progress to senior and executive management.
+  • Ability to work in a fast-paced environment with tight deadlines.
+
+Interested Applicants May apply by copying the link below and completing the online assessments:
+
+https://www.ondemandassessment.com/link/index/JB-L2DV9NP2N?source=Indeed
+
+Job Type: Full-time
+
+Pay: $95,000.00 - $115,000.00 per year
+
+Benefits:
+
+  • 401(k)
+  • 401(k) matching
+  • Dental insurance
+  • Disability insurance
+  • Employee assistance program
+  • Flexible spending account
+  • Health insurance
+  • Life insurance
+  • Paid time off
+  • Professional development assistance
+  • Tuition reimbursement
+  • Vision insurance
+
+Schedule:
+
+  • Day shift
+  • Monday to Friday
+
+Work Location: In person"
+bf7ead3314d43459,Indeed,Insurance Business Analyst,Deloitte,Data Analyst,in-person,Full-time,2025-04-11,2025-04-15,Los Angeles,CA,90013,yearly,93225.0,155375.0,93225.0,155375.0,124300.0,https://www.indeed.com/viewjob?jk=bf7ead3314d43459,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"What we do   
+
+Operations and Technology Transformation delivers market leading expertise and industry depth by harnessing deep sector knowledge, scaling the power of hybrid services and products, and unlocking the power of Process Bionics to deliver sustainable and impactful solutions to our clients. We advise, design, implement, and deploy innovative and technology enabled solutions focused on ""heart of the business"" issues in specific sectors including Health Care & Life Sciences, Digital Banking & Payments, Investment & Wealth Management, Insurance, Telecom, Media and Energy & Resources.  
+
+Our OTT team applies deep sector knowledge and technical business operations consulting experience to take a more strategic view of our clients' priorities, helping them to prepare for growth, embrace digital agenda, optimize costs, and maximize operational efficiency.  
+
+Who we serve   
+
+Insurance moves the world forward. It's the invisible safety net behind everything else that happens in society. To stay ahead, insurers need modern solutions. Our Insurance Transformation practitioners serve as trusted advisors to our clients, combining strategic thinking with deep industry knowledge to solve complex business problems in a team-based environment. We architect operating models and processes that enable growth, optimize capital, and maximize operational efficiency. We implement innovative technology solutions spanning core, digital, data, analytics, cloud and AI.  
+
+Deloitte's Financial Services Industry consulting practice is the largest in the world, serving over 90% of Fortune 500 banking, insurance, securities, investment management, and real estate companies.  
+
+Work you'll do   
+
+As an OTT Insurance Transformation Consultant, you will bring considerable insurance domain and functional expertise in the areas of Underwriting, Rating, Policy Administration, Claims and/or Distribution to deliver effective solutions to clients. As a Consultant, you will work on engagements in a team-based environment, partnering directly with clients, fellow Operations & Technology Transformation practitioners, and Deloitte consultants from complementary disciplines. As a Consultant, you will play a key role on the team, gathering and analyzing information, formulating and testing hypotheses and developing actionable recommendations. You will often help present your team's findings to senior client stakeholders and implement recommendations.  
+
+The ideal candidate will be curious, analytical, and confident with a natural drive to exceed immediate project requirements and overcome obstacles. A genuine passion for the insurance industry, combined with relationship-building, leadership, and communication skills will be critical to success. Candidates should be energized by continuous personal improvement, proactively seeking out new skills and perspectives, exhibiting openness to coaching from senior colleagues, and contributing to the development of junior staff.  
+
+Recruiting for this role ends on May 31, 2025.  
+
+Required Qualifications   
+
+  • Bachelor's degree
+  • 2 years consulting or relevant Insurance experience within Property & Casualty, Commercial lines, Specialty Insurance and/or Life & Annuities/Group
+  • 2 years' experience in one or more of the following areas: Insurance Products, Underwriting, Rating, Policy Administration, Claims or Distribution
+  • 2 years' experience in logical structuring, storyboarding and/or presentation development using PowerPoint
+  • Ability to travel 50%, on average, based on the work you do and the clients and industries/sectors you serve
+  • Must be legally authorized to work in the United States without the need for employer sponsorship, now or at any time in the future
+
+Preferred Qualifications   
+
+  • Advanced degree (e.g., MBA, PhD)
+  • 2 years' experience managing at least one large Business Integration effort and project team through all phases of the project lifecycle from scoping and planning, business analysis, requirements gathering, design, development, and testing
+  • CPCU, AIC, ARM Certification
+  • 2 years' experience in Property & Casualty Insurance Solutions with Guidewire, Duck Creek, Majesco, Origami or similar package
+  • 2 years' experience in Life & Annuities Solutions with FAST, Sapiens, Calcfocus, ALIP, Vertafore/VUE, iPipeline iGo, Firelight or Unqork (specific to Life, Annuities and Group)
+  • 2 years' experience delivering via an Agile/Scrum methodology
+  • 2 years' experience with Business Process Modeling (BPM) tools, Business rules integration
+Agile / SAFe / Scrum Master / PMP Certification 
+
+The wage range for this role takes into account the wide range of factors that are considered in making compensation decisions including but not limited to skill sets; experience and training; licensure and certifications; and other business and organizational needs. The disclosed range estimate has not been adjusted for the applicable geographic differential associated with the location at which the position may be filled. At Deloitte, it is not typical for an individual to be hired at or near the top of the range for their role and compensation decisions are dependent on the facts and circumstances of each case. A reasonable estimate of the current range is $93,225 - $155,375  
+
+Information for applicants with a need for accommodation: https://www2.deloitte.com/us/en/pages/careers/articles/join-deloitte-assistance-for-disabled-applicants.html"
+7407cf7c1054a452,Indeed,Project Analyst – National Partnerships and Sales Excellence Support Officer,U.S. Bank National Association,Data Analyst,in-person,Full-time,2025-04-09,2025-04-15,Los Angeles,CA,90071,yearly,71400.0,92400.0,71400.0,92400.0,81900.0,https://www.indeed.com/viewjob?jk=7407cf7c1054a452,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"At U.S. Bank, we’re on a journey to do our best. Helping the customers and businesses we serve to make better and smarter financial decisions and enabling the communities we support to grow and succeed. We believe it takes all of us to bring our shared ambition to life, and each person is unique in their potential. A career with U.S. Bank gives you a wide, ever-growing range of opportunities to discover what makes you thrive at every stage of your career. Try new things, learn new skills and discover what you excel at—all from Day One.
+
+##  Job Description
+
+Provides project and analytical support to assigned business line or functional area. Performs research, analysis, review, development, implementation, and monitoring of new and/or revised products and services. Acts as a project liaison with other departments. Analyzes current costs and estimates cost savings. Compiles and analyzes information for an assigned project or area, making recommendations based on findings. Travel will be required up to 10% annually.
+
+Basic Qualifications:
+
+Bachelor’s degree, or equivalent work experience
+
+Three to five years of experience in project management activities
+
+Preferred Skills/Experience:
+
+Thorough knowledge of assigned business line or functional area
+
+Strong organizational and analytical skills
+
+Familiarity with mortgage sales processes and center of influence (COI) development
+
+Understanding of how product knowledge creates growth opportunities in strategic markets
+
+Ability to support development of KPIs, analyze performance data, and support impact reporting
+
+Ability to identify and resolve exceptions and to analyze data
+
+Strong cross-functional collaboration skills, particularly in community impact and business development efforts
+
+Demonstrated leadership skills
+
+Highly organized and detail-oriented
+
+The role offers a hybrid/flexible schedule, which means there's an in-office expectation of 3 or more days per week and the flexibility to work outside the office location for the other days.
+
+If there’s anything we can do to accommodate a disability during any portion of the application or hiring process, please refer to our disability accommodations for applicants.
+
+Benefits:
+
+Our approach to benefits and total rewards considers our team members’ whole selves and what may be needed to thrive in and outside work. That's why our benefits are designed to help you and your family boost your health, protect your financial security and give you peace of mind. Our benefits include the following (some may vary based on role, location or hours):
+
+  • Healthcare (medical, dental, vision)
+
+  • Basic term and optional term life insurance
+
+  • Short-term and long-term disability
+
+  • Pregnancy disability and parental leave
+
+  • 401(k) and employer-funded retirement plan
+
+  • Paid vacation (from two to five weeks depending on salary grade and tenure)
+
+  • Up to 11 paid holiday opportunities
+
+  • Adoption assistance
+
+  • Sick and Safe Leave accruals of one hour for every 30 worked, up to 80 hours per calendar year unless otherwise provided by law
+
+U.S. Bank is an equal opportunity employer. We consider all qualified applicants without regard to race, religion, color, sex, national origin, age, sexual orientation, gender identity, disability or veteran status, and other factors protected under applicable law.
+
+E-Verify
+
+U.S. Bank participates in the U.S. Department of Homeland Security E-Verify program in all facilities located in the United States and certain U.S. territories. The E-Verify program is an Internet-based employment eligibility verification system operated by the U.S. Citizenship and Immigration Services.
+
+The salary range reflects figures based on the primary location, which is listed first. The actual range for the role may differ based on the location of the role. In addition to salary, U.S. Bank offers a comprehensive benefits package, including incentive and recognition programs, equity stock purchase 401(k) contribution and pension (all benefits are subject to eligibility requirements). Pay Range: $71,400.00 - $84,000.00 - $92,400.00 
+
+U.S. Bank will consider qualified applicants with arrest or conviction records for employment. U.S. Bank conducts background checks consistent with applicable local laws, including the Los Angeles County Fair Chance Ordinance and the California Fair Chance Act as well as the San Francisco Fair Chance Ordinance. U.S. Bank is subject to, and conducts background checks consistent with the requirements of Section 19 of the Federal Deposit Insurance Act (FDIA). In addition, certain positions may also be subject to the requirements of FINRA, NMLS registration, Reg Z, Reg G, OFAC, the NFA, the FCPA, the Bank Secrecy Act, the SAFE Act, and/or federal guidelines applicable to an agreement, such as those related to ethics, safety, or operational procedures.
+
+Applicants must be able to comply with U.S. Bank policies and procedures including the Code of Ethics and Business Conduct and related workplace conduct and safety policies."
+,Indeed,Data Analyst & Admin,Robert Half,Data Analyst,in-person,,2025-04-09,2025-04-15,Gardena,CA,90248,yearly,70000.0,78000.0,70000.0,78000.0,74000.0,https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0CpzDdaQkua3np5pkmj49lKioZwmwxQ-yx5plwbYmV_My5n3mQeb8nYDJVLe6sL43n6VSYefXB5_x6kdZOALpVpanvvGYA8JeO5MvOz5y91SUdNTO3EtX9as2-i0DgNzKpxRGcEPgHDV8GfbRGfyiPgcYkNAw7vYa7Q-dHSD4Z5AqLkqTtAbidGGva80JoH50R-QgMS-1HGCProrTZeUftVN56AwYnOAGf2sceM3Vs-yFgQsxwDoG5-guKjuUd5YDdAe0mxAc5geW3pe2cggJ403vfEK75WgwP3tG1IwZ-Q9zU8422Hge7GOdYdh8SP1sPWTFhrQOWbU4ybgjXdlIihSnrW-SW2hGsa_QW29ZMf6U45SZR4Jqb4_AShtvT1W2mcB0JQaJT0wCASE09-05vbCAfyE9BYg3nO2l5X8C0WPuAUH4mJsIfsiPzRiie0bVGXQ9BMe7gES3nSdj9Oj0IUuwP9tsa_eoDyNFHeceeJk4LNWg-cce-CpeZ_0yzssoWPrD7HJ2UACgxExIaw4D4mMkSFtAR9IhnxDAs-QpLEXzITHzcBF4Zt6i0KMTTsE8fT_D05_Wroyba0S1iwugU4RVZRFI8XdMYeFiWl3q22QCt0khBLSLM3X2CpiN5fyBoXZjnIfZ4AZy1Ev64gJcE0KcjQ7dI5Fcvz-Ir8x6l6rfjbgknzx_a2WtOpDP-wuL4m6QAXF7THN_d0hjr3TFVMrZCEmjT8ROpYCnifD7WcVg==&xkcb=SoC36_M3zcczLNx-jh0FbzkdCdPP&camk=nUmJqO2E8riM8rxelXMfBg==&p=14&fvj=0&vjs=3,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"We are offering an exciting opportunity for a Data Analyst & Admin to join our team in the food and food processing industry, located in Gardena, California. In this role, you will be responsible for the preparation and maintenance of financial records, tracking company expenses, profit and loss, tax liabilities and other related financial activities. Additionally, you will be managing and facilitating procedures and assisting the Data Management section.   
+
+Responsibilities:  
+
+  • Take charge of managing and coordinating procedures and act as the main point of contact for related matters.
+  • Assist the Data Management section in gathering data and creating periodic reports as well as reports based on specific requests.
+  • Contribute to monthly, quarterly, and yearly book closings.
+  • Prepare and maintain financial records to track company expenses, profit and loss, tax liabilities, and other related financial activities.
+  • Perform various other accounting, bookkeeping, reporting, and financial duties as required.
+  • Utilize skills in CRM, Maps API, Microsoft Excel, Microsoft Word, Networking, About Time, AB Testing, Auditing, Budget Processes, and Capital Management.
+
+For confidential consideration, please apply directly with your resume or call Allysa at (310) 719-1400. If you are already working with a recruiter from Robert Half, please contact him or her directly to expedite your candidacy for this role.   
+
+  • Minimum of 3 years of experience in a relevant field
+  • Proficiency in CRM systems
+  • Experience with Maps API
+  • Mastery of Microsoft Excel and Microsoft Word
+  • Strong networking skills
+  • Familiarity with About Time software
+  • Proven experience in AB Testing
+  • Prior experience in auditing
+  • Knowledge of budget processes
+  • Experience in capital management within the food & food processing industry
+
+Robert Half is the world’s first and largest specialized talent solutions firm that connects highly qualified job seekers to opportunities at great companies. We offer contract, temporary and permanent placement solutions for finance and accounting, technology, marketing and creative, legal, and administrative and customer support roles.   
+
+Robert Half works to put you in the best position to succeed. We provide access to top jobs, competitive compensation and benefits, and free online training. Stay on top of every opportunity - whenever you choose - even on the go. Download the Robert Half app and get 1-tap apply, notifications of AI-matched jobs, and much more.   
+
+Robert Half will consider for employment qualified applicants with arrest or conviction records in accordance with the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act. All applicants applying for U.S. job openings must be legally authorized to work in the United States. Benefits are available to contract/temporary professionals, including medical, vision, dental, and life and disability insurance. Hired contract/temporary professionals are also eligible to enroll in our company 401(k) plan. Visit roberthalf.gobenefits.net for more information.   
+
+© 2025 Robert Half. An Equal Opportunity Employer. M/F/Disability/Veterans. By clicking “Apply Now,” you’re agreeing to Robert Half’s Terms of Use ."
+,Indeed,Business Analyst - Biopharmaceutical / Life Sciences SaaS Solutions Implementation,SteepRock Inc,Data Analyst,remote,Full-time,2025-04-11,2025-04-15,,,,yearly,95000.0,130000.0,95000.0,130000.0,112500.0,https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BoRbUD9bUt_HGFbbUoAzz_KR5Tc8Uh1oEQc4HNClrso96Kbmge5Gv5R0XiQwYM7YADxH9Pz4gAblqgZUW4U6Q9L22JqjFU9USG94rknlyGwSCE1tOv7LqROpxxY7rNttTnWOebp-i14pRCzUIrjceO9GOFsTUXZMKhnmOJzcMZdLgHRwjGoELMtpz2EUYariDPtYxNGXzT6mIGwb0z4Ay0C9prVByaNPzUioSAu810eZg3TV0wDqpTHT7ViUmMsat8eYtnyW_jfqlmDQ9sz6kLfrBFZsQPdICs66aYW5IghuddHPic2m2zqS1Vfq_gLZpEZ49QnJeFDSHvgKkbGnqt8AhK2u6ziCkkp_GHvyNOAP_-OjUpBvtcA-yWA1GX-cVT6CPqRGEwl-T7hZpAOMz2ZYHY9kr0fvJF4OFmHmqtzp-COc4hw9Ix1YVHAgK1mmEWoPJjdPuQb6tUf_LvdbARGvLBo8v4-_Xb_lDLb95jd_4AvORFizSbQ96AdRywBK2yN4VcMWdFWPqwxQkpE9YU3f91D6-aRraw-TpJ_CvFkFLffnKpDVurFKoTRC4V0T_Shy3vsq_rN_QnGoEJqL2tsDEMP6SIdGnqDB584fOdMQPxHClkGwgEmBNSzS2HRefH8FlgeXbEHIALbefXwanmzQpO4MRFhjghWJQSbrFPeRne03jTeO6Mnun39EV5ng5jVYdHAswLRPe6wYw3I-gQp7XXzpK50S0-cZwG8bK51FIuj1sFgZPw&xkcb=SoBN6_M3zcdFoYxf5B0LbzkdCdPP&camk=ethIe0s0heels9tUsBMhBg==&p=0&fvj=0&vjs=3,https://www.indeed.com/jobs?q=Data+Analyst&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Company Overview
+
+SteepRock is a pioneering SaaS and aPaaS provider with over two decades of experience delivering specialized solutions to the life sciences sector. As a trusted technology partner to biopharmaceutical and medical device companies of all sizes, from emerging biotechs to global enterprises, we've established ourselves as a leader in AI-powered data analytics and workflow automation. Our comprehensive suite of SaaS products empowers research, medical affairs, and commercial teams with cutting-edge tools that streamline critical processes including grant management, investigator-initiated studies, and research funding workflows. With a proven track record of innovation and client success spanning 20+ years, SteepRock continues to set the standard for efficiency, compliance, and strategic insights in the life sciences industry.
+
+Position Overview
+
+We are seeking a technically proficient and client-focused Business Analyst with expertise in life sciences SaaS implementation. The ideal candidate will possess extensive knowledge of system configuration, project management, and change management specifically within the biopharmaceutical and medical device sectors. This role requires proven analytical skills, attention to detail, effective stakeholder communication, and a commitment to delivering solutions that exceed client expectations.
+
+Key Responsibilities
+
+Requirements Gathering & Documentation
+
+  • Collaborate with stakeholders to elicit, analyze, and document business requirements for system configurations and change management processes
+  • Develop comprehensive Statements of Work (SOWs), Configuration Requirements Documents (CRDs), and detailed functional/technical specifications
+  • Create traceability matrices to ensure all requirements are addressed throughout the implementation lifecycle
+  • Document user workflows and process maps to support system configuration
+
+System Implementation
+
+  • Configure SteepRock SaaS applications according to client requirements and industry best practices
+  • Create and execute comprehensive test scripts for User Acceptance Testing (UAT)
+  • Manage data migration planning, mapping, and validation between legacy and new systems
+  • Document system deliverables in accordance with project requirements
+
+Project Management Support
+
+  • Assist in planning and monitoring projects, ensuring timely delivery and adherence to requirements, scope and budget
+  • Identify and mitigate risks throughout the implementation lifecycle
+  • Support integration planning between the implemented solution and other enterprise systems
+  • Ensure the client acceptance process is properly planned and executed consistently with in-scope requirements
+
+Client Engagement & Support
+
+  • Serve as a trusted advisor to clients, understanding their domain-specific needs and translating them into effective technical solutions
+  • Facilitate workshops and requirement-gathering sessions with diverse stakeholders, including clinical and IT teams
+  • Communicate regularly with the technical team on impediments and concerns, escalating issues to leadership and/or the client as needed
+  • Create and maintain project documentation that meets industry standards
+
+Post-Implementation Support
+
+  • Provide transition support to Client Services teams and clients, ensuring high levels of satisfaction and adoption
+  • Provide guidance to the Client Service team members as they to develop user guides and training materials tailored to different user role permission groups
+  • Train the Client Services team on end-user training focusing on role-specific workflows
+  • Identify opportunities for system optimization and process improvements
+  • Support ongoing system maintenance, updates, and enhancement requests
+
+Initiative and Problem-solving
+
+  • Identify challenges before they escalate and take ownership of finding solutions
+  • Come prepared with thoughtful recommendations rather than just highlighting problems
+  • Work independently to overcome obstacles without constant direction
+  • Anticipate needs and address them proactively
+  • Take the initiative to improve processes and outcomes beyond stated requirements
+
+Qualifications
+
+Education and Experience
+
+  • 5+ years' experience as a Business Analyst, with at least 3 years specifically within the pharmaceutical or medical device industry implementing SaaS solutions for Investigator Sponsored Trials ( IIS, ITT), Grants and other external research projects
+
+Industry Knowledge
+
+  • Demonstrated experience in grants management or external research processes
+  • Understanding of life sciences industry requirements and best practices
+  • Familiarity with handling sensitive data
+
+Technical Skills
+
+  • Experience with SOW requirements gathering, CRD development, and acceptance procedure management
+  • Familiarity with integration approaches between enterprise systems
+  • Experience with project management tools and methodologies (Agile, Waterfall)
+
+Soft Skills
+
+  • Exceptional written and verbal communication skills, with the ability to translate technical concepts to non-technical stakeholders
+  • Strong analytical and problem-solving abilities
+  • Excellent relationship-building skills with the ability to establish credibility with clients and colleagues
+  • Detail-oriented with strong documentation capabilities
+  • Ability to manage multiple projects simultaneously and meet deadlines
+  • Collaborative mindset for working effectively with cross-functional teams
+
+Compensation
+
+  • Base Salary: Commanding range of $95,000 - $130,000, reflecting your exceptional expertise and specialized knowledge
+  • Client Acquisition Incentive: Lucrative 8% commission structure on first-year fees for new business you introduce and generate – creating unlimited earning potential directly tied to your network and relationships
+  • Performance Rewards: Additional bonuses tied to implementation success metrics and on-time delivery excellence
+  • Comprehensive Benefits:
+  • Premium health insurance package with top-tier coverage
+  • Wealth-building 401(k) program with attractive company match that becomes available based on employment duration
+  • Professional development allowance for continuing education and certifications
+
+Compensation package reflects our commitment to attracting and retaining exceptional industry talent, particularly those who understand firsthand the market we serve, the competitive landscape and the customer needs our solutions address. We strategically invest in professionals who can leverage their experience, relationships and specialized platform knowledge to accelerate our growth.
+
+SteepRock is an equal opportunity employer.
+
+Job Type: Full-time
+
+Pay: $95,000.00 - $130,000.00 per year
+
+Benefits:
+
+  • 401(k)
+  • 401(k) 3% Match
+  • Health insurance
+
+Compensation Package:
+
+  • Bonus opportunities
+  • Commission pay
+  • Performance bonus
+
+Experience:
+
+  • business analyst: 5 years (Required)
+  • pharma/life sciences: 3 years (Required)
+
+Work Location: Remote"

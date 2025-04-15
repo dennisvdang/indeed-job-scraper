@@ -51,12 +51,12 @@ Here's how you can perform a simple job search:
 
 ```bash
 # Run a basic job search
-indeed-scraper --job-title "Software Engineer" --location "San Francisco"
+indeed-scraper --job-title "Software Engineer" --location "San Francisco, CA"
 ```
 
 ## 🔍 Key Features
 
-### 1. Flexible Job Filtering
+### 1. Search Filters
 
 ```bash
 indeed-scraper \
@@ -67,12 +67,23 @@ indeed-scraper \
     --days-ago 7
 ```
 
+<summary>Filter commands</summary>
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `--job-title` | Job title to search for (**required**) | `"Data Analyst"` |
+| `--location` | Location to search in | `"New York, NY"` |
+| `--work-setting` | Work arrangement | `remote`, `hybrid`, `onsite` |
+| `--job-type` | Employment type | `"full-time"`, `"contract"` |
+| `--days-ago` | Filter by posting date | `1`, `3`, `7`, `14` |
+| `--search-radius` | Search radius in miles | `25`, `50`, `100` |
+
 ### 2. Multiple Job Searches/Queues
 
 You can run several job searches at once using a queue file:
 
 ```bash
-indeed-scraper --queue examples/job_queues/software_and_data_jobs.txt
+indeed-scraper --queue examples/job_queues/top_cities_major_jobs.json
 ```
 
 <details>
@@ -111,21 +122,18 @@ The dashboard automatically loads your collected data from the `data/raw/` direc
 | `--work-setting` | Work arrangement | `remote`, `hybrid`, `onsite` |
 | `--job-type` | Employment type | `"full-time"`, `"contract"` |
 | `--days-ago` | Filter by posting date | `1`, `3`, `7`, `14` |
+| `--search-radius` | Search radius in miles | `25`, `50`, `100` |
 | `--queue` | Run multiple job searches | `examples/job_queues/remote_jobs.txt` |
 
-<details>
 <summary>Additional options...</summary>
 
 | Parameter | Description | Possible Values | Default |
 |-----------|-------------|-----------------|---------|
-| `--search-radius` | Search radius in miles | Any positive integer | 25 |
-| `--num-pages` | Maximum pages to scrape | Any positive integer | 3 |
+| `--max-pages` | Maximum pages to scrape | Any positive integer | 3 |
 | `--exclude-descriptions` | Skip job descriptions | Flag | False |
 | `--verbose` | Detailed logging | Flag | False |
 | `--output` | Custom output file path | Valid file path | Auto-generated |
 | `--keep-browser` | Keep browser open | Flag | False |
-
-</details>
 
 ## 🔧 Troubleshooting
 
