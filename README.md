@@ -101,13 +101,8 @@ To explore the scraped data interactively:
 ```bash
 streamlit run src/streamlit_dashboard.py
 ```
-The dashboard automatically loads your collected data from the `data/raw/` directory and helps you explore:
-- Salary distributions
-- Geographic locations of jobs
-- Companies and job roles
-- Detailed job descriptions
 
-![Demo Gif](images.demo.gif)
+![Demo Gif](images/demo.gif)
 
 ## 📚 Helpful Resources
 
