@@ -1,6 +1,6 @@
 # Indeed Job Scraper [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-![Indeed Job Scraper Dashboard](images/dashboard-cover.jpg)
+![Demo Gif](images/demo.gif)
 
 This repository contains a Python command-line tool to help you scrape job listings from Indeed.com, along with an interactive Streamlit dashboard for visualizing and exploring job data. It's meant as a helpful resource for research, analysis, or personal exploration of the job market.
 
@@ -101,8 +101,6 @@ To explore the scraped data interactively:
 ```bash
 streamlit run src/streamlit_dashboard.py
 ```
-
-![Demo Gif](images/demo.gif)
 
 ## 📚 Helpful Resources
 
