@@ -107,6 +107,8 @@ The dashboard automatically loads your collected data from the `data/raw/` direc
 - Companies and job roles
 - Detailed job descriptions
 
+![Demo Gif](images.demo.gif)
+
 ## 📚 Helpful Resources
 
 - **[Examples Directory](examples/)**: Sample files and usage patterns
