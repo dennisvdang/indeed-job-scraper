@@ -6,6 +6,7 @@ dependencies:
   - python=3.11
   - pip
   - pandas>=2.1.0
+  - plotly>=5.15.0
   - numpy>=1.26.0
   - beautifulsoup4>=4.12.0
   - requests>=2.31.0
