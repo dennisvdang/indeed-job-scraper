@@ -672,7 +672,7 @@ def display_salary_tab(df: pd.DataFrame) -> None:
 
 def display_salary_statistics(df: pd.DataFrame) -> None:
     """Display detailed salary statistics table."""
-    st.subheader("Detailed Salary Statistics")
+    st.subheader("Salary Statistics")
     
     percentiles = [0.1, 0.25, 0.5, 0.75, 0.9]
     percentile_names = ['10th', '25th', '50th (Median)', '75th', '90th']
