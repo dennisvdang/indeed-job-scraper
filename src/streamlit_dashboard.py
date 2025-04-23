@@ -344,6 +344,7 @@ def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
 
 def display_metrics(df: pd.DataFrame) -> None:
     """Display key metrics at the top of the dashboard."""
+    # First row of metrics
     cols = st.columns(3)
     
     # Total jobs
@@ -364,6 +365,22 @@ def display_metrics(df: pd.DataFrame) -> None:
             st.metric("Median Salary", f"${median_salary:,.0f}")
         else:
             st.metric("Median Salary", "N/A")
+    
+    # Second row for min/max salary metrics
+    if 'salary_min_yearly' in df.columns and 'salary_max_yearly' in df.columns:
+        salary_cols = st.columns(3)
+        
+        with salary_cols[0]:
+            min_salary = df['salary_min_yearly'].median()
+            st.metric("Median Min Salary", f"${min_salary:,.0f}")
+        
+        with salary_cols[1]:
+            mid_salary = df['salary_midpoint_yearly'].median()
+            st.metric("Median Mid Salary", f"${mid_salary:,.0f}")
+        
+        with salary_cols[2]:
+            max_salary = df['salary_max_yearly'].median()
+            st.metric("Median Max Salary", f"${max_salary:,.0f}")
 
 
 def display_overview_tab(df: pd.DataFrame) -> None:
@@ -391,12 +408,190 @@ def display_overview_tab(df: pd.DataFrame) -> None:
                 st.plotly_chart(work_setting_fig, use_container_width=True)
 
 
+def create_salary_by_job_title_chart(df: pd.DataFrame) -> Optional[go.Figure]:
+    """Create box plot of salary ranges by top job titles."""
+    if not check_required_columns(df, ['title', 'salary_midpoint_yearly']):
+        return None
+    
+    # Get job titles with enough data
+    title_counts = df.groupby('title').size().reset_index(name='count')
+    title_counts = title_counts.sort_values('count', ascending=False)
+    
+    # Select top job titles with at least 2 data points
+    top_titles = title_counts[title_counts['count'] >= 2].head(10)['title'].tolist()
+    
+    if len(top_titles) < 3:
+        return None
+    
+    filtered_df = df[df['title'].isin(top_titles)]
+    
+    fig = px.box(
+        filtered_df,
+        x='title',
+        y='salary_midpoint_yearly',
+        title='Salary Ranges by Top Job Titles',
+        labels={'title': 'Job Title', 'salary_midpoint_yearly': 'Annual Salary ($)'}
+    )
+    
+    fig.update_layout(
+        xaxis={'categoryorder': 'total descending'},
+        xaxis_title='Job Title',
+        yaxis_title='Annual Salary ($)'
+    )
+    
+    return fig
+
+
+def create_salary_by_job_type_chart(df: pd.DataFrame) -> Optional[go.Figure]:
+    """Create box plot of salary by job type."""
+    if not check_required_columns(df, ['job_type', 'salary_midpoint_yearly']):
+        return None
+    
+    # Filter out job types with too few data points
+    job_type_counts = df.groupby('job_type').size().reset_index(name='count')
+    valid_job_types = job_type_counts[job_type_counts['count'] >= 2]['job_type'].tolist()
+    
+    if len(valid_job_types) < 2:
+        return None
+    
+    filtered_df = df[df['job_type'].isin(valid_job_types)]
+    
+    fig = px.box(
+        filtered_df,
+        x='job_type',
+        y='salary_midpoint_yearly',
+        title='Salary Distribution by Job Type',
+        labels={'job_type': 'Job Type', 'salary_midpoint_yearly': 'Annual Salary ($)'}
+    )
+    
+    fig.update_layout(
+        xaxis_title='Job Type',
+        yaxis_title='Annual Salary ($)'
+    )
+    
+    return fig
+
+
+def create_salary_state_choropleth(df: pd.DataFrame) -> Optional[go.Figure]:
+    """Create a US choropleth map of median salary by state."""
+    if not check_required_columns(df, ['state', 'salary_midpoint_yearly']):
+        return None
+    
+    # Group by state and get median salary
+    state_salary = df.groupby('state')['salary_midpoint_yearly'].agg(['median', 'count']).reset_index()
+    
+    # Filter states with at least 2 data points
+    state_salary = state_salary[state_salary['count'] >= 2]
+    
+    if len(state_salary) < 3:
+        return None
+    
+    fig = px.choropleth(
+        state_salary,
+        locations='state',
+        locationmode='USA-states',
+        color='median',
+        scope='usa',
+        title='Median Salary by State',
+        color_continuous_scale='Viridis',
+        labels={'median': 'Median Salary ($)'}
+    )
+    
+    # Add count as hover data
+    fig.update_traces(
+        hovertemplate='<b>%{location}</b><br>Median Salary: $%{z:,.0f}<br>Job Count: %{customdata}<extra></extra>',
+        customdata=state_salary['count']
+    )
+    
+    return fig
+
+
+def create_salary_city_chart(df: pd.DataFrame) -> Optional[go.Figure]:
+    """Create chart of median salary by top cities."""
+    if not check_required_columns(df, ['city', 'state', 'salary_midpoint_yearly']):
+        return None
+    
+    # Create location column combining city and state
+    df = df.copy()
+    df['location'] = df.apply(lambda row: f"{row['city']}, {row['state']}" 
+                             if pd.notna(row['city']) and pd.notna(row['state']) 
+                             else None, axis=1)
+    
+    # Group by location and calculate median salary
+    location_salary = df.groupby('location')['salary_midpoint_yearly'].agg(['median', 'count']).reset_index()
+    
+    # Filter locations with enough data points
+    location_salary = location_salary[location_salary['count'] >= 2]
+    
+    if len(location_salary) < 3:
+        return None
+    
+    # Sort by median salary and get top 15 cities
+    top_cities = location_salary.sort_values('median', ascending=False).head(15)
+    
+    fig = px.bar(
+        top_cities,
+        x='location',
+        y='median',
+        title='Median Salary in Top 15 Cities',
+        labels={'location': 'City', 'median': 'Median Salary ($)', 'count': 'Job Count'},
+        text='count',
+        color='median',
+        color_continuous_scale='Viridis'
+    )
+    
+    fig.update_traces(
+        texttemplate='%{text} jobs',
+        textposition='outside'
+    )
+    
+    fig.update_layout(
+        xaxis={'categoryorder': 'total descending', 'tickangle': 45},
+        xaxis_title='City',
+        yaxis_title='Median Annual Salary ($)'
+    )
+    
+    return fig
+
+
+def calculate_cost_adjusted_salary(df: pd.DataFrame) -> Optional[pd.DataFrame]:
+    """Calculate cost-adjusted salaries across locations."""
+    if not check_required_columns(df, ['state', 'salary_midpoint_yearly']):
+        return None
+    
+    # This is a simplified approach using state as location
+    # In a real implementation, you would use a cost of living index API or dataset
+    
+    # Group by state to get median salary
+    state_salary = df.groupby('state')['salary_midpoint_yearly'].agg(['median', 'count']).reset_index()
+    state_salary = state_salary[state_salary['count'] >= 3]
+    
+    if len(state_salary) < 3:
+        return None
+    
+    # For demo purposes, use national median as baseline (COL index = 100)
+    national_median = df['salary_midpoint_yearly'].median()
+    
+    # Create a simplified cost of living index based on salary differences
+    # This is just for demonstration - real implementation would use actual COL data
+    state_salary['estimated_col_index'] = state_salary['median'] / national_median * 100
+    
+    # Calculate "adjusted" salary (salary / col_index * 100)
+    state_salary['adjusted_salary'] = national_median
+    
+    # Sort by original median salary
+    state_salary = state_salary.sort_values('median', ascending=False)
+    
+    return state_salary
+
+
 def display_salary_tab(df: pd.DataFrame) -> None:
     """Display content for the Salary Analysis tab."""
     if 'salary_midpoint_yearly' not in df.columns:
         st.write("No salary data available.")
         return
     
+    # Row 1: Salary distribution histogram and Box plot by work setting
     col1, col2 = st.columns(2)
     
     # Salary distribution histogram
@@ -413,31 +608,95 @@ def display_salary_tab(df: pd.DataFrame) -> None:
             ):
                 st.plotly_chart(salary_by_setting_fig, use_container_width=True)
     
-    # Salary by location analysis
-    st.subheader("Salary by Location")
-    if salary_by_location_fig := create_salary_by_location_chart(df):
-        st.plotly_chart(salary_by_location_fig, use_container_width=True)
-    else:
-        st.info("Not enough location data available for salary analysis.")
+    # Row 2: Salary by job title and job type
+    st.subheader("Salary by Job Title and Type")
+    col1, col2 = st.columns(2)
     
-    # Salary statistics table
-    st.subheader("Salary Statistics")
-    salary_stats = (
-        df['salary_midpoint_yearly']
-        .describe()
-        .reset_index()
-        .rename(columns={'index': 'Statistic', 'salary_midpoint_yearly': 'Value'})
-    )
+    with col1:
+        if salary_by_title_fig := create_salary_by_job_title_chart(df):
+            st.plotly_chart(salary_by_title_fig, use_container_width=True)
+    
+    with col2:
+        if salary_by_job_type_fig := create_salary_by_job_type_chart(df):
+            st.plotly_chart(salary_by_job_type_fig, use_container_width=True)
+    
+    # Row 4: Location-based salary intelligence
+    st.subheader("Location-Based Salary Intelligence")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if salary_state_map := create_salary_state_choropleth(df):
+            st.plotly_chart(salary_state_map, use_container_width=True)
+    
+    with col2:
+        if salary_city_chart := create_salary_city_chart(df):
+            st.plotly_chart(salary_city_chart, use_container_width=True)
+    
+    # Row 5: Cost-adjusted salary comparisons
+    st.subheader("Cost-Adjusted Salary Comparisons")
+    
+    if cost_adjusted_data := calculate_cost_adjusted_salary(df):
+        col1, col2 = st.columns([1, 1])
+        
+        with col1:
+            st.dataframe(
+                cost_adjusted_data[['state', 'median', 'estimated_col_index', 'count']].rename(
+                    columns={
+                        'state': 'State',
+                        'median': 'Median Salary ($)',
+                        'estimated_col_index': 'Est. Cost of Living Index',
+                        'count': 'Job Count'
+                    }
+                ).style.format({
+                    'Median Salary ($)': '${:,.0f}',
+                    'Est. Cost of Living Index': '{:.1f}'
+                }),
+                hide_index=True
+            )
+        
+        with col2:
+            st.info(
+                "**Cost-Adjusted Salary Note:**\n\n"
+                "This is a simplified demonstration of cost-adjusted salaries. "
+                "Locations with higher median salaries often have higher costs of living. "
+                "The estimated cost of living index shown here is based on salary differences "
+                "and would be replaced with actual cost of living data in a production implementation."
+            )
+    else:
+        st.info("Not enough location data available for cost-adjusted salary analysis.")
+    
+    # Row 6: Salary statistics table
+    st.subheader("Detailed Salary Statistics")
+    
+    percentiles = [0.1, 0.25, 0.5, 0.75, 0.9]
+    percentile_names = ['10th', '25th', '50th (Median)', '75th', '90th']
+    
+    basic_stats = df['salary_midpoint_yearly'].describe()
+    percentile_stats = df['salary_midpoint_yearly'].quantile(percentiles)
+    
+    # Combine stats into a dataframe
+    all_stats = pd.DataFrame({
+        'Statistic': ['Count', 'Mean', 'Standard Deviation', 'Minimum'] + percentile_names + ['Maximum'],
+        'Value': [
+            basic_stats['count'],
+            basic_stats['mean'],
+            basic_stats['std'],
+            basic_stats['min'],
+            *percentile_stats.values,
+            basic_stats['max']
+        ]
+    })
     
     # Format values as currency except for count
-    salary_stats['Value'] = salary_stats.apply(
+    all_stats['Value'] = all_stats.apply(
         lambda row: f"${row['Value']:,.2f}" 
-                   if row['Statistic'] != 'count' and isinstance(row['Value'], (int, float)) 
-                   else row['Value'], 
+                   if row['Statistic'] != 'Count' and isinstance(row['Value'], (int, float)) 
+                   else f"{row['Value']:,.0f}", 
         axis=1
     )
     
-    st.dataframe(salary_stats, hide_index=True)
+    st.dataframe(all_stats, hide_index=True)
 
 
 def get_field_display_value(row: pd.Series, field: str, default: str = "Unknown") -> str:
