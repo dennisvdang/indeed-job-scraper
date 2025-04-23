@@ -347,7 +347,7 @@ def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
     
     # Salary filter
     if 'salary_midpoint_yearly' in filtered_df.columns:
-        show_only_with_salary = st.sidebar.checkbox("Show only jobs with salary data")
+        show_only_with_salary = st.sidebar.checkbox("Show only jobs with salary data", value=True)
         if show_only_with_salary:
             filtered_df = filtered_df[filtered_df['salary_midpoint_yearly'].notna()]
     
@@ -356,8 +356,8 @@ def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
 
 def display_metrics(df: pd.DataFrame) -> None:
     """Display key metrics at the top of the dashboard."""
-    # First row of metrics
-    cols = st.columns(3)
+    # First row of metrics - Total Jobs and Companies
+    cols = st.columns(2)
     
     # Total jobs
     with cols[0]:
@@ -370,23 +370,22 @@ def display_metrics(df: pd.DataFrame) -> None:
         else:
             st.metric("Companies", "N/A")
     
-    # Median salary
-    with cols[2]:
-        if 'salary_midpoint_yearly' in df.columns and not df['salary_midpoint_yearly'].isna().all():
-            median_salary = df['salary_midpoint_yearly'].median()
-            st.metric("Median Salary", f"${median_salary:,.0f}")
-        else:
-            st.metric("Median Salary", "N/A")
-    
-    # Second row for min/max salary metrics
-    if 'salary_min_yearly' in df.columns and 'salary_max_yearly' in df.columns:
-        salary_cols = st.columns(2)
+    # Second row for salary metrics in specific order
+    if all(col in df.columns for col in ['salary_min_yearly', 'salary_midpoint_yearly', 'salary_max_yearly']):
+        salary_cols = st.columns(3)
         
+        # Minimum Salary Range
         with salary_cols[0]:
             min_salary = df['salary_min_yearly'].median()
             st.metric("Minimum Salary Range (median)", f"${min_salary:,.0f}")
         
+        # Median Salary
         with salary_cols[1]:
+            median_salary = df['salary_midpoint_yearly'].median()
+            st.metric("Median Salary", f"${median_salary:,.0f}")
+        
+        # Maximum Salary Range
+        with salary_cols[2]:
             max_salary = df['salary_max_yearly'].median()
             st.metric("Maximum Salary Range (median)", f"${max_salary:,.0f}")
 
