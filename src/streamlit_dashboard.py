@@ -49,19 +49,17 @@ def load_data(file_path: Path) -> pd.DataFrame:
 
 @st.cache_data(ttl=60, show_spinner=True)
 def load_multiple_datasets() -> pd.DataFrame:
-    """Load and combine multiple CSV files with caching.
-    
-    The cache expires after 60 seconds (ttl=60) to ensure fresh data is loaded periodically.
-    """
+    """Load and combine multiple CSV files with caching (refreshes every 60 seconds)."""
     files = find_csv_files()
     if not files:
         st.error("No CSV files found in the data/raw directory. Please add data files.")
         return pd.DataFrame()
     
-    # Log number of files found to help with debugging
+    # Store metadata in session state
     st.session_state["num_files_found"] = len(files)
     st.session_state["last_refresh_time"] = datetime.now().strftime("%H:%M:%S")
     
+    # Load and combine all datasets
     dfs = [load_data(file).assign(source_file=file.name) for file in files]
     combined_df = pd.concat(dfs, ignore_index=True)
     
@@ -69,20 +67,111 @@ def load_multiple_datasets() -> pd.DataFrame:
     if 'job_id' in combined_df.columns:
         combined_df.drop_duplicates(subset=['job_id'], keep='first', inplace=True)
     
-    # Store job count in session state for reference
     st.session_state["total_job_count"] = len(combined_df)
     
     return combined_df
 
 
-def check_required_columns(df: pd.DataFrame, required_cols: List[str]) -> bool:
+def has_valid_columns(df: pd.DataFrame, required_cols: List[str]) -> bool:
     """Check if dataframe has required columns with valid data."""
     return all(col in df.columns and not df[col].isna().all() for col in required_cols)
 
 
+def format_currency(value: float) -> str:
+    """Format a numeric value as currency."""
+    return f"${value:,.0f}"
+
+
+def get_safe_field(row: pd.Series, field: str, default: str = "Unknown") -> str:
+    """Safely get a field value with fallback to default."""
+    return str(row[field]) if field in row and pd.notna(row[field]) else default
+
+
+def apply_date_filter(df: pd.DataFrame) -> Tuple[pd.DataFrame, bool]:
+    """Apply date filter to the dataframe."""
+    if 'date_posted' not in df.columns:
+        return df, False
+    
+    min_date = df['date_posted'].min().date()
+    max_date = df['date_posted'].max().date()
+    
+    # Set datetime format to mm/dd/yyyy
+    st.sidebar.markdown(
+        "<style>input[type=date] {min-height: 36px;}</style>", 
+        unsafe_allow_html=True
+    )
+    
+    date_range = st.sidebar.date_input(
+        "Job Posted Date Range",
+        value=(min_date, max_date),
+        min_value=min_date,
+        max_value=max_date,
+        format="MM/DD/YYYY"
+    )
+    
+    if len(date_range) == 2:
+        start_date, end_date = date_range
+        filtered_df = df[
+            (df['date_posted'].dt.date >= start_date) & 
+            (df['date_posted'].dt.date <= end_date)
+        ]
+        return filtered_df, True
+    return df, False
+
+
+def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
+    """Apply all dashboard filters to the dataframe."""
+    filtered_df = df.copy()
+    
+    # Job title query filter
+    if 'queried_job_title' in filtered_df.columns:
+        job_title_queries = sorted(filtered_df['queried_job_title'].dropna().unique())
+        selected_queries = st.sidebar.multiselect("Job Title Queries", job_title_queries)
+        if selected_queries:
+            filtered_df = filtered_df[filtered_df['queried_job_title'].isin(selected_queries)]
+    
+    # Date filter
+    filtered_df, _ = apply_date_filter(filtered_df)
+    
+    # Location filter
+    if 'state' in filtered_df.columns:
+        states = sorted(filtered_df['state'].dropna().unique())
+        selected_states = st.sidebar.multiselect("Location", states)
+        if selected_states:
+            filtered_df = filtered_df[filtered_df['state'].isin(selected_states)]
+    
+    # Generic categorical filters
+    categorical_filters = [('work_setting', 'Work Setting'), ('job_type', 'Job Type')]
+    for column, label in categorical_filters:
+        if column in filtered_df.columns:
+            values = ['All'] + sorted(filtered_df[column].dropna().unique())
+            selected = st.sidebar.selectbox(label, values)
+            if selected != 'All':
+                filtered_df = filtered_df[filtered_df[column] == selected]
+    
+    # Salary filter
+    if 'salary_midpoint_yearly' in filtered_df.columns:
+        show_only_with_salary = st.sidebar.checkbox("Show only jobs with salary data", value=True)
+        if show_only_with_salary:
+            filtered_df = filtered_df[filtered_df['salary_midpoint_yearly'].notna()]
+    
+    return filtered_df
+
+
+def create_chart_factory(df: pd.DataFrame) -> Dict[str, callable]:
+    """Create a dictionary of chart creation functions."""
+    return {
+        "count": lambda column, title, limit=20: create_bar_chart(df, column, title, limit),
+        "histogram": lambda column='salary_midpoint_yearly', title=None: create_histogram(df, column, title),
+        "pie": lambda column, title: create_pie_chart(df, column, title),
+        "box": lambda x, y, title: create_box_plot(df, x, y, title),
+        "map": lambda: create_choropleth(df)
+    }
+
+
 def create_bar_chart(df: pd.DataFrame, column: str, title: str, limit: int = 20) -> Optional[go.Figure]:
     """Create a horizontal bar chart for counting values in a column."""
-    if not check_required_columns(df, [column]):
+    if not has_valid_columns(df, [column]):
         return None
     
     counts = df[column].value_counts().reset_index().head(limit)
@@ -103,22 +192,23 @@ def create_histogram(
     title: Optional[str] = None
 ) -> Optional[go.Figure]:
     """Create a histogram with median line for numerical data."""
-    if not check_required_columns(df, [column]):
+    if not has_valid_columns(df, [column]):
+        return None
+    
+    data = df[column].dropna()
+    if len(data) < 5:
         return None
     
     # Use provided title or generate one
     title = title or f'{column.replace("_", " ").title()} Distribution'
     
-    # Filter for valid data
-    data = df[column].dropna()
-    if len(data) < 5:
-        return None
-    
-    # Remove outliers (5th to 95th percentile)
+    # Filter outliers (5th to 95th percentile)
     quantiles = data.quantile([0.05, 0.95])
     filtered_df = df[(df[column] >= quantiles.iloc[0]) & (df[column] <= quantiles.iloc[1])]
     
     median_value = filtered_df[column].median()
+    is_salary = 'salary' in column
+    median_text = f"Median: ${median_value:,.0f}" if is_salary else f"Median: {median_value:.1f}"
     
     fig = px.histogram(
         filtered_df, x=column, title=title,
@@ -127,9 +217,6 @@ def create_histogram(
     )
     
     # Add median line
-    is_salary = 'salary' in column
-    median_text = f"Median: ${median_value:,.0f}" if is_salary else f"Median: {median_value:.1f}"
-    
     fig.add_vline(
         x=median_value, line_dash="dash", line_color="red",
         annotation_text=median_text,
@@ -141,7 +228,7 @@ def create_histogram(
 
 def create_pie_chart(df: pd.DataFrame, column: str, title: str) -> Optional[go.Figure]:
     """Create a pie chart for categorical data."""
-    if not check_required_columns(df, [column]):
+    if not has_valid_columns(df, [column]):
         return None
     
     value_counts = df[column].value_counts().reset_index()
@@ -157,7 +244,7 @@ def create_pie_chart(df: pd.DataFrame, column: str, title: str) -> Optional[go.F
 
 def create_box_plot(df: pd.DataFrame, x: str, y: str, title: str) -> Optional[go.Figure]:
     """Create a box plot for comparing distributions across categories."""
-    if not check_required_columns(df, [x, y]):
+    if not has_valid_columns(df, [x, y]):
         return None
     
     filtered_df = df.dropna(subset=[x, y])
@@ -174,7 +261,7 @@ def create_box_plot(df: pd.DataFrame, x: str, y: str, title: str) -> Optional[go
 
 def create_choropleth(df: pd.DataFrame) -> Optional[go.Figure]:
     """Create a US choropleth map of job counts by state."""
-    if not check_required_columns(df, ['state']):
+    if not has_valid_columns(df, ['state']):
         return None
     
     state_counts = df['state'].value_counts().reset_index()
@@ -190,21 +277,14 @@ def create_choropleth(df: pd.DataFrame) -> Optional[go.Figure]:
 
 def create_chart(df: pd.DataFrame, chart_type: str, **kwargs) -> Optional[go.Figure]:
     """Create various chart types based on parameters."""
-    chart_creators = {
-        "count": partial(create_bar_chart, df=df, **kwargs),
-        "histogram": partial(create_histogram, df=df, **kwargs),
-        "pie": partial(create_pie_chart, df=df, **kwargs),
-        "box": partial(create_box_plot, df=df, **kwargs),
-        "map": partial(create_choropleth, df=df)
-    }
-    
+    chart_creators = create_chart_factory(df)
     creator = chart_creators.get(chart_type)
-    return creator() if creator else None
+    return creator(**kwargs) if creator else None
 
 
 def create_wordcloud(df: pd.DataFrame, column: str = 'title') -> Optional[plt.Figure]:
     """Create a word cloud from text data in specified column."""
-    if not check_required_columns(df, [column]):
+    if not has_valid_columns(df, [column]):
         return None
     
     text = ' '.join(df[column].dropna().astype(str))
@@ -228,7 +308,7 @@ def create_wordcloud(df: pd.DataFrame, column: str = 'title') -> Optional[plt.Fi
 
 def create_salary_by_location_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     """Create chart of salaries grouped by location."""
-    if not check_required_columns(df, ['salary_midpoint_yearly']):
+    if not has_valid_columns(df, ['salary_midpoint_yearly']):
         return None
     
     # Find best location column (state, city, zip)
@@ -285,109 +365,26 @@ def create_salary_by_location_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     return fig
 
 
-def apply_date_filter(df: pd.DataFrame) -> Tuple[pd.DataFrame, bool]:
-    """Apply date filter to the dataframe."""
-    if 'date_posted' not in df.columns:
-        return df, False
-    
-    min_date = df['date_posted'].min().date()
-    max_date = df['date_posted'].max().date()
-    
-    # Set datetime format to mm/dd/yyyy
-    st.sidebar.markdown(
-        "<style>input[type=date] {min-height: 36px;}</style>", 
-        unsafe_allow_html=True
-    )
-    
-    date_range = st.sidebar.date_input(
-        "Job Posted Date Range",
-        value=(min_date, max_date),
-        min_value=min_date,
-        max_value=max_date,
-        format="MM/DD/YYYY"
-    )
-    
-    if len(date_range) == 2:
-        start_date, end_date = date_range
-        return df[
-            (df['date_posted'].dt.date >= start_date) & 
-            (df['date_posted'].dt.date <= end_date)
-        ], True
-    return df, False
-
-
-def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
-    """Apply all dashboard filters to the dataframe."""
-    filtered_df = df.copy()
-    
-    # Job title query filter
-    if 'queried_job_title' in filtered_df.columns:
-        job_title_queries = sorted(filtered_df['queried_job_title'].dropna().unique())
-        selected_queries = st.sidebar.multiselect("Job Title Queries", job_title_queries)
-        if selected_queries:
-            filtered_df = filtered_df[filtered_df['queried_job_title'].isin(selected_queries)]
-    
-    # Date filter
-    filtered_df, _ = apply_date_filter(filtered_df)
-    
-    # Location filter
-    if 'state' in filtered_df.columns:
-        states = sorted(filtered_df['state'].dropna().unique())
-        selected_states = st.sidebar.multiselect("Location", states)
-        if selected_states:
-            filtered_df = filtered_df[filtered_df['state'].isin(selected_states)]
-    
-    # Generic categorical filters
-    for column, label in [('work_setting', 'Work Setting'), ('job_type', 'Job Type')]:
-        if column in filtered_df.columns:
-            values = ['All'] + sorted(filtered_df[column].dropna().unique())
-            selected = st.sidebar.selectbox(label, values)
-            if selected != 'All':
-                filtered_df = filtered_df[filtered_df[column] == selected]
-    
-    # Salary filter
-    if 'salary_midpoint_yearly' in filtered_df.columns:
-        show_only_with_salary = st.sidebar.checkbox("Show only jobs with salary data", value=True)
-        if show_only_with_salary:
-            filtered_df = filtered_df[filtered_df['salary_midpoint_yearly'].notna()]
-    
-    return filtered_df
-
-
 def display_metrics(df: pd.DataFrame) -> None:
     """Display key metrics at the top of the dashboard."""
-    # First row of metrics - Total Jobs and Companies
-    cols = st.columns(2)
+    # Display job and company counts
+    col1, col2 = st.columns(2)
+    col1.metric("Total Jobs", len(df))
+    col2.metric("Companies", df['company'].nunique() if 'company' in df.columns else "N/A")
     
-    # Total jobs
-    with cols[0]:
-        st.metric("Total Jobs", len(df))
-    
-    # Company count
-    with cols[1]:
-        if 'company' in df.columns:
-            st.metric("Companies", df['company'].nunique())
-        else:
-            st.metric("Companies", "N/A")
-    
-    # Second row for salary metrics in specific order
-    if all(col in df.columns for col in ['salary_min_yearly', 'salary_midpoint_yearly', 'salary_max_yearly']):
-        salary_cols = st.columns(3)
+    # Display salary metrics if available
+    salary_cols = ['salary_min_yearly', 'salary_midpoint_yearly', 'salary_max_yearly']
+    if all(col in df.columns for col in salary_cols):
+        salary_metrics = [
+            ("Minimum Salary Range (median)", df['salary_min_yearly'].median()),
+            ("Median Salary", df['salary_midpoint_yearly'].median()),
+            ("Maximum Salary Range (median)", df['salary_max_yearly'].median())
+        ]
         
-        # Minimum Salary Range
-        with salary_cols[0]:
-            min_salary = df['salary_min_yearly'].median()
-            st.metric("Minimum Salary Range (median)", f"${min_salary:,.0f}")
-        
-        # Median Salary
-        with salary_cols[1]:
-            median_salary = df['salary_midpoint_yearly'].median()
-            st.metric("Median Salary", f"${median_salary:,.0f}")
-        
-        # Maximum Salary Range
-        with salary_cols[2]:
-            max_salary = df['salary_max_yearly'].median()
-            st.metric("Maximum Salary Range (median)", f"${max_salary:,.0f}")
+        cols = st.columns(3)
+        for i, (label, value) in enumerate(salary_metrics):
+            with cols[i]:
+                st.metric(label, f"${value:,.0f}")
 
 
 def display_overview_tab(df: pd.DataFrame) -> None:
@@ -417,10 +414,10 @@ def display_overview_tab(df: pd.DataFrame) -> None:
 
 def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
     """Create a boxplot with scatter points of salary by state and city."""
-    if not check_required_columns(df, ['salary_midpoint_yearly']):
+    if not has_valid_columns(df, ['salary_midpoint_yearly']):
         return None
     
-    # Check if we have state data
+    # Check for required data
     has_state = 'state' in df.columns and not df['state'].isna().all()
     has_city = 'city' in df.columns and not df['city'].isna().all()
     
@@ -428,25 +425,19 @@ def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
         st.warning("State information is required for this visualization but was not found in the data.")
         return None
     
-    # Filter for rows with salary and state data
+    # Filter data
     filtered_df = df.dropna(subset=['salary_midpoint_yearly', 'state']).copy()
     if len(filtered_df) < 5:
         return None
     
-    # Remove salary outliers
-    # Calculate the Q1, Q3 and IQR
-    Q1 = filtered_df['salary_midpoint_yearly'].quantile(0.10)
-    Q3 = filtered_df['salary_midpoint_yearly'].quantile(0.90)
-    IQR = Q3 - Q1
+    # Remove salary outliers using IQR method
+    q1, q3 = filtered_df['salary_midpoint_yearly'].quantile([0.10, 0.90])
+    iqr = q3 - q1
+    salary_bounds = (q1 - 1.5 * iqr, q3 + 1.5 * iqr)
     
-    # Define bounds for outliers (using 1.5 * IQR)
-    lower_bound = Q1 - 1.5 * IQR
-    upper_bound = Q3 + 1.5 * IQR
-    
-    # Filter out the outliers
     filtered_df = filtered_df[
-        (filtered_df['salary_midpoint_yearly'] >= lower_bound) & 
-        (filtered_df['salary_midpoint_yearly'] <= upper_bound)
+        (filtered_df['salary_midpoint_yearly'] >= salary_bounds[0]) & 
+        (filtered_df['salary_midpoint_yearly'] <= salary_bounds[1])
     ]
     
     # Create location field for hover info
@@ -456,9 +447,8 @@ def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
             axis=1
         )
         
-        # Create a city category for coloring
-        # Get top cities for better visualization
-        top_cities = filtered_df['city'].value_counts().nlargest(15).index.tolist()
+        # Use top cities for better visualization
+        top_cities = filtered_df['city'].value_counts().nlargest(15).index
         filtered_df['city_category'] = filtered_df['city'].apply(
             lambda x: x if pd.notna(x) and x in top_cities else "Other Cities"
         )
@@ -468,37 +458,40 @@ def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
     
     # Only include states with sufficient data
     state_counts = filtered_df['state'].value_counts()
-    valid_states = state_counts[state_counts >= 3].index.tolist()
+    valid_states = state_counts[state_counts >= 3].index
     filtered_df = filtered_df[filtered_df['state'].isin(valid_states)]
     
     if len(filtered_df) < 5:
         st.warning("Not enough data points for each state after filtering.")
         return None
     
-    # Create the figure with both box plot and scatter points
+    # Create the figure
     fig = go.Figure()
     
-    # First, add box plots for each state
+    # Add box plots for each state
     for state in sorted(filtered_df['state'].unique()):
         state_data = filtered_df[filtered_df['state'] == state]
         fig.add_trace(go.Box(
             x=[state] * len(state_data),
             y=state_data['salary_midpoint_yearly'],
             name=state,
-            boxpoints=False,  # Don't show points with the box plot as we'll add scatter points separately
-            marker_color='rgba(200,200,200,0.5)',  # Light grey boxes
+            boxpoints=False,
+            marker_color='rgba(200,200,200,0.5)',
             line_color='rgba(100,100,100,0.8)',
             showlegend=False,
-            hoverinfo='skip'  # Skip hover for box plots
+            hoverinfo='skip'
         ))
     
-    # Then, add scatter points colored by city
+    # Add scatter points colored by city
     for city_cat in sorted(filtered_df['city_category'].unique()):
         city_data = filtered_df[filtered_df['city_category'] == city_cat]
         
-        # Add jitter to x-coordinates to spread points horizontally within each state
-        jitter = np.random.normal(0, 0.1, size=len(city_data))
-        x_with_jitter = [f"{state}{j}" for state, j in zip(city_data['state'], jitter)]
+        # Custom data for hover info
+        custom_data = np.stack((
+            city_data['title'].values,
+            city_data.get('company', 'Unknown').values,
+            city_data['location'].values
+        ), axis=-1)
         
         fig.add_trace(go.Scatter(
             x=city_data['state'],
@@ -510,11 +503,7 @@ def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
                 line=dict(width=1, color='DarkSlateGrey')
             ),
             name=city_cat,
-            customdata=np.stack((
-                city_data['title'].values,
-                city_data['company'].values if 'company' in city_data.columns else np.array(['Unknown'] * len(city_data)),
-                city_data['location'].values
-            ), axis=-1),
+            customdata=custom_data,
             hovertemplate='<b>%{customdata[0]}</b><br>Salary: $%{y:,.0f}<br>Company: %{customdata[1]}<br>Location: %{customdata[2]}<extra></extra>'
         ))
     
@@ -536,14 +525,12 @@ def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
 
 def create_salary_state_choropleth(df: pd.DataFrame) -> Optional[go.Figure]:
     """Create a US choropleth map of median salary by state."""
-    if not check_required_columns(df, ['state', 'salary_midpoint_yearly']):
+    if not has_valid_columns(df, ['state', 'salary_midpoint_yearly']):
         return None
     
-    # Group by state and get median salary
+    # Group by state and calculate median salary
     state_salary = df.groupby('state')['salary_midpoint_yearly'].agg(['median', 'count']).reset_index()
-    
-    # Filter states with at least 2 data points
-    state_salary = state_salary[state_salary['count'] >= 2]
+    state_salary = state_salary[state_salary['count'] >= 2]  # Filter states with at least 2 data points
     
     if len(state_salary) < 3:
         return None
@@ -570,25 +557,23 @@ def create_salary_state_choropleth(df: pd.DataFrame) -> Optional[go.Figure]:
 
 def create_salary_city_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     """Create chart of median salary by top cities."""
-    if not check_required_columns(df, ['city', 'state', 'salary_midpoint_yearly']):
+    if not has_valid_columns(df, ['city', 'state', 'salary_midpoint_yearly']):
         return None
     
-    # Create location column combining city and state
+    # Create location column and calculate stats
     df = df.copy()
-    df['location'] = df.apply(lambda row: f"{row['city']}, {row['state']}" 
-                             if pd.notna(row['city']) and pd.notna(row['state']) 
-                             else None, axis=1)
+    city_state_valid = pd.notna(df['city']) & pd.notna(df['state'])
+    df.loc[city_state_valid, 'location'] = df.loc[city_state_valid, 'city'] + ', ' + df.loc[city_state_valid, 'state']
     
     # Group by location and calculate median salary
-    location_salary = df.groupby('location')['salary_midpoint_yearly'].agg(['median', 'count']).reset_index()
-    
-    # Filter locations with enough data points
+    location_salary = df.dropna(subset=['location', 'salary_midpoint_yearly'])
+    location_salary = location_salary.groupby('location')['salary_midpoint_yearly'].agg(['median', 'count']).reset_index()
     location_salary = location_salary[location_salary['count'] >= 2]
     
     if len(location_salary) < 3:
         return None
     
-    # Sort by median salary and get top 15 cities
+    # Get top cities by median salary
     top_cities = location_salary.sort_values('median', ascending=False).head(15)
     
     fig = px.bar(
@@ -622,34 +607,32 @@ def display_salary_tab(df: pd.DataFrame) -> None:
         st.write("No salary data available.")
         return
     
-    # Row 1: Salary distribution histogram and Box plot by work setting
+    # Row 1: Distribution and Work Setting
     col1, col2 = st.columns(2)
     
-    # Salary distribution histogram
     with col1:
-        if salary_fig := create_chart(df, "histogram", column='salary_midpoint_yearly', title='Annual Salary Distribution (Midpoint)'):
+        salary_fig = create_chart(df, "histogram", column='salary_midpoint_yearly', 
+                               title='Annual Salary Distribution (Midpoint)')
+        if salary_fig:
             st.plotly_chart(salary_fig, use_container_width=True)
     
-    # Salary by work setting
     with col2:
         if 'work_setting' in df.columns:
-            if salary_by_setting_fig := create_chart(
-                df, "box", x='work_setting', y='salary_midpoint_yearly', 
-                title='Salary Distribution by Work Setting'
-            ):
+            salary_by_setting_fig = create_chart(df, "box", x='work_setting', y='salary_midpoint_yearly', 
+                                              title='Salary Distribution by Work Setting')
+            if salary_by_setting_fig:
                 st.plotly_chart(salary_by_setting_fig, use_container_width=True)
     
-    # Row 2: Salary by state and city - full width
+    # Row 2: Salary by state and city
     st.subheader("Salary by State and City")
-    
-    if salary_location_fig := create_salary_location_boxplot(df):
+    salary_location_fig = create_salary_location_boxplot(df)
+    if salary_location_fig:
         st.plotly_chart(salary_location_fig, use_container_width=True)
     else:
         st.info("Not enough data to create the salary visualization. Ensure states and salary data are available.")
     
-    # Row 3: Location-based salary intelligence
+    # Row 3: Location-based salary comparison
     st.subheader("Location-Based Salary Intelligence")
-    
     col1, col2 = st.columns(2)
     
     with col1:
@@ -661,32 +644,36 @@ def display_salary_tab(df: pd.DataFrame) -> None:
             st.plotly_chart(salary_city_chart, use_container_width=True)
     
     # Row 4: Salary statistics table
+    display_salary_statistics(df)
+
+
+def display_salary_statistics(df: pd.DataFrame) -> None:
+    """Display detailed salary statistics table."""
     st.subheader("Detailed Salary Statistics")
     
     percentiles = [0.1, 0.25, 0.5, 0.75, 0.9]
     percentile_names = ['10th', '25th', '50th (Median)', '75th', '90th']
     
-    basic_stats = df['salary_midpoint_yearly'].describe()
+    stats = df['salary_midpoint_yearly'].describe()
     percentile_stats = df['salary_midpoint_yearly'].quantile(percentiles)
     
     # Combine stats into a dataframe
     all_stats = pd.DataFrame({
         'Statistic': ['Count', 'Mean', 'Standard Deviation', 'Minimum'] + percentile_names + ['Maximum'],
         'Value': [
-            basic_stats['count'],
-            basic_stats['mean'],
-            basic_stats['std'],
-            basic_stats['min'],
+            stats['count'],
+            stats['mean'],
+            stats['std'],
+            stats['min'],
             *percentile_stats.values,
-            basic_stats['max']
+            stats['max']
         ]
     })
     
     # Format values as currency except for count
     all_stats['Value'] = all_stats.apply(
-        lambda row: f"${row['Value']:,.2f}" 
-                   if row['Statistic'] != 'Count' and isinstance(row['Value'], (int, float)) 
-                   else f"{row['Value']:,.0f}", 
+        lambda row: f"${row['Value']:,.2f}" if row['Statistic'] != 'Count' 
+                   else f"{row['Value']:,.0f}",
         axis=1
     )
     
@@ -730,7 +717,7 @@ def display_job_listing_row(df: pd.DataFrame, index: int) -> None:
     row = df.iloc[index]
     job_id = row['job_id']
     
-    # Get field values with appropriate defaults and formatting
+    # Get formatted field values
     title = get_field_display_value(row, 'title', "Unknown Job")
     company = get_field_display_value(row, 'company', "Unknown Company")
     location = get_location_display(row)
@@ -751,15 +738,16 @@ def display_job_listing_row(df: pd.DataFrame, index: int) -> None:
     # View button for job description
     button_type = "secondary" if is_selected else "primary"
     button_label = "Selected" if is_selected else "Job Description"
-    if cols[5].button(button_label, key=f"btn_{index}", use_container_width=True, type=button_type, disabled=is_selected):
+    if cols[5].button(button_label, key=f"btn_{index}", use_container_width=True, 
+                    type=button_type, disabled=is_selected):
         st.session_state.selected_job_id = job_id
         st.rerun()
     
     # Job URL button
     job_url = get_job_url(row)
-    
     if job_url:
-        cols[6].markdown(f"<a href='{job_url}' target='_blank'><button style='width:100%'>Visit Link</button></a>", unsafe_allow_html=True)
+        cols[6].markdown(f"<a href='{job_url}' target='_blank'><button style='width:100%'>Visit Link</button></a>", 
+                        unsafe_allow_html=True)
     else:
         cols[6].write("No URL")
     
@@ -772,40 +760,34 @@ def display_job_details(job: pd.Series) -> None:
     """Display detailed job information in the right panel."""
     st.markdown("### Quick Info")
     
-    # Collect available details
-    fields = [
-        ('company', 'Company'),
-        ('job_type', 'Job Type'),
-        ('work_setting', 'Work Setting'),
-    ]
-    
-    details_md = []
+    # Collect job details
+    details = []
     
     # Add standard fields
-    for field, label in fields:
+    for field, label in [('company', 'Company'), ('job_type', 'Job Type'), ('work_setting', 'Work Setting')]:
         if field in job and pd.notna(job[field]):
-            details_md.append(f"**{label}:** {job[field]}")
+            details.append(f"**{label}:** {job[field]}")
     
     # Add location
     location = get_location_display(job)
     if location != "Unknown":
-        details_md.append(f"**Location:** {location}")
+        details.append(f"**Location:** {location}")
     
     # Add salary
     if 'salary_midpoint_yearly' in job and pd.notna(job['salary_midpoint_yearly']):
-        details_md.append(f"**Annual Salary:** ${job['salary_midpoint_yearly']:,.0f}")
+        details.append(f"**Annual Salary:** ${job['salary_midpoint_yearly']:,.0f}")
     
     # Add job URL
     job_url = get_job_url(job)
     if job_url:
-        details_md.append(f"**[View Job Post Link]({job_url})**")
+        details.append(f"**[View Job Post Link]({job_url})**")
     
-    st.markdown("\n\n".join(details_md))
+    st.markdown("\n\n".join(details))
 
 
 def display_job_description_content(job: pd.Series) -> None:
     """Display the job description content."""
-    # Find description content
+    # Find description content in available columns
     desc_cols = ['job_description', 'description']
     desc_col = next((col for col in desc_cols 
                 if col in job and pd.notna(job[col])), None)
@@ -816,26 +798,8 @@ def display_job_description_content(job: pd.Series) -> None:
         st.info("No job description available for this listing.")
 
 
-def display_descriptions_tab(df: pd.DataFrame) -> None:
-    """Display content for the Job Descriptions tab."""
-    # Ensure job_id exists
-    df = df.copy()
-    if 'job_id' not in df.columns:
-        df['job_id'] = df.index.astype(str)
-    
-    # Ensure we have title and company columns
-    for col in ['title', 'company']:
-        if col not in df.columns:
-            df[col] = "Unknown"
-    
-    # Initialize selected job ID
-    if 'selected_job_id' not in st.session_state or st.session_state.selected_job_id not in df['job_id'].values:
-        st.session_state.selected_job_id = df['job_id'].iloc[0] if not df.empty else ""
-    
-    # Selection interface
-    st.subheader("Select a job to view its description")
-    
-    # Add custom CSS
+def add_job_listing_css() -> None:
+    """Add custom CSS for job listings."""
     st.markdown("""
     <style>
     .compact-item {padding: 6px 10px; border-bottom: 1px solid #eee; margin-bottom: 4px;}
@@ -854,6 +818,28 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     }
     </style>
     """, unsafe_allow_html=True)
+
+
+def display_descriptions_tab(df: pd.DataFrame) -> None:
+    """Display content for the Job Descriptions tab."""
+    # Add custom CSS for job listings
+    add_job_listing_css()
+    
+    # Ensure required columns exist
+    df = df.copy()
+    if 'job_id' not in df.columns:
+        df['job_id'] = df.index.astype(str)
+    
+    for col in ['title', 'company']:
+        if col not in df.columns:
+            df[col] = "Unknown"
+    
+    # Initialize selected job ID
+    if 'selected_job_id' not in st.session_state or st.session_state.selected_job_id not in df['job_id'].values:
+        st.session_state.selected_job_id = df['job_id'].iloc[0] if not df.empty else ""
+    
+    # Job listings section
+    st.subheader("Select a job to view its description")
     
     # Display header row
     headers = ["Job Title", "Company", "Location", "Salary", "Date Posted", "View Job Description", "Visit Job Post"]
@@ -864,7 +850,7 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     # Separator after header
     st.markdown("<hr style='margin: 0; padding: 0; margin-bottom: 10px'>", unsafe_allow_html=True)
     
-    # Create scrollable container for jobs
+    # Scrollable job listings
     with st.container(height=280, border=False):
         for i in range(len(df)):
             display_job_listing_row(df, i)
@@ -872,7 +858,7 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
     # Add spacer
     st.write("---")
     
-    # Get the selected job
+    # Display selected job description
     selected_job = df[df['job_id'] == st.session_state.selected_job_id]
     
     # If job not found, use the first available job
@@ -887,13 +873,10 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
         company_name = get_field_display_value(job, 'company', 'Unknown Company')
         st.subheader(f"{job_title} @ {company_name}")
         
+        # Two column layout for description and details
         col1, col2 = st.columns([3, 1])
-        
-        # Job description (left column)
         with col1:
             display_job_description_content(job)
-        
-        # Job details (right column)
         with col2:
             display_job_details(job)
     else:
@@ -904,15 +887,12 @@ def display_sidebar_info(df: pd.DataFrame) -> None:
     """Display dataset information in the sidebar."""
     st.sidebar.header("Dataset Info")
     
-    # Display when data was last refreshed
+    # Display refresh metadata
     last_refresh = st.session_state.get("last_refresh_time", "Never")
     st.sidebar.write(f"Last refreshed: {last_refresh} (auto-refreshes every 60 seconds)")
+    st.sidebar.write(f"Data files loaded: {st.session_state.get('num_files_found', 0)}")
     
-    # Display file count for debugging
-    num_files = st.session_state.get("num_files_found", 0)
-    st.sidebar.write(f"Data files loaded: {num_files}")
-    
-    # Display basic info
+    # Display dataset summary
     st.sidebar.write(f"Total jobs: {len(df)}")
     if 'company' in df.columns:
         st.sidebar.write(f"Unique companies: {df['company'].nunique()}")
