@@ -15,6 +15,7 @@ dependencies:
   - matplotlib>=3.8.0
   - seaborn>=0.13.0
   - python-dateutil>=2.8.2
+  - wordcloud>=1.9.0
   # Development tools
   - pytest>=7.4.0
   - pytest-mock>=3.12.0
@@ -31,4 +32,6 @@ dependencies:
     - webdriver-manager>=4.0.1
     # Type annotations
     - types-requests>=2.31.0
-    - types-selenium>=3.141.9 
+    - types-selenium>=3.141.9
+    # Dashboard
+    - streamlit>=1.44.0 
