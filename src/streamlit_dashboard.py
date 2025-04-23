@@ -904,15 +904,9 @@ def display_sidebar_info(df: pd.DataFrame) -> None:
     """Display dataset information in the sidebar."""
     st.sidebar.header("Dataset Info")
     
-    # Refresh data button
-    if st.sidebar.button("🔄 Refresh Data"):
-        # Clear caches to force data reload
-        st.cache_data.clear()
-        st.rerun()
-    
     # Display when data was last refreshed
     last_refresh = st.session_state.get("last_refresh_time", "Never")
-    st.sidebar.write(f"Last refreshed: {last_refresh}")
+    st.sidebar.write(f"Last refreshed: {last_refresh} (auto-refreshes every 60 seconds)")
     
     # Display file count for debugging
     num_files = st.session_state.get("num_files_found", 0)
