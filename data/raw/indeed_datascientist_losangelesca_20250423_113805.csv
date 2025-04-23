@@ -1,0 +1,825 @@
+﻿job_id,source,title,company,queried_job_title,work_setting,job_type,date_posted,date_scraped,city,state,zip,salary_period,salary_min,salary_max,salary_min_yearly,salary_max_yearly,salary_midpoint_yearly,job_url,search_url,job_description
+0e1b5ff8d79fe990,Indeed,"Data Scientist, Ecommerce - USDS",TikTok,Data Scientist,hybrid,,2025-04-19,2025-04-23,Los Angeles,CA,,yearly,136800.0,228000.0,136800.0,228000.0,182400.0,https://www.indeed.com/viewjob?jk=0e1b5ff8d79fe990,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Responsibilities
+
+Team Intro The e-commerce industry has seen tremendous growth in recent years and has become a hotly contested space amongst leading Internet companies, and its future growth cannot be underestimated. With millions of loyal users globally, we believe TikTok is an ideal platform to deliver a brand new and better e-commerce experience to our users. We are looking for passionate and talented people to join our product and operations team, together we can build an e-commerce ecosystem that is innovative, secure and intuitive for our users. In order to enhance collaboration and cross-functional partnerships, among other things, at this time, our organization follows a hybrid work schedule that requires employees to work in the office 3 days a week, or as directed by their manager/department. We regularly review our hybrid work model, and the specific requirements may change at any time. Responsibilities: - Work with large and complex datasets to solve a wide array of challenging problems using different analytical and statistical approaches - Apply technical expertise with quantitative analysis, experimentation, data mining, and the presentation of data to develop strategies for our E-commerce product - Identify and measure success of product efforts through goal setting, forecasting, and monitoring of key product metrics to understand trends - Define, understand, and test opportunities and levers to improve the product, and drive roadmaps through your insights and recommendations - Develop data pipelines and dashboards to enhance data infrastructure - Develop ML models to find potential creators, measuring LTV of users, etc - Cooperate with PM/Ops/R&D and other cross-functional teams to inform, influence, support, and execute product strategy and investment decisions
+
+Qualifications
+
+Minimum Qualifcations - Bachelor degree or above, majoring in mathematics, statistics, computer science - Proficient in SQL, tableau and familiar with Python or R for modeling project - At least 3 years of working experience in data science, machine learning - Effectively communicate and present results of data analyses to stakeholders to drive business impact Preferred Qualifications - Ecommerce experience - Self-driven, be able to work with cross-functional teams
+
+Job Information
+
+【For Pay Transparency】Compensation Description (Annually)
+
+The base salary range for this position in the selected city is $136800 - $228000 annually.  
+
+Compensation may vary outside of this range depending on a number of factors, including a candidate’s qualifications, skills, competencies and experience, and location. Base pay is one part of the Total Package that is provided to compensate and recognize employees for their work, and this role may be eligible for additional discretionary bonuses/incentives, and restricted stock units.  
+
+Benefits may vary depending on the nature of employment and the country work location. Employees have day one access to medical, dental, and vision insurance, a 401(k) savings plan with company match, paid parental leave, short-term and long-term disability coverage, life insurance, wellbeing benefits, among others. Employees also receive 10 paid holidays per year, 10 paid sick days per year and 17 days of Paid Personal Time (prorated upon hire with increasing accruals by tenure).  
+
+The Company reserves the right to modify or change these benefits programs at any time, with or without notice.  
+
+For Los Angeles County (unincorporated) Candidates:  
+
+Qualified applicants with arrest or conviction records will be considered for employment in accordance with all federal, state, and local laws including the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act. Our company believes that criminal history may have a direct, adverse and negative relationship on the following job duties, potentially resulting in the withdrawal of the conditional offer of employment:  
+
+1\. Interacting and occasionally having unsupervised contact with internal/external clients and/or colleagues;  
+
+2\. Appropriately handling and managing confidential information including proprietary and trade secret information and access to information technology systems; and  
+
+3\. Exercising sound judgment.  
+
+About USDS
+
+TikTok is the leading destination for short-form mobile video. Our mission is to inspire creativity and bring joy. U.S. Data Security (“USDS”) is a subsidiary of TikTok in the U.S. This new, security-first division was created to bring heightened focus and governance to our data protection policies and content assurance protocols to keep U.S. users safe. Our focus is on providing oversight and protection of the TikTok platform and U.S. user data, so millions of Americans can continue turning to TikTok to learn something new, earn a living, express themselves creatively, or be entertained. The teams within USDS that deliver on this commitment daily span across Trust & Safety, Security & Privacy, Engineering, User & Product Ops, Corporate Functions and more.  
+
+Data Security Statement  
+
+This role requires the ability to work with and support systems designed to protect sensitive data and information. As such, this role will be subject to strict national security-related screening.  
+
+Why Join Us
+
+Inspiring creativity is at the core of TikTok's mission. Our innovative product is built to help people authentically express themselves, discover and connect – and our global, diverse teams make that possible. Together, we create value for our communities, inspire creativity and bring joy - a mission we work towards every day.  
+
+We strive to do great things with great people. We lead with curiosity, humility, and a desire to make impact in a rapidly growing tech company. Every challenge is an opportunity to learn and innovate as one team. We're resilient and embrace challenges as they come. By constantly iterating and fostering an ""Always Day 1"" mindset, we achieve meaningful breakthroughs for ourselves, our company, and our users. When we create and grow together, the possibilities are limitless. Join us.  
+
+Diversity & Inclusion  
+
+TikTok is committed to creating an inclusive space where employees are valued for their skills, experiences, and unique perspectives. Our platform connects people from across the globe and so does our workplace. At TikTok, our mission is to inspire creativity and bring joy. To achieve that goal, we are committed to celebrating our diverse voices and to creating an environment that reflects the many communities we reach. We are passionate about this and hope you are too.  
+
+USDS Reasonable Accommodation
+
+USDS is committed to providing reasonable accommodations in our recruitment processes for candidates with disabilities, pregnancy, sincerely held religious beliefs or other reasons protected by applicable laws. If you need assistance or a reasonable accommodation, please reach out to us at https://tinyurl.com/USDS-RA"
+26fc817c6e368167,Indeed,Data Science Associate,AscentDS Services LLC,Data Scientist,in-person,Full-time,2025-04-19,2025-04-23,Los Angeles,CA,91436,yearly,130000.0,150000.0,130000.0,150000.0,140000.0,https://www.indeed.com/viewjob?jk=26fc817c6e368167,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"About Ascent
+
+Ascent Developer Solutions is a leading private lending platform, serving real estate developers nationwide in the acquisition, renovation, and construction of residential real estate. Founded by a leadership team with a deep understanding and personal experience in virtually every facet of real estate development, Ascent is uniquely positioned to create custom, innovative lending solutions for a variety of real estate development business strategies.
+
+The Role
+
+Our Data Science Associate will consult with various leaders in our business to track company/competitor performance, solve business problems using data, and influence our investments in data. They will also be responsible for mentoring junior analysts.
+
+The Work
+
+Data and analysis
+
+  • Take the lead in building predictive models including potential borrowers, defaults, and quality/valuations of properties for potential lending activities.
+  • Identify new business opportunities through tracking competitor trends and keeping management aware of developer lending market trends and insights.
+  • Support the team with ongoing research of machine learning and artificial intelligence trends. Develop methods for evaluating and selecting large language models (LLMs) for deployment.
+  • Analyze social networks for trends and insights working with Graph data.
+  • Assist in fostering a culture of test & learn within the company.
+
+Leadership
+
+  • Serve as analytics consultant to a broad variety of line-of-business teams.
+  • Partner with technology teams on product changes and impacts on data/performance.
+  • Mentor junior analysts on various data science techniques.
+
+Your Skills and Experience
+
+  • Analytics experience in residential real estate (SFR/MFR), mortgage, or banking required.
+  • Bachelor’s degree in a quantitative field.
+  • 5-7 years of experience in analytical or consulting roles.
+  • Strong data science skills, especially in SQL and with AI/ML related Python libraries such as PyTorch, TensorFlow, MatPlotLib, Pycaret, and Keras. Conceptual knowledge of LLM’s.
+  • Strong knowledge of statistics, hypothesis testing, and setting up experiments.
+  • Visibility to data visualization tools such as PowerBI or Tableau.
+  • Must have deployed several models to production.
+  • Exposure to data engineering skills.
+  • Strong communication and partnership skills, effective cross-department collaboration skills.
+  • Self-starter who can work under limited supervision.
+  • Mentoring skills to help develop junior analysts.
+
+The Pay
+
+Salary range is $130,000-$150,000 per year, with a discretionary bonus of 25% per year.
+
+The Work Environment
+
+  • This role works on-site from Ascent's Encino office, Monday - Thursday (Fridays are work-from-home).
+  • Full-time, 40 hours per week; must be available for occasional overtime.
+  • Some nights and weekends required.
+
+Ascent’s Benefits
+
+We offer a comprehensive benefits package designed to support your health, well-being, and work-life balance. Our benefits include five health plans, two dental plans, health savings and flexible spending accounts, vision coverage, a 401(k) plan, and other optional benefits to choose from.
+
+Ascent’s Pledge
+
+We pledge to be fair and considerate in hiring and promoting individuals, ensuring everyone can contribute their fullest potential regardless of background, identity, or personal circumstances. By promoting equal opportunity, we not only enhance our workplace but also contribute to a more just and equitable society. At Ascent, we stand united in building a community where everyone is empowered to succeed. Thank you for joining us on our journey towards a more inclusive future.
+
+The pay range for this role is:  
+130,000 - 150,000 USD per year(Los Angeles, CA)"
+b08e2664aedf552e,Indeed,Senior Data Scientist,UCLA,Data Scientist,hybrid,Full-time,2025-04-18,2025-04-23,Los Angeles,CA,90095,yearly,68600.0,141000.0,68600.0,141000.0,104800.0,https://www.indeed.com/viewjob?jk=b08e2664aedf552e,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"While the Senior Data Scientist (Supervisor) will learn from the Project’s previous iterations, the new carceral mortality and morbidity agenda will be a significant expansion for the team. As such, in addition to being a core member of our Data Team performing a proportionate share of the Data Team’s work, the Senior Data Scientist (Supervisor) will be responsible for crafting new data project plans and methodological approaches, strategizing incorporation of outside datasets, and managing the data team along with internal collaborations to maximize impact on policy and practice. They will also articulate, in consultation with the Project’s Faculty Directors, a strategic vision for the expanded collection, processing and analysis of carceral morbidity data. The Senior Data Scientist (Supervisor) will supervise the team’s Data Analyst, Data Scientist, Senior Research Scientist, and several student research assistants. 
+
+Salary & Compensation
+
+  • UCLA provides a full pay range. Actual salary offers consider factors, including budget, prior experience, skills, knowledge, abilities, education, licensure and certifications, and other business considerations. Salary offers at the top of the range are not common. Visit UC Benefit package to discover benefits that start on day one, and UC Total Compensation Estimator to calculate the total compensation value with benefits.
+
+Qualifications
+
+  • Substantial research experience. (Required)
+  • Prior building or maintaining productionized ETL pipelines in R or Python. (Preferred)
+  • Experience planning and executing quantitative research including data collection, cleaning, analysis, and publication (Required)
+  • Experience working with datasets that include missing, unstructured, and/or incorrect data. (Required)
+  • Experience establishing relationships and working with diverse collaborators (e.g., local advocates, government officials, and journalists) with varying levels of technical literacy. (Required)
+  • Strong organizational skills for project planning, data collection procedures, and complex research activities. (Required)
+  • Experience with public record requests and creating impactful data visualizations for social media and news reports. (Preferred)
+  • Proficiency using R or another programming language to manipulate data and draw insights from large, complex datasets. (Required)
+  • Strong writing skills, including experience with peer-reviewed manuscripts. (Required)
+  • Experience using git/GitHub to track tasks and data acquisition processes, and regularly update data on GitHub. (Required)
+  • Experience creating impactful data visualizations for social media and reports. (Preferred)
+  • Experience developing open-source datasets and GIS platforms. (Preferred)
+  • Experience planning and executing quantitative data projects including collection, cleaning, analysis, and archiving. (Preferred)
+  • Experience supervising similarly sized data teams and working with diverse collaborators with varying levels of data literacy. (Required)
+
+Education, Licenses, Certifications & Personal Affiliations
+
+  • Master's Degree in Data science, quantitative social science, or related field OR 5+ years working experience as a data or research scientist or equivalent combination of education and experience. (Required)
+
+Special Conditions for Employment
+
+  • Background Check: Continued employment is contingent upon the completion of a satisfactory background investigation.
+  • Live Scan Background Check: A Live Scan background check must be completed prior to the start of employment.
+  • Age Requirement: Candidate(s) must be 18 years or older to be eligible to be hired.
+  • Compassion, empathy, and a sense of humor. (Required)
+  • Lived experience with and/or knowledge of the criminal legal system. (Preferred)
+  • Experience working with remote teams. (Preferred)
+  • Ability to prioritize and effectively manage a workload with multiple deadlines. (Required)
+  • Familiarity or interest in working with public health and/or criminal justice data. (Required)
+  • Outstanding leadership, judgment, attention to detail, and the ability to foster a collaborative remote working environment. (Required)
+
+Schedule
+
+Monday - Friday 8:00 a.m. to 5:00 p.m.   
+
+Union/Policy Covered
+
+99-Policy Covered   
+
+Complete Position Description
+
+https://universityofcalifornia.marketpayjobs.com/ShowJob.aspx?EntityID=38&jobcode=40082290 
+
+Apply
+
+Campus Requisition #:
+
+7512
+
+UC Payroll Title:
+
+PROJECT POLICY ANL 3
+
+Department:
+
+LAW
+
+Appointment Type:
+
+1 - Staff: Contract
+
+Budgeted Pay Scale:
+
+$68,600 - $100,000 Annually
+
+  • Full Salary Range:
+
+USD $68,800.00/Yr. - USD $141,000.00/Yr.
+
+Onsite | Remote | Hybrid Type:
+
+Fully Remote
+
+Department Location:
+
+385 Charles E Young Dr E Law School
+
+Full or Part Time:
+
+Full Time"
+e0d7b439460fb2d2,Indeed,Machine Learning Engineer,Apple,Data Scientist,in-person,Full-time,2025-04-19,2025-04-23,Culver City,CA,,yearly,166600.0,250600.0,166600.0,250600.0,208600.0,https://www.indeed.com/viewjob?jk=e0d7b439460fb2d2,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Imagine what you can do here. Apple is a place where extraordinary people gather to do their lives best work. Together we create products and experiences people once couldn’t have imagined, and now, can’t imagine living without. It’s the diversity of those people and their ideas that inspires the innovation that runs through everything we do.  
+
+Description  
+
+APPLE INC has the following available in Culver City, California. Create privacy-preserving on-device machine learning models to help optimize marketing communications at scale through predictive models for customer state changes, lifetime value, and engagement. Collaborate with Apple Media Products team members and partners to design Machine Learning models that help us better understand and serve our customers, focusing on Services such as Apple TV+, Apple Music, Apple Fitness+, Apple Arcade, and the App Store. Engineer end-to-end Machine Learning products which provide Apple with a granular understanding of customer preferences and user value drivers, including scalable solutions for customer acquisition and targeting. Support engineering, business, and marketing teams at Apple in optimizing all customer touch points by detecting usage patterns with data-driven / machine-learned methods and translating them into practical solutions. Dive deep into large-scale data sources to uncover opportunities for Machine Learning automation, predictive methods, and quantitative modeling across Apple services. Partner with other Apple organizations on data engineering, data governance, voicing support for Machine Learning, and democratizing data. Increase internal adoption of ML and AI products. 40 hours/week. At Apple, base pay is one part of our total compensation package and is determined within a range. This provides the opportunity to progress as you grow and develop within a role. The base pay range for this role is between $166,600 - $250,600/yr and your base pay will depend on your skills, qualifications, experience, and location. PAY & BENEFITS: Apple employees also have the opportunity to become an Apple shareholder through participation in Apple’s discretionary employee stock programs. Apple employees are eligible for discretionary restricted stock unit awards, and can purchase Apple stock at a discount if voluntarily participating in Apple’s Employee Stock Purchase Plan. You’ll also receive benefits including: Comprehensive medical and dental coverage, retirement benefits, a range of discounted products and free services, and for formal education related to advancing your career at Apple, reimbursement for certain educational expenses - including tuition. Additionally, this role might be eligible for discretionary bonuses or commission payments as well as relocation. Learn more about Apple Benefits: https://www.apple.com/careers/us/benefits.html. Note: Apple benefit, compensation and employee stock programs are subject to eligibility requirements and other terms of the applicable plan or program.  
+
+Minimum Qualifications  
+
+  • Master’s degree in Statistics, Mathematics, Computer Science, Physics, Engineering, or related field.
+  • Experience and/or education must include:
+  • Machine Learning
+  • Python
+  • SQL
+  • Spark
+  • Statistics
+
+Preferred Qualifications  
+
+  • N/A
+
+Apple is an equal opportunity employer that is committed to inclusion and diversity. We seek to promote equal opportunity for all applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, Veteran status, or other legally protected characteristics. Learn more about your EEO rights as an applicant .  
+
+Submit Resume"
+2b02b49bcbff9002,Indeed,Senior Business Intelligence Analyst,Disney,Data Scientist,in-person,,2025-04-16,2025-04-23,Burbank,CA,,yearly,104600.0,140200.0,104600.0,140200.0,122400.0,https://www.indeed.com/viewjob?jk=2b02b49bcbff9002,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Senior Business Intelligence Analyst
+
+Apply Now
+
+Apply Later
+
+Job ID
+
+10118353 
+
+Location
+
+Burbank, California, United States 
+
+Business
+
+The Walt Disney Studios 
+
+Date posted
+
+Apr. 16, 2025 
+
+#### Job Summary:
+
+The Studio Content Valuation team is responsible for the valuation of all Studio content on the Company's direct-to-consumer and linear platforms, including films and original series from Disney, Lucasfilm, Marvel, 20th Century, Searchlight, Pixar, and Walt Disney Animation. The team is cross-functional, and its members draw on expertise from various disciplines: finance, statistics, database management, contract management, and accounting.
+
+The Senior Business Intelligence Analyst is responsible for statistical modeling, database management, and automation improvement. The role interacts with sales and finance teams in North America and international regions. It requires problem-solving through multiple statistical methodologies (both parametric and non-parametric); it services a data architecture that enables consistent reporting, automation, and analysis throughout the organization.
+
+The Senior Business Intelligence Analyst must possess a passion for statistics, data manipulation, quality assurance, and exploratory analysis that will help inform planning and decision-making across the business. The role also requires proactiveness and attention to detail in a deadline-driven environment.
+
+Responsibilities:
+
+  • Curate, manipulate, and synthesize large amounts of content licensing and sales data to test hypotheses and draw conclusions that result in actionable insights
+  • Conduct comparative content searches, via internal and external resources, to supplement the data with additional factors (e.g., program genre, popularity, and market conditions)
+  • Process, cleanse, and verify the integrity of the data used for analyses
+  • Compute valuations for both new and library content made available on Disney's distribution platforms
+  • Organize and maintain database to store valuation results
+  • Prepare ad-hoc reports using data visualization, and make presentations to senior management; explain technical concepts to non-technical audiences
+  • Explore new statistical models as well as automation tools for continuous process improvement
+
+Required Qualifications:
+
+  • BA/BS in business, mathematics, economics, data science, or other quantitative discipline (including statistics coursework)
+  • Two to four years of experience as a data scientist, data analyst, or similar role
+  • Strong foundation in statistics, probability, and predictive modeling techniques (e.g., regression, time-series forecasting)
+  • Proficiency in R or Python for data analysis and model development
+  • Solid experience working with SQL databases (writing complex queries, optimizing performance, integrating with analysis workflows)
+  • Demonstrated ability to automate processes using AI/ML tools, scripting, or low-code/no-code platforms (e.g., Alteryx, Power BI)
+  • Familiarity with Excel, including complex formulas, pivot tables, and linking Excel data to external sources (e.g., via Power Query or Python/SQL)
+  • Experience building dashboards or reports using tools like Power BI, Tableau, or similar
+  • Ability to translate complex analytical results into clear, actionable insights for business stakeholders
+
+Preferred Qualifications:
+
+  • Master’s degree in a quantitative discipline such as data science, statistics, economics, or business
+  • Knowledge of data pipeline orchestration tools (e.g., Alteryx)
+  • Exposure to natural language processing (NLP) or generative AI tools (e.g., GPT, Copilot, etc.) to automate document generation or reporting tasks (experience with ML frameworks such as scikit-learn and PyTorch, a plus)
+  • Understanding of data governance, privacy, and security best practices in a corporate setting
+
+Soft skills
+
+  • Excellent problem-solving and analytical thinking.
+  • Strong communication skills—able to work closely with finance professionals and non-technical stakeholders.
+  • Comfortable operating independently and managing multiple projects in a fast-paced, data-driven environment.
+  • A mindset of continuous improvement and curiosity, with the drive to explore new AI tools and methods
+
+The hiring range for this position in Burbank, California is $104,600.00-$140,200.00 per year. The base pay actually offered will take into account internal equity and also may vary depending on the candidate’s geographic region, job-related knowledge, skills, and experience among other factors. A bonus and/or long-term incentive units may be provided as part of the compensation package, in addition to the full range of medical, financial, and/or other benefits, dependent on the level and position offered."
+8bdf74bd47d1c318,Indeed,Senior Business Intelligence Analyst,The Walt Disney Studios,Data Scientist,in-person,,2025-04-17,2025-04-23,Burbank,CA,,yearly,104600.0,140200.0,104600.0,140200.0,122400.0,https://www.indeed.com/viewjob?jk=8bdf74bd47d1c318,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"The Studio Content Valuation team is responsible for the valuation of all Studio content on the Company's direct-to-consumer and linear platforms, including films and original series from Disney, Lucasfilm, Marvel, 20th Century, Searchlight, Pixar, and Walt Disney Animation. The team is cross-functional, and its members draw on expertise from various disciplines: finance, statistics, database management, contract management, and accounting.
+
+The Senior Business Intelligence Analyst is responsible for statistical modeling, database management, and automation improvement. The role interacts with sales and finance teams in North America and international regions. It requires problem-solving through multiple statistical methodologies (both parametric and non-parametric); it services a data architecture that enables consistent reporting, automation, and analysis throughout the organization.
+
+The Senior Business Intelligence Analyst must possess a passion for statistics, data manipulation, quality assurance, and exploratory analysis that will help inform planning and decision-making across the business. The role also requires proactiveness and attention to detail in a deadline-driven environment.
+
+Responsibilities:
+
+  • Curate, manipulate, and synthesize large amounts of content licensing and sales data to test hypotheses and draw conclusions that result in actionable insights
+  • Conduct comparative content searches, via internal and external resources, to supplement the data with additional factors (e.g., program genre, popularity, and market conditions)
+  • Process, cleanse, and verify the integrity of the data used for analyses
+  • Compute valuations for both new and library content made available on Disney's distribution platforms
+  • Organize and maintain database to store valuation results
+  • Prepare ad-hoc reports using data visualization, and make presentations to senior management; explain technical concepts to non-technical audiences
+  • Explore new statistical models as well as automation tools for continuous process improvement
+
+Required Qualifications:
+
+  • BA/BS in business, mathematics, economics, data science, or other quantitative discipline (including statistics coursework)
+  • Two to four years of experience as a data scientist, data analyst, or similar role
+  • Strong foundation in statistics, probability, and predictive modeling techniques (e.g., regression, time-series forecasting)
+  • Proficiency in R or Python for data analysis and model development
+  • Solid experience working with SQL databases (writing complex queries, optimizing performance, integrating with analysis workflows)
+  • Demonstrated ability to automate processes using AI/ML tools, scripting, or low-code/no-code platforms (e.g., Alteryx, Power BI)
+  • Familiarity with Excel, including complex formulas, pivot tables, and linking Excel data to external sources (e.g., via Power Query or Python/SQL)
+  • Experience building dashboards or reports using tools like Power BI, Tableau, or similar
+  • Ability to translate complex analytical results into clear, actionable insights for business stakeholders
+
+Preferred Qualifications:
+
+  • Master’s degree in a quantitative discipline such as data science, statistics, economics, or business
+  • Knowledge of data pipeline orchestration tools (e.g., Alteryx)
+  • Exposure to natural language processing (NLP) or generative AI tools (e.g., GPT, Copilot, etc.) to automate document generation or reporting tasks (experience with ML frameworks such as scikit-learn and PyTorch, a plus)
+  • Understanding of data governance, privacy, and security best practices in a corporate setting
+
+Soft skills
+
+  • Excellent problem-solving and analytical thinking.
+  • Strong communication skills—able to work closely with finance professionals and non-technical stakeholders.
+  • Comfortable operating independently and managing multiple projects in a fast-paced, data-driven environment.
+  • A mindset of continuous improvement and curiosity, with the drive to explore new AI tools and methods
+
+The hiring range for this position in Burbank, California is $104,600.00-$140,200.00 per year. The base pay actually offered will take into account internal equity and also may vary depending on the candidate’s geographic region, job-related knowledge, skills, and experience among other factors. A bonus and/or long-term incentive units may be provided as part of the compensation package, in addition to the full range of medical, financial, and/or other benefits, dependent on the level and position offered."
+7ddce153460331c1,Indeed,"Data Analyst, Global Partnerships & Content",Meta,Data Scientist,in-person,,2025-04-17,2025-04-23,Los Angeles,CA,90066,yearly,124000.0,176000.0,124000.0,176000.0,150000.0,https://www.indeed.com/viewjob?jk=7ddce153460331c1,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"The Global Partnerships & Content organization at Meta works closely with the leading content creators and media entities in the world to build and grow innovative and meaningful content and community engagement experiences across a variety of product areas. The Strategy & Operations team within the Global Partnerships & Content organization is searching for an analyst to understand and quantify opportunities for delivering value to creators. This individual will leverage internal and external data sources to define program strategy, support and improve the team's process, and measure program performance for future iterations, all with the goal of helping thousands of partners meet their desired outcomes. The ideal candidate is a team player and loves breaking down problems, building solutions, delivering actionable and data-driven insights, and working in a changing environment.  
+
+### Data Analyst, Global Partnerships & Content Responsibilities:   
+
+  • Develop data-centric strategies to drive effective scaled programs aligning Facebook priorities and objectives across lead acquisition, product engagement and growth education.
+  • Work with key product stakeholders to help define strategy, create metrics to evaluate success and measure impact of partner acquisition channels and service models for Facebook creators.
+  • Analyze and rigorously measure results and make data-driven recommendations for optimization of future programs and content strategy.
+  • Understand partner performance, collaborating with key stakeholders to develop recommendations for measurement.
+  • Build data pipelines, queries, and reporting from multiple data sources (internal and external) to generate partner dataset for cross functional stakeholders to leverage.
+
+### Minimum Qualifications:  
+
+  • BA or BS degree
+  • 5+ years experience with SQL (Oracle, Vertica, Hive, MySQL, etc)
+  • 5+ years experience with Python
+  • 5+ years of experience in data analytics roles
+  • Presentation and communications experience with extracting insights from technical data sets to varied audiences
+
+### Preferred Qualifications:  
+
+  • Experience utilizing methods such as split testing, matching model, difference-in-differences for causal discovery
+  • Experience with programming languages such as R or Python to build statistical models
+  • Experience at a consumer technology or media company
+  • Experience in growing scalable programs for Sales or Partnerships teams
+  • Experience working in organizations with cross-functional teams
+  • Experience working independently and a track record of taking initiative in dynamic environments
+  • Experience to multi-task and adapt well to changing environment
+
+### About Meta:  
+
+Meta builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps like Messenger, Instagram and WhatsApp further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology. People who choose to build their careers by building with us at Meta help shape a future that will take us beyond what digital connection makes possible today—beyond the constraints of screens, the limits of distance, and even the rules of physics.  
+
+Meta is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics. We also consider qualified applicants with criminal histories, consistent with applicable federal, state and local law. Meta participates in the E-Verify program in certain locations, as required by law. Please note that Meta may leverage artificial intelligence and machine learning technologies in connection with applications for employment.   
+
+Meta is committed to providing reasonable accommodations for candidates with disabilities in our recruiting process. If you need any assistance or accommodations due to a disability, please let us know at accommodations-ext@fb.com.  
+
+$124,000/year to $176,000/year + bonus + equity + benefits  
+
+Individual compensation is determined by skills, qualifications, experience, and location. Compensation details listed in this posting reflect the base hourly rate, monthly rate, or annual salary only, and do not include bonus, equity or sales incentives, if applicable. In addition to base compensation, Meta offers benefits. Learn more about benefits at Meta."
+02ef6d150496dc39,Indeed,Sr. Machine Learning Engineer,Sadaora,Data Scientist,remote,Full-time,2025-04-18,2025-04-23,Los Angeles,CA,,yearly,130000.0,200000.0,130000.0,200000.0,165000.0,https://www.indeed.com/viewjob?jk=02ef6d150496dc39,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"### About Sadaora & This Opportunity:
+
+At Sadaora, we believe your life deserves more than noise—it deserves clarity, purpose, and power. That’s why we are building NewBlazr, the world’s most advanced lifestyle platform, designed to know you, grow with you, and guide you. By combining the richness of your identity with a living intelligence system,** NewBlazr delivers deeply personalized insights and recommendations** that meet you exactly where you are. It understands your rhythms, anticipates your needs, and empowers every decision with confidence. This is more than technology. It’s your trusted companion in becoming the fullest, most informed version of yourself.
+
+We are a startup company that raised $130k in our pre-seed round. We built an MVP that excited our community and allowed us to obtain critical feedback to help guide our next steps. Now we are expanding our team to create the next version of the app , while driving the company to new heights. We expect to raise our seed round in months, and establish our Discord community within weeks.
+
+###  About This Role
+
+Are you a data-savvy innovator with a passion for crafting intelligent systems? As a Machine Learning Engineer at Sadaora you'll be instrumental in transforming vast datasets into actionable insights, driving the evolution of our AI capabilities. You'll design and implement sophisticated machine learning models, optimize algorithms for performance, and deploy scalable solutions that enhance our products and services.
+
+This role is ideal for someone who thrives on tackling complex challenges, excels in dynamic environments, and is dedicated to building high-impact AI applications. You'll collaborate closely with cross-functional teams—including data scientists, software engineers, and product managers—to bring visionary ideas to fruition. If you're eager to push the boundaries of machine learning and contribute to cutting-edge solutions in a collaborative setting, let's innovate together!
+
+###  Your Tasks
+
+Model Development & Deployment
+
+  • Design, train, and evaluate machine learning models using best-in-class frameworks.
+  • Architect scalable ML solutions and pipelines, from feature engineering to deployment.
+  • Implement rigorous testing, validation, and monitoring processes to ensure model reliability in production.
+
+Data Engineering & Infrastructure
+
+  • Work closely with data engineers to shape the data architecture required for robust ML workflows.
+  • Build efficient ETL pipelines to clean, preprocess, and transform large-scale datasets.
+
+Collaboration & Integration
+
+  • Partner with product managers, engineers, and business stakeholders to define ML use cases.
+  • Collaborate with software engineers to integrate ML models into production-grade APIs and applications.
+  • Translate complex ML concepts into business-relevant insights and recommendations.
+
+Research & Innovation
+
+  • Stay current with advancements in machine learning, AI, and related fields.
+  • Experiment with new algorithms, architectures, and tools to continuously enhance our capabilities.
+  • Contribute to a culture of experimentation, technical excellence, and intellectual curiosity.
+
+Requirements
+
+Required Qualifications
+
+  • 5+ years of experience developing, deploying, and maintaining ML models in production environments.
+  • Proficiency in Python and common ML libraries (e.g., Scikit-learn, TensorFlow, PyTorch, XGBoost).
+  • Strong foundation in statistics, linear algebra, probability, and optimization.
+  • Deep understanding of a range of ML techniques (regression, classification, clustering, NLP, deep learning).
+  • Experience with cloud platforms such as AWS, GCP, or Azure.
+  • Familiarity with containerization and orchestration tools (Docker, Kubernetes).
+  • Solid understanding of software engineering principles, version control (Git), and CI/CD workflows.
+
+Preferred Qualifications
+
+  • Experience working with unstructured data (e.g., text, images, audio).
+  • Exposure to MLOps tools and workflows (e.g., MLflow, TFX, SageMaker, Vertex AI).
+  • Background in building recommender systems, time series models, or generative AI applications.
+  • Working knowledge of data privacy, ethics, and model explainability (e.g., SHAP, LIME).
+  • Contributions to open-source ML projects or publications in peer-reviewed forums.
+
+Benefits
+
+Salary + Equity
+
+USD $130k – $200k + 1% – 1.5%
+
+  • Competitive salary, bonus, & equity packages
+  • Fully Remote & Flexible Work Schedule
+  • 401(k) retirement plan
+  • Unlimited PO
+  • Health, Dental, & Vision Insurance premiums fully covered by the company
+  • Leadership, Stretch Assignment and Growth Opportunities
+
+We are actively securing growth funding while preparing for our public launch in summer of 2025, when user-driven revenue begins. At that time, this role will transition into a full-time salaried position within the stated annual range. Until then, compensation will be deferred."
+5149ad9426135dd1,Indeed,"Business Data Scientist, gTech Ads, Professional Services",Google,Data Scientist,in-person,Full-time,2025-04-21,2025-04-23,Los Angeles,CA,,,,,,,,https://www.indeed.com/viewjob?jk=5149ad9426135dd1,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"This role may also be located in our Playa Vista, CA campus.   
+Note: By applying to this position you will have an opportunity to share your preferred working location from the following: Chicago, IL, USA; Atlanta, GA, USA; New York, NY, USA; Los Angeles, CA, USA; Seattle, WA, USA; Sunnyvale, CA, USA; San Francisco, CA, USA.   
+
+Minimum qualifications:  
+
+  • Master's degree in Statistics, Mathematics, Bioinformatics, Economics, a quantitative field, or equivalent practical experience.
+  • 3 years of experience using analytics to solve product or business problems, coding (e.g., Python, R, SQL), querying databases or statistical analysis, or a relevant PhD degree.
+  • 2 years of experience in a data science field.
+  • Experience with statistical software (e.g., R, Python, MATLAB) and database languages (e.g. SQL).
+
+Preferred qualifications:  
+
+  • 4 years of experience using analytics to solve product or business problems, coding (e.g., Python, R, SQL), querying databases or statistical analysis, or a relevant PhD degree.
+  • Experience delivering insights from ML to customers (problem scoping/definition, modeling, interpretation).
+  • Experience using or deploying digital analytics and measurement solutions.
+  • Proficiency with data extraction and modeling tools (SQL, Python), and an understanding of the statistical algorithms used in Marketing Analytics.
+  • Proficiency in Computer Vision and NLP in the context of marketing analytics, and the ability to bring cutting-edge generative AI technologies to customer issues in marketing.
+
+About the job   
+
+The gTech Ads Marketing Data Science team helps measure and optimize marketing ROI for Google’s biggest clients. We build bespoke models that address client’s key business issues. We are multi-disciplined professionals, PhDs, statisticians, economists, engineers, and former consultants with deep experience in Data Science, Machine Learning, and Marketing Analytics. We learn the innovative technologies that drive Google products and bring those innovations to life in the context of specific client needs.   
+In this role, you will be responsible for applying best data science practices to solve our ads customers complex problems in marketing. You will be passionate about bringing the best of Google’s ML capabilities to build innovative solutions that address our customer's problem-space. You will be responsible for executing on gTech’s strategy and goal to deliver applied data science to Google's biggest ads customers.   
+Google creates products and services that make the world a better place, and gTech’s role is to help bring them to life. Our teams of trusted advisors support customers globally. Our solutions are rooted in our technical skill, product expertise, and a thorough understanding of our customers’ complex needs. Whether the answer is a bespoke solution to solve a unique problem, or a new tool that can scale across Google, everything we do aims to ensure our customers benefit from the full potential of Google products.To learn more about gTech, check out ourvideo.   
+The US base salary range for this full-time position is $141,000-$202,000 + bonus + equity + benefits. Our salary ranges are determined by role, level, and location. Within the range, individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range for your preferred location during the hiring process.   
+Please note that the compensation details listed in US role postings reflect the base salary only, and do not include bonus, equity, or benefits. Learn more aboutbenefits at Google.   
+
+Responsibilities   
+
+  • Lead data science aspects of client engagements in the area of marketing effectiveness and marketing portfolio management with knowledge of ML and statistics.
+  • Collaborate with customers to resolve their issues and identify the best statistical techniques that can solve the problem. Own the development of end-to-end modeling framework.
+  • Engage important stakeholders to assess data and model readiness, and be able to scale a proof-of-concept to solution.
+  • Work with customer and internal teams to translate data and model results into tactical insights that are actionable for decision-making. Co-present to and work with clients to integrate recommendations into business processes.
+  • Collaborate with Product/Engineering teams to increase capabilities of our Applied Data Scientist (DS) team, employing methods which create opportunities for scale, proactively helping to drive innovation.
+
+Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See alsoGoogle's EEO Policy andEEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing ourAccommodations for Applicants form."
+ec90c57465cbd36c,Indeed,"Staff Data Scientist, Apps Team",Apple,Data Scientist,in-person,,2025-04-19,2025-04-23,Culver City,CA,,yearly,157000.0,278900.0,157000.0,278900.0,217950.0,https://www.indeed.com/viewjob?jk=ec90c57465cbd36c,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"The applications data science team is looking for an experienced staff-level data scientist who can build machine learning modeling capabilities as well as lead the development of impactful data products and insights. We support user growth of subscription services, product and feature development, content expansion, and optimization. We cover a wide area of the data spectrum including statistical modeling, causal inference, machine learning, and product analytics.  
+
+Description  
+
+As a staff data scientist, you will be responsible for building models, providing insights, evaluating product launches, finding opportunities for future development, and many more. You will partner with engineers, the product team, business leaders, designers, and other teams to bring better experiences to our users and grow the business. Is this you? If yes, please apply! Engage with business teams to see opportunities, understand requirements, and translate those requirements into technical solutions. Manage large, sophisticated projects from conception to completion, identify risks and develop frameworks, evaluate impact, and regularly connect with collaborators and the leadership team. Develop, validate, and maintain advanced behavior, demographic, behavioral-based predictive models, tools, and other capabilities. Collaborate with data engineers to implement robust production decision pipelines. Collaborate with different teams to formulate innovative solutions to test and implement sophisticated data mining techniques. Measure the impact of growth initiatives for subscription businesses by improving user acquisition, conversion, and retention. Collaborate and influence other data scientist peers on modeling framework and statistical methods to uncover insights from large-scale data.  
+
+Minimum Qualifications  
+
+  • 2+ years at the staff level as a data scientist with experience leading the development of data products and insights, as well as building machine learning modeling capabilities.
+  • 6+ years of overall industry experience in the areas of data science, statistics, and/or modeling to support user growth of subscription services, product, and feature development.
+  • Practical experience and theoretical understanding of advanced quantitative methods, statistical & machine learning model development, including regression, classification, clustering, anomaly detection, time-series analysis, deep learning, etc.
+  • Excellent presentation skills, distilling sophisticated analysis and concepts into concise business-focused takeaways.
+  • Strong skills in managing priorities and collaborating with diverse groups of collaborators, including engineering, product, business, design, etc.
+  • Familiarity with data tools like Hadoop, Spark, Hive, etc.
+  • Ability to extract product insights from data and identify the stories behind the patterns.
+  • Bachelor's degree in the fields of Statistics, Applied Mathematics, Machine Learning, CS, Predictive Analytics, or similar academic areas, or the equivalent industry experience in a related field.
+
+Preferred Qualifications  
+
+  • M.Sc. or Ph.D. in the fields of Statistics, Applied Mathematics, Machine Learning, CS, Predictive Analytics, or similar academic areas.
+  • We prefer a strong product sense and a passion for user experience.
+
+Pay & Benefits  
+
+At Apple, base pay is one part of our total compensation package and is determined within a range. This provides the opportunity to progress as you grow and develop within a role. The base pay range for this role is between $157,000 and $278,900, and your base pay will depend on your skills, qualifications, experience, and location.  
+
+Apple employees also have the opportunity to become an Apple shareholder through participation in Apple’s discretionary employee stock programs. Apple employees are eligible for discretionary restricted stock unit awards, and can purchase Apple stock at a discount if voluntarily participating in Apple’s Employee Stock Purchase Plan. You’ll also receive benefits including: Comprehensive medical and dental coverage, retirement benefits, a range of discounted products and free services, and for formal education related to advancing your career at Apple, reimbursement for certain educational expenses - including tuition. Additionally, this role might be eligible for discretionary bonuses or commission payments as well as relocation. Learn more about Apple Benefits.  
+
+Note: Apple benefit, compensation and employee stock programs are subject to eligibility requirements and other terms of the applicable plan or program.  
+
+Apple is an equal opportunity employer that is committed to inclusion and diversity. We seek to promote equal opportunity for all applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, Veteran status, or other legally protected characteristics. Learn more about your EEO rights as an applicant .  
+
+Submit Resume"
+8f003fba7c216b2a,Indeed,Lead Machine Learning Engineer,Novaprime,Data Scientist,remote,Full-time,2025-04-19,2025-04-23,Los Angeles,CA,,yearly,215000.0,235000.0,215000.0,235000.0,225000.0,https://www.indeed.com/viewjob?jk=8f003fba7c216b2a,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"***This role is fully remote within the U.S. (occasional travel to meet teams or partners) with a preference for East Coast. To reduce spam, we're not posting it as remote.***
+
+About Us:
+
+We are a forward-thinking mortgage technology company dedicated to evolving the mortgage industry. Our mission is to make homeownership more affordable. We accomplish our goals by focusing on outcomes, working with existing industry participants, and leveraging emerging technologies. Novaprime is backed by industry-leading institutions and investors and is partnered with some of the largest institutions in the mortgage industry.
+
+Job Description:
+
+We seek an exceptional and skilled Machine Learning Engineer to lead Novaprime's ML team. In this role, you will be pivotal in designing state-of-the-art ML products and developing core infrastructure that powers Novaprime's solutions. As part of this role, you will lead Novaprime’s ML team and collaborate with stakeholders and our product organization to manage the team’s roadmap and execution.
+
+You will focus on evaluating ML models and architectures, fine-tuning, integrating fully managed services, and scaling systems to meet enterprise demands. You will collaborate with the larger engineering organization to deliver efficient solutions from data ingestion and pre-processing to training, evaluation, deployment, and improvements. You are responsible for the team’s delivery of efficient and reliable solutions, including models, implementation of best practices in MLOps, monitoring, automated pipelines, model reproducibility, and facilitating seamless model versioning and rollout.
+
+You are experienced enough to guide our machine learning strategy and own the end-to-end ML lifecycle, from ideation to production deployment, including debugging, iterating, and releasing new models. At the same time, you are excited to be hands-on and build solutions that help Novaprime realize our mission of making homeownership more affordable.
+
+Responsibilities:
+
+  • Develop and implement a technical strategy aligned with our business goals.
+
+  • Design and implement various ML algorithms, approaches, architectures, and models to achieve key business outcomes.
+
+  • Drive implementation and delivery of ML systems, including custom domain-specific and fully managed ML solutions.
+
+  • Drive development from concept to market by combining various technologies and collaborating with a cross-functional team.
+
+  • Lead implementation of ML platform and infrastructure to ensure optimal and scalable performance.
+
+  • Implement new technologies that yield competitive advantages.
+
+  • Assist engineers in their work and decision-making processes.
+
+  • Develop monitoring systems to ensure functionality and efficiency.
+
+  • Build quality assurance and data protection processes.
+
+  • Collaborate with product managers, designers, and other stakeholders to develop strategies and implement new products and features.
+
+  • Stay current with the latest technologies to maintain competitiveness and technological leadership in the market.
+
+  • Various engineering-related tasks which continue to progress the organization’s mission.
+
+Requirements:
+
+  • B.S. in Computer Science or equivalent experience.
+
+  • 10+ years of industry experience.
+
+  • Knowledge of large-scale distributed application architecture, design, implementation and performance tuning.
+
+  • Experience with working with PyTorch, and the Python scientific stack (Numpy, Scikit-Learn, Pandas, etc).
+
+  • Experience with evaluating and launching open-source ML models.
+
+  • Experience with LLMs and automated prompt engineering.
+
+  • Experience with working with k8s and related technologies.
+
+  • Experience with one of the cloud platforms AWS/GCP/Azure.
+
+  • Experience with CI/CD tools like GitHub Actions, etc.
+
+  • Track record collaborating with product managers, designers, and engineers to deliver products and features to customers.
+
+  • Great written and verbal communication skills, sufficient for success in a remote and largely asynchronous work environment.
+
+  • Demonstrated capacity to clearly and concisely communicate about complex technical, architectural, and/or organizational problems and propose thorough iterative solutions.
+
+  • Positive and solution-oriented mindset.
+
+  • Exceptional working in a team environment as well as independently.
+
+  • Various tasks and responsibilities to further the organization’s success.
+
+Desired Experience:
+
+  • 6+ years of experience with machine learning algorithms and tools, artificial intelligence, deep learning, or natural language processing.
+
+  • Leading ML teams.
+
+  • Running and scaling RAG in production environments.
+
+  • Experience with parallel GPU utilization.
+
+  • Experience with developing machine learning platforms, frameworks, and/or infrastructure for production-ready systems.
+
+  • Experience with designing production-ready domain data models for performant and scalable systems.
+
+Benefits:
+
+  • Competitive salary, equity, and benefits.
+
+  • Mostly remote work.
+
+  • Opportunity to make a difference for millions and their ability to be homeowners.
+
+We are an equal opportunity employer and value diversity at our company. We do not discriminate based on race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.
+
+Compensation Range: $215K - $235K"
+1e75a58a345269de,Indeed,Machine Learning Engineer – Generative AI,The Aerospace Corporation,Data Scientist,hybrid,Full-time,2025-04-21,2025-04-23,El Segundo,CA,90245,yearly,110400.0,193500.0,110400.0,193500.0,151950.0,https://www.indeed.com/viewjob?jk=1e75a58a345269de,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"The Aerospace Corporation is the trusted partner to the nation’s space programs, solving the hardest problems and providing unmatched technical expertise. As the operator of a federally funded research and development center (FFRDC), we are broadly engaged across all aspects of space— delivering innovative solutions that span satellite, launch, ground, and cyber systems for defense, civil and commercial customers. When you join our team, you’ll be part of a special collection of problem solvers, thought leaders, and innovators. Join us and take your place in space. 
+
+Information Systems and Cyber Division (ISCD) staff couple the latest in information system technologies, such as elastic compute clouds, containerization, microservices, real-time operating systems, and visualization frameworks, with expertise in cyber security, software architecture, software engineering, data science, Artificial Intelligence, process improvement, and software development to deliver responsive, resilient, high-performance software intensive systems to our Intelligence Community, DoD, and civilian customers. 
+
+We are looking for a Machine Learning Engineer – ML Applications/Generative AI (Sr.MTS/Engineering Specialist – Computer Engineering | AI/ML) who can lead development of publicly available and Aerospace models into deployed applications to serve a variety of needs across the space industry. This individual will have a significant role in defining the Data Science and AI Department’s ML Platform and software development practices and help charter its scope relative to other departments within ISCD. 
+
+Work Model 
+
+This is a full-time position based in El Segundo (CA), Colorado Springs (CO), and Chantilly (VA) offering a hybrid work model that combines 3 regular onsite workdays and remote flexibility as the business needs allow. 
+
+What You’ll Be Doing 
+
+  • This role is for an individual who can join us in revolutionizing how Data Science and ML development is conducted within the company by helping DSAID define and streamline its ML platform, application interfaces, and deployment processes. 
+
+  • Developing, deploying, and maintaining machine-learning applications to serve a variety of government, commercial, and internal customers in the space industry. 
+
+  • Contributing as a technical lead to DSAID’s internal ML platform, code/pipeline repositories, and our software/ML engineering best practices. 
+
+  • Proactively engaging with other departments within and external to ISCD to determine application interfaces and use-cases. 
+
+  • Leading and mentoring junior staff in reviewing code and adoption of best practices. 
+
+What You Need to be Successful 
+
+Minimum Requirements for the Machine Learning Engineer – Generative AI (Senior Member of Technical Staff- Computer Engineering | AI/ML) 
+
+  • Bachelor’s degree in STEM, Computer Science or a related technical field. 
+
+  • 4 years of experience with Machine Learning and Data Science methodologies. 
+
+  • Two or more years of experience with containerization tools (Docker) and orchestration platforms (Kubernetes). 
+
+  • Two or more years of experience with APIs for serving machine learning models, RESTful services and microservice architectures. 
+
+  • Familiarity with SQL/NoSQL databases and with data storage solutions such as data lakes and data warehouses. 
+
+  • Familiarity with continuous integration/continuous deployment (CI/CD) pipelines. 
+
+  • Experience collaborating with data scientists , software developers (ie subject matter experts) and other stakeholders and an ability to document processes, code, and workflows effectively. 
+
+  • Willing to travel domestically less than 5% of the time if required. 
+
+  • This position requires ability to obtain and maintain a security clearance, which is issued by the U.S. government. U.S. citizenship is required to obtain a security clearance. 
+
+In addition to the above, the minimum requirements for the Machine Learning Engineer – Generative AI (Engineering Specialist - Computer Engineering | AI/ML) include: 
+
+  • Bachelor’s degree in STEM, Computer Science or a related technical field. 
+
+  • 6-8 years experience with Machine Learning and Data Science methodologies. 
+
+  • Four or more years of experience with containerization tools (Docker) and orchestration platforms (Kubernetes). 
+
+  • Four or more years of experience with APIs for serving machine learning models, RESTful services and microservice architectures. 
+
+  • Ability to lead development on ML engineering or software engineering projects and to proactively engage with internal stake holders to come up with new solutions. 
+
+How You Can Stand Out 
+
+It would be impressive if you have one or more of these:
+
+  • Master’s or advanced degree STEM in a relevant field 
+
+  • Experience or familiarity with common data and use-cases within the space industry 
+
+  • Demonstrated ML projects deployed as applications 
+
+  • Active top secret TS/SCI clearance 
+
+We offer a competitive compensation package where you’ll be rewarded based on your performance and recognized for the value you bring to our business. The grade-based pay range for this job is listed below. Individual salaries within that range are determined through a wide variety of factors including but not limited to education, experience, knowledge and skills. 
+
+(Min - Max) 
+
+$110,400 - $193,500 
+
+Pay Basis: Annual 
+
+Leadership Competencies 
+
+Our leadership philosophy is simple: every employee, regardless of level and role, can demonstrate leadership. At Aerospace, our commitment is our people. To cultivate our talent and ensure that we have a strong pipeline of future leaders, we want individuals who: 
+
+  • Operate Strategically
+  • Lead Change
+  • Engage with Impact
+  • Foster Innovation
+  • Deliver Results
+
+Ways We Reward Our Employees 
+
+During your interview process, our team will provide details of our industry-leading benefits. 
+
+Benefits vary and are applicable based on Job Type. A few highlights include:
+
+  • Comprehensive health care and wellness plans 
+
+  • Paid holidays, sick time, and vacation 
+
+  • Standard and alternate work schedules, including telework options 
+
+  • 401(k) Plan — Employees receive a total company-paid benefit of 8%, 10%, or 12% of eligible compensation based on years of service and matching contributions; employees are immediately eligible and vested in the plan upon hire 
+
+  • Flexible spending accounts 
+
+  • Variable pay program for exceptional contributions 
+
+  • Relocation assistance 
+
+  • Professional growth and development programs to help advance your career 
+
+  • Education assistance programs 
+
+  • An inclusive work environment built on teamwork, flexibility, and respect 
+
+We are all unique, from various backgrounds and all walks of life, yet one thing bonds all of us to each other—the belief that we can make a difference. This core belief empowers us to do our best work at The Aerospace Corporation. 
+
+Equal Opportunity Commitment 
+
+The Aerospace Corporation is an equal opportunity employer. All qualified applicants will receive consideration for employment and will not be discriminated against on the basis of race, age, sex (including pregnancy, childbirth, and related medical conditions), sexual orientation, gender, gender identity or expression, color, religion, genetic information, marital status, ancestry, national origin, protected veteran status, physical disability, medical condition, mental disability, or disability status and any other characteristic protected by state or federal law. If you’re an individual with a disability or a disabled veteran who needs assistance using our online job search and application tools or need reasonable accommodation to complete the job application process, please contact us by phone at 310.336.5432 or by email at 
+
+peoplemangmnt.mailbox@aero.org 
+
+. You can also review 
+
+Know Your Rights: Workplace Discrimination is Illegal 
+
+."
+36332874bda07ecf,Indeed,AI & GenAI Data Scientist – Director,PRICE WATERHOUSE COOPERS,Data Scientist,in-person,,2025-04-17,2025-04-23,Los Angeles,CA,,yearly,148000.0,317000.0,148000.0,317000.0,232500.0,https://www.indeed.com/viewjob?jk=36332874bda07ecf,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"At PwC, our people in data and analytics focus on leveraging data to drive insights and make informed business decisions. They utilise advanced analytics techniques to help clients optimise their operations and achieve their strategic goals. In data analysis at PwC, you will focus on utilising advanced analytical techniques to extract insights from large datasets and drive data-driven decision-making. You will leverage skills in data manipulation, visualisation, and statistical modelling to support clients in solving complex business problems. 
+
+Translating the vision, you set the tone, and inspire others to follow. Your role is crucial in driving business growth, shaping the direction of client engagements, and mentoring the next generation of leaders. You are expected to be a guardian of PwC's reputation, understanding that quality, integrity, inclusion and a commercial mindset are all foundational to our success. You create a healthy working environment while maximising client satisfaction. You cultivate the potential in others and actively team across the PwC Network, understanding tradeoffs, and leveraging our collective strength.
+
+Examples of the skills, knowledge, and experiences you need to lead and deliver value at this level include but are not limited to:
+
+  • Lead in line with our values and brand.
+  • Develop new ideas, solutions, and structures; drive thought leadership.
+  • Solve problems by exploring multiple angles and using creativity, encouraging others to do the same.
+  • Balance long-term, short-term, detail-oriented, and big picture thinking.
+  • Make strategic choices and drive change by addressing system-level enablers.
+  • Promote technological advances, creating an environment where people and technology thrive together.
+  • Identify gaps in the market and convert opportunities to success for the Firm.
+  • Adhere to and enforce professional and technical standards (e.g. refer to specific PwC tax and audit guidance) the Firm's code of conduct, and independence requirements.
+
+Minimum Degree Required (BQ)
+
+Bachelor's Degree
+
+Minimum Year(s) of Experience (BQ)
+
+10 year(s) 
+
+Degree Preferred
+
+Master's Degree 
+
+Preferred Knowledge/Skills
+
+Demonstrates thought leader-level abilities and/or a proven record of success managing the identification and addressing of client needs:
+
+  • Managing development teams in building of AI and GenAI solutions, including but not limited to analytical modeling, prompt engineering, general all-purpose programming (e.g., Python), testing, communication of results, front end and back-end integration, and iterative development with clients
+  • Documenting and analyzing business processes for AI and Generative AI opportunities, including gathering of requirements, creation of initial hypotheses, and development of AI/GenAI solution approach
+  • Working with client team to understand their business problem and select the appropriate models and approaches for AI/GenAI use cases
+  • Designing and solutioning AI/GenAI architectures for clients, specifically for plugin-based solutions (i.e., ChatClient application with plugins) and custom AI/GenAI application builds
+  • Managing teams to process unstructured and structured data to be consumed as context for LLMs, including but not limited to embedding of large text corpus, generative development of SQL queries, building connectors to structured databases
+  • Managing daily operations of a global data and analytics team on client engagements, review developed models, provide feedback and assist in analysis;
+  • Directing data engineers and other data scientists to deliver efficient solutions to meet client requirements;
+  • Leading and contributing to development of proof of concepts, pilots, and production use cases for clients while working in cross-functional teams;
+  • Facilitating and conducting executive level presentations to showcase GenAI solutions, development progress, and next steps
+  • Structuring, write, communicate and facilitate client presentations; and,
+  • Managing staff through coaching, providing feedback, and guiding work performance.
+
+Demonstrates thought leader-level abilities and/or a proven record of success learning and performing in functional and technical capacities, including the following areas:
+
+  • Managing GenAI application development teams including back-end and front-end integrations
+  • Using Python (e.g., Pandas, NLTK, Scikit-learn, Keras, etc.), common LLM development frameworks (e.g., Langchain, Semantic Kernel), Relational storage (SQL), Non-relational storage (NoSQL);
+  • Experience in analytical techniques such as Machine Learning, Deep Learning and Optimization
+  • Vectorization and embedding, prompt engineering, RAG (retrieval, augmented, generation) workflow dev
+  • Understanding or hands on experience with Azure, AWS, and / or Google Cloud platforms
+  • Experience with Git Version Control, Unit/Integration/End-to-End Testing, CI/CD, release management, etc.
+
+Learn more about how we work: https://pwc.to/how-we-work  
+
+PwC does not intend to hire experienced or entry level job seekers who will need, now or in the future, PwC sponsorship through the H-1B lottery, except as set forth within the following policy: https://pwc.to/H-1B-Lottery-Policy.  
+
+As PwC is an equal opportunity employer, all qualified applicants will receive consideration for employment at PwC without regard to race; color; religion; national origin; sex (including pregnancy, sexual orientation, and gender identity); age; disability; genetic information (including family medical history); veteran, marital, or citizenship status; or, any other status protected by law.  
+
+For only those qualified applicants that are impacted by the Los Angeles County Fair Chance Ordinance for Employers, the Los Angeles' Fair Chance Initiative for Hiring Ordinance, the San Francisco Fair Chance Ordinance, San Diego County Fair Chance Ordinance, and the California Fair Chance Act, where applicable, arrest or conviction records will be considered for Employment in accordance with these laws. At PwC, we recognize that conviction records may have a direct, adverse, and negative relationship to responsibilities such as accessing sensitive company or customer information, handling proprietary assets, or collaborating closely with team members. We evaluate these factors thoughtfully to establish a secure and trusted workplace for all.  
+
+Applications will be accepted until the position is filled or the posting is removed, unless otherwise set forth on the following webpage. Please visit this link for information about anticipated application deadlines: https://pwc.to/us-application-deadlines  
+
+The salary range for this position is: $148,000 - $317,000, plus individuals may be eligible for an annual discretionary bonus. For roles that are based in Maryland, this is the listed salary range for this position. Actual compensation within the range will be dependent upon the individual's skills, experience, qualifications and location, and applicable employment laws. PwC offers a wide range of benefits, including medical, dental, vision, 401k, holiday pay, vacation, personal and family sick leave, and more. To view our benefits at a glance, please visit the following link: https://pwc.to/benefits-at-a-glance"
+6ee7202eb5c5a623,Indeed,"Staff Software Engineer, Machine Learning",Google,Data Scientist,in-person,Full-time,2025-04-22,2025-04-23,Los Angeles,CA,,,,,,,,https://www.indeed.com/viewjob?jk=6ee7202eb5c5a623,https://www.indeed.com/jobs?q=Data+Scientist&l=Los+Angeles%2C+CA&radius=25&fromage=7,"Note: By applying to this position you will have an opportunity to share your preferred working location from the following: Mountain View, CA, USA; Los Angeles, CA, USA; New York, NY, USA.   
+
+Minimum qualifications:  
+
+  • Bachelor's degree or equivalent practical experience.
+  • 8 years of experience with software development in one or more programming languages (e.g., Python, C, C++, Java).
+  • 5 years of experience testing, and launching software products.
+  • Experience with machine learning computer vision algorithm development and tools (e.g., Tensorflow, Flume, Machine Learning Libraries), Artificial Intelligence, Deep Learning.
+
+Preferred qualifications:  
+
+  • Master’s degree or PhD in Engineering, Computer Science, or a related technical field.
+  • 3 years of experience in a technical leadership role leading project teams and setting technical direction.
+  • 3 years of experience working in a complex, matrixed organization involving cross-functional, or cross-business projects.
+  • Experience with LLM deployment, fine tuning, training, prompt engineering.
+  • Experience launching applied ML, NLP or LLM projects.
+
+About the job   
+
+Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software engineer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward.   
+Google Photos is a photo sharing and storage service developed by Google. Photos is one of the most sought after products at Google and is looking for both client-side (web and mobile), with server-side (search, storage, serving) and machine intelligence (learning, computer vision) Software Engineers. We are dedicated to making Google experiences centered around the user.   
+The US base salary range for this full-time position is $197,000-$291,000 + bonus + equity + benefits. Our salary ranges are determined by role, level, and location. Within the range, individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range for your preferred location during the hiring process.Please note that the compensation details listed in US role postings reflect the base salary only, and do not include bonus, equity, or benefits. Learn more aboutbenefits at Google.   
+Responsibilities   
+
+  • Provide technical leadership on high-impact projects.
+  • Influence and coach a distributed team of engineers.
+  • Facilitate alignment and clarity across teams on goals, outcomes, and timelines.
+  • Manage project priorities, deadlines, and deliverables.
+  • Design, develop, test, deploy, maintain, and enhance large scale software solutions.
+
+Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See alsoGoogle's EEO Policy andEEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing ourAccommodations for Applicants form."
