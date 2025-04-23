@@ -419,66 +419,95 @@ def display_overview_tab(df: pd.DataFrame) -> None:
                 st.plotly_chart(work_setting_fig, use_container_width=True)
 
 
-def create_salary_by_job_title_chart(df: pd.DataFrame) -> Optional[go.Figure]:
-    """Create box plot of salary ranges by top job titles."""
-    if not check_required_columns(df, ['title', 'salary_midpoint_yearly']):
+def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.Figure]:
+    """Create a scatterplot of salary by job title, company, and location."""
+    if not check_required_columns(df, ['title', 'company', 'salary_midpoint_yearly']):
         return None
     
-    # Get job titles with enough data
-    title_counts = df.groupby('title').size().reset_index(name='count')
-    title_counts = title_counts.sort_values('count', ascending=False)
+    # Check if we have location data
+    has_state = 'state' in df.columns and not df['state'].isna().all()
+    has_city = 'city' in df.columns and not df['city'].isna().all()
     
-    # Select top job titles with at least 2 data points
-    top_titles = title_counts[title_counts['count'] >= 2].head(15)['title'].tolist()
-    
-    if len(top_titles) < 3:
+    if not (has_state or has_city):
         return None
     
-    filtered_df = df[df['title'].isin(top_titles)]
+    # Filter for rows with salary data
+    filtered_df = df.dropna(subset=['salary_midpoint_yearly'])
+    if len(filtered_df) < 5:
+        return None
     
-    fig = px.box(
-        filtered_df,
+    # Get top companies and job titles for better visualization
+    top_companies = filtered_df['company'].value_counts().nlargest(10).index.tolist()
+    top_titles = filtered_df['title'].value_counts().nlargest(15).index.tolist()
+    
+    # Filter for top companies and titles
+    plot_df = filtered_df[
+        (filtered_df['company'].isin(top_companies)) & 
+        (filtered_df['title'].isin(top_titles))
+    ].copy()
+    
+    if len(plot_df) < 5:
+        # If too restrictive, just use top titles
+        plot_df = filtered_df[filtered_df['title'].isin(top_titles)].copy()
+    
+    # Create location field
+    if has_city and has_state:
+        plot_df['location'] = plot_df.apply(
+            lambda x: f"{x['city']}, {x['state']}" if pd.notna(x['city']) else x['state'], 
+            axis=1
+        )
+    elif has_state:
+        plot_df['location'] = plot_df['state']
+    else:
+        plot_df['location'] = plot_df['city']
+    
+    # Set a default shape for missing state data
+    if has_state:
+        plot_df['state_for_shape'] = plot_df['state'].fillna('Unknown')
+    else:
+        plot_df['state_for_shape'] = 'Unknown'
+    
+    # Create the figure
+    fig = px.scatter(
+        plot_df,
         x='title',
         y='salary_midpoint_yearly',
-        title='Salary Ranges by Top Job Titles',
-        labels={'title': 'Job Title', 'salary_midpoint_yearly': 'Annual Salary ($)'}
+        color='company',
+        symbol='state_for_shape',
+        size=[1] * len(plot_df),  # Uniform size 
+        hover_name='title',
+        hover_data={
+            'title': False,  # Hide title in hover as it's already the x-axis
+            'salary_midpoint_yearly': True,
+            'company': True,
+            'location': True,
+            'state_for_shape': False,  # Hide this in hover as it's redundant
+        },
+        labels={
+            'title': 'Job Title',
+            'salary_midpoint_yearly': 'Annual Salary ($)',
+            'company': 'Company',
+            'location': 'Location'
+        },
+        title='Salary Distribution by Job Title, Company, and Location',
     )
     
+    # Update layout for better readability
     fig.update_layout(
         xaxis={'categoryorder': 'total descending', 'tickangle': 45},
         xaxis_title='Job Title',
         yaxis_title='Annual Salary ($)',
-        height=500  # Make the chart taller to accommodate more titles
+        legend_title_text='Company',
+        height=600,
+        showlegend=True,
     )
     
-    return fig
-
-
-def create_salary_by_job_type_chart(df: pd.DataFrame) -> Optional[go.Figure]:
-    """Create box plot of salary by job type."""
-    if not check_required_columns(df, ['job_type', 'salary_midpoint_yearly']):
-        return None
+    # Format y-axis tick labels as currency
+    fig.update_layout(yaxis=dict(tickprefix='$', tickformat=','))
     
-    # Filter out job types with too few data points
-    job_type_counts = df.groupby('job_type').size().reset_index(name='count')
-    valid_job_types = job_type_counts[job_type_counts['count'] >= 2]['job_type'].tolist()
-    
-    if len(valid_job_types) < 2:
-        return None
-    
-    filtered_df = df[df['job_type'].isin(valid_job_types)]
-    
-    fig = px.box(
-        filtered_df,
-        x='job_type',
-        y='salary_midpoint_yearly',
-        title='Salary Distribution by Job Type',
-        labels={'job_type': 'Job Type', 'salary_midpoint_yearly': 'Annual Salary ($)'}
-    )
-    
-    fig.update_layout(
-        xaxis_title='Job Type',
-        yaxis_title='Annual Salary ($)'
+    # Update hover template
+    fig.update_traces(
+        hovertemplate='<b>%{hovertext}</b><br>Salary: $%{y:,.0f}<br>Company: %{customdata[1]}<br>Location: %{customdata[2]}'
     )
     
     return fig
@@ -589,11 +618,13 @@ def display_salary_tab(df: pd.DataFrame) -> None:
             ):
                 st.plotly_chart(salary_by_setting_fig, use_container_width=True)
     
-    # Row 2: Salary by job title - full width
-    st.subheader("Salary by Job Title")
+    # Row 2: Salary by job title, company and location - full width
+    st.subheader("Salary by Job Title, Company, and Location")
     
-    if salary_by_title_fig := create_salary_by_job_title_chart(df):
-        st.plotly_chart(salary_by_title_fig, use_container_width=True)
+    if salary_scatter_fig := create_salary_company_location_scatterplot(df):
+        st.plotly_chart(salary_scatter_fig, use_container_width=True)
+    else:
+        st.info("Not enough data to create the salary scatterplot. Ensure job titles, companies, and salary data are available.")
     
     # Row 3: Location-based salary intelligence
     st.subheader("Location-Based Salary Intelligence")
