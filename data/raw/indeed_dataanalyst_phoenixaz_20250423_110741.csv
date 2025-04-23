@@ -1,0 +1,2065 @@
+﻿job_id,source,title,company,queried_job_title,work_setting,job_type,date_posted,date_scraped,city,state,zip,salary_period,salary_min,salary_max,salary_min_yearly,salary_max_yearly,salary_midpoint_yearly,job_url,search_url,job_description
+129285ca7e837802,Indeed,SAP Logistics Business Analyst (Remote),NTT DATA,Data Analyst,remote,,2025-04-23,2025-04-23,Tempe,AZ,,hourly,80.0,85.0,166400.0,176800.0,171600.0,https://www.indeed.com/viewjob?jk=129285ca7e837802,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Company Overview:  
+Req ID: 303941  
+NTT DATA strives to hire exceptional, innovative and passionate individuals who want to grow with us. If you want to be part of an inclusive, adaptable, and forward-thinking organization, apply now.  
+We are currently seeking a SAP Logistics Business Analyst (Remote) to join our team in Phoenix, Arizona (US-AZ), United States (US).  
+
+Job Description:  
+In these roles you will be responsible for:  
+Data identification and mapping for migrating legacy data to SAP  
+Support Data Cleansing activities as required  
+Perform migration rehearsals, cutover tasks and post go-live support.  
+Preload and post load validation of migration results, handle fallout data and advise on data cleansing requirements.  
+Requirements for this role include:  
+SAP LE background with knowledge of LE-WM and Transportations processes  
+Knowledge and experience working with LE master and transactional data.  
+Extensive experience of data management and migration activities in an SAP environment  
+Experience in data analysis and reconciliation and able to prove correctness and completeness of migration tasks.  
+Experience with cutover planning and preparation of data migration runbooks  
+Good consulting skills are a pre-requisite, with business facing consulting capability  
+Knowledge of SAP tables, master data and transactional data fields, SAP data fields.  
+Minimum 2 full cycle SAP implementations. At least 4 years working on data migrations  
+Must be a US Citizen  
+Preferences: -  
+LSMW, ABAP experience  
+Ability to communicate (oral/written) effectively to exchange information with our client.  
+Required schedule availability for this position is Monday-Friday (08:00am to 05:00pm MST). The shift timings can be changed as per client.  
+
+About NTT DATA:  
+Where required by law, NTT DATA provides a reasonable range of compensation for specific roles. The starting hourly range for this remote role is HOURLY RATE $80.00/Hour TO $85.00/Hour. This range reflects the minimum and maximum target compensation for the position across all US locations. Actual compensation will depend on several factors, including the candidate's actual work location, relevant experience, technical skills, and other qualifications. This position may also be eligible for incentive compensation based on individual and/or company performance.  
+This position is eligible for company benefits that will depend on the nature of the role offered. Company benefits may include medical, dental, and vision insurance, flexible spending or health savings account, life, and AD&D insurance, short-and long-term disability coverage, paid time off, employee assistance, participation in a 401k program with company match, and additional voluntary or legally required benefits.  
+
+NTT DATA is a $30 billion trusted global innovator of business and technology services. We serve 75% of the Fortune Global 100 and are committed to helping clients innovate, optimize and transform for long term success. As a Global Top Employer, we have diverse experts in more than 50 countries and a robust partner ecosystem of established and start-up companies. Our services include business and technology consulting, data and artificial intelligence, industry solutions, as well as the development, implementation and management of applications, infrastructure and connectivity. We are one of the leading providers of digital and AI infrastructure in the world. NTT DATA is a part of NTT Group, which invests over $3.6 billion each year in R&D to help organizations and society move confidently and sustainably into the digital future. Visit us at us.nttdata.com  
+
+NTT DATA endeavors to make https://us.nttdata.com accessible to any and all users. If you would like to contact us regarding the accessibility of our website or need assistance completing the application process, please contact us at https://us.nttdata.com/en/contact-us. This contact information is for accommodation requests only and cannot be used to inquire about the status of applications. NTT DATA is an equal opportunity employer. Qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or protected veteran status. For our EEO Policy Statement, please click here. If you’d like more information on your EEO rights under the law, please click here. For Pay Transparency information, please click here."
+4d6f20463c747f66,Indeed,Data Analyst,"Okland Construction Co., Inc.",Data Analyst,in-person,Full-time,2025-04-19,2025-04-23,Phoenix,AZ,,,,,,,,https://www.indeed.com/viewjob?jk=4d6f20463c747f66,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Description
+
+## DATA ANALYST
+
+JOB SUMMARY
+
+Okland Construction is seeking a skilled and proactive data analyst to join our dynamic team. The ideal candidate will leverage their expertise in data analytics, SQL, programming, API integration, and Power BI to transform complex data into actionable insights. This role also requires proficiency in Microsoft Fabric for advanced data analytics development. The data analyst will play a critical part in supporting our decision-making processes and driving operational efficiency.
+
+ABOUT US
+
+Founded in 1918, Okland Construction operates as a regional general contracting and construction management company with now nearly 1,000 employees and growing. It supervises the architectural, engineering, bidding, contracting, building, and inspection from the beginning to the end of the project and specializes in concrete self-preform on a large commercial scale.
+
+WHY OKLAND?
+
+  • A people focused culture united by our shared values
+  • Progressive leadership
+  • Growth, training, and development opportunities
+  • Competitive salary rates
+  • Generous PTO
+  • Health, Life, & Disability Insurance
+  • 401(k) with company match
+  • Employee Recognition and rewards
+  • Company bonus eligibility
+  • A commitment to delivering the most remarkable experience for all stakeholders
+
+ESSENTIAL DUTIES AND RESPONSIBILITIES
+
+  • Design, develop, and maintain SQL queries to extract, manipulate, and analyze data from various sources.
+  • Perform light programming tasks to automate data processing and enhance reporting functionality.
+  • Integrate and work with APIs to pull data from external sources into our systems.
+  • Utilize Power BI to create visually appealing and actionable dashboards and reports for stakeholders.
+  • Collaborate with cross-functional teams to understand business requirements and deliver tailored data solutions.
+  • Employ Microsoft Fabric tools for advanced data analytics development and ensure seamless integration into business processes.
+  • Identify data trends, patterns, and anomalies to provide insights that inform strategic decisions.
+  • Maintain and document data processes, ensuring accuracy and integrity across all analytics projects.
+
+EDUCATION/EXPERIENCE REQUIREMENTS
+
+  • Bachelor’s degree in Computer Science, Data Analytics, Statistics, or a related field.
+  • Proven experience in SQL development and database management.
+  • Familiarity with programming languages (e.g., Python, R, or others suitable for data analytics).
+  • Strong knowledge of API integration and data extraction methodologies.
+  • Expertise in Power BI, including dashboard creation, report generation, and data modeling.
+  • Hands-on experience with Microsoft Fabric for data analytics development.
+  • Excellent analytical, problem-solving, and communication skills.
+  • Ability to work collaboratively in a team environment while managing individual projects.
+
+PHYSICAL REQUIREMENTS
+
+The physical demands described here are representative of those that must be met by an employee to successfully perform the essential responsibilities of this job. Reasonable accommodations may be made to enable individuals with disabilities to perform the essential responsibilities.
+
+While performing the duties of this job, the employee is regularly required to sit, talk, and/or hear. The employee is frequently required to use hands to finger, handle or feel. The employee is occasionally required to reach with hands and arms. The employee is occasionally required to climb or balance, stoop, kneel, crouch, and/or crawl. The employee must also occasionally lift and/or move up to 20 pounds. Specific vision abilities include close vision and color vision. The employee is also required to frequently inspect the project and may be exposed to ongoing construction and various weather conditions. The noise level in the work environment may range from moderate to loud.
+
+Okland is an equal opportunity employer and considers all applicants for employment based on merit, competence, performance, and business needs. We do not discriminate on the basis of any status protected under federal, state, or local law. Applicants will be considered regardless of their race, color, sex, gender identity or expression, age, religion, creed, national origin, citizenship status, sexual orientation, genetic information, physical or mental disability, military status or any other characteristic protected under federal, state, or local law. In addition to complying with all applicable laws, Okland also has a strong corporate commitment to inclusion.
+
+Notice to all Employment, Staffing & Recruiting Agencies and Recruiters: We please ask that you do not directly email, call or visit our hiring managers. Okland Construction does not accept unsolicited resumes, and should any be received from a third party, they will not be considered unless a signed agreement is in place. If you would like to discuss becoming a preferred staffing vendor to Okland Construction, please contact our recruitment team, who will advise you on the process."
+7e3e7d25ac8f8f49,Indeed,Payment Operations Analyst,Global Payment Holding Company,Data Analyst,remote,Full-time,2025-04-23,2025-04-23,Tempe,AZ,85281,yearly,52400.0,72000.0,52400.0,72000.0,62200.0,https://www.indeed.com/viewjob?jk=7e3e7d25ac8f8f49,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Every day, Global Payments makes it possible for millions of people to move money between buyers and sellers using our payments solutions for credit, debit, prepaid and merchant services. Our worldwide team helps over 3 million companies, more than 1,300 financial institutions and over 600 million cardholders grow with confidence and achieve amazing results. We are driven by our passion for success and we are proud to deliver best-in-class payment technology and software solutions. Join our dynamic team and make your mark on the payments technology landscape of tomorrow.
+
+The position is not open to candidates that will require Sponsorship now or anytime in the future. 
+
+The Payment Operations Analyst is a vital role within the MineralTree Payment Operations Team. In this role you will be responsible for analyzing our supplier network, producing client-facing spend analysis reports, and providing insightful reporting on key revenue drivers and business performance KPI’s. You will be responsible for designing and delivering weekly and monthly updates to leadership on business performance trends and insights, analyzing data from a variety of sources, and presenting the findings to key stakeholders, as well as maintaining accurate revenue reporting in partnership with our Finance team.
+
+We are looking for a self-driven, detail-oriented candidate who has demonstrated success in designing and analyzing robust data sets from multiple sources, and experience driving efficiencies while managing multiple deadlines. This individual must have extensive experience in Microsoft Excel, Google Sheets, and other analytical tools. Tableau, Sigma, and Salesforce experience is a plus. The ideal candidate must be able to operate in a fast-paced, collaborative environment that will require the individual to engage with a variety of cross-functional internal and external partners to execute on the following:
+
+Responsibilities:
+
+  • Create informative and interactive data analysis, including customer-facing visualization, using analytics tools such as Sigma Computing, as well as MS Excel and Google Sheets
+
+  • Manage monthly revenue reporting routines, including QA and reconciliation of revenue reporting and timely submission to Finance
+
+  • Collaborate with internal business partners to understand requirements and conceive solutions that enable decision making, including but not limited to, weekly/monthly/quarterly performance metric reporting, team scorecards/dashboards, operational performance KPI’s, financial reporting and customer-facing materials
+
+  • Analyze data trends and patterns to identify revenue growth opportunities, areas of risk, as well as areas for improvement and operational efficiencies
+
+  • Deliver timely monthly/quarterly updates to leadership on business performance, trends, and insights
+
+  • Execute ad-hoc analysis and reporting
+
+  • Other duties as required to support the success of MineralTree and our customers
+
+What Are We Looking For in This Role?
+
+Minimum Qualifications
+
+  • Bachelor’s degree in a relevant field (e.g. Business Administration, Computer Science, Analytics, Finance) or equivalent practical experience
+
+  • 2 + years of relevant experience in business operations, finance operations, sales operations, or related fields, preferably in the financial services, fintech or software (SaaS) industry
+
+  • Professional experience working with end-users to meet business needs
+
+What Are Our Desired Qualifications, Skills and Capabilities?
+
+  • Proven experience in operations analysis and reporting with strong proficiency in spreadsheet tools, particularly Excel and Google Sheets (e.g. advanced formulas, pivot tables, macros, data validation)
+
+  • Excellent analytical skills with the ability to interpret complex data and provide actionable insights
+
+  • Proven experience with creating visually appealing and consumable analysis, reports and executive dashboards
+
+  • Critical thinker with strong problem-solving abilities, and a meticulous attention to detail with the ability to identify and resolve data discrepancies
+
+  • Experience handling large amounts of data including data from diverse sources that must be transformed to conduct analysis
+
+  • Ability to comprehend and clearly communicate complex concepts in a fast-paced, dynamic environment and provide strong documentation
+
+  • Proven ability to work independently, and self-motivated with the ability to prioritize across multiple workstreams, manage multiple projects simultaneously, and meet deadlines
+
+  • Working understanding of the Commercial Card/B2B payments eco-system a plus
+
+  • Experience with Tableau or Sigma Computing, SQL, MS Access a plus
+
+  • Supervision - Normally receives little instruction on day-to-day work, general instructions on new assignments
+
+“The position listed in this requisition is ineligible for the referral bonus award program”
+
+This position is eligible to be considered for remote hiring
+
+#LI-Remote
+
+Apply By: Friday, May 2, 2025
+
+Pay: Pay Range is from $52,400.00 - $72,000.00 and there is an opportunity for additional commissions/incentive associated with this role.
+
+The above represents the expected salary range for this job requisition. Ultimately, in determining your pay, we'll consider your location, experience, and other job-related factors.
+
+""Candidates and applicants are advised they may redact age information from requested items like transcripts, resumes, and certificates attached to their application for positions that can be performed in Colorado.""
+
+Benefits: Global Payments offers a comprehensive benefits package to all of our team members, including medical, dental and vision care, EAP programs, paid time off, recognition programs, retirement and investment options, charitable gift matching programs, and worldwide days of service. To learn more, review our Benefits page at: https://jobs.globalpayments.com/en/why-global-payments/benefits/
+
+Global Payments Inc. is an equal opportunity employer. Global Payments provides equal employment opportunities to all employees and applicants for employment without regard to race, color, religion, sex (including pregnancy), national origin, ancestry, age, marital status, sexual orientation, gender identity or expression, disability, veteran status, genetic information or any other basis protected by law. If you wish to request reasonable accommodations related to applying for employment or provide feedback about the accessibility of this website, please contact jobs@globalpay.com."
+2d5e2465d7b5bdfc,Indeed,Business Intelligence Analyst,Genius Monkey,Data Analyst,remote,Full-time,2025-04-17,2025-04-23,Gilbert,AZ,,,,,,,,https://www.indeed.com/viewjob?jk=2d5e2465d7b5bdfc,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"BI Analyst
+
+Genius Monkey is a rapidly growing digital advertising technology firm with an advanced full-service platform designed for today's real-time programmatic advertising needs. We work with both advertising agencies as well as direct relationships to advise, execute and support digital marketing campaigns, including programmatic display, video, audio, and OTT/CTV. Genius Monkey’s unique and significant competitive advantage is based on our cutting-edge proprietary analytics systems, offering our clients an advanced toolset for measuring the effectiveness and return on their digital advertising spend.
+
+We are currently seeking an analytical individual to assist Genius Monkey with acquiring data from multiple sources, organizing data for accessibility, interpreting trends and patterns, and developing new reports to assist with answering business questions. The individual will help perform analysis and interpret trends or patterns in data to provide insight to Genius Monkey and its many clients. A good candidate will have strong communication skills and be able to clearly articulate findings with stakeholders.
+
+This role's success depends on the ability to analyze large datasets to reveal business insights and metrics. These insights will enable strategic decision-making, operational optimization, trend identification, and ultimately drive business growth and success.
+
+Responsibilities
+
+  • Primarily responsible for developing new reports for the business utilizing off-the-shelf analytics tools
+  • Collect and analyze data and work with development to ensure all data necessary is available
+  • Be able to provide quality assurance testing on new reports.
+  • Will work closely with executives to provide necessary reporting.
+  • Analyzing large datasets to uncover key business insights and metrics.
+  • Visualizing data through charts, graphs, and dashboards to communicate insights and recommendations
+  • Collaborating with cross-functional teams, including project managers, engineers, and designers
+  • Staying up-to-date with trends in data visualization, BI tools, and analytics best practices
+
+Skills
+
+  • Strong analytical background to make logical recommendations
+  • Needs strong communication skills and can clearly understand problems.
+  • Proficiency with BI platforms, such as Looker, Power BI, or Tableau, and experience with SQL and spreadsheets
+  • Preferable experience in Salesforce.com, BigQuery, or other data warehouses
+  • Bachelor's degree in a related field or equivalent work experience
+
+If interested and you believe you are a stellar fit for this position, please submit your resume along with a cover letter that only includes a quote from your favorite movie and your favorite food."
+d4210b9530101575,Indeed,Business Intelligence Analyst,Donor Network of Arizona (DNA),Data Analyst,in-person,,2025-04-21,2025-04-23,Tempe,AZ,,,,,,,,https://www.indeed.com/viewjob?jk=d4210b9530101575,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"About Us:  
+Donor Network of Arizona’s mission is to make the most of life through the gift of organ and tissue donation. We challenge ourselves and others every day to realize Arizona's potential to save and improve lives. Every employee at Donor Network of Arizona is responsible for embracing the organizational culture by upholding the Donor Network of Arizona’s core values of Positive Energy, Passion and Eagerness.
+
+We Offer:  
+Competitive Salary   
+Organizational Incentive Program Annually, up to 10% (7% at target)  
+Very Generous Medical, Dental & Vision Insurance  
+Paid Life Insurance and LTD Insurance  
+Voluntary Life Insurance options  
+403b employer match and profit sharing  
+Generous Tuition Assistance Program  
+Employee Assistance Program  
+Employee Wellness Program  
+
+Business Intelligence Analyst:  
+This position is responsible for supporting operations and organizational objectives by creating high quality, complex and timely reports and dashboards through the use of SQL language, Python and the use of Business Intelligence (BI) tools, such as SSRS, DundasBI, and PowerBI. This position will function at the guidance of the Data Systems and Analytics Manager to ensure data and information reported to internal and external partners is functioning optimally and systematically through report designing, building, maintaining, and prioritizing. The position will also partner with multiple stakeholders throughout the organization, maintaining open, productive, and timely communication. This position is also responsible for adhering to all established standard operating procedures, federal, state, and association regulations.
+
+Position Responsibilities:  
+Supports the direction of department leadership in the utilization of data and information.  
+Creates high quality, complex and timely reports, visualizations, dashboards, and documents to fulfill information requests using BI technologies (e.g. SSRS and Dundas) as requested by DNA management.  
+Maintains, validates, and verifies data reporting in keeping with regulatory requirements (UNOS, CMS and FDA) and association requirements (AOPO, AATB, EBAA).   
+Assists and coordinates with organizational departments with the use and integration of available information delivery alternatives (e.g., static reports, dashboards, self-service analytics tools, and data extracts).  
+Utilizes multi-dimensional integrated data as developed by Business Intelligence and Information Technology data solutions to meet DNA management intelligence needs.  
+Maintains working knowledge of business processes and key metrics used in organizational operations.  
+Provides technical assistance and cross training to other team members related to assigned areas and role competencies.  
+Reports data errors to department leadership.  
+Responsible for working collaboratively and maintaining open communication with others throughout DNA, using customer centric methodologies (face-to-face, MS Teams, email, phone, meetings, and other solutions) to ensure accurate information, timely project execution, and information assimilation with all key stakeholders involved.  
+Plans for and participates in administrative meetings and in-services as requested by DNA management, as assigned.  
+Performs other related duties as required.  
+
+Qualifications:  
+
+Minimum Education:  
+Bachelor degree with coursework in Computer Science, Mathematics, Analytics, Statistics or related field  
+
+Minimum Qualifications:  
+2+ Years experience with BI analytics solutions (DundasBI, Tableau, Qlik, or PowerBI)   
+2 + Years experience in report writing using SSRS or equivalent.  
+Knowledge of SQL language  
+Possess strong analytical and organizational skills  
+Strong interpersonal, collaboration, and communication skills  
+Ability to manage several tasks/projects concurrently and prioritize work effectively  
+
+Preferred Education  
+Bachelor’s Degree or higher in statistics, mathematics, data analytics, economics or other related field, or equivalent work experience   
+
+Preferred Experience  
+Experience in organ and tissue donation or transplantation industry  
+4+ Years of intermediate or advanced level experience with BI analytics solutions  
+1 Year of Project Management experience  
+Knowledge of Hospital Medical Records, Healthcare, and/or Medical Terminology  
+
+Vision Requirements:   
+Near Acuity: ability to see clearly at 20 inches or less  
+Color vision: ability to distinguish and identify different colors  
+
+Working Conditions:  
+Subject to many interruptions  
+Occasional Travel required  
+Occasional pressure due to multiple calls, inquiries, and deadline
+
+Donor Network of Arizona is a drug free workplace."
+c9381155a9ed0bf1,Indeed,Information Security Analyst-SQL/ Python Data Reporting,Amex,Data Analyst,hybrid,,2025-04-23,2025-04-23,Phoenix,AZ,,yearly,85000.0,150000.0,85000.0,150000.0,117500.0,https://www.indeed.com/viewjob?jk=c9381155a9ed0bf1,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"You Lead the Way. We’ve Got Your Back.
+
+With the right backing, people and businesses have the power to progress in incredible ways. When you join Team Amex, you become part of a global and diverse community of colleagues with an unwavering commitment to back our customers, communities and each other. Here, you’ll learn and grow as we help you create a career journey that’s unique and meaningful to you with benefits, programs, and flexibility that support you personally and professionally.
+
+At American Express, you’ll be recognized for your contributions, leadership, and impact—every colleague has the opportunity to share in the company’s success. Together, we’ll win as a team, striving to uphold our company values and powerful backing promise to provide the world’s best customer experience every day. And we’ll do it with the utmost integrity, and in an environment where everyone is seen, heard and feels like they belong.
+
+Join Team Amex and let's lead the way together.
+
+As part of our diverse tech team, you can architect, code and ship software that makes us an essential part of our customers’ digital lives. Here, you can work alongside talented engineers in an open, supportive, inclusive environment where your voice is valued, and you make your own decisions on what tech to use to solve challenging problems. American Express offers a range of opportunities to work with the latest technologies and encourages you to back the broader engineering community through open source. And because we understand the importance of keeping your skills fresh and relevant, we give you dedicated time to invest in your professional development. Find your place in technology on #TeamAmex.
+
+How will you make an impact in this role?
+
+This position will be the part of Identity Analytics and Controls operations team in Identity and Lifecycle Management. This role is responsible for completing key deliverables to support the entitlement lifecycle control management, policy-based access control and access revocation process, engineer and implement new controls measures to further improve data quality and drive least privilege. We are seeking a candidate with a solid grasp of information security and technology controls.
+
+Job Responsibilities
+
+  • This is a Mid-level professional and technical role, developing new strategy, and implementing control measures effectively.
+
+  • Design, Implement and Support the entitlement lifecycle management, policy-based access control (PBAC), access revocation, supporting its technologies, processes, and project initiatives.
+
+  • Engineer solutions that proactively reduce the need for human intervention in IAM controls.
+
+  • Identify trends and opportunities for access revocation through analysis of datasets from various sources.
+
+  • Participates in the development of plans and strategies for information security processes, and programs.
+
+  • Perform exploratory analysis to identify patterns and insights in the data and automate access revocations based on insights.
+
+  • Provides day-to-day operational management over functional processes and project delivery.
+
+  • Creating and updating process and technical documentation.
+
+  • Accountable for ensuring security standard methodologies, policies, and procedures are implemented and adhered to.
+
+  • Project requirements analysis, technical design, and implementation activities.
+
+Minimum qualifications
+
+  • Bachelor’s degree in computer science, computer engineering, or related field
+
+  • 5+ years of experience in Information systems
+
+  • Understanding of Identity and Access Management. Ability to understand all facets of the Identity and Access Management lifecycle including the threats and vulnerabilities therein.
+
+  • Interpreting data from various sources to provide valuable insights and implement the recommendations to drive least privilege.
+
+  • Proficiency in Python for data wrangling, transformation, writing modular reusable scripts, automation of data pipelines and reporting.
+
+  • Strong command of SQL for data querying, filtering and transformation. Comfortable with complex joins, aggregations and familiarity with databases.
+
+  • Experience in automating report or dashboards, knowledge on data quality checks and exception handling.
+
+  • Ability to understand, analyze data and produce meaningful conclusions.
+
+  • Experience with Web Services and REST APIs.
+
+  • Demonstrate ability to prioritize and handle multiple concurrent assignments with strong attention to details.
+
+  • Self-motivated and dedicated, with the ability to work effectively as a member of a team and independently.
+
+  • Ability to learn quickly, work effectively in ambiguous situations, and a willingness to take charge and drive results.
+
+  • Excellent time management skills, and the ability to prioritize and multi-task.
+
+  • Understanding of the audit and regulatory environment of financial institutions.
+
+Salary Range: $85,000.00 to $150,000.00 annually + bonus + benefits
+
+The above represents the expected salary range for this job requisition. Ultimately, in determining your pay, we’ll consider your location, experience, and other job-related factors.
+
+We back our colleagues and their loved ones with benefits and programs that support their holistic well-being. That means we prioritize their physical, financial, and mental health through each stage of life. Benefits include:
+
+  • Competitive base salaries
+  • Bonus incentives
+  • 6% Company Match on retirement savings plan
+  • Free financial coaching and financial well-being support
+  • Comprehensive medical, dental, vision, life insurance, and disability benefits
+  • Flexible working model with hybrid, onsite or virtual arrangements depending on role and business need
+  • 20+ weeks paid parental leave for all parents, regardless of gender, offered for pregnancy, adoption or surrogacy
+  • Free access to global on-site wellness centers staffed with nurses and doctors (depending on location)
+  • Free and confidential counseling support through our Healthy Minds program
+  • Career development and training opportunities
+
+For a full list of Team Amex benefits, visit our Colleague Benefits Site.
+
+American Express is an equal opportunity employer and makes employment decisions without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, veteran status, disability status, age, or any other status protected by law. American Express will consider for employment all qualified applicants, including those with arrest or conviction records, in accordance with the requirements of applicable state and local laws, including, but not limited to, the California Fair Chance Act, the Los Angeles County Fair Chance Ordinance for Employers, and the City of Los Angeles’ Fair Chance Initiative for Hiring Ordinance. For positions covered by federal and/or state banking regulations, American Express will comply with such regulations as it relates to the consideration of applicants with criminal convictions.
+
+We back our colleagues with the support they need to thrive, professionally and personally. That's why we have Amex Flex, our enterprise working model that provides greater flexibility to colleagues while ensuring we preserve the important aspects of our unique in-person culture. Depending on role and business needs, colleagues will either work onsite, in a hybrid model (combination of in-office and virtual days) or fully virtually.
+
+US Job Seekers - Click to view the “Know Your Rights” poster. If the link does not work, you may access the poster by copying and pasting the following URL in a new browser window: https://www.eeoc.gov/poster
+
+Employment eligibility to work with American Express in the United States is required as the company will not pursue visa sponsorship for these positions."
+decf024224652fc0,Indeed,Data Management Analyst,U.S. Bank National Association,Data Analyst,in-person,Full-time,2025-04-22,2025-04-23,Tempe,AZ,85288,yearly,66640.0,86240.0,66640.0,86240.0,76440.0,https://www.indeed.com/viewjob?jk=decf024224652fc0,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"At U.S. Bank, we’re on a journey to do our best. Helping the customers and businesses we serve to make better and smarter financial decisions and enabling the communities we support to grow and succeed. We believe it takes all of us to bring our shared ambition to life, and each person is unique in their potential. A career with U.S. Bank gives you a wide, ever-growing range of opportunities to discover what makes you thrive at every stage of your career. Try new things, learn new skills and discover what you excel at—all from Day One.
+
+##  Job Description
+
+U.S. Bank's Business, Insights and Performance organization has a Data Management Analyst opportunity to support Operations. Responsible for very complex reporting projects that gather and integrate large volumes of data, performs in depth analysis, interprets results and develops actionable insights and recommendations for use across the company for customer and employee populations. Acquires data from multiple data sources in order to perform analysis and reporting. Identifies, analyzes and interprets trends or patterns in complex data in order to provide answers to business questions as well as provide recommendations for action. Presents data and analysis in a clear and concise manner allowing the audience to quickly understand the results and recommendations so they activate upon them and make data driven decisions. Collaborates with various partners to provide a holistic view of the analysis. Measures and monitors results of applied recommendations and present adjustments. Ensures all data acquisition, sharing and results of applied recommendations are compliant with company standards.
+
+This role does not support a visa sponsorship. The role offers a hybrid/flexible schedule, which means there’s an in-office expectation of 3 or more days per week and the flexibility to work outside the office location for the other days at one of the following locations: 
+
+  • Irving, TX
+  • Cincinnati, OH
+  • Saint Paul, MN
+  • Gresham, OR
+  • Earth City, MO
+  • Tempe, AZ
+
+Basic Qualifications  
+
+  • Bachelor's degree, or equivalent work experience
+  • One to four years of data analysis experience
+
+Preferred Skills/Experience  
+
+  • Experience in SQL/WebFOCUS or other BI tool for querying data and for data manipulation/transformation
+  • Experience in financial services, with some knowledge of HR systems or financial services products, customers, transactions and interaction data
+  • Strong analytic skills with the ability to extract, collect, organize, analyze and interpret results for insights
+  • Ability to data mine, analyze data, and present insights in a meaningful way
+  • Ability to develop and maintain strategic partnership with Senior Business unit management, business partners and project sponsors, as well as communicate effectively with business, and development teams, end users, and product owners
+  • Strong decision-making and problem-solving skills
+  • Strong organization and project management skills
+  • Effective interpersonal, verbal and written communication skills
+
+If there’s anything we can do to accommodate a disability during any portion of the application or hiring process, please refer to our disability accommodations for applicants.
+
+Benefits:
+
+Our approach to benefits and total rewards considers our team members’ whole selves and what may be needed to thrive in and outside work. That's why our benefits are designed to help you and your family boost your health, protect your financial security and give you peace of mind. Our benefits include the following (some may vary based on role, location or hours):
+
+  • Healthcare (medical, dental, vision)
+
+  • Basic term and optional term life insurance
+
+  • Short-term and long-term disability
+
+  • Pregnancy disability and parental leave
+
+  • 401(k) and employer-funded retirement plan
+
+  • Paid vacation (from two to five weeks depending on salary grade and tenure)
+
+  • Up to 11 paid holiday opportunities
+
+  • Adoption assistance
+
+  • Sick and Safe Leave accruals of one hour for every 30 worked, up to 80 hours per calendar year unless otherwise provided by law
+
+U.S. Bank is an equal opportunity employer. We consider all qualified applicants without regard to race, religion, color, sex, national origin, age, sexual orientation, gender identity, disability or veteran status, and other factors protected under applicable law.
+
+E-Verify
+
+U.S. Bank participates in the U.S. Department of Homeland Security E-Verify program in all facilities located in the United States and certain U.S. territories. The E-Verify program is an Internet-based employment eligibility verification system operated by the U.S. Citizenship and Immigration Services.
+
+The salary range reflects figures based on the primary location, which is listed first. The actual range for the role may differ based on the location of the role. In addition to salary, U.S. Bank offers a comprehensive benefits package, including incentive and recognition programs, equity stock purchase 401(k) contribution and pension (all benefits are subject to eligibility requirements). Pay Range: $66,640.00 - $78,400.00 - $86,240.00 
+
+U.S. Bank will consider qualified applicants with arrest or conviction records for employment. U.S. Bank conducts background checks consistent with applicable local laws, including the Los Angeles County Fair Chance Ordinance and the California Fair Chance Act as well as the San Francisco Fair Chance Ordinance. U.S. Bank is subject to, and conducts background checks consistent with the requirements of Section 19 of the Federal Deposit Insurance Act (FDIA). In addition, certain positions may also be subject to the requirements of FINRA, NMLS registration, Reg Z, Reg G, OFAC, the NFA, the FCPA, the Bank Secrecy Act, the SAFE Act, and/or federal guidelines applicable to an agreement, such as those related to ethics, safety, or operational procedures.
+
+Applicants must be able to comply with U.S. Bank policies and procedures including the Code of Ethics and Business Conduct and related workplace conduct and safety policies."
+cca1f3404979d9f0,Indeed,Business Intelligence Analyst,Arizona State University,Data Analyst,hybrid,Full-time,2025-04-18,2025-04-23,Tempe,AZ,,yearly,65000.0,76500.0,65000.0,76500.0,70750.0,https://www.indeed.com/viewjob?jk=cca1f3404979d9f0,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Arizona State University (ASU), a leading innovator in Higher Education, is looking for a Business Intelligence Analyst (BI Analyst) within the Enterprise Technology (ET) Data Analysis and Visualization team that is ready to dive into an exhilarating role that puts you at the heart of student success.
+
+You’ll be the bridge connecting stakeholders across all levels of the organization. Your comprehensive knowledge base will be instrumental in fostering collaboration and driving our mission forward through your dedication to supporting the development of enterprise applications, providing data insights to translate business needs, and pioneering innovative technical solutions for stakeholders across ASU. Your work will fuel downstream report development, dashboards, and analyses, using a variety of querying techniques.
+
+As with all members of the Enterprise Technology team, this role carries core responsibilities, including fostering a sense of belonging and cultivating a culture that is relational, visionary, and empowering. With a strong emphasis on authenticity and compassion, this position is dedicated to embodying and advancing our culture. If you’re looking for an opportunity where your contributions make a difference, consider taking the step to join the Sun Devil family! 
+
+Apply before 11:59 PM Arizona time the day before the posted End Date. 
+
+Job Profile: 
+
+Business and Data Analyst 2 
+
+Job Family: 
+
+Business and Data Analytics 
+
+Time Type: 
+
+Full time 
+
+## 
+
+Max Pay – Depends on experience: 
+
+$76,500.00 USD Annual 
+
+## Job Description: 
+
+Salary Range: $65,000-$76,500.00 per year; DOE 
+
+Essential Duties: 
+
+  • Gathers data requirements through interviews, meetings, surveys, process analysis, and review of existing documentation.
+
+  • Works closely and cooperatively with development teams on product design and implementation to make recommendations enhancing product support and usability.
+
+  • Follows best practices for data visualization and uses storytelling to effectively convey information about student degree audit data, assisting with informed decision-making.
+
+  • Creates dashboards and reports to support but not limited to functional and operational stakeholder needs as it relates to the ASU products and services.
+
+  • Collaborates with developers and architects to transform business requirements into technical solutions, including creating datasets within ASU’s data warehouse.
+
+  • Utilizes university Business Intelligence (BI) tools (Analytics Websites, Alteryx, Report Builder, Tableau, etc.) to retrieve, evaluate, perform testing/quality assurance, and/or analyze data within a data warehouse or source system.
+
+  • Adheres to best practices for data reporting within an application development team by maintaining documentation, knowledge sharing (documentation, presenting, etc.), and maintaining healthy partnerships.
+
+  • Assists with requirements for integrating new data sources into the data warehouse as needed.
+
+  • Assists with creating and delivering end-user training and documentation.
+
+  • Manages multiple stakeholders to set expectations, hold collaborators accountable to timelines, and communicate transparently.
+
+  • Willingness to learn new technologies and stay up-to-date with industry trends to improve BI capabilities.
+
+  • Performs research analysis to understand current performance, analyze trends, and assists in making recommendations for future project performances.
+
+  • Participates in system administration functions including, but not limited to: data validation processes, duplicate resolution processes, system change requests, and system integration/user acceptance testing to ensure ongoing integrity and security of data consistent with university policies and procedures.
+
+  • Take responsibility for fostering a positive culture, upholding organizational values, and championing engagement in all its forms.
+
+  • Collaborate across teams and actively participate in ET/ASU events and programs
+
+Desired Qualifications: 
+
+Knowledge and Work Experience 
+
+  • Experience in delivering data-driven insights to facilitate application development
+
+  • Experience using data to identify trends, patterns, and insights
+
+  • Experience in computing and data analysis, including querying and working with a variety of file formats, including JSON
+
+  • Experience with business intelligence and data tools like Tableau, Alteryx, and Excel
+
+  • Strong proficiency in SQL for complex querying, data extraction, and data manipulation
+
+  • Ability to thrive in fast-paced, ambiguous environments by applying critical thinking, continuous learning, and flexible problem-solving
+
+  • Experience in collecting, organizing, synthesizing and analyzing requirements; summarizing findings; developing conclusions and recommendations
+
+  • Experience communicating complex, conceptual, and technical concepts to a variety of audiences presented both in writing and orally
+
+  • Excellent storytelling skills with the ability to convert complex findings into a compelling narrative
+
+  • Working knowledge of ETL processes
+
+  • Working knowledge of AWS products and tools, including S3 and Redshift
+
+  • Experience with higher education data and degree planning
+
+  • Experience in accurately and reliably interpreting data for determining appropriate action
+
+  • Experience in using problem-solving and metadata skills
+
+Leadership Skills and Competencies 
+
+  • Exhibiting professionalism and expertise in every interaction and engaging in professional development to meet expectations for service excellence
+
+  • Strong consulting skills with a proven track record of driving change through influence
+
+  • Ability to help foster a safe psychological space for all teammates where everyone can thrive
+
+  • Demonstrated ability to model empathy, compassion, and emotional intelligence.
+
+  • Experience in a values-driven organization with a strong commitment to inclusion and belonging.
+
+  • Ability to cultivate a psychologically safe environment where all team members can thrive.
+
+  • Capacity to inspire and drive meaningful change in individual, institutional, and corporate behaviors to support a more sustainable environment.
+
+  • Commitment to leading by example through effective communication, active participation, and advocacy for the institution’s sustainability programs.
+
+Working Environment: 
+
+  • Activities primarily take place in a standard, climate-controlled office environment and may involve extended periods of sitting, standing, or moving between office spaces.
+
+  • This role involves regular use of a computer (desktop and/or laptop), including a keyboard and mouse.
+
+  • Effective communication and proficiency with a variety of technologies are essential for collaboration with the broader team.
+
+  • Required to stand for varying lengths of time and walk moderate distances to perform work.
+
+  • Regular responsibilities may require the ability to quickly change priorities, which may include and/or are subject to resolution of conflicts.  
+
+About Enterprise Technology: 
+
+Enterprise Technology (ET) embraces its role as both an enabler and catalyst for advancing the vision and work of the New American University. We are a values-driven organization. Our commitments are reflected in all of the work we do in pursuit of operational excellence, the experience and delight of our community, and our strategic and innovation initiatives. Applicants must be eligible to work in the United States.
+
+Join the team that sparks human-centered innovation! 
+
+ET is a rapidly reconfigurable and entrepreneurial organization at ASU that prioritizes and
+
+executes to meet the needs of our community of learners, faculty, researchers and staff. Our
+
+work emphasizes autonomy, flexibility and distributed decision-making to leverage the strengths of individuals. Together, we embrace a culture that nurtures, engages and embraces many voices with a shared lens of positive community impact and expanded opportunities for collaboration.
+
+Why join us? 
+
+Mission oriented. Everything we do is to advance ASU’s charter - measuring who we include and how they succeed. We are staunch champions of learner success and put people first.
+
+Flexibility. Our flexible work environment allows employees to explore opportunities with their supervisor beyond the traditional work schedule. Opportunities include hybrid work where staff are in person three days per week.
+
+Culture forward. We embrace a Positive Core culture: Belonging, Relational, Authentic, Visionary and Empowered.
+
+Scale of impact. Our work changes the world. With 200k+ learners, faculty, researchers and staff, working with ET means you have the capacity to improve many lives and entire communities.
+
+World-class, low cost education. Our professional development is built in! ET encourages staff to seek additional certificates and degrees via ASU’s top ranked programs with major tuition breaks.
+
+Exposure to industry giants. ET partners with Amazon, Apple, Arista, Cox, Verizon, Salesforce, Alteryx and a diversity of technology companies to enhance our innovations and deepen their impact.
+
+Minimum Qualifications: 
+
+Bachelor's degree and three (3) years of experience appropriate to the area of assignment/field; OR, Any equivalent combination of experience and/or training from which comparable knowledge, skills and abilities have been achieved. 
+
+Driving Requirement: 
+
+Driving is not required for this position. 
+
+Location: 
+
+Campus: Tempe 
+
+Funding: 
+
+No Federal Funding 
+
+Instructions to Apply 
+
+Current Employees and Students should apply directly within Workday using the Jobs Hub. Use this link and log in using SSO: 
+
+https://www.myworkday.com/asu/d/inst/1$9925/9925$5832.htmld 
+
+To be considered, your application must include all of the following attachments:
+
+  • Cover letter
+  • Resume/CV
+
+Note: Multiple documents can be submitted into the attachment box. Alternatively, merge all documents into one PDF for submission.
+
+Please include all employment information in month/year format (e.g., 6/88 to 8/94), job title, job duties and name of employer for each position. Resume should clearly illustrate how prior knowledge and experience meets the Minimum and Desired qualifications of this position. NOTE: GA and Intern positions are counted as .5 for job experience (ie. 1 year equals 6 months experience equivalency). Only electronic applications are accepted for this position.
+
+## Need help finding the right job? 
+
+We can recommend jobs specifically for you! Create a custom Job Alert by selecting criteria that suit your career interests.
+
+ASU Statement 
+
+Arizona State University is a new model for American higher education, an unprecedented combination of academic excellence, entrepreneurial energy and broad access. This New American University is a single, unified institution comprising four differentiated campuses positively impacting the economic, social, cultural and environmental health of the communities it serves. Its research is inspired by real world application blurring the boundaries that traditionally separate academic disciplines. ASU serves more than 100,000 students in metropolitan Phoenix, Arizona, the nation's fifth largest city. ASU champions inclusive excellence, and welcomes students from all fifty states and more than one hundred nations across the globe.
+
+ASU is a tobacco-free university. For details visit https://wellness.asu.edu/explore-wellness/body/alcohol-and-drugs/tobacco
+
+All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, disability, protected veteran status, or any other basis protected by law.
+
+Notice of Availability of the ASU Annual Security and Fire Safety Report 
+
+In compliance with federal law, ASU prepares an annual report on campus security and fire safety programs and resources. ASU’s Annual Security and Fire Safety Report is available online at https://www.asu.edu/police/PDFs/ASU-Clery-Report.pdf . You may request a hard copy of the report by contacting the ASU Police Department at 480-965-3456.
+
+Relocation Assistance – For information about schools, housing child resources, neighborhoods, hospitals, community events, and taxes, visit https://cfo.asu.edu/az-resources .
+
+Employment Verification Statement 
+
+ASU conducts pre-employment screening which may include verification of work history, academic credentials, licenses, and certifications.
+
+Background Check Statement 
+
+ASU conducts pre-employment screening for all positions which includes a criminal background check, verification of work history, academic credentials, licenses, and certifications. Employment is contingent upon successful passing of the background check.
+
+Fingerprint Check Statement 
+
+This position is considered safety/security sensitive and will include a fingerprint check. Employment is contingent upon successful passing of the fingerprint check."
+784be28755b8e0ec,Indeed,Product Analyst (UGC),Scribd,Data Analyst,remote,Full-time,2025-04-16,2025-04-23,Phoenix,AZ,,yearly,76000.0,142000.0,76000.0,142000.0,109000.0,https://www.indeed.com/viewjob?jk=784be28755b8e0ec,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"At Scribd (pronounced “scribbed”), our mission is to spark human curiosity. Join our team as we create a world of stories and knowledge, democratize the exchange of ideas and information, and empower collective expertise through our three products: Everand, Scribd, and Slideshare.
+
+We support a culture where our employees can be real and be bold; where we debate and commit as we embrace plot twists; and where every employee is empowered to take action as we prioritize the customer.
+
+When it comes to workplace structure, we believe in balancing individual flexibility and community connections. It’s through our flexible work benefit, Scribd Flex, that employees – in partnership with their manager – can choose the daily work-style that best suits their individual needs. A key tenet of Scribd Flex is our prioritization of intentional in-person moments to build collaboration, culture, and connection. For this reason, occasional in-person attendance is required for all Scribd employees, regardless of their location.
+
+So what are we looking for in new team members? Well, we hire for “GRIT”. The textbook definition of GRIT is demonstrating the intersection of passion and perseverance towards long term goals. At Scribd, we are inspired by the potential that this can unlock, and ask each of our employees to pursue a GRIT-ty approach to their work. In a tactical sense, GRIT is also a handy acronym that outlines the standards we hold ourselves and each other to. Here’s what that means for you: we’re looking for someone who showcases the ability to set and achieve Goals, achieve Results within their job responsibilities, contribute Innovative ideas and solutions, and positively influence the broader Team through collaboration and attitude.
+
+About the Team
+
+The mission of the business strategy & analytics team is to ensure the entire company understands business performance and trends, and to empower all business teams to make good decisions with data.
+
+The User Generated Content (UGC) Pillar vision and mission is to inspire the world through stories and knowledge by being the largest and most accessible library that connects storytellers with their audience. Every month, hundreds of millions of people come to Scribd and SlideShare, our UGC products, to grow themselves personally and professionally.  
+
+About You
+
+  • You are a highly motivated and analytical individual who loves solving ambiguous business problems.
+
+  • You thrive in a fast-paced and collaborative environment, where you can leverage your strong communication skills to effectively interact with executives, stakeholders, and cross-functional teams.
+
+  • You are a strategic thinker who can balance big-picture objectives with attention to detail, and you possess a natural curiosity to explore complex problems and find innovative solutions.
+
+You Will:
+
+  • Collaborate with the product team to develop and execute data-driven experiments and A/B tests, focusing on UGC initiatives.
+
+  • Conduct in-depth analysis of user behavior, conversion rates, and content performance to identify growth opportunities and inform product and search and recommendation optimization strategies.
+
+  • Provide actionable insights and recommendations to key stakeholders based on statistical analysis and data interpretation.
+
+  • Develop and maintain advanced dashboards, reports, and visualizations to track and communicate critical key performance indicators (KPIs) and performance metrics.
+
+  • Work closely with stakeholders to define and track KPIs and design Product Analytics roadmap to drive UGC strategy.
+
+  • Work closely with engineering teams to ensure accurate data collection and instrumentation, providing guidance on tracking implementation and data integrity.
+
+  • Collaborate with the data engineering team to refine and enhance data infrastructure and architecture to support advanced analytics and reporting capabilities.
+
+You Have:
+
+  • 3+ years of experience in product analytics, preferably in a high-velocity product environment, with a track record of delivering impactful insights and driving growth.
+
+  • Expert knowledge of statistical analysis methods, experimental design, and hypothesis testing
+
+  • Experience with A/B testing methodologies, funnel analysis, cohort analysis, and other advanced analytics techniques.
+
+  • Strong proficiency in data visualization tools such as Tableau, Looker, or similar tools to create compelling dashboards and reports.
+
+  • Expertise in programming languages such as Python or R, as well as proficiency in SQL for data extraction and manipulation.
+
+  • Self-motivated, proactive, and able to work effectively both independently and collaboratively in a dynamic, fast-paced environment.
+
+  • Excellent communication and presentation skills, with the ability to convey complex findings and insights to non-technical stakeholders in a clear and actionable manner.
+
+  • Strong problem-solving skills and the ability to think critically, ensuring accuracy and attention to detail in all analyses.
+
+  • Bachelor's degree in a quantitative field such as Statistics, Mathematics, Computer Science, Economics, or a related discipline. A Master's degree is a plus.
+
+At Scribd, your base pay is one part of your total compensation package and is determined within a range. Our pay ranges are based on the local cost of labor benchmarks for each specific role, level, and geographic location. San Francisco is our highest geographic market in the United States.
+
+In the state of California, the reasonably expected salary range is between $92,500 [minimum salary in our lowest geographic market within California] to $149,500 [maximum salary in our highest geographic market within California].
+
+In the United States, outside of California, the reasonably expected salary range is between $76,000 [minimum salary in our lowest US geographic market outside of California] to $142,000 [maximum salary in our highest US geographic market outside of California].
+
+In Canada, the reasonably expected salary range is between $95,500 CAD [minimum salary in our lowest geographic market] to $142,000 CAD [maximum salary in our highest geographic market].
+
+We carefully consider a wide range of factors when determining compensation, including but not limited to experience; job-related skill sets; relevant education or training; and other business and organizational needs. The salary range listed is for the level at which this job has been scoped. In the event that you are considered for a different level, a higher or lower pay range would apply. This position is also eligible for a competitive equity ownership, and a comprehensive and generous benefits package.
+
+Remote employees must have their primary residence in: Arizona, California, Colorado, Connecticut, DC, Florida, Georgia, Hawaii, Maryland, Massachusetts, Michigan, Missouri, New Jersey, New York, Ohio, Oregon, Tennessee, Texas, Utah, Washington, Ontario (Canada), British Columbia (Canada), or Mexico. #LI-Remote
+
+Benefits, Perks, and Wellbeing at Scribd
+
+  • Benefits/perks listed may vary depending on the nature of your employment with Scribd and the geographical location where you work.
+
+  • Healthcare Insurance Coverage (Medical/Dental/Vision): 100% paid for employees
+
+  • 12 weeks paid parental leave
+
+  • Short-term/long-term disability plans
+
+  • 401k/RSP matching
+
+  • Onboarding stipend for home office peripherals + accessories
+
+  • Learning & Development allowance
+
+  • Learning & Development programs
+
+  • Quarterly stipend for Wellness, WiFi, etc.
+
+  • Mental Health support & resources
+
+  • Free subscription to Scribd + gift memberships for friends & family
+
+  • Referral Bonuses
+
+  • Book Benefit
+
+  • Sabbaticals
+
+  • Company-wide events
+
+  • Team engagement budgets
+
+  • Vacation & Personal Days
+
+  • Paid Holidays (+ winter break)
+
+  • Flexible Sick Time
+
+  • Volunteer Day
+
+  • Company-wide Employee Resource Groups and programs that foster an inclusive and diverse workplace.
+
+Want to learn more about life at Scribd? www.linkedin.com/company/scribd/life
+
+We want our interview process to be accessible to everyone. You can inform us of any reasonable adjustments we can make to better accommodate your needs by emailing accommodations@scribd.com about the need for adjustments at any point in the interview process.
+
+Scribd is committed to equal employment opportunity regardless of race, color, religion, national origin, gender, sexual orientation, age, marital status, veteran status, disability status, or any other characteristic protected by law. We encourage people of all backgrounds to apply, and believe that a diversity of perspectives and experiences create a foundation for the best ideas. Come join us in building something meaningful."
+f69d0788d85f0a50,Indeed,BUSINESS ANALYST,State of Arizona,Data Analyst,in-person,Full-time,2025-04-23,2025-04-23,Phoenix,AZ,85007,yearly,80000.0,85000.0,80000.0,85000.0,82500.0,https://www.indeed.com/viewjob?jk=f69d0788d85f0a50,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"DEPT OF ENVIRONMENTAL QUALITY
+
+We are looking for results-oriented, driven individuals with a thirst for problem solving.  
+
+At Arizona Department of Environmental Quality (ADEQ) our mission is to protect and enhance public health and the environment in Arizona. Through consistent, science-based environmental regulation; and clear, equitable engagement and communication; with integrity, respect and the highest standards of effectiveness and efficiency. Because Arizonans treasure the unique environment of our state and its essential role in sustaining well-being and economic vitality, today and for future generations.   
+
+We are currently looking for employees who are committed to our Agency, passionate to excel in their career and engaged in our mission. Only this caliber of employee will be successful in driving our Agency towards accomplishing our mission
+
+BUSINESS ANALYST
+
+Job Location:
+
+Address: 1110 W. Washington Street, Phoenix, AZ 85007
+
+Mission Partners Division
+
+Posting Details:
+
+Salary: $80-85k  
+
+Grade: 24  
+
+Closing Date: Open Until Filled
+
+Job Summary:
+
+We have an excellent opportunity for a Business Analyst to join our Business and Finance team. The Business Analyst will be a Subject Matter Expert (SME) and Model Builder for the financial budgeting and planning software platform, Anaplan. Anaplan is a commercial, cloud-based financial planning software used by the Agency for budgeting, forecasting and long- range planning of fiscal resources. This role will be responsible for maintaining existing reports and modeling within Anaplan as well as designing and implementing future use case solutions. The position will have a detailed understanding of the business processes and data sources which impact the information within the tool.
+
+This position is available for remote work on a full-time basis within Arizona (including virtual office arrangements).
+
+The State of Arizona strives for a work culture that affords employees flexibility, autonomy, and trust. Across our many agencies, boards, and commissions, many State employees participate in the State’s Remote Work Program and are able to work remotely in their homes, in offices, and in hoteling spaces. All work, including remote work, should be performed within Arizona unless an exception is properly authorized in advance.
+
+Job Duties:
+
+  • Maintain existing models and processes within the Anaplan environment.
+  • Utilize reports from Anaplan and other relevant sources to perform various financial analysis in collaboration with the Budget, Grants and other Business and Finance Teams.
+  • Create and maintain relevant data quality processes, procedures and documentation. Perform continuous improvement activities to optimize current financial models and identify opportunities to convert current state processes, spreadsheets and reports to Anaplan.
+  • Perform continuous improvement activities to optimize current financial models and identify opportunities to convert current state processes, spreadsheets and reports to Anaplan.
+  • Design and implement solutions through opportunities identified into multidimensional Anaplan models and related process. Participate in data integration solutions.
+
+Knowledge, Skills & Abilities (KSAs):
+
+  • Advanced knowledge of Excel and database modeling
+  • Knowledge of developing systems requirements, designing, prototyping, testing, training and defining support procedures
+  • Organizational and analytical skills
+  • Excellent verbal and written communication skills
+  • Customer centered mindset and approach in providing solutions
+  • Ability to collaborate effectively and work well with internal teams
+  • Ability to establish procedures for relevant technical and business processes; Research, analyze, compile, and effectively report on complex financial data
+  • Ability to perform difficult analytic work; train users and write and speak with clarity and effectiveness
+  • Skills in application of budgeting spend management and accounting methods and techniques
+  • Project management ability; creating/collecting metrics and measuring team performance
+
+Selective Preference(s):
+
+  • A four-year bachelor’s degree with a preference for degree emphasis in accounting, finance, information systems, or computer science
+
+  • 5 years of experience in business analysis (or equivalent experience)
+
+Pre-Employment Requirements:  
+
+If this position requires driving or the use of a vehicle as an essential function of the job to conduct State business, then the following requirements apply: Driver’s License Requirements.
+
+All newly hired State employees are subject to and must successfully complete the Electronic Employment Eligibility Verification Program (E-Verify).
+
+Benefits:
+
+Among the many benefits of a career with the State of Arizona, there are:  
+
+  • 10 paid holidays per year
+  • Accrual of sick and annual leave beginning at 12 and 13 days per year respectively for full-time employees
+  • Paid Parental Leave-Up to 12 weeks per year paid leave for newborn or newly-placed foster/adopted child (pilot program).
+  • A top-ranked retirement program with lifetime pension benefits
+  • A robust and affordable insurance plan to include medical, dental, life, short-term and long-term disability
+  • An incentivized commuter club and public transportation subsidy program
+  • We promote the importance of work/life balance by offering workplace flexibility
+  • We offer a variety of learning and career development opportunities
+
+By providing the option of a full-time or part-time remote work schedule, employees enjoy improved work/life balance, report higher job satisfaction, and are more productive. Remote work is a management option and not an employee entitlement or right. An agency may terminate a remote work agreement at its discretion.
+
+Retirement:
+
+ASRS Lifetime Benefits
+
+Contact Us:
+
+Persons with a disability may request a reasonable accommodation such as a sign language interpreter or an alternative format by contacting HPO@azdeq.gov.
+
+Requests should be made as early as possible to allow time to arrange the accommodation. The State of Arizona is an Equal Opportunity/Reasonable Accommodation Employer."
+20b73122df9e5240,Indeed,Development and Acquisitions Analyst,"Marquee Asset Management, LLC",Data Analyst,in-person,Full-time,2025-04-18,2025-04-23,Scottsdale,AZ,85258,yearly,100000.0,100000.0,100000.0,100000.0,100000.0,https://www.indeed.com/viewjob?jk=20b73122df9e5240,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Development and Acquisitions Analyst  
+
+About the Company:  
+
+The Company is a fast-growing multifamily developer, owner, and operator. The firm focuses primarily on the development of new multifamily communities, value-add and opportunistic apartment transactions, investing alongside various private equity and institutional partners. The firm develops new multifamily communities primarily in the Sunbelt and invests nationally in both Tier 1 coastal, as well as various Sunbelt markets.  
+
+The firm has currently 800 units of housing under construction in metro Phoenix and since its inception in 2010, the firm has invested nearly $2.0 billion in apartment transactions on behalf of its own account and its strategic joint-venture investment partners. The firm has over 70 professionals currently split between Los Angeles and Scottsdale, its head office for development. The Company is backed by a large international apartment company with a multi-decade history and track record of several $-billion of acquisitions and development experience, which has developed over 30,000 multifamily units in the past 65 years.  
+
+Duties/Responsibilities:  
+
+The Development and Acquisitions Analyst will play an important role in support of the firm’s investment activities, including acquisitions, development, dispositions, asset management, capital markets, portfolio management, investor relations, reporting, and other initiatives. The successful candidate will be well-rounded, have strong analytical/financial modeling skills, an ability to create presentations, the ability interact with high-performing teams and have excellent communication skills. Other specific aspects of the role include:
+
+  • Development and Acquisitions Financial Analysis, Project Due Diligence, and Business Planning:
+  • Utilize existing financial models and/or build new models as necessary for development and acquisition opportunities,
+  • Conduct ad hoc financial modeling and analyses in support of firm executives, acquisitions, development and asset management teams;
+  • Perform property level, capital structure and partnership level financial analyses;
+  • Draft and prepare detailed, concise business plans and investment memoranda, marketing materials, research reports and administrative summaries for internal and external purposes;
+  • Assist in working with internal and external teams to prepare development budgets including: revenues, expenses, capital expenditures, construction budget and renovation plans;
+  • Participate and support due diligence efforts for new communities including: project phasing strategies, site characteristics and constraints, financing structures and strategies, third party consultant reports, review of contracts, preparation of development budgets, etc;
+
+Market Analysis:
+
+  • Research and analyze data on sales, rental rates, development pipeline information, construction and development costs, acquisitions, trends, and market fundamentals, and incorporate the analysis to the financial modelling;
+  • Compile and summarize market rent, land sales data, investment sales, and operating expense surveys and comparables;
+  • Research local codes, laws and regulations pertaining to new development and investments;
+  • Professionally interact with market participants and government agencies, as necessary;
+  • Develop and maintain knowledge of real estate market conditions in target real estate markets and submarkets;
+  • Cultivate and maintain broker relationships to assist in sourcing, market information, pricing data etc.;
+  • Collaborate with market professionals and underwriting team with pricing guidance and valuation.
+
+Asset / Portfolio Management:
+
+  • Support in the maintaining and revising of asset management business plans including periodic budgeting, forecasting, and analytics;
+  • Perform hold/sell analyses for existing portfolio of assets;
+  • Assist in providing periodic updates to investors, lenders and other stakeholders.
+
+Capital Markets
+
+  • Assist with the preparation of debt financing needs/applications;
+  • Participate on calls/meetings with intermediaries, lenders and investors;
+  • Support various efforts and presentations in raising debt and/or equity capital from third parties;
+  • Perform periodic prospecting and research efforts regarding potential capital sources.
+
+Other:
+
+  • Perform special projects/analysis for the company executives, development, acquisition and asset management teams.;
+  • Performs other duties as assigned.
+
+Qualifications:
+
+  • Undergraduate degree from a top tier university; MBA or Master’s degree preferred, but not required;
+  • 2-5 years of experience preferred, but not required, working in a commercial real estate capacity at a company focused on development, acquisitions, investments, asset management, advisory, operations, investment banking or brokerage;
+  • Strong analytical skills with an emphasis on real estate financial valuation methodology including discounted cash flows, direct capitalization, sales comparison and replacement cost analyses, capital structuring, partnership economics;
+  • Strong problem-solving skills;
+  • Ability to multi-task and track multiple assignments in various stages of the real estate life cycle;
+  • Excellent written, verbal and interpersonal communication and customer service skills;
+  • Proficient with Microsoft Office Suite, particularly Excel, and also experienced in Power BI, Argus, Google Earth and/or ArcGIS are encouraged;
+  • Ability to travel locally and domestically by plane and by land transportation;
+  • Ability to sit in an office setting for at least 2 hours at a time;
+  • The Position will be based in our Scottsdale, AZ office;
+  • Adherence to professional code of ethics and rules of conduct.
+
+Shelter Asset Management is an Equal Opportunity/Affirmative Action employer. All qualified applicants will receive consideration for employment without regard to race, age, color, religion, gender, gender identity, sexual orientation, national origin, disability, protected Veteran status or any other protected category under applicable state/federal law."
+e6048e571ad4af05,Indeed,Business Analyst V (Job 2821),Arizona Supreme Court,Data Analyst,hybrid,Full-time,2025-04-18,2025-04-23,Phoenix,AZ,85007,yearly,58289.0,58289.0,58289.0,58289.0,58289.0,https://www.indeed.com/viewjob?jk=e6048e571ad4af05,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"JOB TITLE:
+
+Business Analyst V
+
+JOB #: 
+
+2821
+
+DIVISION:
+
+Information Technology
+
+HIRING SALARY:
+
+$58,289.00 annualized
+
+CLOSING DATE:
+
+All positions are open until filled.
+
+EMPLOYEE REFERRAL PROGRAM:  
+This position is eligible for an employee referral incentive payment of $1,000.00 (conditions apply).
+
+POSITION SUMMARY: 
+
+This position within the Information Technology Division will perform a high level of administrative and technical work managing complex projects associated with the configuration, implementation, and integration of the case management system utilized by the statewide adult probation system. As part of a project team, the position assists in identifying, defining, and developing solutions to complex business and automation requirements. The team also represents the user's interests in the system of operations and implementation of the application and when interfacing with other applications.
+
+This position will develop project plans, determine operations and functional requirements for statewide probation automation efforts and assist the Project Manager, Project Leaders, and ITD Technical Lead. This position will also trouble-shoot efforts and complete work requested within the case management application, assist in preparing user specifications for complex and inter-related automation changes, and perform thorough software testing and second-level application support. Additionally, this position will serve as co-faculty and participate in training key probation personnel in probation automation and operations.
+
+This position may be eligible for a hybrid-telework schedule once the employee has completed three (3) months of employment and has sufficiently proved their ability to perform assigned tasks.
+
+Public Service Loan Forgiveness (PSLF) Program qualified employer.
+
+MINIMUM REQUIREMENTS:
+
+The successful candidate will possess a bachelor’s in criminal justice, computer science, or related field. Directly related experience may substitute for the degree requirement. Five years of experience working in a court or criminal justice organization, performing improvement projects related to the subject matter.
+
+The successful candidate will have experience with producing business requirements and design documentation, and significant system analysis work involving new and/or complex systems. Demonstrated ability to plan, organize, and manage multiple projects simultaneously, as well as the ability to communicate complex concepts clearly both orally and in writing. This position also requires experience with all Microsoft desktop applications, and excellent interpersonal skills.
+
+The preferred candidate will have knowledge of current Arizona court/criminal justice policies, practices and operations.
+
+Travel level: up to 80% within the state of Arizona.
+
+SELECTION PROCESS:
+
+Applicants must be currently authorized to work in the United States on a full-time basis. Only applicants whose backgrounds most closely meet the needs of the position may be invited to interview. Requests for a special accommodation to participate in the interview process should be made at the time you are contacted to schedule an interview. The Selection Process may include computer testing (Word, Excel, PowerPoint, Outlook, proofreading, typing, etc.) and first and/or second round panel interviews. This is a Regular, Full-time, Exempt level position.
+
+BENEFITS: 
+
+The Arizona Supreme Court, Administrative Office of the Court offers a comprehensive benefits package to include:
+
+  • Accrued vacation pay and sick leave
+  • 10 paid holidays per year
+  • Health and dental insurance
+  • Retirement plan
+  • Life insurance and long-term disability insurance
+  • Optional employee benefits include short-term disability insurance, deferred compensation plans, and supplemental life insurance
+  • By providing the option of a full-time or part-time remote work schedule, employees enjoy improved work/life balance, report higher job satisfaction, and are more productive. Remote work is a management option and not an employee entitlement or right. The Court may terminate a remote work agreement at its discretion.
+
+RETIREMENT:
+
+  • Positions in this classification participate in the Arizona State Retirement System (ASRS).
+  • Please note, enrollment eligibility will become effective after 27 weeks of employment.
+
+The Arizona Supreme Court is an EOE/ADA Reasonable Accommodation Employer"
+385a16cb93eacd38,Indeed,Project Analyst III - Remote,CSAA Insurance Group,Data Analyst,remote,Full-time,2025-04-23,2025-04-23,Phoenix,AZ,85021,yearly,99810.0,110900.0,99810.0,110900.0,105355.0,https://www.indeed.com/viewjob?jk=385a16cb93eacd38,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"CSAA Insurance Group (CSAA IG), a AAA insurer, is one of the top personal lines property and casualty insurance groups in the U.S. Our employees proudly live our core beliefs and fulfill our enduring purpose to help members prevent, prepare for and recover from life's uncertainties, and we're proud of the culture we create together. As we commit to progress over perfection, we recognize that every day is an opportunity to be innovative and adaptable. At CSAA IG, we hire good people for a brighter tomorrow. We are actively hiring for a Project Analyst III! Join us and support CSAA IG in achieving our goals.
+
+##  Your Role: 
+
+As a Project Analyst III, you will interface across the organization with all business units to create and manage benefit realization for the entire portfolio of projects. You will collect and organize data from varying sources to present the portfolio, budget, demand, capacity, etc. to senior leaders. You will be expected to provide actionable insights and work with leaders across the organization on those insights.
+
+##  Required Experience, Education and Skills
+
+  • Bachelor's degree in mathematics, business, statistics, economics, computer science or equivalent combination of education and experience
+  • Typically 5+ years of directly related experience
+  • Superior research, statistical, analytical, processing and mathematical skills with ability to structure and conduct analyses
+  • Adaptability and the capability of multi-tasking and strong time management
+  • Ability to make effective formal presentations
+  • Strong oral and written communication skills
+  • Ability to work in a team environment
+  • Ability to coach and mentor co-workers and give feedback as required
+
+##  What would make us excited about you?
+
+  • Knowledge of insurance, accounting, project management, supply and demand
+  • Proficiency in Microsoft Office Suite, SAS, SQL, Python, Visual Basic, Snowflake, Power BI, and various structured analysis and design techniques
+  • Advanced degree in related field
+  • Actively shapes our company culture (e.g., participating in employee resource groups, volunteering, etc.)
+  • Lives into cultural norms (e.g., willing to have cameras when it matters: helping onboard new team members, building relationships, etc.)
+  • Travels as needed for role, including divisional / team meetings and other in-person meetings
+  • Fulfills business needs, which may include investing extra time, helping other teams, etc
+
+##  CSAA IG Careers
+
+At CSAA IG, we’re proudly devoted to protecting our customers, our employees, our communities, and the world at large. We are on a climate journey to continue to do better for our people, our business, and our planet. Taking bold action and leading by example. We are citizens for a changing world, and we continually change to meet it.
+
+Join us if you…
+
+  • BELIEVE in a mission focused on building a community of service, rooted in inclusion and belonging.
+  • COMMIT to being there for our customers and employees.
+  • CREATE a sense of purpose that serves the greater good through innovation.
+
+Recognition: We offer a total compensation package, performance bonus, 401(k) with a company match, and so much more! Read more about what we offer and what it is like to be a part of our dynamic team at https://careers.csaa-insurance.aaa.com/us/en/benefits
+
+In most cases, you will have the opportunity to choose your preferred working location from the following options when you join CSAA IG: remote, hybrid, or in-person. Submit your application to be considered. We communicate via email, so check your inbox and/or your spam folder to ensure you don’t miss important updates from us.
+
+If a reasonable accommodation is needed to participate in the job application or interview process, please contact TalentAcquisition@csaa.com.
+
+As part of our values, we are committed to supporting inclusion and diversity at CSAA IG. We actively celebrate colleagues’ different abilities, sexual orientation, ethnicity, and gender. Everyone is welcome and supported in their development at all stages in their journey with us.
+
+We are always recruiting, retaining, and promoting a diverse mix of colleagues who are representative of the U.S. workforce. The diversity of our team fosters a broad range of ideas and enables us to design and deliver a wide array of products to meet customers’ evolving needs.
+
+CSAA Insurance Group is an equal opportunity employer.
+
+00"
+ef40ea77ed7db474,Indeed,Business Analytics Advisor - Remote,The Cigna Group,Data Analyst,remote,Full-time,2025-04-21,2025-04-23,Scottsdale,AZ,85254,yearly,96000.0,160000.0,96000.0,160000.0,128000.0,https://www.indeed.com/viewjob?jk=ef40ea77ed7db474,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Candidates who reside within 50 miles of the following locations may be asked to work in person: Bloomfield, CT, Chattanooga, TN, Denver, CO, St. Louis, MO, or Scottsdale, AZ.
+
+The Business Analytics Advisor role directly enables Cigna’s evolved strategy to be champions of affordable, simple, and predictable health care by providing high quality provider reimbursement operations performance data that drives efficiency and improvement supporting business strategies. Our goal is to own, organize, govern, and deliver operational performance data with a specific lens on operational delivery successes, risks, and opportunities for improvement. This role supports Insights & Visualization, which delivers both tactical and strategic performance analysis and analytics to the business.
+
+General Purpose:
+
+Aligned to Delivery Support & Insights, the Business Analytics Advisor provides provider data and claim-based pricing performance analytics, improvement opportunity and risk insight, and data expertise supporting provider programs. This role works within an analytics and visualization disciplined team leading growth and operations enhancement projects across provider data, pricing operations and other supporting functions. This role works closely with operations, asset development teams, and business users from related functional areas.
+
+Job activities include:
+
+1) Defining and designing operational performance analytics and/or insights,
+
+2) Operational analytics summarization and characterization of insights gained in an actionable format,
+
+3) Reporting improvement success and estimations of gain relative to operational performance,
+
+4) Provide guidance on end-user needs, inform reporting solution design, and fulfill data and measurement requests in support of priorities,
+
+5) Deliver analytical and operational reporting, business performance measurements, and management dashboards for leadership.
+
+Additionally, this role will be responsible for creating and maintaining reporting processes, job aids, and templates used in the course of providing performance analysis and insights to provider data, pricing operations and related functional areas. This role serves as a member of Agile Kanban team, which executes all PI deliverables following Agile methodology.
+
+Responsibilities:
+
+Scope of Responsibilities include, but are not limited to:
+
+  • Design operational performance analytics program, including definitions, measurement systems, and reporting tools used
+  • Conduct operational performance reporting routines that are aligned with and give insight to business priorities
+  • Evaluate operational performance for success against anticipated outcomes
+  • Report performance intelligence/analytics results and activities including trends and probable issues
+  • Assist cause identification and process improvement activities
+  • Provide summary operational performance intelligence reporting to other organizations/leadership
+  • Create and administer templates or other documentation required for program administration
+  • Serve as an analytics and reporting subject matter expert to the business
+
+Qualifications:
+
+Technical Skills & Knowledge:
+
+  • Demonstrated knowledge and application of operations & quality performance monitoring methods and tools
+  • Ability to convert data analysis into a business-actionable configuration
+  • Proficient in MS Office/ability to tailor Office applications to meet specific program needs
+  • Experience with provider data management systems (HCPM) preferred
+  • 3+ years of intermediate to advanced experience using SAS EG or similar applications with ability to write complex and sustainable SQL queries from multiple connections required
+  • 3+ years of intermediate to advanced experience in Tableau Desktop development required
+  • Ability to understand business needs and design repeatable solutions in an ambiguous data environment, utilizing knowledge of database architecture and implementing creative solutions
+  • 3+ years of intermediate to advanced experience using query and reporting software tools (such as Toad, Hive, MS SQL Server) for data profiling, cleaning and troubleshooting required
+
+Education, Certification, and Work Experience:
+
+  • Bachelor’s Degree or higher strongly preferred or equivalent work experience required
+  • Prior experience or working knowledge of provider reimbursement methodologies and/or member claims payment and pricing systems preferred
+  • Tableau Desktop Certified Associate (or higher) certification or equivalent skills strongly preferred
+  • Related experience executing in an Agile environment preferred
+
+If you will be working at home occasionally or permanently, the internet connection must be obtained through a cable broadband or fiber optic internet service provider with speeds of at least 10Mbps download/5Mbps upload. 
+
+For this position, we anticipate offering an annual salary of 96,000 - 160,000 USD / yearly, depending on relevant factors, including experience and geographic location. 
+
+This role is also anticipated to be eligible to participate in an annual bonus plan.
+
+We want you to be healthy, balanced, and feel secure. That’s why you’ll enjoy a comprehensive range of benefits, with a focus on supporting your whole health. Starting on day one of your employment, you’ll be offered several health-related benefits including medical, vision, dental, and well-being and behavioral health programs. We also offer 401(k) with company match, company paid life insurance, tuition reimbursement, a minimum of 18 days of paid time off per year and paid holidays. For more details on our employee benefits programs, visit Life at Cigna Group.
+
+About The Cigna Group 
+
+Doing something meaningful starts with a simple decision, a commitment to changing lives. At The Cigna Group, we’re dedicated to improving the health and vitality of those we serve. Through our divisions Cigna Healthcare and Evernorth Health Services, we are committed to enhancing the lives of our clients, customers and patients. Join us in driving growth and improving lives. 
+
+Qualified applicants will be considered without regard to race, color, age, disability, sex, childbirth (including pregnancy) or related medical conditions including but not limited to lactation, sexual orientation, gender identity or expression, veteran or military status, religion, national origin, ancestry, marital or familial status, genetic information, status with regard to public assistance, citizenship status or any other characteristic protected by applicable equal employment opportunity laws.
+
+If you require reasonable accommodation in completing the online application process, please email: SeeYourself@cigna.com for support. Do not email SeeYourself@cigna.com for an update on your application or to provide your resume as you will not receive a response.
+
+The Cigna Group has a tobacco-free policy and reserves the right not to hire tobacco/nicotine users in states where that is legally permissible. Candidates in such states who use tobacco/nicotine will not be considered for employment unless they enter a qualifying smoking cessation program prior to the start of their employment. These states include: Alabama, Alaska, Arizona, Arkansas, Delaware, Florida, Georgia, Hawaii, Idaho, Iowa, Kansas, Maryland, Massachusetts, Michigan, Nebraska, Ohio, Pennsylvania, Texas, Utah, Vermont, and Washington State.
+
+Qualified applicants with criminal histories will be considered for employment in a manner consistent with all federal, state and local ordinances."
+e7ab5fd6f30835a3,Indeed,"Supply Chain Analyst 1, 2, Senior",Salt River Project,Data Analyst,hybrid,,2025-04-21,2025-04-23,Tempe,AZ,,,,,,,,https://www.indeed.com/viewjob?jk=e7ab5fd6f30835a3,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Requisition ID: 18627
+
+Join us in building a better future for Arizona! 
+
+SRP is one of the largest public power and water utilities in the U.S. providing electricity to approximately one million customers in the greater metropolitan Phoenix area. Since its founding in 1903, SRP has fostered a culture of stewardship and customer service consistently ranking as an industry leader in customer service according to J.D. Power and named one of Arizona's best employers by Forbes. SRP continues to adapt to its changing business environment by seeking innovative ways to reimagine utility service and the provision of critical resources essential to the life and economy of Arizona.
+
+Why Work at SRP
+
+At SRP, we foster an inclusive work environment and believe everyone should have a fair chance to work, regardless of who they are. That’s why we value teams with diverse perspectives, experiences, and backgrounds to help SRP deliver on its mission of providing reliable, affordable and sustainable water and power.
+
+SRP's success is rooted in our employees' happiness, health, and safety. That's why we offer a comprehensive benefits package to meet the needs of our employees and enhance their well-being. In addition to competitive pay and performance incentives, eligible employees can take advantage of the following benefits:
+
+  • Pension Plan (at no cost to the employee)
+  • 401(k) plan with employer matching
+  • Available your first day: Medical, vision, dental, and life insurance
+  • Over 200+ hours of PTO (includes vacation days, holidays, floating holidays, and sick leave)
+  • Parental leave (up to 4 weeks) and adoption assistance
+  • Wellness programs (including access to a recreation and fitness facility)
+  • Short and long-term disability plans
+  • Tuition assistance for both undergraduate and graduate programs
+  • 10 Employee Resource Groups for career development, community service, and networking
+
+##   
+Summary
+
+Supply Chain Analysts improve the efficiency of supply chain operations through data collection and analysis, process improvement and functional system support. The position requires excellent attention to detail, in-depth understanding of the supply chain function and exceptional analytics skills. It is essential for Supply Chain Analysts to possess excellent customer service skills, both internally and externally. They must effectively communicate and collaborate with various departments and suppliers, utilizing their interpersonal and problem-solving abilities to gather information and recommend improvements to the supply chain. Their ability to foster positive relationships and provide exceptional service is key to driving operational success and achieving organizational goals.
+
+##  What You'll Do
+
+  • Pull and analyze data from systems such as SAP, Ariba, Aravo, ServiceNow & Maximo.
+  • Analyze data to identify areas of risk or areas for improvement.
+  • Understand how systems work from a functional standpoint and assist with testing for IT upgrades or projects.
+  • Run and oversee projects including gathering requirements, keeping track of risks & issues as well as mitigation steps, status reporting and communicating to key stakeholders.
+  • Build strong internal stakeholders with support groups like IT, Accounts Payable, Cyber, Risk Management, Corporate Taxes, etc.
+  • Evaluate products and suppliers according to key business criteria.
+  • Work closely with procurement, and key stakeholders across the organization that work with the supplier base.
+  • Understanding of SRP policies, procedures, and standards.
+  • Be flexible and adaptable to areas of change and evolution for the role.
+  • Proactively seeks ways to efficiently improve processes and identify gaps that can be better served by supplier management.
+  • Possess excellent customer service skills. Effectively communicate and collaborate with various departments and suppliers as the main point of contact for suppliers and supplier related data.
+
+##  What It Takes To Succeed
+
+  • Prefer 5 years’ experience within supply chain, IT, business analytics, accounting or other specific utility experience
+  • Knowledge of reporting tools such as Power BI.
+  • Knowledge of circular supply chain and supplier diversity.
+  • Strong understanding of Procure to Pay, Investment Recovery and Inventory Management.
+  • Knowledge of SAP Supply Chain modules and Maximo work management modules.
+  • Ability to train and mentor other employees.
+  • Great communication skills and ability to work well with others.
+  • Knowledge of Accounts Payable, Sales/Use taxes, and warehousing processes.
+
+##  Experience
+
+  • For a Level 1 (Associate), a minimum of no previous years of experience to two years related experience is required (if no degree, four-six years of relevant experience or equivalent combination of education and related experience totaling four-six years).
+
+  • For a Level 2 (Journey), a minimum of two years of experience to four years related experience is required (if no degree, six-eight years of relevant experience or equivalent combination of education and related experience totaling six-eight years).
+
+  • For a Level 3 (Senior), a minimum of five years of related experience is required (if no degree, nine years of relevant experience or equivalent combination of education and related experience totaling nine years).
+
+Promotion to Level 2 requires a minimum of two years experience at Level 1 and demonstrated capability to perform advanced and more difficult work as determined by the supervisor. Promotion to Senior Level requires a minimum of 3 years experience at Level 2, is fully competent in all aspects of functional area of assignment and as such would be recognized as a specialist in area of assignment and may have periodic or occasional lead responsibilities.
+
+##  Education
+
+A bachelor’s degree related to the assignment from an accredited institution is preferred. 
+
+Hybrid Workplace
+
+SRP currently offers a hybrid workplace, which allows employees whose jobs can be performed remotely, and who have sufficient technical capability, to telework up to three days per week. Although teleworking is available, all employees must live and work in Arizona.
+
+Drug/Alcohol Policy Statement 
+
+To promote the safety and well-being of our employees, customers, and the communities we serve, SRP is committed to maintaining a drug/alcohol free work environment. Although marijuana may now be legal in Arizona, except as otherwise specified under Arizona law, SRP considers it to be an illegal drug for the purpose of our drug/alcohol policy because marijuana remains illegal at the federal level. Any candidate found to be impaired during the hiring process or who has the presence of an illegal drug or unauthorized substance in their system during the pre-employment drug/alcohol test may be disqualified from further consideration in the hiring process.
+
+Equal Opportunity Employer Statement 
+
+Salt River Project (SRP) is committed to equal employment opportunity regardless of race, color, religion, sex (including pregnancy), gender identity, sexual orientation, national origin, age, disability, genetic information, military status, or any other protected status under applicable federal, state or local law.
+
+Work Authorization
+
+All candidates must be legally authorized to work in the United States.  
+Currently, SRP does not sponsor H1B visas, OPT, or other employment-related visa's."
+82e1f25ada8c6203,Indeed,INFORMATION SECURITY ANALYST,State of Arizona,Data Analyst,in-person,Full-time,2025-04-16,2025-04-23,Phoenix,AZ,85004,yearly,60810.3,70000.0,60810.3,70000.0,65405.15,https://www.indeed.com/viewjob?jk=82e1f25ada8c6203,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"DEPARTMENT OF ECONOMIC SECURITY
+
+Your Partner For A Stronger Arizona.   
+
+DES works with families, community organizations, advocates and state and federal partners to realize our collective vision: A thriving Arizona.  
+
+DES serves more than 3 million Arizonans. Our Mission is to strengthen individuals, families, and communities for a better quality of life.
+
+INFORMATION SECURITY ANALYST
+
+Job Location:
+
+Office of Inspector General (OIG)  
+2200 North Central Avenue, Phoenix, Arizona 85004  
+www.azdes.gov
+
+Posting Details:
+
+Salary: $60,810.30 - $70,000  
+
+Grade: 22  
+
+Closing Date: April 30, 2025
+
+Job Summary:
+
+The Department of Economic Security, Office of Inspector General (OIG) is seeking an experienced and highly motivated individual to join our team as an Information Security Analyst. The Information Security Analyst is responsible for testing, implementation, and directing potential upgrades and improvements to the Appellate Processing System (APS). This individual will be the liaison between the development team and Appellate Service Administration (ASA) and Office of the Inspector General (OIG) leadership regarding changes to the system.  
+
+This position may offer the ability to work remotely within Arizona based upon the department's needs and continual meeting of expected performance measures.  
+
+The state of Arizona strives for a work culture that affords employees flexibility, autonomy, and trust. Across our many agencies, boards, commissions, many State employees participate in the State's Remote Work Program and are able to work remotely in their homes, in offices, and in hoteling spaces. All work, including remote work, should be performed within Arizona unless an exception is properly authorized in advance.
+
+Job Duties:
+
+Essential Responsibilities include but are not limited to:  
+
+  • Under the supervision of the Appellate Services Administrator and in conjunction with the Department of Technology Services the Systems Information Analyst is responsible for maintaining and testing the Appellate Processing System (APS) system for potential flaws, generate and track testing mechanisms to ensure system stability.
+  • Provide support and maintenance of APS, including modifying system assets, access to the system, and modifying templates. Performs fault isolation by validating, isolating, and correcting faults, and verifying service restoration with customers. Monitors logs and manages user accounts.
+  • Facilitate meetings between Division of Technology Services and Office of the Inspector General leadership to provide updates and address concerns regarding technical issues within the Appellate Service Administration. Processes, documents, and coordinates resolution of trouble calls with help desk.
+  • Create training materials, operational manuals, and produce ad-hoc reports as needed.
+
+Knowledge, Skills & Abilities (KSAs):
+
+Knowledge of:  
+
+  • General knowledge of information security technologies the areas of risk assessment, compliance and vulnerability management.
+  • Google Workspace Applications, including Gmail, Docs, Sheets, Slides, Drive, Meets, and other applications.
+  • Microsoft Applications, including Office Suite and Microsoft Windows Servers.
+  • Qualitative and Quantitative methods for gathering data and assessing and improving effectiveness.
+  • Principles of strategic planning, financial management, policy analysis, program evaluation and resource allocation.
+  • Federal, state and local statutes and Administrative Code.
+
+Skill in:  
+
+  • Performing statistical research and analysis.
+  • Preparing clear, concise, and accurate oral and written reports.
+  • Identifying risk and developing methods of mitigation.
+  • Familiar with Agile Methodology and Scrum Ceremonies.
+  • A strong knowledge of HTML, JavaScript (ES6), and CSS.
+  • Experience with advanced SQL and relational databases.
+  • Strong customer service skills.
+  • Excellent interpersonal, written and oral communication skills.
+
+Ability to:  
+
+  • Research and analyze data, drawing valid conclusions.
+  • Present accurate findings clearly, both orally and in writing.
+  • Recommend feasible improvements that affect program efficiency and effectiveness.
+  • Develop project plans that are mutually acceptable to program management and other stakeholders.
+  • Coordinate resources.
+  • Ability to synthesize feedback and adjust plans accordingly.
+  • Prioritize tasks to meet deadlines.
+  • Integrate and interpret complex information.
+  • Establish effective working relationships with those contacted in the course of work.
+
+Selective Preference(s):
+
+The ideal candidate for this position will have:  
+
+  • N/A
+
+Pre-Employment Requirements:
+
+  • All newly hired State employees are subject to and must successfully complete the Electronic Employment Eligibility Verification Program (E-Verify).
+  • Successfully pass background and reference checks; employment is contingent upon completion of the above-mentioned process and the agency’s ability to reasonably accommodate any restrictions.
+  • If this position requires driving or the use of a vehicle as an essential function of the job, then the following requirements apply. Any employee operating a motor vehicle on State business must possess and retain a current, valid class-appropriate driver’s license, complete all required training, and successfully pass all necessary driver’s license record checks. The license must be current, unexpired, and neither revoked nor suspended. Employees who drive on state business are subject to driver’s license record checks, must maintain acceptable driving records, and must complete all required driver training. An employee who operates a personally owned vehicle on state business shall maintain the statutorily required liability insurance (see Arizona Administrative Code (A.A.C.) R2-10-207.11).
+  • Associate’s degree plus 1 – 3 years of experience in information security analysis (or equivalent experience).
+
+Benefits:
+
+The Arizona Department of Economic Security offers a comprehensive benefits package to include:  
+
+  • Affordable medical, dental, life, and short-term disability insurance plans
+  • Participation in the Arizona State Retirement System (ASRS) and long-term disability plans
+  • 10 paid holidays per year
+  • Vacation time accrued at 4.00 hours bi-weekly for the first 3 years
+  • Paid Parental Leave-Up to 12 weeks per year paid leave for newborn or newly-placed foster/adopted child (pilot program).
+  • Sick time accrued at 3.70 hours bi-weekly
+  • Deferred compensation plan
+  • Wellness plans
+  • Tuition Reimbursement
+  • Stipend Opportunities
+  • Infant at Work Program
+  • Rideshare and Public Transit Subsidy
+  • Career Advancement & Employee Development Opportunities
+  • Flexible schedules to create a work/life balance
+
+By providing the option of a full-time or part-time remote work schedule, employees enjoy improved work/life balance, report higher job satisfaction, and are more productive. Remote work is a management option and not an employee entitlement or right. An agency may terminate a remote work agreement at its discretion. 
+
+Retirement:
+
+State employees are required to participate in the Arizona State Retirement System (ASRS), the State sponsored retirement contribution plan and the Long-Term Disability (LTD) program after a 27-week waiting period. The ASRS defined benefit plan provides for life-long income upon retirement. You will also have the option to participate in a voluntary deferred compensation program to take advantage of tax-deferred retirement investments.  
+
+On, or shortly after, your first day of work you will be provided with additional information about the available insurance plans, enrollment instructions, submission deadlines and effective dates.
+
+Contact Us:
+
+For questions about this career opportunity, please contact Benson Walker at (480)318-4150 or email Bensonwalker@azdes.gov.  
+
+The State of Arizona is an Equal Opportunity/Reasonable Accommodation Employer. Persons with a disability may request a reasonable accommodation such as a sign language interpreter or an alternative format by calling (480) 318-4150. Requests should be made as early as possible to allow sufficient time to arrange the accommodation."
+f377f6b3d4339be1,Indeed,Business Systems Analyst,Discount Tire,Data Analyst,in-person,Full-time,2025-04-16,2025-04-23,Scottsdale,AZ,85255,,,,,,,https://www.indeed.com/viewjob?jk=f377f6b3d4339be1,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Overview: 
+
+Here at Discount Tire, we celebrate the spirit of our people with extraordinary pride and enthusiasm. Our business has been growing for more than 60 years and now is the best time in our history to join us. We are opening more locations every year and we are always looking for qualified individuals to join us in our growth. We are a company that promotes from within, both in our retail and corporate operations. 
+
+Under general supervision, the Business Systems Analyst II evaluates software requirements, workflows, and challenges to enhance existing systems or implement new solutions. This role collaborates with stakeholders to optimize HR technology, ensuring efficiency, scalability, and user satisfaction. The ideal candidate demonstrates strong analytical skills, problem-solving abilities, and a commitment to continuous improvement. 
+
+Essential Duties and Responsibilities
+
+  • Gather, document, and analyze business requirements through stakeholder interviews, workshops, and analysis.
+  • Translate business needs into technical specifications.
+  • Conduct gap analyses to identify discrepancies between current and desired states.
+  • Collaborate with developers, architects, and Quality Assurance teams to ensure solutions meet requirements.
+  • Create process models, flowcharts, and documentation to clarify workflows and system functionality.
+  • Assist in testing and validating system changes during implementation.
+  • Use best practices and knowledge of internal or external business issues to improve products or services. Solve complex problems and take a new perspective using existing solutions.
+  • Apply broad knowledge to identify and resolve core problems.
+  • Working with People Care Product Owners plan, organize, and direct concurrent software design and implementation projects.
+  • Consider enterprise-wide solutions and impact.
+  • Facilitate ongoing communication with stakeholders to clarify requirements, manage expectations, and address concerns throughout the project lifecycle.
+  • Evaluate and prioritize business requirements based on their impact and urgency.
+  • Assist with change management efforts, including user training, communication planning, and adoption support.
+  • Ensure compliance with relevant standards and data security practices, such as GDPR, HIPAA, or internal company policies.
+  • Analyze data trends to support business decisions and validate system effectiveness.
+  • Develop reports or dashboards to track system performance and project metrics.
+  • Proactively identify process optimization opportunities and propose improvements.
+  • Serve as a liaison between People Care leadership, business units, and People Care and IT technical teams, ensuring alignment across departments.
+  • Other duties as assigned.
+
+Qualifications
+
+  • Minimum of 3 years of business analysis experience, preferably within HR or related functions.
+  • Experience working in a data-rich environment, including handling HR data such as payroll, benefits, and employee demographics.
+  • Familiarity with HRIS systems (Workday, Oracle HCM, SAP SuccessFactors) and Applicant Tracking Systems (ATS) is preferred.
+  • Understanding of project management methodologies and practices.
+  • Experience with databases, analytical tools, and techniques.
+  • Basic understanding of analytical methods (e.g., forecasting, workforce analytics).
+  • Attention to detail, including validation and reconciliation of HR data and datasets.
+  • Strong proficiency in Microsoft Office Programs (Excel, Access, PowerPoint preferred).
+  • Intermediate to advanced skills in Microsoft Word and Excel.
+  • Excellent communication, organizational, and customer service skills.
+  • Problem-solving abilities, particularly in resolving system or process issues in HR operations.
+  • Ability to handle sensitive and confidential information with integrity and discretion.
+  • Ability to work independently and as part of a team.
+  • Proven ability to work efficiently and accurately under pressure, meet deadlines, and adapt to changing requirements.
+  • Strong interpersonal skills, including the ability to collaborate with diverse stakeholders in HR and IT departments.
+  • Professional demeanor and ability to maintain a positive and friendly attitude under changing organizational circumstances.
+  • Can-do attitude, resourcefulness, and willingness to tackle complex challenges.
+  • Commitment to upholding company values and treating others with respect.
+
+Educational Requirements
+
+  • Bachelor’s Degree or equivalent experience is required.
+  • Professional certifications are a plus
+
+#  Work Days
+
+  • Normal work days are Monday through Friday. Occasional Saturdays and Sundays may be necessary.
+
+Work Hours
+
+  • Normal work hours are 8:00 a.m. to 5:00 p.m. Additional hours may be necessary.
+
+Discount Tire provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state, or local law. 
+
+#LI-Onsite 
+
+#LI-MS1"
+3deec94745a24755,Indeed,Senior Cost Analyst,Sargent & Lundy,Data Analyst,hybrid,Full-time,2025-04-19,2025-04-23,Phoenix,AZ,,yearly,91220.0,140750.0,91220.0,140750.0,115985.0,https://www.indeed.com/viewjob?jk=3deec94745a24755,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Description: 
+
+This role offers a hybrid work arrangement. You'll spend three days a week in the office, giving you the flexibility to work remotely for two days.
+
+As a Capital Projects Senior Cost Analyst, you will apply your technical skills to meet project team and client needs for monitoring, analyzing, and reporting project cost performance. This work will include interfacing directly with project management, client management, and site personnel for the development of budget and cost metrics for the engineering, procurement, and construction scopes of work associated with capital infrastructure projects. Using a variety of industry and proprietary tools, you will perform the following tasks:
+
+  • Implement project controls tools and methodology
+  • Support the month end closing and phase gate processes, coordination, productions, management, reporting and analysis of cost information
+  • Support the establishment of project original and approved budgets
+  • Work with project stakeholders to establish cost baselines
+  • Develop project forecasts, utilizing estimates, schedules, purchase order open commitments, and inputs from project stakeholders. Review, explain basis for, and adjust project forecasts directly with Project Managers.
+  • Monitor and analyze actual project costs, calculate variances between actual and forecasted costs, and gather information to document variance explanations.
+  • Assemble supporting documentation to meet project team and client requests/needs
+  • Analyze data and build reports to support project monitoring and decision making
+  • Interface regularly with project management to support monitoring cost performance
+  • There is the potential for you to travel to client office for project coordination meetings
+  • Experience with Accrual based project execution.
+
+Qualifications: 
+
+Essential skills and experience:
+
+  • Familiarity with the practical application of project controls
+  • Seven or more years of project experience
+  • Post-secondary graduate
+  • Communication: Excellent written and verbal communication skills, with a proven ability to interact and multitask with project team members, clients, and vendors of varying position levels.
+  • Motivation: Eager to learn new skills and develop knowledge to add make a valuable impact to project team operation. Willing to engage with others to understand project team needs. Committed to deliver high quality, accurate deliverables with attention to detail.
+  • Computer Skills: Working knowledge in MS Office tools, with emphasis on the advanced use of MS Excel and/or PowerBI in creating detailed, interactive spreadsheets, workbooks, and databases.
+  • Working knowledge in SAP
+
+Valued but not required skills and experience:
+
+  • Related internship, co-op, or work experience, which includes project controls, project planning, project scheduling, and earned value performance, preferably within the power industry
+  • i.) AACE CCT, or PMI Equivalent
+  • ii.) Working towards AACE CCP, CEP, PSP, PRMP, EVP, or PMI Equivalent
+  • iii.) In lieu of Professional Designation (i. or ii.) above, has completed equivalent training
+  • Or in lieu of i.), ii.) or iii.) above, has successfully passed designated proficiency testing
+
+Award-Winning Benefits: 
+
+At Sargent & Lundy, we care about the health and well-being of our employees. Our commitment extends beyond the workplace, offering comprehensive healthcare plans and generous paid time off to support our team members in every aspect of their lives. We understand the importance of work-life balance, which is why we are proud to provide competitive, award-winning benefits. Our dedication to employee satisfaction has earned us the prestigious Top Workplaces Culture Excellence Award for compensation and benefits in 2022, 2023, and 2024.
+
+Health & Wellness
+
+Financial Benefits
+
+Work-Life Balance
+
+  • Health Plans: Medical, Dental, Vision
+  • Life & Accident Insurance
+  • Disability Coverage
+  • Employee Assistance Program (EAP)
+  • Back-Up Daycare
+  • FSA & HSA
+
+  • 401(k)
+  • Pre-Tax Commuter Account
+  • Merit Scholarship Program
+  • Employee Discount Program
+  • Corporate Charitable Giving Program
+  • Tuition Assistance
+  • First Professional Licensure Bonus
+  • Employee Referral Bonus
+
+  • Paid Annual Personal/Sick Time (PST)
+  • Paid Vacation
+  • Paid Holidays
+  • Paid Parental Leave
+  • Paid Bereavement Leave
+  • Flexible Work Arrangements
+
+Compensation Range: $91,220.00 - $140,750.00 Awards & Recognition: 
+
+Equal Opportunity: 
+
+Sargent & Lundy is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, national origin, disability status, protected veteran status, or any protected status as defined by applicable law."
+efa27e500e854d30,Indeed,Energy Innovation Senior Analyst | Data Center Strategy,APS,Data Analyst,in-person,,2025-04-18,2025-04-23,Phoenix,AZ,85004,,,,,,,https://www.indeed.com/viewjob?jk=efa27e500e854d30,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Date: Apr 17, 2025
+
+Location: PHOENIX, AZ, US, 85004-3903
+
+Company: APS
+
+The APS Promise is our commitment to our customers, community and each other. It explains why we’re here (our purpose), what we’re here to do (vision and mission) and the principles and behaviors that will empower us to achieve our strategic goals. It represents the opportunity to build on our cultural strengths and develop new behaviors that will enable our future success.
+
+##  Summary
+
+The Energy Innovation Senior Analyst | Data Center Strategy helps development and execution of strategic initiatives related to serving power to data centers and other extra high load factor customers. Utilize regulated utility business acumen to drive change and policy improvements with the goal of protecting existing customers from cost/reliability risk potentially caused by large load customer growth. Ability to influence internal APS stakeholders without authority to achieve Data Center Strategy goals/initiatives. Ensure business unit decisions/policy align with corporate initiatives and data center strategy. Manage relationships of data center customers in coordination with Key Accounts, Customer Construction and other teams. Lead data center customers though contract negotiation and execution while staying in alignment with company business units. Track market/industry trends related to strategic/tariffs utilities are advancing to serve the data center industry. Track/develop/implement utility programs including energy efficiency, demand response, microgrids, on-site generation utilizing existing and new technology. Identifies, investigates and evaluates strategic business alliances that are in line with the organization's long-range goals. Evaluates and develops new market initiatives and analyzes business opportunities in both new and existing markets. Develops proposals, including feasibility studies, for new business opportunities. Identifies, analyzes and compares alternative opportunities for entering new markets and adopting new technologies. Monitors and reports on portfolio status and proactively addresses and resolves issues.
+
+##  Minimum Requirements
+
+  • Bachelors' degree in Engineering, Science, Information Technology or related field and 5 years of prior relevant experience in the technology, power and/or natural gas sectors with an understanding of regulatory, technical and business issues impacting the industry.
+
+  • In lieu of Bachelor's degree, High School/GED plus 9 years directly related experience in the technology, power and/or natural gas sectors with an understanding of regulatory, technical and business issues impacting the industry including renewables, distributed energy and grid technologies.
+
+  • Detailed knowledge and understanding of one or more emerging energy technologies and related business models, such as solar, energy storage, electric vehicles, energy management software platforms etc.
+
+  • Experience collecting and analyzing data of medium to high complexity with multiple correlations and variables.
+
+Preferred Special Skills, Knowledge or Qualifications:
+
+  • Regulated utility business acumen.
+
+  • History of developing new strategies or programs.
+
+  • History of communicating at various levels of organizations including executives, public stakeholders
+
+  • Experience working with the strategy and business development teams to assess technology-driven business opportunities, and build business cases for handling of the most impactful technologies.
+
+  • Understanding of financial concepts and ability to model business scenarios.
+
+  • Strong analytical skills with demonstrated ability to research initiatives and stay current with industry trends & developments.
+
+  • Strong presentation and writing skills and ability to convey complex/technical content in a coherent and compelling story for audiences with varying levels of technical knowledge Ability to establish relationships with multiple technology teams and provide subject-matter expertise and advice relevant to specific business needs.
+
+##  Major Accountabilities
+
+1) Manage standard Energy Innovation related projects, both directly and through collaboration with other internal and external groups through effective research, data and trend analysis.
+
+2) Research and understand relevant technology trends and emerging business models, including early stage developments.  
+
+3) Prepare regular business updates on industry trends, emerging technologies and technology-enabled business models, focusing on the potential opportunities and threats for the Company.  
+
+4) Develop analytical and technical capabilities and expertise in areas including: distributed generation, energy storage and smart grid technologies, regulatory and policy issues.  
+
+5) Work closely with other business unit teams to assess technology-driven business opportunities, and build business cases for handling of the most impactful technologies  
+
+6) Provide support and expertise in forecasting the business impacts of emerging technologies, and ensure these perspectives are factored into business case development.  
+
+7) Effectively interface and resolve project issues with departmental staff, other departments, regulatory agencies and other stakeholders to meet project requirements.  
+
+8) Maintain and foster business relationships with business units and vendors, participating in negotiations and evaluations to identify potential issues and risks.  
+
+9) Participate, as Company representative in various forums, committees and working groups dealing with various Energy Innovation technical, policy and regulatory issues.  
+
+10) Demonstrates a continuous learning mindset and knowledge of pilot and proof of concept goals and processes. Able to contribute to the construction of a POC plan and test platform.
+
+##  Export Compliance / EEO Statement
+
+This position may require access to and/or use of information subject to control under the Department of Energy's Part 810 Regulations (10 CFR Part 810), the Export Administration Regulations (EAR) (15 CFR Parts 730 through 774), or the International Traffic in Arms Regulations (ITAR) (22 CFR Chapter I, Subchapter M Part 120) (collectively, 'U.S. Export Control Laws'). Therefore, some positions may require applicants to be a U.S. person, which is defined as a U.S. Citizen, a U.S. Lawful Permanent Resident (i.e. 'Green Card Holder'), a Political Asylee, or a Refugee under the U.S. Export Control Laws. All applicants will be required to confirm their U.S. person or non-US person status. All information collected in this regard will only be used to ensure compliance with U.S. Export Control Laws, and will be used in full compliance with all applicable laws prohibiting discrimination on the basis of national origin and other factors. For positions at Palo Verde Nuclear Generating Stations (PVNGS) all openings will require applicants to be a U.S. person.  
+
+Pinnacle West Capital Corporation and its subsidiaries and affiliates ('Pinnacle West') maintain a continuing policy of nondiscrimination in employment. It is our policy to provide equal opportunity in all phases of the employment process and in compliance with applicable federal, state, and local laws and regulations. This policy of nondiscrimination shall include, but not be limited to, recruiting, hiring, promoting, compensating, reassigning, demoting, transferring, laying off, recalling, terminating employment, and training for all positions without regard to race, color, religion, disability, age, national origin, gender, gender identity, sexual orientation, marital status, protected veteran status, or any other classification or characteristic protected by law.  
+
+For more information on applicable equal employment regulations, please refer to EEO is the Law poster. Federal law requires all employers to verify the identity and employment eligibility of every person hired to work in the United States, refer to E-Verify poster. View the employee rights and responsibilities under the Family and Medical Leave Act (FMLA).  
+
+Arizona Public Service is a smoke free workplace.
+
+Hybrid: Employees in hybrid roles work both in their home offices (virtually) and alongside their colleagues (in person).
+
+In order for employees to build strong relationships and to promote meaningful in-person interactions, hybrid employees are expected to work about 40% of their time in-person at an APS or other (non-home office) location.
+
+*Employees are expected to reside in Arizona (or New Mexico for Four Corners-based employees).
+
+  • Working from a home office requires adequate technology and an appropriate ergonomic set up.
+
+  • Role types are subject to change based on business need.
+
+Job Segment: Nuclear, Energy"
+6c568cc644cc04e5,Indeed,Senior Financial Systems Business Analyst,APS,Data Analyst,in-person,,2025-04-17,2025-04-23,Phoenix,AZ,85004,,,,,,,https://www.indeed.com/viewjob?jk=6c568cc644cc04e5,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Date: Apr 17, 2025
+
+Location: PHOENIX, AZ, US, 85004-3903
+
+Company: APS
+
+Arizona Public Service generates clean, reliable and affordable energy for 2.7 million Arizonans. As the state’s largest and longest-serving energy provider, our more than 6,000 dedicated employees power our vision of creating a sustainable energy future for Arizona.
+
+##  Summary
+
+The Accounting Systems team is seeking a talented and motivated individual to support our enterprise-wide financial systems and processes. As a Senior Financial Systems Business Analyst, you will play a key role in working with and optimizing multiple systems and complex processes throughout the company to ensure the delivery of accurate and reliable financial data.
+
+What You’ll Do:
+
+  • Manage the ongoing support and optimization of large enterprise financial systems and processes
+  • Conduct systems optimization of high-activity processes and functions
+  • Optimize the financial functions and processes of a wide variety of systems beyond finance, including work management, customer billing, supply chain, and inventory systems.
+  • Work alongside IT to design, test, and implement new functionality and system improvements
+  • Design and help develop custom solutions to supplement unique company needs
+  • Continuously develop your technical skills to analyze and solve data irregularities
+
+What We’re Looking For:  
+Successful candidates tend to have a process optimization background (e.g., Industrial Engineering, Systems Engineering, Operations Management, Management Information Systems) and acquire their functional business knowledge along the way.
+
+  • Strong expertise in systems and process optimization
+  • Strong technical, analytical, and problem-solving skills
+  • Ability to work with and analyze large datasets
+  • Knowledgeable in providing functional support to large enterprise systems
+  • Knowledgeable in the implementation and maintenance of large enterprise systems
+  • Accounting/Finance knowledge a plus
+
+## Minimum Requirements
+
+  • BS/BA equivalency or an equivalent combination of four years relevant work experience and relevant college coursework in business, information technology or a related area.
+  • An additional five (5) years of progressively responsible experience where strong understanding of database design, structure, functions and processes and experience with database tools is obtained.
+  • Previous experience with the systems specific to the functional area may also be required.
+  • Demonstrated knowledge of business processes and operational knowledge including functions, procedures, processes, and computer systems.
+  • Ability to identify process improvement opportunities and tie functional needs to technology solutions.
+  • Demonstrated project/team experience and ability to prioritize work.
+  • Strong analytical ability to review data, see relationships and patterns as well as communication, interpersonal and organizational skills.
+  • Experience in managing projects and identifying and resolving issues.
+  • Expertise in PC applications including advanced skill level in Microsoft Excel, Access, and Word.
+  • Requires proficient knowledge of emerging practices and technologies used within the area.
+  • Knowledge of applicable federal and state laws, regulations, and standards impacting business areas.
+  • Demonstrated communication skills, both verbal and written.
+
+## Major Accountabilities
+
+1) Participates or leads projects to formulate and define business processes, systems scope and objectives through research and fact finding combined with a good understanding of business functions, systems, and industry requirements.
+
+2) Participates in or oversees the analysis and recommendation, installation and maintenance of new and enhancement of existing systems.  
+
+3) Provides input and gathers functional requirements, policy/procedure interpretation, and future business system needs. Supports upgrades, patches, fixes, and new implementations by performing testing, process and system documentation, and supports end user training and roll out efforts.  
+
+4) Works within areas of responsibility on process improvement initiatives. Analyzes work process design, workflow and technology solutions to streamline, automate and improve work processes.  
+
+5) Researches, analyzes, and resolves routine to complex business/operations problems related to systems utilized within the business units. Interfaces with IS or vendors to resolve issues as necessary. Follows up with resolution of problems to ensure timely response and customer satisfaction.  
+
+6) Coordinates and participates in the development of effective business cases using sound cost/benefit analysis with some direction. For smaller projects, may coordinate assigned phases of project planning and execution, including estimating resources and tasks, creating, managing and controlling project schedules and resources.  
+
+7) Provides operational support for multiple business areas and systems including, but not limited to, researching and resolving system problems, system setup and maintenance, and data integrity audits.  
+
+8) Writes, maintains and supports a variety of reports or queries utilizing appropriate reporting tools. Assists in the development of standard and complex reports for customers. Assists in the development and maintenance of standardized business reporting protocol and ensures data integrity and consistency in all reporting aspects.  
+
+9) Participates in project team assignments either as a project lead or as a key team member. Responsible for coordinating activities within the functional business areas. Direct areas of project responsibility could include business needs analysis, project scope definition, testing strategy, roll out and user acceptance.  
+
+10) Maintains documentation of system changes, business processes, guidelines and procedures, and tools and training aids needed to support business unit.  
+
+11) May support application/system training to functional users.  
+
+12) May be responsible for managing security for all business systems including documentation of processes associated with security. Responsible for ensuring appropriate data security controls, process and system documentation.  
+
+13) May monitor and track business goals, activities, performance monitoring and issues for an assigned unit(s) to keep management apprised of business unit activities.  
+
+14) May participate in the planning, development, and administration of business unit's budget functions.  
+
+15) Actively seeks knowledge and understanding of business/technical environment, priorities, procedures and processes. Keeps apprised of current and emerging trends for the business units systems.  
+
+## Export Compliance / EEO Statement
+
+This position may require access to and/or use of information subject to control under the Department of Energy's Part 810 Regulations (10 CFR Part 810), the Export Administration Regulations (EAR) (15 CFR Parts 730 through 774), or the International Traffic in Arms Regulations (ITAR) (22 CFR Chapter I, Subchapter M Part 120) (collectively, 'U.S. Export Control Laws'). Therefore, some positions may require applicants to be a U.S. person, which is defined as a U.S. Citizen, a U.S. Lawful Permanent Resident (i.e. 'Green Card Holder'), a Political Asylee, or a Refugee under the U.S. Export Control Laws. All applicants will be required to confirm their U.S. person or non-US person status. All information collected in this regard will only be used to ensure compliance with U.S. Export Control Laws, and will be used in full compliance with all applicable laws prohibiting discrimination on the basis of national origin and other factors. For positions at Palo Verde Nuclear Generating Stations (PVNGS) all openings will require applicants to be a U.S. person.  
+
+Pinnacle West Capital Corporation and its subsidiaries and affiliates ('Pinnacle West') maintain a continuing policy of nondiscrimination in employment. It is our policy to provide equal opportunity in all phases of the employment process and in compliance with applicable federal, state, and local laws and regulations. This policy of nondiscrimination shall include, but not be limited to, recruiting, hiring, promoting, compensating, reassigning, demoting, transferring, laying off, recalling, terminating employment, and training for all positions without regard to race, color, religion, disability, age, national origin, gender, gender identity, sexual orientation, marital status, protected veteran status, or any other classification or characteristic protected by law.  
+
+For more information on applicable equal employment regulations, please refer to EEO is the Law poster. Federal law requires all employers to verify the identity and employment eligibility of every person hired to work in the United States, refer to E-Verify poster. View the employee rights and responsibilities under the Family and Medical Leave Act (FMLA).  
+
+Arizona Public Service is a smoke free workplace. 
+
+Hybrid: Employees in hybrid roles work both in their home offices (virtually) and alongside their colleagues (in person).
+
+In order for employees to build strong relationships and to promote meaningful in-person interactions, hybrid employees are expected to work about 40% of their time in-person at an APS or other (non-home office) location.
+
+  • Employees are expected to reside in Arizona (or New Mexico for Four Corners-based employees).
+
+  • Working from a home office requires adequate technology and an appropriate ergonomic set up.
+
+  • Role types are subject to change based on business need.
+
+Job Segment: Sustainability, Nuclear, Energy"
+3956c7318e96bd7d,Indeed,Principal Budget & Research Analyst,"City of Goodyear, AZ",Data Analyst,in-person,Full-time,2025-04-20,2025-04-23,Goodyear,AZ,,yearly,84046.11,124766.83,84046.11,124766.83,104406.47,https://www.indeed.com/viewjob?jk=3956c7318e96bd7d,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"## Job Description Summary
+
+This position provides leadership to a team of professional analysts engaged in the annual budget process. It coordinates and oversees key phases of budget development, including the operating budget, capital improvement program, and revenue projections. Responsibilities include reviewing and monitoring budgets, conducting financial and data analyses, ensuring compliance with internal and external reporting requirements, and preparing financial schedules, publications, and advertisements. The role also involves offering technical support to Division and City department staff by resolving budget-related issues, delivering training on budget preparation, presentation, and monitoring, and supporting related activities. The Principal Budget and Research Analyst is distinguished by the complexity of assignments and the expectation to work independently and proactively. This role requires advanced professional, administrative, and analytical expertise in collecting information, developing and managing citywide budgets, conducting research and statistical analysis, and designing efficient financial systems.
+
+The ideal candidate will have experience in accounting, finance, and/or budgeting. A CPA license may count toward overall professional experience. We highly value resumes that highlight not just responsibilities but measurable accomplishments that demonstrate high performance. Evidence of upward career progression, involvement in process improvements, supervisory responsibilities, and experience with training or mentoring others will be particularly beneficial in easing the transition into this role.
+
+A strong desire to learn and grow, paired with critical thinking skills, is essential. The successful candidate will not only complete assigned tasks but will proactively seek ways to improve efficiency and add value—especially in repetitive analytical work—while modeling this mindset for the broader budget team.
+
+Excellent communication skills, both written and verbal (including presentations), are crucial. These abilities may be called upon in the absence of the Budget Manager or to support future career advancement.
+
+Proficiency in Microsoft Excel, including comfort with semi-complex to complex formulas, is highly valuable for effectively managing processes and reviewing team outputs.
+
+At the City of Goodyear, you will be a part of an organization that values its employees as its greatest asset. You will become part of a dedicated team of professionals that are committed to build and maintain a highly engaged workforce. You will be challenged to learn and grow in an environment that values employee development and career-building. You will thrive in a culture of innovation. We believe that successful employees are those that possess these six core values:  
+
+Adaptability - Integrity - Initiative - Empathy - Optimism – Innovation
+
+Only a limited number of the most qualified applicants meeting the City's requirements will be invited for an interview. The examination process for this position will consist of a panel interview. All communication regarding application status and interview notifications will be sent via email- please monitor your junk/spam email for communication as it will come from a system generated source.
+
+## Essential Functions
+
+  • Conducts rolling long-range revenue and expenditure forecasts related to operating and capital expenditures, fund and balances, and revenues.
+  • Leads staff by encouraging efficiencies and adjustments to work tasks, planning and prioritizing tasks, ensuring policy and procedure compliance, reviewing work prepared by staff, offering expertise and training in the professional development of staff.
+  • Develops training materials and standard procedures for Division and provides training and development opportunities for staff.
+  • Acts as and assumes all duties of the Budget Manager in their absence.
+  • Reviews and performs various forms of budget and financial analysis, estimates and forecasts in support of the annual budget including revenue, operating and capital expenditures, and fund balance and capital funds availability.
+  • Develops monthly and quarterly budget variance reports for department operating budgets, one-time supplemental budget allocations, capital improvement program and/or revenues and other resources. Performs various types of trend and other analysis, develops reports and questions for department discussions, and writes variance explanations for financial reports.
+  • Acts as a Budget liaison for various City departments. Coordinates and provides technical support to City department staff by anticipating and resolving budget challenges, providing training in the development, presentation, and monitoring of annual budgets, and other related activities.
+  • Coordinates and oversees completion of portions of the annual budget development process including instructions and forms, staff training, City department support and assistance, and performs analytical reviews of work for completeness and reasonableness, and various forms of reporting for management, City Council and the public.
+  • Develops financial schedules and presentations in support of the annual budget process and budget document. Coordinates the publication of the budget book. Gathers needed information, writes narratives, reviews work of others, and develops draft presentations.
+  • Coordinates and supervises completion of required publications and advertising for adopting the annual budget.
+  • Leads special projects such as cost allocation and user fees, impact fee studies, and technology solutions including scope of work and procurement, contract administration, citywide coordination, and required reporting.
+  • Represents the departments in various ad hoc and standing committees and task forces.
+  • Develops general and specific financial impact analysis by researching pertinent data and developing recommendations for leadership.
+  • Responds to department and division inquiries to budget issues, conducts research, analyzes data, and develops reports when directed by leadership.
+  • Administers city-wide budget preparation systems including forms, tables, and other maintenance activities for automated and business systems.
+
+## Requirements
+
+  • Formal Education/Knowledge: Work requires broad knowledge in a general professional or technical field. Knowledge is normally acquired through four years of college resulting in a bachelor's degree or equivalent.
+  • Experience: Minimum five years of experience in a related field.
+  • Certifications and Other Requirements: None
+  • Reading: Work requires the ability to read financial research studies, pending legislation, business plans, engineering consultant reports, water/wastewater technical reports, City Council communications, professional publications, request for proposals, organizational policies and procedures, regulatory publications, and technical financial analysis user manuals.
+  • Math: Work requires the ability to work complex problem-solving using algebra, present/future value concepts, trend analysis, statistical relationships, capital budgeting, financial formulas, and cost benefits analysis.
+  • Writing: Work requires the ability to write Financial Reports, Memorandums, Council Action Requests, and procedural manuals.
+  • Managerial: Semi-Complex - Work requires functioning as a lead worker performing essentially the same work as those directed, and includes overseeing work quality, training, instructing, and scheduling work.
+  • Budget Responsibility: Significant - Oversees budget preparation of a program budget. Reviews and approves expenditures of significant budgeted funds for the department or does research and prepares recommendations for city-wide budget expenditures
+  • Policy/Decision Making: Significant - The employee normally performs the job by following established standard operating procedures and/or policies. There is a choice of the appropriate procedure or policy to apply to duties. More complex work as well as decisions with more significant impacts are typically reviewed prior to being finalized.
+  • Technical Skills: Comprehensive - Work requires a comprehensive, practical knowledge of a technical field with use of analytical judgment and decision-making abilities appropriate to the work environment of the organization.
+  • Interpersonal/Human Relations Skills: High - Interactions at this level usually impact the implementation of policies. Contacts may involve interpretation of how policies are implemented and may require discussion and the support of controversial positions or the negotiation of sensitive issues or important presentations. During interactions on policy implementation, contacts may also involve stressful, negative interactions requiring high levels of tact and the ability to respond to aggressive interpersonal interactions.
+
+## 12 Month Objectives
+
+  • Gain a thorough understanding of the job and roles of all budget staff by reviewing and familiarizing yourself with the budget division onboarding document.
+
+  • Meet at least weekly with the Budget Manager to ask questions, solicit feedback, and prioritize work tasks.
+
+  • Demonstrate a thorough understanding of city financial policies, city schedules, and other governing documentation to assist with decision making and oversight of city budgets.
+
+  • Read and review budget department documentation proactively take the lead on reviewing, adding, and updating SOP’s, Best Practices, and task lists to enhance the standardization of processes.
+
+  • Coordinate & review the timely, accurate, and thorough completion of all our recurring financial reports.
+
+  • Build relationships, gain trust, and seek out opportunities to mentor and train budget staff.
+
+  • Coordinate and oversee completion of assigned duties as part of the annual budget development process.
+
+  • Play an integral role in understanding and updating our rolling long-range revenue & expenditure forecasts.
+
+  • Provide day-to-day support and customer service to assigned departments by anticipating budget issues & assisting budget staff with doing the same.
+
+  • Update and maintain our “Win the Lottery” file and internal SharePoint site."
+57f276c26102ccb2,Indeed,Senior Financial Workload Analyst,TriWest Healthcare Alliance,Data Analyst,in-person,Full-time,2025-04-17,2025-04-23,Phoenix,AZ,,,,,,,,https://www.indeed.com/viewjob?jk=57f276c26102ccb2,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"## Profile
+
+**This is a hybrid role that requires onsite attendance at our North Phoenix, AZ Corporate Office. 
+
+Our Department of Defense contract requires US citizenship and a favorably adjudicated DOD background investigation for this position. 
+
+Veterans, Reservists, Guardsmen and military family members are encouraged to apply! 
+
+Job Summary
+
+This Finance based position is responsible for compiling and analyzing financial and/or operational drivers to develop complex models within assigned areas. The techniques include workload forecasting, resource staffing, daily volume analysis, historical performance trending and large scale data analysis. Data analysis is of moderate to broad scope and complexity requiring analysis of data combining multiple data sources into one report and researching data sources. Provide solutions to management based on findings from data analysis and trends to include the development of metrics, preparation of reports, graphs, and charts to support the analysis. . This person exercises independent judgment within defined procedures and practices to determine appropriate action. Provides expertise on large projects and manages small projects. Participates in staffing requirement development including, but not limited to, budgeting and forecasting of staffing requirements and related expenses.
+
+Education & Experience
+
+Required:  
+o Bachelor's degree in Finance, Accounting, or related field
+
+o 5 years of experience analyzing, modeling, and forecasting complex data
+
+o Experience with report design and presentation
+
+o Proficiency with Microsoft Word and PowerPoint and advanced in Excel
+
+Preferred:  
+o 6+ years in analyzing, modeling, and forecasting data
+
+o PeopleSoft experience
+
+o Experience with large volume data
+
+o Proficient in nVision and Query
+
+Key Responsibilities
+
+o Create and maintain statistical models for ongoing and ad hoc review and analysis of data o Research, compile, and analyze data in order to create standard and ad hoc reports that provide solutions to management on complex issues o Provides analyses and interpretation of complex workload models, volumes analyses and predicts impact of various process improvement initiatives o Works with management to understand the impact of decisions made by analyzing and identifying trends creating what-if scenarios before implementation of initiatives o Work with internal departments, such as Operations and Data Management to determine performance drivers, key performance indicators from internal and external sources in order to develop reports which measure these items o Performs a variety of complex analysis and reporting to provide ongoing information, compiles relevant information, makes comparisons and evaluates results. Prepares a variety of complex financial data, information, and studies in a clear, concise format, month-end financial reports, and provides variance analysis. Identify, initiate, research, and prepare evaluations on issues related to assigned areas
+
+o Develop the salary and benefit budget / forecast based utilizing the workload model and other information o Work on problems of moderate scope where analysis of situations or data requires a review of a variety of factors o Present results of analysis to financial and business leaders to include senior management, assist in coordinating and executing the monthly volume and workload forecasting process o Strong working knowledge of complex data modeling, trend, and gap analysis o Completely weekly, monthly, quarterly, and annual analysis on volumes related to the current business o Compiles data, organizes into meaningful format, and analyses performance levels, cost data, budget outcomes, and other specialized data to improve operational understanding o Work with management to prioritize business and information needs o Maintains documentation and ensures all procedure support department and company policies and procedures o Perform other duties as assigned
+
+Competencies
+
+Computer Literacy: Ability to function in a multi-system Microsoft environment using Word, Outlook, TriWest Intranet, the Internet, and department software applications. High level of expertise in Excel needed.
+
+Coping / Flexibility: Resiliency in adapting to a variety of situations and individuals while maintaining a sense of purpose and mature problem-solving approach
+
+Independent Thinking / Self-Initiative: Critical thinker with ability to focus on things which matter most to achieving outcomes; Commitment to task to produce outcomes without direction and to find necessary resources
+
+Information Management: Ability to manage large amounts of complex information, easily communicate it clearly, and draw sound conclusions
+
+Multi-Tasking / Time Management: Prioritize and manage actions to meet changing deadlines and requirements within a high volume, high stress environment
+
+Organizational Skills: Ability to organize people or tasks, adjust to priorities, learn systems, within time constraints and with available resources; Detail-oriented
+
+Team-Building / Team Player: Influence the actions and opinions of others in a positive direction and build group commitment
+
+Technical Skills: Knowledge of complex modeling associated with staffing forecasting, volume estimating, Microsoft Office, presentation skills, accounting rules, practices, and principles, software applications, and accounting and forecasting systems, and analytical tools; project management skills; Ability to maintain confidentiality and proprietary issues
+
+Working Conditions
+
+Working Conditions:  
+o Availability to cover any work shift o Works within a standard office environment
+
+##  Company Overview
+
+Taking Care of Our Nation’s Heroes. 
+
+It’s Who We Are. It’s What We Do.
+
+Do you have a passion for serving those who served?
+
+Join the TriWest Healthcare Alliance Team! We’re On a Mission to Serve®!
+
+Our job is to make sure that America’s heroes get connected to health care in the community.
+
+At TriWest Healthcare Alliance, we’ve proudly been on that important mission since 1996.
+
+##  DoD Statement
+
+Our Department of Defense contract requires US citizenship and a favorably adjudicated DOD background investigation for this position.
+
+##  Benefits
+
+We’re more than just a health care company. We’re passionate about serving others! We believe in rewarding loyal, hard-working people who are willing to learn as they grow. TriWest Healthcare Alliance values teamwork. Join our team, fulfill your responsibilities, and you may also be considered for frequent pay raises, overtime opportunities to earn even more, recognition and reward programs, and much more. Of course, we also offer a comprehensive and progressive compensation and benefits package that includes:
+
+  • Medical, Dental and Vision Coverage
+  • Generous paid time off
+  • 401(k) Retirement Savings Plan (with matching)
+  • Short-term and long-term disability, basic life, and accidental death and dismemberment insurance
+  • Tuition reimbursement
+  • Paid volunteer time
+
+##  Equal Employment Opportunity
+
+TriWest Healthcare Alliance is an equal employment opportunity employer. We are proud to have an inclusive work environment and know that a diverse team is a strength that will drive our success. To that end, TriWest strives to create an inclusive environment that cultivates and supports diversity at every organizational level, including hiring and retaining a diverse workforce, and we highly encourages candidates from all backgrounds to apply. Applicants are considered for positions without discrimination on the basis of race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability or any other consideration made unlawful by applicable federal, state, or local laws."
+357314ad61527123,Indeed,IT Risk Management Senior Analyst,City National Bank,Data Analyst,hybrid,,2025-04-23,2025-04-23,Phoenix,AZ,85020,yearly,92114.0,156880.0,92114.0,156880.0,124497.0,https://www.indeed.com/viewjob?jk=357314ad61527123,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"IT RISK MANAGEMENT SENIOR ANALYST
+
+WHAT IS THE OPPORTUNITY?
+
+""The IT Risk Senior Analyst is a subject-area specialist with specialized training, methods and analytic techniques to create recommendations and directions for cyber risk mitigation in a complex technical environment. Focus areas of IT Control assessment by the ITRM Security Senior Analyst includes fit for purpose review and challenges and process/risk/control (PRC) reviews to evaluate and overall control program effectiveness in mitigating risk. The ITRM Senior Analyst's goal to create actionable information for IT and business leadership, and to provide objective assessment of cyber security risks for auditors, regulators and external parties. This requires routinely performing review and challenge reviews agains 1LOD testing practices specific to T&I controls, authoring detailed reports and gathering metrics ensure stakeholders receive accurate and complete information. The ITRM Senior Anlayst keeps abreast of external cyber security trends, technologies and cyber risk management approaches, and often works with other teams on cyber risk-related initiatives to provide subject-matter recommendations and guidance to achieve a posture within the bank's overall risk appetite. This is an advanced senior professional with wide ranging experience uses professional concepts and to resolve complex issues in creative and effective ways. Serves as an expert in own discipline or area of specializationWorks on complex issues where analysis of situations or data requires an in-depth evaluation of variable factors"" 
+
+WHAT WILL YOU DO?
+
+  • Perform fit for purpose review and challenges specific to IT (T&I) controls tested by 1LOD Testing team
+  • Provide guidance to 1LOD colleagues to ensure testing practices meet internal standards.
+  • Support regulatory requirements and deliverables as needed
+  • Define analysis objectives, collect data from internal and external sources, and evaluate/analyze data to provide objective information on cyber risks for IT and business management with both summary and detailed reporting
+  • Assess risk within subject specialty area to evaluate the design and effectiveness of security controls
+  • Partner with external partners, vendors, law enforcement, and intelligence community as applicable to fulfill reporting and information sharing requirements, and collecting information required for comprehensive risk analysis and assessment
+  • Create new and maintain process and procedural documentation for various risk analysis and risk assessment activities; Highlight industry-based methodologies, techniques or standards (FAIR, NIST, FFIEC, etc.) used as the basis for analysis efforts
+  • Publish routine, accurate risk analysis and assessment reports as defined by organizational risk policies and procedures to applicable audiences for each subject area discipline
+  • Participate in other projects and duties as needed or requested
+
+WHAT DO YOU NEED TO SUCCEED?
+
+Required Qualifications*
+
+  • Bachelor's Degree or equivalent
+  • Minimum of 12 years' experience in Information/Cyber Security field
+  • Minimum of 6 years' experience in cyber security operations, incident response, IT risk management or investigations
+
+Additional Qualifications
+
+  • Demonstrated experience analyzing IT control testing attributes and evidence to properly evaluate and conclude control effectiveness
+Demonstrated knowledge of cyber security landscape 
+  • \- threats, trends, technologies
+  • Demonstrated knowledge of financial regulation and control frameworks applicable to cyber security or IT risk
+  • Excellent communication and interpersonal skills. Including a strong ability to create positive and professional business relationships with internal clients.
+  • Strong commitment to working as a team and providing excellent customer service.
+  • Exposure to banking or equivalent highly controlled technology environment is preferred
+  • Masters' degree in business, computer science or related field preferred
+  • Security certifications (CISSP, GSEC, etc.) are highly desired.
+  • Demonstrated experience with Industry or subject specific analysis or assessment frameworks is highly desired (FAIR, NIST CSF, etc.)
+  • Experience in banking/financial industry is strongly preferred
+  • Formalized training in cyber security analysis or assessment techniques
+
+WHAT'S IN IT FOR YOU?
+
+Compensation
+
+Starting base salary: $92,114 - $156,880 per year. Exact compensation may vary based on skills, experience, and location. This job is eligible for bonus and/or commissions. 
+
+Benefits and Perks
+
+At City National, we strive to be the best at whatever we do, including the benefits and perks we offer our colleagues including: 
+
+  • Comprehensive healthcare coverage, including Medical, Dental and Vision plans, available the first of the month following start date
+  • Generous 401(k) company matching contribution
+  • Career Development through Tuition Reimbursement and other internal upskilling and training resources
+  • Valued Time Away benefits including vacation, sick and volunteer time
+  • Specialized health and family planning benefits including fertility benefits, and cancer, diabetes and musculoskeletal support programs
+  • Career Mobility support from a dedicated recruitment team
+  • Colleague Resource Groups to support networking and community engagement
+
+Get a more detailed look at our Benefits and Perks. 
+
+ABOUT US
+
+Since day one we've always gone further than the competition to help our clients, colleagues and communities flourish. City National Bank was founded in 1954 by entrepreneurs for entrepreneurs and that legacy of integrity, community and unparalleled client relationships continues today. City National is a subsidiary of Royal Bank of Canada, one of North America's leading diversified financial services companies. To learn more about City National and our dynamic company culture, visit us at About Us. 
+
+INCLUSION AND EQUAL OPPORTUNITY EMPLOYMENT
+
+City National Bank fosters an inclusive environment where all forms of diversity are valued and leveraged to make us a better company and employer. We are an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, sexual orientation, gender identity, national origin, disability, veteran status or other basis protected by law.  
+
+It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.  
+
+  • Represents basic qualifications for the position. To be considered for this position, you must at least meet the required qualifications. careers.cnb.com accepts applications on an ongoing basis, until filled."
+a846c7b3bdc8186d,Indeed,Senior Analyst,Discount Tire,Data Analyst,in-person,Full-time,2025-04-16,2025-04-23,Scottsdale,AZ,85255,,,,,,,https://www.indeed.com/viewjob?jk=a846c7b3bdc8186d,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Overview: 
+
+Here at Discount Tire, we celebrate the spirit of our people with extraordinary pride and enthusiasm. Our business has been growing for more than 60 years and now is the best time in our history to join us. We recognize that to remain the industry leader we must continue to grow and evolve our business in a rapidly changing industry. We are achieving this, not only by opening new stores, but by transforming our technological landscape and making data a central component of our strategy. The Business Analytics team, one of the fastest growing teams in the company, is leading this change. We are responsible for driving the insights, recommendations, and developing the decision support tools that influence the strategic direction of the company. 
+
+Under minimal supervision, the Senior Metadata Analyst develops and maintains data dictionaries, data catalog’s, business glossaries for enterprise data assets to hydrate enterprise data platform and Data warehouse and supporting enterprise business intelligence solutions. Creates standard data definitions, accurate business rules/calculations, and complete traceability and lineage of governed data within the Discount Tire systems. This position is a recognized data management expert that collaborates with different business and technical teams on projects with organization-wide impact that includes but is not limited to formulating strategies and processes that will increase sophistication and accuracy to our technical data management environment. If you love data and are looking for opportunities to constantly learning, discover and collaborate on what’s next in data management technology, Discount Tire is looking for you. 
+
+Essential Duties and Responsibilities:
+
+  • Develops & Maintains data catalogs, data dictionaries, business glossaries, data lineage, data quality and observability rules for enterprise data assets. Understanding business concepts, data journey, profiles data to analyze data quality and proposes actions to be taken to improve data quality. Drives continuous improvements to existing artifacts.
+  • Builds high performing data models (dimensional data models, Vault data models), to support different data integration patterns, real-time and batch data processing, and data structures capable of supporting enterprise business intelligence solutions.
+  • Defines Best Practices and Develops data governance rules for managing enterprise data assets working with data stewards and enterprise data architects.
+  • Leads the analysis and mining of very large quantities of data using deep knowledge of a specific domain to find patterns and insights utilizing statistical software’s.
+  • Investigates standards on implementing a framework’s for metadata items collection, storage, availability and end user consumption.
+  • Designs the mechanisms and conducts data quality assessments to proactively identify data quality problems. Proposes rules and actions to be taken as part of data quality process to minimize the risk of data inaccuracy.
+  • Hands on experience designing and implementing data catalog’s, data lineage and data governance rules using tools like Collibra, Alation, Ataccama etc.
+  • Designs and implements mechanisms to socialize metadata and data lineage to make them systematically available for business and technical users.
+  • Documents the business concepts associated to specific datasets by collaborating with business and technical SMEs to understand business rules.
+  • Defines the approach and develops business glossary to standardize and communicate business context of enterprise KPIs, metrics and attributes.
+  • Creates, publishes and enhances source to target mapping documents for the Enterprise Data Warehouse and Data Marts following standards to consistently and accurately represent business rules and data transformations. In addition, develops standards on implementing and improving the framework for source to target mapping.
+  • Reviews and determines if source to target documents are consistent and the business rules are accurately represented by data transformations.
+  • Contributes to the development conceptual and logical data models in collaboration with data engineers and BI architects.
+  • Influences and proposes changes to data models standards, shares knowledge with data modeling team to ensure that there are not missing relationships across datasets.
+  • Communicates effectively with internal and external teams to influence them through the adoption of data management and data governance standards and practices to ensure consistent and appropriate use throughout the organization.
+  • Stays current on the latest industry technologies, trends and strategies
+  • Completes work in a timely and accurate manner while providing exceptional customer service.
+  • Assists employees, vendors or other customers by answering questions related to metadata analysis processes, procedures and services.
+  • Intellectual curiosity, a passion for data and results orientated.
+  • Other duties as assigned.
+
+Qualifications:
+
+  • 6+ years of demonstrated working experience in Metadata Management
+  • Organizational and problem-solving skills, a can-do attitude, and the ability to adjust to changing requirements are essential.
+  • Advanced knowledge and demonstrated experience of metadata concepts including but not limited to items collection, repositories, technical and/or business content and data lineage.
+  • Advanced knowledge and demonstrated experience working with data governance.
+  • Advanced knowledge and demonstrated experience in Information Technology and Data Management.
+  • Demonstrated working experience on cloud-based or serverless environments is preferred.
+  • Demonstrated working experience on relational databases, Advanced SQL skills is required. Kimball’s methodology is a plus.
+  • Advanced knowledge and demonstrated experience working with data quality concepts, dimensions and measurements.
+  • Agile experience is preferred.
+  • Solid computer experience, including skills in Microsoft Word, Excel and Power Point is necessary.
+  • Ability to communicate effectively across all levels of the organization is necessary.
+  • Strong customer service skills, including the ability to manage and respond to different customer situations.
+  • Development of project documentation, presentation materials and presenting to technical/non-technical audiences.
+  • Ability to multi-task while managing multiple projects and meeting various deadlines simultaneously is required. Delivers high quality documents.
+
+Educational Requirements:
+
+This position requires a bachelor’s degree in information technology, statistics or other quantitative field or equivalent work experience. 
+
+Discount Tire provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state, or local law. 
+
+#LI-GW1"
+43af17174584dece,Indeed,Senior Business Analyst Finance,Discount Tire,Data Analyst,in-person,Full-time,2025-04-16,2025-04-23,Scottsdale,AZ,85255,,,,,,,https://www.indeed.com/viewjob?jk=43af17174584dece,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Overview: 
+
+Here at Discount Tire, we celebrate the spirit of our people with extraordinary pride and enthusiasm. Our business has been growing for more than 60 years and now is the best time in our history to join us. We recognize that to remain the industry leader we must continue to grow and evolve our business in a rapidly changing industry. We are achieving this, not only by opening new stores, but by transforming our technological landscape and making data a central component of our strategy. The Analytics team, one of the fastest growing teams in the company, is leading this change. We are responsible for driving the insights, recommendations, and developing the decision support tools that influence the strategic direction of the company. 
+
+The Senior Business Insights Analyst develops data-oriented insights and solutions in support of the finance segment. The Analyst provides information-based, actionable solutions to enable enhanced business insights and support the segment and Company’s strategic goals. 
+
+Essential Duties and Responsibilities:
+
+  • Proposes original and innovative insights and strategic direction to key stakeholder; creatively applies methodologies to future strategic decisions.
+  • Executes complex quantitative analyses and advanced modeling; translates data into concise and actionable insights to an executive business audience.
+  • Designs, develops, and delivers complex analytical solutions, resulting in decision support or models’; communicates findings to stakeholders.
+  • Researches and analyzes key business drivers, competitive environment, opportunities, trends, and operating metrics based on data; formulates business direction in collaboration with internal and external stakeholders; ensures insight can be leveraged for future business decisions.
+  • Conducts statistical analysis to formulate conclusions and recommendations based on data available, operating within varying degrees of data maturity.
+  • Stays current on the latest industry technologies, techniques, trends and strategies.
+  • Assists employees, vendors or other customers by answering questions related to Data Analysis processes, Completes work in a timely and accurate manner while providing exceptional customer service.
+  • Other duties as assigned.
+
+Qualifications:
+
+  • This position requires a minimum of five years experience conducting operations, product, and financial analysis and developing insights using regression models and statistical analysis.
+  • Excellent quantitative and problem-solving skills are vital.
+  • The ability to frame solutions to complex problems is crucial.
+  • Advanced knowledge of Microsoft Office, Word, Excel and PowerPoint is needed.
+  • Advanced proficiency in SQL with the ability to read and write queries is required.
+  • Advanced experience with statistical tools such as Python or R is required.
+  • Advanced experience with business intelligence tools like Tableau is preferred.
+  • Experience working with senior level executive leadership is required.
+  • Ability to communicate across all levels of the organization is necessary; must be able to clearly articulate technical ideas to a non-technical audience both verbally and in writing.
+  • Business acumen with knowledge and understanding of business issues, priorities, goals, and strategy is necessary.
+  • Domain knowledge in retail, manufacturing, store operations, automotive, real estate, or services is helpful.
+  • The ability to multi-task and manage multiple projects to meet various deadlines simultaneously is required.
+  • The ability to work efficiently under pressure, accurately meet deadlines, present a professional demeanor and work well independently is essential.
+  • Customer service skills, including the ability to manage and respond to different customer situations while maintaining a positive and friendly attitude are essential.
+  • In addition, organizational and problem-solving skills, a can-do attitude, and the ability to adjust to changing requirements are essential.
+  • Maintaining confidentiality, treating others with respect and upholding Company values are key attributes.
+
+Educational Requirements:
+
+  • Bachelor's degree in Engineering, Mathematical Sciences, Finance, Economics, Accounting, Philosophy or related or equivalent experience is required.
+  • Masters is a quantitative degree or MBA strongly preferred.
+
+Discount Tire provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state, or local law. 
+
+#LI-Onsite 
+
+#LI-GW1"
+c93608e8aa5b717d,Indeed,Technical Analyst (Salesforce) - Hybrid,Blue Cross Blue Shield of Arizona,Data Analyst,in-person,Full-time,2025-04-16,2025-04-23,Phoenix,AZ,85021,,,,,,,https://www.indeed.com/viewjob?jk=c93608e8aa5b717d,https://www.indeed.com/jobs?q=Data+Analyst&l=Phoenix%2C+AZ&radius=25&fromage=7,"Awarded a Healthiest Employer, Blue Cross Blue Shield of Arizona aims to fulfill its mission to inspire health and make it easy. AZ Blue offers a variety of health insurance products and services to meet the diverse needs of individuals, families, and small and large businesses as well as providing information and tools to help individuals make better health decisions. 
+
+At AZ Blue, we have a hybrid workforce strategy, called Workability, that offers flexibility with how and where employees work. Our positions are classified as hybrid, onsite or remote. While the majority of our employees are hybrid, the following classifications drive our current minimum onsite requirements: 
+
+  • Hybrid People Leaders: must reside in AZ, required to be onsite at least once per week 
+
+  • Hybrid Individual Contributors: must reside in AZ, unless otherwise cited within this posting, required to be onsite at least once per month 
+
+  • Onsite: daily onsite requirement based on the essential functions of the job 
+
+  • Remote: not held to onsite requirements, however, leadership can request presence onsite for business reasons including but not limited to staff meetings, one-on-ones, training, and team building 
+
+Please note that onsite requirements may change in the future, based on business need, and job responsibilities. Most employees should expect onsite requirements and at a minimum of once per month. 
+
+PURPOSE OF THE JOB 
+
+  • This position requires the candidate to have the knowledge, experience, skills, and initiative to span multiple roles from analyst and requirements lead, to data modeler, to contributor for each of these functions.
+  • Leads or participates in design and requirements sessions with key business users, gathering and documenting business processes and requirements for the system, and act as a liaison between business stakeholders and IT teams.
+  • Collaborates with the development team to determine best options to meet requirements and meet reasonable deliverable dates.
+  • This position acts as an expert technical resource to programming staff in the development, testing, and implementation of business processes utilizing CRM platforms.
+
+REQUIRED QUALIFICATIONS 
+
+Required Work Experience 
+
+  • 5 years of information systems design, implementation, or integration experience in analysis, programming, query design, and database development, ETL Processes and CRM solutions development & administration
+  • 3 additional years of experience in the design, implementation, documentation and support of an enterprise-level applications in a complex business environment
+
+Required Education 
+
+  • Bachelor’s degree in computer science/information systems, applied mathematics or related fields
+
+Required Licenses 
+
+  • N/A
+
+Required Certifications 
+
+  • N/A
+
+PREFERRED QUALIFICATIONS 
+
+Preferred Work Experience 
+
+  • Experience in CRM solutions development specifically around Microsoft Dynamics or Salesforce
+
+Preferred Education 
+
+  • Bachelor’s degree in computer science, Information Systems, or related field
+
+Required Licenses 
+
+  • N/A
+
+Required Certifications 
+
+  • N/A
+
+ESSENTIAL JOB FUNCTIONS AND RESPONSIBILITIES 
+
+  • Review and understand detailed business, functional and technical requirements
+  • Translate business requirements into conceptual, logical, and physical data models
+  • Communicate and collaborate with Infrastructure SMEs to design enterprise solutions
+  • Perform data quality assessment and measurement
+  • Resolve data integrity issues across stakeholders
+  • Administer CRM system either Microsoft Dynamics or Salesforce
+  • The position requires a full-time work schedule. Full-time is defined as working at least 40 hours per week, plus any overtime as requested or needed to perform job responsibilities
+
+REQUIRED COMPETENCIES 
+
+Required Job Skills 
+
+  • Advanced experience in data modeling, data management, integration, and data analysis
+  • Comfortable using Visual Studio, TFS/VSTS
+  • Advanced knowledge of Microsoft SQL databases
+  • Advanced proficiency in SSIS, Data Transformation Services, T-SQL, Redgate, enterprise data modeling and schema change management
+  • Proficiency in understanding and implementing business workflows and processes
+
+Required Job Skills 
+
+  • Ability to work in a dynamic fast paced environment and quickly adjust to the changes
+  • Strong analytical skills to support independent and effective decisions
+  • Strong written communication skills especially related to articulating technical specifications
+  • Strong verbal communication skills and the ability to interact professionally with a diverse group, management, and subject matter experts
+  • Strong analytical skills to support independent and effective decisions
+  • Ability to prioritize tasks and work with multiple priorities, sometimes under limited time constraints
+  • Experience working and coordinating activities with third parties
+  • Ability to maintain confidentiality and privacy
+  • Ability to write effective user stories
+  • Ability to write data dictionaries
+  • Effective interpersonal skills and ability to maintain positive working relationship with related business areas
+  • Experience working with and managing third party vendors
+  • Knowledge of Enterprise CRM platforms (Salesforce or Dynamics)
+  • Able to work in a dynamic fast paced environment
+  • Adjust to changes quickly
+
+Required Leadership Experience and Competencies 
+
+  • N/A
+
+PREFERRED COMPETENCIES 
+
+Preferred Job Skills 
+
+  • Knowledge of HIPAA security and privacy standards
+  • In depth knowledge of healthcare and health plan data structures and business processes and workflows
+
+Preferred Job Skills 
+
+  • Excellent analytical and problem-solving skills.
+  • Self-starter and motivated
+  • Proficiency in database best practices
+  • Open to learning new tools, technologies and techniques
+  • Ability to create wire frames as needed
+
+Preferred Leadership Experience and Competencies 
+
+  • N/A
+
+Our Commitment 
+
+AZ Blue does not discriminate in hiring or employment on the basis of race, ethnicity, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, protected veteran status or any other protected group. 
+
+Thank you for your interest in Blue Cross Blue Shield of Arizona. For more information on our company, see azblue.com. If interested in this position, please apply."

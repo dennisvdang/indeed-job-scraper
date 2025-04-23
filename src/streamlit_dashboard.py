@@ -418,7 +418,7 @@ def create_salary_by_job_title_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     title_counts = title_counts.sort_values('count', ascending=False)
     
     # Select top job titles with at least 2 data points
-    top_titles = title_counts[title_counts['count'] >= 2].head(10)['title'].tolist()
+    top_titles = title_counts[title_counts['count'] >= 2].head(15)['title'].tolist()
     
     if len(top_titles) < 3:
         return None
@@ -434,9 +434,10 @@ def create_salary_by_job_title_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     )
     
     fig.update_layout(
-        xaxis={'categoryorder': 'total descending'},
+        xaxis={'categoryorder': 'total descending', 'tickangle': 45},
         xaxis_title='Job Title',
-        yaxis_title='Annual Salary ($)'
+        yaxis_title='Annual Salary ($)',
+        height=500  # Make the chart taller to accommodate more titles
     )
     
     return fig
@@ -577,17 +578,11 @@ def display_salary_tab(df: pd.DataFrame) -> None:
             ):
                 st.plotly_chart(salary_by_setting_fig, use_container_width=True)
     
-    # Row 2: Salary by job title and job type
-    st.subheader("Salary by Job Title and Type")
-    col1, col2 = st.columns(2)
+    # Row 2: Salary by job title - full width
+    st.subheader("Salary by Job Title")
     
-    with col1:
-        if salary_by_title_fig := create_salary_by_job_title_chart(df):
-            st.plotly_chart(salary_by_title_fig, use_container_width=True)
-    
-    with col2:
-        if salary_by_job_type_fig := create_salary_by_job_type_chart(df):
-            st.plotly_chart(salary_by_job_type_fig, use_container_width=True)
+    if salary_by_title_fig := create_salary_by_job_title_chart(df):
+        st.plotly_chart(salary_by_title_fig, use_container_width=True)
     
     # Row 3: Location-based salary intelligence
     st.subheader("Location-Based Salary Intelligence")

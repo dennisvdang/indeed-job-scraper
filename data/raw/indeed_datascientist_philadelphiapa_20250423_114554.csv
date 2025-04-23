@@ -1,0 +1,814 @@
+﻿job_id,source,title,company,queried_job_title,work_setting,job_type,date_posted,date_scraped,city,state,zip,salary_period,salary_min,salary_max,salary_min_yearly,salary_max_yearly,salary_midpoint_yearly,job_url,search_url,job_description
+2ccc49a008d638e3,Indeed,"Engineer 1, Machine Learning",Comcast Corporation,Data Scientist,in-person,Full-time,2025-04-23,2025-04-23,Philadelphia,PA,19103,,,,,,,https://www.indeed.com/viewjob?jk=2ccc49a008d638e3,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Make your mark at Comcast - a Fortune 30 global media and technology company. From the connectivity and platforms we provide, to the content and experiences we create, we reach hundreds of millions of customers, viewers, and guests worldwide. Become part of our award-winning technology team that turns big ideas into cutting-edge products, platforms, and solutions that our customers love. We create space to innovate, and we recognize, reward, and invest in your ideas, while ensuring you can proudly bring your authentic self to the workplace. Join us. You’ll do the best work of your career right here at Comcast. (In most cases, Comcast prefers to have employees on-site collaborating unless the team has been designated as virtual due to the nature of their work. If a position is listed with both office locations and virtual offerings, Comcast may be willing to consider candidates who live greater than 100 miles from the office for the remote option.) 
+
+Job Summary
+
+Responsible for collaborating effectively with peers to contribute to the team's machine learning algorithm development and the software development process. Participates in the evaluation of accuracy and functionality of machine learning algorithms as a part of a larger team. Contributes to translating application requirements into machine learning problem statements. Analyzes and evaluates solutions both internally generated as well as third party supplied. Collaborates with peers to develop ways to use machine learning to solve problems and discover new products, working on a portion of the problem and collaborating with more senior researchers and engineers as needed. Works with moderate guidance in own area of knowledge. Previous intern program participant or prior experience as Comcast intern preferred. 
+
+Job Description
+
+Core Responsibilities
+
+  • Contributes as part of a team to the training of machine learning models, validation of the accuracy of the machine learning models once trained and deployment of validated machine learning models into production.
+  • Contributes as part of a team to the implementation, refinement and validation of machine learning algorithms for products and applications.
+  • Contributes as part of a team to designs and development of data pipelines consisting of data ingest, data validation, data cleaning and data monitoring.
+  • Researches, writes and edits documentation and technical requirements, including evaluation plans, confluence pages, white papers, presentations, test results, technical manuals, formal recommendations and reports. Contributes to the company by creating patents, Application Programming Interfaces (APIs) and other intellectual property.
+  • Contributes to the testing and evaluation of solutions presented to the Company by various internal and external partners and vendors. Contributes to case studies, testing and reporting.
+  • Works with more senior researchers and engineers to design proof of concept solutions and contribute to studies to support future product or application development.
+  • Consistent exercise of independent judgment and discretion in matters of significance.
+  • Regular, consistent and punctual attendance. Must be able to work nights and weekends, variable schedule(s) and overtime as necessary.
+  • Other duties and responsibilities as assigned.
+
+Employees at all levels are expected to:
+
+  • Understand our Operating Principles; make them the guidelines for how you do your job.
+  • Own the customer experience - think and act in ways that put our customers first, give them seamless digital options at every touchpoint, and make them promoters of our products and services.
+  • Know your stuff - be enthusiastic learners, users and advocates of our game-changing technology, products and services, especially our digital tools and experiences.
+  • Win as a team - make big things happen by working together and being open to new ideas.
+  • Be an active part of the Net Promoter System - a way of working that brings more employee and customer feedback into the company - by joining huddles, making call backs and helping us elevate opportunities to do better for our customers.
+  • Drive results and growth.
+  • Respect and promote inclusion & diversity.
+  • Do what's right for each other, our customers, investors and our communities.
+
+Disclaimer:
+
+  • This information has been designed to indicate the general nature and level of work performed by employees in this role. It is not designed to contain or be interpreted as a comprehensive inventory of all duties, responsibilities and qualifications.
+
+Comcast is proud to be an equal opportunity workplace. We will consider all qualified applicants for employment without regard to race, color, religion, age, sex, sexual orientation, gender identity, national origin, disability, veteran status, genetic information, or any other basis protected by applicable law.
+
+Skills:
+
+PySpark; Machine Learning; Machine Learning Algorithms; Python (Programming Language); Digital Twin
+
+Base pay is one part of the Total Rewards that Comcast provides to compensate and recognize employees for their work. Most sales positions are eligible for a Commission under the terms of an applicable plan, while most non-sales positions are eligible for a Bonus. Additionally, Comcast provides best-in-class Benefits to eligible employees. We believe that benefits should connect you to the support you need when it matters most, and should help you care for those who matter most. That’s why we provide an array of options, expert guidance and always-on tools, that are personalized to meet the needs of your reality – to help support you physically, financially and emotionally through the big milestones and in your everyday life. Please visit the compensation and benefits summary on our careers site for more details.
+
+Education
+
+Bachelor's Degree
+
+While possessing the stated degree is preferred, Comcast also may consider applicants who hold some combination of coursework and experience, or who have extensive related professional experience.
+
+Relevant Work Experience
+
+0-2 Years"
+e33b6dc50eb29a88,Indeed,Sr Exec Dir of Data Science,Merakey,Data Scientist,in-person,,2025-04-16,2025-04-23,Lafayette Hill,PA,19444,,,,,,,https://www.indeed.com/viewjob?jk=e33b6dc50eb29a88,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Are you looking for an opportunity to advance your career while working with an extraordinary team? At Merakey, we put heart and soul into everything we do.
+
+We are seeking a Senior Executive Director of Data Science to join our team.
+
+Remote: This opportunity is available for candidates residing in PA, DE, FL, LA, MD, NJ, OH, TX, and VA.
+
+Position Details: 
+
+The Senior Executive Director of Data Science (SED) is a thought leader who effectively communicates complex data and insights to shape conversations, strategy, and policy through compelling storytelling. Utilizing advanced analytics and data visualization, the SED of Data Science leads the data science team in telling Merakey's story by demonstrating the value, ROI, and social impact of high-quality services, while inspiring curiosity and driving innovation to identify and create new stories to tell.
+
+Utilizing Advanced Analytics and Data Visualization for Storytelling
+
+  • Create frameworks and processes for turning data and insights into engaging narratives which promote understanding and action.
+  • Use demonstrable outcome data and storytelling to support cases to secure and sustain funding and/or alternative funding models.
+  • Create narratives and visual stories to share data insights that can advocate, persuade, and inform public policy.
+  • Supervise and mentor data architects, analysts, and other professionals involved in data storytelling.
+  • Discover stories we've yet to tell through data mining/exploration.
+  • Tailor communication strategies to diverse audiences, including executives, existing and potential funders, policymakers, and the public.
+  • Enhance Merakey brand awareness through publications and presentations.
+
+Using Data and Insights for Strategy Development
+
+  • Collaborate with leadership team to align data science initiatives with strategic business goals.
+  • Partner with Information Technology to design a comprehensive data analytics platform. Provide vision and subject matter expertise for scalable, tech-enabled workflows and dashboards which build and enhance analytic capabilities.
+  • Support responses to new business development opportunities (RFPs, new business proposals, presentations, etc.) by leveraging data analytics, visualization, and strategic insights to create compelling data-driven justifications.
+  • Serve as key advisor for enterprise initiatives and executive decision-making. Provide research, data analysis, and consultative support to inform strategic planning, such as identifying successful service models and/or potential opportunities (i.e., gaps in service systems, population needs, etc.) to inform growth strategy.
+  • Foster a culture of service excellence. Identify best practices and inspire innovative solutions that drive access to equitable, high-quality, and cost-efficient care that delivers better outcomes for individuals and populations.
+  • Analyze Merakey and public data sets to support Population Health initiatives, identifying gaps and potential strategies.
+  • Support data collection and analysis for in-house research projects.
+  • Facilitate partnerships and meaningful collaborations with stakeholders, both internal and external to Merakey, in advancement and support of strategic objectives.
+  • Ensure compliance with legal and ethical standards of data privacy and confidentiality.
+  • Related duties as assigned.
+
+Benefits
+
+Merakey offers generous benefits that promote well-being, financial security, and work-life balance, including:
+
+  • Comprehensive medical, dental, and vision coverage, plus access to healthcare advocacy support.
+Retirement plan 
+  • \- both pre-tax and Roth (after-tax) options available for employee contributions.
+DailyPay 
+  • \- access your pay when you need it!
+  • On the Goga well-being platform, featuring self-care tools and resources.
+  • Access Care.com for backup childcare, elder care, and household services.
+  • Confidential counseling, legal, and financial services through our Employee Assistance Program (EAP).
+  • Tuition reimbursement and educational partnerships.
+  • Employee discounts and savings programs on entertainment, travel, and lifestyle.
+  • Access to Pryor Online Learning for free online personal development classes.
+
+Learn more about our full benefits package - https://www.merakey.org/careers/benefits
+
+About Merakey
+
+Merakey is a non-profit provider of developmental, behavioral health, and education services. More than 8,000 employees provide support to nearly 40,000 individuals and families throughout 12 states across the country each year. Click here to watch a video about Merakey. Merakey strictly follows a zero-tolerance policy for abuse.
+
+Merakey is proud to be an Equal Opportunity Employer! We deeply value diversity and do not discriminate on the basis of race, religion, color, national origin, ethnic background, sex, gender, gender identity, sexual orientation, age, marital status, veteran status, genetic information, or disability status. Moreover, we are committed to creating teams that reflect the diversity of the communities we serve and encourage applicants from underrepresented backgrounds to apply. Merakey welcomes all Veterans to apply!
+
+Requirements: 
+
+Our ideal candidate will possess the following skills:
+
+  • At least 5 years experience with health data analytics, visualization, and storytelling. Research and/or publication experience required. Experience in behavioral health or social services preferred.
+  • PhD in Public Health, Data Science, Statistics, Health Informatics or related field
+  • Demonstrated excellence in data communication and storytelling
+  • Experienced in statistical analysis, modeling, and data mining.
+
+Machine learning experience preferred.
+
+  • Data Management and Conceptualization
+  • Experience with SQL, R, Power BI, and Python
+  • Experience with SPSS or similar statistical software
+  • Advanced user of Excel, Tableau or other data visualization tools, including Geographic Information Systems mapping
+  • Demonstrated experience in writing white papers, preparing presentations, and public speaking
+  • Experience managing large data sets, integrating data from multiple data sources, and preparing data used in research
+  • Familiarity with public and population health concepts and insights
+  • Proven experience in building, developing, and growing high performing team that achieve desired outcomes and strategic objectives.
+  • Strong problem solving, leadership, teamwork and interpersonal skills"
+eb496dcc11449194,Indeed,"Associate Director, Statistical Programming",Organon,Data Scientist,in-person,Full-time,2025-04-21,2025-04-23,Plymouth Meeting,PA,,yearly,125400.0,213100.0,125400.0,213100.0,169250.0,https://www.indeed.com/viewjob?jk=eb496dcc11449194,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"The Position
+
+Responsibilities
+
+  • Support and manage statistical programming activities to all clinical development programs and internal initiatives.
+
+  • Act as a lead statistical programmer and project manager for the studies, compound and or one or more therapeutic areas (TAs) and interact with other stake holders in the team.
+
+  • Provide expert-level hands-on support for all internal statistical programming needs including, but not limited to, ISS and ISE summaries and exploratory data analyses.
+
+  • Provide oversight and quality control (QC) of external vendors to ensure the high-quality deliverables and managing timelines for the outsourced studies. Standardize and work on processes improvement and programming within TA and compound and strategize for the long-term seamless management of the program.
+
+  • Collaborate with biostatistics, data management and others to provide technical support for ongoing trials, FDA submissions, publications, and other business needs.
+
+  • Develop and validate standard department/generic macros and template programs.
+
+  • Utilize strong knowledge on CDISC SDTM/ADaM data standards and regulatory requirements.
+
+  • Write or review and approve data specifications for SDTM and ADaM.
+
+  • Write SAS programs to generate or validate SDTM, ADaM, and TLFs.
+
+  • Manage and willingness to coach and mentor junior programmers.
+
+  • Participate in the development and implementation of innovative strategies.
+
+  • Participate in development, maintenance and adherence to departmental SOPs and Guideline.
+
+  • Lead in continuous improvement initiatives within Biometrics and represent in cross functional departmental initiatives.
+
+Required Education, Experience and Skills
+
+  • Must have a Master’s degree in Statistics, Mathematics, Engineering, Computer Science, or Life Science plus at least nine years of statistical programming experience in a Contract Research Organization (CRO), biotech or pharmaceutical industry OR a Bachelor’s degree in Statistics, Mathematics, Engineering, Computer Science, or Life Science plus at least ten years of statistical programming experience in a Contract Research Organization (CRO), biotech or pharmaceutical industry.
+
+  • Experience working for in regulatory and publication support request and working with an outsourced model also required.
+
+  • Advanced working knowledge of CDISC SDTM, ADaM, Define.xml and submission standards; and advanced knowledge of SAS and Macros programming required.
+
+  • Must possess strong project management skills to prioritize the tasks and negotiate the timelines and ensure the timely deliverables with highest quality; and excellent written and oral communication skills.
+
+  • Ability to manage and work on multiple projects and shifting priorities; and to write generic SAS macros and provide out of the box solutions required.
+
+Telecommuting permitted. 40 hours per week. Must have proof of legal authority to work in the United States. To apply, create a profile and submit your CV for Job Req. #R533377.
+
+Who We Are:
+
+Organon delivers ingenious health solutions that enable people to live their best lives. We are a $6.5 billion global healthcare company focused on making a world of difference for women, their families and the communities they care for. We have an important portfolio and are growing it by investing in the unmet needs of Women’s Health, expanding access to leading biosimilars and touching lives with a diverse and trusted portfolio of health solutions. Our Vision is clear: A better and healthier every day for every woman.
+
+US and PR Residents Only
+
+For more information about personal rights under Equal Employment Opportunity, visit:
+
+EEOC Poster
+
+EEOC GINA Supplement
+
+OFCCP EEO Supplement
+
+OFCCP Pay Transparency Rule
+
+Organon proudly embraces diversity in all of its manifestations and is committed to equal opportunity in the terms and conditions of employment for all employees and job applicants without regard to race, color, religion, sex, sexual orientation, age, gender identity, or gender expression, national origin, disability, veteran status or any other characteristic protected by state or federal law.
+
+Search Firm Representatives Please Read Carefully  
+Organon LLC., does not accept unsolicited assistance from search firms for employment opportunities. All CVs / resumes submitted by search firms to any employee at our company without a valid written search agreement in place for this position will be deemed the sole property of our company. No fee will be paid in the event a candidate is hired by our company as a result of an agency referral where no pre-existing agreement is in place. Where agency agreements are in place, introductions are position specific. Please, no phone calls or emails.
+
+Applicable to United States Positions Only: Under various U.S. state laws, Organon is required to provide a reasonable estimate of the salary range for this job. Final salary determinations take a number of factors into account including, but not limited to, primary work location, relevant skills, education level, and/or prior work experience. The applicable salary range for this position in the U.S. is stated below. Benefits offered in the U.S. include a retirement savings plan, paid vacation and holiday time, paid caregiver/parental and medical leave, and health benefits including medical, prescription drug, dental, and vision coverage in accordance with the terms and conditions of the applicable plans.
+
+Annualized Salary Range (US)
+
+$125,400.00 - $213,100.00 
+
+Please Note: Pay Ranges are Specific to local market and therefore vary from country to country
+
+Employee Status: 
+
+Regular 
+
+Relocation:
+
+No relocation 
+
+VISA Sponsorship:
+
+Travel Requirements: Organon employees must be able to satisfy all applicable travel and credentialing requirements, including associated vaccination prerequisites.
+
+Flexible Work Arrangements:
+
+Shift:
+
+Valid Driving License:
+
+Hazardous Material(s):
+
+Number of Openings: 
+
+1 
+
+Requisition ID:R533377"
+ad4c97fab56271df,Indeed,Applied Data Scientist Consultant,"Universal Health Services, Inc. - Corporate Office",Data Scientist,in-person,Contract,2025-04-17,2025-04-23,King of Prussia,PA,19406,,,,,,,https://www.indeed.com/viewjob?jk=ad4c97fab56271df,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Responsibilities: 
+
+One of the most respected providers of hospital and healthcare services, Universal Health Services, Inc. has built an impressive record of achievement and performance. Growing steadily since its inception into an esteemed Fortune 500 corporation, annual revenues were $11.6 billion in 2020. In 2021, UHS was again recognized as one of the World’s Most Admired Companies by Fortune; in 2020, ranked #281 on the Fortune 500; and listed #330 in Forbes ranking of U.S.’ Largest Public Companies. Headquartered in King of Prussia, PA, UHS has 89,000 employees and through its subsidiaries operates 26 acute care hospitals, 334 behavioral health facilities, 39 outpatient facilities and ambulatory care access points, an insurance offering, a physician network and various related services located in 38 U.S. states, Washington, D.C., Puerto Rico and the United Kingdom. 
+
+The Corporate Information Services Department is seeking a dynamic and talented Applied Data Scientist. 
+
+The Applied Data Scientist recommends and implements methodologies appropriate to large scale data analytics, including those commonly involved in large-scale Machine Learning (ML) and Artificial Intelligence (AI). Devises and tests analytic processes and algorithms. Recommends data visualization techniques and identifies and integrates new information sources. Applies methodologies to large data sets and finds opportunities for product and process optimization across the company. Uses models to test the effectiveness of different courses of action. Advances the organization’s analytic approach and capabilities in support of both patient care and business operation decisions. Collaborates across departments and functions including Information Services, Process Improvement, Quality and with other organizational stakeholders to improve business outcomes.
+
+Key Responsibilities include:
+
+  • Provides analysis to identify critical issues/questions around key performance metrics. Conducts exploratory data analysis from potentially complex, disparate data sources to recognize patterns, and identify performance improvement opportunities.
+  • Identifies data sources internally and externally relevant to required data analyses. Generates hypotheses and analyzes data to test and interpret results. Designs and develops data models, leveraging ML and or AI as appropriate, to predict outcomes or future impacts of key decisions.
+  • Communicates findings from exploratory and predictive data analysis broadly to administrative, clinical and business leaders. Designs and recommends creative means to display information visually and make the patterns and insights clear and compelling. Identifies improvement opportunities in people, process and technology and collaborates as appropriate in implementation.
+  • Serves as the organizational resident data expert and shares best practices / approaches for statistics, analysis involving ML techniques, data modeling, simulation, and advanced mathematics with appropriate audiences in the corporate office and facilities as appropriate.
+
+Qualifications: 
+
+Position Requirements:
+
+  • Bachelor’s degree required. Master’s degree in a related field (applied mathematics, statistics, computer science) is required, a Ph.D. is preferred.
+  • Requires demonstrated experience in devising and testing analytic methodologies and algorithms, developing, and recommending data visualization techniques, and identifying and integrating new data sources and applications including ML and AI.
+  • Programming experience using major software such as SAS/Python/R and domain specific languages such as SQL.
+  • A working knowledge of healthcare and or clinical operations is beneficial.
+  • Proficient in SAS/Python/R or other key programming languages.
+  • Skilled in domain specific languages such as SQL.
+  • Must have a passion for discovering solutions hidden in large data sets.
+  • Ability to work with all levels across the organization.
+
+Contract Length: 2 months 
+
+  •   
+UHS is a registered trademark of UHS of Delaware, Inc., the management company for Universal Health Services, Inc. and a wholly-owned subsidiary of Universal Health Services, Inc. Universal Health Services, Inc. is a holding company and operates through its subsidiaries including its management company, UHS of Delaware, Inc. All healthcare and management operations are conducted by subsidiaries of Universal Health Services, Inc. To the extent any reference to ""UHS or UHS facilities"" on this website including any statements, articles or other publications contained herein relates to our healthcare or management operations it is referring to Universal Health Services' subsidiaries including UHS of Delaware. Further, the terms ""we,"" ""us,"" ""our"" or ""the company"" in such context similarly refer to the operations of Universal Health Services' subsidiaries including UHS of Delaware. Any employment referenced in this website is not with Universal Health Services, Inc. but solely with one of its subsidiaries including but not limited to UHS of Delaware, Inc.
+
+UHS is not accepting unsolicited assistance from search firms for this employment opportunity. Please, no phone calls or emails. All resumes submitted by search firms to any employee at UHS via-email, the Internet or in any form and/or method without a valid written search agreement in place for this position will be deemed the sole property of UHS. No fee will be paid in the event the candidate is hired by UHS as a result of the referral or through other means. 
+
+EEO Statement
+
+All UHS subsidiaries are committed to providing an environment of mutual respect where equal employment opportunities are available to all applicants and teammates. UHS subsidiaries are equal opportunity employers and as such, openly support and fully commit to recruitment, selection, placement, promotion and compensation of individuals without regard to race, color, religion, age, sex (including pregnancy, gender identity, and sexual orientation), genetic information, national origin, disability status, protected veteran status or any other characteristic protected by federal, state or local laws. 
+
+We believe that diversity and inclusion among our teammates is critical to our success. 
+
+Notice
+
+At UHS and all our subsidiaries, our Human Resources departments and recruiters are here to help prospective candidates by matching skillset and experience with the best possible career path at UHS and our subsidiaries. We take pride in creating a highly efficient and best in class candidate experience. During the recruitment process, no recruiter or employee will request financial or personal information (Social Security Number, credit card or bank information, etc.) from you via email. The recruiters will not email you from a public webmail client like Hotmail, Gmail, Yahoo Mail, etc. If you are suspicious of a job posting or job-related email mentioning UHS or its subsidiaries, let us know by contacting us at: https://uhs.alertline.com or 1-800-852-3449."
+279d2a90661bcd71,Indeed,Data Scientist II - Supply Chain,Burlington Stores,Data Scientist,hybrid,Full-time,2025-04-20,2025-04-23,Edgewater Park,NJ,08010,yearly,115000.0,115000.0,115000.0,115000.0,115000.0,https://www.indeed.com/viewjob?jk=279d2a90661bcd71,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"LOCATION 4287 Route 130 S Edgewater Park NJ US 08010
+
+Overview
+
+Come join our growing team here at Burlington Stores as a Data Scientist II! The Data Scientist II will support business areas including Allocations, Inventory and Supply Chain Analytics teams with insights gained from analyzing Burlington and external data. Must have strong experience using a variety of data mining/data analysis methods, using a variety of data tools building and implementing models, using/creating algorithms and creating/running simulations. Must have strong interpersonal and relationship building skills & strong written and verbal communication skills.
+
+Retail Operations with Supply Chain and Inventory datasets experience is required.
+
+This is a hybrid role requiring every other week (Wednesday/Thursday). Relocation can be considered.
+
+A Day In The Life
+
+  • Work with stakeholders throughout the organization to identify opportunities for leveraging company data to drive business solutions
+  • Mine and analyze data from the data warehouse to drive optimization and improvement of product allocation, marketing strategy and drive sales
+  • Develop predictive models using various algorithms and come up with the best outcomes for business to follow
+  • Keep up-to-date with latest technology trends
+  • Coordinate with different functional teams to implement models and monitor outcomes
+  • Develop processes and tools to monitor and analyze model performance and data accuracy
+  • Create presentation of gained insights and explain it to stakeholders
+
+To Be Successful You Should Possess
+
+  • Bachelors/Masters Degree or a Foreign Equivalent
+  • 5+ years Data Science experience with extensive background in building ML models, data mining and statistical analysis
+  • 5+ years experience in coding using Python/PySpark or equivalent
+  • Experience utilizing Databricks and Snowflake
+  • Proven experience applying machine learning algorithms (e.g., supervised and unsupervised learning, deep learning) and optimization models to real-world business problems, including model development, optimization, and deployment in production environments
+  • 3+ years Experience in building retail operations ML models (e.g. Demand Forecasting, Inventory Allocation, Carton Forecasting, etc.) at different store product mapping levels (e.g. at store-SKU, store-Division models etc.)
+  • Practical experience with Snowflake, SaaS, Netezza, data processing, database programming and data analytics is a plus
+  • Experience in writing SQL code to access data from the data warehouse
+  • Able to understand various data structures and common methods in data transformation
+  • Excellent pattern recognition and predictive modeling skills
+  • Working knowledge with Analytical tools like Power BI, MicroStrategy, Tableau, Looker, etc.
+  • Experience in presenting end-to-end models/results for different stakeholders in the company
+
+Come join our team. You’re going to like it here!
+
+You will enjoy a competitive wage, flexible hours, and an associate discount. Burlington’s benefits package includes medical, dental and vision coverage including life and disability insurance. Full time associates are also eligible for paid time off, paid holidays and a 401(k) plan.
+
+We are a rapidly growing brand and provide a variety of training and development opportunities so our associates can grow with us. Our teams work hard and have fun together! Burlington associates make a difference in the lives of customers, colleagues, and the communities where we live and work every day. Burlington Stores, Inc. is an equal opportunity employer committed to workplace diversity.
+
+\\#LI-TG1
+
+Posting Number 2025-228794
+
+Location US-NJ-Edgewater Park
+
+Address 4287 Route 130 S
+
+Zip Code 08010
+
+Workplace Type Hybrid
+
+Position Type Regular Full-Time
+
+Career Site Category Corporate
+
+Position Category Information Technology
+
+Evergreen Yes
+
+Min USD $115,000.00/Annual
+
+Mid USD $150,000.00/Annual"
+0a567a9126abcd96,Indeed,URBN Senior Machine Learning Engineer,URBN,Data Scientist,in-person,Full-time,2025-04-18,2025-04-23,Philadelphia,PA,19112,,,,,,,https://www.indeed.com/viewjob?jk=0a567a9126abcd96,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Role Summary: 
+
+URBN is seeking a Senior Machine Learning Engineer to join the development of AI-powered digital experiences. We are seeking an experienced Full Stack Engineer to join our mission of integrating algorithmic solutions with creative tools. In this unique opportunity, you will use your full stack engineering skills to implement cutting-edge algorithms into our rapidly evolving products across our digital ecosystem. You will collaborate with a talented cross-functional team that includes data scientists, product managers, and domain experts to deliver a significant business impact.
+
+Role Responsibilities: 
+
+  • Conduct exploratory proof-of-concept studies to assess potential deployment architectures and evaluate new data engineering technologies.
+  • Propose, promote, and facilitate paved paths for algorithm integration and productization, laying foundations for feedback loops and data flywheels.
+  • Identify and execute opportunities to create leverage for scaling algorithm impact, managing algorithm dependencies, and expanding algorithm distributions
+  • Collaborate with the team to implement and maintain the ML architecture, including data pipelines and applications that enable training and inference of ML models in production.
+  • Identify and execute opportunities to scale algorithm impact, manage algorithm dependencies, and expand algorithm distribution.
+  • Contribute to end-to-end algorithm projects across different domains
+  • Collaborate with the team to implement and maintain automated monitoring of deployed models to assess their performance, uptime, etc.
+  • Foster strong cross-functional partnerships
+  • Champion best practices in full-stack algorithm engineering
+
+Role Qualifications: 
+  • Strong coding skills and software development experience. Proficiency in Python is required.
+  • Experience with Cloud platforms (Google Cloud Platform, Amazon Web Services, Microsoft Azure, etc.).
+  • Proven track record of delivering high-impact, algorithm-driven software systems and solutions.
+  • Experience deploying machine learning models in production.
+  • Hands-on experience with large-scale data processing, data engineering, and automation.
+  • High proficiency in full stack engineering, including backend, distributed systems, and cloud infrastructure
+  • Familiarity with machine learning approaches and terminology. Understanding of the practical aspects of ML, e.g., train/dev/test sets, precision and recall, overfitting, hyperparameter tuning, etc.
+  • Excellent communicator. Comfortable with ambiguity; able to take ownership and thrive with minimal oversight and process.
+  • Passion for bridging algorithms with tooling and workflows
+
+#LI-EM2
+
+The Perks: 
+
+URBN offers comprehensive Perks & Benefits to employees. Availability and eligibility to specific benefits may be subject to your location and employment status. Benefits include medical, dental, vision, PTO, generous employee discounts, retirement savings and much more! For additional information visit www.urbn.com/work-with-us/benefits 
+
+EEO Statement: 
+
+URBN celebrates diversity and is committed to creating an inclusive environment for all employees. We are proud to provide equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, sex (including gender, pregnancy, sexual orientation, and gender identity or expression), religion, creed, age, physical or mental disability, national origin or ancestry, ethnicity, citizenship, service in the uniformed services, genetic information, or any other protected characteristic as established by law. We believe strongly in fostering a safe, fair and respectful work environment. To ensure compliance with our non-discrimination and anti-harassment policies, we offer anti-harassment training to managers and employees."
+8497cbd5d6bac1c0,Indeed,Statistician,Drexel University,Data Scientist,remote,Part-time,2025-04-18,2025-04-23,Philadelphia,PA,,,,,,,,https://www.indeed.com/viewjob?jk=8497cbd5d6bac1c0,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Job no: 504989  
+Work type: Part-Time  
+Location: Remote  
+Categories: Dornsife School of Public Health  
+
+Job Summary
+
+This position will provide statistical support as needed to Dr. Nora Lee for the Youth Access to Tobacco (Synar) project.
+
+Essential Functions
+
+  • Collaborate with Louisiana Department of Health to clean and verify list of licensed tobacco outlets. Conduct statistical sampling of tobacco outlets in the state of Louisiana for annual Synar compliance checks.
+  • Provide formatted lists of sampled tobacco outlets by region for merchant education.
+  • Collaborate with Louisiana Department of Health to clean compliance check data. Conduct analyses on data from compliance checks using the SSES system as required by SAMHSA. Provide tables of results for Annual Synar Report, including retailer violation rates by region. Review draft Annual Synar Report for accuracy and completeness.
+
+Required Qualifications
+
+  • Minimum of PhD or Doctorate in Biostatistics.
+  • Minimum of 10 years of experience.
+
+Preferred Qualifications
+
+  • Experience with Synar SSES analysis system
+
+Physical Demands
+
+  • Typically sitting at a desk/table
+
+Location
+
+  • Remote
+
+Additional Information
+
+This is a Part-Time per diem position classified as Non-Exempt. The offered pay is based on the successful candidate’s qualifications and experience, department budget, and an internal equity review.
+
+For information about benefits, please review Drexel’s Per Diem/Casual/Temporary Benefit Fact Sheet.
+
+Special Instructions to the Applicant  
+Please make sure you upload your CV/resume and cover letter when submitting your application.
+
+Additional Required Documents
+
+A review of applicants will begin once a suitable candidate pool is identified.
+
+#LI-Remote
+
+Advertised: Apr 18 2025 Eastern Daylight Time  
+Applications close: May 18 2025 Eastern Daylight Time"
+956170d9ffa9dce6,Indeed,"Sr. Director, Data Science",Cadent,Data Scientist,in-person,Full-time,2025-04-17,2025-04-23,Philadelphia,PA,,,,,,,,https://www.indeed.com/viewjob?jk=956170d9ffa9dce6,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Overview: 
+
+Cadent connects the TV advertising ecosystem. We help advertisers and publishers identify and understand audiences, activate campaigns, and measure what matters – across any TV content or device. Aperture, our converged TV platform, simplifies cross-screen advertising through a streamlined workflow that brings together identity, data, and inventory with hundreds of integrated partners. For more information, visit cadent.tv. 
+
+Right now we are looking for a highly motivated and experienced Senior Director of Data Science within the Data Services Organization who will be responsible for shaping our data science strategy, managing a team of data scientists, delivering ML products and collaborating with cross-functional teams to translate data into actionable business strategies. The Sr. Director will apply scientific methods to identify business optimization strategies and develop, evaluate, and demonstrate prototypes and production grade builds. 
+
+Data Scientists collaborate directly with the Business, Product, Data Engineering, DevOps and QA team members to productize AI/ML research to drive business growth. This is a critical role that needs knowledge of mathematics and engineering, output from this role will be leveraged by business, engineers and by senior executives to define the future of Cadent. 
+
+Responsibilities: 
+
+  • Lead, mentor, guide and manage data science team & junior data scientists providing guidance on technical and professional growth and develop a team of data scientists
+  • Establish roadmaps, deliver projects end to end ML model builds including deployment & monitoring
+  • Manage resource allocation, project prioritization, and workload distribution among team members
+  • Define project scope, objectives, and success metrics, ensuring projects are delivered on time and within budget
+  • Oversee the end-to-end lifecycle of data science projects, from problem formulation to model deployment and monitoring
+  • Hands-on design, train and apply statistics, mathematical models, & machine learning techniques to create scalable ML solutions such as identity to solve business problems and build ML data products to enable speed to market and rapid experimentation
+  • Strive to innovate leveraging latest algos, tools, data and systems while staying abreast of industry trends and best practices in data science
+  • Work with machine learning engineers, data engineers, DevOps and software developers to deploy models and modeling pipelines to be leveraged by business
+  • Align with Product and business on project deliverables, timelines, provide updates on progress
+  • Foster a collaborative and innovative team culture that encourages knowledge sharing and continuous learning
+  • Leverage model governance techniques and frameworks to ensure performance and stability of data science products
+  • Participate in the Agile / scrum process
+  • Follow the CRISP-DM process to generate robust documentation associated with iterative work
+  • Present results and findings to technical audience, product and business stakeholders
+  • Collaborate effectively with broader data services group including but not limited to Machine Learning Engineers, Data Engineers, Analytics Engineers, Software Engineers, Quality Assurance Engineers, and Business Intelligence analysts
+  • Encouraging team to participate in researching new data, tools, algorithms and tech stack to align with evolving AI & ML industry
+
+Qualifications: 
+  • M.S. or higher in computer science, mathematics, operations research, statistics or related discipline with a focus on machine learning; or the equivalent of 10 -12 years’ experience in a Data Science and Machine learning role
+  • 8+ years of data science and machine learning developer hands on keyboard experience
+  • 5 – 6 years of managerial experience leading medium (7-10) Data Science teams and spear heading data science projects coordinating with business & product
+  • Experience working with LLM technologies, including developing generative and embedding techniques, modern model architectures, retrieval-augmented generation (RAG), fine tuning / pre-training LLM (including parameter efficient fine-tuning), and evaluation benchmarks
+  • Proven background answering open ended research questions using data, tools and technology
+  • Ability to write clean, expressive code in Python, use of open source frameworks such as TensorFlow, PyTorch, scikit learn) and or other tools including PySpark, Scala etc.
+  • Experience with SQL and reading from relational databases, experienced using cloud computing ecosystems (e.g., AWS, GCP)
+  • Experience with the practical application of computational statistics and complex ML algos including deep learning, GraphDB SVMs, time series forecasting etc. to build and evaluate models
+  • Experienced in deploying models in production and enable model governance
+  • Strong analytical and quantitative problem-solving ability
+  • Experienced effectively communicating technical concepts and insights to non-technical stakeholders, influencing decision-making across the organization.
+  • Fundamental understanding of the mathematical workings of standard feature engineering, dimension reduction, machine learning algorithms and model validation & measurement
+  • Familiarity with best practices for software engineering and the use of the scientific Python ecosystem
+  • Media or ad-tech experience a plus
+
+If the leading edge of media technology is the place you want to be, please contact us today and let’s start the conversation! 
+
+Cadent is an Equal Opportunity Employer and is committed to supporting all it’s employees when it comes to Inclusion & Diversity. Cadent’s policy is to provide equal opportunity for applicants & employees without regard to race, color, religion, creed, gender, gender identity or expression, sexual identity or orientation, age, national origin or ancestry, citizenship, disability or medical condition (including pregnancy, childbirth, or related medical condition), sexual and reproductive health decisions, genetic information, marital status (including domestic partnerships and civil unions), pregnancy, culture ancestry, familial or caregiver status, military status, veteran status, socioeconomic status, unemployment status, status as a victim of domestic violence or any other basis prohibited by law. and will not discriminate against the basis of disability. This commitment is honored when it comes to decisions on hiring, recruiting, training, promotions, compensations, benefits, transfers and terminations.
+
+Cadent is seeking to actively engage with our employees from a wide variety of cultures and to connect with our clients differently. Our workforce has generational diversity that supports greater innovation when we maximize representation of all diversity. Our active employee resource groups promote engagement across all groups of individuals that are represented within the company and externally.
+
+Pay Range: USD $0.00 - USD $0.00 /Yr."
+d64de1721e0bf1f1,Indeed,"Associate Director, Analytics & Data Solutions",KPMG,Data Scientist,hybrid,Full-time,2025-04-16,2025-04-23,Philadelphia,PA,19103,,,,,,,https://www.indeed.com/viewjob?jk=d64de1721e0bf1f1,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Known for being a great place to work and build a career, KPMG provides audit, tax and advisory services for organizations in today's most important industries. Our growth is driven by delivering real results for our clients. It's also enabled by our culture, which encourages individual development, embraces an inclusive environment, rewards innovative excellence and supports our communities. With qualities like those, it's no wonder we're consistently ranked among the best companies to work for by Fortune Magazine, Consulting Magazine, Seramount, Fair360 and others. If you're as passionate about your future as we are, join our team.
+
+KPMG is currently seeking an Associate Director, Analytics & Data Solutions to join our Digital Nexus technology organization. This is a hybrid work opportunity.
+
+###  Responsibilities:
+
+  • Facilitate/oversee the technical design and development of technology solutions through the entire project lifecycle to ensure business needs are met; transform architectural and business concepts, as well as requirements into robust technology
+  • Collaborate with developers, architects, analysts and develop best technical design, as well as propose solution approaches working with vendors and resource partners to assign proper resources to drive project success; lead the delivery team to establish the ongoing development, and operations of a data management platforms
+  • Lead, moderate or participate in code reviews, unit testing and debugging, analyze and resolve defects identified through the quality assurance (QA) process; prepare or assist in the preparation of implementation documentation; support the implementation of applications into production
+  • Transform architectural and business concepts, as well as requirements into robust technology designs and engineering configurations to deliver sustainable solutions for data management, and analytics areas
+  • Ensure that technical as well as process architectures (application and information) are implemented and maintained to support core business functions; keep abreast of latest trends in technology, industry, and corresponding business domain
+
+###  Qualifications:
+
+  • Minimum seven years of recent experience and knowledge of strategic solution delivery models to ensure products and/or services continue to innovate, as well as to drive continuous improvement; demonstrated experience across the systems development life cycle in all project phases such as plan, initiate, analyze, design, build, test, implement, operate
+  • Bachelor's degree from an accredited college or university is preferred
+  • Knowledge of agile deliveries and project management methodologies; strong analytical, problem-solving, and decision-making skills with the ability to identify patterns and generate ideas
+  • Demonstrated experience across the systems development life cycle in all project phases plan, initiate, analyze, design, build, test, implement, operate; great independent judgment skills with the ability to positively influence, mentor and be a credible source of knowledge to less experienced team members
+  • Deep understanding of the overall architectures of cloud data platforms and tools such as Azure Databricks, Azure Data and analytics platforms, Power BI, PySpark, SparkSQL, as well as Data Integration tools/platforms like Azure Data Factory, Informatica IPaaS, MuleSoft, Python and Spark technologies; familiarity with Gen AI tools and technology is highly preferred; strong SQL background; experience with Microsoft suite and Azure preferred; profound knowledge of data management methodologies such as data architecture, data governance, data modeling, BI/Analytics, and more
+  • Excellent verbal/written communication, collaboration, analytical and presentation skills to lead an environment driven by customer service and teamwork; capability to create high level presentations for executives and stakeholders; ability to manage change and effectively communicate to teams; advanced knowledge of the broader scope that frames the essential technical area of work with ability to use this knowledge to create incremental value
+  • Applicants must be authorized to work in the U.S. without the need for employment-based visa sponsorship now or in the future; KPMG LLP will not sponsor applicants for U.S. work visa status for this opportunity (no sponsorship is available for H-1B, L-1, TN, O-1, E-3, H-1B1, F-1, J-1, OPT, CPT or any other employment-based visa)
+
+KPMG complies with all local/state regulations regarding displaying salary ranges. If required, the ranges displayed below or via the URL below are specifically for those potential hires who will work in the location(s) listed. Any offered salary is determined based on relevant factors such as applicant's skills, job responsibilities, prior relevant experience, certain degrees and certifications and market considerations. In addition, the firm is proud to offer a comprehensive, competitive benefits package, with options designed to help you make the best decisions for yourself, your family, and your lifestyle. Available benefits are based on eligibility. Our Total Rewards package includes a variety of medical and dental plans, vision coverage, disability and life insurance, 401(k) plans, and a robust suite of personal well-being benefits to support your mental health. Depending on job classification, standard work hours, and years of service, KPMG provides Personal Time Off per fiscal year. Additionally, each year the firm publishes a calendar of holidays to be observed during the year and provides two firmwide breaks each year where employees will not be required to use Personal Time Off; one is at year end and the other is around the July 4th holiday. Additional details about our benefits can be found towards the bottom of our KPMG US Careers site at “Benefits & How We Work”. 
+
+Follow this link to obtain salary ranges by city outside of CA: 
+
+https://kpmg.com/us/en/how-we-work/pay-transparency.html/?id=6684_9_25  
+
+KPMG LLP (the U.S. member firm of KPMG International) offers a comprehensive compensation and benefits package. KPMG is an equal opportunity employer. KPMG complies with all applicable federal, state and local laws regarding recruitment and hiring. All qualified applicants are considered for employment without regard to race, color, religion, age, sex, sexual orientation, gender identity, national origin, citizenship status, disability, protected veteran status, or any other category protected by applicable federal, state or local laws. The attached link contains further information regarding the firm's compliance with federal, state and local recruitment and hiring laws. No phone calls or agencies please.
+
+KPMG does not currently require partners or employees to be fully vaccinated or test negative for COVID-19 in order to go to KPMG offices, client sites or KPMG events, except when mandated by federal, state or local law. In some circumstances, clients also may require proof of vaccination or testing (e.g., to go to the client site).
+
+KPMG recruits on a rolling basis. Candidates are considered as they apply, until the opportunity is filled. Candidates are encouraged to apply expeditiously to any role(s) for which they are qualified that is also of interest to them.
+
+Los Angeles County applicants: Material job duties for this position are listed above. Criminal history may have a direct, adverse, and negative relationship with some of the material job duties of this position. These include the duties and responsibilities listed above, as well as the abilities to adhere to company policies, exercise sound judgment, effectively manage stress and work safely and respectfully with others, exhibit trustworthiness, and safeguard business operations and company reputation. Pursuant to the California Fair Chance Act, Los Angeles County Fair Chance Ordinance for Employers, Fair Chance Initiative for Hiring Ordinance, and San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records."
+0792c8d02a6dbd18,Indeed,AI & GenAI Data Scientist – Director,PRICE WATERHOUSE COOPERS,Data Scientist,in-person,,2025-04-17,2025-04-23,Philadelphia,PA,19103,yearly,148000.0,317000.0,148000.0,317000.0,232500.0,https://www.indeed.com/viewjob?jk=0792c8d02a6dbd18,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"At PwC, our people in data and analytics focus on leveraging data to drive insights and make informed business decisions. They utilise advanced analytics techniques to help clients optimise their operations and achieve their strategic goals. In data analysis at PwC, you will focus on utilising advanced analytical techniques to extract insights from large datasets and drive data-driven decision-making. You will leverage skills in data manipulation, visualisation, and statistical modelling to support clients in solving complex business problems. 
+
+Translating the vision, you set the tone, and inspire others to follow. Your role is crucial in driving business growth, shaping the direction of client engagements, and mentoring the next generation of leaders. You are expected to be a guardian of PwC's reputation, understanding that quality, integrity, inclusion and a commercial mindset are all foundational to our success. You create a healthy working environment while maximising client satisfaction. You cultivate the potential in others and actively team across the PwC Network, understanding tradeoffs, and leveraging our collective strength.
+
+Examples of the skills, knowledge, and experiences you need to lead and deliver value at this level include but are not limited to:
+
+  • Lead in line with our values and brand.
+  • Develop new ideas, solutions, and structures; drive thought leadership.
+  • Solve problems by exploring multiple angles and using creativity, encouraging others to do the same.
+  • Balance long-term, short-term, detail-oriented, and big picture thinking.
+  • Make strategic choices and drive change by addressing system-level enablers.
+  • Promote technological advances, creating an environment where people and technology thrive together.
+  • Identify gaps in the market and convert opportunities to success for the Firm.
+  • Adhere to and enforce professional and technical standards (e.g. refer to specific PwC tax and audit guidance) the Firm's code of conduct, and independence requirements.
+
+Minimum Degree Required (BQ)
+
+Bachelor's Degree
+
+Minimum Year(s) of Experience (BQ)
+
+10 year(s) 
+
+Degree Preferred
+
+Master's Degree 
+
+Preferred Knowledge/Skills
+
+Demonstrates thought leader-level abilities and/or a proven record of success managing the identification and addressing of client needs:
+
+  • Managing development teams in building of AI and GenAI solutions, including but not limited to analytical modeling, prompt engineering, general all-purpose programming (e.g., Python), testing, communication of results, front end and back-end integration, and iterative development with clients
+  • Documenting and analyzing business processes for AI and Generative AI opportunities, including gathering of requirements, creation of initial hypotheses, and development of AI/GenAI solution approach
+  • Working with client team to understand their business problem and select the appropriate models and approaches for AI/GenAI use cases
+  • Designing and solutioning AI/GenAI architectures for clients, specifically for plugin-based solutions (i.e., ChatClient application with plugins) and custom AI/GenAI application builds
+  • Managing teams to process unstructured and structured data to be consumed as context for LLMs, including but not limited to embedding of large text corpus, generative development of SQL queries, building connectors to structured databases
+  • Managing daily operations of a global data and analytics team on client engagements, review developed models, provide feedback and assist in analysis;
+  • Directing data engineers and other data scientists to deliver efficient solutions to meet client requirements;
+  • Leading and contributing to development of proof of concepts, pilots, and production use cases for clients while working in cross-functional teams;
+  • Facilitating and conducting executive level presentations to showcase GenAI solutions, development progress, and next steps
+  • Structuring, write, communicate and facilitate client presentations; and,
+  • Managing staff through coaching, providing feedback, and guiding work performance.
+
+Demonstrates thought leader-level abilities and/or a proven record of success learning and performing in functional and technical capacities, including the following areas:
+
+  • Managing GenAI application development teams including back-end and front-end integrations
+  • Using Python (e.g., Pandas, NLTK, Scikit-learn, Keras, etc.), common LLM development frameworks (e.g., Langchain, Semantic Kernel), Relational storage (SQL), Non-relational storage (NoSQL);
+  • Experience in analytical techniques such as Machine Learning, Deep Learning and Optimization
+  • Vectorization and embedding, prompt engineering, RAG (retrieval, augmented, generation) workflow dev
+  • Understanding or hands on experience with Azure, AWS, and / or Google Cloud platforms
+  • Experience with Git Version Control, Unit/Integration/End-to-End Testing, CI/CD, release management, etc.
+
+Learn more about how we work: https://pwc.to/how-we-work  
+
+PwC does not intend to hire experienced or entry level job seekers who will need, now or in the future, PwC sponsorship through the H-1B lottery, except as set forth within the following policy: https://pwc.to/H-1B-Lottery-Policy.  
+
+As PwC is an equal opportunity employer, all qualified applicants will receive consideration for employment at PwC without regard to race; color; religion; national origin; sex (including pregnancy, sexual orientation, and gender identity); age; disability; genetic information (including family medical history); veteran, marital, or citizenship status; or, any other status protected by law.  
+
+For only those qualified applicants that are impacted by the Los Angeles County Fair Chance Ordinance for Employers, the Los Angeles' Fair Chance Initiative for Hiring Ordinance, the San Francisco Fair Chance Ordinance, San Diego County Fair Chance Ordinance, and the California Fair Chance Act, where applicable, arrest or conviction records will be considered for Employment in accordance with these laws. At PwC, we recognize that conviction records may have a direct, adverse, and negative relationship to responsibilities such as accessing sensitive company or customer information, handling proprietary assets, or collaborating closely with team members. We evaluate these factors thoughtfully to establish a secure and trusted workplace for all.  
+
+Applications will be accepted until the position is filled or the posting is removed, unless otherwise set forth on the following webpage. Please visit this link for information about anticipated application deadlines: https://pwc.to/us-application-deadlines  
+
+The salary range for this position is: $148,000 - $317,000, plus individuals may be eligible for an annual discretionary bonus. For roles that are based in Maryland, this is the listed salary range for this position. Actual compensation within the range will be dependent upon the individual's skills, experience, qualifications and location, and applicable employment laws. PwC offers a wide range of benefits, including medical, dental, vision, 401k, holiday pay, vacation, personal and family sick leave, and more. To view our benefits at a glance, please visit the following link: https://pwc.to/benefits-at-a-glance"
+42d7f3daa517968f,Indeed,A/AI Software & System Architect,Lockheed Martin,Data Scientist,in-person,Full-time,2025-04-18,2025-04-23,King of Prussia,PA,19406,,,,,,,https://www.indeed.com/viewjob?jk=42d7f3daa517968f,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Job ID: 691874BR   
+Date posted: Apr. 17, 2025  
+
+Description:Bringing together people who use their passion for purposeful innovation...Your Mission is Ours.  
+
+At Lockheed Martin we keep people safe and solve the world's most complex challenges. We place an emphasis on empowering our employees by fostering innovation, integrity, and exemplifying the epitome of corporate responsibility. Our people are some of the greatest minds in the industry and they make Lockheed Martin a great place to work. We provide diverse career opportunities designed to propel development and boost agility. Our flexible schedules, competitive pay, and comprehensive benefits enable our employees to live a healthy, fulfilling life in and outside of work.  
+
+The Lockheed Martin Artificial Intelligence Center (LAIC) team is seeking a high energy experienced individual with a strong background in software engineering and computer science to support the Applied AI team and product portfolio, focusing on a broad range of projects across the LAIC. The team is focused on exploiting small, innovative and agile teams to rapidly iterate and mature solutions from prototypes to deployment for utilization across the Lockheed Martin enterprise and in the field for our customers.   
+
+The selected candidate will focus on the development of software products that implement Artificial Intelligence to provide discriminating capability to our customers. This will require engagement in every phase of the system development lifecycle including requirements generation, system and software design, implementation, integration, and flight test. Activities will range from proof of concepts, development of prototypes, building demonstrators, and transition to production. The selected candidate will be required to leverage current computer science paradigms including object oriented programming, have familiarity with data structures and algorithms, utilize concurrency (both threaded and multi-processing), and have familiarity with I/O (block storage network database); developing code to solve complex problems and field innovative solutions. The candidate may also be expected assume technical lead responsibilities and mentor junior engineers.   
+
+Must exhibit self-motivation, a strong work ethic, time management and interpersonal skills.   
+
+The selected candidate can work at any major Lockheed Martin facility or remotely.   
+
+Must be a US Citizen.  
+Basic Qualifications:  
+
+  • Bachelor's Degree in Engineering, Computer Science, or other related discipline
+  • Experience using machine learning frameworks (Pytorch, Tensorflow, MxNet, Caffe, etc.)
+  • Experience with C++, Java, GO, Rust or other compiled languages
+  • Experience developing applications on Linux
+  • Experience with automated testing
+  • Strong understanding of object-oriented design principles
+  • Must be a US Citizen.
+
+Desired Skills:  
+
+  • Master's Degree in Engineering, Computer Science, or other related discipline
+  • Experience with Test-Driven Development from both unit- and system/acceptance-level perspectives
+  • Experience with software orchestration (e.g. Kubernetes, Helm, Istio/Linkerd) and modern GitOps workflows
+  • Experience developing microservices
+  • Experience with hardware-accelerated computing for both CPUs and GPUs (e.g. CUDA, Intel oneAPI, SYCL)
+  • Experience with model deployment software libraries and stacks (e.g. NVIDIA TensorRT, Triton Inference Server, OnnxRuntime)
+  • Experience deploying AI-enabled systems in multiple environments (e.g. cloud, edge devices)
+  • Experience with high-performance computing
+  • Experience interfacing with databases (SQL, MongoDB, etc.)
+  • Experience with DevOps tools: Docker, Git [GitLab, GitHub], Continuous Integration [CI], Continuous Deployment [CD]
+  • Experience with network programming (e.g. Socket programming with TCP and UDP)
+  • Experience with service-to-service messaging (e.g. gRPC, Kafka, ActiveMQ, ZeroMQ, RabbitMQ, DDS, RESTful APIs, etc.)
+  • Expertise in writing clean, maintainable code
+
+Clearance Level: None  
+Other Important Information You Should Know  
+Expression of Interest: By applying to this job, you are expressing interest in this position and could be considered for other career opportunities where similar skills and requirements have been identified as a match. Should this match be identified you may be contacted for this and future openings.  
+Ability to Work Remotely: Part-time Remote Telework: The employee selected for this position will work part of their work schedule remotely and part of their work schedule at a designated Lockheed Martin facility. The specific weekly schedule will be discussed during the hiring process.  
+Work Schedules: Lockheed Martin supports a variety of alternate work schedules that provide additional flexibility to our employees. Schedules range from standard 40 hours over a five day work week while others may be condensed. These condensed schedules provide employees with additional time away from the office and are in addition to our Paid Time off benefits.  
+Schedule for this Position: 4x10 hour day, 3 days off per week  
+Pay Rate: The annual base salary range for this position in California and New York (excluding most major metropolitan areas), Colorado, Hawaii, Illinois, Maryland, Minnesota, Washington or Washington DC is $79,700 - $140,530. For states not referenced above, the salary range for this position will reflect the candidate's final work location. Please note that the salary information is a general guideline only. Lockheed Martin considers factors such as (but not limited to) scope and responsibilities of the position, candidate's work experience, education/ training, key skills as well as market and business considerations when extending an offer.  
+Benefits offered: Medical, Dental, Vision, Life Insurance, Short-Term Disability, Long-Term Disability, 401(k) match, Flexible Spending Accounts, EAP, Education Assistance, Parental Leave, Paid time off, and Holidays.   
+(Washington state applicants only) Non-represented full-time employees: accrue at least 10 hours per month of Paid Time Off (PTO) to be used for incidental absences and other reasons; receive at least 90 hours for holidays. Represented full time employees accrue 6.67 hours of Vacation per month; accrue up to 52 hours of sick leave annually; receive at least 96 hours for holidays. PTO, Vacation, sick leave, and holiday hours are prorated based on start date during the calendar year.  
+This position is incentive plan eligible.  
+Lockheed Martin is an equal opportunity employer. Qualified candidates will be considered without regard to legally protected characteristics.  
+The application window will close in 90 days; applicants are encouraged to apply within 5 - 30 days of the requisition posting date in order to receive optimal consideration.  
+At Lockheed Martin, we use our passion for purposeful innovation to help keep people safe and solve the world's most complex challenges. Our people are some of the greatest minds in the industry and truly make Lockheed Martin a great place to work.   
+
+With our employees as our priority, we provide diverse career opportunities designed to propel, develop, and boost agility. Our flexible schedules, competitive pay, and comprehensive benefits enable our employees to live a healthy, fulfilling life at and outside of work. We place an emphasis on empowering our employees by fostering an inclusive environment built upon integrity and corporate responsibility.  
+
+If this sounds like a culture you connect with, you're invited to apply for this role. Or, if you are unsure whether your experience aligns with the requirements of this position, we encourage you to search on Lockheed Martin Jobs, and apply for roles that align with your qualifications.  
+Experience Level: 4 yr and up College  
+Business Unit: ENTERPRISE BUSINESS SERVICES  
+Relocation Available: Possible  
+Career Area: Artificial Intelligence  
+Type: Full-Time  
+Shift: First"
+31bcfccb08ffa28b,Indeed,A/AI Software & System Architect Senior (mid-career),Lockheed Martin,Data Scientist,in-person,Full-time,2025-04-22,2025-04-23,King of Prussia,PA,19406,,,,,,,https://www.indeed.com/viewjob?jk=31bcfccb08ffa28b,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"Job ID: 691975BR   
+Date posted: Apr. 21, 2025  
+
+Description:The Lockheed Martin Artificial Intelligence Center (LAIC) team is seeking a high energy experienced individual with a strong background in software engineering and computer science to support the Applied AI team and product portfolio, focusing on a broad range of projects across the LAIC. The team is focused on exploiting small, innovative and agile teams to rapidly iterate and mature solutions from prototypes to deployment for utilization across the Lockheed Martin enterprise and in the field for our customers.   
+
+The selected candidate will focus on the development of software products that implement Artificial Intelligence to provide discriminating capability to our customers. This will require engagement in every phase of the system development lifecycle including requirements generation, system and software design, implementation, integration, and flight test. Activities will range from proof of concepts, development of prototypes, building demonstrators, and transition to production. The selected candidate will be required to leverage current computer science paradigms including object oriented programming, have familiarity with data structures and algorithms, utilize concurrency (both threaded and multi-processing), and have familiarity with I/O (block storage network database); developing code to solve complex problems and field innovative solutions. The candidate may also be expected assume technical lead responsibilities and mentor junior engineers.   
+
+Must exhibit self-motivation, a strong work ethic, time management and interpersonal skills.   
+
+On-site work at a Lockheed Martin facility may be required as needed. The selected candidate can work at any major Lockheed Martin facility or remotely.  
+What's In It For You  
+From onsite to remote, we offer flexible work schedules to comprehensive benefits investing in your future and security, Learn more about Lockheed Martin's comprehensive benefits package here.  
+Do you want to be part of a company culture that empowers employees to think big, lead with a growth mindset, and make the impossible a reality? We provide the resources and give you the flexibility to enable inspiration and focus -if you have the passion and courage to dream big, work hard, and have fun doing what you love then we want to build a better tomorrow with you.  
+Must be a US Citizen.  
+Basic Qualifications:  
+Bachelor's Degree in Engineering, Computer Science, or other related discipline   
+
+Experience with both Python and compiled languages (e.g. C++, Go, Rust)  
+
+Experience with DevOps tools: Docker, Git [GitLab, GitHub], Continuous Integration [CI], Continuous Deployment [CD]   
+
+Experience with service-to-service messaging paradigms (e.g. gRPC, Kafka, ActiveMQ, ZeroMQ, RabbitMQ, DDS, RESTful APIs, etc.)  
+
+Experience with automated software unit testing and writing high-quality tests   
+
+Must be a US Citizen  
+Desired Skills:  
+
+  • Bachelor's Degree in Engineering, Computer Science, or other related discipline
+  • Experience using machine learning frameworks (Pytorch, Tensorflow, MxNet, Caffe, etc.)
+  • Experience with C++, Java, GO, Rust and other compiled languages
+  • Experience with DevOps tools: Docker, Git [GitLab, GitHub], Continuous Integration [CI], Continuous Deployment [CD]
+  • Experience developing applications on Linux
+  • Experience with network programming (e.g. Socket programming with TCP and UDP)
+  • Experience with service-to-service messaging (e.g. gRPC, Kafka, ActiveMQ, ZeroMQ, RabbitMQ, DDS, RESTful APIs, etc.)
+  • Experience working with geographically diverse teams and leadership
+  • Experience with automated unit-, integration-, and system-level testing
+  • Expertise in writing clean, maintainable code with loose coupling and high cohesion
+  • Strong understanding of object-oriented design principles (e.g. SOLID, the Package Principles) and software design patterns
+  • Must be a US Citizen.
+
+Clearance Level: None  
+Other Important Information You Should Know  
+Expression of Interest: By applying to this job, you are expressing interest in this position and could be considered for other career opportunities where similar skills and requirements have been identified as a match. Should this match be identified you may be contacted for this and future openings.  
+Ability to Work Remotely: Part-time Remote Telework: The employee selected for this position will work part of their work schedule remotely and part of their work schedule at a designated Lockheed Martin facility. The specific weekly schedule will be discussed during the hiring process.  
+Work Schedules: Lockheed Martin supports a variety of alternate work schedules that provide additional flexibility to our employees. Schedules range from standard 40 hours over a five day work week while others may be condensed. These condensed schedules provide employees with additional time away from the office and are in addition to our Paid Time off benefits.  
+Schedule for this Position: 4x10 hour day, 3 days off per week  
+Pay Rate: The annual base salary range for this position in California and New York (excluding most major metropolitan areas), Colorado, Hawaii, Illinois, Maryland, Minnesota, Washington or Washington DC is $97,100 - $171,235. For states not referenced above, the salary range for this position will reflect the candidate's final work location. Please note that the salary information is a general guideline only. Lockheed Martin considers factors such as (but not limited to) scope and responsibilities of the position, candidate's work experience, education/ training, key skills as well as market and business considerations when extending an offer.  
+Benefits offered: Medical, Dental, Vision, Life Insurance, Short-Term Disability, Long-Term Disability, 401(k) match, Flexible Spending Accounts, EAP, Education Assistance, Parental Leave, Paid time off, and Holidays.   
+(Washington state applicants only) Non-represented full-time employees: accrue at least 10 hours per month of Paid Time Off (PTO) to be used for incidental absences and other reasons; receive at least 90 hours for holidays. Represented full time employees accrue 6.67 hours of Vacation per month; accrue up to 52 hours of sick leave annually; receive at least 96 hours for holidays. PTO, Vacation, sick leave, and holiday hours are prorated based on start date during the calendar year.  
+This position is incentive plan eligible.  
+Lockheed Martin is an equal opportunity employer. Qualified candidates will be considered without regard to legally protected characteristics.  
+The application window will close in 90 days; applicants are encouraged to apply within 5 - 30 days of the requisition posting date in order to receive optimal consideration.  
+At Lockheed Martin, we use our passion for purposeful innovation to help keep people safe and solve the world's most complex challenges. Our people are some of the greatest minds in the industry and truly make Lockheed Martin a great place to work.   
+
+With our employees as our priority, we provide diverse career opportunities designed to propel, develop, and boost agility. Our flexible schedules, competitive pay, and comprehensive benefits enable our employees to live a healthy, fulfilling life at and outside of work. We place an emphasis on empowering our employees by fostering an inclusive environment built upon integrity and corporate responsibility.  
+
+If this sounds like a culture you connect with, you're invited to apply for this role. Or, if you are unsure whether your experience aligns with the requirements of this position, we encourage you to search on Lockheed Martin Jobs, and apply for roles that align with your qualifications.  
+Experience Level: Experienced Professional  
+Business Unit: ENTERPRISE BUSINESS SERVICES  
+Relocation Available: Possible  
+Career Area: Artificial Intelligence  
+Type: Full-Time  
+Shift: First"
+7bde89bab305c4f5,Indeed,Head of AI & Innovation Lab,Brown Brothers Harriman,Data Scientist,in-person,Full-time,2025-04-17,2025-04-23,Philadelphia,PA,,,,,,,,https://www.indeed.com/viewjob?jk=7bde89bab305c4f5,https://www.indeed.com/jobs?q=Data+Scientist&l=Philadelphia%2C+PA&radius=25&fromage=7,"At BBH, Partnership is more than a form of ownership—it’s our approach to business and relationships. We know that supporting your professional and personal goals is the best way to help our clients and advance our business. We take that responsibility seriously. With a 200-year legacy and a shared passion for what’s next, this is the right place to build a fulfilling career. 
+
+The Head of AI & Innovation Lab manages and directs a specific function within the Systems line of business. This individual has direct oversight of the high-volume activity, consistently complex issues and/or high-level risk and exposure items that have a significant impact on the achievement of the objectives of the department and potentially the Systems Division. 
+
+We are recruiting for a visionary leader to establish and drive our AI & Innovation Lab. This role will spearhead the development of cutting-edge AI strategies and solutions within the financial sector, focusing on innovation, governance, and operational excellence. This role will play a critical role in aligning AI-driven innovations with the organization’s global goals while fostering collaboration across multiple business units. 
+
+The Head of AI & Innovation Lab will be instrumental in building this new function including, recruiting, and developing top talent, creating robust governance frameworks, and delivering innovative AI/ML solutions to transform business operations. 
+
+Responsibilities include: 
+
+Strategic Leadership 
+
+  • Define and implement a firmwide AI strategy in alignment with corporate goals.
+  • Drive the vision and roadmap for AI initiatives, fostering a culture of innovation across the organization.
+  • Collaborate with senior leadership and stakeholders to embed AI solutions into the organization’s core processes.
+
+Innovation & Delivery 
+
+  • Research and develop advanced AI and ML tools, particularly in areas such as NLP, generative AI, and predictive analytics, to solve business challenges.
+  • Oversee the end-to-end lifecycle of AI/ML initiatives, from ideation to production deployment.
+  • Identify, prioritize, and champion AI use cases that deliver measurable value.
+
+Governance & Compliance 
+
+  • Establish robust governance frameworks to ensure ethical and compliant use of AI technologies.
+  • Ensure adherence to regulatory requirements and industry standards across all AI initiatives.
+  • Manage risks associated with AI adoption, balancing innovation with operational safeguards.
+
+Team Building & Development 
+
+  • Build and lead a multidisciplinary team of data scientists, ML engineers, and researchers.
+  • Foster a high-performance culture, providing mentorship and professional development opportunities.
+  • Promote cross-functional collaboration with product, engineering, operations, HR, and marketing teams.
+
+Stakeholder Engagement 
+
+  • Act as a subject matter expert, advocating for AI adoption across the organization.
+  • Communicate complex AI concepts to non-technical stakeholders effectively.
+  • Represent the institution in external forums, building partnerships with startups, universities, and research institutions.
+
+Productivity/Quality 
+
+  • Ensure the smooth, effective operation of the function. This includes proper product delivery, proper escalation and resolution of high exposure items, maintain the proper balance of cost, control and client service, and maintaining proper standards and controls.
+  • In conjunction with the Division Manager, develop, maintain and achieve an integrated Business Plan for the function, which aligns organization structure, systems priorities, budget, management reporting and job descriptions.
+
+Technical 
+
+  • Ensure standard of suite of products is competitive, strategic, well defined and critical to our client’s success.
+  • Develop, maintain, and increase the knowledge and skills essential to performing the job and at the quality required.
+  • Solve job-related problems and perform the technical responsibilities of the job with a high level of competence.
+
+Client Focus 
+
+  • Oversee total customer satisfaction by ensuring responsiveness, flexibility, and follow-through with all requests.
+  • Focus on client's perspective and needs by setting and meeting expectations and deadlines.
+  • Lead staff by setting high standards, providing a thoughtful approach, having a committed attitude, and by being an effective representative of BBH Systems.
+
+Qualifications & Experience: 
+
+  • 10+ years of relevant technical & managerial experience.
+  • Financial services or high-tech industry experience preferred.
+  • Advanced Degree (MS/PHD) in Computer Science, Artificial Intelligence, Machine Learning, or a related field.
+  • Leadership experience in building and managing AI teams preferably in finance or high-transaction environments.
+  • Proven track record of implementing AI solutions that have driven business impact.
+  • Expertise in software architecture and design principles
+  • Strong knowledge of machine learning techniques & statistical concepts
+  • Hands-on experience with NLP, NLU, NLG, and generative AI technologies
+  • Strong understanding of AI model development, deployment, and monitoring.
+  • Hands-on experience with ML libraries (Pandas, NumPy, Scikit-Learn, TensorFlow, SciPy).
+  • Experience with cloud solutions (eg Azure).
+  • Experience building data products including ETL pipelines for data processing.
+  • Experience building automated pipelines for model training, fine-tuning and testing.
+  • Demonstrated success in establishing and scaling new teams within large organizations.
+  • Proven ability to manage senior-level stakeholders and cross-functional teams.
+  • Excellent problem-solving skills and a strategic mindset.
+  • Strong communication and interpersonal skills to foster collaboration and influence decision-making.
+
+What We Offer: 
+
+  • A collaborative environment that enables you to step outside your role to add value wherever you can
+  • Direct access to clients, information and experts across all business areas around the world
+  • Opportunities to grow your expertise, take on new challenges, and reinvent yourself—without leaving the firm
+  • A culture of inclusion that values each employee’s unique perspective
+  • High-quality benefits program emphasizing good health, financial security, and peace of mind
+  • Rewarding work with the flexibility to enjoy personal and family experiences at every career stage
+  • Volunteer opportunities to give back to your community and help transform the lives of others
+
+We value diverse experiences. We value diverse experiences and transferrable skillsets. If your career hasn’t followed a traditional path, includes alternative experiences, or doesn’t meet every qualification or skill listed in the job description, please do go ahead and apply. 
+
+About BBH: 
+
+Brown Brothers Harriman (BBH) is a premier global financial services firm, known for premium service, specialist expertise, technology solutions and partnership approach to client management. Across Investor Services and Capital Partners, we work with an enviable roster of sophisticated clients who make BBH their first call when they are tackling their hardest challenges. Delivering for our clients and each other energizes us. 
+
+We believe that how we do our work is just as important as what we do. We are relentless problem solvers who know our best ideas come from collective debate and development—so we are never possessive about our ideas. Every day we come together as a diverse community of smart and caring people to deliver exceptional service and expert advice—creating success that lasts. No matter where you sit in the organization, everyone is empowered to contribute their ideas. BBHers can pick up the phone and call any colleague, and they are happy to help. Expanding your impact beyond your daily role is part of how we operate as trusted partners to one another. 
+
+We believe stability is a competitive advantage, but being stable means having the knowledge, skill, and discipline to evolve, often—pushing the boundaries of innovation. As a private partnership, every investment we make is in the relationships, technologies, products and development we believe are in the long-term interests of our clients and our people. Our long-tenured leaders are experts in their areas and are actively involved in the day-to day business, taking the time to provide guidance and mentoring to build the next generation of BBHers. Because we know, our success begins with yours. 
+
+Go to BBH.com to learn more about our 
+
+rewards and benefits 
+
+, 
+
+philanthropy 
+
+, approach to 
+
+sustainability 
+
+or how we support you to 
+
+thrive personally, physically and financially 
+
+. 
+
+We are an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, gender, national origin, age, genetic information, creed, marital status, sexual orientation, gender identity, disability status, protected veteran status, or any other protected status under federal, state or local law."
