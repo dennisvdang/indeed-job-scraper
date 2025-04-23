@@ -366,25 +366,48 @@ def create_salary_by_location_chart(df: pd.DataFrame) -> Optional[go.Figure]:
 
 
 def display_metrics(df: pd.DataFrame) -> None:
-    """Display key metrics at the top of the dashboard."""
-    # Display job and company counts
-    col1, col2 = st.columns(2)
-    col1.metric("Total Jobs", len(df))
-    col2.metric("Companies", df['company'].nunique() if 'company' in df.columns else "N/A")
+    """Display key metrics at the top of the dashboard in a compact format."""
+    # Add custom CSS to make metrics more compact
+    st.markdown("""
+    <style>
+    div[data-testid="metric-container"] {
+        padding: 10px 15px;
+        margin-bottom: 0px;
+    }
+    div[data-testid="metric-container"] > div[data-testid="stVerticalBlock"] > div {
+        font-size: 0.9rem;
+    }
+    div[data-testid="metric-container"] > div[data-testid="stVerticalBlock"] > div:nth-child(2) {
+        font-size: 1.8rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
     
-    # Display salary metrics if available
+    # Combine all metrics into a single row
+    metrics_columns = []
+    
+    # Add job and company counts
+    metrics_columns.append(("Total Jobs", len(df)))
+    if 'company' in df.columns:
+        metrics_columns.append(("Companies", df['company'].nunique()))
+    
+    # Add salary metrics if available
     salary_cols = ['salary_min_yearly', 'salary_midpoint_yearly', 'salary_max_yearly']
     if all(col in df.columns for col in salary_cols):
-        salary_metrics = [
-            ("Minimum Salary Range (median)", df['salary_min_yearly'].median()),
+        metrics_columns.extend([
+            ("Min Salary", df['salary_min_yearly'].median()),
             ("Median Salary", df['salary_midpoint_yearly'].median()),
-            ("Maximum Salary Range (median)", df['salary_max_yearly'].median())
-        ]
-        
-        cols = st.columns(3)
-        for i, (label, value) in enumerate(salary_metrics):
-            with cols[i]:
+            ("Max Salary", df['salary_max_yearly'].median())
+        ])
+    
+    # Create a single row with all metrics
+    cols = st.columns(len(metrics_columns))
+    for i, (label, value) in enumerate(metrics_columns):
+        with cols[i]:
+            if isinstance(value, (int, float)) and "Salary" in label:
                 st.metric(label, f"${value:,.0f}")
+            else:
+                st.metric(label, value)
 
 
 def display_overview_tab(df: pd.DataFrame) -> None:
