@@ -46,12 +46,20 @@ def load_data(file_path: Path) -> pd.DataFrame:
     return df
 
 
-@st.cache_data
+@st.cache_data(ttl=60, show_spinner=True)
 def load_multiple_datasets() -> pd.DataFrame:
-    """Load and combine multiple CSV files with caching."""
+    """Load and combine multiple CSV files with caching.
+    
+    The cache expires after 60 seconds (ttl=60) to ensure fresh data is loaded periodically.
+    """
     files = find_csv_files()
     if not files:
+        st.error("No CSV files found in the data/raw directory. Please add data files.")
         return pd.DataFrame()
+    
+    # Log number of files found to help with debugging
+    st.session_state["num_files_found"] = len(files)
+    st.session_state["last_refresh_time"] = datetime.now().strftime("%H:%M:%S")
     
     dfs = [load_data(file).assign(source_file=file.name) for file in files]
     combined_df = pd.concat(dfs, ignore_index=True)
@@ -59,6 +67,9 @@ def load_multiple_datasets() -> pd.DataFrame:
     # Remove duplicate jobs
     if 'job_id' in combined_df.columns:
         combined_df.drop_duplicates(subset=['job_id'], keep='first', inplace=True)
+    
+    # Store job count in session state for reference
+    st.session_state["total_job_count"] = len(combined_df)
     
     return combined_df
 
@@ -840,6 +851,20 @@ def display_descriptions_tab(df: pd.DataFrame) -> None:
 def display_sidebar_info(df: pd.DataFrame) -> None:
     """Display dataset information in the sidebar."""
     st.sidebar.header("Dataset Info")
+    
+    # Refresh data button
+    if st.sidebar.button("🔄 Refresh Data"):
+        # Clear caches to force data reload
+        st.cache_data.clear()
+        st.rerun()
+    
+    # Display when data was last refreshed
+    last_refresh = st.session_state.get("last_refresh_time", "Never")
+    st.sidebar.write(f"Last refreshed: {last_refresh}")
+    
+    # Display file count for debugging
+    num_files = st.session_state.get("num_files_found", 0)
+    st.sidebar.write(f"Data files loaded: {num_files}")
     
     # Display basic info
     st.sidebar.write(f"Total jobs: {len(df)}")
