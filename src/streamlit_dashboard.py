@@ -420,7 +420,7 @@ def display_overview_tab(df: pd.DataFrame) -> None:
 
 
 def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.Figure]:
-    """Create a scatterplot of salary by company, title, and location."""
+    """Create a scatterplot of salary by company, location, and title."""
     if not check_required_columns(df, ['title', 'company', 'salary_midpoint_yearly']):
         return None
     
@@ -433,59 +433,79 @@ def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.
     if len(filtered_df) < 5:
         return None
     
-    # Don't restrict to top companies - use all companies
-    # But limit to a reasonable number of job titles for coloring
-    top_titles = filtered_df['title'].value_counts().nlargest(10).index.tolist()
+    # Remove salary outliers
+    # Calculate the Q1, Q3 and IQR
+    Q1 = filtered_df['salary_midpoint_yearly'].quantile(0.10)
+    Q3 = filtered_df['salary_midpoint_yearly'].quantile(0.90)
+    IQR = Q3 - Q1
     
-    # Add an "Other" category for job titles not in the top list
-    filtered_df['title_category'] = filtered_df['title'].apply(
-        lambda x: x if x in top_titles else "Other Job Titles"
-    )
+    # Define bounds for outliers (using 1.5 * IQR)
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
     
-    # Create location field
+    # Filter out the outliers
+    filtered_df = filtered_df[
+        (filtered_df['salary_midpoint_yearly'] >= lower_bound) & 
+        (filtered_df['salary_midpoint_yearly'] <= upper_bound)
+    ]
+    
+    # Create location field for hover info
     if has_city and has_state:
         filtered_df['location'] = filtered_df.apply(
-            lambda x: f"{x['city']}, {x['state']}" if pd.notna(x['city']) else x['state'], 
+            lambda x: f"{x['city']}, {x['state']}" if pd.notna(x['city']) and pd.notna(x['state']) else 
+            (x['city'] if pd.notna(x['city']) else (x['state'] if pd.notna(x['state']) else "Unknown")), 
             axis=1
         )
     elif has_state:
-        filtered_df['location'] = filtered_df['state']
+        filtered_df['location'] = filtered_df['state'].fillna("Unknown")
     elif has_city:
-        filtered_df['location'] = filtered_df['city']
+        filtered_df['location'] = filtered_df['city'].fillna("Unknown")
     else:
         filtered_df['location'] = "Unknown"
     
-    # Set a default shape for missing state data
+    # Create a color category based on location
+    # Decide whether to use state or city for coloring
     if has_state:
-        filtered_df['state_for_shape'] = filtered_df['state'].fillna('Unknown')
+        # Use states for coloring (fewer categories)
+        top_states = filtered_df['state'].value_counts().nlargest(10).index.tolist()
+        filtered_df['location_category'] = filtered_df['state'].apply(
+            lambda x: x if pd.notna(x) and x in top_states else "Other States"
+        )
+        color_title = "State"
+    elif has_city:
+        # Use cities if states not available
+        top_cities = filtered_df['city'].value_counts().nlargest(10).index.tolist()
+        filtered_df['location_category'] = filtered_df['city'].apply(
+            lambda x: x if pd.notna(x) and x in top_cities else "Other Cities"
+        )
+        color_title = "City"
     else:
-        filtered_df['state_for_shape'] = 'Unknown'
+        # Fallback if no location data
+        filtered_df['location_category'] = "Unknown"
+        color_title = "Location"
     
     # Create the figure
     fig = px.scatter(
         filtered_df,
         x='company',
         y='salary_midpoint_yearly',
-        color='title_category',
-        symbol='state_for_shape',
-        size_max=5,  # Make dots smaller
-        opacity=0.7,  # Add some transparency for overlapping points
+        color='location_category',  # Use location for coloring
         hover_name='title',
         hover_data={
             'company': False,  # Hide company in hover as it's already the x-axis
-            'title': True,     # Include the actual job title
-            'title_category': False,  # Hide this in hover as it's redundant
+            'title': True,  # Show the job title in hover
             'salary_midpoint_yearly': True,
             'location': True,
-            'state_for_shape': False,  # Hide this in hover as it's redundant
+            'location_category': False,  # Hide this in hover as it's redundant
         },
         labels={
             'company': 'Company',
             'salary_midpoint_yearly': 'Annual Salary ($)',
-            'title_category': 'Job Title',
+            'location_category': color_title,
             'location': 'Location'
         },
-        title='Salary Distribution by Company, Job Title, and Location',
+        title='Salary Distribution by Company and Location',
+        opacity=0.7,  # Add some transparency for overlapping points
     )
     
     # Update layout for better readability
@@ -493,7 +513,7 @@ def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.
         xaxis={'categoryorder': 'total descending', 'tickangle': 90},
         xaxis_title='Company',
         yaxis_title='Annual Salary ($)',
-        legend_title_text='Job Title',
+        legend_title_text=color_title,
         height=700,  # Make chart taller to accommodate x-axis labels
         showlegend=True,
         margin=dict(b=150),  # Add bottom margin for company names
@@ -618,13 +638,13 @@ def display_salary_tab(df: pd.DataFrame) -> None:
             ):
                 st.plotly_chart(salary_by_setting_fig, use_container_width=True)
     
-    # Row 2: Salary by job title, company and location - full width
-    st.subheader("Salary by Job Title, Company, and Location")
+    # Row 2: Salary by company and location - full width
+    st.subheader("Salary by Company and Location")
     
     if salary_scatter_fig := create_salary_company_location_scatterplot(df):
         st.plotly_chart(salary_scatter_fig, use_container_width=True)
     else:
-        st.info("Not enough data to create the salary scatterplot. Ensure job titles, companies, and salary data are available.")
+        st.info("Not enough data to create the salary scatterplot. Ensure companies, locations, and salary data are available.")
     
     # Row 3: Location-based salary intelligence
     st.subheader("Location-Based Salary Intelligence")
