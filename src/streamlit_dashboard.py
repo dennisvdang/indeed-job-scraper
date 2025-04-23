@@ -420,7 +420,7 @@ def display_overview_tab(df: pd.DataFrame) -> None:
 
 
 def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.Figure]:
-    """Create a scatterplot of salary by job title, company, and location."""
+    """Create a scatterplot of salary by company, title, and location."""
     if not check_required_columns(df, ['title', 'company', 'salary_midpoint_yearly']):
         return None
     
@@ -428,78 +428,75 @@ def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.
     has_state = 'state' in df.columns and not df['state'].isna().all()
     has_city = 'city' in df.columns and not df['city'].isna().all()
     
-    if not (has_state or has_city):
-        return None
-    
     # Filter for rows with salary data
-    filtered_df = df.dropna(subset=['salary_midpoint_yearly'])
+    filtered_df = df.dropna(subset=['salary_midpoint_yearly', 'company']).copy()
     if len(filtered_df) < 5:
         return None
     
-    # Get top companies and job titles for better visualization
-    top_companies = filtered_df['company'].value_counts().nlargest(10).index.tolist()
-    top_titles = filtered_df['title'].value_counts().nlargest(15).index.tolist()
+    # Don't restrict to top companies - use all companies
+    # But limit to a reasonable number of job titles for coloring
+    top_titles = filtered_df['title'].value_counts().nlargest(10).index.tolist()
     
-    # Filter for top companies and titles
-    plot_df = filtered_df[
-        (filtered_df['company'].isin(top_companies)) & 
-        (filtered_df['title'].isin(top_titles))
-    ].copy()
-    
-    if len(plot_df) < 5:
-        # If too restrictive, just use top titles
-        plot_df = filtered_df[filtered_df['title'].isin(top_titles)].copy()
+    # Add an "Other" category for job titles not in the top list
+    filtered_df['title_category'] = filtered_df['title'].apply(
+        lambda x: x if x in top_titles else "Other Job Titles"
+    )
     
     # Create location field
     if has_city and has_state:
-        plot_df['location'] = plot_df.apply(
+        filtered_df['location'] = filtered_df.apply(
             lambda x: f"{x['city']}, {x['state']}" if pd.notna(x['city']) else x['state'], 
             axis=1
         )
     elif has_state:
-        plot_df['location'] = plot_df['state']
+        filtered_df['location'] = filtered_df['state']
+    elif has_city:
+        filtered_df['location'] = filtered_df['city']
     else:
-        plot_df['location'] = plot_df['city']
+        filtered_df['location'] = "Unknown"
     
     # Set a default shape for missing state data
     if has_state:
-        plot_df['state_for_shape'] = plot_df['state'].fillna('Unknown')
+        filtered_df['state_for_shape'] = filtered_df['state'].fillna('Unknown')
     else:
-        plot_df['state_for_shape'] = 'Unknown'
+        filtered_df['state_for_shape'] = 'Unknown'
     
     # Create the figure
     fig = px.scatter(
-        plot_df,
-        x='title',
+        filtered_df,
+        x='company',
         y='salary_midpoint_yearly',
-        color='company',
+        color='title_category',
         symbol='state_for_shape',
-        size=[1] * len(plot_df),  # Uniform size 
+        size_max=5,  # Make dots smaller
+        opacity=0.7,  # Add some transparency for overlapping points
         hover_name='title',
         hover_data={
-            'title': False,  # Hide title in hover as it's already the x-axis
+            'company': False,  # Hide company in hover as it's already the x-axis
+            'title': True,     # Include the actual job title
+            'title_category': False,  # Hide this in hover as it's redundant
             'salary_midpoint_yearly': True,
-            'company': True,
             'location': True,
             'state_for_shape': False,  # Hide this in hover as it's redundant
         },
         labels={
-            'title': 'Job Title',
-            'salary_midpoint_yearly': 'Annual Salary ($)',
             'company': 'Company',
+            'salary_midpoint_yearly': 'Annual Salary ($)',
+            'title_category': 'Job Title',
             'location': 'Location'
         },
-        title='Salary Distribution by Job Title, Company, and Location',
+        title='Salary Distribution by Company, Job Title, and Location',
     )
     
     # Update layout for better readability
     fig.update_layout(
-        xaxis={'categoryorder': 'total descending', 'tickangle': 45},
-        xaxis_title='Job Title',
+        xaxis={'categoryorder': 'total descending', 'tickangle': 90},
+        xaxis_title='Company',
         yaxis_title='Annual Salary ($)',
-        legend_title_text='Company',
-        height=600,
+        legend_title_text='Job Title',
+        height=700,  # Make chart taller to accommodate x-axis labels
         showlegend=True,
+        margin=dict(b=150),  # Add bottom margin for company names
     )
     
     # Format y-axis tick labels as currency
@@ -507,8 +504,11 @@ def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.
     
     # Update hover template
     fig.update_traces(
-        hovertemplate='<b>%{hovertext}</b><br>Salary: $%{y:,.0f}<br>Company: %{customdata[1]}<br>Location: %{customdata[2]}'
+        hovertemplate='<b>%{hovertext}</b><br>Salary: $%{y:,.0f}<br>Company: %{x}<br>Location: %{customdata[2]}'
     )
+    
+    # Reduce marker size
+    fig.update_traces(marker=dict(size=4))
     
     return fig
 
