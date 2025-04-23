@@ -323,9 +323,63 @@ def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
     # Job title query filter
     if 'queried_job_title' in filtered_df.columns:
         job_title_queries = sorted(filtered_df['queried_job_title'].dropna().unique())
-        selected_queries = st.sidebar.multiselect("Job Title Queries", job_title_queries)
-        if selected_queries:
-            filtered_df = filtered_df[filtered_df['queried_job_title'].isin(selected_queries)]
+        
+        # Initialize session state variables for job title selection if they don't exist
+        if 'selected_job_titles' not in st.session_state:
+            st.session_state.selected_job_titles = []
+        if 'job_title_dropdown_open' not in st.session_state:
+            st.session_state.job_title_dropdown_open = False
+        
+        # Create a container for the custom dropdown
+        dropdown_container = st.sidebar.container()
+        
+        # Display the selected job titles with removal option
+        if st.session_state.selected_job_titles:
+            selected_titles_display = ", ".join(st.session_state.selected_job_titles)
+            dropdown_container.markdown(f"**Selected Job Title Queries:** {selected_titles_display}")
+            
+            # Add option to clear all selected job titles
+            if dropdown_container.button("Clear All Selections", key="clear_job_titles"):
+                st.session_state.selected_job_titles = []
+                st.rerun()
+        
+        # Toggle dropdown button
+        dropdown_label = "Select Job Title Queries" if not st.session_state.job_title_dropdown_open else "Close Selection"
+        if dropdown_container.button(dropdown_label, key="toggle_job_title_dropdown"):
+            st.session_state.job_title_dropdown_open = not st.session_state.job_title_dropdown_open
+            st.rerun()
+        
+        # Show dropdown options if open
+        if st.session_state.job_title_dropdown_open:
+            with dropdown_container:
+                st.write("Click to select/deselect:")
+                # Create a grid layout for job title options
+                cols = st.columns(1)
+                
+                for i, title in enumerate(job_title_queries):
+                    # Determine if this title is already selected
+                    is_selected = title in st.session_state.selected_job_titles
+                    button_type = "secondary" if is_selected else "primary"
+                    
+                    # Create clickable button for each job title
+                    if cols[0].button(
+                        f"{title} {'✓' if is_selected else ''}",
+                        key=f"job_title_{i}",
+                        type=button_type
+                    ):
+                        # Toggle selection
+                        if is_selected:
+                            st.session_state.selected_job_titles.remove(title)
+                        else:
+                            st.session_state.selected_job_titles.append(title)
+                        
+                        # Auto-close the dropdown after selection
+                        st.session_state.job_title_dropdown_open = False
+                        st.rerun()
+        
+        # Apply the filter based on selected job titles
+        if st.session_state.selected_job_titles:
+            filtered_df = filtered_df[filtered_df['queried_job_title'].isin(st.session_state.selected_job_titles)]
     
     # Date filter
     filtered_df, _ = apply_date_filter(filtered_df)
@@ -380,19 +434,15 @@ def display_metrics(df: pd.DataFrame) -> None:
     
     # Second row for min/max salary metrics
     if 'salary_min_yearly' in df.columns and 'salary_max_yearly' in df.columns:
-        salary_cols = st.columns(3)
+        salary_cols = st.columns(2)
         
         with salary_cols[0]:
             min_salary = df['salary_min_yearly'].median()
-            st.metric("Median Min Salary", f"${min_salary:,.0f}")
+            st.metric("Minimum Salary Range (median)", f"${min_salary:,.0f}")
         
         with salary_cols[1]:
-            mid_salary = df['salary_midpoint_yearly'].median()
-            st.metric("Median Mid Salary", f"${mid_salary:,.0f}")
-        
-        with salary_cols[2]:
             max_salary = df['salary_max_yearly'].median()
-            st.metric("Median Max Salary", f"${max_salary:,.0f}")
+            st.metric("Maximum Salary Range (median)", f"${max_salary:,.0f}")
 
 
 def display_overview_tab(df: pd.DataFrame) -> None:
