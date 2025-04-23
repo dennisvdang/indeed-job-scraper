@@ -20,6 +20,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
+import numpy as np
 
 
 def find_csv_files(directory: str = "data/raw") -> List[Path]:
@@ -419,17 +420,21 @@ def display_overview_tab(df: pd.DataFrame) -> None:
                 st.plotly_chart(work_setting_fig, use_container_width=True)
 
 
-def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.Figure]:
-    """Create a scatterplot of salary by company, location, and title."""
-    if not check_required_columns(df, ['title', 'company', 'salary_midpoint_yearly']):
+def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
+    """Create a boxplot with scatter points of salary by state and city."""
+    if not check_required_columns(df, ['salary_midpoint_yearly']):
         return None
     
-    # Check if we have location data
+    # Check if we have state data
     has_state = 'state' in df.columns and not df['state'].isna().all()
     has_city = 'city' in df.columns and not df['city'].isna().all()
     
-    # Filter for rows with salary data
-    filtered_df = df.dropna(subset=['salary_midpoint_yearly', 'company']).copy()
+    if not has_state:
+        st.warning("State information is required for this visualization but was not found in the data.")
+        return None
+    
+    # Filter for rows with salary and state data
+    filtered_df = df.dropna(subset=['salary_midpoint_yearly', 'state']).copy()
     if len(filtered_df) < 5:
         return None
     
@@ -450,85 +455,86 @@ def create_salary_company_location_scatterplot(df: pd.DataFrame) -> Optional[go.
     ]
     
     # Create location field for hover info
-    if has_city and has_state:
+    if has_city:
         filtered_df['location'] = filtered_df.apply(
-            lambda x: f"{x['city']}, {x['state']}" if pd.notna(x['city']) and pd.notna(x['state']) else 
-            (x['city'] if pd.notna(x['city']) else (x['state'] if pd.notna(x['state']) else "Unknown")), 
+            lambda x: f"{x['city']}, {x['state']}" if pd.notna(x['city']) else x['state'], 
             axis=1
         )
-    elif has_state:
-        filtered_df['location'] = filtered_df['state'].fillna("Unknown")
-    elif has_city:
-        filtered_df['location'] = filtered_df['city'].fillna("Unknown")
-    else:
-        filtered_df['location'] = "Unknown"
-    
-    # Create a color category based on location
-    # Decide whether to use state or city for coloring
-    if has_state:
-        # Use states for coloring (fewer categories)
-        top_states = filtered_df['state'].value_counts().nlargest(10).index.tolist()
-        filtered_df['location_category'] = filtered_df['state'].apply(
-            lambda x: x if pd.notna(x) and x in top_states else "Other States"
-        )
-        color_title = "State"
-    elif has_city:
-        # Use cities if states not available
-        top_cities = filtered_df['city'].value_counts().nlargest(10).index.tolist()
-        filtered_df['location_category'] = filtered_df['city'].apply(
+        
+        # Create a city category for coloring
+        # Get top cities for better visualization
+        top_cities = filtered_df['city'].value_counts().nlargest(15).index.tolist()
+        filtered_df['city_category'] = filtered_df['city'].apply(
             lambda x: x if pd.notna(x) and x in top_cities else "Other Cities"
         )
-        color_title = "City"
     else:
-        # Fallback if no location data
-        filtered_df['location_category'] = "Unknown"
-        color_title = "Location"
+        filtered_df['location'] = filtered_df['state']
+        filtered_df['city_category'] = "Unknown"
     
-    # Create the figure
-    fig = px.scatter(
-        filtered_df,
-        x='company',
-        y='salary_midpoint_yearly',
-        color='location_category',  # Use location for coloring
-        hover_name='title',
-        hover_data={
-            'company': False,  # Hide company in hover as it's already the x-axis
-            'title': True,  # Show the job title in hover
-            'salary_midpoint_yearly': True,
-            'location': True,
-            'location_category': False,  # Hide this in hover as it's redundant
-        },
-        labels={
-            'company': 'Company',
-            'salary_midpoint_yearly': 'Annual Salary ($)',
-            'location_category': color_title,
-            'location': 'Location'
-        },
-        title='Salary Distribution by Company and Location',
-        opacity=0.7,  # Add some transparency for overlapping points
-    )
+    # Only include states with sufficient data
+    state_counts = filtered_df['state'].value_counts()
+    valid_states = state_counts[state_counts >= 3].index.tolist()
+    filtered_df = filtered_df[filtered_df['state'].isin(valid_states)]
     
-    # Update layout for better readability
+    if len(filtered_df) < 5:
+        st.warning("Not enough data points for each state after filtering.")
+        return None
+    
+    # Create the figure with both box plot and scatter points
+    fig = go.Figure()
+    
+    # First, add box plots for each state
+    for state in sorted(filtered_df['state'].unique()):
+        state_data = filtered_df[filtered_df['state'] == state]
+        fig.add_trace(go.Box(
+            x=[state] * len(state_data),
+            y=state_data['salary_midpoint_yearly'],
+            name=state,
+            boxpoints=False,  # Don't show points with the box plot as we'll add scatter points separately
+            marker_color='rgba(200,200,200,0.5)',  # Light grey boxes
+            line_color='rgba(100,100,100,0.8)',
+            showlegend=False,
+            hoverinfo='skip'  # Skip hover for box plots
+        ))
+    
+    # Then, add scatter points colored by city
+    for city_cat in sorted(filtered_df['city_category'].unique()):
+        city_data = filtered_df[filtered_df['city_category'] == city_cat]
+        
+        # Add jitter to x-coordinates to spread points horizontally within each state
+        jitter = np.random.normal(0, 0.1, size=len(city_data))
+        x_with_jitter = [f"{state}{j}" for state, j in zip(city_data['state'], jitter)]
+        
+        fig.add_trace(go.Scatter(
+            x=city_data['state'],
+            y=city_data['salary_midpoint_yearly'],
+            mode='markers',
+            marker=dict(
+                size=6,
+                opacity=0.7,
+                line=dict(width=1, color='DarkSlateGrey')
+            ),
+            name=city_cat,
+            customdata=np.stack((
+                city_data['title'].values,
+                city_data['company'].values if 'company' in city_data.columns else np.array(['Unknown'] * len(city_data)),
+                city_data['location'].values
+            ), axis=-1),
+            hovertemplate='<b>%{customdata[0]}</b><br>Salary: $%{y:,.0f}<br>Company: %{customdata[1]}<br>Location: %{customdata[2]}<extra></extra>'
+        ))
+    
+    # Update layout
     fig.update_layout(
-        xaxis={'categoryorder': 'total descending', 'tickangle': 90},
-        xaxis_title='Company',
+        title='Salary Distribution by State and City',
+        xaxis_title='State',
         yaxis_title='Annual Salary ($)',
-        legend_title_text=color_title,
-        height=700,  # Make chart taller to accommodate x-axis labels
+        boxmode='group',
+        height=700,
         showlegend=True,
-        margin=dict(b=150),  # Add bottom margin for company names
+        legend_title_text='City',
+        xaxis={'categoryorder': 'array', 'categoryarray': sorted(filtered_df['state'].unique())},
+        yaxis=dict(tickprefix='$', tickformat=',')
     )
-    
-    # Format y-axis tick labels as currency
-    fig.update_layout(yaxis=dict(tickprefix='$', tickformat=','))
-    
-    # Update hover template
-    fig.update_traces(
-        hovertemplate='<b>%{hovertext}</b><br>Salary: $%{y:,.0f}<br>Company: %{x}<br>Location: %{customdata[2]}'
-    )
-    
-    # Reduce marker size
-    fig.update_traces(marker=dict(size=4))
     
     return fig
 
@@ -615,328 +621,81 @@ def create_salary_city_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     return fig
 
 
-def create_salary_by_state_boxplot(df: pd.DataFrame) -> go.Figure:
-    """
-    Create a boxplot showing salary distribution by state with city filtering.
-    
-    Args:
-        df: DataFrame with job listings including salary and location data
-        
-    Returns:
-        A Plotly Figure object with the boxplot
-    """
-    # Check if we have the required columns
-    required_cols = ['state', 'salary_midpoint_yearly']
-    if not all(col in df.columns for col in required_cols):
-        return None
-    
-    # Remove rows without state or salary data
-    plot_df = df.dropna(subset=required_cols).copy()
-    
-    if len(plot_df) < 5:  # Need at least 5 data points to make a meaningful boxplot
-        return None
-    
-    # Filter out extreme outliers based on IQR
-    Q1 = plot_df['salary_midpoint_yearly'].quantile(0.25)
-    Q3 = plot_df['salary_midpoint_yearly'].quantile(0.75)
-    IQR = Q3 - Q1
-    
-    # Use a more generous outlier definition (3 * IQR instead of 1.5 * IQR)
-    lower_bound = Q1 - 3 * IQR
-    upper_bound = Q3 + 3 * IQR
-    
-    plot_df = plot_df[(plot_df['salary_midpoint_yearly'] >= lower_bound) & 
-                     (plot_df['salary_midpoint_yearly'] <= upper_bound)]
-    
-    # Only include states with at least 3 data points
-    state_counts = plot_df['state'].value_counts()
-    valid_states = state_counts[state_counts >= 3].index.tolist()
-    plot_df = plot_df[plot_df['state'].isin(valid_states)]
-    
-    if len(plot_df) < 5:  # Check again after filtering
-        return None
-    
-    # Create a 'location' field that combines city and state if available
-    if 'city' in plot_df.columns:
-        has_city = ~plot_df['city'].isna()
-        plot_df.loc[has_city, 'location'] = plot_df.loc[has_city, 'city'] + ', ' + plot_df.loc[has_city, 'state']
-        plot_df.loc[~has_city, 'location'] = plot_df.loc[~has_city, 'state']
-    else:
-        plot_df['location'] = plot_df['state']
-    
-    # Calculate median salary for each state for sorting
-    state_median_salary = plot_df.groupby('state')['salary_midpoint_yearly'].median().sort_values(ascending=False)
-    sorted_states = state_median_salary.index.tolist()
-    
-    # Choose colors based on available data
-    if 'city' in plot_df.columns and len(plot_df['city'].dropna().unique()) > 1:
-        # If we have multiple cities, color by city
-        fig = px.box(
-            plot_df, 
-            x='state', 
-            y='salary_midpoint_yearly',
-            color='city',
-            category_orders={"state": sorted_states},
-            hover_name='location',
-            hover_data={
-                'state': False,
-                'city': True,
-                'salary_midpoint_yearly': True,
-                'job_title': True if 'job_title' in plot_df.columns else False,
-                'company_name': True if 'company_name' in plot_df.columns else False
-            },
-            title='Salary Distribution by State',
-            labels={
-                'salary_midpoint_yearly': 'Annual Salary (USD)',
-                'state': 'State',
-                'city': 'City'
-            }
-        )
-    elif 'company_name' in plot_df.columns:
-        # If no city data but we have company data, color by company
-        fig = px.box(
-            plot_df, 
-            x='state', 
-            y='salary_midpoint_yearly',
-            color='company_name',
-            category_orders={"state": sorted_states},
-            hover_name='location',
-            hover_data={
-                'state': False,
-                'salary_midpoint_yearly': True,
-                'job_title': True if 'job_title' in plot_df.columns else False,
-                'company_name': True
-            },
-            title='Salary Distribution by State',
-            labels={
-                'salary_midpoint_yearly': 'Annual Salary (USD)',
-                'state': 'State',
-                'company_name': 'Company'
-            }
-        )
-    else:
-        # Simple boxplot without color differentiation
-        fig = px.box(
-            plot_df, 
-            x='state', 
-            y='salary_midpoint_yearly',
-            category_orders={"state": sorted_states},
-            hover_name='location',
-            hover_data={
-                'state': False,
-                'salary_midpoint_yearly': True,
-                'job_title': True if 'job_title' in plot_df.columns else False
-            },
-            title='Salary Distribution by State',
-            labels={
-                'salary_midpoint_yearly': 'Annual Salary (USD)',
-                'state': 'State'
-            }
-        )
-    
-    # Update the layout for better readability
-    fig.update_layout(
-        xaxis_title="State",
-        yaxis_title="Annual Salary (USD)",
-        yaxis_tickprefix="$",
-        yaxis_tickformat=",",
-        legend_title_text="Legend",
-        height=500,
-        xaxis={'categoryorder': 'array', 'categoryarray': sorted_states}
-    )
-    
-    # Add median salary as text on the plot if there are many states
-    if len(sorted_states) > 8:
-        for state in sorted_states:
-            median_salary = state_median_salary[state]
-            fig.add_annotation(
-                x=state, 
-                y=median_salary,
-                text=f"${median_salary:,.0f}",
-                showarrow=False,
-                font=dict(size=9, color="black"),
-                bgcolor="rgba(255, 255, 255, 0.5)",
-                yshift=15
-            )
-    
-    return fig
-
-
-def create_salary_histogram(df: pd.DataFrame, title: Optional[str] = None) -> Optional[go.Figure]:
-    """Create a histogram specifically for salary data with improved styling."""
-    if not check_required_columns(df, ['salary_midpoint_yearly']):
-        return None
-    
-    # Use provided title or default
-    title = title or 'Salary Distribution'
-    
-    # Filter for valid salary data
-    data = df['salary_midpoint_yearly'].dropna()
-    if len(data) < 5:
-        return None
-    
-    # Remove outliers (5th to 95th percentile for better visualization)
-    quantiles = data.quantile([0.05, 0.95])
-    filtered_df = df[(df['salary_midpoint_yearly'] >= quantiles.iloc[0]) & 
-                     (df['salary_midpoint_yearly'] <= quantiles.iloc[1])]
-    
-    median_value = filtered_df['salary_midpoint_yearly'].median()
-    
-    fig = px.histogram(
-        filtered_df, x='salary_midpoint_yearly', title=title,
-        labels={'salary_midpoint_yearly': 'Annual Salary ($)'},
-        color_discrete_sequence=['#2E86C1'], nbins=20
-    )
-    
-    # Add median line with improved styling
-    fig.add_vline(
-        x=median_value, line_dash="dash", line_color="red",
-        annotation_text=f"Median: ${median_value:,.0f}",
-        annotation_position="top right"
-    )
-    
-    # Improve layout
-    fig.update_layout(
-        xaxis_title='Annual Salary ($)',
-        yaxis_title='Number of Jobs',
-        bargap=0.1,
-        plot_bgcolor='rgba(240, 240, 240, 0.5)'
-    )
-    
-    # Format x-axis ticks as currency
-    fig.update_xaxes(tickprefix='$', tickformat=',')
-    
-    return fig
-
-
-def create_salary_by_title_chart(df: pd.DataFrame) -> Optional[go.Figure]:
-    """Create a chart showing salary distribution by job title."""
-    if not check_required_columns(df, ['salary_midpoint_yearly', 'title']):
-        return None
-    
-    # Filter for valid data
-    valid_data = df.dropna(subset=['salary_midpoint_yearly', 'title'])
-    if len(valid_data) < 5:
-        return None
-    
-    # Standardize job titles (simplify to handle variants)
-    valid_data['job_title'] = valid_data['title'].str.lower()
-    
-    # Group by standardized job title and get statistics
-    title_stats = valid_data.groupby('job_title')['salary_midpoint_yearly'].agg(['median', 'mean', 'count'])
-    
-    # Get top job titles by frequency (minimum 2 occurrences)
-    min_count = 2
-    top_titles = title_stats[title_stats['count'] >= min_count].sort_values('count', ascending=False).head(15)
-    
-    if len(top_titles) < 3:
-        # Not enough data with multiple occurrences, use top 10 regardless of count
-        top_titles = title_stats.sort_values('count', ascending=False).head(10)
-    
-    # Filter dataframe to only include top job titles
-    plot_data = valid_data[valid_data['job_title'].isin(top_titles.index)]
-    
-    # Create appropriate chart based on data amount
-    if len(plot_data) >= 15:
-        # Create boxplot for job titles with enough data
-        fig = px.box(
-            plot_data, y='job_title', x='salary_midpoint_yearly',
-            title='Salary Distribution by Job Title',
-            labels={'job_title': 'Job Title', 'salary_midpoint_yearly': 'Annual Salary ($)'},
-            color='job_title',
-            category_orders={'job_title': top_titles.sort_values('median', ascending=False).index.tolist()}
-        )
-        fig.update_layout(showlegend=False)  # Hide legend as it's redundant
-    else:
-        # Create bar chart for smaller datasets
-        bar_data = top_titles.sort_values('median', ascending=True).reset_index()
-        bar_data.columns = ['Job Title', 'Median', 'Mean', 'Count']
-        
-        fig = px.bar(
-            bar_data, y='Job Title', x='Median',
-            title='Median Salary by Job Title',
-            text='Count', color='Median',
-            labels={'Median': 'Median Annual Salary ($)'},
-            color_continuous_scale='Viridis'
-        )
-        fig.update_traces(texttemplate='%{text} jobs', textposition='outside')
-    
-    # Improve layout
-    fig.update_layout(
-        xaxis_title='Annual Salary ($)',
-        yaxis_title='Job Title',
-        yaxis={'categoryorder': 'array', 'categoryarray': top_titles.sort_values('median', ascending=True).index.tolist()}
-    )
-    
-    # Format x-axis ticks as currency
-    fig.update_xaxes(tickprefix='$', tickformat=',')
-    
-    return fig
-
-
-def display_salary_tab(df: pd.DataFrame):
-    """Display the Salary Analysis tab content with state-based visualizations."""
-    st.header("Salary Analysis")
-    
-    # Check if we have salary data to work with
-    if not check_required_columns(df, ['salary_midpoint_yearly']):
-        st.warning("No salary data available in the loaded job listings.")
+def display_salary_tab(df: pd.DataFrame) -> None:
+    """Display content for the Salary Analysis tab."""
+    if 'salary_midpoint_yearly' not in df.columns:
+        st.write("No salary data available.")
         return
-
-    # Basic salary stats
-    st.subheader("Salary Distribution Overview")
-    col1, col2, col3, col4 = st.columns(4)
     
-    # Clean salary data for calculations
-    salary_data = df['salary_midpoint_yearly'].dropna()
+    # Row 1: Salary distribution histogram and Box plot by work setting
+    col1, col2 = st.columns(2)
     
-    if len(salary_data) > 0:
-        median_salary = salary_data.median()
-        mean_salary = salary_data.mean()
-        min_salary = salary_data.min()
-        max_salary = salary_data.max()
-        
-        col1.metric("Median Salary", f"${median_salary:,.0f}")
-        col2.metric("Average Salary", f"${mean_salary:,.0f}")
-        col3.metric("Minimum Salary", f"${min_salary:,.0f}")
-        col4.metric("Maximum Salary", f"${max_salary:,.0f}")
-        
-        # Histogram for salary distribution
-        st.subheader("Overall Salary Distribution")
-        hist_fig = create_salary_histogram(df)
-        if hist_fig:
-            st.plotly_chart(hist_fig, use_container_width=True)
-        else:
-            st.info("Unable to create salary histogram with the available data.")
+    # Salary distribution histogram
+    with col1:
+        if salary_fig := create_chart(df, "histogram", column='salary_midpoint_yearly', title='Annual Salary Distribution (Midpoint)'):
+            st.plotly_chart(salary_fig, use_container_width=True)
+    
+    # Salary by work setting
+    with col2:
+        if 'work_setting' in df.columns:
+            if salary_by_setting_fig := create_chart(
+                df, "box", x='work_setting', y='salary_midpoint_yearly', 
+                title='Salary Distribution by Work Setting'
+            ):
+                st.plotly_chart(salary_by_setting_fig, use_container_width=True)
+    
+    # Row 2: Salary by state and city - full width
+    st.subheader("Salary by State and City")
+    
+    if salary_location_fig := create_salary_location_boxplot(df):
+        st.plotly_chart(salary_location_fig, use_container_width=True)
     else:
-        st.warning("No valid salary data to analyze.")
-        return
-
-    # Row 2: Salary by state boxplot - full width
-    st.subheader("Salary Distribution by State")
-    state_boxplot = create_salary_by_state_boxplot(df)
+        st.info("Not enough data to create the salary visualization. Ensure states and salary data are available.")
     
-    if state_boxplot:
-        st.plotly_chart(state_boxplot, use_container_width=True)
-        
-        # Add explanatory text
-        st.markdown("""
-        This boxplot shows salary distributions across different states. For each state:
-        - The box represents the middle 50% of salaries (between 25th and 75th percentiles)
-        - The line inside the box shows the median salary
-        - The whiskers extend to show the range of non-outlier salaries
-        - Individual points may represent specific jobs with their salaries
-        """)
-    else:
-        st.info("Not enough location data to create the state boxplot. Try scraping more job listings with location information.")
+    # Row 3: Location-based salary intelligence
+    st.subheader("Location-Based Salary Intelligence")
     
-    # Salary trends by job title
-    st.subheader("Salary by Job Title")
-    title_fig = create_salary_by_title_chart(df)
-    if title_fig:
-        st.plotly_chart(title_fig, use_container_width=True)
-    else:
-        st.info("Not enough job title data to create the job title salary chart.")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if salary_state_map := create_salary_state_choropleth(df):
+            st.plotly_chart(salary_state_map, use_container_width=True)
+    
+    with col2:
+        if salary_city_chart := create_salary_city_chart(df):
+            st.plotly_chart(salary_city_chart, use_container_width=True)
+    
+    # Row 4: Salary statistics table
+    st.subheader("Detailed Salary Statistics")
+    
+    percentiles = [0.1, 0.25, 0.5, 0.75, 0.9]
+    percentile_names = ['10th', '25th', '50th (Median)', '75th', '90th']
+    
+    basic_stats = df['salary_midpoint_yearly'].describe()
+    percentile_stats = df['salary_midpoint_yearly'].quantile(percentiles)
+    
+    # Combine stats into a dataframe
+    all_stats = pd.DataFrame({
+        'Statistic': ['Count', 'Mean', 'Standard Deviation', 'Minimum'] + percentile_names + ['Maximum'],
+        'Value': [
+            basic_stats['count'],
+            basic_stats['mean'],
+            basic_stats['std'],
+            basic_stats['min'],
+            *percentile_stats.values,
+            basic_stats['max']
+        ]
+    })
+    
+    # Format values as currency except for count
+    all_stats['Value'] = all_stats.apply(
+        lambda row: f"${row['Value']:,.2f}" 
+                   if row['Statistic'] != 'Count' and isinstance(row['Value'], (int, float)) 
+                   else f"{row['Value']:,.0f}", 
+        axis=1
+    )
+    
+    st.dataframe(all_stats, hide_index=True)
 
 
 def get_field_display_value(row: pd.Series, field: str, default: str = "Unknown") -> str:
