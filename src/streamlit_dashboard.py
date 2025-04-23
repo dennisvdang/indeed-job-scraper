@@ -888,7 +888,6 @@ def display_sidebar_info(df: pd.DataFrame) -> None:
     st.sidebar.header("Dataset Info")
     
     # Display dataset summary
-    st.sidebar.write(f"Data files loaded: {st.session_state.get('num_files_found', 0)}")
     st.sidebar.write(f"Total jobs: {len(df)}")
     if 'company' in df.columns:
         st.sidebar.write(f"Unique companies: {df['company'].nunique()}")
