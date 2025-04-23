@@ -83,6 +83,9 @@ VALID_DAYS_AGO = [1, 3, 7, 14]
 JOB_CARD_SELECTOR = "div.job_seen_beacon, div.tapItem, [data-testid='jobListing']"
 NEXT_PAGE_SELECTOR = "a[data-testid='pagination-page-next']"
 
+# Captcha detection
+CAPTCHA_DETECTION_THRESHOLD = 2  # Number of consecutive failed description scrapes before prompting
+
 # Field selectors within job cards
 JOB_FIELD_SELECTORS = {
     'title': [(By.CSS_SELECTOR, "a.jcs-JobTitle"), (By.CSS_SELECTOR, "h2.jobTitle span[title]")],
@@ -442,6 +445,55 @@ def navigate_to_next_page(driver: uc.Chrome) -> bool:
 
 
 # =====================
+# Captcha Handling
+# =====================
+def handle_possible_captcha(driver: uc.Chrome) -> bool:
+    """
+    Handle a potential captcha situation by prompting the user.
+    
+    Returns:
+        bool: True if user confirmed captcha was solved, False if exit requested
+    """
+    captcha_message = """
+    !! CAPTCHA DETECTED !!
+    ======================
+    
+    Multiple job descriptions could not be retrieved.
+    This usually happens when Indeed is showing a CAPTCHA verification.
+    
+    Please check the browser window and solve any CAPTCHAs if present.
+    After solving the CAPTCHA, press Enter to continue scraping...
+    """
+    
+    logger.warning(captcha_message)
+    
+    # Try to navigate to Indeed's homepage to make CAPTCHA more visible
+    try:
+        current_url = driver.current_url
+        driver.get("https://www.indeed.com/")
+        time.sleep(1)
+    except Exception:
+        pass
+    
+    response = get_user_input("Press Enter after solving the CAPTCHA (or Ctrl+C to exit): ")
+    if response is None:  # Exit was requested
+        return False
+        
+    # Wait a moment for the page to settle after captcha
+    time.sleep(2)
+    
+    # Return to original URL if we navigated away
+    try:
+        if driver.current_url != current_url:
+            driver.get(current_url)
+            time.sleep(2)
+    except Exception:
+        pass
+    
+    return True
+
+
+# =====================
 # Job Search & Scraping
 # =====================
 def get_search_url(
@@ -536,6 +588,74 @@ def extract_job_data(card: WebElement) -> Optional[Dict[str, Any]]:
         return None
 
 
+def batch_scrape_with_captcha_check(
+    driver: uc.Chrome, 
+    url_to_listing: Dict[str, JobListing]
+) -> bool:
+    """
+    Scrape job descriptions with captcha detection.
+    
+    Args:
+        driver: Chrome driver instance
+        url_to_listing: Dictionary mapping job URLs to JobListing objects
+    
+    Returns:
+        bool: True if captcha was detected and handled, False otherwise
+    """
+    if not url_to_listing:
+        return False
+        
+    # Keep track of URLs in original order to resume after CAPTCHA detection
+    url_list = list(url_to_listing.keys())
+    
+    logger.info(f"Scraping descriptions for {len(url_list)} jobs...")
+    
+    # Process job URLs in batches to detect consecutive failures
+    consecutive_failures = 0
+    first_failed_url = None
+    i = 0
+    
+    while i < len(url_list):
+        url = url_list[i]
+        listing = url_to_listing[url]
+        
+        # Call description scraper for a single URL
+        batch_scrape_descriptions(driver, {url: listing})
+        
+        # Check if description was successfully scraped
+        if listing.description is None:
+            consecutive_failures += 1
+            # Track the first failure in a potential consecutive sequence
+            if consecutive_failures == 1:
+                first_failed_url = url
+            
+            # If we hit 2 consecutive failures, assume a CAPTCHA
+            if consecutive_failures >= CAPTCHA_DETECTION_THRESHOLD:
+                logger.warning(f"Detected {consecutive_failures} consecutive description scraping failures - possible CAPTCHA")
+                
+                # Handle captcha
+                if handle_possible_captcha(driver):
+                    # Resume from the first failed URL
+                    i = url_list.index(first_failed_url)
+                    consecutive_failures = 0
+                    logger.info(f"Resuming description scraping from job {i+1} of {len(url_list)}")
+                    continue
+                else:
+                    # User requested exit
+                    return True
+        else:
+            # Reset counter on success
+            consecutive_failures = 0
+        
+        i += 1
+        
+    # Report how many descriptions were successfully scraped
+    successful = sum(1 for listing in url_to_listing.values() if listing.description is not None)
+    logger.info(f"Successfully scraped {successful} out of {len(url_list)} descriptions")
+    
+    return False
+
+
 def scrape_job_listings(
     driver: uc.Chrome,
     job_title: str,
@@ -561,7 +681,7 @@ def scrape_job_listings(
         driver.get(search_url)
         random_delay()
         
-        # Handle CAPTCHA (only for first job in queue)
+        # Handle CAPTCHA at the start (only for first job in queue)
         if not captcha_already_solved:
             logger.info("\nIf a CAPTCHA appears, please solve it and press Enter to continue...")
             if get_user_input() is None:
@@ -586,19 +706,17 @@ def scrape_job_listings(
             if not job_cards:
                 logger.info("No job cards found on this page.")
                 # Likely a CAPTCHA or other blocking mechanism
-                logger.info("\nPossible CAPTCHA detected. Please check the browser window.")
-                logger.info("After solving any CAPTCHA, press Enter to continue scraping...")
-                if get_user_input() is None:
-                    return all_jobs
-                # Try to find job cards again after CAPTCHA is solved
-                job_cards = driver.find_elements(By.CSS_SELECTOR, JOB_CARD_SELECTOR)
-                if not job_cards:
-                    logger.info("Still no job cards found after user input. Moving to next job.")
-                    break
+                if handle_possible_captcha(driver):
+                    # Try to find job cards again after CAPTCHA is solved
+                    job_cards = driver.find_elements(By.CSS_SELECTOR, JOB_CARD_SELECTOR)
+                    if not job_cards:
+                        logger.info("Still no job cards found after CAPTCHA handling. Moving to next job.")
+                        break
+                else:
+                    return all_jobs  # User requested exit
                 
             # Process each job card
             jobs_on_page = []
-            page_urls_to_scrape = []
             
             for card in job_cards:
                 if SHOULD_EXIT:
@@ -635,20 +753,19 @@ def scrape_job_listings(
                 )
                 
                 jobs_on_page.append(job_listing)
-                
-                # Track URLs for description scraping
-                if not exclude_descriptions and job_data.get('link'):
-                    page_urls_to_scrape.append(job_data['link'])
-                
                 random_delay(0.2, 0.5)
             
             logger.info(f"Found {len(jobs_on_page)} unique jobs on this page")
             
             # Batch scrape descriptions if needed
-            if not exclude_descriptions and page_urls_to_scrape:
-                logger.info(f"Scraping descriptions for {len(page_urls_to_scrape)} jobs...")
+            if not exclude_descriptions and jobs_on_page:
                 url_to_listing = {listing.job_url: listing for listing in jobs_on_page if listing.job_url}
-                batch_scrape_descriptions(driver, url_to_listing)
+                if url_to_listing:
+                    # This will handle CAPTCHA detection and prompt user if needed
+                    captcha_detected = batch_scrape_with_captcha_check(driver, url_to_listing)
+                    if captcha_detected:
+                        # User chose to exit
+                        break
             
             all_jobs.extend(jobs_on_page)
             
@@ -788,8 +905,18 @@ def run_scrape_job(
     driver: uc.Chrome, 
     job: ScrapeJob,
     captcha_already_solved: bool = False
-) -> List[JobListing]:
-    """Run a single scrape job configuration."""
+) -> Tuple[List[JobListing], bool]:
+    """
+    Run a single scrape job configuration.
+    
+    Args:
+        driver: Chrome driver instance
+        job: Scrape job configuration
+        captcha_already_solved: Whether a captcha was already solved in a previous job
+        
+    Returns:
+        Tuple of (job_listings, captcha_solved_status)
+    """
     logger.info(f"Starting job search for '{job.job_title}' in {job.location or 'any location'}")
     
     # Get output filepath
@@ -816,7 +943,11 @@ def run_scrape_job(
     else:
         logger.info(f"No jobs found for '{job.job_title}'")
     
-    return jobs
+    # If we were able to get any jobs, we assume captcha is solved
+    # even if some descriptions failed (since we handle that during scraping)
+    captcha_solved = len(jobs) > 0
+    
+    return jobs, captcha_solved
 
 
 def main() -> int:
@@ -872,12 +1003,10 @@ def main() -> int:
                 logger.info(f"Running job {i+1} of {len(job_queue)}")
                 logger.info(f"{'='*60}\n")
                 
-                jobs = run_scrape_job(driver, job, captcha_already_solved)
-                # If no jobs were found, we may need to solve a CAPTCHA again for the next job
-                if not jobs:
-                    captcha_already_solved = False
-                else:
-                    captcha_already_solved = True
+                jobs, captcha_solved = run_scrape_job(driver, job, captcha_already_solved)
+                
+                # Update captcha status for next job
+                captcha_already_solved = captcha_solved
                 
                 # Add a delay between jobs
                 if i < len(job_queue.jobs) - 1 and not SHOULD_EXIT:
