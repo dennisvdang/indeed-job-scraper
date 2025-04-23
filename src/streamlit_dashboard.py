@@ -887,12 +887,8 @@ def display_sidebar_info(df: pd.DataFrame) -> None:
     """Display dataset information in the sidebar."""
     st.sidebar.header("Dataset Info")
     
-    # Display refresh metadata
-    last_refresh = st.session_state.get("last_refresh_time", "Never")
-    st.sidebar.write(f"Last refreshed: {last_refresh} (auto-refreshes every 60 seconds)")
-    st.sidebar.write(f"Data files loaded: {st.session_state.get('num_files_found', 0)}")
-    
     # Display dataset summary
+    st.sidebar.write(f"Data files loaded: {st.session_state.get('num_files_found', 0)}")
     st.sidebar.write(f"Total jobs: {len(df)}")
     if 'company' in df.columns:
         st.sidebar.write(f"Unique companies: {df['company'].nunique()}")
