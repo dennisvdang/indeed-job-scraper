@@ -554,37 +554,6 @@ def create_salary_city_chart(df: pd.DataFrame) -> Optional[go.Figure]:
     return fig
 
 
-def calculate_cost_adjusted_salary(df: pd.DataFrame) -> Optional[pd.DataFrame]:
-    """Calculate cost-adjusted salaries across locations."""
-    if not check_required_columns(df, ['state', 'salary_midpoint_yearly']):
-        return None
-    
-    # This is a simplified approach using state as location
-    # In a real implementation, you would use a cost of living index API or dataset
-    
-    # Group by state to get median salary
-    state_salary = df.groupby('state')['salary_midpoint_yearly'].agg(['median', 'count']).reset_index()
-    state_salary = state_salary[state_salary['count'] >= 3]
-    
-    if len(state_salary) < 3:
-        return None
-    
-    # For demo purposes, use national median as baseline (COL index = 100)
-    national_median = df['salary_midpoint_yearly'].median()
-    
-    # Create a simplified cost of living index based on salary differences
-    # This is just for demonstration - real implementation would use actual COL data
-    state_salary['estimated_col_index'] = state_salary['median'] / national_median * 100
-    
-    # Calculate "adjusted" salary (salary / col_index * 100)
-    state_salary['adjusted_salary'] = national_median
-    
-    # Sort by original median salary
-    state_salary = state_salary.sort_values('median', ascending=False)
-    
-    return state_salary
-
-
 def display_salary_tab(df: pd.DataFrame) -> None:
     """Display content for the Salary Analysis tab."""
     if 'salary_midpoint_yearly' not in df.columns:
@@ -620,7 +589,7 @@ def display_salary_tab(df: pd.DataFrame) -> None:
         if salary_by_job_type_fig := create_salary_by_job_type_chart(df):
             st.plotly_chart(salary_by_job_type_fig, use_container_width=True)
     
-    # Row 4: Location-based salary intelligence
+    # Row 3: Location-based salary intelligence
     st.subheader("Location-Based Salary Intelligence")
     
     col1, col2 = st.columns(2)
@@ -633,40 +602,7 @@ def display_salary_tab(df: pd.DataFrame) -> None:
         if salary_city_chart := create_salary_city_chart(df):
             st.plotly_chart(salary_city_chart, use_container_width=True)
     
-    # Row 5: Cost-adjusted salary comparisons
-    st.subheader("Cost-Adjusted Salary Comparisons")
-    
-    if cost_adjusted_data := calculate_cost_adjusted_salary(df):
-        col1, col2 = st.columns([1, 1])
-        
-        with col1:
-            st.dataframe(
-                cost_adjusted_data[['state', 'median', 'estimated_col_index', 'count']].rename(
-                    columns={
-                        'state': 'State',
-                        'median': 'Median Salary ($)',
-                        'estimated_col_index': 'Est. Cost of Living Index',
-                        'count': 'Job Count'
-                    }
-                ).style.format({
-                    'Median Salary ($)': '${:,.0f}',
-                    'Est. Cost of Living Index': '{:.1f}'
-                }),
-                hide_index=True
-            )
-        
-        with col2:
-            st.info(
-                "**Cost-Adjusted Salary Note:**\n\n"
-                "This is a simplified demonstration of cost-adjusted salaries. "
-                "Locations with higher median salaries often have higher costs of living. "
-                "The estimated cost of living index shown here is based on salary differences "
-                "and would be replaced with actual cost of living data in a production implementation."
-            )
-    else:
-        st.info("Not enough location data available for cost-adjusted salary analysis.")
-    
-    # Row 6: Salary statistics table
+    # Row 4: Salary statistics table
     st.subheader("Detailed Salary Statistics")
     
     percentiles = [0.1, 0.25, 0.5, 0.75, 0.9]
