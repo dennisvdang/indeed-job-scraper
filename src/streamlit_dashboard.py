@@ -367,7 +367,7 @@ def create_salary_by_location_chart(df: pd.DataFrame) -> Optional[go.Figure]:
 
 def display_metrics(df: pd.DataFrame) -> None:
     """Display key metrics at the top of the dashboard in a compact format."""
-    # Add custom CSS to make metrics more compact
+    # Custom CSS to make metrics more compact
     st.markdown("""
     <style>
     div[data-testid="metric-container"] {
@@ -470,7 +470,7 @@ def create_salary_location_boxplot(df: pd.DataFrame) -> Optional[go.Figure]:
             axis=1
         )
         
-        # Use top cities for better visualization
+        # Top cities for better visualization
         top_cities = filtered_df['city'].value_counts().nlargest(15).index
         filtered_df['city_category'] = filtered_df['city'].apply(
             lambda x: x if pd.notna(x) and x in top_cities else "Other Cities"
