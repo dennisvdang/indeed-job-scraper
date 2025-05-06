@@ -25,6 +25,10 @@ dependencies:
   - isort>=5.12.0
   - mypy>=1.5.0
   - pip:
+    # Database backend dependencies
+    - sqlalchemy>=2.0.29
+    - pyodbc>=5.0.1
+    - psutil>=7.0.0
     # Core web-scraping
     - selenium>=4.16.0
     - undetected-chromedriver>=3.5.3
@@ -33,6 +37,11 @@ dependencies:
     # Type annotations
     - types-requests>=2.31.0
     - types-selenium>=3.141.9
+    # Text processing for scraping
+    - html2text>=2024.2.26
+    # CLI & logging utilities
+    - typer>=0.9.0
+    - rich>=13.9.4
     # Dashboard
     - streamlit>=1.44.0
     # Data validation & config
