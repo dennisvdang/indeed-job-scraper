@@ -1,0 +1,107 @@
+[
+  {
+    "job_title": "Software Engineer",
+    "location": "New York, NY",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Software Engineer",
+    "location": "Los Angeles, CA",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Software Engineer",
+    "location": "Chicago, IL",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Software Engineer",
+    "location": "Houston, TX",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Software Engineer",
+    "location": "Phoenix, AZ",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "New York, NY",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "Los Angeles, CA",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "Chicago, IL",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "Houston, TX",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "Phoenix, AZ",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Scientist",
+    "location": "New York, NY",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Scientist",
+    "location": "Los Angeles, CA",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Scientist",
+    "location": "Chicago, IL",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Scientist",
+    "location": "Houston, TX",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  },
+  {
+    "job_title": "Data Scientist",
+    "location": "Phoenix, AZ",
+    "days_ago": 7,
+    "max_pages": 3,
+    "search_radius": 25
+  }
+]

@@ -7,9 +7,18 @@ selenium==4.16.0
 undetected-chromedriver==3.5.4
 selenium-stealth==1.0.6
 webdriver-manager==4.0.1
+html2text==2024.2.26
 
 # Data processing
 python-dateutil==2.8.2
+
+# CLI
+typer==0.9.0
+rich==13.9.4
+
+# Configuration and validation
+pydantic==2.6.3
+pydantic-settings==2.2.1
 
 # Development and testing
 pytest==7.4.3
@@ -31,3 +40,9 @@ matplotlib==3.7.2
 streamlit==1.44.0
 plotly==5.15.0
 wordcloud==1.9.2
+
+# Database
+SQLAlchemy==2.0.29
+pyodbc==5.0.1
+psutil==7.0.0
+python-dotenv==1.0.1

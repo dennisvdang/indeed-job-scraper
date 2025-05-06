@@ -11,12 +11,11 @@ __pycache__/
 
 # Virtual Environment
 venv/
-env/
+# Ignore environment file
+.env
 
 # Data and outputs
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+data/exports/*
 
 # IDE
 .vscode/
@@ -28,6 +27,9 @@ data/processed/*
 notebooks/.ipynb_checkpoints
 notebooks/indeed_job_analysis.ipynb
 notebooks/job_scraper.ipynb
+notebooks
 
 # Logs
 *.log
+
+deprecated/

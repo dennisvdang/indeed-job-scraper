@@ -2,155 +2,171 @@
 
 ![Demo Gif](images/demo.gif)
 
-This repository contains a Python command-line tool to help you scrape job listings from Indeed.com, along with an interactive Streamlit dashboard for visualizing and exploring job data. It's meant as a helpful resource for research, analysis, or personal exploration of the job market.
+A tool for scraping, storing, and analyzing job listings from Indeed.com. This project contains a command-line interface (CLI) for collecting job data, scripts to setup and store data in SQLite or SQL Server databases, and a Streamlit dashboard for visualizing and exploring job listings.
 
-## 📖 Overview
+## Features
 
-With this tool, you can:
+- **Job Scraping**: Extract job listings from Indeed.com searches with customizable parameters
+- **Search Filters**: Filter jobs by title, location, work setting, job type, and more
+- **SQL Database Storage**: Store job data in SQLite or SQL Server databases
+- **Dashboard Analytics**: Explore job data through charts and visualizations (Work in Progress)
+- **Job Description Viewer**: View entire job descriptions and original links
+- **CAPTCHA Handling**: Pauses for manual CAPTCHA completion before resuming
 
-- Scrape job listings from Indeed.com using simple and clear filtering options.
-- Extract detailed job information, including salaries and descriptions.
-- Explore and analyze the collected data using an interactive dashboard.
-- Export structured data for further personal research or analysis.
+## Tech Stack
 
-<details>
-<summary>📋 Extracted job data includes...</summary>
+- **Python**
+- **Selenium, chrome browser, undetected-chromedriver**: Web scraping with anti-detection
+- **SQLAlchemy**: Database ORM
+- **Pydantic**: Data validation and settings management
+- **Typer & Rich**: Command-line interface, formatting
+- **Streamlit**: Data visualization dashboard
+- **Pandas & Plotly**: Data manipulation and charts
 
-- Job titles, companies, locations, and contact information (when available).
-- Salary information (normalized to annual equivalents for easier comparison).
-- Work settings, such as remote, hybrid, or onsite.
-- Job types such as full-time, part-time, or contract.
-- Full job descriptions and posting dates.
-- Direct links to original job postings.
+## Installation
 
-</details>
-
-## 🛠️ Getting Started
-
-### Installation
-
-To use the tool, follow these steps:
+### Step 1: Clone the repository
 
 ```bash
-# Clone this repository
-git clone https://github.com/dennisvdang/Indeed-Job-Scraper.git
+git clone https://github.com/yourusername/Indeed-Job-Scraper.git
 cd Indeed-Job-Scraper
+```
 
-# Create and activate a virtual environment
+### Step 2: Create and activate a virtual environment
+
+#### Using venv (standard library)
+```bash
+# Windows
 python -m venv venv
-source venv/bin/activate  # macOS/Linux
-venv\Scripts\activate     # Windows
+venv\Scripts\activate
 
-# Install required packages
-pip install -r requirements.txt
+# macOS/Linux
+python -m venv venv
+source venv/bin/activate
 ```
 
-### Basic Usage
+#### Using conda (alternative)
+```bash
+conda create -n indeed-scraper python=3.9
+conda activate indeed-scraper
+```
 
-Here's how you can perform a simple job search:
+### Step 3: Install dependencies
 
 ```bash
-# Run a basic job search
-indeed-scraper --job-title "Software Engineer" --location "San Francisco, CA"
+pip install -e .
 ```
 
-## 🔍 Key Features
+### Step 4: Set up the database
 
-### 1. Search Filters
+The default configuration uses SQLite, which requires no additional setup:
 
 ```bash
-indeed-scraper \
-    --job-title "Data Scientist" \
-    --location "New York" \
-    --work-setting remote \
-    --job-type "full-time" \
-    --days-ago 7
+python setup_database.py --sqlite
 ```
 
-<summary>Filter commands</summary>
+For SQL Server (optional):
 
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `--job-title` | Job title to search for (**required**) | `"Data Analyst"` |
-| `--location` | Location to search in | `"New York, NY"` |
-| `--work-setting` | Work arrangement | `remote`, `hybrid`, `onsite` |
-| `--job-type` | Employment type | `"full-time"`, `"contract"` |
-| `--days-ago` | Filter by posting date | `1`, `3`, `7`, `14` |
-| `--search-radius` | Search radius in miles | `25`, `50`, `100` |
+1. Create a `.env` file in the project root with your database connection details:
 
-### 2. Multiple Job Searches/Queues
+```
+DB_SERVER=your_server_name
+DB_NAME=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+DB_USE_WINDOWS_AUTH=False
+```
 
-You can run several job searches at once using a queue file:
+2. Run the database setup:
 
 ```bash
-indeed-scraper --queue examples/job_queues/top_cities_major_jobs.json
+python setup_database.py
 ```
 
-<details>
+## Usage
 
-<summary>More about job queues...</summary>
-
-You can create your own text or JSON queue files to automate multiple searches. Check the [`examples/job_queues/`](examples/job_queues/) directory for examples and [`examples/templates/`](examples/templates/) for templates you can customize.
-
-</details>
-
-### 3. Interactive Dashboard
-
-To explore the scraped data interactively:
+### Command-Line Interface
 
 ```bash
-streamlit run src/streamlit_dashboard.py
+# Single job search (results are saved to the database by default)
+indeed-scraper scrape "python developer" --location "New York, NY"
+
+# Skip database persistence
+indeed-scraper scrape "python developer" --no-save
+
+# With additional filters
+indeed-scraper scrape "data scientist" \
+  --location "Austin, TX" \
+  --work-setting remote \
+  --job-type full-time \
+  --pages 5
 ```
 
-## 📚 Helpful Resources
+```bash
+# Batch job search from JSON config
+indeed-scraper scrape jobs.json
+```
 
-- **[Examples Directory](examples/)**: Sample files and usage patterns
-- **[Command Line Reference](#command-line-reference)**: All available command-line options explained.
-- **[Troubleshooting](#troubleshooting)**: Solutions for common issues.
+#### CLI Options Reference
 
-## 📊 Command Line Reference
+| Option                   | Type                  | Default | Description                                                                 |
+|--------------------------|-----------------------|---------|-----------------------------------------------------------------------------|
+| query                    | string                | N/A     | Job title or path to a JSON file with job configs                            |
+| --location, -l           | string                | ""     | Location to search in                                                        |
+| --radius, -r             | int                   | 25      | Search radius in miles                                                       |
+| --pages, -p              | int                   | 3       | Maximum number of pages to scrape                                            |
+| --days-ago, -d           | int                   | 7       | Jobs posted within days ago (valid options: 1, 3, 7, 14)                     |
+| --work-setting, -w       | string                | None    | Work setting filter (remote, hybrid, onsite)                                   |
+| --job-type, -j           | string                | None    | Job type filter (full-time, part-time, contract, etc.)                       |
+| --headless               | flag                  | False   | Run browser in headless mode (not recommended due to CAPTCHA issues)          |
+| --save/--no-save         | flag                  | True    | Persist scraped results to the database (use --no-save to skip persistence)   |
+| --version, -v            | flag                  | False   | Show version and exit                                                         |
+| --verbose, -V            | flag                  | False   | Enable verbose logging                                                        |
+| --json-logs              | flag                  | False   | Output logs in JSON format                                                    |
+| --log-file               | string                | None    | Log file path (default: stdout only)                                          |
 
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `--job-title` | Job title to search for (**required**) | `"Data Analyst"` |
-| `--location` | Location to search in | `"New York, NY"` |
-| `--work-setting` | Work arrangement | `remote`, `hybrid`, `onsite` |
-| `--job-type` | Employment type | `"full-time"`, `"contract"` |
-| `--days-ago` | Filter by posting date | `1`, `3`, `7`, `14` |
-| `--search-radius` | Search radius in miles | `25`, `50`, `100` |
-| `--queue` | Run multiple job searches | `examples/job_queues/remote_jobs.txt` |
+### Streamlit Dashboard
 
-<summary>Additional options...</summary>
+```bash
+streamlit run streamlit_app.py
+```
 
-| Parameter | Description | Possible Values | Default |
-|-----------|-------------|-----------------|---------|
-| `--max-pages` | Maximum pages to scrape | Any positive integer | 3 |
-| `--exclude-descriptions` | Skip job descriptions | Flag | False |
-| `--verbose` | Detailed logging | Flag | False |
-| `--output` | Custom output file path | Valid file path | Auto-generated |
-| `--keep-browser` | Keep browser open | Flag | False |
+![Dashboard](images/dashboard-cover.jpg)
 
-## 🔧 Troubleshooting
+## Project Structure
 
-### CAPTCHA Handling
+```
+Indeed-Job-Scraper/
+│
+├── src/
+│   └── indeed_scraper/        # Main package
+│       ├── cli.py             # Command-line interface
+│       ├── scraper.py         # Web scraper functionality
+│       ├── models.py          # Data models 
+│       ├── database/          # Database connection and schemas
+│       ├── config.py          # Configuration management
+│       └── streamlit_dashboard.py # Dashboard implementation
+│
+├── data/                      # Storage for job data
+│   ├── processed/             # Processed job listings
+│   └── raw/                   # Raw scraped data
+│
+├── setup.py                   # Package installation
+├── setup_database.py          # Database initialization
+├── requirements.txt           # Project dependencies
+└── streamlit_app.py           # Dashboard entry point
+```
 
-When prompted, solve the CAPTCHA in the browser window and press Enter to continue.
+## Screenshots
 
-### Chrome Issues
+![CLI](images/cli.jpg)
 
-The tool uses undetected-chromedriver with Chrome version 134 (or compatible). Ensure you have Chrome installed and updated.
+## Future Improvements
 
-## ⚠️ Disclaimer
-
-Please use this tool responsibly. It is intended strictly for educational and personal research purposes. Always respect Indeed.com's terms of service.
-
-## 🌱 Planned Improvements
-
-Some areas for future improvement include:
-
-- Adding job description analysis using language models.
-- Further enhancements to the dashboard experience.
-
+- Additional job sources beyond Indeed
+- Job responsibilities, benefits, experience level extraction using machine learning
+- Salary prediction for listings without salary information
+ 
 Contributions, suggestions, and feedback from everyone are warmly welcomed. Feel free to open an issue or submit a pull request if you'd like to help make the project better.
 
 ---

@@ -2,9 +2,5 @@
 enableCORS = false
 enableXsrfProtection = false
 
-[global]
-logLevel = "info"
-disableWatchdogWarning = true
-
 [browser]
 gatherUsageStats = false 

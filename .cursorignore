@@ -1,0 +1,15 @@
+# Database 
+src/streamlit_dashboard_db.py
+PIPELINE_README.md
+tests/
+tests/*
+tests//*
+
+
+venv/
+.vscode/pycache/
+.pyc
+.pyo
+
+# **/.env.*
+# **/.env

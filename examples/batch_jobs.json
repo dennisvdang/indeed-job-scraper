@@ -1,0 +1,40 @@
+[
+  {
+    "job_title": "Data Scientist",
+    "location": "New York, NY",
+    "search_radius": 25,
+    "max_pages": 3,
+    "days_ago": 7,
+    "work_setting": "remote",
+    "job_type": "full-time"
+  },
+  {
+    "job_title": "Software Engineer",
+    "location": "San Francisco, CA",
+    "search_radius": 25,
+    "max_pages": 3,
+    "days_ago": 7
+  },
+  {
+    "job_title": "Python Developer",
+    "location": "Remote",
+    "max_pages": 5,
+    "days_ago": 14
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "Chicago, IL",
+    "search_radius": 50,
+    "max_pages": 2,
+    "days_ago": 3,
+    "job_type": "full-time"
+  },
+  {
+    "job_title": "Machine Learning Engineer",
+    "location": "Austin, TX",
+    "search_radius": 25,
+    "max_pages": 3,
+    "days_ago": 7,
+    "work_setting": "hybrid"
+  }
+] 
