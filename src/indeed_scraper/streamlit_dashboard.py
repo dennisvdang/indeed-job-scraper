@@ -19,7 +19,7 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 
-from ..database.repository import JobListingRepository
+from database.repository import JobListingRepository
 from .repository import get_repository
 
 # Suppress SQLAlchemy SQL statement logs in the dashboard
@@ -590,7 +590,7 @@ def display_job_description_content(job: pd.Series) -> None:
     else:
         try:
             if 'job_id' in job and pd.notna(job['job_id']):
-                from ..database.repository import JobListingRepository
+                from database.repository import JobListingRepository
                 
                 description = JobListingRepository.get_description_for_job(job['job_id'])
                 if description:
@@ -604,7 +604,7 @@ def display_job_description_content(job: pd.Series) -> None:
 def get_job_with_description(job_id: str) -> Optional[pd.Series]:
     """Get a job with its description loaded on demand."""
     try:
-        from ..database.repository import JobListingRepository
+        from database.repository import JobListingRepository
         
         job_data = JobListingRepository.get_job_details(job_id)
         if job_data:
