@@ -2,7 +2,9 @@
 
 ![Demo Gif](images/demo.gif)
 
-A tool for scraping, storing, and analyzing job listings from Indeed.com. This project contains a command-line interface (CLI) for collecting job data, scripts to setup and store data in SQLite or SQL Server databases, and a Streamlit dashboard for visualizing and exploring job listings.
+## Overview
+
+A tool for scraping, storing, and analyzing job listings from Indeed.com. This project contains a command-line interface (CLI) for collecting job data, scripts to setup and store data in SQLite or SQL Server databases, and a Streamlit dashboard for visualizing and exploring job listings. Here's a demo [Streamlit dashboard](https://indeed-job-scraper-dashboard.streamlit.app/) featuring real scraped job data with SQLite backend.
 
 ## Features
 
@@ -21,14 +23,14 @@ A tool for scraping, storing, and analyzing job listings from Indeed.com. This p
 - **Pydantic**: Data validation and settings management
 - **Typer & Rich**: Command-line interface, formatting
 - **Streamlit**: Data visualization dashboard
-- **Pandas & Plotly**: Data manipulation and charts
+- **Pandas & Plotly**: Data manipulation and visualization
 
 ## Installation
 
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Indeed-Job-Scraper.git
+git clone https://github.com/dennisvdang/Indeed-Job-Scraper.git
 cd Indeed-Job-Scraper
 ```
 
