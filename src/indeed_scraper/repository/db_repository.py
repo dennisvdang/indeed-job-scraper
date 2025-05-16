@@ -2,16 +2,27 @@
 """SQLAlchemy implementation of job listing repository."""
 
 import logging
+import sys
 from typing import List, Dict, Any, Optional, Set, Iterator, Tuple, cast
 import pandas as pd
 from sqlalchemy import select, func, update, delete, text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from ...database.connection import get_db_session, db_manager
-from ...database.job_schema import JobListing as DBJobListing
-from ...database.job_schema import JobDescription as DBJobDescription
-from ..models import JobListing
+# Handle imports in a way that works in both local and deployed environments
+try:
+    # Try absolute imports first (for Streamlit Cloud)
+    from src.database.connection import get_db_session, db_manager
+    from src.database.job_schema import JobListing as DBJobListing
+    from src.database.job_schema import JobDescription as DBJobDescription
+    from src.indeed_scraper.models import JobListing
+except ImportError:
+    # Fall back to relative imports (for local development)
+    from ...database.connection import get_db_session, db_manager
+    from ...database.job_schema import JobListing as DBJobListing
+    from ...database.job_schema import JobDescription as DBJobDescription
+    from ..models import JobListing
+
 from .base import JobListingRepositoryInterface
 
 logger = logging.getLogger(__name__)
