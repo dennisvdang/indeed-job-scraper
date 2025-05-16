@@ -140,23 +140,44 @@ streamlit run streamlit_app.py
 ```
 Indeed-Job-Scraper/
 │
-├── src/
-│   └── indeed_scraper/        # Main package
-│       ├── cli.py             # Command-line interface
-│       ├── scraper.py         # Web scraper functionality
-│       ├── models.py          # Data models 
-│       ├── database/          # Database connection and schemas
-│       ├── config.py          # Configuration management
-│       └── streamlit_dashboard.py # Dashboard implementation
+├── src/                       # Source code directory
+│   ├── indeed_scraper/        # Main package
+│   │   ├── __init__.py        # Package initialization
+│   │   ├── cli.py             # Command-line interface
+│   │   ├── scraper.py         # Web scraper functionality
+│   │   ├── browser.py         # Browser setup and management 
+│   │   ├── models.py          # Data models with Pydantic
+│   │   ├── config.py          # Configuration management
+│   │   ├── logger.py          # Structured logging utilities
+│   │   ├── exporter.py        # Data export functionality
+│   │   ├── descriptions.py    # Job description processing
+│   │   ├── streamlit_dashboard.py # Dashboard implementation
+│   │   ├── repository/        # Repository pattern implementation
+│   │   │   ├── __init__.py    # Repository initialization
+│   │   │   ├── base.py        # Repository interfaces
+│   │   │   └── db_repository.py # Database repository implementation
+│   │   └── database/          # Database-specific code
+│   │
+│   └── database/              # Core database functionality
+│       ├── __init__.py        # Database package initialization
+│       ├── connection.py      # Database connection management
+│       ├── job_schema.py      # SQLAlchemy schema definitions
+│       ├── repository.py      # Core repository implementation
+│       ├── data_validator.py  # Data validation utilities
+│       └── setup.py           # Database setup utilities
 │
-├── data/                      # Storage for job data
-│   ├── processed/             # Processed job listings
-│   └── raw/                   # Raw scraped data
+├── data/                      # Data storage directory
+│   ├── exports/               # Exported data files
+│   └── imports/               # Imported data files
+│
+├── tests/                     # Test directory
 │
 ├── setup.py                   # Package installation
-├── setup_database.py          # Database initialization
 ├── requirements.txt           # Project dependencies
-└── streamlit_app.py           # Dashboard entry point
+├── setup_database.py          # Database initialization
+├── streamlit_app.py           # Dashboard entry point
+├── .env                       # Environment variables (not in repo)
+└── .gitignore                 # Git ignore file
 ```
 
 ## Screenshots
