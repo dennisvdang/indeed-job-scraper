@@ -19,6 +19,7 @@ from .scraper import run_scrape_job
 from .config import config, WorkSetting, JobType
 from .exporter import export_jobs_to_db
 from .repository import get_repository
+from .browser import setup_browser
 
 app = typer.Typer(
     name="indeed_scraper",
@@ -64,36 +65,16 @@ def display_job_summary(jobs: List[JobListing]) -> None:
     console.print(table)
 
 def is_json_file(value: str) -> bool:
-    """
-    Determine if the string is a path to a valid JSON file.
-    
-    Args:
-        value: String to check
-        
-    Returns:
-        True if the value is a path to a valid JSON file
-    """
-    if not os.path.exists(value):
-        return False
-        
-    if not value.lower().endswith('.json'):
-        return False
-        
-    try:
-        with open(value, 'r') as f:
-            json.load(f)
-        return True
-    except (json.JSONDecodeError, IOError):
-        return False
-        
-    return False
+    """Check if the provided query string refers to a JSON file by extension."""
+    return value.lower().endswith('.json')
 
 def process_single_job(
-    scrape_job: ScrapeJob, 
-    headless: bool, 
+    scrape_job: ScrapeJob,
+    headless: bool,
     save_to_db: bool,
     repository: Any,
-    captcha_already_solved: bool = False
+    captcha_already_solved: bool = False,
+    driver: Any = None
 ) -> List[JobListing]:
     """
     Process a single scrape job.
@@ -104,6 +85,7 @@ def process_single_job(
         save_to_db: Save results to database
         repository: Database repository
         captcha_already_solved: Whether CAPTCHA is already solved
+        driver: WebDriver instance
         
     Returns:
         List of scraped job listings
@@ -112,7 +94,8 @@ def process_single_job(
         scrape_job=scrape_job,
         headless=headless,
         repository=repository,
-        captcha_already_solved=captcha_already_solved
+        captcha_already_solved=captcha_already_solved,
+        driver=driver
     )
     
     if not jobs:
@@ -225,28 +208,31 @@ def scrape_command(
         # Flag to skip CAPTCHA check after first job
         captcha_already_solved = False
         
-        for i, job_config in enumerate(job_configs):
-            try:
-                scrape_job = ScrapeJob.from_dict(job_config)
-                console.print(f"\n[bold][{i+1}/{total_jobs}] Scraping: {scrape_job.job_title}[/bold]")
-                
-                jobs = process_single_job(
-                    scrape_job=scrape_job,
-                    headless=headless,
-                    save_to_db=save_to_db,
-                    repository=repository,
-                    captcha_already_solved=captcha_already_solved
-                )
-                
-                # Set flag after first successful job
-                if jobs and not captcha_already_solved:
-                    captcha_already_solved = True
-                
-                all_jobs.extend(jobs)
-                
-            except Exception as e:
-                logger.error(f"Error processing job {job_config.get('job_title', f'#{i+1}')}: {e}")
-                console.print(f"[red]Error processing job: {e}[/red]")
+        # reuse one browser session for entire batch
+        with setup_browser(headless=headless) as driver:
+            for i, job_config in enumerate(job_configs):
+                try:
+                    scrape_job = ScrapeJob.from_dict(job_config)
+                    console.print(f"\n[bold][{i+1}/{total_jobs}] Scraping: {scrape_job.job_title}[/bold]")
+                    
+                    jobs = process_single_job(
+                        scrape_job=scrape_job,
+                        headless=headless,
+                        save_to_db=save_to_db,
+                        repository=repository,
+                        captcha_already_solved=captcha_already_solved,
+                        driver=driver
+                    )
+                    
+                    # Set flag after first successful job
+                    if jobs and not captcha_already_solved:
+                        captcha_already_solved = True
+                    
+                    all_jobs.extend(jobs)
+                    
+                except Exception as e:
+                    logger.error(f"Error processing job {job_config.get('job_title', f'#{i+1}')}: {e}")
+                    console.print(f"[red]Error processing job: {e}[/red]")
         
         # Final summary
         console.print(f"\n[bold green]Completed {total_jobs} scrape jobs with {len(all_jobs)} total listings.[/bold green]")

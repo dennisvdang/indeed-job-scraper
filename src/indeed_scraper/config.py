@@ -2,15 +2,17 @@
 """Configuration settings for Indeed job scraper."""
 
 from enum import Enum
-from typing import Dict, List, Optional
-from pydantic import Field
+from typing import Dict, List, Optional, ClassVar, Final
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
 
 class WorkSetting(str, Enum):
     """Work settings for job filtering."""
     REMOTE = "remote"
     HYBRID = "hybrid"
     ONSITE = "onsite"
+
 
 class JobType(str, Enum):
     """Job types for filtering."""
@@ -19,6 +21,13 @@ class JobType(str, Enum):
     CONTRACT = "contract"
     TEMPORARY = "temporary"
     TEMP_TO_HIRE = "temp-to-hire"
+
+
+class DatabaseType(str, Enum):
+    """Database type options."""
+    SQLITE = "sqlite"
+    SQL_SERVER = "sql_server"
+
 
 class ScraperConfig(BaseSettings):
     """Configuration for the Indeed job scraper."""
@@ -38,13 +47,12 @@ class ScraperConfig(BaseSettings):
     
     # Database settings
     db_connection_string: Optional[str] = Field(None, description="Database connection string")
-    
-    # Add these fields that are being used from .env but weren't defined in the model
     db_server: Optional[str] = Field(None, description="Database server name")
-    db_name: Optional[str] = Field(None, description="Database name")
-    db_driver: Optional[str] = Field(None, description="Database driver")
-    db_sqlite_path: Optional[str] = Field("data/indeed_jobs_local.sqlite3", description="SQLite database path")
-    sqlalchemy_echo: Optional[str] = Field(None, description="Echo SQL statements")
+    db_name: Optional[str] = Field("IndeedJobs", description="Database name")
+    db_driver: Optional[str] = Field("ODBC Driver 17 for SQL Server", description="Database driver")
+    db_sqlite_path: str = Field("data/indeed_jobs_local.sqlite3", description="SQLite database path")
+    sqlalchemy_echo: bool = Field(False, description="Echo SQL statements")
+    db_type: DatabaseType = Field(DatabaseType.SQLITE, description="Database type")
     
     # Work setting filters
     work_setting_filters: Dict[str, str] = Field(
@@ -68,15 +76,47 @@ class ScraperConfig(BaseSettings):
         description="Job type filters for Indeed URL"
     )
     
-    # Selectors
-    job_card_selector: str = Field(
-        "div.job_seen_beacon, div.tapItem, [data-testid='jobListing']", 
-        description="CSS selector for job cards"
-    )
-    next_page_selector: str = Field(
-        "a[data-testid='pagination-page-next']",
-        description="CSS selector for next page button"
-    )
+    # Selectors - stored as class variables for easy access
+    JOB_CARD_SELECTOR: ClassVar[str] = "div.job_seen_beacon, div.tapItem, [data-testid='jobListing']"
+    NEXT_PAGE_SELECTOR: ClassVar[str] = "a[data-testid='pagination-page-next']"
+    
+    # Field selectors within job cards
+    JOB_FIELD_SELECTORS: ClassVar[Dict[str, List[tuple]]] = {
+        'title': [("css selector", "a.jcs-JobTitle"), ("css selector", "h2.jobTitle span[title]")],
+        'company': [("css selector", "[data-testid='company-name']"), ("css selector", "span.companyName")],
+        'location': [("css selector", "[data-testid='text-location']"), ("css selector", "div.companyLocation")],
+        'salary': [("css selector", "div[class*='salary-snippet-container']"), ("css selector", "div.salary-snippet-container")],
+        'job_type': [("css selector", "div[data-testid='job-type-info']"), ("css selector", "div.metadataContainer span.attribute_snippet")],
+        'work_setting': [("css selector", "div[data-testid='work-setting-info']"), ("css selector", "div.metadataContainer span.attribute_snippet[data-work-setting]")],
+        'link': [("css selector", "a.jcs-JobTitle"), ("css selector", "h2.jobTitle a")]
+    }
+    
+    @field_validator('sqlalchemy_echo', mode='before')
+    @classmethod
+    def parse_bool_string(cls, v: str) -> bool:
+        """Parse string to boolean for sqlalchemy_echo."""
+        if isinstance(v, str):
+            return v.lower() in ('true', 'yes', '1', 't', 'y')
+        return bool(v)
+    
+    def is_sqlite(self) -> bool:
+        """Check if using SQLite database."""
+        return self.db_type == DatabaseType.SQLITE or self.db_sqlite_path is not None
+    
+    def get_db_connection_string(self) -> str:
+        """Generate database connection string based on configuration."""
+        if self.is_sqlite():
+            return f"sqlite:///{self.db_sqlite_path}"
+        
+        # SQL Server connection
+        driver_formatted = self.db_driver.replace(" ", "+") if self.db_driver else ""
+        server = self.db_server or ""
+        
+        # Escape server name if it contains a single backslash but not a double backslash
+        if '\\' in server and '\\\\' not in server:
+            server = server.replace('\\', '\\\\')
+            
+        return f"mssql+pyodbc://{server}/{self.db_name}?driver={driver_formatted}&trusted_connection=yes"
     
     model_config = SettingsConfigDict(
         env_prefix="INDEED_",
@@ -84,6 +124,7 @@ class ScraperConfig(BaseSettings):
         env_file_encoding="utf-8",
         extra="allow"  # Allow extra fields from env vars
     )
+
 
 # Global configuration instance
 config = ScraperConfig() 

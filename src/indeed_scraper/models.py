@@ -4,8 +4,8 @@
 import re
 from datetime import datetime
 from enum import Enum
-from typing import Dict, List, Optional, Any, Union, ClassVar, Self
-from pydantic import BaseModel, Field, field_validator, model_validator
+from typing import Dict, List, Optional, Any, Union, ClassVar, Self, TypedDict
+from pydantic import BaseModel, Field, field_validator, model_validator, ConfigDict
 
 class WorkSetting(str, Enum):
     """Work settings for job listings."""
@@ -30,6 +30,23 @@ class SalaryPeriod(str, Enum):
     MONTHLY = "monthly"
     YEARLY = "yearly"
     UNKNOWN = "unknown"
+
+class LocationInfo(TypedDict, total=False):
+    """Structured location information."""
+    city: Optional[str]
+    state: Optional[str]
+    zip: Optional[str]
+    country: Optional[str]
+
+class SalaryInfo(TypedDict, total=False):
+    """Structured salary information."""
+    min: Optional[float]
+    max: Optional[float]
+    period: Optional[str]
+    min_yearly: Optional[float]
+    max_yearly: Optional[float]
+    midpoint_yearly: Optional[float]
+    currency: Optional[str]
 
 class JobListing(BaseModel):
     """Job listing data model with validation."""
@@ -70,6 +87,11 @@ class JobListing(BaseModel):
     city: Optional[str] = None
     state: Optional[str] = None
     zip: Optional[str] = None
+    
+    model_config = ConfigDict(
+        arbitrary_types_allowed=True,
+        json_encoders={datetime: lambda v: v.isoformat()}
+    )
     
     @field_validator('job_url')
     @classmethod
@@ -122,16 +144,28 @@ class JobListing(BaseModel):
             
         return self
     
+    def get_location_info(self) -> LocationInfo:
+        """Get structured location information."""
+        return {
+            "city": self.city,
+            "state": self.state,
+            "zip": self.zip
+        }
+    
+    def get_salary_info(self) -> SalaryInfo:
+        """Get structured salary information."""
+        return {
+            "min": self.salary_min,
+            "max": self.salary_max,
+            "period": self.salary_period,
+            "min_yearly": self.salary_min_yearly,
+            "max_yearly": self.salary_max_yearly,
+            "midpoint_yearly": self.salary_midpoint_yearly
+        }
+    
     def to_dict(self) -> Dict[str, Any]:
         """Convert model to dictionary, excluding None values."""
         return {k: v for k, v in self.model_dump().items() if v is not None}
-    
-    model_config = {
-        "arbitrary_types_allowed": True,
-        "json_encoders": {
-            datetime: lambda v: v.isoformat()
-        }
-    }
 
 class ScrapeJob(BaseModel):
     """Configuration for a scrape job."""
@@ -142,6 +176,8 @@ class ScrapeJob(BaseModel):
     days_ago: int = 7
     work_setting: Optional[str] = None
     job_type: Optional[str] = None
+    
+    model_config = ConfigDict(extra="allow")
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary, excluding None values."""

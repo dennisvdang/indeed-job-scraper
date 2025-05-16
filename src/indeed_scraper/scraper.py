@@ -9,7 +9,7 @@ import re
 import signal
 from typing import List, Dict, Optional, Set, Tuple, Any, Callable
 from urllib.parse import quote_plus
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
@@ -181,7 +181,8 @@ def scrape_job_listings(
     captcha_already_solved: bool = False,
     headless: bool = False,
     input_prompt: Callable = input,
-    repository: Optional[JobListingRepositoryInterface] = None
+    repository: Optional[JobListingRepositoryInterface] = None,
+    driver: Optional[uc.Chrome] = None
 ) -> List[JobListing]:
     """
     Main function to scrape Indeed job listings.
@@ -198,6 +199,7 @@ def scrape_job_listings(
         headless: Whether to run browser in headless mode
         input_prompt: Function to get user input for CAPTCHA handling
         repository: Repository to check for existing jobs
+        driver: Existing browser instance to reuse
         
     Returns:
         List of JobListing objects
@@ -206,13 +208,15 @@ def scrape_job_listings(
         if SHOULD_EXIT:
             return []
         
-        with setup_browser(headless=headless) as driver:
+        # reuse existing driver or spin up a new one
+        browser_ctx = setup_browser(headless=headless) if driver is None else nullcontext(driver)
+        with browser_ctx as driver_instance:
             try:
                 search_url = get_search_url(
                     job_title, location, search_radius, days_ago, work_setting, job_type
                 )
                 logger.info(f"Searching for jobs: {search_url}")
-                driver.get(search_url)
+                driver_instance.get(search_url)
                 random_delay()
                 
                 if not captcha_already_solved:
@@ -239,13 +243,13 @@ def scrape_job_listings(
                         break
                         
                     logger.info(f"Scraping page {page} of {max_pages}...")
-                    scroll_page(driver)
+                    scroll_page(driver_instance)
                     
-                    job_cards = driver.find_elements(By.CSS_SELECTOR, config.job_card_selector)
+                    job_cards = driver_instance.find_elements(By.CSS_SELECTOR, config.job_card_selector)
                     if not job_cards:
                         logger.info("No job cards found on this page.")
-                        if handle_possible_captcha(driver, input_prompt):
-                            job_cards = driver.find_elements(By.CSS_SELECTOR, config.job_card_selector)
+                        if handle_possible_captcha(driver_instance, input_prompt):
+                            job_cards = driver_instance.find_elements(By.CSS_SELECTOR, config.job_card_selector)
                             if not job_cards:
                                 logger.info("Still no job cards found after CAPTCHA handling. Moving to next job.")
                                 break
@@ -298,13 +302,13 @@ def scrape_job_listings(
                     
                     # Scrape descriptions for the jobs on this page
                     if jobs_on_page:
-                        processed_jobs = batch_scrape_descriptions(driver, jobs_on_page, input_prompt)
+                        processed_jobs = batch_scrape_descriptions(driver_instance, jobs_on_page, input_prompt)
                         all_jobs.extend(processed_jobs)
                     
                     if SHOULD_EXIT or page >= max_pages:
                         break
                         
-                    if not navigate_to_next_page(driver):
+                    if not navigate_to_next_page(driver_instance):
                         break
                         
                     random_delay(2.0, 4.0)
@@ -321,7 +325,8 @@ def run_scrape_job(
     headless: bool = False,
     repository: Optional[JobListingRepositoryInterface] = None,
     captcha_already_solved: bool = False,
-    input_prompt: Callable = input
+    input_prompt: Callable = input,
+    driver: Optional[uc.Chrome] = None
 ) -> List[JobListing]:
     """
     Run a scrape job with the given configuration.
@@ -332,6 +337,7 @@ def run_scrape_job(
         repository: Repository to check for existing jobs and save results
         captcha_already_solved: Whether CAPTCHA has already been solved
         input_prompt: Function to get user input for CAPTCHA handling
+        driver: Existing browser instance to reuse
         
     Returns:
         List of scraped job listings
@@ -349,7 +355,8 @@ def run_scrape_job(
         captcha_already_solved=captcha_already_solved,
         headless=headless,
         input_prompt=input_prompt,
-        repository=repository
+        repository=repository,
+        driver=driver
     )
     
     logger.info(f"Completed scrape job: {scrape_job.job_title}. Found {len(jobs)} jobs.")

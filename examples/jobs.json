@@ -1,0 +1,26 @@
+[
+  {
+    "job_title": "Data Scientist",
+    "location": "Irvine, CA",
+    "search_radius": 25,
+    "days_ago": 7
+  },
+  {
+    "job_title": "Data Scientist",
+    "location": "Los Angeles, CA",
+    "search_radius": 25,
+    "days_ago": 7
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "Los Angeles, CA",
+    "search_radius": 25,
+    "days_ago": 7
+  },
+  {
+    "job_title": "Data Analyst",
+    "location": "Irvine, CA",
+    "search_radius": 25,
+    "days_ago": 7
+  }
+]
