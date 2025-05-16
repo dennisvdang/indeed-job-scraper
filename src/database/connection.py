@@ -171,7 +171,7 @@ def get_sql_server_connection_string(
     
     if trusted_connection:
         return f"mssql+pyodbc://{server}/{database}?driver={driver_formatted}&trusted_connection=yes"
-    
+
     if username and password:
         return f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver_formatted}"
     
